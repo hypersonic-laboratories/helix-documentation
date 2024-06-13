@@ -1,0 +1,4 @@
+site_name: Helix Documentation
+site_url: https://docs.helixgame.com/documentation
+theme:
+  name: material
