@@ -1,4 +1,77 @@
-site_name: Helix Documentation
-site_url: https://docs.helixgame.com/documentation
+# Project information
+site_name: HELIX Documentation
+site_description: API Documentation & Tutorials for the HELIX Platform
+site_author: Hypersonic Labs (Max Wason)
+site_url: https://docs.helixgame.com/documentation #TODO
+# !ENV [MKDOCS_SITE_URL, "https://development.docs.helixgame.com"]
+
+# Repository
+repo_url: https://github.com/HypersonicLabs/Docs #TODO
+edit_uri: edit/development/src
+
+# Copyright
+copyright: "&copy; 2024 HELIX&trade; is a trademark of Hypersonic Labs"
+
+# Directory for the documentation pages
+docs_dir: docs
+
+# If you add or remove a page, you must update it here
+nav:
+  - Getting Started:
+    - getting_started/gettingStarted.md
+    - Start Here:
+      - Install: getting_started/install.md
+      - Intro To Studio: getting_started/introStudio.md
+      - Getting Help: getting_started/help.md
+      - Making Your First Game: getting_started/firstGame.md
+    - Coming From Other Platforms:
+      - GMod: getting_started/comingGmod.md
+      - GTA/FiveM: getting_started/comingGTA.md
+    - Advice For Each Discipline:
+      - Modelers: getting_started/modelers.md
+      - Mappers: getting_started/mappers.md
+      - Animators: getting_started/animators.md
+      - Scripters: getting_started/scripters.md
+      - Server Owners: getting_started/serverOwners.md
+  - Tutorials:
+    - tutorials/tutorials.md
+    - Tutorials:
+      - Server/Client: tutorials/serverClient.md
+      - QBCore Framework: tutorials/qbcore.md
+      - DarkRP Framework: tutorials/darkrp.md
+    - References:
+      - Better Practices: tutorials/betterPractices.md
+  - API:
+    - api/api.md
+    - API Details: api/apiDetails.md
+
+
+# Theme
+
 theme:
   name: material
+  # language: en
+  font:
+    text: Roboto
+    code: JetBrains Mono
+  features:
+    # - content.code.annotate
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.instant
+    - navigation.instant.prefetch
+    - navigation.instant.progress
+    - navigation.sections
+    - navigation.prune
+    - navigation.indexes
+    - navigation.top
+    - toc.follow
+  palette:
+    scheme: slate
+
+markdown_extensions:
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+
