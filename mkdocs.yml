@@ -2,7 +2,7 @@
 site_name: HELIX Documentation
 site_description: API Documentation & Tutorials for the HELIX Platform
 site_author: Hypersonic Labs (Max Wason)
-site_url: https://docs.helixgame.com/documentation #TODO
+site_url: https://helixdocs-1s1.pages.dev #TODO
 # !ENV [MKDOCS_SITE_URL, "https://development.docs.helixgame.com"]
 
 # Repository
