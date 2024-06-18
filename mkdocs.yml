@@ -1,26 +1,19 @@
 # Project information
 site_name: HELIX Documentation
-site_description: API Documentation & Tutorials for the HELIX Platform
-site_author: Hypersonic Labs (Max Wason)
-site_url: https://development.helixdocs-1s1.pages.dev/
-# !ENV [MKDOCS_SITE_URL, "https://development.docs.helixgame.com"]
+site_description: API Documentation & Tutorials for the HELIX Platform.
+site_author: Hypersonic Laboratories (Max Wason)
 
-# Repository
-# repo_url: https://github.com/HypersonicLabs/Docs
-# edit_uri: edit/development/src
-# comments: ToDo
+# Site URL
+site_url: https://development.helixdocs-1s1.pages.dev #Can add ENV flag, e.g. !ENV [MKDOCS_SITE_URL, "https://development.helixdocs-1s1.pages.dev/"]
+
+# Repository (for editing pages)
+repo_url: https://github.com/maxswell-helix/HelixDocs 
+edit_uri: edit/development/docs/
 
 # Copyright
 copyright: "&copy; 2024 HELIX&trade; is a trademark of Hypersonic Labs"
-extra:
-  generator: false # Remove footer mention
-  homepage: https://helixgame.com/ # Make icon redirect to main helix site
-  
 
-# Directory for the documentation pages
-docs_dir: docs
-
-# If you add or remove a page, you must update it here
+###------------------------------If you add or remove a page, you must update it here!!!-------------------------------------------------###
 nav:
   - Getting Started:
     - getting_started/gettingStarted.md
@@ -51,26 +44,65 @@ nav:
     - API Details: api/apiDetails.md
 
 
-# Theme
-
+# Extra styling
+# https://squidfunk.github.io/mkdocs-material/customization/?h=#additional-css
 extra_css:
-  - stylesheets/extra.css
+  - _extra/css/extra.css
+  # Can add more here
 
+# Extra functionality
+# https://squidfunk.github.io/mkdocs-material/customization/?h=#additional-javascript
+extra_javascript:
+  - _extra/javascript/extra.js
+  # Can add more here
+
+# Validate links with logging tags
+# https://www.mkdocs.org/user-guide/configuration/#validation
+validation:
+  nav:
+    omitted_files: info
+    not_found: warn
+    absolute_links: ignore
+  links:
+    not_found: warn
+    absolute_links: ignore
+    unrecognized_links: info
+
+# Add snippets
+watch:
+  - _snippets
+
+# MkDocs-Material Theme + customization
 theme:
   name: material
-  custom_dir: theme_overrides
+  custom_dir: _overrides
   language: en
   font:
     text: Roboto
     code: JetBrains Mono
-  favicon: assets/favicon.ico
-  logo: assets/logo.jpg
+  favicon: _images/favicon.ico
+  logo: _images/logo.jpg
+  icon:
+    repo: fontawesome/brands/github
   palette:
     scheme: slate
     # primary: custom
     # accent: custom
   features:
-    # - content.code.annotate
+    # https://squidfunk.github.io/mkdocs-material/setup/adding-a-git-repository/#code-actions
+    - content.action.edit
+    
+    # https://squidfunk.github.io/mkdocs-material/reference/code-blocks
+    - content.code.annotate
+    - content.code.copy
+
+    # https://squidfunk.github.io/mkdocs-material/reference/tooltips/#improved-tooltips
+    - content.tooltips
+
+    # https://squidfunk.github.io/mkdocs-material/setup/setting-up-the-footer/?h=footer#navigation
+    # - navigation.footer #Disabled for now, may re-include
+
+    # https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation
     - navigation.tracking
     - navigation.tabs
     - navigation.tabs.sticky
@@ -83,8 +115,160 @@ theme:
     - navigation.top
     - toc.follow
 
-markdown_extensions:
-  - pymdownx.superfences
-  - pymdownx.tabbed:
-      alternate_style: true
+  static_templates:
+    - 404.html #TODO
+    - offline.html #TODO
+  #TODO: don't include MkDocs' JS?
 
+extra:
+  analytics:
+    provider: google
+    property: !ENV GOOGLE_ANALYTICS_KEY #TODO
+    feedback:
+      title: Was this page helpful?
+      ratings:
+        - icon: material/emoticon-happy-outline
+          name: This page was helpful
+          data: 1
+          note: >-
+            Thanks for your feedback!
+        - icon: material/emoticon-sad-outline
+          name: This page could be improved
+          data: 0
+          note: >-
+            Thanks for your feedback! Help us improve this page by
+            using our <a href="https://github.com/maxswell-helix/HelixDocs/issues/new" target="_blank" rel="noopener">feedback form</a>.
+  consent:
+    title: Cookie Consent
+    description: >-
+      We use cookies to recognize your repeated visits and preferences, as well
+      as to measure the effectiveness of our documentation and whether users
+      find what they're searching for. With your consent, you're helping us to
+      make our documentation better.
+  feedback_url: https://github.com/maxswell-helix/HelixDocs/issues/new
+  generator: false #No mention of MkDocs-Material in footer
+  social: #TODO: ACTUAL LINKS, not just placeholders
+    - icon: fontawesome/brands/discord
+      link: https://discord.helixgame.com
+      name: Discord
+    - icon: fontawesome/brands/youtube
+      link: https://www.youtube.com/HELIXGames
+      name: YouTube
+    - icon: fontawesome/brands/reddit
+      link: https://www.reddit.com/r/HELIXGame
+      name: Reddit
+    - icon: fontawesome/brands/facebook
+      link: https://www.facebook.com/helixgame
+      name: Facebook
+    - icon: fontawesome/brands/instagram
+      link: https://www.instagram.com/helixgame
+      name: Instagram
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/helixgame
+      name: Twitter
+    - icon: fontawesome/brands/twitch
+      link: https://twitch.tv/helixgame
+      name: Twitch
+    - icon: fontawesome/brands/tiktok
+      link: https://www.tiktok.com/@helixgame
+      name: TikTok
+
+markdown_extensions:
+  # https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown/
+  # Note some are replaced by https://facelessuser.github.io/pymdown-extensions/extensions/blocks/
+  - abbr
+  - attr_list
+  - footnotes
+  - md_in_html
+  - toc:
+      slugify: !!python/object/apply:pymdownx.slugs.slugify #if yaml syntax errors: safe to ignore
+        kwds:
+          case: lower
+      anchorlink: true
+  - tables
+
+  # https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown-extensions/
+  # https://facelessuser.github.io/pymdown-extensions/
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.blocks.admonition: #ignore yml errors
+      types:
+        - note
+        - info
+        - tip
+        - question
+        - warning
+        - danger
+  - pymdownx.blocks.details #ignore yml errors
+  - pymdownx.blocks.definition #ignore yml errors
+  - pymdownx.blocks.tab:
+      alternate_style: true
+  - pymdownx.caret:
+      smart_insert: true
+      insert: true
+      superscript: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji 
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.escapeall #ignore yml errors
+  - pymdownx.highlight:
+      linenums: true
+      linenums_style: pymdownx-inline
+  - pymdownx.inlinehilite
+  - pymdownx.keys:
+      separator: +
+      strict: false
+      camel_case: true
+  - pymdownx.magiclink:
+      user: maxswell-helix
+      provider: github
+      repo: HelixDocs
+      repo_url_shorthand: true
+  - pymdownx.mark:
+      smart_mark: true
+  - pymdownx.pathconverter #ignore yml errors
+  - pymdownx.progressbar #ignore yml errors
+  - pymdownx.saneheaders #ignore yml errors
+  - pymdownx.smartsymbols
+  - pymdownx.snippets: #TODO: configure
+      check_paths: true
+  - pymdownx.superfences
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde:
+      smart_delete: true
+      delete: true
+      subscript: true
+
+# https://squidfunk.github.io/mkdocs-material/plugins/
+plugins:
+  # Included
+  - search
+  - tags:
+      enabled: true
+
+  # Custom below here - NEED TO INSTALL
+
+  # https://squidfunk.github.io/mkdocs-material/reference/images/#lightbox
+  # https://github.com/blueswen/mkdocs-glightbox
+  - glightbox:
+      touchNavigation: false
+      loop: false
+      effect: zoom
+      slide_effect: none
+      width: auto
+      height: auto
+      zoomable: false
+      draggable: false
+      auto_caption: false
+      caption_position: bottom
+
+  # https://github.com/timvink/mkdocs-git-revision-date-localized-plugin
+  - git-revision-date-localized
+
+  # https://github.com/orbikm/mkdocs-ezlinks-plugin
+  - ezlinks #ignore yml errors
+
+  # TODO: setup minify, e.g.
+  # - minify:
+  #     minify_html: !ENV MKDOCS_MINIFY
