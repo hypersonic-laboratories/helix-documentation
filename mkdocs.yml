@@ -90,7 +90,7 @@ theme:
     # accent: custom
   features:
     # https://squidfunk.github.io/mkdocs-material/setup/adding-a-git-repository/#code-actions
-    - content.action.edit
+    - content.action.edit #Also adds comment issue button, via _overrides/partials/actions.html
     
     # https://squidfunk.github.io/mkdocs-material/reference/code-blocks
     - content.code.annotate
@@ -145,7 +145,6 @@ extra:
       as to measure the effectiveness of our documentation and whether users
       find what they're searching for. With your consent, you're helping us to
       make our documentation better.
-  feedback_url: https://github.com/maxswell-helix/HelixDocs/issues/new
   generator: false #No mention of MkDocs-Material in footer
   social: #TODO: ACTUAL LINKS, not just placeholders
     - icon: fontawesome/brands/discord
