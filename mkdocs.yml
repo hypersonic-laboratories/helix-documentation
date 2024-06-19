@@ -72,9 +72,9 @@ validation:
     absolute_links: ignore
     unrecognized_links: info
 
-# Add snippets
-watch:
-  - _snippets
+# Add snippets #TODO: enable, but need to configure build to watch
+# watch:
+#   - _snippets
 
 # MkDocs-Material Theme + customization
 theme:
