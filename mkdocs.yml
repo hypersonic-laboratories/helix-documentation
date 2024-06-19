@@ -16,7 +16,7 @@ copyright: "&copy; 2024 HELIX&trade; is a trademark of Hypersonic Labs"
 ###------------------------------If you add or remove a page, you must update it here!!!-------------------------------------------------###
 nav:
   - Getting Started:
-    - getting_started/gettingStarted.md
+    - getting_started/welcome.md
     - Start Here:
       - Install: getting_started/install.md
       - Intro To Studio: getting_started/introStudio.md
@@ -32,15 +32,19 @@ nav:
       - Scripters: getting_started/scripters.md
       - Server Owners: getting_started/serverOwners.md
   - Tutorials:
-    - tutorials/tutorials.md
+    - tutorials/tutorialHome.md
     - Tutorials:
+      - Intro To Lua: tutorials/introLua.md
       - Server/Client: tutorials/serverClient.md
       - QBCore Framework: tutorials/qbcore.md
       - DarkRP Framework: tutorials/darkrp.md
     - References:
+      - Lua Style Guide: tutorials/luaStyleGuide.md
       - Better Practices: tutorials/betterPractices.md
+    - Examples:
+      - Doors: tutorials/doors.md
   - API:
-    - api/api.md
+    - api/apiHome.md
     - API Details: api/apiDetails.md
 
 
@@ -100,7 +104,7 @@ theme:
     - content.tooltips
 
     # https://squidfunk.github.io/mkdocs-material/setup/setting-up-the-footer/?h=footer#navigation
-    # - navigation.footer #Disabled for now, may re-include
+    - navigation.footer
 
     # https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation
     - navigation.tracking
@@ -115,9 +119,9 @@ theme:
     - navigation.top
     - toc.follow
 
-  static_templates:
-    - 404.html #TODO
-    - offline.html #TODO
+  # static_templates: #disabled for now
+  #   - 404.html #TODO
+
   #TODO: don't include MkDocs' JS?
 
 extra:
@@ -243,8 +247,8 @@ markdown_extensions:
 plugins:
   # Included
   - search
-  - tags:
-      enabled: true
+  # - tags:
+  #     enabled: true #can enable later
 
   # Custom below here - NEED TO INSTALL
 
@@ -266,7 +270,7 @@ plugins:
   - git-revision-date-localized
 
   # https://github.com/orbikm/mkdocs-ezlinks-plugin
-  - ezlinks #ignore yml errors
+  # - ezlinks #disabled for now, was causing issues #ignore yml errors
 
   # TODO: setup minify, e.g.
   # - minify:
