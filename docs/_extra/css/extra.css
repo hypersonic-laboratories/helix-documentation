@@ -1,0 +1,47 @@
+:root {
+    /* Company colors */
+	--helix-color-mint: #01FFD1;
+    --helix-color-mint-dark: #003032;
+    --helix-color-red: #FF6B61;
+    --helix-color-red-dark: #240F0E;
+    --helix-color-gray: #EDEDED;
+    --helix-color-gray-dark: #28282A;
+
+    /* Site Colors */
+    /* TODO */
+}
+
+/*
+Currently just mismatched placeholder colors
+- Need to update mkdocs.yml scheme to be 'helix' instead of 'slate' to view
+- See following link for details on the possible vars:
+https://github.com/squidfunk/mkdocs-material/blob/master/src/templates/assets/stylesheets/main/_colors.scss
+*/
+[data-md-color-scheme="helix"] {
+    /* Primary Foreground */
+    --md-primary-fg-color: var(--helix-color-mint);
+    --md-primary-fg-color--light: var(--helix-color-gray);
+    --md-primary-fg-color--dark: var(--helix-color-gray-dark);
+    /* Primary Background */
+    --md-primary-bg-color: var(--helix-color-red-dark);
+    --md-primary-bg-color--light: var(--helix-color-red);
+    /* Accent Foreground */
+    --md-accent-fg-color: white;
+    --md-accent-fg-color--transparent: rgba(250, 250, 250, 0.5);
+    /* Accent Background */
+    --md-accent-bg-color: var(--helix-color-mint-dark);
+    --md-accent-bg-color--light: var(--helix-color-mint);
+}
+
+/* On hover nav, add an underline */
+.md-tabs__link--active, .md-tabs__link:is(:focus,:hover) {
+    border-bottom: 2px solid rgb(219, 219, 219);
+}
+
+/* TODO 
+- Update headers to be bold by default
+- Update headers in side/top nav to be more visible (bold/underline/higher contrast)
+- Remove GitHub link (may be easier to remove via html partial in header)
+- General styling pass to better match something like: https://docs.coregames.com/getting_started/installing_core/ (open source/mit: https://github.com/ManticoreGamesInc/platform-documentation/tree/development)
+- Trying to avoid source changes if possible, but can fork/bundle/recompile if need be
+*/

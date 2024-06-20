@@ -89,9 +89,7 @@ theme:
   icon:
     repo: fontawesome/brands/github
   palette:
-    scheme: slate
-    # primary: custom
-    # accent: custom
+    scheme: slate #ToDo: change to Helix
   features:
     # https://squidfunk.github.io/mkdocs-material/setup/adding-a-git-repository/#code-actions
     - content.action.edit #Also adds comment issue button, via _overrides/partials/actions.html
