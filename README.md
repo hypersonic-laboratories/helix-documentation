@@ -1,14 +1,14 @@
-## Install
+## Developer Setup
 1. Install [python 3](https://www.python.org/downloads/)
-2. Setup [venv](https://realpython.com/what-is-pip/#using-pip-in-a-python-virtual-environment)
-3. Run `pip install mkdocs-material` [^](https://squidfunk.github.io/mkdocs-material/getting-started/)
+- (Optional) Setup [venv](https://realpython.com/what-is-pip/#using-pip-in-a-python-virtual-environment)
+2. Run `pip install -r requirements.txt`
 
 ## Development
 1. `mkdocs serve` for local testing at `http://127.0.0.1:8000/`
-2. `mkdocs build` for building manually (shouldn't ever be needed)
+2. `mkdocs build` for building manually
 
 ## Branches
-- `development`, viewable at `dev.docs.helixgame.com`
+- `development`, previews viewable at `development.helixdocs-1s1.pages.dev`
 - `production` for the main site at `docs.helixgame.com`. Cannot be pushed to directly.
 
-(Note: We use Cloudflare pages for this [private])
+(Hosting via Cloudflare Pages [private])
