@@ -47,11 +47,3 @@ https://github.com/squidfunk/mkdocs-material/blob/master/src/templates/assets/st
 .md-tabs__link--active, .md-tabs__link:is(:focus,:hover) {
     border-bottom: 2px solid rgb(219, 219, 219);
 }
-
-/* TODO 
-- Update headers to be bold by default
-- Update headers in side/top nav to be more visible (bold/underline/higher contrast)
-- Remove GitHub link (may be easier to remove via html partial in header)
-- General styling pass to better match something like: https://docs.coregames.com/getting_started/installing_core/ (open source/mit: https://github.com/ManticoreGamesInc/platform-documentation/tree/development)
-- Trying to avoid source changes if possible, but can fork/bundle/recompile if need be
-*/
