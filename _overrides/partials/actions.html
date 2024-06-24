@@ -1,0 +1,32 @@
+<!-- Actions -->
+{% if page.edit_url %}
+
+    <!-- If mkdocs.yml has theme.features.content.action.edit enabled (likely always will) -->
+    {% if "content.action.edit" in features %}
+        
+        <!-- Add Edit button -->
+        <a
+            href="{{ page.edit_url }}"
+            title="{{ lang.t('action.edit') }}"
+            class="md-content__button md-icon"
+            target="_blank"
+        >
+        {% set icon = config.theme.icon.edit or "material/file-edit-outline" %}
+        {% include ".icons/" ~ icon ~ ".svg" %}
+        </a>
+
+        <!-- Add Comments too -->
+        <a 
+            href="{{ config.repo_url + '/issues/new?labels=' + 'page-' + page.title|replace(' ', '-')|lower + '&title=[' + page.title + '] Feedback' + '&body=[' + page.title + '](' + page.edit_url + ')%0D%0DThis page can be improved by:%0D1. %0D2.%20'}}"
+            title="Provide feedback about this page"
+            aria-label="Provide feedback about this page"
+            class="md-content__button md-icon"
+            target="_blank"
+            rel="noopener"
+        >
+        {% include ".icons/material/comment-text.svg" %}
+        </a>
+
+    {% endif %}
+
+{% endif %}
