@@ -66,3 +66,4 @@ Done via theme overrides
 - [ ] Remove GitHub link in header (can hide via css, or remove html segment via partials)
 - [ ] Always show underline for currently selected header nav tab
 - [ ] General styling pass to better match something like: https://docs.coregames.com/getting_started/installing_core/ (open source/mit: https://github.com/ManticoreGamesInc/platform-documentation/tree/development)
+- [ ] Better code formatting (better syntax coloring, line highlights, wrapping)
