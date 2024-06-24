@@ -31,6 +31,16 @@ https://github.com/squidfunk/mkdocs-material/blob/master/src/templates/assets/st
     /* Accent Background */
     --md-accent-bg-color: var(--helix-color-mint-dark);
     --md-accent-bg-color--light: var(--helix-color-mint);
+
+    /* Default color shades */
+    --md-default-fg-color:               hsla(0, 0%, 0%, 0.87);
+    --md-default-fg-color--light:        hsla(0, 0%, 0%, 0.54);
+    --md-default-fg-color--lighter:      hsla(0, 0%, 0%, 0.32);
+    --md-default-fg-color--lightest:     hsla(0, 0%, 0%, 0.07);
+    --md-default-bg-color:               rgb(26, 26, 26);
+    --md-default-bg-color--light:        hsla(0, 0%, 100%, 0.7);
+    --md-default-bg-color--lighter:      hsla(0, 0%, 100%, 0.3);
+    --md-default-bg-color--lightest:     hsla(0, 0%, 100%, 0.12);
 }
 
 /* On hover nav, add an underline */

@@ -1,5 +1,5 @@
 ## Developer Setup
-1. Install [python 3](https://www.python.org/downloads/)
+1. Install [python 3](https://www.python.org/downloads/) (see 'runtime.txt' for exact version - currently 3.12.4)
 - (Optional) Setup [venv](https://realpython.com/what-is-pip/#using-pip-in-a-python-virtual-environment)
 2. Run `pip install -r requirements.txt`
 

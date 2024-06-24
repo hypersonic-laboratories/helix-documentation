@@ -85,11 +85,11 @@ theme:
     text: Roboto
     code: JetBrains Mono
   favicon: _images/favicon.ico
-  logo: _images/logo.jpg
+  logo: _images/logo.png
   icon:
     repo: fontawesome/brands/github
   palette:
-    scheme: slate #ToDo: change to Helix
+    scheme: slate #toggle between 'slate' (default dark) and 'helix' (custom)
   features:
     # https://squidfunk.github.io/mkdocs-material/setup/adding-a-git-repository/#code-actions
     - content.action.edit #Also adds comment issue button, via _overrides/partials/actions.html
