@@ -1,13 +1,13 @@
 # Project information
 site_name: HELIX Documentation
 site_description: API Documentation & Tutorials for the HELIX Platform.
-site_author: Hypersonic Laboratories (Max Wason)
+site_author: Hypersonic Laboratories
 
 # Site URL
-site_url: https://development.helixdocs-1s1.pages.dev #Can add ENV flag, e.g. !ENV [MKDOCS_SITE_URL, "https://development.helixdocs-1s1.pages.dev/"]
+site_url: https://development.helix-documentation.pages.dev #Can add ENV flag, e.g. !ENV [MKDOCS_SITE_URL, "https://development.helixdocs-1s1.pages.dev/"]
 
 # Repository (for editing pages)
-repo_url: https://github.com/maxswell-helix/HelixDocs 
+repo_url: https://github.com/hypersonic-laboratories/helix-documentation
 edit_uri: edit/development/docs/
 
 # Copyright
@@ -139,7 +139,7 @@ extra:
           data: 0
           note: >-
             Thanks for your feedback! Help us improve this page by
-            using our <a href="https://github.com/maxswell-helix/HelixDocs/issues/new" target="_blank" rel="noopener">feedback form</a>.
+            using our <a href="https://https://github.com/hypersonic-laboratories/helix-documentation/issues/new" target="_blank" rel="noopener">feedback form</a>.
   consent:
     title: Cookie Consent
     description: >-
