@@ -1,16 +1,26 @@
 ---
 contentType: howto
-description: How to use HELIX Studio
+description: Studio & Launcher
 ---
 
-# Studio
+# HELIX's Creator Ecosystem
 
-HELIX Studio is a collection of tools built on top on Unreal Engine 5. In combination with the Launcher, it provides the tools needed to create wonderful worlds and experiences.
+**HELIX Studio** is a collection of tools built on top on Unreal Engine 5. In combination with the **Launcher**, it provides the tools needed to create fantastic worlds and experiences.
 
-### Features
+### Studio
 [Annotated Image]
+
 - Unreal plugin, so everything you know/learn about Unreal is relevant
-- Helper functions for the most common use cases, allowing you to make an RP game far easier than without our tooling
+- Helper functions for the most common use cases, allowing you to make an RP game far easier than without our tooling (e.g. asset cooking, code linking, hot reload, etc.)
+
+### Launcher
+
+Note that **HELIX's Launcher** also contains some key tools to ease your development experience.
+
+[Annotated Images]
+
+- Access to the [HELIX Vault](https://hub.helixgame.com/)
+- Easily launch projects, server standalones, and more
 
 ## Next Steps
 <div class="grid cards" markdown>

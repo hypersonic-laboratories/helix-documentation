@@ -19,13 +19,13 @@ nav:
     - getting_started/welcome.md
     - Start Here:
       - Install: getting_started/install.md
-      - Intro To Studio: getting_started/introStudio.md
+      - Creator Tools: getting_started/creatorTools.md
       - Getting Help: getting_started/help.md
       - Making Your First Game: getting_started/firstGame.md
     - Coming From Other Platforms:
       - GMod: getting_started/comingGmod.md
       - GTA/FiveM: getting_started/comingGTA.md
-    - Advice For Each Discipline:
+    - Discipline Hubs:
       - Modelers: getting_started/modelers.md
       - Mappers: getting_started/mappers.md
       - Animators: getting_started/animators.md

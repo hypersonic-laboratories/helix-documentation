@@ -1,6 +1,5 @@
 ---
 contentType: overview
-id: welcome
 title: Welcome
 name: Helix Documentation Home
 ---
