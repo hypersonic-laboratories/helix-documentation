@@ -123,6 +123,13 @@ theme:
   #TODO: don't include MkDocs' JS?
 
 extra:
+  status:
+    placeholder: Placeholder page
+    editing: Needs editing
+    outdated: Outdated!
+    complete: Completed
+    new: New content!
+    deprecated: Deprecated
   analytics:
     provider: google
     property: !ENV GOOGLE_ANALYTICS_KEY #TODO

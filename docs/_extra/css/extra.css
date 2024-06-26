@@ -9,6 +9,8 @@
 
     /* Site Colors */
     /* TODO */
+
+    --md-status--warning: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48IS0tIFVwbG9hZGVkIHRvOiBTVkcgUmVwbywgd3d3LnN2Z3JlcG8uY29tLCBHZW5lcmF0b3I6IFNWRyBSZXBvIE1peGVyIFRvb2xzIC0tPgo8c3ZnIHdpZHRoPSI4MDBweCIgaGVpZ2h0PSI4MDBweCIgdmlld0JveD0iMCAwIDUxMiA1MTIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHRpdGxlPmlvbmljb25zLXY1LXI8L3RpdGxlPjxwYXRoIGQ9Ik04NS41Nyw0NDYuMjVINDI2LjQzYTMyLDMyLDAsMCwwLDI4LjE3LTQ3LjE3TDI4NC4xOCw4Mi41OGMtMTIuMDktMjIuNDQtNDQuMjctMjIuNDQtNTYuMzYsMEw1Ny40LDM5OS4wOEEzMiwzMiwwLDAsMCw4NS41Nyw0NDYuMjVaIiBzdHlsZT0iZmlsbDpub25lO3N0cm9rZTojMDAwMDAwO3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2Utd2lkdGg6MzJweCIvPjxwYXRoIGQ9Ik0yNTAuMjYsMTk1LjM5bDUuNzQsMTIyLDUuNzMtMTIxLjk1YTUuNzQsNS43NCwwLDAsMC01Ljc5LTZoMEE1Ljc0LDUuNzQsMCwwLDAsMjUwLjI2LDE5NS4zOVoiIHN0eWxlPSJmaWxsOm5vbmU7c3Ryb2tlOiMwMDAwMDA7c3Ryb2tlLWxpbmVjYXA6cm91bmQ7c3Ryb2tlLWxpbmVqb2luOnJvdW5kO3N0cm9rZS13aWR0aDozMnB4Ii8+PHBhdGggZD0iTTI1NiwzOTcuMjVhMjAsMjAsMCwxLDEsMjAtMjBBMjAsMjAsMCwwLDEsMjU2LDM5Ny4yNVoiLz48L3N2Zz4=);
 }
 
 /*
@@ -46,4 +48,39 @@ https://github.com/squidfunk/mkdocs-material/blob/master/src/templates/assets/st
 /* On hover nav, add an underline */
 .md-tabs__link--active, .md-tabs__link:is(:focus,:hover) {
     border-bottom: 2px solid rgb(219, 219, 219);
+}
+
+/* 
+Statuses:
+
+Inbuilt: 
+-status (!) 
+-status--new {!}
+-status--deprecated {||}
+-status--encrypted \^/
+
+Custom (svg -> base64):
+-status--warning /!\
+
+Note: New and Deprecated also exist, but not shown here 
+*/
+.md-status--placeholder::after {
+    mask-image: var(--md-status--warning);
+    -webkit-mask-image: var(--md-status--warning);
+}
+
+.md-status--editing::after {
+    mask-image: var(--md-status);
+    -webkit-mask-image: var(--md-status);
+}
+
+.md-status--outdated::after {
+    mask-image: var(--md-status--deprecated);
+    -webkit-mask-image: var(--md-status--deprecated);
+}
+
+.md-status--complete::after {
+    mask-image: var(--md-status--encrypted);
+    -webkit-mask-image: var(--md-status--encrypted);
+    /* display: none; */     /*ToDo: Re-enable after review */
 }
