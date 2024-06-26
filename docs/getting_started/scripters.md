@@ -10,7 +10,8 @@ If you want to jump straight into code, you've come to the right spot!
 
 ### Alternate Workflows
 
-- By clicking the server icon in the launcher, you can run a server directly, allowing you to easily code
+/// info | The launcher allows you to start a server directly (:material-console: for any existing project), allowing you to ignore the Studio UI if you don't need/want it!
+///
 
 ### Useful Links
 

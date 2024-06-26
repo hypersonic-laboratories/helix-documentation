@@ -28,7 +28,6 @@ ToDo (Kakarot)
 |               | Project Browser | Project Content    |
 |               | Asset Store     | Vault         |
 |               | Generate Terrain| Terrain Generator |
-|               |                 |                    |
 |               | Console         | Event Log          |
 |               | Inspector       | Properties         |
 | **Scripting** | C#              | Lua                |

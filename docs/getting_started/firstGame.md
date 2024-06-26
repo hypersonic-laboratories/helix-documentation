@@ -1,7 +1,7 @@
 ---
 contentType: howto
 description: Your First RP Game
-status: editing
+status: placeholder
 ---
 
 # Your First Game

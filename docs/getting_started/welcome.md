@@ -2,17 +2,17 @@
 contentType: overview
 title: Welcome
 name: Helix Documentation Home
-status: complete
+# status: complete
 ---
 
 # Welcome to HELIX
-Welcome to the documentation for [Helix](https://helixgame.com/), the platform that allows you to create the experience of your dreams.
+Welcome to the documentation for [HELIX](https://helixgame.com/), the platform that allows you to create the experience of your dreams.
 
 ![Banner Image](../_images/getting_started/banner.png)
 
 ## About HELIX
 
-- **Built For Creators, By Creators** - We see you. We see your ingenuity, your creativity, as you modify games in beautiful, frustrating ways, fighting the very systems you need. *HELIX is different.* Time to know what it feels like to be empowered alongside a community of creators.
+- **Built For Creators, By Creators** - We see you. We see your ingenuity, your creativity, as you modify games in beautiful, frustrating ways, fighting the very systems you rely on. *HELIX is different.* Time to know what it feels like to be empowered alongside a community of creators.
 
 - **The Power of Unreal** - HELIX is intentionally built on top of the well-loved Unreal 5 game engine, allowing for unparalleled graphical fidelity and customization. Our import tools allow you to work on whatever complexity layer you like - this is creation without limits!
 

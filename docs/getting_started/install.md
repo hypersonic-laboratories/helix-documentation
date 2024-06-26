@@ -1,7 +1,7 @@
 ---
 contentType: howto
 description: How to install HELIX (as a developer)
-status: editing
+# status: editing
 ---
 
 # Installing HELIX
@@ -9,7 +9,7 @@ status: editing
 ## Make a HELIX Account
 
 /// warning | Closed Beta
-We are currently in closed beta, meaning unless you have a login, you won't be able to make an account. We're scaling up to reach everyone as quick as we can, so hold tight if you don't have access yet!
+We are currently in closed beta, meaning account sign ups are restricted. Sign up for the waitlist [on our website](TODO_waitlist_link), and learn more about getting quicker access [here](TODO_waitlistDetails_link). 
 ///
 
 To get started, you will need an account.
@@ -24,7 +24,7 @@ To get started, you will need an account.
 
 ### Download for Windows
 1. Log in to the [HELIX Website](https://helixgame.com/) with your HELIX account.
-2. Click [Download HELIX](TODO_dl_link) to download the HELIX launcher.
+2. Click [Download HELIX](TODO_dl_link) in the top right to download the HELIX launcher.
 3. Once the download finishes, extract and run the `HELIXlauncher.exe` file to install and run the launcher.
 
 ### Install Unreal Engine 5
@@ -32,6 +32,6 @@ To get started, you will need an account.
 2. Navigate to the Unreal Engine tab on the left
 3. Install Unreal Engine 5.4.x (and mark the file location you saved it in)
 
-## Launcher Overview
-
-<!-- ToDo: More Launcher details, once more finalized -->
+## Next steps
+- Run the launcher, click the 'Create' tab at the top, and get started!
+- Keep exploring the documentation, with an overview of the [tools](creatorTools.md) and how to make your [first game](firstGame.md).
