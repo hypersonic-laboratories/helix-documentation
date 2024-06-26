@@ -126,6 +126,7 @@ extra:
   status:
     placeholder: Placeholder page
     editing: Needs editing
+    untested: Untested!
     outdated: Outdated!
     complete: Completed
     new: New content!

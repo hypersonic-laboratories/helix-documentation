@@ -77,6 +77,16 @@ ToDo: Make hover show nicely
     color: var(--helix-color-gray) !important; /* Doesn't work for first element unless important override */
 }
 
+/* Force GitHub link to not display */
+.md-header__source {
+    display: none;
+}
+
+/* Make grid card headers be whiter */
+.grid.cards ul li p strong {
+    color: var(--helix-color-gray);
+}
+
 /* 
 Statuses:
 
@@ -102,6 +112,11 @@ Note: New and Deprecated also exist, but not shown here
 }
 
 .md-status--outdated::after {
+    mask-image: var(--md-status--deprecated);
+    -webkit-mask-image: var(--md-status--deprecated);
+}
+
+.md-status--untested::after {
     mask-image: var(--md-status--deprecated);
     -webkit-mask-image: var(--md-status--deprecated);
 }
