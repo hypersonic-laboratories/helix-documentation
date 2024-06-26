@@ -192,7 +192,8 @@ markdown_extensions:
       slugify: !!python/object/apply:pymdownx.slugs.slugify #if yaml syntax errors: safe to ignore
         kwds:
           case: lower
-      anchorlink: true
+      anchorlink: false
+      permalink: "#"
   - tables
 
   # https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown-extensions/
