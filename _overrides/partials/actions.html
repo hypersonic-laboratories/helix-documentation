@@ -1,6 +1,17 @@
 <!-- Actions -->
 {% if page.edit_url %}
 
+    <!-- If need be, we can add a status icon here too, instead of just in the sidebar, but it'll require custom js -->
+    <!-- <a
+        id="pageEditStatus"
+        href="{{ page.edit_url }}"
+        title="Page's Development Status"
+        class="md-content__button md-icon"
+        target="_blank"
+    >
+    {% include ".icons/octicons/bookmark-fill-24.svg" %}
+    </a> -->
+
     <!-- If mkdocs.yml has theme.features.content.action.edit enabled (likely always will) -->
     {% if "content.action.edit" in features %}
         
