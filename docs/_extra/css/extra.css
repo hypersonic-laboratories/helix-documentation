@@ -45,9 +45,36 @@ https://github.com/squidfunk/mkdocs-material/blob/master/src/templates/assets/st
     --md-default-bg-color--lightest:     hsla(0, 0%, 100%, 0.12);
 }
 
-/* On hover nav, add an underline */
-.md-tabs__link--active, .md-tabs__link:is(:focus,:hover) {
-    border-bottom: 2px solid rgb(219, 219, 219);
+/* Make top tabs larger */
+.md-tabs__link {
+    font-size: .8rem;
+    font-weight: 500;
+    color: var(--helix-color-gray);
+}
+
+/* Make top tabs have bottom border */
+li.md-tabs__item.md-tabs__item--active {
+    border-bottom: .2rem solid var(--helix-color-gray);
+}
+
+/*
+ToDo: Make hover show nicely
+.md-tabs__link--active, .md-tabs__link:is(:active) {
+    border-bottom: 2px solid #01FFD1;
+}
+.md-tabs__link:is(:focus,:hover) {
+    border-bottom: 2px solid var(--helix-color-mint);
+} */
+
+/* Make markdown headers whiter and bolder */
+.md-typeset h1, .md-typeset h2, .md-typeset h3 {
+    font-weight: 500;
+    color: var(--helix-color-gray);
+}
+
+/* Make sidebar headers more visible */
+.md-nav__link[id^="__nav_"][id$="_label"] {
+    color: var(--helix-color-gray) !important; /* Doesn't work for first element unless important override */
 }
 
 /* 
