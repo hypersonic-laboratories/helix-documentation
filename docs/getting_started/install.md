@@ -1,6 +1,7 @@
 ---
 contentType: howto
 description: How to install HELIX (as a developer)
+status: editing
 ---
 
 # Installing HELIX

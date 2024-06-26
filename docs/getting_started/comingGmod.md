@@ -1,6 +1,7 @@
 ---
 contentType: howto
 description: HELIX Studio from GMod
+status: placeholder
 ---
 
 ## Overview

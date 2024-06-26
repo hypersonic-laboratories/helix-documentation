@@ -1,6 +1,7 @@
 ---
 contentType: howto
 description: HELIX Studio from FiveM/GTA
+status: editing
 ---
 ## Overview
 
@@ -11,7 +12,7 @@ The purpose of this page is to let experienced game developers get started using
 
 ### Differences From FiveM
 
-ToDo
+ToDo (Kakarot)
 
 ### Terminology
 
