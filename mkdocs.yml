@@ -45,7 +45,6 @@ nav:
       - tutorials/exampleImports/basic-setup.md
       - tutorials/exampleImports/blueprint-communication.md
       - tutorials/exampleImports/chat-colors.md
-      - tutorials/exampleImports/code-examples.md
       - tutorials/doors.md
       - tutorials/exampleImports/gravity-gun.md
       - tutorials/exampleImports/name-tags.md
@@ -219,7 +218,8 @@ markdown_extensions:
         - question
         - warning
         - danger
-  - pymdownx.blocks.details #ignore yml errors
+  - pymdownx.details
+  # - pymdownx.blocks.details #not working
   - pymdownx.blocks.definition #ignore yml errors
   - pymdownx.blocks.tab:
       alternate_style: true
@@ -285,6 +285,9 @@ plugins:
 
   # https://github.com/timvink/mkdocs-git-revision-date-localized-plugin
   - git-revision-date-localized
+
+  # https://github.com/lukasgeiter/mkdocs-awesome-pages-plugin
+  - awesome-pages
 
   # https://github.com/orbikm/mkdocs-ezlinks-plugin
   # - ezlinks #disabled for now, was causing issues #ignore yml errors
