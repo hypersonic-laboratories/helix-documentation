@@ -119,7 +119,7 @@ theme:
   icon:
     repo: fontawesome/brands/github
   palette:
-    scheme: helix #toggle between 'slate' (default dark) and 'helix' (custom)
+    scheme: slate #toggle between 'slate' (default dark) and 'helix' (custom)
   features:
     # https://squidfunk.github.io/mkdocs-material/setup/adding-a-git-repository/#code-actions
     - content.action.edit #Also adds comment issue button, via _overrides/partials/actions.html
