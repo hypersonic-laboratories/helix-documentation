@@ -42,7 +42,19 @@ nav:
       - tutorials/luaStyleGuide.md
       - tutorials/betterPractices.md
     - Examples:
+      - tutorials/exampleImports/basic-setup.md
+      - tutorials/exampleImports/blueprint-communication.md
+      - tutorials/exampleImports/chat-colors.md
+      - tutorials/exampleImports/code-examples.md
       - tutorials/doors.md
+      - tutorials/exampleImports/gravity-gun.md
+      - tutorials/exampleImports/name-tags.md
+      - tutorials/exampleImports/painting-meshes.md
+      - tutorials/exampleImports/play-as-prop.md
+      - tutorials/exampleImports/prop-rain.md
+      - tutorials/exampleImports/prop-shooter.md
+      - tutorials/exampleImports/weapon-flashlight.md
+      - tutorials/exampleImports/x-ray-and-highlight.md
   - API:
     - api/apiHome.md
     - api/apiDetails.md
