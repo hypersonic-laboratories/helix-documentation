@@ -1,16 +1,15 @@
 ---
-contentType: howto
-description: Studio & Launcher
-# status: complete
+title: Creator Tools
+status: change
 ---
 
-# HELIX's Creator Ecosystem
+# HELIX's Tooling Ecosystem
 
 **HELIX Studio** is a collection of tools built on top on Unreal Engine 5. In combination with the **Launcher**, it provides the tools needed to create fantastic worlds and experiences.
 
-### Studio
+## Studio
 
-![](../_images/getting_started/StudioSpam_BigFile.jpg)
+![](../_images/getting_started/StudioSpam.jpg)
 
 - As an Unreal plugin everything you know about Unreal is relevant, and everything you learn will help you progress as a developer
 - HELIX adds functions for the most common use cases, allowing you to make an RP game far easier than without our tooling (e.g. asset cooking, code linking, hot reload, etc.).
@@ -22,11 +21,11 @@ description: Studio & Launcher
 | Server Hot Reload | New Assets/Packages/Items|
 | Publish World     | Publish Assets |
 
-### Launcher
+## Launcher
 
 Note that **HELIX's Launcher** also contains some key tools to ease your development experience.
 
-![](../_images/getting_started/HELIXLauncher_BigFile.png)
+![](../_images/getting_started/HELIXLauncher.png)
 ToDo: Annotate, etc.
 
 - Access to the [HELIX Vault](https://hub.helixgame.com/)

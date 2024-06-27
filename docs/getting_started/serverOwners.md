@@ -1,10 +1,8 @@
 ---
-contentType: hub
-description: Server Owner Links
 status: placeholder
 ---
 
-# Server Owner
+# Server Owners
 
 See [scripters.md](scripters.md) for a more full example
 

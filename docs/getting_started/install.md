@@ -1,15 +1,9 @@
----
-contentType: howto
-description: How to install HELIX (as a developer)
-# status: editing
----
-
-# Installing HELIX
+# Install
 
 ## Make a HELIX Account
 
-/// warning | Closed Beta
-We are currently in closed beta, meaning account sign ups are restricted. Sign up for the waitlist [on our website](TODO_waitlist_link), and learn more about getting quicker access [here](TODO_waitlistDetails_link). 
+/// warning | Closed Alpha
+We are currently in closed alpha, meaning account sign ups are restricted. Sign up for the waitlist [on our website](https://helixgame.com/), and learn more about getting quicker access [here](TODO_waitlistDetails_link). 
 ///
 
 To get started, you will need an account.

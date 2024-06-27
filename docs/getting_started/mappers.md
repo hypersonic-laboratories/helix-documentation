@@ -1,6 +1,4 @@
 ---
-contentType: hub
-description: Mappers Links
 status: placeholder
 ---
 

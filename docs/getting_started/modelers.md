@@ -1,6 +1,4 @@
 ---
-contentType: hub
-description: Modeler Links
 status: placeholder
 ---
 

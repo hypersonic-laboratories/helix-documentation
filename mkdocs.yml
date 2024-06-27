@@ -18,34 +18,34 @@ nav:
   - Getting Started:
     - getting_started/welcome.md
     - Start Here:
-      - Install: getting_started/install.md
-      - Creator Tools: getting_started/creatorTools.md
-      - Getting Help: getting_started/help.md
-      - Making Your First Game: getting_started/firstGame.md
+      - getting_started/install.md
+      - getting_started/creatorTools.md
+      - getting_started/help.md
+      - getting_started/firstGame.md
     - Coming From Other Platforms:
-      - GMod: getting_started/comingGmod.md
-      - GTA/FiveM: getting_started/comingGTA.md
+      - getting_started/comingGmod.md
+      - getting_started/comingGTA.md
     - Discipline Hubs:
-      - Modelers: getting_started/modelers.md
-      - Mappers: getting_started/mappers.md
-      - Animators: getting_started/animators.md
-      - Scripters: getting_started/scripters.md
-      - Server Owners: getting_started/serverOwners.md
+      - getting_started/scripters.md
+      - getting_started/modelers.md
+      - getting_started/mappers.md
+      - getting_started/animators.md
+      - getting_started/serverOwners.md
   - Tutorials:
     - tutorials/tutorialHome.md
     - Tutorials:
-      - Intro To Lua: tutorials/introLua.md
-      - Server/Client: tutorials/serverClient.md
-      - QBCore Framework: tutorials/qbcore.md
-      - DarkRP Framework: tutorials/darkrp.md
+      - tutorials/introLua.md
+      - tutorials/serverClient.md
+      - tutorials/qbcore.md
+      - tutorials/darkrp.md
     - References:
-      - Lua Style Guide: tutorials/luaStyleGuide.md
-      - Better Practices: tutorials/betterPractices.md
+      - tutorials/luaStyleGuide.md
+      - tutorials/betterPractices.md
     - Examples:
-      - Doors: tutorials/doors.md
+      - tutorials/doors.md
   - API:
     - api/apiHome.md
-    - API Details: api/apiDetails.md
+    - api/apiDetails.md
 
 
 # Extra styling
@@ -124,12 +124,10 @@ theme:
 
 extra:
   status:
-    placeholder: Placeholder page
-    editing: Needs editing
-    untested: Untested!
-    outdated: Outdated!
-    complete: Completed
-    new: New content!
+    placeholder: Placeholder (Mostly Empty)
+    wip: Work In Progress
+    change: Subject To Change
+    new: New Content!
     deprecated: Deprecated
   analytics:
     provider: google

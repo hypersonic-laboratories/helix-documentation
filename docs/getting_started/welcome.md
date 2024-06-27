@@ -1,11 +1,9 @@
 ---
-contentType: overview
 title: Welcome
-name: Helix Documentation Home
-# status: complete
 ---
 
 # Welcome to HELIX
+
 Welcome to the documentation for [HELIX](https://helixgame.com/), the platform that allows you to create the experience of your dreams.
 
 ![Banner Image](../_images/getting_started/banner.png)

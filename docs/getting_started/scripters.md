@@ -1,7 +1,5 @@
 ---
-contentType: hub
-description: Modeler Links
-status: editing
+status: wip
 ---
 
 # Scripters

@@ -1,6 +1,4 @@
 ---
-contentType: howto
-description: Your First RP Game
 status: placeholder
 ---
 

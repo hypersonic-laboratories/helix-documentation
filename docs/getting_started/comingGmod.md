@@ -1,6 +1,5 @@
 ---
-contentType: howto
-description: HELIX Studio from GMod
+title: Garry's Mod
 status: placeholder
 ---
 
@@ -13,4 +12,4 @@ The purpose of this page is to let experienced game developers get started using
 
 ### Differences From Garry's Mod
 
-ToDo (Mycroft)
+ToDo (find someone knowledgable)

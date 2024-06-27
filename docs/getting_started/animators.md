@@ -1,6 +1,4 @@
 ---
-contentType: hub
-description: Animator Links
 status: placeholder
 ---
 
