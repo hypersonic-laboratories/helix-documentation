@@ -1,0 +1,56 @@
+---
+title: Entity Values
+description: How to store data in Entities accessible from anywhere
+sidebar_position: 4
+tags: [scripting]
+---
+
+
+How to store data in Entities accessible from anywhere
+
+import { BasicType, Classes } from '@site/docs/components/_nanos.mdx';
+
+In HELIX it is possible to store data on entities. Those values can be accessed by any Package and also you can determine if the value will be automatically synchronized with the Clients.
+
+In <Classes.Entity /> page we can find the definitions of `:SetValue()` and `:GetValue()` methods. Also it is possible to store Values globally on [Client](/scripting-reference/static-classes/client.mdx) and [Server](/scripting-reference/static-classes/server.mdx) Static Classes with the same methods!
+
+
+## `SetValue`
+
+In any entity, you can use the method `:SetValue(key, value, sync)` to set any kind of value on that entity. Example:
+
+```lua title="Server/Index.lua"
+-- Sets a synchronized 'my_value' value
+my_player:SetValue("my_value", 100, true)
+```
+
+///tip
+
+It is possible to store <BasicType.Any /> kind of value, except `functions`.
+
+///
+
+If you pass `sync` as true, that value will be automatically synchronized with all clients. Note that `sync`is an optional parameter only available on the **Server** side.
+
+///info note
+
+**Client.SetValue()** and **Server.SetValue()** won't have the last parameter `sync`. As the value will only exist on the side you are setting.
+
+///
+
+
+## `GetValue`
+
+After set, you can access any value from any entity using `:GetValue(key, fallback)` on any entity you want. If you set the value to be synchronized on Clients, you will be able to get the values on the Client side as well. You can pass an aditional parameter `fallback` which will be returned if the key doesn't exist!
+
+```lua
+-- Gets 'my_value' value, or returns '0' if no value is set
+local my_value = my_player:GetValue("my_value", 0)
+```
+
+///caution
+
+Be aware that storing **entities** itself will not nullify the value if the entity is destroyed, so it is a good practice to validate if values with `:IsValid()` after retrieving them.
+
+///
+

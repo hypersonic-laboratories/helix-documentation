@@ -33,30 +33,50 @@ nav:
       - getting_started/serverOwners.md
   - Tutorials:
     - tutorials/tutorialHome.md
-    - Tutorials:
-      - tutorials/introLua.md
-      - tutorials/serverClient.md
-      - tutorials/qbcore.md
-      - tutorials/darkrp.md
-    - References:
-      - tutorials/luaStyleGuide.md
-      - tutorials/betterPractices.md
-    - Examples:
-      - tutorials/exampleImports/basic-setup.md
-      - tutorials/exampleImports/blueprint-communication.md
-      - tutorials/exampleImports/chat-colors.md
+    - General Tutorials:
+      # - tutorials/introLua.md
+      # - tutorials/serverClient.md
+      # - tutorials/qbcore.md
+      # - tutorials/darkrp.md
+      - ... | flat | tutorials/tutorialImports/*.md
+      - ... | flat | tutorials/tutorialImports/creating-assets/*.md
+      - World Creation:
+        - ... | flat | tutorials/tutorialImports/world-creation/*.md
+      - Character:
+        - ... | flat | tutorials/tutorialImports/creating-assets/characters/*.md
+      - HSimpleVehicle:
+        - ... | flat | tutorials/tutorialImports/creating-assets/HSimpleVehicle/*.md
+    - Reference:
+      # - tutorials/luaStyleGuide.md
+      # - tutorials/betterPractices.md
+      - ... | flat | tutorials/referenceImports/*.md
+      - Servers:
+        - ... | flat | tutorials/referenceImports/server-manual/*.md
+      - Default Assets:
+        - ... | flat | tutorials/referenceImports/default-asset-pack/*.md
+  - Scripting:
+    - scripting/scriptingHome.md
+    - Core Concepts:
+      - ... | flat | scripting/coreConceptsImports/*.md
+    - Code Examples:
       - tutorials/doors.md
-      - tutorials/exampleImports/gravity-gun.md
-      - tutorials/exampleImports/name-tags.md
-      - tutorials/exampleImports/painting-meshes.md
-      - tutorials/exampleImports/play-as-prop.md
-      - tutorials/exampleImports/prop-rain.md
-      - tutorials/exampleImports/prop-shooter.md
-      - tutorials/exampleImports/weapon-flashlight.md
-      - tutorials/exampleImports/x-ray-and-highlight.md
+      - ... | flat | tutorials/exampleImports/*.md
   - API:
     - api/apiHome.md
-    - api/apiDetails.md
+    - Glossary:
+      - ... | flat | api/apiImport/glossary/*.md
+    - Classes:
+      - Base Classes:
+        - ... | flat | api/apiImport/classes/base-classes/*.md
+      - Static Classes:
+        - ... | flat | api/apiImport/static-classes/*.md
+      - Utility Classes:
+        - ... | flat | api/apiImport/utility-classes/*.md
+      - All Other Classes:
+        - ... | flat | api/apiImport/classes/*.md
+    - Structs:
+      - ... | flat | api/apiImport/structs/*.md
+    # - api/apiDetails.md
 
 
 # Extra styling

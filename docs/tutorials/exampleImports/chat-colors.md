@@ -10,11 +10,11 @@ Learn how to use and print colored messages to the built-in chat
 
 To stylize a text, just circumvent a piece of text with a style tag: `<TAG>my awesome text</>`.
 
-:::info
+///info
 > This code example is sent when loading the world.
 > You can use it but to see it, open the chat window in game by pressing the `t` letter
 > and writting `package reload all` in the server window.
-:::
+///
 
 
 
@@ -37,11 +37,11 @@ Chat.BroadcastChatMessage("Hello with <italic>Italic</> text message!")
 ```
 
 
-:::caution
+/// warning
 
 It is NOT possible to combine two or more styles together \(eg.: Bold + Red\).
 
-:::
+///
 
 ## All supported text styles/tags
 

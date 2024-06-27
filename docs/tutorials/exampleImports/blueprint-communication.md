@@ -8,11 +8,11 @@ Learn how to communicate between Lua and Blueprints.
 
 In HELIX, you can send and subscribe to Blueprint Events! In this guide you will see how to create and bind events on Blueprints and Lua!
 
-:::info
+///info
 
 All communication is only possible on Client Side! As the server is not aware of Unreal.
 
-:::
+///
 
 
 ## Blueprint Events
@@ -25,11 +25,11 @@ Open or create your Blueprint, enter **Event Graph** tab and **Right Click** the
 
 ![](/img/docs/tutorials/blueprints-01.webp)
 
-:::tip
+///tip
 
 You can also create Functions instead of Events to be called from Lua!
 
-:::
+///
 
 Then, select your newly created Custom Event and in the **Details** panel (usually in the right side), you can add `+` new Inputs to it, you can add any amount of inputs:
 
@@ -42,7 +42,7 @@ And that's it for creating it! You can add any logic you want from now on!
 
 On Lua, you can spawn your blueprint as usual, and call `CallBlueprintEvent` on it to trigger the blueprint event.
 
-```lua Client/index.lua
+``` lua title="Client/index.lua"
 -- Spawns the Blueprint
 local blueprint = Blueprint(Vector(), Rotator(), "my-asset-pack::BP_AwesomeBlueprint")
 
@@ -87,7 +87,7 @@ And then you can plug any logic on it to trigger it, any other Blueprint or Lua 
 
 You can **Bind** Blueprint Event Dispatchers directly from Lua! For that, spawn your Blueprint, and call `BindBlueprintEventDispatcher()` on it to bind the Dispatcher:
 
-```lua Client/index.lua
+```lua title="Client/index.lua"
 -- Spawns the Blueprint
 local blueprint = Blueprint(Vector(), Rotator(), "my-asset-pack::BP_AwesomeBlueprint",)
 

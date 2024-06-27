@@ -1,0 +1,59 @@
+---
+title: Cable
+description: A Cable represents a Physics Constraint which joins two Actors with a rope-like visual representation between them
+sidebar_position: 0
+tags: [class]
+---
+
+<HeaderDeclaration type="Class" name="Cable" image="/img/docs/cable.jpg" />
+
+
+HELIX **Cables** are composed primarily of two Unreal Engine components: a [Cable](https://docs.unrealengine.com/en-US/API/Plugins/CableComponent/UCableComponent/index.html) and a [PhysicsConstraint](https://docs.unrealengine.com/en-US/InteractiveExperiences/Physics/Constraints/ConstraintsBlueprints/index.html). The first is used for visual purposes only and the second one gives the effective physical effects that are applied to each end of the Cable.
+
+///info
+
+Cable **visuals** can be tweaked with `:SetForces()`, `:SetCableSettings()` and `:SetRenderingSettings()` methods. Those methods don’t have effect on the physics being applied and only have effects on the visual representation.
+
+Cable **physics** can be tweaked with `:SetAngularLimits()` and `:SetLinearLimits()`.
+
+///
+
+After attaching the two sides of your cable, the physics can be tweaked to affect how the constraint will affect the objects.
+
+///tip
+
+Cables are automatically **destroyed** when one of the sides are detached
+
+///
+
+
+## Examples
+
+```lua title="Server/Index.lua"
+local my_cable = Cable(Vector())
+local cube_01 = Prop(Vector(100, 100, 100), Rotator(), "helix::SM_Cube")
+local cube_02 = Prop(Vector(200, 0, 100), Rotator(), "helix::SM_Cube")
+
+my_cable:AttachStartTo(cube_01)
+my_cable:AttachEndTo(cube_02)
+```
+
+
+## Constructors
+
+<ConstructorDeclaration type="Class" name="Cable" />
+
+
+## Static Functions
+
+<StaticFunctionsDeclaration type="Class" name="Cable" />
+
+
+## Functions
+
+<FunctionsDeclaration type="Class" name="Cable" />
+
+
+## Events
+
+<EventsDeclaration type="Class" name="Cable" />
