@@ -23,21 +23,18 @@ nav:
       - getting_started/help.md
       - getting_started/firstGame.md
     - Coming From Other Platforms:
-      - getting_started/comingGmod.md
+      # - getting_started/comingGmod.md
       - getting_started/comingGTA.md
     - Discipline Hubs:
       - getting_started/scripters.md
       - getting_started/modelers.md
-      - getting_started/mappers.md
-      - getting_started/animators.md
+      # - getting_started/mappers.md
+      # - getting_started/animators.md
       - getting_started/serverOwners.md
   - Tutorials:
     - tutorials/tutorialHome.md
     - General Tutorials:
-      # - tutorials/introLua.md
       # - tutorials/serverClient.md
-      # - tutorials/qbcore.md
-      # - tutorials/darkrp.md
       - ... | flat | tutorials/tutorialImports/*.md
       - ... | flat | tutorials/tutorialImports/creating-assets/*.md
       - World Creation:
@@ -47,7 +44,6 @@ nav:
       - HSimpleVehicle:
         - ... | flat | tutorials/tutorialImports/creating-assets/HSimpleVehicle/*.md
     - Reference:
-      # - tutorials/luaStyleGuide.md
       # - tutorials/betterPractices.md
       - ... | flat | tutorials/referenceImports/*.md
       - Servers:
@@ -56,6 +52,9 @@ nav:
         - ... | flat | tutorials/referenceImports/default-asset-pack/*.md
   - Scripting:
     - scripting/scriptingHome.md
+    - scripting/introLua.md
+    - scripting/luaStyleGuide.md
+    - scripting/qbcore.md
     - Core Concepts:
       - ... | flat | scripting/coreConceptsImports/*.md
     - Code Examples:

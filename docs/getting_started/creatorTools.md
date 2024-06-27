@@ -48,9 +48,8 @@ status: change
 Note that **HELIX's Launcher** also contains some key tools to ease your development experience.
 
 ![](../_images/getting_started/HELIXLauncher.png)
-ToDo: Annotate, etc.
 
-- Access to the [HELIX Vault](https://hub.helixgame.com/)
+- Access to the [HELIX Vault](https://helixgame.com/vault)
 - Easily launch new/old projects, start standalone servers, and more
 
 ## Next Steps
@@ -78,9 +77,9 @@ ToDo: Annotate, etc.
 
 -   __Start Coding__
 
-    Start VS Code from the top center :material-earth: icon, install `vscode-lua` and `vscode-helix` for lua language support and Helix API autocomplete, and immediately get coding with our API reference.
+    Start VS Code from Studio, and get cracking!
 
     [:octicons-file-code-24: View API](../api/apiHome.md)
 
-    [:octicons-command-palette-16: Scripters Hub](scripters.md)
+    [:octicons-command-palette-16: Scripting Home](../scripting/scriptingHome.md)
 </div>

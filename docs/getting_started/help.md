@@ -1,5 +1,6 @@
 ---
-status: wip
+title: Helpful Resources
+# status: wip
 ---
 
 # Helpful Resources
@@ -25,6 +26,6 @@ Check out the links below for assistance!
 
 -   __Other Support :material-help-network:__
     
-    For all other support (e.g. account issues, technical help), drop us a line directly on the Discord, or email us at [help@helixgame.com](mailto:help@helixgame.com).
+    For all other support (e.g. account issues, technical help), drop us a line directly on the Discord, or email us at [help@helixgame.com](mailto:help@helixgame.com)
 
 </div>
