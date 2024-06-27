@@ -8,7 +8,7 @@ tags: [scripting]
 
 How to inherit HELIX Classes. HELIX provides a built-in way of inheriting the built-in Classes
 
-///caution
+/// warning
 
 This feature is still **experimental**, you can try it out and provide feedback before it's full release!
 

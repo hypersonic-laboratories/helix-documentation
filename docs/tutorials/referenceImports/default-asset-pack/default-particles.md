@@ -10,11 +10,11 @@ Default HELIX Particles and it's Parameters.
 
 import { Structs, BasicType, AssetPath } from '@site/docs/components/_nanos.mdx';
 
-///tip
+/// tip
 
 **Note**: All Particles in this page are already included in the base game in the [Default HELIX Asset Pack](/assets-modding/default-asset-pack/default-assets-list.md), you can reference them like that: **`helix::P_Beam`.**
 
-///
+/// 
 
 ## Template Particles
 

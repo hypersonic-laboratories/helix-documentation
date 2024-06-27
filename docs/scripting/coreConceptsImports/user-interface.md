@@ -12,7 +12,7 @@ How to display information in the Screen for the Player.
 
 In HELIX there are 2 official ways of plotting screen data: **WebUI** and **Canvas**.
 
-///caution
+/// warning
 
 We highly recommend using **WebUI** instead of **Canvas** to create your UIs 😉.
 

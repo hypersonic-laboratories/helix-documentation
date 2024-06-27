@@ -13,7 +13,7 @@ tags: []
 A UI as mentioned in the Introduction is a *2D visual and interactive interface webpage for the user that can show content or be interacted with, where with JavaScript you can affect your game in real time.*
 
 First of all, a WebUI is a webpage, so you must use **HTML, CSS** and **JS** to properly utilize your WebUI. To structure one, it is like any other HTML webpage with a HTML file, a CSS file and a JS file. You can expect your average UI file structure to look like this:
-![](\img\docs\World-creation\add-ui\01_ui.png)
+![](../../../img/docs/World-creation/add-ui/01_ui.png)
 >JQuery is also compatible with our WebUIs, so we highly recommend using them as well. 
 
 ___
@@ -32,7 +32,7 @@ There are many methods you can apply onto your WebUI, the most common ones are t
 ___
 You can also execute JavaScript code in WebUIs and communicate between the WebUI and your Client Scripts. Once you combine these you can easily have a dynamic UI that can change easily and affect the game in real time. Below is an example:
 
-<iframe width="100%" height="315" src="\img\docs\World-creation\add-ui\02_2023-09-27_12-40-01.mp4" frameborder="1" allowfullscreen></iframe>
+<iframe width="100%" height="315" src="../../../img/docs/World-creation/add-ui/02_2023-09-27_12-40-01.mp4" frameborder="1" allowfullscreen></iframe>
 
 
 (Note that at the moment, you cannot receive Keyboard inputs from Javascript code, to bypass this you can use HELIX’s Static Input Class) 

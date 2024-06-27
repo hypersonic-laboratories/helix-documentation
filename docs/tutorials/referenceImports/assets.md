@@ -17,11 +17,11 @@ In order to use custom Assets in your servers, for example to spawn a Prop, or a
 
 All Asset Packs go under `Server/Assets/` folder. Each Asset Pack is a folder under that.
 
-///info Note
+/// info | Note
 
 Asset Packs downloaded when connecting to servers or downloaded from the vault will be stored in `Server/Assets/` folder as well!
 
-///
+/// 
 
 This is an example of a server Assets folder:
 
@@ -148,11 +148,11 @@ Example:
 
 `"my-asset-pack-01::SM_Cube"`
 
-///info note
+/// info | Note
 
 `[ASSET_PACK_PATH]` is the folder name and `[ASSET_KEY]` is the key defined in the `Assets.toml`.
 
-///
+/// 
 
 
 ## Types of Assets

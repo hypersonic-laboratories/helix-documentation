@@ -29,8 +29,8 @@ The Helix Server can be downloaded from the following location:
 
 To start using it, refer to the [Scripting Quick Start](/docs/getting-started/quick-start.mdx)
 
-///tip
+/// tip
 
 Finished! You can now proceed to the next steps to configure your HELIX server.
 
-///
+/// 

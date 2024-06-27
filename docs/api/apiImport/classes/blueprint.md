@@ -105,7 +105,7 @@ List of all supported parameters which can be passed between Lua ↔ Blueprint:
 | **`table`** | [**`Any Struct`**](#any-struct) | ✅ | ✅ |
 
 
-///caution Note
+/// warning | Note
 
 It is only possible to pass Actors from Blueprint → Lua if the Actor is a Spawned Entity. It is not possible to pass newly spawned Actors in Blueprints to Lua.
 

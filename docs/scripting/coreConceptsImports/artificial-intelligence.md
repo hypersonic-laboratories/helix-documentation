@@ -9,7 +9,7 @@ keywords: [scripting, AI]
 
 How AI works in HELIX
 
-///caution
+/// warning
 
 🚧 This page is under construction.
 

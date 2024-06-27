@@ -13,11 +13,11 @@ All you need to know to Configure your server!
 
 The server Configuration file `Config.toml` is generated automatically when the server is launched for the first time. This file will always be overridden with the proper pattern after the server is loaded.
 
-///tip
+/// tip
 
 HELIX Config files use **TOML** (Tom’s Obvious, Minimal Language), please refer to [https://github.com/toml-lang/toml](https://github.com/toml-lang/toml) for more information and syntax.
 
-///
+/// 
 
 ```toml
 # server configurations
@@ -165,11 +165,11 @@ It is possible to override the Server Configuration with Command Line Parameters
 | `--auto_download` | *flag* | Automatically downloads Packages and Assets from Vault if needed |
 | `--log_show_thread` | *flag* | Shows the current running thread of each outputted log |
 
-///tip
+/// tip
 
 **Flag** Value Types don't require any argument, just pass the parameter like `--parameter`.
 
-///
+/// 
 
 
 ### One-liner Server Configuration
@@ -198,11 +198,11 @@ Usually the server runs at 33 ticks per second (or the value configured at Confi
 
 If a single tick takes more than 33 milliseconds, this warning will appear up.
 
-///tip
+/// tip
 
 In some shared VPS, this warning may appear up more frequently due how the VPS handles the scaling of it's machines, sometimes the provider may think your VPS is "idle" (due HELIX server using extremely low CPU) and may decrease your processing power, causing this warning show up as well.
 
-///
+/// 
 
 
 #### `Lua Stack Error: Should be X, is Y...`

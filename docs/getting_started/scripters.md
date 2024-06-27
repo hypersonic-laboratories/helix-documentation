@@ -24,7 +24,7 @@ If you want to jump straight into code, you've come to the right spot!
 
 -   __Better Practices__
 
-    [:material-palette-outline: Lua Style Guide](../tutorials/luaStyleGuide.md)
+    [:material-palette-outline: Lua Style Guide](../scripting/luaStyleGuide.md)
 
 -   __Tooling Overview__
 

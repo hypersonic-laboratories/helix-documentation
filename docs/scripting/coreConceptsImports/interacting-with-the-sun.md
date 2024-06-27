@@ -23,7 +23,7 @@ Because of that it is important to set all your [Actors with `Sun` tag when crea
 
 ///
 
-///caution
+/// warning
 
 Sometimes if you use `SpawnDefaultSun()` in some maps, you may notice you will end up with **two** Directional or Sky Lights, this means the Map wasn't configured with the `Sun` tags.
 

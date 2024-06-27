@@ -8,13 +8,13 @@ tags: [scripting]
 
 How to extend HELIX Classes, HELIX provides a built-in way of extending and customizing the Classes
 
-///caution
+/// warning
 
 This feature is still **experimental**, you can try it out and provide feedback before it's full release!
 
 ///
 
-///caution
+/// warning
 
 Extending Classes can be very useful and speed up the development. Although the code may become very complex and hard for newcomers to understand. As it will start using non-documented methods and accessors.
 

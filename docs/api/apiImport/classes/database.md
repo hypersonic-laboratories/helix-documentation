@@ -57,7 +57,7 @@ All requests are thread safe! 🥳
 
 <ConstructorDeclaration type="Class" name="Database" />
 
-///caution note
+/// warning | note
 
 The initial connection to the Database (when it's being constructed) is made on the main thread, so expect the server hanging for a few seconds during that.
 

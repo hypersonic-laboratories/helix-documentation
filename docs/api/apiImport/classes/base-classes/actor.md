@@ -20,7 +20,7 @@ This is the base class for all Actors we have. You cannot spawn it directly.
 
 ## Functions
 
-///caution
+/// warning
 
 Some of the following methods may not work on certain Actor classes.
 

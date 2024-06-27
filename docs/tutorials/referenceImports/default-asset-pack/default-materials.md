@@ -13,19 +13,19 @@ Default Materials and it's Parameters.
 
 HELIX provides several built-in template materials which can be easily used and customized with [Paintable](/scripting-reference/classes/base-classes/paintable.mdx) methods.
 
-///info
+/// info
 
 You can create and access your own Materials Parameters if you have a Mesh which uses a Custom Material!
 
-///
+/// 
 
 ![](/img/docs/default-materials-01.jpg)
 
-///tip
+/// tip
 
 For more information regarding **Material Types** and **Blend Modes**, please refer to [Unreal Docs](https://docs.unrealengine.com/4.26/en-US/RenderingAndGraphics/Materials/MaterialProperties/BlendModes/).
 
-///
+/// 
 
 
 #### Parameters Supported by Default Materials
@@ -41,11 +41,11 @@ For more information regarding **Material Types** and **Blend Modes**, please re
 | [Scalar](/scripting-reference/classes/base-classes/paintable.mdx#setmaterialscalarparameter) | **`Roughness`** | `0.65` | Affects `Roughness` input - goes from 0 to 1 |
 | [Scalar](/scripting-reference/classes/base-classes/paintable.mdx#setmaterialscalarparameter) | **`Opacity`** | `0` | Affects `Opacity` and `Opacity Mask` inputs - goes from 0 to 1 <br />**Opacity** multiplies with **Texture** Alpha Channel to generate the final opacity |
 
-///tip
+/// tip
 
 For more information regarding how each Parameter affects the final visual, please take a look at Unreal [Physically Based Materials](https://docs.unrealengine.com/4.26/en-US/RenderingAndGraphics/Materials/PhysicallyBased/) and [Material Inputs](https://docs.unrealengine.com/4.26/en-US/RenderingAndGraphics/Materials/MaterialInputs/) docs page.
 
-///
+/// 
 
 
 ### **`M_Default_Masked_Lit`**
@@ -85,11 +85,11 @@ For more information regarding how each Parameter affects the final visual, plea
 **Translucent**, **Lit** with `Wireframe` enabled, meaning it renders objects as Wireframe.
 
 
-///tip
+/// tip
 
 **Note**: All those Materials in this page are already included in the base game in the [Default HELIX Asset Pack](/assets-modding/default-asset-pack/default-assets-list.md), you can reference them like that: **`helix::M_Default_Masked_Lit`.**
 
-///
+/// 
 
 
 #### Materials Summary
@@ -104,7 +104,7 @@ For more information regarding how each Parameter affects the final visual, plea
 | **M_Noise** | Surface | Opaque | Default Lit |
 | **M_Wireframe** | Surface | Translucent | Default Lit |
 
-///tip
+/// tip
 
 **Opaque** are the most efficient ones but doesn't support **Opacity** or **Opacity Mask**.
 
@@ -112,7 +112,7 @@ For more information regarding how each Parameter affects the final visual, plea
 
 **Translucent** are the heavier ones to render, and cause a lot of overdraw (and performance issues) if used incorrectly. It supports **Opacity** but does not support **Normal**, **Metallic,** **Specular** and **Roughness** inputs by default for optimization reasons.
 
-///
+/// 
 
 
 #### Supported Common Parameters in each Material
@@ -138,11 +138,11 @@ Besides the Physical Properties of an object (friction, restitution, density, et
 
 HELIX provides a list of the built-in Physical Materials which you can use to override in-game the Physical properties of an Entity.
 
-///tip
+/// tip
 
 You also can create your own Physical Materials and use them in-game! Just remember to configure in them the proper **SurfaceType** for a better integration!
 
-///
+/// 
 
 
 |  | Friction | Restitution | Density | [Surface Type](/scripting-reference/glossary/enums.mdx#surfacetype) |

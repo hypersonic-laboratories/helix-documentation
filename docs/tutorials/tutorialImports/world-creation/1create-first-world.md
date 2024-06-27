@@ -6,15 +6,14 @@ tags: []
 ---
 Creating a World can be very simple after understanding the basics from this page.
 
-///info
+/// info
 Requirements:  
 [HELIX Studio Setup](/docs/assets-modding/studio/setting-up-studio.md)  
-[Understanding Basic Concepts](docs\getting-started\Introduction_start_here.mdx)
-///
+/// 
  
 ___
 
-A video regarding [creating a world for the first time can be found here](\getting-started\video-tutorials\02-creating-your-first-world.md)
+A video regarding [creating a world for the first time can be found here](/getting-started/video-tutorials/02-creating-your-first-world.md)
 
 ___
 ## Creating a Basic World in HELIX Studio
@@ -35,28 +34,28 @@ To detailed information about how to create a project using HELIX Studio, please
 
 ## First steps in Project
 
-You will see a welcome Message and the StartLevel main tab. Check [the Introduction](/getting-started/Introduction_start_here.mdx) for more details on the Tools and Structure of HELIX Studio.  
+You will see a welcome Message and the StartLevel main tab. Check The Introduction for more details on the Tools and Structure of HELIX Studio.  
 
 For a very first test, hit the green `Play-Button (a)` 
 
-![](\img\docs\World-creation\first_world\fist_step02.png)
+![](../../../img/docs/World-creation/first_world//fist_step02.png)
 
 Next, allow Firewall if prompted.  
 You will see blue sky with `clouds (b)`. This is what server without any code looks like. You can already navigate with the camera with the typical game-controls (`W` ,`A` ,`S` ,`D` and mouse for looking around)  
 Look into the sky and move forward with the W key a bit. If you look down again, you should now see a chessboard `floor (c)`  
 The world exists, now let’s fill it with life. Hit the red Stop button or `ESC` key.
 
-![](\img\docs\World-creation\first_world\fist_step03.jpg)
+![](../../../img/docs/World-creation/first_world//fist_step03.jpg)
 
 ## Add Game Logic
 Open VS Code by clicking on the World Icon and then “Start VS Code”
 
-![](\img\docs\World-creation\first_world\game_logic01.png)
+![](../../../img/docs/World-creation/first_world//game_logic01.png)
 
 This opens VS Code outside Unreal Engine! You can navigate between Unreal Engine and VS Code in the Windows `Task-Bar (a)`  
 Open and edit the file located at `Packages/helloworld/Server/Index.lua (b)`
 
-![](\img\docs\World-creation\first_world\game_logic02.jpg)
+![](../../../img/docs/World-creation/first_world//game_logic02.jpg)
 
 In Packages/helloworld/Server/Index.lua file paste the source-code shown below:
 ```lua title="Packages/helloworld/Server/Index.lua"
@@ -97,25 +96,25 @@ end)
 ```
 Save the Index.lua file and go back to Unreal Engine and hit the green Play button!
 
-![](\img\docs\World-creation\first_world\game_logic04.png)
+![](../../../img/docs/World-creation/first_world//game_logic04.png)
 
 >The Server is controlled and tested through Unreal Engine. It's important to save Code-Files in VS Code, otherwise the server will not apply your changes.  
 
 You will now see your Avatar and a white cube falling from the sky in front of the avatar. Run around and explore, the cube can be grabbed. If you move the Avatar close to it, you can pick it up with the `E` key and carry around.
 
-![](\img\docs\World-creation\first_world\helloworld_gameplay.jpg)
+![](../../../img/docs/World-creation/first_world//helloworld_gameplay.jpg)
 
 
 ## Publish your world
 To publish the world just go to the `World-Icon → Publish → All` (a)  
 You see confirmation on the bottom right side and also in the Output log. (b) 
 
-![](\img\docs\World-creation\first_world\publish_w01.png)
+![](../../../img/docs/World-creation/first_world//publish_w01.png)
 
 In case you encounter issues, please also share these logs (b) when filing bug reports.  
 Your world should now be public and playable. In the example, the world can be found via `helixgame.com/worlds/helloworld.lix` and you can connect to the server via HELIX Client.
 
-![](\img\docs\World-creation\first_world\publish_w03.png)
+![](../../../img/docs/World-creation/first_world//publish_w03.png)
 
 Congratulations, you’ve just created your very first HELIX world!  
 
@@ -146,5 +145,4 @@ ___
 
 
 ## What’s next?
-You now have a World created and running. Players can connect to it through its unique .lix URL and interact with the Cube and each other. Admittedly, the environment and Cube is a bit boring though, so let’s continue with:  
-[Add assets to your world](add-assets-to-your-world.mdx)
+You now have a World created and running. Players can connect to it through its unique .lix URL and interact with the Cube and each other. Admittedly, the environment and Cube is a bit boring though, so let’s continue with the next step.

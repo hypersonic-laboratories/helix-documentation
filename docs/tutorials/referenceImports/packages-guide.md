@@ -9,7 +9,7 @@ keywords: [packages, scripting, lua]
 
 **Packages** are pieces/components of your server which will execute Lua scripts to interact to the game.
 
-![](/img/docs/packages-01.jpg)
+![](../../img/docs/packages-01.jpg)
 
 
 ## Folder Structure
@@ -204,13 +204,13 @@ It contains all functionalities from a `script`, being able to execute scripts a
     # something = 123
 ```
 
-///tip
+/// tip
 
 As HELIX server is not aware of Unreal or it's Assets, we need to somehow say to the server where are the scriptable part of the map, such as Spawn Points, Props locations, Weapon locations and so on.
 
 It is a recommended approach to implement all Props and Weapons spawn locations in your Map Package `Server/Index.lua` and define all Player's Spawn points in the `Package.toml` file.
 
-///
+/// 
 
 
 ## Settings Detailed

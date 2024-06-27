@@ -71,7 +71,7 @@ Under certain circumstances, actors may not be in **Distributed Network Authorit
 
 You can also prevent it from being automatically distributed to other Players by calling `:SetNetworkAuthorityAutoDistributed(false)`.
 
-///caution
+/// warning
 
 Always remember to restore the automatic **Network Authority Distribution** by calling `:SetNetworkAuthorityAutoDistributed(true)`. Otherwise that entity may behave completely weird.
 

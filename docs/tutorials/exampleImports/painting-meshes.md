@@ -13,13 +13,13 @@ In Unreal Engine, a [Material](https://docs.unrealengine.com/en-US/RenderingAndG
 
 In Unreal Engine, when you create a Material, you can define custom [Parameters](https://docs.unrealengine.com/en-US/RenderingAndGraphics/Materials/HowTo/Making_Parameters/index.html) for it. So if you defined some parameters for a Material in a mesh, you can tweak it with simple comands in HELIX!
 
-///warning
+/// warning
 
 **HELIX** provides a bunch of methods to allow you to interact with the parameters you created for your materials using our scripting!
 
 Please read [Base Paintable](/scripting-reference/classes/base-classes/paintable.mdx) Class to check all available methods before proceeding!
 
-///
+/// 
 
 ## Replacing a Mesh Material with Default Material
 
@@ -107,7 +107,7 @@ Cube with Default Masked Material with Metallic and Roughness parameters
 
 ## Loading a Texture into a Mesh
 
-It is even possible to load images \(.jpg, .png, etc\) from disk and apply to the mesh! For that you will need to have an image inside an Asset Pack or a Package \(in the `Client/` folder\). We gonna use [this \(imgur\)](https://i.imgur.com/67CGqHb.jpg) with the name `syed.jpg` and we will place it inside our Package `Client/` folder.
+It is even possible to load images /(.jpg, .png, etc/) from disk and apply to the mesh! For that you will need to have an image inside an Asset Pack or a Package /(in the `Client/` folder/). We gonna use [this /(imgur/)](https://i.imgur.com/67CGqHb.jpg) with the name `syed.jpg` and we will place it inside our Package `Client/` folder.
 
 ![](/img/docs/tutorials/painting-meshes-06.jpg)
 
@@ -127,15 +127,15 @@ my_cube:SetMaterialTextureParameter("Texture", "package://testing/Client/syed.jp
 
 ![](/img/docs/tutorials/painting-meshes-07.jpg)
 
-///tip
+/// tip
 
 And voila! Easy Peasy! Feel free to create your own materials and textures and tweak them in-game!
 
-///
+/// 
 
-///warning
+/// warning
 
 Be careful! Loading raw images directly from disk is a slow operation and may cause unwanted stutters! Also raw images aren't cached neither automatically pre-loaded when joining a server.
 
-///
+/// 
 

@@ -7,7 +7,7 @@ tags: []
 
 ## Watch the video to learn how to create an RP server in HELIX. 
 
-A video on how to setup the RP Server can be found at [the video tutorials section.](getting-started\video-tutorials\03-creating-rp-server.md)
+A video on how to setup the RP Server can be found at the video tutorials section.
 > 💡 The downloads mentioned in the video can be found in the following links:  
  **[RP-Core](https://github.com/helix-game/rp-core)**   
  **[XAMPP](https://www.apachefriends.org/download.html)**   

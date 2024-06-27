@@ -25,9 +25,9 @@ ___
 
 Don’t forget that you must have this world uploaded to the HELIX Creator Hub if you want to have a valid token to be allowed to monetize with LIX. Otherwise you will have an error message that can look like this:
 
-![](\img\docs\World-creation\in-world-purchases\01_error.png)
+![](../../../img/docs/World-creation/in-world-purchases/01_error.png)
 
-To prevent this, follow the [Create your first world](\assets-modding\world-creation\create-first-world.mdx) walk-through.
+To prevent this, follow the [Create your first world](/assets-modding/world-creation/create-first-world.mdx) walk-through.
 ___
 ## Methods to Charge the Player
 
@@ -40,7 +40,7 @@ Directly requests to charge the specified amount of LIX on a player. This is the
 ```lua
 Payment.ChargePlayer(player, amount, to_id, charge_title, charge_description, callback)
 ```
-![](\img\docs\World-creation\in-world-purchases\02_confirmation.png)
+![](../../../img/docs/World-creation/in-world-purchases/02_confirmation.png)
 
 ___
 ### Sell Item
@@ -49,7 +49,7 @@ Request to purchase an actual item with a valid Item ID
 Payment.SellItemToPlayer(player, item_id, amount, charge_title, charge_description, callback)
 ```
 
-![](\img\docs\World-creation\in-world-purchases\03_buy_item.png)
+![](../../../img/docs/World-creation/in-world-purchases/03_buy_item.png)
 
 ___
 
@@ -196,6 +196,6 @@ end)
 Index.lua
 
 Now we have the code working, let’s test it out! Join your world and you will see the request!
-![](\img\docs\World-creation\in-world-purchases\04_description.png)
+![](../../../img/docs/World-creation/in-world-purchases/04_description.png)
 
-![](\img\docs\World-creation\in-world-purchases\05_user_shooting.png)
+![](../../../img/docs/World-creation/in-world-purchases/05_user_shooting.png)

@@ -48,7 +48,7 @@ After set, you can access any value from any entity using `:GetValue(key, fallba
 local my_value = my_player:GetValue("my_value", 0)
 ```
 
-///caution
+/// warning
 
 Be aware that storing **entities** itself will not nullify the value if the entity is destroyed, so it is a good practice to validate if values with `:IsValid()` after retrieving them.
 
