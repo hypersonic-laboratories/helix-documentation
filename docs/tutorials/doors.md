@@ -1,7 +1,7 @@
 ---
 title: Door Tutorial
 description: How to create a simple, automatic door
-status: untested
+# status: change
 ---
 
 /// warning | Untested with latest Helix

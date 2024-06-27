@@ -13,7 +13,7 @@ status: change
 
 - As an Unreal plugin everything you know about Unreal is relevant, and everything you learn will help you progress as a developer
 - HELIX adds functions for the most common use cases, allowing you to make an RP game far easier than without our tooling (e.g. asset cooking, code linking, hot reload, etc.).
-    - The table below highlights some elements (accessible via the top center icons):
+    - The table below highlights some of the most common elements (accessible via the top center icons):
 
 | :material-earth:  | :material-pencil-ruler: |
 |:------------------|:-----|
@@ -21,14 +21,35 @@ status: change
 | Server Hot Reload | New Assets/Packages/Items|
 | Publish World     | Publish Assets |
 
+??? abstract "Full Studio Feature List"
+
+    #### World
+    ![Studio World](/img/docs/assets-modding/studio-features/01-world-features.png)
+
+    - **Start VS Code**: Initiates Visual Studio Code within the Package folder.
+    - **Regenerate Placeholder**: Refreshes the placeholder file located in the package.
+    - **Server Hot Reload**: When enabled, the plugin checks for changes in the package file and automatically performs a hot reload within the editor.
+    - **Publish**: 
+    - **All**: Cooks and publishes both the world asset and package.
+    - **Package**: Only publishes the package.
+
+    #### Asset
+    ![Studio Assets](/img/docs/assets-modding/studio-features/02-asset-feature.png)
+
+    - **Open Creator Exchange**: Display the creator exchange where assets created by other users can be imported into the project.
+    - **Import Asset**: Allows users to import asset packs that have been downloaded.
+    - **New Package**: Initiates the creation of a new server package.
+    - **New Asset Pack**: Initiates the creation of a new asset pack.
+    - **New Item**: Initiates the creation of a new item.
+    - **Publish Asset**: Cooks and uploads to the HUB a specified asset pack.
+
 ## Launcher
 
 Note that **HELIX's Launcher** also contains some key tools to ease your development experience.
 
 ![](../_images/getting_started/HELIXLauncher.png)
-ToDo: Annotate, etc.
 
-- Access to the [HELIX Vault](https://hub.helixgame.com/)
+- Access to the [HELIX Vault](https://helixgame.com/vault)
 - Easily launch new/old projects, start standalone servers, and more
 
 ## Next Steps
@@ -56,9 +77,9 @@ ToDo: Annotate, etc.
 
 -   __Start Coding__
 
-    Start VS Code from the top center :material-earth: icon, install `vscode-lua` and `vscode-helix` for lua language support and Helix API autocomplete, and immediately get coding with our API reference.
+    Start VS Code from Studio, and get cracking!
 
     [:octicons-file-code-24: View API](../api/apiHome.md)
 
-    [:octicons-command-palette-16: Scripters Hub](scripters.md)
+    [:octicons-command-palette-16: Scripting Home](../scripting/scriptingHome.md)
 </div>

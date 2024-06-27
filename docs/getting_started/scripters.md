@@ -6,17 +6,30 @@ status: wip
 
 If you want to jump straight into code, you've come to the right spot!
 
-### Alternate Workflows
-
-/// info | The launcher allows you to start a server directly (:material-console: for any existing project), allowing you to ignore the Studio UI if you don't need/want it!
-///
-
 ### Useful Links
 
-| **Topic**  | **Link**      
-| ------------- | --------------- |
-| **Tooling**  | [Studio & Launcher](creatorTools.md)      |
-| **Reference**    | [API](../api/apiHome.md) |
-| | [Intro To Lua](../tutorials/introLua.md) |
-| | [Lua Style Guide](../tutorials/luaStyleGuide.md) |
-| **Other** | Placeholder              | 
+<div class="grid cards" markdown>
+
+-   __Scripting Home__
+
+    Concept overviews, code examples, and useful tips
+
+    [:octicons-command-palette-16: Scripting Home](../scripting/scriptingHome.md)
+
+-   __Browse the API__
+
+    Classes, structures, and even a glossary
+
+    [:octicons-file-code-24: API Home](../api/apiHome.md)
+
+-   __Better Practices__
+
+    [:material-palette-outline: Lua Style Guide](../scripting/luaStyleGuide.md)
+
+-   __Tooling Overview__
+
+    [:material-file-document-check-outline: Studio & Launcher](creatorTools.md)
+    
+    [:octicons-command-palette-16: IDE Tooling](../scripting/scriptingHome.md)
+
+</div>

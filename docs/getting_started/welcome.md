@@ -14,7 +14,7 @@ Welcome to the documentation for [HELIX](https://helixgame.com/), the platform t
 
 - **The Power of Unreal** - HELIX is intentionally built on top of the well-loved Unreal 5 game engine, allowing for unparalleled graphical fidelity and customization. Our import tools allow you to work on whatever complexity layer you like - this is creation without limits!
 
-- **Helpful Resources** - From one click publishing to the [Vault](https://hub.helixgame.com/) (community created assets) to extensive documentation, we have all the resources you need to get started quickly and easily.
+- **Helpful Resources** - From one click publishing to the [Vault](https://helixgame.com/vault) (community created assets) to extensive documentation, we have all the resources you need to get started quickly and easily.
 
 ## Getting Started
 
@@ -32,9 +32,9 @@ Welcome to the documentation for [HELIX](https://helixgame.com/), the platform t
 
 	Whatever you specialize in, we've got the right tools for you. 
 
-    [:material-palette-outline: Modelers](modelers.md)
-
     [:octicons-command-palette-16: Scripters](scripters.md)
+
+    [:material-palette-outline: Modelers](modelers.md)
 
     [:octicons-server-16: Server Owners](serverOwners.md)
 

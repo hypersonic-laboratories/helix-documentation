@@ -1,0 +1,155 @@
+---
+title: Database
+description: The Database entity provides programmers a way to access SQL databases easily through scripting.
+sidebar_position: 0
+tags: [class]
+---
+
+<HeaderDeclaration type="Class" name="Database" image="/img/docs/db.webp" />
+
+///tip
+
+Currently HELIX supports `SQLite`, `MySQL` and `PostgreSQL` out of the box.
+
+///
+
+
+## Examples
+
+```lua title="Server/Index.lua"
+-- Creates a SQLite connection, using a local file called 'database_filename.db'
+local sqlite_db = Database(DatabaseEngine.SQLite, "db=database_filename.db timeout=2")
+
+-- Creates a table
+sqlite_db:Execute([[
+	CREATE TABLE IF NOT EXISTS test (
+		id INTEGER,
+		name VARCHAR(100)
+	)
+]])
+
+-- Insert values in the table
+local affected_rows = sqlite_db:Execute("INSERT INTO test VALUES (1, 'amazing')")
+Console.Log("Affected Rows: " .. tostring(affected_rows))
+-- Will output: 1
+
+-- Selects the data
+local rows = sqlite_db:Select("SELECT * FROM test")
+Console.Log(HELIXTable.Dump(rows))
+-- Will output a table with all data from 'test'
+
+-- Selects the data with filter
+local rows_filter = sqlite_db:Select("SELECT * FROM test WHERE name = :0", "amazing")
+Console.Log(HELIXTable.Dump(rows_filter))
+-- Will output a table with all data from 'test' where name matches 'amazing'
+```
+
+<ExamplesDeclaration type="Class" name="Database" />
+
+///tip
+
+All requests are thread safe! 🥳
+
+///
+
+
+## Constructors
+
+<ConstructorDeclaration type="Class" name="Database" />
+
+/// warning | note
+
+The initial connection to the Database (when it's being constructed) is made on the main thread, so expect the server hanging for a few seconds during that.
+
+///
+
+///info
+
+If the Database fails to connect, it will spit an error on console and will return `nil`.
+
+///
+
+
+## Static Functions
+
+<StaticFunctionsDeclaration type="Class" name="Database" />
+
+
+## Functions
+
+<FunctionsDeclaration type="Class" name="Database" />
+
+///tip
+
+When passing arguments to a query, use the following syntax: `:?` where ? is the placeholder argument (i.e. :0) passed into the function.
+
+///
+
+For a more in-depth example see [Examples](#examples)
+
+
+## 🧵 Connection String
+
+Each **Database Engine** has it's own parameters which can be used on the `connection_string` constructor. Those parameters are defined and backend-dependent by the Engine, being passed directly to the Backend when creating the connection.
+
+They should be set in the following format: `"param1=value1 param2=value2 param3=value3"`.
+
+///tip
+
+Usually you don't need to explicitly define all (or most) of the parameters described here, just use the ones you make sure are useful for your needs. Some of them are described by the libraries but aren't 100% tested in HELIX.
+
+///
+
+
+### ▶ SQLite
+
+///tip
+
+There is a special **connection_string** for SQLite: `:memory:`. This will create a database in the memory which is destroyed when the server closes.
+
+///
+
+| Parameter | Default Value | Description |
+| :--- | :--- | :--- |
+| **`db/dbname`** |  | The database name |
+| **`timeout`** | `0` | set sqlite busy timeout (in seconds) ([link](http://www.sqlite.org/c3ref/busy_timeout.html)) |
+| **`readonly`** | `false` | open database in read-only mode instead of the default read-write (note that the database file must already exist in this case, see the [documentation](https://www.sqlite.org/c3ref/open.html)) |
+| **`synchronous`** | | set the pragma synchronous flag ([link](http://www.sqlite.org/pragma.html#pragma_synchronous)) |
+| **`shared_cache`** | | should be true ([link](http://www.sqlite.org/c3ref/enable_shared_cache.html)) |
+| **`vfs`** | | set the SQLite VFS used to as OS interface. The VFS should be registered before opening the connection, see the [documentation](https://www.sqlite.org/vfs.html) |
+
+
+### ▶ MySQL
+
+| Parameter | Default Value | Description |
+| :--- | :--- | :--- |
+| **`db/dbname`** |  | The database name |
+| **`user`** |  | User name to connect as |
+| **`password/pass`** |  | Password to be used if the server demands password authentication |
+| **`host`** |  | Name of host to connect to |
+| **`port`** |  | Port number to connect to at the server host |
+| **`unix_socket`** |  | |
+| **`sslca`** |  | |
+| **`sslcert`** |  | |
+| **`local_infile`** |  | should be `0` or `1`, `1` means `MYSQL_OPT_LOCAL_INFILE` will be set |
+| **`charset`** |  |  |
+| **`reconnect`** | `0` | if set to `1`, will attempt to reconnect on connection loss |
+| **`connect_timeout`** |  | should be positive integer value that means seconds corresponding to `MYSQL_OPT_CONNECT_TIMEOUT` |
+| **`read_timeout`** |  | should be positive integer value that means seconds corresponding to `MYSQL_OPT_READ_TIMEOUT` |
+| **`write_timeout`** |  | should be positive integer value that means seconds corresponding to `MYSQL_OPT_WRITE_TIMEOUT` |
+
+
+### ▶ PostgreSQL
+
+More parameters and complete information can be found at the [PostgreSQL Official Documentation](https://www.postgresql.org/docs/8.3/libpq-connect.html).
+
+| Parameter | Default Value | Description |
+| :--- | :--- | :--- |
+| **`host`** |  | Name of host to connect to |
+| **`hostaddr`** |  | Numeric IP address of host to connect to |
+| **`port`** |  | Port number to connect to at the server host |
+| **`user`** | same as OS user name | User name to connect as |
+| **`dbname`** | same as user name | The database name |
+| **`password`** |  | Password to be used if the server demands password authentication |
+| **`connect_timeout`** | `0` | Maximum wait for connection, in seconds |
+| **`options`** |  | Command-line options to be sent to the server |

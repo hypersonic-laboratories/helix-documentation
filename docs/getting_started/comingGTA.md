@@ -1,5 +1,5 @@
 ---
-title: GTA/FiveM
+title: FiveM (GTA)
 status: wip
 ---
 ## Overview
