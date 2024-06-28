@@ -10,6 +10,7 @@
 
   /* Extra Site Colors */
   --helix-color-mint-hover: #02cca7;
+  --helix-color-gray-light: #f7f7f7;
 
   --helix-color-card-border: var(--helix-color-gray-dark);
   --helix-color-card-background: #1e1e24;
@@ -136,10 +137,19 @@ https://github.com/squidfunk/mkdocs-material/blob/master/src/templates/assets/st
     color: var(--helix-color-mint);
   }
 
+  .md-search__form {
+    background-color: var(--helix-color-gray-dark);
+  }
+
   /* Header tabs */
   .md-tabs {
     background-color: transparent;
   }
+
+  /* Not active one automatically darker, need to investigate */
+  /* .md-tabs__link {
+    color: var(--helix-color-gray-light) !important; Needs override
+  } */
 
   .md-tabs__link:is(:focus,:hover) {
     color: var(--helix-color-mint);
@@ -259,8 +269,7 @@ https://github.com/squidfunk/mkdocs-material/blob/master/src/templates/assets/st
 /* Make top tabs larger */
 .md-tabs__link {
   font-size: 0.8rem;
-  font-weight: 500;
-  color: var(--helix-color-gray);
+  font-weight: 600;
 }
 
 /* Make top tabs have bottom border */
