@@ -8,8 +8,10 @@
   --helix-color-gray: #ededed;
   --helix-color-gray-dark: #28282a;
 
+  --helix-color-mint-hover: #02cca7;
+
   --helix-black: #000000;
-  --helix-not-quite-black: #0a0a0a;
+  --helix-not-quite-black: #141414;
   --helix-not-quite-black-rgb: 10, 10, 10;
   --helix-white: #ededed;
   --helix-white-rgb: 237, 237, 237;
@@ -17,11 +19,130 @@
   --helix-not-quite-white-rgb: 238, 238, 238;
   --helix-copy: #b5b5b6;
 
-  --helix-card-border: #232325;
-  --helix-card-background: #161616;
+  --helix-card-border: var(--helix-color-gray-dark);
+  --helix-card-background: #1a1919;
   /* Site Colors */ /* TODO */
   --md-status--warning: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48IS0tIFVwbG9hZGVkIHRvOiBTVkcgUmVwbywgd3d3LnN2Z3JlcG8uY29tLCBHZW5lcmF0b3I6IFNWRyBSZXBvIE1peGVyIFRvb2xzIC0tPgo8c3ZnIHdpZHRoPSI4MDBweCIgaGVpZ2h0PSI4MDBweCIgdmlld0JveD0iMCAwIDUxMiA1MTIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHRpdGxlPmlvbmljb25zLXY1LXI8L3RpdGxlPjxwYXRoIGQ9Ik04NS41Nyw0NDYuMjVINDI2LjQzYTMyLDMyLDAsMCwwLDI4LjE3LTQ3LjE3TDI4NC4xOCw4Mi41OGMtMTIuMDktMjIuNDQtNDQuMjctMjIuNDQtNTYuMzYsMEw1Ny40LDM5OS4wOEEzMiwzMiwwLDAsMCw4NS41Nyw0NDYuMjVaIiBzdHlsZT0iZmlsbDpub25lO3N0cm9rZTojMDAwMDAwO3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2Utd2lkdGg6MzJweCIvPjxwYXRoIGQ9Ik0yNTAuMjYsMTk1LjM5bDUuNzQsMTIyLDUuNzMtMTIxLjk1YTUuNzQsNS43NCwwLDAsMC01Ljc5LTZoMEE1Ljc0LDUuNzQsMCwwLDAsMjUwLjI2LDE5NS4zOVoiIHN0eWxlPSJmaWxsOm5vbmU7c3Ryb2tlOiMwMDAwMDA7c3Ryb2tlLWxpbmVjYXA6cm91bmQ7c3Ryb2tlLWxpbmVqb2luOnJvdW5kO3N0cm9rZS13aWR0aDozMnB4Ii8+PHBhdGggZD0iTTI1NiwzOTcuMjVhMjAsMjAsMCwxLDEsMjAtMjBBMjAsMjAsMCwwLDEsMjU2LDM5Ny4yNVoiLz48L3N2Zz4=);
   --md-status--change: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iMTE4LjMwN3B4IiBoZWlnaHQ9IjEyMi44OHB4IiB2aWV3Qm94PSIwIDAgMTE4LjMwNyAxMjIuODgiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDExOC4zMDcgMTIyLjg4IiB4bWw6c3BhY2U9InByZXNlcnZlIj48Zz48cGF0aCBkPSJNMTAuMDMsMzUuNjczYzIuMjQ1LTEwLjQ5Niw3LjIwMS0xOS4xNzYsMTQuMjQ2LTI1LjM2MkMzMi41MDQsMy4wODYsNDMuNDk4LTAuNjc0LDU2LjI3MSwwLjEgYzEuOTE2LDAuMTEzLDMuMzc3LDEuNzU4LDMuMjY1LDMuNjc0Yy0wLjExMywxLjkxNi0xLjc1NywzLjM3OC0zLjY3MywzLjI2NUM0NC45ODgsNi4zNzksMzUuNzEsOS41MDksMjguODQ4LDE1LjUzNSBjLTYuNDgzLDUuNjkzLTEwLjg4MywxNC4wMjgtMTIuNTEyLDI0LjI1OGwwLjYzOSwwLjI2NGwxMC4zODktNy4xNzJjMS40MjUtMC45ODYsMy4zOC0wLjYzLDQuMzY3LDAuNzk1IGMwLjk4NiwxLjQyNiwwLjYzLDMuMzgxLTAuNzk1LDQuMzY2bC0xNi41NTcsMTEuNDNjLTEuNDI1LDAuOTg2LTMuMzgsMC42My00LjM2Ni0wLjc5NWMtMC4wNjItMC4wODktMC4xMTgtMC4xOC0wLjE2OS0wLjI3MiBMOS44NCw0OC40MDlMMC4zOSwzMS4xNDZjLTAuODM2LTEuNTItMC4yODItMy40MzEsMS4yMzgtNC4yNjdjMS41Mi0wLjgzNiwzLjQzLTAuMjgyLDQuMjY2LDEuMjM4TDEwLjAzLDM1LjY3M0wxMC4wMywzNS42NzN6IE05OS4wMzIsMjMuMTA4bC0wLjIwNiwwLjE1OWwxLjAxNiwxMi41ODNjMC4xNDIsMS43MjgtMS4xNDUsMy4yNDMtMi44NzIsMy4zODRjLTEuNzI3LDAuMTQyLTMuMjQyLTEuMTQ1LTMuMzg0LTIuODcyIEw5MS45NjcsMTYuMzFjLTAuMTQyLTEuNzI4LDEuMTQ0LTMuMjQzLDIuODcxLTMuMzg0YzAuMTA4LTAuMDA5LDAuMjE1LTAuMDEzLDAuMzItMC4wMTFsMC4wMDEtMC4wMDJsMTkuNjc1LDAuNDQ2IGMxLjczNCwwLjAzNiwzLjExMiwxLjQ3MSwzLjA3NiwzLjIwNmMtMC4wMzUsMS43MzQtMS40NzEsMy4xMTEtMy4yMDYsMy4wNzVsLTkuNjUtMC4yMTljMy43NjksNC40MzcsNi43OTksOS40MjIsOS4wMSwxNC43NjIgYzIuNzc1LDYuNjk4LDQuMjQzLDEzLjkyMiw0LjI0MywyMS4yODFjMCwzLjYzLTAuMzU4LDcuMjUtMS4wNjQsMTAuODEyYy0wLjcsMy41MzUtMS43NTUsNy4wMjEtMy4xNTMsMTAuNDA5IGMtMC43MjksMS43NzMtMi43NTcsMi42Mi00LjUzLDEuODkxYy0xLjc3My0wLjcyOS0yLjYxOS0yLjc1Ny0xLjg5MS00LjUyOWMxLjIwNy0yLjkyNCwyLjEyNS01Ljk3NCwyLjc0NS05LjEwNCBjMC42MTYtMy4xMDQsMC45MjgtNi4yNzksMC45MjgtOS40NzhjMC02LjQ3Ni0xLjI3OS0xMi44MDQtMy42OTgtMTguNjQzQzEwNS41ODMsMzEuODUsMTAyLjY4NCwyNy4yMDcsOTkuMDMyLDIzLjEwOCBMOTkuMDMyLDIzLjEwOHogTTcyLjY1OCwxMDkuODZjLTUuNzI5LDEuMDQ3LTExLjU1OCwxLjE4MS0xNy4yNzcsMC40MjdjLTcuMTcyLTAuOTQzLTE0LjE2Mi0zLjI4OC0yMC41NTItNi45NzhsLTAuMDEtMC4wMDYgbC0wLjAwMywwLjAwNmMtMy4xNC0xLjgxMy02LjA5Ny0zLjkzNC04LjgzMi02LjMyOGMtMi43My0yLjM5Mi01LjIyMy01LjA0NS03LjQzNy03LjkyM2MtMS4xNzItMS41MTktMC44OTItMy42OTksMC42MjUtNC44NzEgczMuNjk5LTAuODkyLDQuODcxLDAuNjI2YzEuOTQ4LDIuNTMzLDQuMTMxLDQuODU3LDYuNTEyLDYuOTQzYzIuMzc3LDIuMDgyLDQuOTcsMy45MzksNy43NDMsNS41NGwtMC4wMDMsMC4wMDYgYzUuNTg4LDMuMjI1LDExLjcwNSw1LjI3NCwxNy45ODMsNi4xMDFjNS4zNSwwLjcwNSwxMC44MjQsMC41MTcsMTYuMTk2LTAuNTkzbC0wLjAzNS0wLjI2NGwtMTEuNDA1LTUuNDExIGMtMS41NjYtMC43NDEtMi4yMzYtMi42MTItMS40OTUtNC4xNzljMC43NDEtMS41NjcsMi42MTMtMi4yMzYsNC4xOC0xLjQ5NWwxOC4xNzcsOC42MjRjMS41NjYsMC43NDEsMi4yMzUsMi42MTIsMS40OTQsNC4xOCBjLTAuMDQ2LDAuMDk3LTAuMDk3LDAuMTkxLTAuMTUsMC4yODJsMC4wMDIsMC4wMDFsLTEwLjIyNSwxNi44MTZjLTAuODk4LDEuNDgzLTIuODMsMS45NTktNC4zMTQsMS4wNjEgYy0xLjQ4NC0wLjg5Ny0xLjk2LTIuODI5LTEuMDYyLTQuMzEzTDcyLjY1OCwxMDkuODZMNzIuNjU4LDEwOS44NnoiLz48L2c+PC9zdmc+);
+}
+
+/* Slate theme customized to helix colors - base code from:
+https://github.com/squidfunk/mkdocs-material/blob/master/src/templates/assets/stylesheets/palette/_scheme.scss
+*/
+[data-md-color-scheme="slate-helix"] {
+
+  /* Indicate that the site is rendered with a dark color scheme */
+  color-scheme: dark;
+
+  /* Default color shades */
+  --md-default-fg-color:             hsla(var(--md-hue), 15%, 90%, 0.82);
+  --md-default-fg-color--light:      hsla(var(--md-hue), 15%, 90%, 0.56);
+  --md-default-fg-color--lighter:    hsla(var(--md-hue), 15%, 90%, 0.32);
+  --md-default-fg-color--lightest:   hsla(var(--md-hue), 15%, 90%, 0.12);
+  --md-default-bg-color:             hsla(var(--md-hue), 15%, 14%, 1);
+  --md-default-bg-color--light:      hsla(var(--md-hue), 15%, 14%, 0.54);
+  --md-default-bg-color--lighter:    hsla(var(--md-hue), 15%, 14%, 0.26);
+  --md-default-bg-color--lightest:   hsla(var(--md-hue), 15%, 14%, 0.07);
+
+  /* Code color shades */
+  --md-code-fg-color:                hsla(var(--md-hue), 18%, 86%, 0.82);
+  --md-code-bg-color:                hsla(var(--md-hue), 15%, 18%, 1);
+
+  /* Code highlighting color shades */
+  --md-code-hl-color:                hsla(#{hex2hsl($clr-blue-a400)}, 1);
+  --md-code-hl-color--light:         hsla(#{hex2hsl($clr-blue-a400)}, 0.1);
+
+  /* Code highlighting syntax color shades */
+  --md-code-hl-number-color:         hsla(6, 74%, 63%, 1);
+  --md-code-hl-special-color:        hsla(340, 83%, 66%, 1);
+  --md-code-hl-function-color:       hsla(291, 57%, 65%, 1);
+  --md-code-hl-constant-color:       hsla(250, 62%, 70%, 1);
+  --md-code-hl-keyword-color:        hsla(219, 66%, 64%, 1);
+  --md-code-hl-string-color:         hsla(150, 58%, 44%, 1);
+  --md-code-hl-name-color:           var(--md-code-fg-color);
+  --md-code-hl-operator-color:       var(--md-default-fg-color--light);
+  --md-code-hl-punctuation-color:    var(--md-default-fg-color--light);
+  --md-code-hl-comment-color:        var(--md-default-fg-color--light);
+  --md-code-hl-generic-color:        var(--md-default-fg-color--light);
+  --md-code-hl-variable-color:       var(--md-default-fg-color--light);
+
+  /* Typeset color shades */
+  --md-typeset-color:                var(--md-default-fg-color);
+
+  /* Typeset `a` color shades */
+  --md-typeset-a-color:              var(--helix-color-mint);
+
+  /* Typeset `kbd` color shades */
+  --md-typeset-kbd-color:            hsla(var(--md-hue), 15%, 90%, 0.12);
+  --md-typeset-kbd-accent-color:     hsla(var(--md-hue), 15%, 90%, 0.2);
+  --md-typeset-kbd-border-color:     hsla(var(--md-hue), 15%, 14%, 1);
+
+  /* Typeset `mark` color shades */
+  --md-typeset-mark-color:           hsla(#{hex2hsl($clr-blue-a200)}, 0.3);
+
+  /* Typeset `table` color shades */
+  --md-typeset-table-color:          hsla(var(--md-hue), 15%, 95%, 0.12);
+  --md-typeset-table-color--light:   hsla(var(--md-hue), 15%, 95%, 0.035);
+
+  /* Admonition color shades */
+  --md-admonition-fg-color:          var(--md-default-fg-color);
+  --md-admonition-bg-color:          var(--md-default-bg-color);
+
+  /* Footer color shades */
+  --md-footer-bg-color:              hsla(var(--md-hue), 15%, 10%, 0.87);
+  --md-footer-bg-color--dark:        hsla(var(--md-hue), 15%, 8%, 1);
+
+  /* Shadow depth 1 */
+  --md-shadow-z1:
+    0 #{px2rem(4px)} #{px2rem(10px)} hsla(0, 0%, 0%, 0.05),
+    0 0              #{px2rem(1px)}  hsla(0, 0%, 0%, 0.1);
+
+  /* Shadow depth 2 */
+  --md-shadow-z2:
+    0 #{px2rem(4px)} #{px2rem(10px)} hsla(0, 0%, 0%, 0.25),
+    0 0              #{px2rem(1px)}  hsla(0, 0%, 0%, 0.25);
+
+  /* Shadow depth 3 */
+  --md-shadow-z3:
+    0 #{px2rem(4px)} #{px2rem(10px)} hsla(0, 0%, 0%, 0.4),
+    0 0              #{px2rem(1px)}  hsla(0, 0%, 0%, 0.35);
+
+  /* Hide images for light mode */
+  img[src$="#only-light"],
+  img[src$="#gh-light-mode-only"] {
+    display: none;
+  }
+
+  /* Add hover color */
+  --md-accent-fg-color: var(--helix-color-mint-hover);
+
+  /* Custom Overrides */
+
+  /* Header general */
+  .md-header {
+    box-shadow: none;
+    backdrop-filter: saturate(1.8) blur(20px);
+    background-color: var(--helix-not-quite-black);
+    border-bottom: 3px solid var(--helix-color-gray-dark);
+  }
+
+  .md-search__icon.md-icon {
+    color: var(--helix-color-mint);
+  }
+
+  /* Header tabs */
+  .md-tabs {
+    background-color: var(--helix-not-quite-black);
+  }
+
+  .md-tabs__link:is(:focus,:hover) {
+    color: var(--helix-color-mint);
+  }
+
+  li.md-tabs__item.md-tabs__item--active {
+    border-bottom: 0.2rem solid var(--helix-color-mint) !important; /* Needs override */
+  }
+
 }
 
 /*
@@ -51,11 +172,11 @@ https://github.com/squidfunk/mkdocs-material/blob/master/src/templates/assets/st
   --md-accent-bg-color--light: var(--helix-color-mint);
 
   /* Default color shades */
-  --md-default-fg-color: hsla(0, 0%, 0%, 0.87);
-  --md-default-fg-color--light: hsla(0, 0%, 0%, 0.54);
-  --md-default-fg-color--lighter: hsla(0, 0%, 0%, 0.32);
-  --md-default-fg-color--lightest: hsla(0, 0%, 0%, 0.07);
-  --md-default-bg-color: rgb(26, 26, 26);
+  --md-default-fg-color: hsla(0, 0%, 13%, 0.87);
+  --md-default-fg-color--light: hsla(0, 0%, 13%, 0.54);
+  --md-default-fg-color--lighter: hsla(0, 0%, 13%, 0.32);
+  --md-default-fg-color--lightest: hsla(0, 0%, 13%, 0.07);
+  --md-default-bg-color: rgb(61, 61, 61);
   --md-default-bg-color--light: hsla(0, 0%, 100%, 0.7);
   --md-default-bg-color--lighter: hsla(0, 0%, 100%, 0.3);
   --md-default-bg-color--lightest: hsla(0, 0%, 100%, 0.12);
@@ -66,43 +187,46 @@ https://github.com/squidfunk/mkdocs-material/blob/master/src/templates/assets/st
 
   --md-typeset-a-color: var(--helix-color-mint);
   --md-default-fg-color--light: var(--helix-color-gray);
-}
 
-.md-header {
-  box-shadow: none;
-  backdrop-filter: saturate(1.8) blur(20px);
-  background-color: rgba(0, 0, 0, 0.8);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.13);
-}
+  --md-footer-bg-color: var(var(--helix-color-gray-dark));
 
-.md-top {
-  background-color: rgba(var(--helix-white-rgb), 0.9);
-  backdrop-filter: saturate(1.8) blur(20px);
-  color: rgba(var(--helix-not-quite-black-rgb), 0.9);
-  box-shadow: none;
-}
-
-.md-tabs {
-  background-color: transparent;
-}
-
-.md-typeset .grid.cards > ol > li,
-.md-typeset .grid.cards > ul > li,
-.md-typeset .grid > .card {
-  background-color: var(--helix-card-background);
-  box-shadow: inset 0 0 0 rgba(var(--helix-color-mint-rgb), 0.05);
-  border: 0.05rem solid var(--helix-card-border);
-  border-radius: 8px;
-}
-
-.md-typeset .grid.cards > ol > li:focus-within,
-.md-typeset .grid.cards > ol > li:hover,
-.md-typeset .grid.cards > ul > li:focus-within,
-.md-typeset .grid.cards > ul > li:hover,
-.md-typeset .grid > .card:focus-within,
-.md-typeset .grid > .card:hover {
-  box-shadow: inset 20px 20px 20px rgba(var(--helix-color-mint-rgb), 0.05);
-  border-color: rgba(var(--helix-not-quite-white-rgb), 0.2);
+  .md-header {
+    box-shadow: none;
+    backdrop-filter: saturate(1.8) blur(20px);
+    background-color: rgba(43, 43, 43, 0.8);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.13);
+  }
+  
+  .md-top {
+    background-color: rgba(var(--helix-white-rgb), 0.9);
+    backdrop-filter: saturate(1.8) blur(20px);
+    color: rgba(var(--helix-not-quite-black-rgb), 0.9);
+    box-shadow: none;
+  }
+  
+  .md-tabs {
+    background-color: transparent;
+  }
+  
+  .md-typeset .grid.cards > ol > li,
+  .md-typeset .grid.cards > ul > li,
+  .md-typeset .grid > .card {
+    background-color: var(--helix-card-background);
+    box-shadow: inset 0 0 0 rgba(var(--helix-color-mint-rgb), 0.05);
+    border: 0.05rem solid var(--helix-card-border);
+    border-radius: 8px;
+  }
+  
+  .md-typeset .grid.cards > ol > li:focus-within,
+  .md-typeset .grid.cards > ol > li:hover,
+  .md-typeset .grid.cards > ul > li:focus-within,
+  .md-typeset .grid.cards > ul > li:hover,
+  .md-typeset .grid > .card:focus-within,
+  .md-typeset .grid > .card:hover {
+    box-shadow: inset 20px 20px 20px rgba(var(--helix-color-mint-rgb), 0.05);
+    border-color: rgba(var(--helix-not-quite-white-rgb), 0.2);
+  }
+  
 }
 
 /* Make top tabs larger */
