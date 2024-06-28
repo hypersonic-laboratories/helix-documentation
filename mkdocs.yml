@@ -112,14 +112,14 @@ theme:
   custom_dir: _overrides
   language: en
   font:
-    text: Roboto
+    text: Inter
     code: JetBrains Mono
   favicon: _images/favicon.ico
   logo: _images/logo.png
   icon:
     repo: fontawesome/brands/github
   palette:
-    scheme: slate #toggle between 'slate' (default dark) and 'helix' (custom)
+    scheme: slate-helix #toggle between 'slate' (default dark) and 'helix' (custom) and 'helix-slate' (custom, less dark)
   features:
     # https://squidfunk.github.io/mkdocs-material/setup/adding-a-git-repository/#code-actions
     - content.action.edit #Also adds comment issue button, via _overrides/partials/actions.html
