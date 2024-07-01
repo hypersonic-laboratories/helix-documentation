@@ -10,6 +10,8 @@ Welcome to the documentation for [HELIX](https://helixgame.com/), the platform t
 
 ## About HELIX
 
+HELIX is an open-world multiplayer sandbox game. As a developer, you can create your own games and virtual worlds using our extensive scripting API and creation tools.
+
 - **Built For Creators, By Creators** - We see you. We see your ingenuity, your creativity, as you modify games in beautiful, frustrating ways, fighting the very systems you rely on. *HELIX is different.* Time to know what it feels like to be empowered alongside a community of creators.
 
 - **The Power of Unreal** - HELIX is intentionally built on top of the well-loved Unreal 5 game engine, allowing for unparalleled graphical fidelity and customization. Our import tools allow you to work on whatever complexity layer you like - this is creation without limits!

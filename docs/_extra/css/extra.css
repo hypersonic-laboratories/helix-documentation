@@ -141,6 +141,13 @@ https://github.com/squidfunk/mkdocs-material/blob/master/src/templates/assets/st
     background-color: var(--helix-color-gray-dark);
   }
 
+  /* Mobile specific */
+  @media screen and (max-width: 76.234375em) {
+    .md-nav--primary .md-nav__title[for=__drawer] {
+      background-color: var(--helix-color-gray-dark);
+    }
+  }
+
   /* Header tabs */
   .md-tabs {
     background-color: transparent;
@@ -294,6 +301,11 @@ ToDo: Make hover show nicely
   color: var(--helix-color-gray);
 }
 
+/* Toc also brighter */
+.md-nav__title {
+  color: var(--helix-color-gray);
+}
+
 /* Make sidebar headers more visible */
 .md-nav__link[id^="__nav_"][id$="_label"] {
   color: var(
@@ -302,7 +314,7 @@ ToDo: Make hover show nicely
 }
 
 /* Force GitHub link to not display */
-.md-header__source {
+.md-header__source, .md-nav__source {
   display: none;
 }
 

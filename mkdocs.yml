@@ -1,5 +1,5 @@
 # Project information
-site_name: HELIX Documentation
+site_name: Documentation
 site_description: API Documentation & Tutorials for the HELIX Platform.
 site_author: Hypersonic Laboratories
 
@@ -115,7 +115,7 @@ theme:
     text: Inter
     code: JetBrains Mono
   favicon: _images/favicon.ico
-  logo: _images/logo.png
+  logo: _images/logo2.svg
   icon:
     repo: fontawesome/brands/github
   palette:
