@@ -1,0 +1,35 @@
+nav:
+  - Getting Started:
+    - getting_started/welcome.md
+    - Start Here:
+      - getting_started/install.md
+      - getting_started/creatorTools.md
+      - getting_started/help.md
+      - getting_started/firstGame.md
+    - Coming From Other Platforms:
+      - getting_started/comingGmod.md
+      - getting_started/comingGTA.md
+    - Discipline Hubs:
+      - getting_started/scripters.md
+      - getting_started/modelers.md
+      - getting_started/mappers.md
+      - getting_started/animators.md
+      - getting_started/serverOwners.md
+  - Tutorials:
+    - tutorials/tutorialHome.md
+    - Tutorials:
+      - tutorials/introLua.md
+      - tutorials/serverClient.md
+      - tutorials/qbcore.md
+      - tutorials/darkrp.md
+    - References:
+      - tutorials/luaStyleGuide.md
+      - tutorials/betterPractices.md
+      - tutorials/referenceImports/packages-guide.md
+      - flat | tutorials/referenceImports/*.md
+    - Examples:
+      - tutorials/doors.md
+      - ... | flat | tutorials/exampleImports/*.md
+  - API:
+    - api/apiHome.md
+    - api/apiDetails.md

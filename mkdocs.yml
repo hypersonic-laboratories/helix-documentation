@@ -1,5 +1,5 @@
 # Project information
-site_name: HELIX Documentation
+site_name: Documentation
 site_description: API Documentation & Tutorials for the HELIX Platform.
 site_author: Hypersonic Laboratories
 
@@ -18,34 +18,64 @@ nav:
   - Getting Started:
     - getting_started/welcome.md
     - Start Here:
-      - Install: getting_started/install.md
-      - Intro To Studio: getting_started/introStudio.md
-      - Getting Help: getting_started/help.md
-      - Making Your First Game: getting_started/firstGame.md
+      - getting_started/install.md
+      - getting_started/creatorTools.md
+      - getting_started/help.md
+      - getting_started/firstGame.md
     - Coming From Other Platforms:
-      - GMod: getting_started/comingGmod.md
-      - GTA/FiveM: getting_started/comingGTA.md
-    - Advice For Each Discipline:
-      - Modelers: getting_started/modelers.md
-      - Mappers: getting_started/mappers.md
-      - Animators: getting_started/animators.md
-      - Scripters: getting_started/scripters.md
-      - Server Owners: getting_started/serverOwners.md
+      # - getting_started/comingGmod.md
+      - getting_started/comingGTA.md
+    - Discipline Hubs:
+      - getting_started/scripters.md
+      - getting_started/modelers.md
+      # - getting_started/mappers.md
+      # - getting_started/animators.md
+      - getting_started/serverOwners.md
   - Tutorials:
     - tutorials/tutorialHome.md
-    - Tutorials:
-      - Intro To Lua: tutorials/introLua.md
-      - Server/Client: tutorials/serverClient.md
-      - QBCore Framework: tutorials/qbcore.md
-      - DarkRP Framework: tutorials/darkrp.md
-    - References:
-      - Lua Style Guide: tutorials/luaStyleGuide.md
-      - Better Practices: tutorials/betterPractices.md
-    - Examples:
-      - Doors: tutorials/doors.md
+    - General Tutorials:
+      # - tutorials/serverClient.md
+      - ... | flat | tutorials/tutorialImports/*.md
+      - ... | flat | tutorials/tutorialImports/creating-assets/*.md
+      - World Creation:
+        - ... | flat | tutorials/tutorialImports/world-creation/*.md
+      - Character:
+        - ... | flat | tutorials/tutorialImports/creating-assets/characters/*.md
+      - HSimpleVehicle:
+        - ... | flat | tutorials/tutorialImports/creating-assets/HSimpleVehicle/*.md
+    - Reference:
+      # - tutorials/betterPractices.md
+      - ... | flat | tutorials/referenceImports/*.md
+      - Servers:
+        - ... | flat | tutorials/referenceImports/server-manual/*.md
+      - Default Assets:
+        - ... | flat | tutorials/referenceImports/default-asset-pack/*.md
+  - Scripting:
+    - scripting/scriptingHome.md
+    - scripting/introLua.md
+    - scripting/luaStyleGuide.md
+    - scripting/qbcore.md
+    - Core Concepts:
+      - ... | flat | scripting/coreConceptsImports/*.md
+    - Code Examples:
+      - tutorials/doors.md
+      - ... | flat | tutorials/exampleImports/*.md
   - API:
     - api/apiHome.md
-    - API Details: api/apiDetails.md
+    - Glossary:
+      - ... | flat | api/apiImport/glossary/*.md
+    - Classes:
+      - Base Classes:
+        - ... | flat | api/apiImport/classes/base-classes/*.md
+      - Static Classes:
+        - ... | flat | api/apiImport/static-classes/*.md
+      - Utility Classes:
+        - ... | flat | api/apiImport/utility-classes/*.md
+      - All Other Classes:
+        - ... | flat | api/apiImport/classes/*.md
+    - Structs:
+      - ... | flat | api/apiImport/structs/*.md
+    # - api/apiDetails.md
 
 
 # Extra styling
@@ -82,14 +112,14 @@ theme:
   custom_dir: _overrides
   language: en
   font:
-    text: Roboto
+    text: Inter
     code: JetBrains Mono
   favicon: _images/favicon.ico
-  logo: _images/logo.png
+  logo: _images/logo2.svg
   icon:
     repo: fontawesome/brands/github
   palette:
-    scheme: slate #toggle between 'slate' (default dark) and 'helix' (custom)
+    scheme: slate-helix #toggle between 'slate' (default dark) and 'helix' (custom) and 'helix-slate' (custom, less dark)
   features:
     # https://squidfunk.github.io/mkdocs-material/setup/adding-a-git-repository/#code-actions
     - content.action.edit #Also adds comment issue button, via _overrides/partials/actions.html
@@ -123,6 +153,12 @@ theme:
   #TODO: don't include MkDocs' JS?
 
 extra:
+  status:
+    placeholder: Placeholder (Mostly Empty)
+    wip: Work In Progress
+    change: Subject To Change
+    new: New Content!
+    deprecated: Deprecated
   analytics:
     provider: google
     property: !ENV GOOGLE_ANALYTICS_KEY #TODO
@@ -138,8 +174,8 @@ extra:
           name: This page could be improved
           data: 0
           note: >-
-            Thanks for your feedback! Help us improve this page by
-            using our <a href="https://https://github.com/hypersonic-laboratories/helix-documentation/issues/new" target="_blank" rel="noopener">feedback form</a>.
+            Thanks for your feedback! Help us improve this page by using our
+            using our <a href="https://github.com/hypersonic-laboratories/helix-documentation/issues/new" target="_blank" rel="noopener">feedback form</a>.
   consent:
     title: Cookie Consent
     description: >-
@@ -185,7 +221,8 @@ markdown_extensions:
       slugify: !!python/object/apply:pymdownx.slugs.slugify #if yaml syntax errors: safe to ignore
         kwds:
           case: lower
-      anchorlink: true
+      anchorlink: false
+      permalink: "#"
   - tables
 
   # https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown-extensions/
@@ -200,7 +237,8 @@ markdown_extensions:
         - question
         - warning
         - danger
-  - pymdownx.blocks.details #ignore yml errors
+  - pymdownx.details
+  # - pymdownx.blocks.details #not working
   - pymdownx.blocks.definition #ignore yml errors
   - pymdownx.blocks.tab:
       alternate_style: true
@@ -266,6 +304,14 @@ plugins:
 
   # https://github.com/timvink/mkdocs-git-revision-date-localized-plugin
   - git-revision-date-localized
+
+  # https://github.com/lukasgeiter/mkdocs-awesome-pages-plugin
+  - awesome-pages
+
+  # https://github.com/mkdocs/mkdocs-redirects
+  - redirects:
+      redirect_maps:
+        'index.md': 'getting_started/welcome.md'
 
   # https://github.com/orbikm/mkdocs-ezlinks-plugin
   # - ezlinks #disabled for now, was causing issues #ignore yml errors

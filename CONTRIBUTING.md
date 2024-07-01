@@ -61,9 +61,11 @@ Done via theme overrides
 - **Clean UX** emphasizing clarity and ease of use
 
 ### TODO 
-- [ ] Update all headers to be bold by default
-- [ ] Update headers in side/top nav to be more visible (e.g. bold/underline/higher contrast)
-- [ ] Remove GitHub link in header (can hide via css, or remove html segment via partials)
-- [ ] Always show underline for currently selected header nav tab
+- [x] Update all headers to be bold by default
+- [x] Update headers in side/top nav to be more visible (e.g. bold/underline/higher contrast)
+- [x] Always show underline for currently selected header nav tab
+- [x] Remove GitHub link in header (can hide via css, or remove html segment via partials)
 - [ ] General styling pass to better match something like: https://docs.coregames.com/getting_started/installing_core/ (open source/mit: https://github.com/ManticoreGamesInc/platform-documentation/tree/development)
-- [ ] Better code formatting (better syntax coloring, line highlights, wrapping)
+    - [ ] Emulate higher contrast bg/text color/coloring matching company theme
+    - [ ] Add key buttons in header
+- [ ] Advanced code formatting (better syntax coloring, line highlights, wrapping - see this to start: https://squidfunk.github.io/mkdocs-material/reference/code-blocks/)
