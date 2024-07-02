@@ -1,10 +1,8 @@
 ---
-contentType: overview
-id: tutorialsHome
-title: Home
-name: Tutorials & Examples Home
+icon: material/school
 status: placeholder
 ---
+
 
 # Tutorials & Examples
 

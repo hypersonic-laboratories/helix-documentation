@@ -15,9 +15,8 @@ copyright: "&copy; 2024 HELIX&trade; is a trademark of Hypersonic Labs"
 
 ###------------------------------If you add or remove a page, you must update it here!!!-------------------------------------------------###
 nav:
-  - Getting Started:
+  - Getting Started: 
     - getting_started/index.md
-    - getting_started/welcome.md
     - Start Here:
       - getting_started/install.md
       - getting_started/creatorTools.md
@@ -33,7 +32,7 @@ nav:
       # - getting_started/animators.md
       - getting_started/serverOwners.md
   - Tutorials:
-    - tutorials/tutorialHome.md
+    - tutorials/index.md
     - General Tutorials:
       # - tutorials/serverClient.md
       - ... | flat | tutorials/tutorialImports/*.md
@@ -52,17 +51,18 @@ nav:
       - Default Assets:
         - ... | flat | tutorials/referenceImports/default-asset-pack/*.md
   - Scripting:
-    - scripting/scriptingHome.md
-    - scripting/introLua.md
-    - scripting/luaStyleGuide.md
-    - scripting/qbcore.md
+    - scripting/index.md
+    - Key References:
+      - scripting/introLua.md
+      - scripting/luaStyleGuide.md
+      - scripting/qbcore.md
     - Core Concepts:
       - ... | flat | scripting/coreConceptsImports/*.md
     - Code Examples:
       - tutorials/doors.md
       - ... | flat | tutorials/exampleImports/*.md
   - API:
-    - api/apiHome.md
+    - api/index.md
     - Glossary:
       - ... | flat | api/apiImport/glossary/*.md
     - Classes:
@@ -76,7 +76,6 @@ nav:
         - ... | flat | api/apiImport/classes/*.md
     - Structs:
       - ... | flat | api/apiImport/structs/*.md
-    # - api/apiDetails.md
 
 
 # Extra styling
@@ -312,8 +311,7 @@ plugins:
   # https://github.com/mkdocs/mkdocs-redirects
   - redirects:
       redirect_maps:
-        'index.md': 'getting_started/welcome.md'
-        'getting_started/index.md': 'getting_started/welcome.md'
+        'index.md': 'getting_started/index.md'
 
   # https://github.com/orbikm/mkdocs-ezlinks-plugin
   # - ezlinks #disabled for now, was causing issues #ignore yml errors

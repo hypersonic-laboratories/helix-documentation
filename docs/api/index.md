@@ -1,8 +1,5 @@
 ---
-contentType: overview
-id: apiHome
-title: Home
-name: API Home
+icon: material/code-json
 status: placeholder
 ---
 

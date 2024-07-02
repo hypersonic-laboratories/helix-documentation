@@ -1,8 +1,5 @@
 ---
-contentType: overview
-id: scriptingHome
-title: Home
-name: Scripting Home
+icon: octicons/file-code-24
 status: wip
 ---
 
@@ -12,7 +9,7 @@ status: wip
 
 1. Start VS Code from the top center of [Studio](../getting_started/creatorTools.md) :material-earth: icon
 2. install `vscode-lua` and `vscode-helix` for lua language support and Helix API autocomplete
-3. Get coding with our [API reference](../api/apiHome.md)
+3. Get coding with our [API reference](../api/index.md)
 
 ### Alternate Workflows
 
