@@ -132,6 +132,11 @@ https://github.com/squidfunk/mkdocs-material/blob/master/src/templates/assets/st
     background-color: var(--helix-not-quite-black);
     border-bottom: 3px solid var(--helix-color-gray-dark);
   }
+  
+  /* To play with: align with border bottom from tabs */
+  /* .md-tabs {
+    border-bottom: 0.2rem solid var(--helix-color-red);
+  } */
 
   .md-search__icon.md-icon {
     color: var(--helix-color-mint);
@@ -150,7 +155,7 @@ https://github.com/squidfunk/mkdocs-material/blob/master/src/templates/assets/st
 
   /* Edit/Comment buttons brighter */
   .md-content__button.md-icon {
-    color: var(--helix-color-mint);
+    color: var(--helix-color-mint-hover);
   }
 
   /* Header tabs */
@@ -158,15 +163,20 @@ https://github.com/squidfunk/mkdocs-material/blob/master/src/templates/assets/st
     background-color: transparent;
   }
 
-  /* Not active one automatically darker, need to investigate */
-  /* .md-tabs__link {
-    color: var(--helix-color-gray-light) !important; Needs override
-  } */
+  /* Brighter non-active tabs */
+  .md-tabs__link {
+    opacity: .85;
+  }
 
+  /* Set active/hovered tab links to be mint */
+  .md-tabs__item--active {
+    color: var(--helix-color-mint);
+  }
   .md-tabs__link:is(:focus,:hover) {
     color: var(--helix-color-mint);
   }
 
+  /* Add underline to active tab */
   li.md-tabs__item.md-tabs__item--active {
     border-bottom: 0.2rem solid var(--helix-color-mint) !important; /* Needs override */
   }
