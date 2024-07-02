@@ -316,6 +316,12 @@ ToDo: Make hover show nicely
   color: var(--helix-color-gray);
 }
 
+/* Increase space inbetween tabs */
+.md-tabs__item {
+  padding-left: .9rem;
+  padding-right: .9rem;
+}
+
 /* Toc also brighter */
 .md-nav__title {
   color: var(--helix-color-gray);
