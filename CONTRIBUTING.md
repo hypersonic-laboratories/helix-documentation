@@ -45,6 +45,7 @@ Currently hosting via Cloudflare Pages - [private link](https://dash.cloudflare.
 - Use tabs, not spaces, for code. Use placeholders as hyphenated words in angle brackets (e.g. `<your-root-directory>`)
 - File names, directory names, and paths: code formatted.
     - Make sure you match brand names precisely in text. For example: "HELIX", not "Helix".
+- Links should include `{.external-link}` after the link if they link to a different site.
 
 ### TODO
 - [ ] Implement linters like [Vale](https://docs.errata.ai/) and [Lexi](https://github.com/Rebilly/lexi/tree/main)
