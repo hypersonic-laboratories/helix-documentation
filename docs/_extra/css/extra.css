@@ -148,6 +148,11 @@ https://github.com/squidfunk/mkdocs-material/blob/master/src/templates/assets/st
     }
   }
 
+  /* Edit/Comment buttons brighter */
+  .md-content__button.md-icon {
+    color: var(--helix-color-mint);
+  }
+
   /* Header tabs */
   .md-tabs {
     background-color: transparent;
