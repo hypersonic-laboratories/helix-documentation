@@ -1,10 +1,8 @@
 # Thank You For Helping!
 
 ## Architecture
-- The docs are built on [MkDocs](https://www.mkdocs.org/) with the [material theme](https://squidfunk.github.io/mkdocs-material/)
-    - They both, unsuprisingly, have good documentation. Reference this often if stuck, starting with Material.
-        - [Material](https://squidfunk.github.io/mkdocs-material/getting-started/)
-        - [Mkdocs](https://www.mkdocs.org/getting-started/)
+- The docs are built on [MkDocs](https://www.mkdocs.org/) with the [material theme](https://squidfunk.github.io/mkdocs-material/), with a number of plugins/extensions
+    - Their own docs: [Material](https://squidfunk.github.io/mkdocs-material/getting-started/) | [Mkdocs](https://www.mkdocs.org/getting-started/)
 
 ## Developer Setup
 
@@ -23,10 +21,7 @@
 
 ### Hosting
 
-Currently hosting via Cloudflare Pages - [private link](https://dash.cloudflare.com/d6a088d02c11f99940fa2e342f1893d8/pages/view/helixdocs)
-
-### TODO
-- [ ] Make repo public (when closer to closed alpha)
+Currently built and hosted via Cloudflare Pages - [private link](https://dash.cloudflare.com/d6a088d02c11f99940fa2e342f1893d8/pages/view/helix-documentation)
 
 # Contributing
 
@@ -47,26 +42,15 @@ Currently hosting via Cloudflare Pages - [private link](https://dash.cloudflare.
     - Make sure you match brand names precisely in text. For example: "HELIX", not "Helix".
 - Links should include `{.external-link}` after the link if they link to a different site.
 
-### TODO
-- [ ] Implement linters like [Vale](https://docs.errata.ai/) and [Lexi](https://github.com/Rebilly/lexi/tree/main)
-
 ## Styling
 
 Done via theme overrides 
-- Essentially this means we use `html` files in _overrides and `css/js` files in docs/_extras.
-    - Documentation: [[mkdocs basics](https://www.mkdocs.org/user-guide/customizing-your-theme/) | [material specifics](https://squidfunk.github.io/mkdocs-material/customization/)
-    - Currently trying to avoid larger changes if possible, but we can fork/bundle a custom variant of the theme if need be.
+- Essentially this means we use `html` files in `/_overrides` and `css/js` files in `/docs/_extras`.
+    - Overrides documentation: [mkdocs basics](https://www.mkdocs.org/user-guide/customizing-your-theme/) | [material specifics](https://squidfunk.github.io/mkdocs-material/customization/)
 
 ### Goals
 - **Consistent with HELIX branding** with typeface, palette, etc.
 - **Clean UX** emphasizing clarity and ease of use
 
-### TODO 
-- [x] Update all headers to be bold by default
-- [x] Update headers in side/top nav to be more visible (e.g. bold/underline/higher contrast)
-- [x] Always show underline for currently selected header nav tab
-- [x] Remove GitHub link in header (can hide via css, or remove html segment via partials)
-- [ ] General styling pass to better match something like: https://docs.coregames.com/getting_started/installing_core/ (open source/mit: https://github.com/ManticoreGamesInc/platform-documentation/tree/development)
-    - [ ] Emulate higher contrast bg/text color/coloring matching company theme
-    - [ ] Add key buttons in header
-- [ ] Advanced code formatting (better syntax coloring, line highlights, wrapping - see this to start: https://squidfunk.github.io/mkdocs-material/reference/code-blocks/)
+### Keep It Clean
+- Use existing color variable for css, don't `!override` unless necessary, etc.
