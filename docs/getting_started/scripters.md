@@ -14,13 +14,13 @@ If you want to jump straight into code, you've come to the right spot!
 
     Concept overviews, code examples, and useful tips
 
-    [:octicons-command-palette-16: Scripting Home](../scripting/scriptingHome.md)
+    [:octicons-command-palette-16: Scripting Home](../scripting/index.md)
 
 -   __Browse the API__
 
     Classes, structures, and even a glossary
 
-    [:octicons-file-code-24: API Home](../api/apiHome.md)
+    [:octicons-file-code-24: API Home](../api/index.md)
 
 -   __Better Practices__
 
@@ -30,6 +30,6 @@ If you want to jump straight into code, you've come to the right spot!
 
     [:material-file-document-check-outline: Studio & Launcher](creatorTools.md)
     
-    [:octicons-command-palette-16: IDE Tooling](../scripting/scriptingHome.md)
+    [:octicons-command-palette-16: IDE Tooling](../scripting/index.md)
 
 </div>

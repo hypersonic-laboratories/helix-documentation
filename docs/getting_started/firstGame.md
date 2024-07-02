@@ -48,7 +48,7 @@ We're going to create a fully functional roleplaying map, using qb-core and an u
 
     [:octicons-command-palette-16: Scripters Hub](scripters.md)
 
-    [:octicons-file-code-24: View API](../api/apiHome.md)
+    [:octicons-file-code-24: View API](../api/index.md)
 
     [:material-file-document-outline: QB-Core Docs](../scripting/qbcore.md)
 
@@ -56,6 +56,6 @@ We're going to create a fully functional roleplaying map, using qb-core and an u
 
     Either step-by-step or through examples.
 
-    [:material-file-document-check-outline: See Tutorials](../tutorials/tutorialHome.md)
+    [:material-file-document-check-outline: See Tutorials](../tutorials/index.md)
     
 </div>

@@ -73,13 +73,13 @@ Note that **HELIX's Launcher** also contains some key tools to ease your develop
 
     See how it's done directly, either step-by-step or through examples.
 
-    [:material-file-document-check-outline: See Tutorials](../tutorials/tutorialHome.md)
+    [:material-file-document-check-outline: See Tutorials](../tutorials/index.md)
 
 -   __Start Coding__
 
     Start VS Code from Studio, and get cracking!
 
-    [:octicons-file-code-24: View API](../api/apiHome.md)
+    [:octicons-file-code-24: View API](../api/index.md)
 
-    [:octicons-command-palette-16: Scripting Home](../scripting/scriptingHome.md)
+    [:octicons-command-palette-16: Scripting Home](../scripting/index.md)
 </div>
