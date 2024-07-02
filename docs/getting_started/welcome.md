@@ -1,5 +1,6 @@
 ---
 title: Welcome
+tag: welcomeTab
 ---
 
 # Welcome to HELIX

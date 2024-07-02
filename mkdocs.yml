@@ -16,6 +16,7 @@ copyright: "&copy; 2024 HELIX&trade; is a trademark of Hypersonic Labs"
 ###------------------------------If you add or remove a page, you must update it here!!!-------------------------------------------------###
 nav:
   - Getting Started:
+    - getting_started/index.md
     - getting_started/welcome.md
     - Start Here:
       - getting_started/install.md
@@ -312,6 +313,7 @@ plugins:
   - redirects:
       redirect_maps:
         'index.md': 'getting_started/welcome.md'
+        'getting_started/index.md': 'getting_started/welcome.md'
 
   # https://github.com/orbikm/mkdocs-ezlinks-plugin
   # - ezlinks #disabled for now, was causing issues #ignore yml errors
