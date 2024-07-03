@@ -130,13 +130,33 @@ https://github.com/squidfunk/mkdocs-material/blob/master/src/templates/assets/st
     box-shadow: none;
     backdrop-filter: saturate(1.8) blur(20px);
     background-color: var(--helix-not-quite-black);
-    border-bottom: 3px solid var(--helix-color-gray-dark);
   }
-  
-  /* To play with: align with border bottom from tabs */
-  /* .md-tabs {
-    border-bottom: 0.2rem solid var(--helix-color-red);
-  } */
+
+  /* Add header nav bar underline */
+  .md-tabs::before {
+    content: '';
+    position: absolute;
+    bottom: 0; /* Align with the bottom of the md_tabs__item */
+    left: 0;
+    width: 100%;
+    height: 0.2rem; /* Adjust the height as needed */
+    background-color: var(--helix-color-gray-dark);
+    z-index: 0; /* Ensure it appears below other content if necessary */
+  }
+
+  .md-tabs {
+    position: relative;
+    border: none; /* Remove border if any */
+    background-color: transparent; /* Ensure no background color obscures items */
+  }
+
+  /* Add underline to active tab */
+  li.md-tabs__item.md-tabs__item--active {
+    position: relative;
+    border-bottom: 0.2rem solid var(--helix-color-mint) !important; /* Needs override */
+    z-index: 1; /* in front of .md_tabs::before line */
+    background-color: transparent; /* Ensure the background is set if needed */
+  }
 
   .md-search__icon.md-icon {
     color: var(--helix-color-mint);
@@ -198,11 +218,6 @@ https://github.com/squidfunk/mkdocs-material/blob/master/src/templates/assets/st
   }
   .md-tabs__link:is(:focus,:hover) {
     color: var(--helix-color-mint);
-  }
-
-  /* Add underline to active tab */
-  li.md-tabs__item.md-tabs__item--active {
-    border-bottom: 0.2rem solid var(--helix-color-mint) !important; /* Needs override */
   }
 
   /* Grid cards */
