@@ -1,4 +1,8 @@
-# Install
+---
+status: change
+---
+
+# Install Helix
 
 ## Make a HELIX Account
 
@@ -22,7 +26,7 @@ To get started, you will need an account.
 3. Once the download finishes, extract and run `HELIXlauncher.exe`
 4. In the `Create` tab, click on the "Install Studio" button
 
-### Install Unreal Engine 5
+### Install Unreal Engine 5 (subject to change)
 1. Download, install, and run the [Epic Games Store Launcher](https://store.epicgames.com/en-US/download)
 2. Navigate to the Unreal Engine tab on the left
 3. Install Unreal Engine 5.4.x (and mark the file location you saved it in)

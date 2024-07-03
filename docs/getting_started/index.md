@@ -5,13 +5,13 @@ icon: material/book-open-variant
 
 # Getting Started
 
-Welcome to the documentation for [HELIX](https://helixgame.com/){.external-link}, the platform that allows you to create the experience of your dreams.
+Welcome to the documentation for [HELIX](https://helixgame.com/){.external-link}, the platform that allows you to create the roleplaying experience of your dreams.
 
 ![Banner Image](../_images/getting_started/banner.png)
 
 ## About HELIX
 
-HELIX is an open-world multiplayer sandbox game. As a developer, you can create your own games and virtual worlds using our extensive scripting API and creation tools.
+HELIX is an open-world multiplayer sandbox game. As a developer, you can create your own games, roleplaying servers, and virtual worlds using our extensive scripting API and creation tools.
 
 - **Built For Creators, By Creators** - We see you. We see your ingenuity, your creativity, as you modify games in beautiful, frustrating ways, fighting the very systems you rely on. *HELIX is different.* Time to know what it feels like to be empowered alongside a community of creators.
 
@@ -39,7 +39,7 @@ HELIX is an open-world multiplayer sandbox game. As a developer, you can create 
 
     [:material-palette-outline: Modelers](modelers.md)
 
-    [:octicons-server-16: Server Owners](serverOwners.md)
+    [:octicons-server-16: RP Server Owners](rpServerOwners.md)
 
 -   __View tutorials and examples__
 

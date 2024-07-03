@@ -30,7 +30,7 @@ nav:
       - getting_started/modelers.md
       # - getting_started/mappers.md
       # - getting_started/animators.md
-      - getting_started/serverOwners.md
+      - getting_started/rpServerOwners.md
   - Tutorials:
     - tutorials/index.md
     - General Tutorials:

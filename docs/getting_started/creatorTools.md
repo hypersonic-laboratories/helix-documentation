@@ -67,7 +67,7 @@ Note that **HELIX's Launcher** also contains some key tools to ease your develop
 
     [:material-palette-outline: Modelers](modelers.md)
 
-    [:octicons-server-16: Server Owners](serverOwners.md)
+    [:octicons-server-16: RP Server Owners](rpServerOwners.md)
 
 -   __View tutorials and examples__
 
