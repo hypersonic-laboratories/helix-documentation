@@ -42,6 +42,13 @@ Currently built and hosted via Cloudflare Pages - [private link](https://dash.cl
     - Make sure you match brand names precisely in text. For example: "HELIX", not "Helix".
 - Links should include `{.external-link}` after the link if they link to a different site.
 
+### Common Eunms
+[Admonitions](https://squidfunk.github.io/mkdocs-material/reference/admonitions/?h=admoni#supported-types)
+- note, abstract, info, tip, success, question, warning, failure, danger, bug, example, quote
+
+[Page Statuses](mkdocs.yml)
+- placeholder, wip, change, new, deprecated, old
+
 ## Styling
 
 Done via theme overrides 
