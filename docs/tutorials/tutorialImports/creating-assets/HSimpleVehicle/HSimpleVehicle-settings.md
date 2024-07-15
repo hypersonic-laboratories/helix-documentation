@@ -4,7 +4,11 @@ description: HSimpleVehicle configuration.
 sidebar_position: 2
 tags: [HSimpleVehicle]
 keywords: [assets, studio, HSimpleVehicle, unreal]
+status: old
 ---
+
+--8<-- "old.md"
+
 This page covers the controls to drive the vehicle and settings to customize the HSimpleVehicle experience.
 
 ## Vehicle Controls

@@ -4,7 +4,10 @@ description: All you need to know about Packages
 sidebar_position: 0
 tags: [scripting, packages]
 keywords: [packages, scripting, lua]
+status: old
 ---
+
+--8<-- "old.md"
 
 
 **Packages** are pieces/components of your server which will execute Lua scripts to interact to the game.

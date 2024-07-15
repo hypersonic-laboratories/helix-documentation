@@ -3,7 +3,10 @@ title: Using External Datastores
 description: How to keep information through the game.
 sidebar_position: 8
 tags: []
+status: old
 ---
+
+--8<-- "old.md"
 
 This document contains information to setup a database in another server and link it back to HELIX Worlds.
 

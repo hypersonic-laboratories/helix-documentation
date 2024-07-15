@@ -2,7 +2,10 @@
 title: Name Tags
 description: How to add Name Tags to Characters
 tags: [tutorial-example, scripting]
+status: old
 ---
+
+--8<-- "old.md"
 
 
 How to add Name Tags to Characters.

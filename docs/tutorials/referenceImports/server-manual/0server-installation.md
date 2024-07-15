@@ -3,11 +3,14 @@ title: Server Installation
 description: Creating servers in HELIX is very simple and straightforward, just a few steps and you have your server up and ready!
 sidebar_position: 1
 tags: [hosting]
+status: old
 ---
 
+--8<-- "old.md"
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
+
+<!-- import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem'; -->
 
 Creating servers in HELIX is very simple and straightforward, just a few steps and you have your server up and ready!
 

@@ -4,7 +4,11 @@ description: How to do a custom animation
 tags: [characters, customization]
 keywords: [character, mannequin, unreal]
 sidebar_position: 2
+status: old
 ---
+
+--8<-- "old.md"
+
 Custom animations 
 
 Our current character systems work by default with the UE5 Metahuman character skeleton. Any animation made for standard UE5 Manny or UE5 Metahuman skeleton should work out of the bag on our main character.

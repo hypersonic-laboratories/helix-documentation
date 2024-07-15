@@ -2,7 +2,10 @@
 title: Persistent Data
 description: How to store and retrieve persistent data from disk using the built-in system
 tags: [scripting]
+status: old
 ---
+
+--8<-- "old.md"
 
 
 import { Structs, BasicType } from '@site/docs/components/_nanos.mdx';

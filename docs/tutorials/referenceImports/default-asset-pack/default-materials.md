@@ -3,7 +3,10 @@ title: Default Materials
 description: Default Materials and it's Parameters
 tags: [assets]
 keywords: [assets, materials, built-in, default]
+status: old
 ---
+
+--8<-- "old.md"
 
 
 Default Materials and it's Parameters.

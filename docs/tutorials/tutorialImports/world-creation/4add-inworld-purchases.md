@@ -3,7 +3,10 @@ title: Add In-World Purchases
 description: Adding purchases.
 sidebar_position: 5
 tags: []
+status: old
 ---
+
+--8<-- "old.md"
 
 # In-World Purchases Video
 

@@ -3,7 +3,10 @@ title: Default Weapons
 description: Default HELIX Weapons and it's Parameters
 tags: [assets]
 keywords: [assets, weapons, built-in, default]
+status: old
 ---
+
+--8<-- "old.md"
 
 
 Default HELIX Weapons and it's Parameters.

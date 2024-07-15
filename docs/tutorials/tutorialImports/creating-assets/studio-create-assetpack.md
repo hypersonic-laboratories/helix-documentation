@@ -4,9 +4,10 @@ description: Learn how to develop an asset pack for Studio.
 sidebar_position: 2
 tags: [assets]
 keywords: [assets, Studio, import, unreal]
+status: old
 ---
 
-# Developing Your Own Asset Pack
+--8<-- "old.md"
 
 /// tip
 

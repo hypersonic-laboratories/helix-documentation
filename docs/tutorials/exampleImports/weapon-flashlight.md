@@ -2,7 +2,10 @@
 title: Weapon Flashlight
 description: This sample code attaches a Light to a Weapon to make a Flashlight attachment.
 tags: [tutorial-example, scripting]
+status: old
 ---
+
+--8<-- "old.md"
 
 
 This sample code attaches a Light to a Weapon to make a Flashlight attachment.

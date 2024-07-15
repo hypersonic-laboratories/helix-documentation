@@ -4,7 +4,10 @@ description: How AI works in HELIX
 sidebar_position: 6
 tags: [scripting]
 keywords: [scripting, AI]
+status: old
 ---
+
+--8<-- "old.md"
 
 
 How AI works in HELIX

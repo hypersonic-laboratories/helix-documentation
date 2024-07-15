@@ -3,7 +3,10 @@ title: Creating An RP Server
 description: Download RP-Core, setup package, custom map and persistent datastores.
 sidebar_position: 7
 tags: []
+status: old
 ---
+
+--8<-- "old.md"
 
 ## Watch the video to learn how to create an RP server in HELIX. 
 

@@ -19,11 +19,11 @@ Note that all pages beyone here were written for previous versions of Helix, and
 
 - __Tutorial Quickstart__
 
-    [:material-import: Importing Maps](tutorialImports/importing-custom-map.md)
-
     [:material-draw: Creating Maps](tutorialImports/world-creation/1create-first-world.md)
 
     [:material-human-edit: Custom Characters](tutorialImports/creating-assets/characters/0create-custom-character.md)
+
+    [:material-import: Importing Unreal Maps](tutorialImports/importing-custom-map.md)
 
 - __Reference Quickstart__
 

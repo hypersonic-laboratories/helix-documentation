@@ -10,4 +10,4 @@ status: placeholder
 - If you have thoughts, please let me know via the feedback button (top right!)
 ///
 
-For now, check out the [old docs site](https://docs.helixgame.com/docs/scripting-reference/glossary/basic-types) for API documentation
+For now, **check out the [old docs site](https://docs.helixgame.com/docs/scripting-reference/glossary/basic-types)** for API documentation

@@ -3,7 +3,10 @@ title:  Initial Setup
 description: Basic configuration to add the code and test it.
 tags: [tutorial-example, scripting, ui]
 sidebar_position: 1
+status: old
 ---
+
+--8<-- "old.md"
 
 This page shows the basic configuration to have in order to test the code shown in the examples.
 

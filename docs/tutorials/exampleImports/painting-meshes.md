@@ -2,7 +2,10 @@
 title: Painting Meshes
 description: How to use the new Material customization methods available to use
 tags: [tutorial-example, scripting, assets]
+status: old
 ---
+
+--8<-- "old.md"
 
 
 How to use the new Material customization methods available to use.

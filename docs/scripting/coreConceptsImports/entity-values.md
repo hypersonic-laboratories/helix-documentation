@@ -3,7 +3,10 @@ title: Entity Values
 description: How to store data in Entities accessible from anywhere
 sidebar_position: 4
 tags: [scripting]
+status: old
 ---
+
+--8<-- "old.md"
 
 
 How to store data in Entities accessible from anywhere

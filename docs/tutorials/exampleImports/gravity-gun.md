@@ -2,7 +2,10 @@
 title: Gravity Gun
 description: How to create a simple Gravity Gun to move Props around
 tags: [tutorial-example, scripting]
+status: old
 ---
+
+--8<-- "old.md"
 
 
 How to create a simple Gravity Gun to move Props around.

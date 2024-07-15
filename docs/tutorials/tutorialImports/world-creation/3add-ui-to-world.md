@@ -3,7 +3,10 @@ title: Add UI To Your World
 description: Adding UI to world.
 sidebar_position: 4
 tags: []
+status: old
 ---
+
+--8<-- "old.md"
 
 
 > 💡 This page details how to optimally add UIs onto your game with key points, techniques and live examples.

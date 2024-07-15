@@ -3,7 +3,10 @@ title: Add Assets To Your World
 description: Adding assets.
 sidebar_position: 2
 tags: []
+status: old
 ---
+
+--8<-- "old.md"
 
 ## Adding an Asset from HELIX Creator Exchange
 

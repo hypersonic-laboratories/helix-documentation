@@ -3,7 +3,10 @@ title: Authority Concepts
 description: All you need to know about Authority & Network Authority concepts.
 sidebar_position: 2
 tags: [scripting]
+status: old
 ---
+
+--8<-- "old.md"
 
 
 All you need to know about Authority & Network Authority concepts.

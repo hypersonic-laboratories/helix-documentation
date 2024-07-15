@@ -3,7 +3,10 @@ title: Packages Communication
 description: All you need to know to communicate between different Packages
 sidebar_position: 3
 tags: [scripting]
+status: old
 ---
+
+--8<-- "old.md"
 
 
 All you need to know to communicate between different Packages

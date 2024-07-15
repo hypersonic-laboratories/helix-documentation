@@ -3,7 +3,10 @@ title: Test Multiplayer Functionality
 description: Information about multiplayer.
 sidebar_position: 6
 tags: []
+status: old
 ---
+
+--8<-- "old.md"
 
 # Test multiplayer functionality
 

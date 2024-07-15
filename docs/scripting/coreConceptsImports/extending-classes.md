@@ -3,7 +3,10 @@ title: Extending Classes
 description: How to extend HELIX Classes
 sidebar_position: 8
 tags: [scripting]
+status: old
 ---
+
+--8<-- "old.md"
 
 
 How to extend HELIX Classes, HELIX provides a built-in way of extending and customizing the Classes
