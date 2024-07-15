@@ -1,10 +1,14 @@
 ---
 title: Importing Maps
+status: old
 description: How to import maps from Unreal to HELIX
 sidebar_position: 4
 tags: [assets]
 keywords: [map, level, unreal]
 ---
+
+--8<-- "old.md"
+
 Import custom maps from the marketplace.
 
 ## Create a new project with HELIX studio.
