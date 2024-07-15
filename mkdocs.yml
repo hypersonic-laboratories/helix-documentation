@@ -158,6 +158,7 @@ extra:
     wip: Work In Progress
     change: Subject To Change
     new: New Content!
+    old: Old Page
     deprecated: Deprecated
   analytics:
     provider: google
@@ -271,6 +272,8 @@ markdown_extensions:
   - pymdownx.smartsymbols
   - pymdownx.snippets: #TODO: configure
       check_paths: true
+      base_path:
+        - docs/_snippets
   - pymdownx.superfences
   - pymdownx.tasklist:
       custom_checkbox: true

@@ -400,8 +400,8 @@ Custom (svg -> base64):
 Note: New and Deprecated also exist, but not shown here 
 */
 .md-status--placeholder::after {
-  mask-image: var(--md-status);
-  -webkit-mask-image: var(--md-status);
+  mask-image: var(--md-status--new);
+  -webkit-mask-image: var(--md-status--new);
 }
 
 .md-status--wip::after {
@@ -412,6 +412,11 @@ Note: New and Deprecated also exist, but not shown here
 .md-status--change::after {
   mask-image: var(--md-status--change);
   -webkit-mask-image: var(--md-status--change);
+}
+
+.md-status--old::after {
+  mask-image: var(--md-status);
+  -webkit-mask-image: var(--md-status);
 }
 
 /* External link styling */
