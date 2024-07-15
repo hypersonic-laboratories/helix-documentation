@@ -8,8 +8,6 @@ status: old
 
 --8<-- "old.md"
 
-# Test multiplayer functionality
-
 
 > 💡 How to connect with several clients to test multiplayer functionality within your world.
 

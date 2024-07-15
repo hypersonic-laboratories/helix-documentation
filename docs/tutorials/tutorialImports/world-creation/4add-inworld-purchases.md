@@ -8,8 +8,6 @@ status: old
 
 --8<-- "old.md"
 
-# In-World Purchases Video
-
 There is video you can follow in the [video tutorials here](/getting-started/video-tutorials/05-our-currency.md)
 
 

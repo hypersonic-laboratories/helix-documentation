@@ -9,7 +9,7 @@ status: old
 
 --8<-- "old.md"
 
-Create items to use them with the HELIX character
+Create items for HELIX characters
 
 /// tip
 In order to follow this guide, please read and follow on [How to install HELIX Studio](/assets-modding/studio/setting-up-studio.md)
