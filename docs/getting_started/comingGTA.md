@@ -6,8 +6,9 @@ status: wip
 
 The purpose of this page is to let experienced FiveM game developers get started using the unique features of the HELIX platform.
 
-- For a general introduction to creating with HELIX, see [Creator Tools](creatorTools.md)
-- For a complete technical overview, see the [HELIX API Documentation](../api/index.md)
+- For a look into working with HELIX and the tools you'll use, see [Creator Tools](creatorTools.md)
+- For a quickstart example, try out [Your First Game](firstGame.md)
+- For an overview of scripting details, see [these links](scripters.md)
 
 ### Main Differences From FiveM
 
@@ -17,11 +18,12 @@ ToDo (Kakarot)
 
 | **Category**   | **FiveM**       | **HELIX**           |
 | -------------  | --------------- | ------------------ |
-| **Scripting**  | AddEventHandler      | Events.Subscribe          |
+| **Concepts**  | AddEventHandler      | Events.Subscribe          |
 |                | RegisterNetEvent         | Events.SubscribeRemote           |
 |                | TriggerEvent | Events.Call           |
 |                | TriggerServer/ClientEvent  | Events.CallRemote      |
-|                | `SetNuiFocus(enabe_input, enable_mouse)`      | `Input.SetInputEnabled(enable_input)` `Input.SetMouseEnabled(enable_mouse)` |
+| | |
+| **Examples**  | `SetNuiFocus(enabe_input, enable_mouse)`      | `Input.SetInputEnabled(enable_input)` `Input.SetMouseEnabled(enable_mouse)` |
 |                | ```SendNUIMessage({action = “togglePhone” data = not isOpen })``` | ```main_hud = WebUI("Phone", "file://ui/index.html") main_hud:CallEvent("togglePhone", not isOpen)```    |
 |                | ```window.addEventListener('message', function(event) { if (event.data.action === "togglePhone") {```     |  ```Events.Subscribe("togglePhone", function(bool) {```         |
 |                | ```SetTimeout(miliseconds, callback)```     |  ```Timer.SetTimeout(callback, milliseconds)```         |
@@ -37,4 +39,5 @@ ToDo (Kakarot)
 |                | `SetPlayerModel(ped, model)`     |  `ped:SetMesh(skeletal_mesh_asset)`         |
 |                | `FreezeEntityPosition(ped, bool)`     |  `ped:SetInputEnabled(bool) or Input.SetInputEnabled(bool)`         |
 |                | `GetVehiclePedIsIn(ped)`     |  `ped:GetVehicle()`         |
-| **Other Terms**  | Placeholder            | Placeholder                |
+| | |
+| **Other**      | Placeholder            | Placeholder                |
