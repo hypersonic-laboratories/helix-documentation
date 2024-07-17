@@ -44,6 +44,8 @@ nav:
       - HSimpleVehicle:
         - ... | flat | tutorials/tutorialImports/creating-assets/HSimpleVehicle/*.md
     - Reference:
+      - tutorials/vault.md
+      - tutorials/keyTerms.md
       # - tutorials/betterPractices.md
       - ... | flat | tutorials/referenceImports/*.md
       - Servers:
