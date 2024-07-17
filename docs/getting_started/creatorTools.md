@@ -9,7 +9,8 @@ status: change
 The Launcher and Studio workflow is relatively new, and more features are being added consitently. Expect more changes and improvements here soon!
 ///
 
-- HELIX Studio (**Studio**) is a collection of tools, in the form of a plugin, built on top on Unreal Engine 5.
+- HELIX Studio (**Studio**) is a UE5 plug-in for more advanced developers to import custom assets and develop highly sophisticated experiences. Unleash the full power of UE5 and create assets and worlds with the highest fidelity of graphics and gameplay.
+
 - In combination with the HELIX Launcher (**Launcher**), you will have all the tools you need to create fantastic roleplaying worlds and experiences.
 
 ## Studio
