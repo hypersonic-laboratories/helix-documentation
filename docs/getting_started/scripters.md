@@ -4,7 +4,7 @@ title: Scripters
 
 # Scripters
 
-If you want to jump straight into code, you've come to the right spot!
+Thanks for doing the hard work that makes everything functional and interesting! :computer:
 
 ### Useful Links
 
@@ -12,9 +12,9 @@ If you want to jump straight into code, you've come to the right spot!
 
 -   __Scripting Home__
 
-    Concept overviews, code examples, and useful tips
+    Concept overviews, code examples, and useful tips - start here if you're unsure!
 
-    [:octicons-command-palette-16: Scripting Home](../scripting/index.md)
+    [:material-skip-next-circle: Scripting Home](../scripting/index.md)
 
 -   __Browse the API__
 

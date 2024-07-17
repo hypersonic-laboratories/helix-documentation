@@ -123,6 +123,10 @@ https://github.com/squidfunk/mkdocs-material/blob/master/src/templates/assets/st
   /* Add hover color */
   --md-accent-fg-color: var(--helix-color-mint-hover);
 
+  /* Change cookie button color */
+  --md-primary-fg-color: var(--helix-color-mint);
+  --md-primary-bg-color: var(--helix-color-mint-hover);
+
   /* Custom Overrides */
 
   /* Header general */
@@ -421,8 +425,8 @@ Note: New and Deprecated also exist, but not shown here
 
 /* External link styling */
 
-a.external-link::after,
-a.external-link::after
+a.external::after,
+a.external::after
 {
   content: "";
   width: 11px;
@@ -434,6 +438,10 @@ a.external-link::after
   background-repeat: no-repeat;
   background-size: contain;
   display: inline-block;
+}
+
+.whiter {
+  color: var(--helix-color-gray);
 }
 
 /* Header button styling */

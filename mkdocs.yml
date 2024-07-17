@@ -27,10 +27,10 @@ nav:
       - getting_started/comingGTA.md
     - Hubs:
       - getting_started/scripters.md
-      - getting_started/modelers.md
+      - getting_started/rpServerOwners.md
+      - getting_started/artists.md
       # - getting_started/mappers.md
       # - getting_started/animators.md
-      - getting_started/rpServerOwners.md
   - Tutorials:
     - tutorials/index.md
     - General Tutorials:
@@ -118,6 +118,7 @@ theme:
   logo: _images/logo2.svg
   icon:
     repo: fontawesome/brands/github
+    annotation: material/plus-circle 
   palette:
     scheme: slate-helix #toggle between 'slate' (default dark) and 'helix' (custom) and 'helix-slate' (custom, less dark)
   features:
@@ -255,10 +256,7 @@ markdown_extensions:
       linenums: true
       linenums_style: pymdownx-inline
   - pymdownx.inlinehilite
-  - pymdownx.keys:
-      separator: +
-      strict: false
-      camel_case: true
+  - pymdownx.keys
   - pymdownx.magiclink:
       user: maxswell-helix
       provider: github

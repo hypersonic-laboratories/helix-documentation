@@ -5,7 +5,7 @@ status: wip
 
 # Artists
 
-Thanks for making things beautiful :kissing_heart:
+Thanks for making things beautiful! :kissing_heart:
 
 ### Useful Links
 

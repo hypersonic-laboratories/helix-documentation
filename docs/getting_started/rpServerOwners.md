@@ -2,7 +2,7 @@
 title: RP Server Owners
 ---
 
-If you're looking to start a lively, engaging role-playing server, you've come to the right place.
+Thanks for bringing everything together, making it possible for everyone to have an enjoyable, engaging time! :partying_face:
 
 ### Useful Links
 
@@ -10,7 +10,7 @@ If you're looking to start a lively, engaging role-playing server, you've come t
 
 -   __Getting Started__
 
-    Check out the tutorial on importing a map and gamemode to setup your first server.
+    Check out the step-by-step tutorial on importing a map and gamemode to setup your first server.
 
     [:material-skip-next-outline: Your First Game](firstGame.md)
 
@@ -22,13 +22,13 @@ If you're looking to start a lively, engaging role-playing server, you've come t
 
     [:material-server-plus-outline: Server Configuration](../tutorials/referenceImports/server-manual/server-configuration.md)
 
--   __Visual Customization__
+-   __Aesthetic Customization__
 
     [:material-palette-outline: Custom Maps](../tutorials/tutorialImports/world-creation/1create-first-world.md)
 
     [:material-human-edit: Custom Characters](../tutorials/tutorialImports/creating-assets/characters/0create-custom-character.md)
 
--   __Functional Customization__
+-   __Gameplay Customization__
 
     [:material-file-document-check-outline: QB-Core Framework](../scripting/qbcore.md)
     
