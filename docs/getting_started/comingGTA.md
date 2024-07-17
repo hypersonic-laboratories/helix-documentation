@@ -14,6 +14,9 @@ The purpose of this page is to let experienced FiveM game developers get started
 
 While both FiveM and HELIX offer robust scripting APIs for game development, HELIX provides a more structured and modular approach, with an emphasis on class-based architecture and simplified event handling. These differences can lead to more maintainable and scalable codebases, especially for larger projects. As the HELIX scripting API continues to evolve, it aims to streamline the development process, making it easier for developers to build and manage complex game functionalities.
 
+Additionally, HELIX is built on Unreal Engine 5 (UE5) whereas FiveM uses GTA V's engine. This fundamental difference means that HELIX leverages the advanced features and capabilities of UE5, opening up more possibilities for game development. All assets in HELIX are designed for UE5, providing a high level of graphical fidelity and performance.
+
+
 #### Event Handling and Remote Calls
 
 | **Category**   | **FiveM**       | **HELIX**           |
