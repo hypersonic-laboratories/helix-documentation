@@ -2,7 +2,7 @@
 status: change
 ---
 
-# Install Helix
+# Install HELIX
 
 ## Make a HELIX Account
 
