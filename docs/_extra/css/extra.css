@@ -224,6 +224,15 @@ https://github.com/squidfunk/mkdocs-material/blob/master/src/templates/assets/st
     color: var(--helix-color-mint);
   }
 
+  /* Change annotation icon color for more obvious clickability */
+  .md-annotation__index::after {
+    background-color: var(--helix-color-mint);
+  }
+
+  .md-annotation:is(:focus,:hover) .md-annotation__index::after {
+    background-color: var(--helix-color-mint-hover);
+  }
+
   /* Grid cards */
 
   .md-typeset .grid.cards > ol > li,
