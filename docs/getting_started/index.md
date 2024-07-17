@@ -17,7 +17,7 @@ HELIX is an open-world multiplayer sandbox platform, specifically designed for r
 
 - :fontawesome-solid-people-line: **Built By Creators, For Creators**{.whiter} - We see you. We see your ingenuity, your creativity, as you modify games in beautiful, frustrating ways, fighting the very systems you rely on. *HELIX is different.* Time to know what it feels like to be empowered alongside a community of creators.
 
-- :material-chart-areaspline: **We Succeed When You Succeed**{.whiter} - With access to the [Add-on Vault](https://helixgame.com/vault){.external} (1) and extensive documentation, we strive to help you excel. Not to mention features like one-click-publishing, full IP ownership, and mututally-beneficial monetization! (2)
+- :material-chart-areaspline: **We Succeed When You Succeed**{.whiter} - With access to the [Add-on Vault](../tutorials/vault.md) (1) and extensive documentation, we strive to help you excel. Not to mention features like one-click-publishing, full IP ownership, and mututally-beneficial monetization! (2)
 
 - :material-arrow-up-box: **Delightful Tooling**{.whiter} - HELIX is built on top of the well-used Unreal 5 game engine, allowing for unparalleled graphical fidelity and customization. We also provide an intuitive and powerful Lua API alongside a host of other useful tools.
 </div>

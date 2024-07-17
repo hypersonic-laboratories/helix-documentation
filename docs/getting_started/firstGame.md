@@ -23,7 +23,7 @@ We're going to create a fully functional roleplaying map, using [QB-Core](../scr
 1. Open a New Project via **Studio**
 
 ### Importing The Map
-1. Open the [Add-on Vault](https://helixgame.com/vault){.external-link} via the **Launcher**
+1. Open the [Add-on Vault](../tutorials/vault.md) via the **Launcher**
 2. Import the `Downtown-RP` map (it may take a while to download the first time)
 
 ### Adding In A Framework
