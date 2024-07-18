@@ -254,6 +254,18 @@ https://github.com/squidfunk/mkdocs-material/blob/master/src/templates/assets/st
     border-color: rgba(var(--helix-not-quite-white-rgb), 0.2);
   }
 
+  /* Increase grid-gap slightly */
+  .md-typeset .grid {
+    grid-gap: 0.6rem;
+  }
+
+  /* Make the third card full width on larger screens for specified classes */
+  @media (min-width: 768px) {
+    .grid.cards.full-width-3 > ul > li:nth-child(3) {
+        grid-column: span 2; /* Span 2 columns */
+    }
+  }
+
 }
 
 /*
