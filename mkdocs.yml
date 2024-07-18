@@ -55,6 +55,7 @@ nav:
   - Scripting:
     - scripting/index.md
     - Key References:
+      - scripting/editorSetup.md
       - scripting/introLua.md
       - scripting/luaStyleGuide.md
       - scripting/qbcore.md
