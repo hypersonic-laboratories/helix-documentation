@@ -3,7 +3,10 @@ title: Events Guide
 description: All you need to know about Events
 sidebar_position: 1
 tags: [scripting]
+status: old
 ---
+
+--8<-- "old.md"
 
 
 All you need to know about Events.

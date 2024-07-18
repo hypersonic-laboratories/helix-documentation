@@ -2,7 +2,10 @@
 title: Interacting with the Sun
 description: How to integrate and communicate with the Sun and Light
 tags: [scripting]
+status: old
 ---
+
+--8<-- "old.md"
 
 
 How to integrate and communicate with the Sun and Light.

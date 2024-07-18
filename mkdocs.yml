@@ -15,8 +15,8 @@ copyright: "&copy; 2024 HELIX&trade; is a trademark of Hypersonic Labs"
 
 ###------------------------------If you add or remove a page, you must update it here!!!-------------------------------------------------###
 nav:
-  - Getting Started:
-    - getting_started/welcome.md
+  - Getting Started: 
+    - getting_started/index.md
     - Start Here:
       - getting_started/install.md
       - getting_started/creatorTools.md
@@ -25,14 +25,14 @@ nav:
     - Coming From Other Platforms:
       # - getting_started/comingGmod.md
       - getting_started/comingGTA.md
-    - Discipline Hubs:
+    - Hubs:
       - getting_started/scripters.md
-      - getting_started/modelers.md
+      - getting_started/rpServerOwners.md
+      - getting_started/artists.md
       # - getting_started/mappers.md
       # - getting_started/animators.md
-      - getting_started/serverOwners.md
   - Tutorials:
-    - tutorials/tutorialHome.md
+    - tutorials/index.md
     - General Tutorials:
       # - tutorials/serverClient.md
       - ... | flat | tutorials/tutorialImports/*.md
@@ -44,6 +44,8 @@ nav:
       - HSimpleVehicle:
         - ... | flat | tutorials/tutorialImports/creating-assets/HSimpleVehicle/*.md
     - Reference:
+      - tutorials/vault.md
+      - tutorials/keyTerms.md
       # - tutorials/betterPractices.md
       - ... | flat | tutorials/referenceImports/*.md
       - Servers:
@@ -51,17 +53,19 @@ nav:
       - Default Assets:
         - ... | flat | tutorials/referenceImports/default-asset-pack/*.md
   - Scripting:
-    - scripting/scriptingHome.md
-    - scripting/introLua.md
-    - scripting/luaStyleGuide.md
-    - scripting/qbcore.md
+    - scripting/index.md
+    - Key References:
+      - scripting/editorSetup.md
+      - scripting/introLua.md
+      - scripting/luaStyleGuide.md
+      - scripting/qbcore.md
     - Core Concepts:
       - ... | flat | scripting/coreConceptsImports/*.md
     - Code Examples:
       - tutorials/doors.md
       - ... | flat | tutorials/exampleImports/*.md
   - API:
-    - api/apiHome.md
+    - api/index.md
     - Glossary:
       - ... | flat | api/apiImport/glossary/*.md
     - Classes:
@@ -75,7 +79,6 @@ nav:
         - ... | flat | api/apiImport/classes/*.md
     - Structs:
       - ... | flat | api/apiImport/structs/*.md
-    # - api/apiDetails.md
 
 
 # Extra styling
@@ -118,6 +121,7 @@ theme:
   logo: _images/logo2.svg
   icon:
     repo: fontawesome/brands/github
+    annotation: material/plus-circle 
   palette:
     scheme: slate-helix #toggle between 'slate' (default dark) and 'helix' (custom) and 'helix-slate' (custom, less dark)
   features:
@@ -158,6 +162,7 @@ extra:
     wip: Work In Progress
     change: Subject To Change
     new: New Content!
+    old: Old Page
     deprecated: Deprecated
   analytics:
     provider: google
@@ -254,10 +259,7 @@ markdown_extensions:
       linenums: true
       linenums_style: pymdownx-inline
   - pymdownx.inlinehilite
-  - pymdownx.keys:
-      separator: +
-      strict: false
-      camel_case: true
+  - pymdownx.keys
   - pymdownx.magiclink:
       user: maxswell-helix
       provider: github
@@ -271,6 +273,8 @@ markdown_extensions:
   - pymdownx.smartsymbols
   - pymdownx.snippets: #TODO: configure
       check_paths: true
+      base_path:
+        - docs/_snippets
   - pymdownx.superfences
   - pymdownx.tasklist:
       custom_checkbox: true
@@ -311,7 +315,7 @@ plugins:
   # https://github.com/mkdocs/mkdocs-redirects
   - redirects:
       redirect_maps:
-        'index.md': 'getting_started/welcome.md'
+        'index.md': 'getting_started/index.md'
 
   # https://github.com/orbikm/mkdocs-ezlinks-plugin
   # - ezlinks #disabled for now, was causing issues #ignore yml errors

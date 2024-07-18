@@ -4,7 +4,10 @@ description: >-
   How to simulate a Prop possessing using a Character. This can be used for Prop
   Hunt game-modes!
 tags: [tutorial-example, scripting]
+status: old
 ---
+
+--8<-- "old.md"
 
 
 How to simulate a Prop possessing using a Character. This can be used for Prop Hunt game-modes!

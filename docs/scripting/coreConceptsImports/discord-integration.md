@@ -4,7 +4,10 @@ description: >-
   How to use HELIX Discord methods to create a nice integration for your
   server
 tags: [scripting]
+status: old
 ---
+
+--8<-- "old.md"
 
 
 How to use HELIX Discord methods to create a nice integration for your server.

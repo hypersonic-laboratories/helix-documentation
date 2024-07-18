@@ -2,7 +2,10 @@
 title: Default Asset Pack List
 tags: [assets]
 keywords: [assets, built-in, default]
+status: old
 ---
+
+--8<-- "old.md"
 
 
 HELIX provides a default Asset Pack already included in the base game, feel free to use the assets the way you want!

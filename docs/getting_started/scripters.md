@@ -1,10 +1,10 @@
 ---
-status: wip
+title: Scripters
 ---
 
 # Scripters
 
-If you want to jump straight into code, you've come to the right spot!
+Thanks for doing the hard work that makes everything functional and interesting! :computer:
 
 ### Useful Links
 
@@ -12,24 +12,26 @@ If you want to jump straight into code, you've come to the right spot!
 
 -   __Scripting Home__
 
-    Concept overviews, code examples, and useful tips
+    Concept overviews, code examples, and useful tips - start here if you're unsure!
 
-    [:octicons-command-palette-16: Scripting Home](../scripting/scriptingHome.md)
+    [:material-skip-next-circle: Scripting Home](../scripting/index.md)
 
 -   __Browse the API__
 
     Classes, structures, and even a glossary
 
-    [:octicons-file-code-24: API Home](../api/apiHome.md)
+    [:octicons-file-code-24: API Home](../api/index.md)
 
--   __Better Practices__
+-   __References__
 
     [:material-palette-outline: Lua Style Guide](../scripting/luaStyleGuide.md)
+
+    [:material-language-lua: Learning Lua](../scripting/introLua.md)
 
 -   __Tooling Overview__
 
     [:material-file-document-check-outline: Studio & Launcher](creatorTools.md)
     
-    [:octicons-command-palette-16: IDE Tooling](../scripting/scriptingHome.md)
+    [:octicons-command-palette-16: IDE Tooling](../scripting/index.md)
 
 </div>

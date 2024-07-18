@@ -4,7 +4,10 @@ description: >-
   This sample code shows how to set Actors to be highlighted when behind walls,
   or always highlighted!
 tags: [tutorial-example, scripting]
+status: old
 ---
+
+--8<-- "old.md"
 
 
 This sample code shows how to set Actors to be highlighted when behind walls, or always highlighted!

@@ -3,7 +3,11 @@ title: Create your first world
 description: Step-by-step guide to create a new world.
 sidebar_position: 1
 tags: []
+status: old
 ---
+
+--8<-- "old.md"
+
 Creating a World can be very simple after understanding the basics from this page.
 
 /// info

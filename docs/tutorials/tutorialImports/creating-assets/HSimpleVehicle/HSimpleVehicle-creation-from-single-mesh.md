@@ -4,7 +4,11 @@ description: HSimpleVehicle create from single mesh.
 sidebar_position: 3
 tags: [HSimpleVehicle]
 keywords: [assets, studio, HSimpleVehicle, create]
+status: old
 ---
+
+--8<-- "old.md"
+
 Making a Simple Vehicle based off an empty mesh
 
 

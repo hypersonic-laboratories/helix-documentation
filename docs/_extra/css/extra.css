@@ -123,6 +123,10 @@ https://github.com/squidfunk/mkdocs-material/blob/master/src/templates/assets/st
   /* Add hover color */
   --md-accent-fg-color: var(--helix-color-mint-hover);
 
+  /* Change cookie button color */
+  --md-primary-fg-color: var(--helix-color-mint);
+  --md-primary-bg-color: var(--helix-color-mint-hover);
+
   /* Custom Overrides */
 
   /* Header general */
@@ -130,7 +134,32 @@ https://github.com/squidfunk/mkdocs-material/blob/master/src/templates/assets/st
     box-shadow: none;
     backdrop-filter: saturate(1.8) blur(20px);
     background-color: var(--helix-not-quite-black);
-    border-bottom: 3px solid var(--helix-color-gray-dark);
+  }
+
+  /* Add header nav bar underline */
+  .md-tabs::before {
+    content: '';
+    position: absolute;
+    bottom: 0; /* Align with the bottom of the md_tabs__item */
+    left: 0;
+    width: 100%;
+    height: 0.2rem; /* Adjust the height as needed */
+    background-color: var(--helix-color-gray-dark);
+    z-index: 0; /* Ensure it appears below other content if necessary */
+  }
+
+  .md-tabs {
+    position: relative;
+    border: none; /* Remove border if any */
+    background-color: transparent; /* Ensure no background color obscures items */
+  }
+
+  /* Add underline to active tab */
+  li.md-tabs__item.md-tabs__item--active {
+    position: relative;
+    border-bottom: 0.2rem solid var(--helix-color-mint) !important; /* Needs override */
+    z-index: 1; /* in front of .md_tabs::before line */
+    background-color: transparent; /* Ensure the background is set if needed */
   }
 
   .md-search__icon.md-icon {
@@ -139,13 +168,42 @@ https://github.com/squidfunk/mkdocs-material/blob/master/src/templates/assets/st
 
   .md-search__form {
     background-color: var(--helix-color-gray-dark);
+    border-radius: 5px;
+  }
+
+  .download-button {
+    background-color: var(--helix-color-gray-dark);
+  }
+
+  a.download-button {
+    color: var(--helix-color-gray);
+    opacity: .8;
+  }
+  
+  a.download-button:hover {
+    color: var(--helix-color-mint-hover);
+  }
+
+  .download-button svg {
+    color: var(--helix-color-mint);
   }
 
   /* Mobile specific */
   @media screen and (max-width: 76.234375em) {
     .md-nav--primary .md-nav__title[for=__drawer] {
-      background-color: var(--helix-color-gray-dark);
+      background-color: var(--helix-not-quite-black);
     }
+  }
+
+  @media screen and (max-width: 76.234375em) {
+    .md-nav--primary .md-nav__title {
+      background-color: var(--helix-not-quite-black);
+    }
+  }
+
+  /* Edit/Comment buttons brighter */
+  .md-content__button.md-icon {
+    color: var(--helix-color-mint-hover);
   }
 
   /* Header tabs */
@@ -153,17 +211,26 @@ https://github.com/squidfunk/mkdocs-material/blob/master/src/templates/assets/st
     background-color: transparent;
   }
 
-  /* Not active one automatically darker, need to investigate */
-  /* .md-tabs__link {
-    color: var(--helix-color-gray-light) !important; Needs override
-  } */
+  /* Brighter non-active tabs */
+  .md-tabs__link {
+    opacity: .85;
+  }
 
+  /* Set active/hovered tab links to be mint */
+  .md-tabs__item--active {
+    color: var(--helix-color-mint);
+  }
   .md-tabs__link:is(:focus,:hover) {
     color: var(--helix-color-mint);
   }
 
-  li.md-tabs__item.md-tabs__item--active {
-    border-bottom: 0.2rem solid var(--helix-color-mint) !important; /* Needs override */
+  /* Change annotation icon color for more obvious clickability */
+  .md-annotation__index::after {
+    background-color: var(--helix-color-mint);
+  }
+
+  .md-annotation:is(:focus,:hover) .md-annotation__index::after {
+    background-color: var(--helix-color-mint-hover);
   }
 
   /* Grid cards */
@@ -185,6 +252,18 @@ https://github.com/squidfunk/mkdocs-material/blob/master/src/templates/assets/st
   .md-typeset .grid > .card:hover {
     box-shadow: inset 20px 20px 20px rgba(var(--helix-color-mint-rgb), 0.05);
     border-color: rgba(var(--helix-not-quite-white-rgb), 0.2);
+  }
+
+  /* Increase grid-gap slightly */
+  .md-typeset .grid {
+    grid-gap: 0.6rem;
+  }
+
+  /* Make the third card full width on larger screens for specified classes */
+  @media (min-width: 768px) {
+    .grid.cards.full-width-3 > ul > li:nth-child(3) {
+        grid-column: span 2; /* Span 2 columns */
+    }
   }
 
 }
@@ -273,6 +352,11 @@ https://github.com/squidfunk/mkdocs-material/blob/master/src/templates/assets/st
   
 }
 
+/* Change max grid width (wider page) */
+.md-grid {
+  max-width: 70rem;
+}
+
 /* Make top tabs larger */
 .md-tabs__link {
   font-size: 0.8rem;
@@ -284,15 +368,6 @@ li.md-tabs__item.md-tabs__item--active {
   border-bottom: 0.2rem solid var(--helix-color-gray);
 }
 
-/*
-ToDo: Make hover show nicely
-.md-tabs__link--active, .md-tabs__link:is(:active) {
-    border-bottom: 2px solid #01FFD1;
-}
-.md-tabs__link:is(:focus,:hover) {
-    border-bottom: 2px solid var(--helix-color-mint);
-} */
-
 /* Make markdown headers whiter and bolder */
 .md-typeset h1,
 .md-typeset h2,
@@ -300,6 +375,18 @@ ToDo: Make hover show nicely
   font-weight: 500;
   color: var(--helix-color-gray);
 }
+
+/* Increase space inbetween tabs */
+.md-tabs__item {
+  padding-left: .9rem;
+  padding-right: .9rem;
+}
+
+/* ToDo: indent sidebar items slightly, but only on left and --active shouldn't unindent */
+/* :not(div[class='md-sidebar--secondary']) */
+/* a[class='md-nav__link'], a[class='md-nav__link--active'] {
+  padding-left: 0.5rem;
+} */
 
 /* Toc also brighter */
 .md-nav__title {
@@ -338,8 +425,8 @@ Custom (svg -> base64):
 Note: New and Deprecated also exist, but not shown here 
 */
 .md-status--placeholder::after {
-  mask-image: var(--md-status);
-  -webkit-mask-image: var(--md-status);
+  mask-image: var(--md-status--new);
+  -webkit-mask-image: var(--md-status--new);
 }
 
 .md-status--wip::after {
@@ -350,4 +437,101 @@ Note: New and Deprecated also exist, but not shown here
 .md-status--change::after {
   mask-image: var(--md-status--change);
   -webkit-mask-image: var(--md-status--change);
+}
+
+.md-status--old::after {
+  mask-image: var(--md-status);
+  -webkit-mask-image: var(--md-status);
+}
+
+/* External link styling */
+
+a.external::after,
+a.external::after
+{
+  content: "";
+  width: 11px;
+  height: 11px;
+  margin-left: 4px;
+  /* Fill color hardcorded for now */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3C!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--%3E%3Cpath fill='%2363E6BE' d='M352 0c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9L370.7 96 201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L416 141.3l41.4 41.4c9.2 9.2 22.9 11.9 34.9 6.9s19.8-16.6 19.8-29.6V32c0-17.7-14.3-32-32-32H352zM80 32C35.8 32 0 67.8 0 112V432c0 44.2 35.8 80 80 80H400c44.2 0 80-35.8 80-80V320c0-17.7-14.3-32-32-32s-32 14.3-32 32V432c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16V112c0-8.8 7.2-16 16-16H192c17.7 0 32-14.3 32-32s-14.3-32-32-32H80z'/%3E%3C/svg%3E");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: inline-block;
+}
+
+.whiter {
+  color: var(--helix-color-gray);
+}
+
+/* Header button styling */
+.md-header-social {
+  position: relative;
+  display: table-cell;
+  transition: opacity 150ms 150ms;
+  margin-right: .75rem;
+
+  ul {
+    margin: 0;
+    list-style: none;
+  }
+
+  li {
+    display: inline-block;
+  }
+
+  /* Hide when search is active */
+  [data-md-toggle="search"]:checked ~ .md-header & {
+    opacity: 0;
+    transition:
+      opacity   0ms;
+  }
+}
+
+/* Download Buttons (Header Buttons) */
+.download-button {
+  display: inline-block;
+  margin-right: 15px;
+  padding: 6px 14px;
+  font-weight: 400;
+  font-size: 20px;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.download-button svg {
+  height: 20px;
+  margin-bottom: 2px;
+  margin-right: 2px;
+  vertical-align: text-bottom;
+  fill: currentcolor;
+}
+
+@media only screen and (max-width: 959px) {
+  .download-button {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 960px) and (max-width: 1219px) {
+  .download-button {
+    margin-top: 0;
+  }
+}
+
+@media screen and (min-width: 1220px) and (max-width: 1599px) {
+  .download-button {
+    margin-top: 2px;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .download-button {
+    margin-top: 2px;
+  }
 }

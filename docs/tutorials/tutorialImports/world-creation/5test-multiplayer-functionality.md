@@ -3,9 +3,10 @@ title: Test Multiplayer Functionality
 description: Information about multiplayer.
 sidebar_position: 6
 tags: []
+status: old
 ---
 
-# Test multiplayer functionality
+--8<-- "old.md"
 
 
 > 💡 How to connect with several clients to test multiplayer functionality within your world.

@@ -3,7 +3,10 @@ title: Using Persistent Datastores
 description: How to keep information through the game.
 sidebar_position: 7
 tags: []
+status: old
 ---
+
+--8<-- "old.md"
 
 > 💡 Databases allow you to add a new dimension to your game with persistent gameplay elements and is key to increase player retention
 

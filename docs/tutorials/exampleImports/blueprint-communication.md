@@ -2,7 +2,10 @@
 title: Blueprint Communication
 description: Learn how to communicate between Lua and Blueprints
 tags: [tutorial-example]
+status: old
 ---
+
+--8<-- "old.md"
 
 Learn how to communicate between Lua and Blueprints.
 

@@ -2,9 +2,12 @@
 title: Assets Guide
 description: All you need to know about Assets
 tags: [assets]
+status: old
 ---
 
-import { ReferenceLink } from '@site/docs/components/_nanos.mdx';
+--8<-- "old.md"
+
+<!-- import { ReferenceLink } from '@site/docs/components/_nanos.mdx'; -->
 
 All you need to know about Assets
 

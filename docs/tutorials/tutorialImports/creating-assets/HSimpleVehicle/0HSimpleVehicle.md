@@ -4,7 +4,10 @@ description: Create simple vehicles.
 sidebar_position: 1
 tags: [HSimpleVehicle]
 keywords: [assets, studio, HSimpleVehicle, unreal]
+status: old
 ---
+
+--8<-- "old.md"
 
 Create vehicles using the HSimpleVehicle class.
 

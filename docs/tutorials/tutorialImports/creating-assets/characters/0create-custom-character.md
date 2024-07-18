@@ -4,7 +4,10 @@ description: How to create characters
 tags: [characters, customization]
 keywords: [character, mannequin, unreal]
 sidebar_position: 1
+status: old
 ---
+
+--8<-- "old.md"
 
 ### Create custom character
 

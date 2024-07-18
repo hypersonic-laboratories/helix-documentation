@@ -3,7 +3,10 @@ title: Inheriting Classes
 description: How to inherit HELIX Classes
 sidebar_position: 8
 tags: [scripting]
+status: old
 ---
+
+--8<-- "old.md"
 
 
 How to inherit HELIX Classes. HELIX provides a built-in way of inheriting the built-in Classes

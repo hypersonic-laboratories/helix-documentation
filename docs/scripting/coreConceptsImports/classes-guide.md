@@ -3,7 +3,10 @@ title: Classes Guide
 description: All you need to know about Classes
 sidebar_position: 0
 tags: [scripting]
+status: old
 ---
+
+--8<-- "old.md"
 
 
 All you need to know about Classes

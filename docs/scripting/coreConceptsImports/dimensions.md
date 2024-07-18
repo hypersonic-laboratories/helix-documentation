@@ -2,7 +2,10 @@
 title: Dimensions
 description: All you need to know about Dimensions
 tags: [scripting]
+status: old
 ---
+
+--8<-- "old.md"
 
 
 All you need to know about Dimensions

@@ -3,12 +3,15 @@ title: Default Particles
 description: Default HELIX Particles and it's Parameters
 tags: [assets]
 keywords: [assets, particles, built-in, default]
+status: old
 ---
+
+--8<-- "old.md"
 
 
 Default HELIX Particles and it's Parameters.
 
-import { Structs, BasicType, AssetPath } from '@site/docs/components/_nanos.mdx';
+<!-- import { Structs, BasicType, AssetPath } from '@site/docs/components/_nanos.mdx'; -->
 
 /// tip
 

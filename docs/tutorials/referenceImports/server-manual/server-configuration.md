@@ -3,7 +3,10 @@ title: Server Configuration
 description: All you need to know to Configure your server!
 sidebar_position: 2
 tags: [hosting]
+status: old
 ---
+
+--8<-- "old.md"
 
 
 All you need to know to Configure your server!

@@ -4,7 +4,10 @@ description: >-
   This sample code modifies a Weapon to make it shoot Props instead of normal
   bullets
 tags: [tutorial-example, scripting]
+status: old
 ---
+
+--8<-- "old.md"
 
 
 This sample code modifies a Weapon to make it shoot Props instead of normal bullets

@@ -3,7 +3,10 @@ title: User Interface
 description: How to display information in the Screen for the Player
 sidebar_position: 5
 tags: [scripting, ui]
+status: old
 ---
+
+--8<-- "old.md"
 
 
 import { ReferenceLink } from '@site/docs/components/_nanos.mdx';

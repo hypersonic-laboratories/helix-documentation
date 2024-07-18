@@ -3,9 +3,10 @@ title: Add In-World Purchases
 description: Adding purchases.
 sidebar_position: 5
 tags: []
+status: old
 ---
 
-# In-World Purchases Video
+--8<-- "old.md"
 
 There is video you can follow in the [video tutorials here](/getting-started/video-tutorials/05-our-currency.md)
 
