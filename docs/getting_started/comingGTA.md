@@ -38,6 +38,10 @@ Here you'll learn about how, and why, you should develop in HELIX. Let's start w
 
 </div>
 
+/// tip | Auto-Convert Scripts
+Install the **fivem-to-helix package** from the Vault and follow the instructions inside [coming soon!]
+///
+
 ---
 
 ### Event Handling and Remote Calls
