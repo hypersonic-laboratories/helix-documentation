@@ -276,3 +276,10 @@ So, to make the server ignore it you just need to add an `.ignore` file in the r
 ## Logo Image
 
 It is possible to have a custom image to be displayed in the Vault. For that, add a file called `Package.jpg` besides the Package.toml with the image you wish. The recommended size is `300x150`.
+
+
+## Upload via Github Actions
+
+You can also use Github actions to automatically zip your package and upload it to the Helix Platform!
+
+More info on the [repository](https://github.com/hypersonic-laboratories/deploy-package){.external}
