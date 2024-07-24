@@ -105,7 +105,9 @@ Below are some direct translations from FiveM to HELIX:
 
 | **Examples**  | **FiveM**                                         | **HELIX**                                       |
 | ------------- | ------------------------------------------------- | ----------------------------------------------- |
-| (Placeholder) | (Placeholder)                                     | (Placeholder)                                   |
+| Spawn | `local my_veh = CreateVehicle(hash, x, y, z)`            |  `local my_veh = HSimpleVehicle(location, rotation, blueprint_asset)` |
+| Door Interaction | `SetVehicleDoorShut / SetVehicleDoorOpen`            |  `my_veh:SetDoorState(Doorindex, NewState, Curvetype)` |
+| Get Speed | `GetEntitySpeed(entity)`            |  `my_veh::GetVehicleSpeed()` |
 
 #### Utilities
 
@@ -113,6 +115,7 @@ Below are some direct translations from FiveM to HELIX:
 | ------------- | ------------------------------------------------- | ----------------------------------------------- |
 | Timeout       | `SetTimeout(milliseconds, callback)`              | `Timer.SetTimeout(callback, milliseconds)`      |
 | Vector        | `vector3(X, Y, Z)`                                | `Vector(X, Y, Z)`                               |
+| Heading        | `int`                                | `Rotator(0.0, int, 0.0)`  (Rotator Yaw = Heading)                             |
 | Entity Delete | `DeleteEntity(entity)`                            | `actor:Destroy()`                               |
 
 ### Integration with Other Tools and Frameworks
