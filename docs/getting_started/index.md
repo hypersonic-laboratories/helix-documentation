@@ -17,15 +17,17 @@ HELIX is an open-world multiplayer sandbox platform, specifically designed for r
 
 - :fontawesome-solid-people-line: **Built By Creators, For Creators**{.whiter} - We see you. We see your ingenuity, your creativity, as you modify games in beautiful, frustrating ways, fighting the very systems you rely on. *HELIX is different.* Time to know what it feels like to be empowered alongside a community of creators.
 
-- :material-chart-areaspline: **We Succeed When You Succeed**{.whiter} - With access to the [Add-on Vault](../tutorials/vault.md) (1) and extensive documentation, we strive to help you excel. Not to mention features like one-click-publishing, full IP ownership, and mututally-beneficial monetization! (2)
+- :material-chart-areaspline: **We Succeed When You Succeed**{.whiter} - With access to the [Add-on Vault](../tutorials/vault.md) (1) and extensive documentation, we strive to help you excel. Not to mention features like one-click-publishing and full IP ownership!
 
 - :material-arrow-up-box: **Delightful Tooling**{.whiter} - HELIX is built on top of the well-used Unreal 5 game engine, allowing for unparalleled graphical fidelity and customization. We also provide an intuitive and powerful Lua API alongside a host of other useful tools.
 </div>
 
 1.  The Add-on Vault is a central repository of shared assets that contains
     everything you need to build your worlds and RP servers. Discover thousands of add-ons and mods from maps, characters, vehicles, weapons, Lua scripts to entire game modes!
+
+<!-- , and mututally-beneficial monetization! (2) 
 2.  Simply put, Hypersonic takes a cut of all the profits on HELIX. This means
-    the success of the company is directly in-line with how successful you, the creators, are. In other words, our goals are mutually aligned! :partying_face:
+    the success of the company is directly in-line with how successful you, the creators, are. In other words, our goals are mutually aligned! :partying_face: -->
 
 ## Getting Started
 
