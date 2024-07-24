@@ -536,11 +536,9 @@ a.external::after
   }
 }
 
-/*
-Table Formatting
-from core, scss -> css
-*/
+/* Table Formatting */
 
+/* Base table styling */
 table:not([class]) {
   display: table;
   max-width: 100%;
@@ -548,87 +546,114 @@ table:not([class]) {
   font-size: px2rem(12.8px);
   table-layout: auto;
   background: var(--md-default-bg-color);
-  border-bottom: 2px solid var(--helix-color-mint);
+  border-bottom: 2px solid var(--helix-color-mint) !important;
   border-radius: px2rem(4px);
   box-shadow: 0 px2rem(4px) px2rem(10px) rgba(0, 0, 0, 0.05), 0 0 px2rem(1px) rgba(0, 0, 0, 0.1);
   touch-action: auto;
 }
+
+/* Print specific adjustments */
 @media print {
   table:not([class]) {
     display: table;
- }
+  }
 }
+
+/* Margin adjustments for adjacent elements */
 table:not([class]) + * {
   margin-top: 1.5em;
 }
+
+/* Margin adjustments for first child in th/td */
 table:not([class]) :is(th, td) > *:first-child {
   margin-top: 0;
 }
+
+/* Margin adjustments for last child in th/td */
 table:not([class]) :is(th, td) > *:last-child {
   margin-bottom: 0;
 }
+
+/* Text alignment for th/td without align attribute */
 table:not([class]) :is(th, td):not([align]) {
   text-align: left;
 }
+
+/* Right-to-left text alignment for th/td without align attribute */
 [dir="rtl"] table:not([class]) :is(th, td):not([align]) {
   text-align: right;
 }
+
+/* Styling for table header cells */
 table:not([class]) th {
   min-width: px2rem(100px);
   padding: px2em(12px, 12.8px) px2em(16px, 12.8px);
   color: var(--helix-not-quite-white);
   white-space: nowrap;
   vertical-align: top;
-  background-color: var(--helix-card-background);
+  background-color: var(--helix-color-gray-dark);
   border-bottom: 2px solid var(--helix-color-mint);
 }
+
+/* Link styling within table header cells */
 table:not([class]) th a {
   color: inherit;
 }
+
+/* Styling for table data cells */
 table:not([class]) td {
   padding: px2em(8px, 8.8px);
   vertical-align: top;
   border-top: px2rem(1px) solid var(--md-typeset-table-color);
 }
+
+/* Row transition on hover */
 table:not([class]) tbody tr {
   transition: background-color 125ms;
 }
+
+/* Background color change on row hover */
 table:not([class]) tbody tr:hover {
   background-color: rgba(0, 0, 0, 0.035);
   box-shadow: 0 px2rem(1px) 0 var(--md-default-bg-color) inset;
 }
+
+/* Remove top border from first td in tbody */
 table:not([class]) tbody tr:first-child td {
   border-top: 0;
 }
+
+/* Set width for first td in tbody */
 table:not([class]) tbody tr td:first-child {
   width: 250px;
 }
+
+/* Set width for specific class in first td in tbody */
 table:not([class]) tbody tr td.even-table:first-child {
   width: 50%;
 }
+
+/* Word break behavior for links within tables */
 table:not([class]) a {
   word-break: normal;
 }
 
-/* from n8n */
+/* Additional table styles */
 .md-typeset table:not([class]) td:first-of-type {
   white-space: pre;
 }
 
-/* bigger font in table */
-.table-without-whitespace-pre td:first-of-type {
-  white-space: unset;
-}
-
+/* Adjust font size for specific table context */
 .md-typeset table:not([class]) {
-  font-size: 0.75rem
+  font-size: 0.75rem;
 }
 
-/* display tables at full width */
+/* Full width display for specific table context */
 .md-typeset__table {
   width: 100%;
 }
 
+/* Ensure display property for nested tables within specific context */
 .md-typeset__table table:not([class]) {
-  display: table
+  display: table;
 }
