@@ -535,3 +535,100 @@ a.external::after
     margin-top: 2px;
   }
 }
+
+/*
+Table Formatting
+from core, scss -> css
+*/
+
+table:not([class]) {
+  display: table;
+  max-width: 100%;
+  overflow: auto;
+  font-size: px2rem(12.8px);
+  table-layout: auto;
+  background: var(--md-default-bg-color);
+  border-bottom: 2px solid var(--helix-color-mint);
+  border-radius: px2rem(4px);
+  box-shadow: 0 px2rem(4px) px2rem(10px) rgba(0, 0, 0, 0.05), 0 0 px2rem(1px) rgba(0, 0, 0, 0.1);
+  touch-action: auto;
+}
+@media print {
+  table:not([class]) {
+    display: table;
+ }
+}
+table:not([class]) + * {
+  margin-top: 1.5em;
+}
+table:not([class]) :is(th, td) > *:first-child {
+  margin-top: 0;
+}
+table:not([class]) :is(th, td) > *:last-child {
+  margin-bottom: 0;
+}
+table:not([class]) :is(th, td):not([align]) {
+  text-align: left;
+}
+[dir="rtl"] table:not([class]) :is(th, td):not([align]) {
+  text-align: right;
+}
+table:not([class]) th {
+  min-width: px2rem(100px);
+  padding: px2em(12px, 12.8px) px2em(16px, 12.8px);
+  color: var(--helix-not-quite-white);
+  white-space: nowrap;
+  vertical-align: top;
+  background-color: var(--helix-card-background);
+  border-bottom: 2px solid var(--helix-color-mint);
+}
+table:not([class]) th a {
+  color: inherit;
+}
+table:not([class]) td {
+  padding: px2em(8px, 8.8px);
+  vertical-align: top;
+  border-top: px2rem(1px) solid var(--md-typeset-table-color);
+}
+table:not([class]) tbody tr {
+  transition: background-color 125ms;
+}
+table:not([class]) tbody tr:hover {
+  background-color: rgba(0, 0, 0, 0.035);
+  box-shadow: 0 px2rem(1px) 0 var(--md-default-bg-color) inset;
+}
+table:not([class]) tbody tr:first-child td {
+  border-top: 0;
+}
+table:not([class]) tbody tr td:first-child {
+  width: 250px;
+}
+table:not([class]) tbody tr td.even-table:first-child {
+  width: 50%;
+}
+table:not([class]) a {
+  word-break: normal;
+}
+
+/* from n8n */
+.md-typeset table:not([class]) td:first-of-type {
+  white-space: pre;
+}
+
+/* bigger font in table */
+.table-without-whitespace-pre td:first-of-type {
+  white-space: unset;
+}
+
+.md-typeset table:not([class]) {
+  font-size: 0.75rem
+}
+
+/* display tables at full width */
+.md-typeset__table {
+  width: 100%;
+}
+
+.md-typeset__table table:not([class]) {
+  display: table
+}
