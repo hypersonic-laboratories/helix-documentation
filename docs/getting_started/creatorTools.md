@@ -59,7 +59,7 @@ The Launcher also includes some key functionality, notably:
 1. The Add-on Vault is a central repository of shared assets that contains everything you need to build your worlds and RP servers. Discover thousands of add-ons and mods from maps, characters, vehicles, weapons, Lua scripts to entire game modes!
 
 /// tip | Iterative Feature
-The Launcher especially is quite new - so definitely expect more changes and improvements here soon!
+The Launcher especially is quite new - so definitely expect more changes and improvements here soon! Other existing features should be self-explanatory.
 ///
 
 ![](../_images/getting_started/HELIXLauncher.png)

@@ -8,17 +8,15 @@ status: old
 
 💡 In this guide you’ll familiarize yourself with key terms and learn the basics of how HELIX works.
 
-
 ### For creators, HELIX consists of two primary components: The Client and Server.
 
 - The Client is what every regular HELIX player downloads and plays.
-- The Server is where created worlds can run.
-- :warning: The Studio is a UE5 plugin used by creators to develop and publish worlds and assets, note this plugin is currently in development.
+- The Server is what Clients connect to and run on.
 
 ### A World consists of Assets and Packages.
 
-- Assets are cooked Unreal Engine files (levels, static/skeletal meshes, animations, blueprints, audio, etc.).
-- Packages are Lua script files that run on the client or server or both, as well as any files related to UI.
+- **Assets are cooked Unreal Engine files** (levels, static/skeletal meshes, animations, blueprints, audio, etc.).
+- **Packages are Lua script files** that run on the client or server or both, as well as any files related to UI.
 
 ### Technical Overview (Diagram)
 
