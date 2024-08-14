@@ -6,7 +6,7 @@ status: change
 # HELIX's Tooling Ecosystem
 
 /// tip | Iterative Feature
-The Launcher and Studio workflow is relatively new, and more features are being added consitently. Expect more changes and improvements here soon!
+The Launcher and Studio workflow is relatively new, and more features are being added consistently. Expect more changes and improvements here soon!
 ///
 
 - HELIX Studio (**Studio**) is a UE5 plug-in for more advanced developers to import custom assets and develop highly sophisticated experiences. Unleash the full power of UE5 and create assets and worlds with the highest fidelity of graphics and gameplay.
@@ -75,7 +75,7 @@ The Launcher especially is quite new - so definitely expect more changes and imp
 
     [:material-controller-classic-outline: Making Your First Game](firstGame.md)
 
--   __Disciple specific tooling__
+-   __Specific tooling__
 
 	Whatever you specialize in, we've got the right tools for you. 
 
