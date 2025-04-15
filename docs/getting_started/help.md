@@ -25,6 +25,6 @@ Check out the links below for assistance!
 
 -   __:material-help-network: Other Support__
     
-    For all other support (e.g. account issues, technical help), drop us a line directly on the [Discord](https://discord.gg/helixcreators){.external}, or email us at [help@helixgame.com](mailto:help@helixgame.com){.external}
+    For all other support (e.g. account issues, technical help), drop us a line directly on the [Discord](https://discord.gg/helixgame){.external}, or email us at [support@helixgame.com](mailto:support@helixgame.com){.external}
 
 </div>
