@@ -3,54 +3,154 @@ title: Timer
 description: Execute of code at specified time intervals.
 tags: [static-class]
 ---
-
 <HeaderDeclaration type="StaticClass" name="Timer" is_static image={"/img/docs/stopwatch.webp"} />
-
-///info
-
-The shortest interval possible is equal to the local Tick Rate - usually at 33ms. On the Server this can vary depending on the Config.toml setting.
-
-///
-
-
-## Examples
-
-```lua
--- creates a Interval to call a function at every 2 seconds
-local my_interval = Timer.SetInterval(function(param1, param2)
-    Console.Log("Triggered each 2 seconds! Param1: " .. param1 .. ". Param2: " .. param2)
-end, 2000, "awesome param 1", 456)
-
--- cancels the Interval
-Timer.ClearInterval(my_interval)
-
--- creates a Timeout to call my_function in 5 seconds, once - passing a parameter
-Timer.SetTimeout(function(my_param)
-    Console.Log("HELIX " .. my_param)
-end, 5000, "world")
-```
-
-```lua
-local character = Character(...)
-
-local my_timer = Timer.SetTimeout(function(_character)
-    -- Do something with _character
-    -- Ex: Destroy the character after 10 seconds
-    _character:Destroy()
-end, 10000, character)
-
--- Binds the Timer to the Character
--- This will ensure it will never trigger if the character is destroyed before it
--- With this you don't need to validate if the '_character' parameter is valid
-Timer.Bind(my_timer, character)
-```
-
+A global utility class for scheduling delayed or repeating callbacks using Unreal Engine’s Kismet timer system. Provides both classic timer-based control and coroutine-style asynchronous flows for scripting convenience
 
 ## Static Functions
-
 <StaticFunctionsDeclaration type="StaticClass" name="Timer" />
 
+### `Timer.SetNextTick(callback, ...)`
+Schedules a one-time callback to run on the next engine tick.
+```lua title="Example"
+Timer.SetNextTick(function()
+    print("Runs on next tick")
+end)
+```
 
-## Events
+---
 
-<EventsDeclaration type="StaticClass" name="Timer" />
+### `Timer.SetTimeout(callback, delay_ms, ...)`
+Schedules a one-time callback to execute after a delay (in milliseconds).
+```lua title="Example"
+Timer.SetTimeout(function()
+    print("Runs after 1 second")
+end, 1000)
+```
+
+---
+
+### `Timer.SetInterval(callback, interval_ms, ...)`
+Runs the callback repeatedly every interval_ms milliseconds until cleared.
+```lua title="Example"
+Timer.SetInterval(function()
+    print("Repeats every 2 seconds")
+end, 2000)
+```
+
+---
+
+### `Timer.ClearTimeout(id)`
+Stops a one-shot or repeating timer by ID.
+```lua title="Example"
+Timer.ClearTimeout(myTimerId)
+```
+
+---
+
+### `Timer.ClearInterval(id)`
+Alias of Timer.ClearTimeout.
+```lua title="Example"
+Timer.ClearInterval(myIntervalId)
+```
+
+---
+
+### `Timer.Pause(id)`
+Pauses a currently active timer.
+```lua title="Example"
+Timer.Pause(myIntervalId)
+```
+
+---
+
+### `Timer.Resume(id)`
+Resumes a paused timer.
+```lua title="Example"
+Timer.Resume(myIntervalId)
+```
+
+---
+
+### `Timer.IsValid(id)`
+Returns true if a timer is still active and not cleared or expired.
+```lua title="Example"
+Timer.IsValid(myIntervalId) -- true or false
+```
+
+---
+
+### `Timer.IsPaused(id)`
+Returns true if the timer is currently paused.
+```lua title="Example"
+Timer.IsPaused(myIntervalId) -- true or false
+```
+
+---
+
+### `Timer.GetElapsedTime(id)`
+Returns how much time (in milliseconds) has passed since the timer started or last ran.
+```lua title="Example"
+Timer.GetElapsedTime(myTimerId) -- e.g., 523
+```
+
+---
+
+### `Timer.GetRemainingTime(id)`
+Returns the number of milliseconds left before the next callback execution.
+```lua title="Example"
+Timer.GetRemainingTime(myTimerId) -- e.g., 477
+```
+
+---
+
+### `Timer.Invalidate(id)`
+Manually invalidates a timer handle so that it won't run again, even if not cleared.
+```lua title="Example"
+Timer.Invalidate(myTimerId)
+```
+
+---
+
+### `Timer.HasHandle(id)`
+Returns true if a timer has a valid handle, even if paused.
+```lua title="Example"
+Timer.HasHandle(myTimerId) -- true or false
+```
+
+---
+
+### `Timer.ResetElapsedTime(id)`
+Restarts a timer with the same delay and arguments, resetting its elapsed time.
+```lua title="Example"
+Timer.ResetElapsedTime(myTimerId)
+```
+
+---
+
+### `Timer.Delay(context, seconds, callback)`
+Coroutine-safe delay method that pauses execution for the given seconds, then runs the callback.
+```lua title="Example"
+Timer.Delay(self, 1.5, function()
+    print("Delayed by 1.5 seconds")
+end)
+```
+
+---
+
+### `Timer.CreateThread(fn)`
+Runs a Lua function as a coroutine thread, similar to FiveM behavior.
+```lua title="Example"
+Timer.CreateThread(function()
+    print("Running async...")
+    Timer.Wait(1000)
+    print("1 second later")
+end)
+```
+
+---
+
+### `Timer.Wait(ms)`
+Coroutine-only delay (must be called from inside Timer.CreateThread).
+```lua title="Example"
+Timer.Wait(1000) -- pauses the thread for 1 second
+```
