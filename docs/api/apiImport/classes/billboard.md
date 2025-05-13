@@ -22,9 +22,6 @@ local my_billboard = Billboard(
 )
 ```
 
-
-## Constructors
-
 <ConstructorDeclaration type="Class" name="Billboard" />
 
 | Type                                                | Name                   |Default                | Description                        |
