@@ -7,19 +7,19 @@ tags: [class, client]
 ---
 
 <HeaderDeclaration type="Class" name="Billboard" image="/img/docs/billboard.webp" />
+A Billboard is a 2D Material that will be rendered always facing the camera.
 
 
-## Examples
 
-```lua title=Client/Index.lua
+## Constructors
+
+```lua title="Client/Index.lua"
 local my_billboard = Billboard(
     Vector(200, 200, 200), -- location
-    "helix::M_Default_Masked_Lit", -- material
+    '/Decals/MySprite.MySprite', -- Texture path (relative to /Game/)
     Vector2D(32, 32), -- size
-    true
+    true -- screen-space scaling
 )
-
-my_billboard:SetMaterialTextureParameter("Texture", "package://my_package/Client/image.jpg")
 ```
 
 
@@ -27,8 +27,15 @@ my_billboard:SetMaterialTextureParameter("Texture", "package://my_package/Client
 
 <ConstructorDeclaration type="Class" name="Billboard" />
 
+| Type                                                | Name                   |Default                | Description                        |
+|-----------------------------------------------------|------------------------|-----------------------|------------------------------------|
+| [Vector](#vector)                                   | `location`             | `Vector(0, 0, 0)`     |                                    |   
+| [Material Reference](#material-reference)   | `material_asset`       |                       |                                    |
+| [Vector2D](#size)                                   | `size`                 | `Vector2D(32, 32)`    |                                    |        
+| [boolean](#boolean)                           | `size_in_screen_space` | `false`               |  `Size is in Screen or World Space`|   
 
-## Static Functions
+
+<!-- ## Static Functions
 
 <StaticFunctionsDeclaration type="Class" name="Billboard" />
 
@@ -40,4 +47,4 @@ my_billboard:SetMaterialTextureParameter("Texture", "package://my_package/Client
 
 ## Events
 
-<EventsDeclaration type="Class" name="Billboard" />
+<EventsDeclaration type="Class" name="Billboard" /> -->
