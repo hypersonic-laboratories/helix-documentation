@@ -1,6 +1,6 @@
 ---
 title: Chat
-description: Configure, send and intercept chat messages
+description: The Chat class represents the in-game chat panel—a `LyraActivatableWidget` that opens with a single key-press and lets players exchange messages in real time. It handles everything from routing text through the server to colouring or styling words with easy tags. Built-in slash-command support and visibility locking make it simple to add custom commands, mute the chat during cut-scenes, or trigger gameplay events when a command is executed.
 tags: [static-class]
 ---
 
@@ -145,10 +145,11 @@ Always remember to close the tag using &lt;/&gt;
 Chat.Broadcast("<cyan>Hello</> <bold>world!</>")
 ```
 
-> **Note**   
-> The chat renderer supports **one tag at a time** per span.  
-> Combinations such as bold + red are *not* supported.
+///  warning
 
+It is NOT possible to combine two or more styles together /(eg.: Bold + Red/).
+
+/// 
 
 
 <EventsDeclaration type="StaticClass" name="Chat" />
