@@ -15,7 +15,7 @@ copyright: "&copy; 2024 HELIX&trade; is a trademark of Hypersonic Labs"
 
 ###------------------------------If you add or remove a page, you must update it here!!!-------------------------------------------------###
 nav:
-  - Getting Started: 
+  - Getting Started:
     - getting_started/index.md
     - Start Here:
       - getting_started/install.md
@@ -66,19 +66,10 @@ nav:
       - ... | flat | tutorials/exampleImports/*.md
   - API:
     - api/index.md
-    - Glossary:
-      - ... | flat | api/apiImport/glossary/*.md
+    - Global Variables:
+      - ... | flat | api/apiImport/global-variables/*.md
     - Classes:
-      - Base Classes:
-        - ... | flat | api/apiImport/classes/base-classes/*.md
-      - Static Classes:
-        - ... | flat | api/apiImport/static-classes/*.md
-      - Utility Classes:
-        - ... | flat | api/apiImport/utility-classes/*.md
-      - All Other Classes:
-        - ... | flat | api/apiImport/classes/*.md
-    - Structs:
-      - ... | flat | api/apiImport/structs/*.md
+      - ... | flat | api/apiImport/classes/*.md
 
 
 # Extra styling
@@ -121,13 +112,13 @@ theme:
   logo: _images/logo2.svg
   icon:
     repo: fontawesome/brands/github
-    annotation: material/plus-circle 
+    annotation: material/plus-circle
   palette:
     scheme: slate-helix #toggle between 'slate' (default dark) and 'helix' (custom) and 'helix-slate' (custom, less dark)
   features:
     # https://squidfunk.github.io/mkdocs-material/setup/adding-a-git-repository/#code-actions
     - content.action.edit #Also adds comment issue button, via _overrides/partials/actions.html
-    
+
     # https://squidfunk.github.io/mkdocs-material/reference/code-blocks
     - content.code.annotate
     - content.code.copy
@@ -252,7 +243,7 @@ markdown_extensions:
       insert: true
       superscript: true
   - pymdownx.emoji:
-      emoji_index: !!python/name:material.extensions.emoji.twemoji 
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
   - pymdownx.escapeall #ignore yml errors
   - pymdownx.highlight:
