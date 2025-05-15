@@ -5,7 +5,7 @@ tags: [static-class]
 ---
 
 <HeaderDeclaration type="StaticClass" name="Chat" is_static />
-Configure, send and intercept chat messages.
+The Chat class represents the in-game chat panel—a `LyraActivatableWidget` that opens with a single key-press and lets players exchange messages in real time. It handles everything from routing text through the server to colouring or styling words with easy tags. Built-in slash-command support and visibility locking make it simple to add custom commands, mute the chat during cut-scenes, or trigger gameplay events when a command is executed.
 
 ## Examples
 
