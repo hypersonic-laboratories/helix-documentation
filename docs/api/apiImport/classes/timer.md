@@ -3,10 +3,11 @@ title: Timer
 description: Execute of code at specified time intervals.
 tags: [static-class]
 ---
-<HeaderDeclaration type="StaticClass" name="Timer" is_static image={"/img/docs/stopwatch.webp"} />
-A global utility class for scheduling delayed or repeating callbacks using Unreal Engine’s Kismet timer system. Provides both classic timer-based control and coroutine-style asynchronous flows for scripting convenience
+<HeaderDeclaration type="StaticClass" name="Timer"/>
+A global utility class for scheduling delayed or repeating callbacks
+Provides both classic timer-based control and coroutine-style asynchronous flows for scripting convenience
 
-## Static Functions
+## Functions
 <StaticFunctionsDeclaration type="StaticClass" name="Timer" />
 
 ### `Timer.SetNextTick(callback, ...)`

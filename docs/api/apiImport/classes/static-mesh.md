@@ -1,37 +1,63 @@
 ---
 title: StaticMesh
-description: A StaticMesh entity represents a Mesh which can be spawned in the world, can't move and is more optimized for using in decorating the world.
+description: StaticMesh spawns a 3D mesh actor with configurable collision
 sidebar_position: 0
 tags: [class]
 ---
+<HeaderDeclaration type="Class" name="StaticMesh"/>
+StaticMesh is a callable class for spawning a static mesh actor into the world with configurable collision behavior.
+It wraps Unreal’s `AStaticMeshActor` and its `UStaticMeshComponent`, giving direct access to mesh, mobility, transform, materials, and all standard component functions.
+This is ideal for props, obstacles, architecture, or decorative geometry in your scene
 
-<HeaderDeclaration type="Class" name="StaticMesh" image="/img/docs/static-mesh.webp" />
-
-
-Static Meshes are like Props, but with fewer interaction options. Static Meshes are aimed to offer better performance on spawning Static "objects" in the world than Props.
-
-///tip
-
-Automatically all StaticMeshActors present in the Level will be loaded as a StaticMesh entity in the client side.
-
+/// tip
+`StaticMesh` is an `Actor` so it inherits all functions from [Actor](#actor)
 ///
 
-
-## Constructors
-
+## Constructor
 <ConstructorDeclaration type="Class" name="StaticMesh" />
 
+```lua title="Example"
+local cube = StaticMesh(
+    Vector(0, 0, 100),
+    Rotator(0, 0, 0),
+    "/Engine/BasicShapes/Shape_Cube.Shape_Cube",
+    CollisionType.StaticOnly
+)
+```
 
-## Static Functions
-
-<StaticFunctionsDeclaration type="Class" name="StaticMesh" />
-
+| Name        | Type       | Default             | Description                                             |
+|-------------|------------|---------------------|---------------------------------------------------------|
+| `Location`  | `Vector`   | `(0,0,0)`           | World position to spawn the mesh                        |
+| `Rotation`  | `Rotator`  | `(0,0,0)`           | Initial rotation of the mesh actor                      |
+| `MeshPath`  | `string`   | **Required**        | Asset path to a UStaticMesh (e.g. `Shape_Cube`)         |
+| `CollType`  | `enum`     | `CollisionType.Auto`| Collision handling mode — see [`CollisionType`](#collisiontype) enum |
 
 ## Functions
-
 <FunctionsDeclaration type="Class" name="StaticMesh" />
 
+### `SetStaticMesh`
+Changes the mesh to another asset at runtime.
+```lua
+cube:SetStaticMesh(UE.UObject.Load("/Game/Props/MyMesh.MyMesh"))
+```
+---
 
-## Events
+### `SetMaterial`
+Applies a material to the mesh by index.
+```lua
+cube:SetMaterial(0, MyMaterial)
+```
+---
 
-<EventsDeclaration type="Class" name="StaticMesh" />
+### `SetCollisionEnabled`
+Changes the mesh’s collision mode after spawn.
+```lua
+cube:SetCollisionEnabled(CollisionType.NoCollision)
+```
+---
+
+### `SetMobility`
+Sets whether the mesh is movable, static, or stationary.
+```lua
+cube:SetMobility(UE.EComponentMobility.Movable)
+```

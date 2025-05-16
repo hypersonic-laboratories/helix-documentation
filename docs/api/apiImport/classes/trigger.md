@@ -1,49 +1,40 @@
 ---
 title: Trigger
-description: A Trigger class is a utility class to trigger events when any Entity enters an Area
+description:
 sidebar_position: 0
 tags: [class]
 ---
+<HeaderDeclaration type="Class" name="Trigger"/>
+Trigger creates a shape-based volume in the world that detects when other actors overlap it.
+These triggers are useful for gameplay logic like entering zones, starting scripted events, teleporting players, or detecting proximity.
+Supported shapes include spheres, boxes, and capsules. You can assign a Lua callback to respond to overlaps and optionally restrict which classes are allowed to trigger them
 
-<HeaderDeclaration type="Class" name="Trigger" image="/img/docs/trigger.webp" />
+/// tip
+`Trigger` is an `Actor` so it inherits all functions from [Actor](#actor)
+///
 
-
-## Examples
-
-```lua
-local sphere_trigger = Trigger(Vector(-200, 100, 500), Rotator(), Vector(100), TriggerType.Sphere, true, Color(1, 0, 0))
-
-sphere_trigger:Subscribe("BeginOverlap", function(trigger, actor_triggering)
-    Console.Log("Something entered my Sphere Trigger")
-end)
-
-local box_trigger = Trigger(Vector(300, 200, 500), Rotator(0, 45, 0), Vector(150, 150, 150), TriggerType.Box, true, Color(0, 1, 0))
-
-box_trigger:Subscribe("BeginOverlap", function(trigger, actor_triggering)
-    Console.Log("Something entered my Box Trigger")
-end)
-
-box_trigger:Subscribe("EndOverlap", function(trigger, actor_triggering)
-    Console.Log("Something left my Box Trigger")
-end)
-```
-
-
-## Constructors
-
+## Constructor
 <ConstructorDeclaration type="Class" name="Trigger" />
 
+```lua title="Example"
+local trig = Trigger(
+	Vector(0, 0, 200),
+	Rotator(),
+	Vector(100),
+	TriggerType.Sphere,
+	true,
+	function(self, other) print(other:GetName()) end,
+	Color(1, 0, 0, 0.5)
+)
+```
 
-## Static Functions
-
-<StaticFunctionsDeclaration type="Class" name="Trigger" />
-
-
-## Functions
-
-<FunctionsDeclaration type="Class" name="Trigger" />
-
-
-## Events
-
-<EventsDeclaration type="Class" name="Trigger" />
+| Name               | Type       | Default                   | Description                                                                 |
+|--------------------|------------|---------------------------|-----------------------------------------------------------------------------|
+| `Location`         | `Vector`   | `(0,0,0)`                 | World position for the trigger                                              |
+| `Rotation`         | `Rotator`  | `(0,0,0)`                 | World rotation                                                              |
+| `Extent`           | `Vector`   | `(100,100,100)`           | Shape extents (radius, box half-size, or capsule radius/height)            |
+| `TriggerType`      | `enum`     | `TriggerType.Sphere`      | Shape of the volume — Sphere, Box, or Capsule                              |
+| `bVisible`         | `boolean`  | `false`                   | If true, draws a semi-transparent debug shape                               |
+| `CallbackFunction` | `function` | **Required**              | Function called on actor overlap                                            |
+| `Color`            | `Color`    | `(0,1,0,0.5)`             | Debug color if visible                                                      |
+| `OverlapOnlyClasses` | `table`  | `{}`                      | Optional array of UClass paths to restrict overlap (e.g. only `/Script/Engine.Pawn`) |
