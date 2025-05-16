@@ -5,6 +5,10 @@ tags: [class]
 ---
 <HeaderDeclaration type="Class" name="Canvas" />
 
+/// danger | Unfinished Section
+- The API for this class is currenlty under construction!
+///
+
 ## Constructor
 <ConstructorDeclaration type="Class" name="Canvas" />
 
