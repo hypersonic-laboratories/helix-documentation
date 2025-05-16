@@ -4,6 +4,8 @@ description: HELIX Structs
 tags: [scripting]
 ---
 <HeaderDeclaration type="Struct" name="Structs" />
+Structs are fixed-shape data containers used to group related values, like a strongly typed table in Lua.
+They help keep things organized and efficient in Unreal, and are commonly used for positions, colors, stats, and other reusable sets of data.
 
 ## Quat
 <QuatDeclaration type="Struct" name="Quat" />
