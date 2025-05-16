@@ -1,6 +1,5 @@
 ---
 title: HWeapon
-sidebar_position: 0
 tags: [class]
 ---
 <HeaderDeclaration type="Class" name="Weapon" image="/img/docs/weapon.webp" />
@@ -30,12 +29,6 @@ local new_weapon = Weapon(
 
 ## Functions
 <FunctionsDeclaration type="Class" name="Weapon" />
-
-```lua title="Example"
-```
-
-## Events
-<EventsDeclaration type="Class" name="Weapon" />
 
 ```lua title="Example"
 ```
