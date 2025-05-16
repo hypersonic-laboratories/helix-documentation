@@ -106,7 +106,7 @@ theme:
   custom_dir: _overrides
   language: en
   font:
-    text: Inter
+    text: Tomorrow
     code: JetBrains Mono
   favicon: _images/favicon.ico
   logo: _images/logo2.svg
