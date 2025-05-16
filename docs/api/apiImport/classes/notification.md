@@ -3,28 +3,24 @@ title: Notification
 description: Notification is a lightweight helper that fires a one-shot pop-up on the player’s HUD.
 tags: [static-class]
 ---
-
 <HeaderDeclaration type="StaticClass" name="Chat" is_static />
-Notification is a lightweight helper that fires a **one-shot pop-up** on the player’s HUD.
-Give it a line of text, an optional life-time, and a screen preset— `Center`, `TopRight`, `BottomRight`, B`ottomLeft`, or `TopLeft` and it will spawn a `Notification` widget, play its intro animation, hold for the chosen delay and then fade out.
-<br> 
-Ideal for ability errors, system tips, or quick achievements, it needs no replication or extra setup.
+Notification creates a temporary popup widget on the player's HUD with optional animation, delay, and screen position.
+These are useful for alerts, ability failures, errors, status info, or short-lived feedback messages.
+The popups auto-fade after a set time and do not require manual cleanup
 
-## Examples
+/// tip
+`Notification` is callable — use it like `Notification("Text", delay, position)` without creating an instance.
+///
 
-```lua title="Client/Index.lua"
--- sends a chat notification to a client
-Notification("This is a notification", 1.0, NotificationPosition.Center)
+## Constructor
+<ConstructorDeclaration type="Class" name="Notification" />
+
+```lua title="Example"
+Notification("Welcome to HELIX!", 1.5, NotificationPosition.TopRight)
 ```
 
-## Constructors
-
-```lua
-Notification(text, delay, position)
-```
-
-| Type                                        |     Parameter        | Default                        | Description                                                |
-| ------------------------------------------  | ----------------------|--------------------------------| -----------------------------------------------------------|   
-| [string](#string)                             | `text`          |                                | The text to display in the notification.                   |
-| [integer](#number)                            | `delay?`         | `1.0`                          | The delay in seconds before the notification disappears.   |
-| [NotificationPosition](#NotificationPosition) | `position?`     | `NotificationPosition.Center`  | The position of the notification.                          |
+| Name       | Type      | Default         | Description                                                  |
+|------------|-----------|-----------------|--------------------------------------------------------------|
+| `text`     | `string`  | **Required**    | The message to display                                       |
+| `delay`    | `number`  | `1.0`           | How long to show the notification before fading out          |
+| `position` | `enum`    | `NotificationPosition.Center`      | One of `NotificationPosition` enum: `TopLeft`, `BottomRight`, etc. |
