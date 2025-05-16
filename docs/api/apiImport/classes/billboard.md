@@ -1,31 +1,35 @@
 ---
 title: Billboard
-description: A Billboard is a 2D Material that will be rendered always facing the camera.
-image: /img/docs/billboard.webp
-sidebar_position: 0
-tags: [class, client]
+description: Billboard displays a flat 2D sprite that always faces the camera
+tags: [class]
 ---
 <HeaderDeclaration type="Class" name="Billboard" image="/img/docs/billboard.webp" />
-A Billboard is a 2D Material that will be rendered always facing the camera.
+Billboard spawns a 2D sprite in 3D space that always faces the camera.
+This is commonly used for markers, indicators, floating icons, or simple world labels.
+The billboard can be screen-size scaled or world-size scaled and can be textured using any valid sprite or texture asset
 
-## Constructors
+/// tip
+`Billboard` is an `Actor` so it inherits all functions from [Actor](#actor)
+///
+
+## Constructor
 <ConstructorDeclaration type="Class" name="Billboard" />
 
-```lua title="Client/Index.lua"
-local my_billboard = Billboard(
-    Vector(200, 200, 200), -- location
-    '/Decals/MySprite.MySprite', -- Texture path (relative to /Game/)
-    Vector2D(32, 32), -- size
-    true -- screen-space scaling
+```lua title="Example"
+local marker = Billboard(
+    Vector(0, 0, 200),
+    "/Game/UI/Icons/Icon_Marker.Icon_Marker",
+    Vector2D(64, 64),
+    true
 )
 ```
 
-| Type                                                | Name                   |Default                | Description                        |
-|-----------------------------------------------------|------------------------|-----------------------|------------------------------------|
-| [Vector](#vector)                                   | `location`             | `Vector(0, 0, 0)`     |                                    |
-| [Material Reference](#material-reference)           | `material_asset`       |                       |                                    |
-| [Vector2D](#size)                                   | `size`                 | `Vector2D(32, 32)`    |                                    |
-| [boolean](#boolean)                                 | `size_in_screen_space` | `false`               |  `Size is in Screen or World Space`|
+| Name           | Type        | Default      | Description                                                             |
+|----------------|-------------|--------------|-------------------------------------------------------------------------|
+| `Location`      | `Vector`    | `(0,0,0)`    | World position where the billboard is placed                            |
+| `TexturePath`   | `string`    | **Required** | Asset path to the texture or sprite                                     |
+| `Size`          | `Vector2D`  | `(64,64)`    | Desired screen size of the sprite (ignored if not in screen space mode) |
+| `bScreenSpace`  | `boolean`   | `false`      | If true, sprite maintains size in screen space (UI-style)               |
 
 ## Functions
 <FunctionsDeclaration type="Class" name="Billboard" />

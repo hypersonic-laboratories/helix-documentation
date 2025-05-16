@@ -1,123 +1,100 @@
 ---
 title: Chat
-description: The Chat class represents the in-game chat panel—a `LyraActivatableWidget` that opens with a single key-press and lets players exchange messages in real time. It handles everything from routing text through the server to colouring or styling words with easy tags. Built-in slash-command support and visibility locking make it simple to add custom commands, mute the chat during cut-scenes, or trigger gameplay events when a command is executed.
+description: ''
 tags: [static-class]
 ---
-
 <HeaderDeclaration type="StaticClass" name="Chat" is_static />
-The Chat class represents the in-game chat panel—a `LyraActivatableWidget` that opens with a single key-press and lets players exchange messages in real time. It handles everything from routing text through the server to colouring or styling words with easy tags. Built-in slash-command support and visibility locking make it simple to add custom commands, mute the chat during cut-scenes, or trigger gameplay events when a command is executed.
+Chat is a global utility class that connects Lua scripts to the in-game chat system.
+It supports registering custom slash commands, adding chat messages locally, broadcasting announcements, and sending messages to specific players.
+Commands registered through `Chat.RegisterCommand(...)` also become usable via the console
+
+/// tip
+`Chat` is a static module — you don’t instantiate it. Use `Chat.RegisterCommand(...)`, `Chat.AddMessage(...)`, etc.
+///
 
 ## Examples
 
-```lua title="Server/Index.lua"
+```lua title="Server"
 -- sends a chat message to everyone
 Chat.Broadcast("Welcome to the server!")
 
 -- sends a message to a specific player (server only)
-Chat.SendMessage('You just got your paycheck!.', player)
+Chat.SendMessage('You just got your paycheck!', player)
 ```
 
-```lua title="Client/Index.lua"
--- registers a command 
+```lua title="Client"
+-- registers a command
 Chat.RegisterCommand('ping', {}, 'Pong', function(args)
     Chat.AddMessage('Pong!')
 end)
 
 -- sends a chat message locally (client only)
-Chat.AddMessage('You just got your paycheck!.')
+Chat.AddMessage('You just got your paycheck!')
 
 ```
 
-
-## Static Functions
-
+## Functions
 <StaticFunctionsDeclaration type="StaticClass" name="Chat" />
-### AddMessage
 
-Adds a chat message which will display local only
-
+### `RegisterCommand`
+Registers a new custom chat command (e.g. `/noclip`)
 ```lua
-Chat.AddMessage(message) -- client side only 
+Chat.RegisterCommand("noclip", {}, "Toggles noclip mode", function(args)
+	print("Noclip toggled!")
+end)
 ```
+---
 
-| Type              | Parameter              |Default                | Description                        |
-|-------------------|------------------------|-----------------------|------------------------------------|
-| [string](#string) | `message`              |                       | `The message to send`              |    
-
-
-### SendMessage
-
-Sends a chat message to a Player only
-
+### `AddMessage`
+Adds a local message to the player's chat feed
 ```lua
-Chat.SendMessage(message, player) -- server side only 
+Chat.AddMessage("Welcome to the server!")
 ```
+---
 
-| Type              | Parameter              |Default                | Description                        |
-|-------------------|------------------------|-----------------------|------------------------------------|
-| [string](#string) | `message`              |                       | `The message to send`              |   
-| [Player](#Player) | `player`               |                       | `The player to receive the message`| 
-
-
-### Broadcast
+### `Broadcast`
+Sends a global announcement to all players
 ```lua
-Chat.Broadcast(message)  -- server side only
+Chat.Broadcast("The server will restart in 5 minutes")
 ```
+---
 
-Sends a chat message to all Players
-
-| Type              | Parameter              |Default                | Description                        |
-|-------------------|------------------------|-----------------------|------------------------------------|
-| [string](#string) | `message`              |                       | `The message to broadcast`         |   
-
-### RegisterCommand
-
-Registers a chat and console command. 
-
+### `SendMessage`
+Sends a private message to a specific player controller
 ```lua
-Chat.RegisterCommand(name, paramDefs, description, cb) -- client side only 
+Chat.SendMessage("Hello, Player!", TargetPlayer)
 ```
+---
 
-| Type              | Parameter              |Default                | Description                                        |
-|-------------------|------------------------|-----------------------|----------------------------------------------------|
-| [string](#string) | `name`                 |                       | `Command name`                                     |   
-| [table](#table)   | `paramDefinitions`     |                       | `Param Definitions`                                |   
-| [string](#string) | `description`          |                       | `Command description`                              |   
-| [function](#callback)   | `callback`       |                       | `Function to run when command is executed`   |   
-
-### SetVisibility
-
-Sets if the Chat is visible or not
-
+### `Clear`
+Clears the chat UI
 ```lua
-Chat.SetVisibility(is_visible) -- client side only 
+Chat.Clear()
 ```
+---
 
-| Type                | Parameter              |Default                | Description                        |
-|---------------------|------------------------|-----------------------|------------------------------------|
-| [boolean](#boolean) | `is_visible`           |                       | `Whether it is visible or not`     |   
-
-### Clear
-
-Clears all messages
-
+### `SetVisibility`
+Shows or hides the chat UI widget
 ```lua
-Chat.Clear() -- client side only 
+Chat.SetVisibility(false)
 ```
-### IsReady
+---
 
-Returns if the chat is constructed 
-
+### `IsReady`
+Returns true if the chat widget is currently bound and ready
 ```lua
-Chat.IsReady() -- client side only 
+if Chat.IsReady() then
+	Chat.AddMessage("Chat system ready.")
+end
 ```
-### GetWidget
+---
 
-Returns the chat widget
-
+### `GetWidget`
+Returns the current chat UI widget instance
 ```lua
-Chat.GetWidget() -- client side only 
+local ui = Chat.GetWidget()
 ```
+---
 
 ## Text Formatting
 
@@ -136,7 +113,7 @@ Chat.GetWidget() -- client side only
 | *Italic text* | ``<italic></>`` | Italic style |
 
 /// info
-Always remember to close the tag using &lt;/&gt; 
+Always remember to close the tag using &lt;/&gt;
 ///
 
 ### Quick example
@@ -149,7 +126,4 @@ Chat.Broadcast("<cyan>Hello</> <bold>world!</>")
 
 It is NOT possible to combine two or more styles together /(eg.: Bold + Red/).
 
-/// 
-
-
-<EventsDeclaration type="StaticClass" name="Chat" />
+///
