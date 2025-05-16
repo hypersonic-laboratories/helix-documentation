@@ -3,8 +3,9 @@ title: HCharacter
 tags: [class]
 ---
 <HeaderDeclaration type="Class" name="HCharacter"/>
-HCharacter spawns a fully featured player character with built-in support for attachments, skeletal mesh overrides, animation, input control, and ragdoll physics.
-It uses a Lyra-based blueprint character and applies a default pawn data asset for abilities, movement, and mesh setup. Useful for creating custom player characters, test bots, or roleplay avatars.
+HCharacter spawns a customizable player character into the world with support for animation, mesh overrides, ragdoll physics, and attachments.
+It is designed for gameplay characters that need full control over visuals, input, skeletal sockets, and interactions.
+This class is ideal for roleplay systems, test bots, or any scenario where you need a fully controllable humanoid character
 
 /// tip
 `HCharacter` is an `Actor` so it inherits all functions from [Actor](#actor)
