@@ -3,7 +3,7 @@ title: Controller
 description: Base class for all Controller entities
 tags: [base-class]
 ---
-<HeaderDeclaration type="Class" name="Damageable" />
+<HeaderDeclaration type="Class" name="Controller" />
 `PlayerController` is the class responsible for handling player input and possessing pawns.
 It acts as the bridge between the player's inputs (keyboard, mouse, gamepad) and the game world, processing input events, managing the HUD, camera control, and interacting with possessed pawns or characters.
 Controllers exist independently of pawns and can be reassigned dynamically.
@@ -22,7 +22,7 @@ local Controller = UE.UGameplayStatics.GetPlayerController(HWorld, 0)
 ```
 
 ## Functions
-<FunctionsDeclaration type="Class" name="Damageable" />
+<FunctionsDeclaration type="Class" name="Controller" />
 
 ### `Possess`
 Handles attaching this controller to the specified pawn

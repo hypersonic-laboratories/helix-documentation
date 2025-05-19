@@ -1,207 +1,124 @@
 ---
 title: Decal
-description: Decals are Materials that are projected onto meshes in your level, including Static Meshes and Skeletal Meshes.
+description: Decal places a world-aligned material projection onto surfaces
 sidebar_position: 0
-tags: [class, client]
+tags: [class]
 ---
+<HeaderDeclaration type="Class" name="Decal"/>
+Decal spawns a 3D projected material onto surfaces in the world.
+This is useful for things like graffiti, blood splatters, burn marks, ground targets, or bullet impacts.
+Decals can fade based on screen size and automatically destroy themselves after a set lifespan.
 
-<HeaderDeclaration type="Class" name="Decal" image="/img/docs/decals.webp" />
+/// tip
+`Decal` is an `Actor`, so you can call any [Actor](#actor) functions
+///
 
-
-## Examples
-
-```lua title="Client/Index.lua"
-local DecalActor = Decal(
-    Vector(100, 200, 0),
-    Rotator(0, 90, 90),
-    'helix::M_Default_Translucent_Lit_Decal',
-    Vector(128, 256, 256),
-    60,
-    0.01,
-)
-
-DecalActor:SetDecalMaterial('/Engine/EditorResources/FieldNodes/_Resources/M_FieldVolumePreview.M_FieldVolumePreview')
-```
-
-```lua title="Client/Index.lua"
-local DecalActor = Decal(
-    Vector(100, 200, 0),
-    Rotator(0, 90, 90),
-    'helix::M_Default_Translucent_Lit_Decal',
-    Vector(128, 256, 256),
-    60,
-    0.01
-)
-print(DecalActor.Object) -- AActor
-print(DecalActor.Component) -- UDecalComponent
-```
-
-## Variables
-
-<VariableDeclaration type="Class" name="Decal" />
-
-| Name              |       Type             |
-| ----------------  | ------------------- |
-| Component          | [UDecalComponent](https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Runtime/Engine/Components/UDecalComponent?application_version=5.5)    |
-
-
-## Constructors
-
+## Constructor
 <ConstructorDeclaration type="Class" name="Decal" />
 
-```lua
-local DecalActor = Decal(Vector(100, 200, 0), Rotator(0, 90, 90), 'helix::M_Default_Translucent_Lit_Decal', Vector(128, 256, 256), 60, 0.01)
+```lua title="Example"
+local myDecal = Decal(
+	Vector(100, 200, 0),
+	Rotator(0, 90, 90),
+	"helix::M_Default_Translucent_Lit_Decal",
+	Vector(128, 256, 256),
+	60,
+	0.01
+)
 ```
 
-| Type              |       Name        | Default | Description                                                              |
-| ---------------  | :----------------- | ----- | ----------------------------------------------------------------------  |
-| [Vector](../../structs/vector) | `Location`   |  | The location to spawn the decal at.  |
-| [Rotator](../../structs/rotator) | `Rotation`  |   | The orentiation of the decal. |
-| string | `MaterialAsset` |        | The material to be set to the decal. |
-| [Vector?](../../structs/vector) | `Size` | `Vector(128, 256, 256)` | The size of the decal. |
-| number? | `Lifespan` | `60` | The number of seconds that the decal will live for. |
-| number? | `FadeScreenSize` | `0.01` | The screen size at which the decal fades. |
-
-### Returns
-```lua
-table: {
-    Object: AActor,
-    Component: UDecalComponent,
-}
-```
+| Name             | Type      | Default              | Description                                                       |
+|------------------|-----------|----------------------|-------------------------------------------------------------------|
+| `Location`        | `Vector`  | **Required**         | World position for the center of the decal projection             |
+| `Rotation`        | `Rotator` | **Required**         | Orientation of the decal in world space                           |
+| `MaterialAsset`   | `string`  | **Required**         | Path to a decal-compatible material                               |
+| `Size`            | `Vector`  | `(128, 256, 256)`    | Size of the decal (depth, height, width)                          |
+| `Lifespan`        | `number`  | `60`                 | Seconds to live before destroying (0 = infinite)                  |
+| `FadeScreenSize`  | `number`  | `0.01`               | Screen size threshold below which the decal fades out             |
 
 ## Functions
+<AFunctionsDeclaration type="Class" name="Decal" />
 
-<FunctionsDeclaration type="Class" name="Decal" />
-
-### SetSortOrder
-Sets the sort order for the decal component. Higher values draw later (on top).
-
+### `SetDecalMaterial`
+Changes the decal’s material at runtime.
 ```lua
-Decal:SetSortOrder(Value)
+decal:SetDecalMaterial(UE.UObject.Load("/Game/MyDecals/NewMat.NewMat"))
 ```
-
-| Type | Name | Default | Description |
-| ---- | ---- | ------- | ----------- |
-| integer | `Value` | | The new value for setting the sorting order. |
-
 ---
-### SetFadeScreenSize
-Sets the FadeScreenSize for this decal component.
 
+### `GetDecalMaterial`
+Returns the currently assigned material.
 ```lua
-Decal:SetFadeScreenSize(NewFadeScreenSize)
+local mat = decal:GetDecalMaterial()
 ```
-
-| Type | Name | Default |  Description |
-| ---- | ---- | ------- | ----------- |
-| number | `NewFadeScreenSize` | | The new fade screen size for the decal. |
-
 ---
-### SetFadeOut
-Sets the decal's fade start time, duration and if the owning actor should be destroyed after the decal is fully faded out.
 
+### `CreateDynamicMaterialInstance`
+Creates a dynamic material instance for modifying parameters.
 ```lua
-Decal:SetFadeOut(StartDelay, Duration, DestroyOwnerAfterFade)
+local dyn = decal:CreateDynamicMaterialInstance()
+dyn:SetScalarParameterValue("Opacity", 0.5)
 ```
-
-| Type | Name | Default | Description |
-| ---- | ---- | ------- | ----------- |
-| number | `StartDelay` |         | Delay before fading starts. |
-| number | `Duration` |         | Duration of the fade. |
-| boolean | `DestroyOwnerAfterFade` | `false` | Whether to destroy the actor after fade. |
-
 ---
-### SetFadeIn
-Sets the decal's fade in start delay, and duration for the fade in.
 
+### `GetDecalMaterialInstance`
+Returns the dynamic material instance (if previously created).
 ```lua
-Decal:SetFadeIn(StartDelay, Duration)
+local inst = decal:GetDecalMaterialInstance()
 ```
-
-| Type | Name | Default | Description |
-| ---- | ---- | ------- | ----------- |
-| number | `StartDelay` | | Delay before fade-in starts. |
-| number | `Duration` | | Duration of the fade-in. |
-
 ---
-### SetDecalMaterial
-Sets the material on the decal component.
 
+### `SetDecalColor`
+Tints the decal color (if supported by the material).
 ```lua
-Decal:SetDecalMaterial(NewDecalMaterial)
+decal:SetDecalColor(Color(1, 0.2, 0.2, 1)) -- light red
 ```
-
-| Type | Name |  Default | Description |
-| ---- | ---- |  ------- | ----------- |
-| [UMaterialInterface](https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Runtime/Engine/Materials/UMaterialInterface?application_version=5.5) | `NewDecalMaterial` | The new material asset to set. |
-
 ---
-### SetDecalColor
-Sets the decal's color.
 
+### `GetDecalColor`
+Gets the current color tint.
 ```lua
-Decal:SetDecalColor(Color)
+local color = decal:GetDecalColor()
 ```
-
-| Type | Name | Default | Description |
-| ---- | ---- | ------- | ----------- |
-| [FLinearColor](https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Runtime/Core/Math/FLinearColor?application_version=5.5) | `Color` | | The new FLinearColor to set on the decal. |
-
 ---
-### GetFadeStartDelay
-Gets the current fade start delay.
-```lua
-Decal:GetFadeStartDelay()
-```
-#### Returns
-`number`: Fade start delay value.
 
+### `SetFadeScreenSize`
+Controls how small the decal appears before fading out.
+```lua
+decal:SetFadeScreenSize(0.005)
+```
 ---
-### GetFadeInStartDelay
-Gets the current fade in start delay.
-```lua
-Decal:GetFadeInStartDelay()
-```
-#### Returns
-`number`: Fade-in start delay value.
 
+### `GetFadeScreenSize`
+Returns the current fade screen size threshold.
+```lua
+print(decal:GetFadeScreenSize())
+```
 ---
-### GetFadeInDuration
-Gets the current fade in duration.
-```lua
-Decal:GetFadeInDuration()
-```
-#### Returns
-`number`: Fade-in duration.
 
+### `SetFadeOut`
+Begins fade-out after a delay, with optional destruction.
+```lua
+decal:SetFadeOut(1.5, 2.0, true)
+```
 ---
-### GetFadeDuration
-Gets the current fade duration.
-```lua
-Decal:GetFadeDuration()
-```
-#### Returns
-`number`: Fade duration.
 
+### `SetFadeIn`
+Fades the decal in over time (if needed).
+```lua
+decal:SetFadeIn(0.0, 1.25)
+```
 ---
-### GetDecalMaterial
-Gets the current decal material.
-```lua
-Decal:GetDecalMaterial()
-```
-#### Returns
-[UMaterialInterface](https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Runtime/Engine/Materials/UMaterialInterface?application_version=5.5): Current decal material.
 
+### `SetSortOrder`
+Controls which decals are rendered in front.
+```lua
+decal:SetSortOrder(5)
+```
 ---
-### CreateDynamicMaterialInstance
-Creates a dynamic material instance at runtime.
+
+### `GetSortOrder`
+Gets the current sort order value.
 ```lua
-Decal:CreateDynamicMaterialInstance()
+print(decal:GetSortOrder())
 ```
-#### Returns
-[UMaterialInstanceDynamic](https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Runtime/Engine/Materials/UMaterialInstanceDynamic?application_version=5.5): A dynamic instance of the decal material.
-
-## Events
-
-<EventsDeclaration type="Class" name="Decal" />
