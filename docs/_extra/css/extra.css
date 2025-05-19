@@ -16,7 +16,7 @@
     --helix-color-card-background: #1e1e24;
 
     /* More Site Colors (unvetted) */
-    --helix-black: #000000;
+    --helix-black: #0a0a0a;
     --helix-not-quite-black: #141414;
     --helix-not-quite-black-rgb: 10, 10, 10;
     --helix-white: #ededed;
@@ -45,7 +45,7 @@ https://github.com/squidfunk/mkdocs-material/blob/master/src/templates/assets/st
     --md-default-fg-color--light: hsla(var(--md-hue), 15%, 90%, 0.56);
     --md-default-fg-color--lighter: hsla(var(--md-hue), 15%, 90%, 0.32);
     --md-default-fg-color--lightest: hsla(var(--md-hue), 15%, 90%, 0.12);
-    --md-default-bg-color: var(--helix-not-quite-black); /* Changed all bg colors */
+    --md-default-bg-color: var(--helix-black); /* Changed all bg colors */
     --md-default-bg-color--light: hsla(var(--md-hue), 15%, 10%, 0.54);
     --md-default-bg-color--lighter: hsla(var(--md-hue), 15%, 10%, 0.26);
     --md-default-bg-color--lightest: hsla(var(--md-hue), 15%, 10%, 0.07);
@@ -126,7 +126,7 @@ https://github.com/squidfunk/mkdocs-material/blob/master/src/templates/assets/st
     .md-header {
         box-shadow: none;
         backdrop-filter: saturate(1.8) blur(20px);
-        background-color: var(--helix-not-quite-black);
+        background-color: var(--helix-black);
     }
 
     /* Add header nav bar underline */
@@ -387,6 +387,19 @@ li.md-tabs__item.md-tabs__item--active {
     color: var(--helix-color-gray) !important; /* Doesn't work for first element unless important override */
 }
 
+.md-nav__link--active {
+    background-color: var(--helix-color-gray-dark);
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%, 0 0);
+}
+
+.md-nav__link--active .md-ellipsis {
+    padding: 5px 0 5px 5px;
+}
+
+.md-nav__link--passed {
+    color: inherit;
+}
+
 /* Force GitHub link to not display */
 .md-header__source,
 .md-nav__source {
@@ -426,7 +439,6 @@ a.external::after {
     width: 11px;
     height: 11px;
     margin-left: 4px;
-    /* Fill color hardcorded for now */
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3C!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--%3E%3Cpath fill='%2363E6BE' d='M352 0c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9L370.7 96 201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L416 141.3l41.4 41.4c9.2 9.2 22.9 11.9 34.9 6.9s19.8-16.6 19.8-29.6V32c0-17.7-14.3-32-32-32H352zM80 32C35.8 32 0 67.8 0 112V432c0 44.2 35.8 80 80 80H400c44.2 0 80-35.8 80-80V320c0-17.7-14.3-32-32-32s-32 14.3-32 32V432c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16V112c0-8.8 7.2-16 16-16H192c17.7 0 32-14.3 32-32s-14.3-32-32-32H80z'/%3E%3C/svg%3E");
     background-position: center;
     background-repeat: no-repeat;
@@ -474,6 +486,7 @@ a.external::after {
     text-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
     border-radius: 5px;
     cursor: pointer;
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%, 0 0);
 }
 
 .download-button svg {
