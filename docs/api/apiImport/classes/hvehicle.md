@@ -189,7 +189,6 @@ HVehicle:GetFuelRatio(number)
 
 ### State Queries
 
----
 #### IsInReverse
 Returns if the vehicle is in reverse.
 ```lua
