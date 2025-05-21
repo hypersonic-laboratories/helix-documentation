@@ -1,54 +1,77 @@
 ---
 title: Persistent Data
-description: How to store and retrieve persistent data from disk using the built-in system
 tags: [scripting]
-status: old
 ---
 
---8<-- "old.md"
+# Persistent Data
+HELIX provides a built-in system for saving and loading data to disk using a persistent storage layer. This is ideal for tracking progress, saving custom settings, or keeping game state across sessions.
+Behind the scenes, HELIX uses **SQLite**, but you interact with it using simple and intuitive Lua functions.
 
+---
 
-import { Structs, BasicType } from '@site/docs/components/_nanos.mdx';
+## 📥 Saving Data
+To save data, use:
 
-How to store and retrieve persistent data from disk using the built-in system.
+```lua title="Example"
+Package.SetPersistentData(key, value)
+```
 
-In HELIX it is possible to store and retrieve data from disk with simple functions.
+- `key` is a string (e.g. `"player_data"`)
+- `value` can be any Lua type (table, string, number, etc.)
 
-///tip
-
-It is possible to store Persistent Data in both **Client** and **Server**!
-
-///
-
-## File Format
-
-The persistent data is automatically stored in the **TOML** format in the file `PersistentData.toml` inside your Package/ folder. This file is only created if you call `Package.SetPersistentData()`.
-
-## Storing and Retrieving data
-
-All **PersistentData** files are loaded automatically when the Package loads and stored in memory. You can easily access the whole file with `Package.GetPersistentData()` method.
-
-For storing data you will need to pass a `key` value, which will store <BasicType.Any /> lua value in that key.
-
-## Examples
-
-```lua
-local my_table = {
-    my_id = 123,
-    my_data_02 = "data"
+```lua title="Example"
+local my_data = {
+    level = 12,
+    xp = 3200,
+    name = "Nova"
 }
 
-Package.SetPersistentData("awesome_table", my_table)
-
--- PersistentData.toml will be:
--- awesome_table = {my_id = 123, my_data_02 = "data"}
+Package.SetPersistentData("player_stats", my_data)
 ```
 
-```lua
-local my_table = Package.GetPersistentData().awesome_table
+This will write:
 
-Console.Log(my_table.my_id)
-
--- Will print:
--- 123
+```lua title="Example"
+player_stats = {level = 12, xp = 3200, name = "Nova"}
 ```
+
+---
+
+## 📤 Loading Data
+To retrieve previously saved data, use:
+
+```lua title="Example"
+local all_data = Package.GetPersistentData()
+```
+
+You can then access your key like this:
+
+```lua title="Example"
+local stats = Package.GetPersistentData().player_stats
+print(stats.level) -- Output: 12
+```
+
+---
+
+## 🔐 Best Practices
+
+- Use simple keys to organize your data (e.g. `"settings"`, `"profile_data"`, `"last_used_weapon"`)
+- Keep client-only data lightweight
+- Always check for `nil` before accessing keys that might not exist yet
+
+```lua title="Example"
+local settings = Package.GetPersistentData().user_settings
+if settings then
+    ApplySettings(settings)
+end
+```
+
+---
+
+## Summary
+
+- `SetPersistentData(key, value)` saves a value
+- `GetPersistentData()` retrieves the full table
+- Data persists across sessions and is stored per server
+
+Persistent data gives you a powerful way to build long-term features like player progression, saved preferences, or persistent world states.

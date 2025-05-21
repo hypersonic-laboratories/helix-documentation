@@ -6,8 +6,5 @@ status: placeholder
 # API Reference
 
 /// danger | Unfinished Section
-- The API section is heavily WIP, as I consider how best to design v2.0 of the documentation for it
-- If you have thoughts, please let me know via the feedback button (top right!)
+- The API section is heavily WIP
 ///
-
-For now, **check out the [old docs site](https://docs-old.helixgame.com/docs/scripting-reference/glossary/basic-types)** for API documentation

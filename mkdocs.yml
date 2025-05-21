@@ -55,14 +55,11 @@ nav:
   - Scripting:
     - scripting/index.md
     - Key References:
-      - scripting/editorSetup.md
-      - scripting/introLua.md
-      - scripting/luaStyleGuide.md
-      - scripting/qbcore.md
+      - scripting/codeeditor.md
+      - scripting/packageguide.md
     - Core Concepts:
       - ... | flat | scripting/coreConceptsImports/*.md
     - Code Examples:
-      - tutorials/doors.md
       - ... | flat | tutorials/exampleImports/*.md
   - API:
     - api/index.md

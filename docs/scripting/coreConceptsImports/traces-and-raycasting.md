@@ -1,69 +1,119 @@
 ---
 title: Traces & Raycasting
-description: How to use Traces & Raycasting to gather world information in runtime
-sidebar_position: 7
 tags: [scripting]
-status: old
 ---
 
---8<-- "old.md"
+# Traces & Raycasting
+Traces (also known as **Raycasts**) are a powerful way to detect what’s in front of the player or along any path in your game world.
+By casting an invisible line from one point to another, you can detect objects, get hit positions, and interact with the world dynamically at runtime.
 
+---
 
- How to use Traces & Raycasting to gather world information in runtime.
+## 🧠 What Is a Trace?
+A **trace** checks for collisions along a straight line between two 3D points: a **start** and **end**.
+HELIX uses the physics system to return detailed info if something was hit — such as:
 
-**Traces** offer a method for reaching out in your maps and getting feedback on what is present along a line segment. You use them by providing two end points (a start and end location) and the physics system “traces” a line segment between those points, reporting any Actors that it hits. Traces are essentially the same as **Raycasts** or **Raytraces** in other software packages.
+- Which entity was hit
+- The world position of the hit
+- The type of surface or object
 
-![](/img/docs/traces-raycasting.jpg)
+Traces are the same concept as **Raycasting** in other engines like Unity or Unreal.
 
-The following example will show you how to get what and where the player is looking at.
+![Traces example](/img/docs/traces-raycasting.jpg)
 
-```lua title="Client/Index.lua"
--- Traces at each 100ms
+---
+
+## 🔍 What Is the Player Looking At?
+This example runs a trace every 100ms from the center of the screen out into the world.
+
+```lua title="Example"
+-- Run every 100ms
 Timer.SetInterval(function()
-    -- Gets the middle of the screen
-    local viewport_2D_center = Viewport.GetViewportSize() / 2
 
-    -- Deprojects to get the 3D Location for the middle of the screen
-    local viewport_3D = Viewport.DeprojectScreenToWorld(viewport_2D_center)
+    -- Get the center of the player's screen
+    local screen_center = Viewport.GetViewportSize() / 2
 
-    -- Makes a trace with the 3D Location and it's direction multiplied by 5000
-    -- Meaning it will trace 5000 units in that direction
-    local trace_max_distance = 5000
+    -- Convert screen center to a 3D world position + direction
+    local deprojected = Viewport.DeprojectScreenToWorld(screen_center)
 
-    local start_location = viewport_3D.Position
-    local end_location = viewport_3D.Position + viewport_3D.Direction * trace_max_distance
+    -- Trace 5000 units outward in the direction the player is looking
+    local start = deprojected.Position
+    local stop = deprojected.Position + deprojected.Direction * 5000
 
-    -- Determine at which object we will be tracing for (WorldStatic - StaticMeshes - and PhysicsBody - Props)
-    local collision_trace = CollisionChannel.WorldStatic | CollisionChannel.PhysicsBody
+    -- Specify what types of objects we want to detect
+    local collision = CollisionChannel.WorldStatic | CollisionChannel.PhysicsBody
 
-    -- Sets the trace modes (we want it to return Entity and Draws a Debug line)
-    local trace_mode = TraceMode.ReturnEntity | TraceMode.DrawDebug
+    -- Define the behavior of the trace
+    local mode = TraceMode.ReturnEntity | TraceMode.DrawDebug
 
-    -- Last parameter as true means it will draw a Debug Line in the traced segment
-    local trace_result = Trace.LineSingle(start_location, end_location, collision_trace, trace_mode)
+    -- Perform the trace
+    local result = Trace.LineSingle(start, stop, collision, mode)
 
-    -- If hit something draws a Debug Point at the location
-    if (trace_result.Success) then
+    -- If it hits something
+    if result.Success then
 
-        -- Makes the point Red or Green if hit an Actor
-        local color = Color(1, 0, 0) -- Red
+        local color = Color(1, 0, 0) -- Red if no entity
 
-        if (trace_result.Entity) then
-            color = Color(0, 1, 0) -- Green
+        if result.Entity then
+            color = Color(0, 1, 0) -- Green if it hit an entity
 
-            -- Here you can check which actor you hit like
-            -- if (trace_result.Entity:GetType() == "Character") then ...
+            -- You can check what kind of actor was hit:
+            -- if result.Entity:GetType() == "Character" then ...
         end
 
-        -- Draws a Debug Point at the Hit location for 5 seconds with size 10
-        Debug.DrawPoint(trace_result.Location, color, 5, 10)
+        -- Draw a debug point at the hit location
+        Debug.DrawPoint(result.Location, color, 5, 10)
     end
 end, 100)
 ```
 
-///tip
+---
 
-As you could see, we can pass bit-wise operators to Trace for more than one [CollisionChannel](/scripting-reference/glossary/enums.mdx#collisionchannel) at once! Use `|` between the **CollisionChannels** to achieve that.
+## ⚙️ Collision Filtering
+Traces can be filtered by **Collision Channels**, which define what types of objects the trace can interact with. This allows you to ignore irrelevant objects or target only specific types like characters, props, or world geometry.
+You can **combine multiple channels** using the `|` (bitwise OR) operator:
 
-///
+```lua title="Example"
+local collision = CollisionChannel.WorldStatic | CollisionChannel.PhysicsBody
+```
 
+### Common Collision Channels
+
+- `WorldStatic` – Static objects like walls or terrain
+- `PhysicsBody` – Movable physics-enabled props
+- `Pawn` – Characters, NPCs, or players
+
+---
+
+## 🧪 Debugging Tools
+Use trace debug options to **visualize raycasts** in the game world. This helps you confirm direction, distance, and what was hit.
+
+### TraceMode Flags
+
+- `TraceMode.DrawDebug` – Draws a colored line showing the trace
+- `TraceMode.ReturnEntity` – Includes entity hit results (not just position)
+
+You can also manually draw visuals with the `Debug` library:
+
+```lua title="Example"
+-- Draw a point where the trace hit
+Debug.DrawPoint(position, color, duration, size)
+
+-- Draw a line for custom traces
+Debug.DrawLine(start_position, end_position, color, duration, thickness)
+```
+
+These are especially useful when tuning aiming systems, line-of-sight checks, or precise interactions.
+
+---
+
+## ✅ Summary
+
+- **Traces** let you detect objects between two 3D points (like a laser)
+- Use `Trace.LineSingle()` to raycast between a start and end position
+- Use `CollisionChannel` to decide what kind of objects to detect
+- Add `TraceMode` flags to control output and debugging behavior
+- Use `Debug` tools to draw lines and points for visual feedback
+- Great for aiming, detecting hits, line-of-sight, and interaction systems
+
+Traces are a core part of building responsive gameplay logic in HELIX. Master them early—they’re used everywhere!
