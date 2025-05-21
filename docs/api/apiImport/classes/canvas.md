@@ -51,6 +51,11 @@ local CanvasActor = Canvas(
 ### DrawBox
 Adds a draw box instruction in to the draw command queue
 
+- ScreenPosition `Vector2D`
+- ScreenSize `Vector2D`
+- Thickness `number`
+- RenderColor? `LinearColor`
+
 ```lua
 Canvas:DrawBox(Vector2D(500, 500), Vector2D(100, 200), 5, Color.WHITE)
 ```
@@ -58,18 +63,34 @@ Canvas:DrawBox(Vector2D(500, 500), Vector2D(100, 200), 5, Color.WHITE)
 ---
 
 ### DrawLine
-Adds a draw line instruction in to the draw command queue
+Adds a draw line instruction in to the draw command queue.
+
+- ScreenPositionA `Vector2D`
+- ScreenPositionB `Vector2D`
+- Thickness `number`
+- RenderColor `LinearColor`
+
 ```lua
 Canvas:DrawLine(Vector2D(300, 500), Vector2D(800, 300), 5, Color.WHITE)
 ```
 
 ### DrawMaterial
-Adds a draw material instruction in to the draw command queue for drawing material instances onto the canvas
+Adds a draw material instruction in to the draw command queue for drawing material instances onto the canvas.
+
+- RenderMaterial `UMaterialInterface`
+- ScreenPosition `Vector2D`
+- ScreenSize `Vector2D`
+- CoordinatePosition `Vector2D`
+- CoordinateSize `Vector2D`
+- Rotation `number`
+- PivotPoint? `Vector2D`
+
 ```lua
 Canvas:DrawMaterial('', Vector2D(500, 500), Vector2D(800, 400), Vector2D(0, 0), Vector2D(100, 100), 45, Vector2D(0, 0))
 ```
 
 ### DrawMaterialFromWebUI
+Draws a web UI instance as a material interface on the canvas.
 ```lua
 Canvas:DrawMaterialFromWebUI()
 ```
@@ -80,30 +101,73 @@ Canvas:DrawMaterialFromSceneCapture()
 ```
 
 ### DrawText
-Adds a draw text instruction in to the draw command queue
+Adds a draw text instruction in to the draw command queue.
+
+- RenderText `string`
+- ScreenPosition `Vector2D`
+- Font `FontType`
+- Scale? `Vector2D`
+- Color? `LinearColor`
+- Kerning? `number`
+- CentreX? `boolean`
+- CentreY? `boolean`
+- ShadowColor? `LinearColor`
+- ShadowOffset? `Vector2D`
+- Outlined? `boolean`
+- OutlineColor? `LinearColor`
+
 ```lua
 Canvas:DrawText('Hello, this is text!', Vector2D(1000, 500), FontType.Roboto, 24, Color.WHITE, 0, false, false, Color.TRANSPARENT, Vector2D(1, 1), false, Color.BLACK)
 ```
 
 ### DrawTexture
+Adds a draw texture instruction in to the draw command queue. Draws a specified texture on the canvas.
+
+- RenderTexture `UTexture`
+- Position `Vector2D`
+- Size `Vector2D`
+- CoordinatePosition `Vector2D`
+- CoordinateSize? `Vector2D`
+- RenderColor `LinearColor`
+- BlendMode? `BlendMode`
+- Rotation? `number`
+- PivotPoint? `Vector2D`
+
 ```lua
 Canvas:DrawTexture(UE.UObject.Load(''), Vector2D(1000, 500), Vector2D(500, 500), Vector2D(0, 0), Vector2D(1, 1), Color.WHITE, 0, 0, Vector2D(0.5, 0.5))
 ```
 
 ### DrawPolygon
 Adds a draw polygon instruction to the draw command queue. Draws a regular polygon with the specified number of sides, position, radius, and color. Optionally accepts a texture and blend mode.
+
+- RenderTexture `UTexture`
+- ScreenPosition `Vector2D`
+- Radius? `Vector2D`
+- NumberOfSides? `number`
+- RenderColor `LinearColor`
+
 ```lua
 Canvas:DrawPolygon(texture, Vector2D(500, 500), 100, 6, Color.WHITE, 0)
 ```
 
 ### DrawRect
 Adds a filled rectangle instruction to the draw command queue. Draws a rectangle at the given position and size, with an optional texture, color, and blend mode.
+
+- RenderTexture `UTexture`
+- ScreenPosition `Vector2D`
+- Size `Vector2D`
+- RenderColor? `LinearColor`
+- BlendMode `BlendMode`
+
 ```lua
 Canvas:DrawRect(texture, Vector2D(500, 500), Vector2D(200, 100), Color.WHITE, 0)
 ```
 
 ### SetAutoRepaintRate
 Sets the automatic repaint rate for the canvas. Use `-1` to disable auto repaint, or `0` to repaint every frame.
+
+- NewRate `number`
+
 ```lua
 Canvas:SetAutoRepaintRate(0.1) -- Repaints every 0.1 seconds
 ```
@@ -116,24 +180,37 @@ local size = Canvas:GetSize()
 
 ### Resize
 Resizes the canvas to the specified width and height if auto-resize is disabled.
+
+- Width `number`
+- Height `number`
+
 ```lua
 Canvas:Resize(800, 600)
 ```
 
 ### SetScreenPosition
 Sets the screen position (offset) of the canvas.
+
+- NewScreenPosition `Vector2D`
+
 ```lua
 Canvas:SetScreenPosition(Vector2D(100, 100))
 ```
 
 ### SetAutoResize
 Enables or disables automatic resizing of the canvas.
+
+- AutoResize `boolean`
+
 ```lua
 Canvas:SetAutoResize(true)
 ```
 
 ### SetVisibility
 Sets whether the canvas is visible.
+
+- Visible `boolean`
+
 ```lua
 Canvas:SetVisibility(false)
 ```
@@ -146,6 +223,9 @@ Canvas:Repaint()
 
 ### Clear
 Clears the canvas with the specified color and repaints.
+
+- NewColor `LinearColor`
+
 ```lua
 Canvas:Clear(Color.BLACK)
 ```
