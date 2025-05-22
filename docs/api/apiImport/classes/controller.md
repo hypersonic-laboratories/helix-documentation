@@ -183,10 +183,8 @@ Controller:IsInputKeyDown(key)
 ### `GetViewportSize`
 Returns the current size of the viewport (screen resolution in pixels) for this player controller
 ```lua title="Example"
-local SizeX = UE.NewInteger(0)
-local SizeY = UE.NewInteger(0)
-Controller:GetViewportSize(SizeX, SizeY)
-print("Viewport size:", SizeX:Value(), SizeY:Value())
+local SizeX, SizeY = Controller:GetViewportSize(SizeX, SizeY)
+print("Viewport size:", SizeX, SizeY)
 ```
 
 ---
