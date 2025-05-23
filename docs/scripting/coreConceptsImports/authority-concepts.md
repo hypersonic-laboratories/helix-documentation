@@ -76,6 +76,24 @@ To disable automatic reassignment to other players:
 
 ---
 
+## Checking Authority in Code
+Use these methods to determine what type of authority your script is running under:
+
+- `:IsAuthority()`
+Returns `true` if the current context owns the actor (i.e., it was spawned on this side or this side is responsible for it).
+This is useful for gating logic to run only on the authoritative side (like spawning effects or triggering server-only logic).
+
+- `:IsLocallyControlled()`
+Returns `true` if the current context is the local player’s controlling side.
+This can be `true` on the Client for the player's own character, even if the Server has general authority over most game logic.
+
+/// tip
+Use `:IsAuthority()` to check ownership or authoritative control of actors.
+Use `:IsLocallyControlled()` to check if the local player should control or see certain behavior, such as camera effects or input-based interactions.
+///
+
+---
+
 ## Behavior Limited to the Network Authority
 
 Only the current **Network Authority** of an actor will execute certain actions, such as:
