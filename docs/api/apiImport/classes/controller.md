@@ -153,10 +153,8 @@ Controller:SetMouseLocation(x, y)
 Retrieves the current X and Y screen coordinates of the mouse cursor.
 Returns `false` if no mouse is available (e.g. on gamepad or touchscreen).
 ```lua title="Example"
-local X = UE.NewFloat(0)
-local Y = UE.NewFloat(0)
-Controller:GetMousePosition(X, Y)
-print("Mouse is at:", X:Value(), Y:Value())
+local X, Y = Controller:GetMousePosition(X, Y)
+print("Mouse is at:", X, Y)
 ```
 
 ---
@@ -192,10 +190,8 @@ print("Viewport size:", SizeX, SizeY)
 ### `GetInputMouseDelta`
 Retrieves how far the mouse moved this frame on the X and Y axes
 ```lua title="Example"
-local DeltaX = UE.NewFloat(0)
-local DeltaY = UE.NewFloat(0)
-Controller:GetInputMouseDelta(DeltaX, DeltaY)
-print("Mouse moved:", DeltaX:Value(), DeltaY:Value())
+local DeltaX, DeltaY = Controller:GetInputMouseDelta(DeltaX, DeltaY)
+print("Mouse moved:", DeltaX, DeltaY)
 ```
 
 ---
