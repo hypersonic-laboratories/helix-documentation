@@ -9,7 +9,6 @@ tags: [class, client]
 This class is a WIP, and may be subject to change.
 ///
 
-
 <HeaderDeclaration type="Class" name="Interactable" image="/img/docs/interactable.webp" />
 
 The `Interactable` class lets you make any actor in your scene interactable by players. It displays a customizable prompt and supports multiple interaction options, each with its own text, input action, and callback or ability. You can attach it to existing actors or create new interactable static meshes, and adjust the interaction point as needed.
@@ -29,7 +28,7 @@ The `Interactable` class lets you make any actor in your scene interactable by p
 
 ```lua
 local InteractableTransform = Transform()
-InteractableTransform.Location = Vector(0, 0, 0)
+InteractableTransform.Translation = Vector(0, 0, 0)
 local InteractableActor = Interactable({
     {
         Text = 'Interact', -- Base text on interaction option
@@ -55,6 +54,12 @@ local InteractableActor = Interactable({
 InteractableActor:SetInteractableProp(CubeActor)
 print(InteractableActor.Object) -- AActor
 ```
+
+| Type              |       Name        | Default | Description                                                              |
+| ---------------  | :----------------- | ----- | ----------------------------------------------------------------------  |
+| table | `InteractionData`   |  | A table of interaction tables.  |
+| string? | `StaticMeshPath`  |   | The path to a static mesh asset to be created as the interactable. (Optional) |
+| [Transform](../../global-variables/structs/#transform)? | `Transform`  |    |  The transform to spawn the static mesh with. (Optional) |
 
 ## Functions
 
