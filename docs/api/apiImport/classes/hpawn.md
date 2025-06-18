@@ -14,14 +14,13 @@ HPawn spawns a customizable NPC character into the world with support for animat
 <ConstructorDeclaration type="Class" name="HCharacter" />
 
 ```lua title="Example"
-local npc = HPawn(Vector(0,0,100), Quat(0,0,0,1), false)
+local npc = HPawn(Vector(0,0,100), Rotator(0,0,0))
 ```
 
 | Name            | Type       | Default    | Description                                                     |
 |-----------------|------------|------------|-----------------------------------------------------------------|
 | `location`       | `Vector`   | `(0,100,100)` | Spawn position                                                  |
 | `rotation`       | `Quat`     | `(0,0,0,1)`   | Spawn orientation                                               |
-| `aggressive`         | `boolean`        | `false`      | Whether the pawn is aggressive or passive     |
 
 ## Functions
 
