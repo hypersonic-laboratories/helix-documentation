@@ -2,9 +2,13 @@
 title: HWeapon
 tags: [class]
 ---
-<HeaderDeclaration type="Class" name="Weapon" image="/img/docs/weapon.webp" />
+<HeaderDeclaration type="Class" name="Weapon"/>
 Weapons are entities with firing, reloading and aiming functionalities
 They are fully customizable, all pieces of the weapon can be changed with immense possibility of creation
+
+/// tip
+`HWeapon` is an `Actor` so it inherits all functions from [Actor](#actor)
+///
 
 ## Constructor
 <ConstructorDeclaration type="Class" name="Weapon" />

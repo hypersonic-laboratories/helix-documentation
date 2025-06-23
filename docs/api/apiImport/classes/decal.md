@@ -1,7 +1,6 @@
 ---
 title: Decal
 description: Decal places a world-aligned material projection onto surfaces
-sidebar_position: 0
 tags: [class]
 ---
 <HeaderDeclaration type="Class" name="Decal"/>

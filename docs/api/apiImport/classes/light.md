@@ -1,7 +1,6 @@
 ---
 title: Light
 description: A Light represents a Lighting source
-sidebar_position: 0
 tags: [class]
 ---
 <HeaderDeclaration type="Class" name="Light" image="/img/docs/light.webp" />
