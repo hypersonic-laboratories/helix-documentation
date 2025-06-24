@@ -10,7 +10,7 @@ Cascade was the original VFX solution used for simulating explosions, fire, smok
 While still supported, it is no longer maintained and should only be used for older assets that haven't been converted to Niagara
 
 ///warning
-This class is deprecated, use [Niagara](#niagara) instead!
+This class is deprecated, use [Niagara](niagara.md) instead!
 ///
 
 ## Constructor

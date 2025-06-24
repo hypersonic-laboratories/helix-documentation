@@ -7,7 +7,7 @@ tags: [class]
 HPawn spawns a customizable NPC character into the world with support for animation, mesh overrides, ragdoll physics, and attachments. This class is ideal for spawning passive, aggressive or custom non controlled characters.
 
 /// tip
-`HPawn` is an `Actor` so it inherits all functions from [Actor](#actor)
+`HPawn` is an `Actor` so it inherits all functions from [Actor](actor.md)
 ///
 
 ## Constructor

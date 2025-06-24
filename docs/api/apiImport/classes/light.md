@@ -8,7 +8,7 @@ tags: [class]
 Light is a callable class that simplifies the process of spawning and configuring dynamic lights in Unreal Engine. It supports three light types—Point, Spot, and Rect—and automatically sets up location, rotation, color, intensity, attenuation, and shadow settings. The returned wrapper provides unified access to both the underlying light actor and its component, making it easy to manipulate lights in real time through Lua scripts.
 
 /// tip
-`Light` is an `Actor` so it inherits all functions from [Actor](#actor)
+`Light` is an `Actor` so it inherits all functions from [Actor](actor.md)
 ///
 
 ## 💡 Light Profiles

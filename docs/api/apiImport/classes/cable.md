@@ -56,7 +56,7 @@ local CableActor = Cable(Vector(0.0, 0.0, 60.0), true)
 
 | Type              |       Name        | Default | Description                                                              |
 | ---------------  | :----------------- | ----- | ----------------------------------------------------------------------  |
-| [Vector](../../structs/vector) | `StartLocation`   |         | The start location of the cable, this gets overridden upon attachment.   |
+| [Vector](../global-variables/structs.md/#vector) | `StartLocation`   |         | The start location of the cable, this gets overridden upon attachment.   |
 | boolean?           | `bEnableVisuals`  | `true`  | Whether the cable actor is visible                                       |
 
 ### Returns

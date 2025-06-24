@@ -10,7 +10,7 @@ It wraps Unreal’s `AStaticMeshActor` and its `UStaticMeshComponent`, giving di
 This is ideal for props, obstacles, architecture, or decorative geometry in your scene
 
 /// tip
-`StaticMesh` is an `Actor` so it inherits all functions from [Actor](#actor)
+`StaticMesh` is an `Actor` so it inherits all functions from [Actor](actor.md)
 ///
 
 ## Constructor
@@ -30,7 +30,7 @@ local cube = StaticMesh(
 | `Location`  | `Vector`   | `(0,0,0)`           | World position to spawn the mesh                        |
 | `Rotation`  | `Rotator`  | `(0,0,0)`           | Initial rotation of the mesh actor                      |
 | `MeshPath`  | `string`   | **Required**        | Asset path to a UStaticMesh (e.g. `Shape_Cube`)         |
-| `CollType`  | `enum`     | `CollisionType.Auto`| Collision handling mode — see [`CollisionType`](#collisiontype) enum |
+| [`CollType`](../global-variables/enums.md/#collisiontype)  | `enum`     | `CollisionType.Auto` |
 
 ## Functions
 <FunctionsDeclaration type="Class" name="StaticMesh" />

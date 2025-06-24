@@ -5,11 +5,11 @@ status: placeholder
 # Your First Game
 
 ### Goal
-We're going to create a fully functional roleplaying map, using [QB-Core](../scripting/qbcore.md) (1) and an urban downtown map, that you can then further customize to your heart's content.
+We're going to create a fully functional roleplaying map, using `QBCore` and an urban downtown map, that you can then further customize to your heart's content.
 { .annotate }
 
 1.  QB-Core is a widely-used roleplaying framework, popular in the
-    FiveM/GTA ecosystem. It has been ported specifically to HELIX's Lua API by its maintainer (Kakarot) to enable you to quickly make great games. 
+    FiveM/GTA ecosystem. It has been ported specifically to HELIX's Lua API by its maintainer (Kakarot) to enable you to quickly make great games.
 
 [image of end result]
 
@@ -27,8 +27,8 @@ We're going to create a fully functional roleplaying map, using [QB-Core](../scr
 2. Import the `Downtown-RP` map (it may take a while to download the first time)
 
 ### Adding In A Framework
-1. With the **Add-on Vault** open, import the `QB-Core` framework
-/// note | Feel free to configure the framework as much or as little as you'd like. More info on the page for [QB-Core](../scripting/qbcore.md).
+1. With the **Add-on Vault** open, import the `QBCore` framework
+/// note | Feel free to configure the framework as much or as little as you'd like. More info on the page for `QBCore`.
 ///
 
 ### Publishing
@@ -62,12 +62,10 @@ We're going to create a fully functional roleplaying map, using [QB-Core](../scr
 
     [:octicons-file-code-24: View API](../api/index.md)
 
-    [:material-file-document-outline: QB-Core Docs](../scripting/qbcore.md)
-
 -   __Keep Exploring__
 
     One of the best ways to learn is to get inspiration from other works. Play games others have created to see what's possible!
 
-    [:material-controller: HELIX Games](https://helixgame.com/){.external}    
-    
+    [:material-controller: HELIX Games](https://helixgame.com/){.external}
+
 </div>

@@ -10,7 +10,7 @@ It’s useful for labeling objects, creating signs, markers, or displaying messa
 The text can be customized with different fonts, colors, sizes, and rotations, making it suitable for both debug information and immersive in-world displays
 
 /// tip
-`TextRender` is an `Actor` so it inherits all functions from [Actor](#actor)
+`TextRender` is an `Actor` so it inherits all functions from [Actor](actor.md)
 ///
 
 ## Constructor

@@ -4,9 +4,7 @@ description: HELIX vehicle!
 sidebar_position: 0
 tags: [class]
 ---
-
 <HeaderDeclaration type="Class" name="HVehicle" />
-
 HVehicle constructor and functions. This allows you to spawn a vehicle actor in the world and perform logical actions through class methods. This class also provides getter methods, allowing you to obtain data relating to specific vehicle actors.
 
 ## Examples
@@ -35,7 +33,7 @@ local VehicleActor = HVehicle(
 print(VehicleActor.Object) -- AActor
 print(VehicleActor.Movement) -- UModularMovementComponent
 ```
- 
+
 ## Variables
 
 | Name              |       Type             |
@@ -53,8 +51,8 @@ local VehicleActor = HVehicle(Vector(0, 0, 0), Rotator(0, 0, 0), '/abcca-dax-veh
 
 | Type              |       Name        | Default | Description                                                              |
 | ---------------  | :----------------- | ----- | ----------------------------------------------------------------------  |
-| [Vector](../../structs/vector) | `Location`   |  | The location to spawn the vehicle at.  |
-| [Rotator](../../structs/rotator) | `Rotation`  |   | The orentiation of the vehicle. |
+| [Vector](../global-variables/structs.md/#vector) | `Location`   |  | The location to spawn the vehicle at.  |
+| [Rotator](../global-variables/structs.md/#rotator) | `Rotation`  |   | The orentiation of the vehicle. |
 | string | `BlueprintAsset`  |    |  Long package name for the vehicle BP, e.g. "/Game/Vehicles/BP_MyCar.BP_MyCar_C" |
 | string | `CollisionType` | `QueryAndPhysics` | One of "NoCollision", "QueryOnly", "PhysicsOnly", "QueryAndPhysics" |
 | boolean | `GravityEnabled` | `true` | Whether physics gravity is enabled |
@@ -333,7 +331,7 @@ HVehicle:RequestDirectMove(moveVelocity, forceMaxSpeed)
 
 | Type     | Name         | Default | Description                         |
 |----------|--------------|---------|-------------------------------------|
-| [Vector](../../structs/vector)  | moveVelocity |         | The target velocity for the vehicle. |
+| [Vector](../global-variables/structs.md/#vector)  | moveVelocity |         | The target velocity for the vehicle. |
 | boolean?  | forceMaxSpeed| `false` | Whether to force the maximum speed.  |
 
 ---
@@ -345,7 +343,7 @@ HVehicle:RequestPathMove(inputVector)
 
 | Type     | Name       | Description                       |
 |----------|------------|-----------------------------------|
-| [Vector](../../structs/vector)  | inputVector | The target input vector for the vehicle. |
+| [Vector](../global-variables/structs.md/#vector)  | inputVector | The target input vector for the vehicle. |
 
 ---
 #### StopActiveMovement
@@ -440,8 +438,3 @@ HVehicle:GetMaxSpeedForNavMovement()
 ```
 ##### Returns
 `number`: The maximum speed for nav movement.
-
-
-## Events
-
-<EventsDeclaration type="Class" name="HVehicle" />

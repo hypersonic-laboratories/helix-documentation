@@ -3,13 +3,6 @@ title: WebUI
 description: ''
 tags: [class]
 ---
-<HeaderDeclaration type="Class" name="WebUI"/>
-
-/// danger | Unfinished Section
-- The API for this class is currently under construction!
-///
-
-<HeaderDeclaration type="Class" name="WebUI" image="/img/docs/interactable.webp" />
 
 WebUI is a class that creates and manages web-based user interfaces within an application. It allows developers to display web content (URLs or HTML) as interactive widgets with full browser functionality.
 
@@ -80,7 +73,7 @@ UI:LoadHTML([[
     <body>
         <h1 style='color: red'>Test</h1>
     </body>
-</html>    
+</html>
 ]])
 ```
 

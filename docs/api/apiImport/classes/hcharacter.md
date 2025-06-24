@@ -8,7 +8,7 @@ It is designed for gameplay characters that need full control over visuals, inpu
 This class is ideal for roleplay systems, test bots, or any scenario where you need a fully controllable humanoid character
 
 /// tip
-`HCharacter` is an `Actor` so it inherits all functions from [Actor](#actor)
+`HCharacter` is an `Actor` so it inherits all functions from [Actor](actor.md)
 ///
 
 ## Constructor

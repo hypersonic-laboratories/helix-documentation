@@ -10,7 +10,7 @@ These triggers are useful for gameplay logic like entering zones, starting scrip
 Supported shapes include spheres, boxes, and capsules. You can assign a Lua callback to respond to overlaps and optionally restrict which classes are allowed to trigger them
 
 /// tip
-`Trigger` is an `Actor` so it inherits all functions from [Actor](#actor)
+`Trigger` is an `Actor` so it inherits all functions from [Actor](actor.md)
 ///
 
 ## Constructor

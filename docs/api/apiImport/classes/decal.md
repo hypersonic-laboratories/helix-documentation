@@ -9,7 +9,7 @@ This is useful for things like graffiti, blood splatters, burn marks, ground tar
 Decals can fade based on screen size and automatically destroy themselves after a set lifespan.
 
 /// tip
-`Decal` is an `Actor`, so you can call any [Actor](#actor) functions
+`Decal` is an `Actor`, so you can call any [Actor](actor.md) functions
 ///
 
 ## Constructor

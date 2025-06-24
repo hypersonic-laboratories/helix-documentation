@@ -9,7 +9,7 @@ This is commonly used for markers, indicators, floating icons, or simple world l
 The billboard can be screen-size scaled or world-size scaled and can be textured using any valid sprite or texture asset
 
 /// tip
-`Billboard` is an `Actor` so it inherits all functions from [Actor](#actor)
+`Billboard` is an `Actor` so it inherits all functions from [Actor](actor.md)
 ///
 
 ## Constructor

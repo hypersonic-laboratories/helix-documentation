@@ -53,15 +53,15 @@ print(SoundActor.Component) -- UAudioComponent
 
 <ConstructorDeclaration type="Class" name="Sound" />
 ```lua
-local SoundActor = Sound(Vector(0, 0, 0), 
-'/Engine/VREditor/Sounds/UI/Enter_Play', 
-false, false, 1.0, 1.0, 400, 600, 
+local SoundActor = Sound(Vector(0, 0, 0),
+'/Engine/VREditor/Sounds/UI/Enter_Play',
+false, false, 1.0, 1.0, 400, 600,
 AttenuationFunction.Linear, true)
 ```
 
 | Type              |       Name        | Default | Description                                                              |
 | ---------------  | :----------------- | ----- | ----------------------------------------------------------------------  |
-| [Vector](../../structs/vector) | `Location`   |  | The location to spawn the decal at.  |
+| [Vector](../global-variables/structs.md/#vector) | `Location`   |  | The location to spawn the decal at.  |
 | string | `SoundAsset`  |   | The path to a USoundBase asset. |
 | boolean? | `bIs2D` |    `true`    | Whether the sound is to be 2D sound, or a 3D sound. |
 | boolean | `bAutoDestroy` |  | Whether to automatically destroy the component once the sound has finished playing. |

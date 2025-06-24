@@ -19,7 +19,7 @@ The `Interactable` class lets you make any actor in your scene interactable by p
 
 | Name              |       Type             |
 | ----------------  | -------------------------------------- |
-| Options          | [TArray](../global-variables/structs.md#tarray)\<FInteractionOption\>|
+| Options          | [TArray](../global-variables/structs.md/#tarray)\<FInteractionOption\>|
 | InteractableProp | [AStaticMeshActor](https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Runtime/Engine/Engine/AStaticMeshActor?application_version=5.5) |
 
 ## Constructors
@@ -38,7 +38,7 @@ local InteractableActor = Interactable({
             print('Interaction pressed on', CubeActor.Object)
         end,
     },
-}, '/Engine/VREditor/BasicMeshes/SM_Cube_01.SM_Cube_01', InteractableTransform) 
+}, '/Engine/VREditor/BasicMeshes/SM_Cube_01.SM_Cube_01', InteractableTransform)
 -- StaticMeshPath, Transform
 ```
 ```lua
@@ -59,7 +59,7 @@ print(InteractableActor.Object) -- AActor
 | ---------------  | :----------------- | ----- | ----------------------------------------------------------------------  |
 | table | `InteractionData`   |  | A table of interaction tables.  |
 | string? | `StaticMeshPath`  |   | The path to a static mesh asset to be created as the interactable. (Optional) |
-| [Transform](../../global-variables/structs/#transform)? | `Transform`  |    |  The transform to spawn the static mesh with. (Optional) |
+| [Transform](../global-variables/structs.md/#transform)? | `Transform`  |    |  The transform to spawn the static mesh with. (Optional) |
 
 ## Functions
 

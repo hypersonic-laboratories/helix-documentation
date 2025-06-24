@@ -7,7 +7,7 @@ Weapons are entities with firing, reloading and aiming functionalities
 They are fully customizable, all pieces of the weapon can be changed with immense possibility of creation
 
 /// tip
-`HWeapon` is an `Actor` so it inherits all functions from [Actor](#actor)
+`HWeapon` is an `Actor` so it inherits all functions from [Actor](actor.md)
 ///
 
 ## Constructor
@@ -25,11 +25,11 @@ local new_weapon = Weapon(
 
 | Type                                              | Name              | Default                | Description |
 | ------------------------------------------------- | ----------------- | ---------------------- | ----------- |
-| [Vector](#vector)                                 | `location`        |                        |             |
-| [Rotator](#rotator)                               | `rotation`        |                        |             |
-| [SkeletalMesh Reference](#skeletalmesh-reference) | `asset`           |                        |             |
-| [CollisionType](#collisiontype)                   | `collision_type`  | `CollisionType.Normal` |             |
-| [boolean](#boolean)                               | `gravity_enabled` | `true`                 |             |
+| [Vector](../global-variables/structs.md/#vector)                                 | `location`        |                        |             |
+| [Rotator](../global-variables/structs.md/#rotator)                               | `rotation`        |                        |             |
+| [SkeletalMesh Reference] | `asset`           |                        |             |
+| [CollisionType](../global-variables/enums.md/#collisiontype)                   | `collision_type`  | `CollisionType.Normal` |             |
+| boolean                               | `gravity_enabled` | `true`                 |             |
 
 ## Functions
 <FunctionsDeclaration type="Class" name="Weapon" />

@@ -14,7 +14,7 @@ It serves as the player's presence in the world, handling input and controlling 
 ///
 
 /// tip
-`PlayerController` is an `Actor` so it inherits all functions from [Actor](#actor)
+`PlayerController` is an `Actor` so it inherits all functions from [Actor](actor.md)
 ///
 
 ```lua title="Example"

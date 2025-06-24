@@ -10,7 +10,7 @@ Unlike actors or components, HPlayer is not spawned manually, instead it represe
 Each connected player (local or remote) can be accessed and controlled through this class, and a global Players table keeps track of all active instances
 
 /// tip
-`HPlayer` is a `Controller` so it inherits all functions from [Controller](#controller)
+`HPlayer` is a `Controller` so it inherits all functions from [Controller](controller.md)
 ///
 
 ## Functions
