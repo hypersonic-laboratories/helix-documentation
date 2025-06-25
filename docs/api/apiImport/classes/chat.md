@@ -103,25 +103,7 @@ local ui = Chat.GetWidget()
 
 ---
 
-## Text Formatting
 
-| Preview | Tag to type | Purpose |
-|---------|-------------|---------|
-| <span style="color:#00FFFF">Cyan text</span> | ``<cyan>`` | Cyan foreground |
-| <span style="color:#3ddb42">Green text</span> | ``<green></>`` | Green foreground |
-| <span style="color:#3184ff">Blue text</span>  | ``<blue></>``  | Blue foreground |
-| <span style="color:#8c5bff">Purple text</span>| ``<purple></>``| Purple foreground |
-| <span style="color:#596c7a">Marengo text</span>| ``<marengo></>``| Marengo/grey-blue |
-| <span style="color:#ffd337">Yellow text</span>| ``<yellow></>``| Yellow foreground |
-| <span style="color:#ff9a38">Orange text</span>| ``<orange></>``| Orange foreground |
-| <span style="color:#f15151">Red text</span>   | ``<red></>``   | Red foreground |
-| <span style="color:#aaaaaa">Grey text</span>  | ``<grey></>``  | Grey foreground |
-| **Bold text** | ``<bold>Text</>`` | Bold weight |
-| *Italic text* | ``<italic></>`` | Italic style |
-
-/// info
-Always remember to close the tag using &lt;/&gt;
-///
 
 ### Quick example
 
