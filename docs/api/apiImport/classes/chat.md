@@ -3,7 +3,6 @@ title: Chat
 description: ''
 tags: [static-class]
 ---
-<HeaderDeclaration type="StaticClass" name="Chat" is_static />
 Chat is a global utility class that connects Lua scripts to the in-game chat system.
 It supports registering custom slash commands, adding chat messages locally, broadcasting announcements, and sending messages to specific players.
 Commands registered through `Chat.RegisterCommand(...)` also become usable via the console
@@ -34,7 +33,6 @@ Chat.AddMessage('You just got your paycheck!')
 ```
 
 ## Functions
-<StaticFunctionsDeclaration type="StaticClass" name="Chat" />
 
 ### `RegisterCommand`
 Registers a new custom chat command (e.g. `/noclip`)
@@ -123,7 +121,5 @@ Chat.Broadcast("<cyan>Hello</> <bold>world!</>")
 ```
 
 ///  warning
-
 It is NOT possible to combine two or more styles together /(eg.: Bold + Red/).
-
 ///
