@@ -15,7 +15,7 @@ Commands registered through `Chat.RegisterCommand(...)` also become usable via t
 
 ```lua title="Server"
 -- sends a chat message to everyone
-Chat.Broadcast("Welcome to the server!")
+Chat.Broadcast('Welcome to the server!')
 
 -- sends a message to a specific player (server only)
 Chat.SendMessage('You just got your paycheck!', player)
@@ -29,16 +29,17 @@ end)
 
 -- sends a chat message locally (client only)
 Chat.AddMessage('You just got your paycheck!')
-
 ```
+
+---
 
 ## Functions
 
 ### `RegisterCommand`
 Registers a new custom chat command (e.g. `/noclip`)
 ```lua
-Chat.RegisterCommand("noclip", {}, "Toggles noclip mode", function(args)
-	print("Noclip toggled!")
+Chat.RegisterCommand('noclip', {}, 'Toggles noclip mode', function(args)
+	print('Noclip toggled!')
 end)
 ```
 
@@ -47,7 +48,7 @@ end)
 ### `AddMessage`
 Adds a local message to the player's chat feed
 ```lua
-Chat.AddMessage("Welcome to the server!")
+Chat.AddMessage('Welcome to the server!')
 ```
 
 ---
@@ -55,7 +56,7 @@ Chat.AddMessage("Welcome to the server!")
 ### `Broadcast`
 Sends a global announcement to all players
 ```lua
-Chat.Broadcast("The server will restart in 5 minutes")
+Chat.Broadcast('The server will restart in 5 minutes')
 ```
 
 ---
@@ -63,7 +64,7 @@ Chat.Broadcast("The server will restart in 5 minutes")
 ### `SendMessage`
 Sends a private message to a specific player controller
 ```lua
-Chat.SendMessage("Hello, Player!", TargetPlayer)
+Chat.SendMessage('Hello, Player!', TargetPlayer)
 ```
 
 ---
@@ -88,7 +89,7 @@ Chat.SetVisibility(false)
 Returns true if the chat widget is currently bound and ready
 ```lua
 if Chat.IsReady() then
-	Chat.AddMessage("Chat system ready.")
+	Chat.AddMessage('Chat system ready.')
 end
 ```
 
@@ -125,7 +126,7 @@ Always remember to close the tag using &lt;/&gt;
 ### Quick example
 
 ```lua
-Chat.Broadcast("<cyan>Hello</> <bold>world!</>")
+Chat.Broadcast('<cyan>Hello</> <bold>world!</>')
 ```
 
 ///  warning
