@@ -95,14 +95,6 @@ end)
 - Consider using async operations for large datasets to avoid blocking the main thread
 - Always check if results exist before accessing them
 
-```lua title="Example"
-local settings = Database.Select("SELECT value FROM settings WHERE key = ?", {"user_preferences"})
-if #settings > 0 then
-    local userPrefs = settings[1].Columns.value
-    ApplySettings(userPrefs)
-end
-```
-
 ---
 
 ## Summary
