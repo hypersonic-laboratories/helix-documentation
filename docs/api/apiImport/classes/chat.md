@@ -41,6 +41,7 @@ Chat.RegisterCommand("noclip", {}, "Toggles noclip mode", function(args)
 	print("Noclip toggled!")
 end)
 ```
+
 ---
 
 ### `AddMessage`
@@ -48,6 +49,7 @@ Adds a local message to the player's chat feed
 ```lua
 Chat.AddMessage("Welcome to the server!")
 ```
+
 ---
 
 ### `Broadcast`
@@ -55,6 +57,7 @@ Sends a global announcement to all players
 ```lua
 Chat.Broadcast("The server will restart in 5 minutes")
 ```
+
 ---
 
 ### `SendMessage`
@@ -62,6 +65,7 @@ Sends a private message to a specific player controller
 ```lua
 Chat.SendMessage("Hello, Player!", TargetPlayer)
 ```
+
 ---
 
 ### `Clear`
@@ -69,6 +73,7 @@ Clears the chat UI
 ```lua
 Chat.Clear()
 ```
+
 ---
 
 ### `SetVisibility`
@@ -76,6 +81,7 @@ Shows or hides the chat UI widget
 ```lua
 Chat.SetVisibility(false)
 ```
+
 ---
 
 ### `IsReady`
@@ -85,6 +91,7 @@ if Chat.IsReady() then
 	Chat.AddMessage("Chat system ready.")
 end
 ```
+
 ---
 
 ### `GetWidget`
@@ -92,6 +99,7 @@ Returns the current chat UI widget instance
 ```lua
 local ui = Chat.GetWidget()
 ```
+
 ---
 
 ## Text Formatting
