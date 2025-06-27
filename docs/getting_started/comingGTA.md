@@ -25,7 +25,7 @@ the key differences.
 
 - :material-api: __API Improvements__<br>
   HELIX’s scripting layer offers a structured, class-based API — familiar to Lua developers, but far more maintainable.
-  It’s built for clarity, modularit, and future growth.<br><br>
+  It’s built for clarity, modularity, and future growth.<br><br>
   Expect **cleaner code, simpler event handling,** and **a scalable foundation** for large or team-driven projects.
 
 </div>
