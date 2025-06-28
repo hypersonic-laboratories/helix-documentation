@@ -12,15 +12,10 @@ We are currently in closed alpha. Sign up for the waitlist [on our website](http
 
 ## Download the Installer
 
-### Download for Windows
+### Download HELIX
 
-1. Log in to the [HELIX Website](https://helixgame.com/) with your HELIX account
-2. Click [Download HELIX](TODO_dl_link) in the top right to download the HELIX launcher
-   /// warning | Temporary Instructions
-   As of August 2024, for internal employees, please download the latest version of the Launcher via [this link](https://rs.helix-cdn.com/launcher/windows/x64/latest)
-   ///
-3. Once the download finishes, extract and run `HELIXlauncher.exe`
-4. In the `Create` tab, click on the "Install Studio" button
+/// warning | Coming Soon
+If you're provided with Closed Alpha access, you'll receive instructions on how to download HELIX.
 
 ### Install Unreal Engine 5 (subject to change)
 
