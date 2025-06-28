@@ -11,7 +11,7 @@ repo_url: https://github.com/hypersonic-laboratories/helix-documentation
 edit_uri: edit/development/docs/
 
 # Copyright
-copyright: "&copy; 2024 HELIX&trade; is a trademark of Hypersonic Labs"
+copyright: "&copy; 2024 HELIX&reg; is a registered trademark of Hypersonic Labs"
 
 ###------------------------------If you add or remove a page, you must update it here!!!-------------------------------------------------###
 nav:
