@@ -179,28 +179,25 @@ extra:
   generator: false #No mention of MkDocs-Material in footer
   social: #TODO: ACTUAL LINKS, not just placeholders
     - icon: fontawesome/brands/discord
-      link: https://discord.helixgame.com
+      link: https://discord.gg/helixgame
       name: Discord
     - icon: fontawesome/brands/youtube
-      link: https://www.youtube.com/HELIXGames
+      link: https://www.youtube.com/@play_HELIX
       name: YouTube
     - icon: fontawesome/brands/reddit
-      link: https://www.reddit.com/r/HELIXGame
+      link: https://www.reddit.com/r/play_HELIX/
       name: Reddit
-    - icon: fontawesome/brands/facebook
-      link: https://www.facebook.com/helixgame
-      name: Facebook
     - icon: fontawesome/brands/instagram
-      link: https://www.instagram.com/helixgame
+      link: https://www.instagram.com/playhelix
       name: Instagram
     - icon: fontawesome/brands/twitter
-      link: https://twitter.com/helixgame
+      link: https://twitter.com/play_helix
       name: Twitter
     - icon: fontawesome/brands/twitch
-      link: https://twitch.tv/helixgame
+      link: https://www.twitch.tv/playhelix
       name: Twitch
     - icon: fontawesome/brands/tiktok
-      link: https://www.tiktok.com/@helixgame
+      link: https://www.tiktok.com/@play_helix
       name: TikTok
 
 markdown_extensions:
