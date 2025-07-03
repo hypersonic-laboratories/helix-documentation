@@ -10,39 +10,46 @@ With WebUI you can load HTML pages which integrate with your Packages in Lua usi
 **Note:** All WebUI code runs on Client side!
 ///
 
-```lua title="Client/Index.lua"
+```lua title="index.lua"
 -- Spawns a WebUI with the HTML file you just created
-MyUI = WebUI("My UI", "file://UI/index.html")
+UI = WebUI("My UI", "blui://path/to/index.html")
 
--- When the HTML is ready, triggers an Event in there
-MyUI:Subscribe("Ready", function()
-    MyUI:CallEvent("MyAwesomeEvent", "Hello! You are ready!")
-end)
+UI:RegisterEventHandler('Ready', function(data)
+    print(data.arg)
 
-MyUI:Subscribe("MyAwesomeAnswer", function(param1)
-    Console.Log("Received an answer! Message: " .. param1)
+    UI:CallEvent('changeColour', 'red')
 end)
 ```
 
-```html title="Client/UI/index.html"
+```html title="index.html"
 <html>
     <head>
-        <script src="index.js"></script>
+        <title>WebUI Test</title>
+        <script src='./index.js'>
     </head>
     <body>
-        Hello World!
+        <h1 id='text' style='color: black;'>This is a test WebUI Document!</h1>
     </body>
 </html>
 ```
 
-```javascript title="Client/UI/index.js"
-// Register for "MyAwesomeEvent" from Lua
-Events.Subscribe("MyAwesomeEvent", function(param1) {
-    console.log("Triggered! " + param1);
+```javascript title="index.js"
+// Register for "changeColour" from Lua
+function changeColour(colour) {
+    console.log('Event Triggered!');
+    let text = document.getElementById('text');
+    text.style.color = colour;
+}
 
-    // Triggers "MyAwesomeAnswer" on Lua
-    Events.Call("MyAwesomeAnswer", "Hey there!");
-})
+// Triggers "Ready" on Lua
+fetch('http://127.0.0.1:8091/My UI/Ready', {
+    method: 'POST',
+    mode: 'no-cors',
+    headers: {
+        'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({arg: 'This is an argument'})
+});
 ```
 
 ![WebUI results](/img/docs/01_UserInterface.png)
@@ -50,6 +57,6 @@ Events.Subscribe("MyAwesomeEvent", function(param1) {
 This will output:
 
 ```text
-[WebUI]  Triggered! Hello! You are ready!
-[Script] Received an answer! Message: Hey there!
+[Script] This is an argument
+[WebUI] Event Triggered!
 ```

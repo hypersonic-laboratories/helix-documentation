@@ -49,10 +49,18 @@ UI:BringToFront()
 
 ---
 
+### RegisterEventHandler
+Registers a Lua event by name with args
+```lua
+UI:RegisterEventHandler('Test', function(arg1) print(arg1) end)
+```
+
+---
+
 ### CallEvent
 Call a JS event by name with args
 ```lua
-UI:BringToFront(eventName, ...)
+UI:CallEvent('Test', 'This is a test event!')
 ```
 
 ---
@@ -87,10 +95,10 @@ UI:GetName()
 
 ---
 
-### ExecuteJavaScript
+### ExecuteJS
 Executes arbitrary JavaScript
 ```lua
-UI:ExecuteJavaScript('alert("This is a test alert!");')
+UI:ExecuteJS('alert("This is a test alert!");')
 ```
 
 ---
@@ -140,10 +148,10 @@ UI:SetVisibility(WidgetVisibility)
 
 ---
 
-### SpawnSound
-Spawns a sound
+### EnableAudio
+Enables the audio of the WebUI Widget
 ```lua
-UI:SpawnSound(Vector(100, 50, 250), false, 1.0, 5.0, 10.0, AttenuationFunction.NaturalSound)
+local SoundWave = UI:EnableAudio()
 ```
 
 ---
