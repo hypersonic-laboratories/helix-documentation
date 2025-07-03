@@ -57,10 +57,10 @@ UI:RegisterEventHandler('Test', function(arg1) print(arg1) end)
 
 ---
 
-### CallEvent
-Call a JS event by name with args
+### CallFunction
+Call a JS function by name with args, used to trigger logic, like an event
 ```lua
-UI:CallEvent('Test', 'This is a test event!')
+UI:CallFunction('Test', 'This is a test event!')
 ```
 
 ---

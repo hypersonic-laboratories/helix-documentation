@@ -17,7 +17,7 @@ UI = WebUI("My UI", "blui://path/to/index.html")
 UI:RegisterEventHandler('Ready', function(data)
     print(data.arg)
 
-    UI:CallEvent('changeColour', 'red')
+    UI:CallFunction('changeColour', 'red')
 end)
 ```
 
