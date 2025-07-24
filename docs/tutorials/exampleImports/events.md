@@ -2,7 +2,7 @@
 title: Communicating with Events
 tags: [scripting]
 ---
-# Network Communication
+# Communicating with Events
 This page shows how to use the global event system to send structured data between the client and server in your game.
 Events can include a wide range of arguments like strings, numbers, booleans, `nil`, vectors, and tables.
 Both sides of the network can register handlers and trigger events using the `TriggerServerEvent` and `TriggerClientEvent` functions on the player controller.
