@@ -6,6 +6,10 @@ tags: [class]
 
 WebUI is a class that creates and manages web-based user interfaces within an application. It allows developers to display web content (URLs or HTML) as interactive widgets with full browser functionality.
 
+/// note
+This class supports all JS frameworks available, such as Vue.JS, React.JS, etc. WebUI is powered by **Chromium (CEF)**.
+///
+
 ## Variables
 
 <VariableDeclaration type="Class" name="WebUI" />
