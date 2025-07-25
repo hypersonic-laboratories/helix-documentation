@@ -9,6 +9,17 @@ tags: [class, client]
 
 The `Interactable` class lets you make any actor in your scene interactable by players. It displays a customizable prompt and supports multiple interaction options, each with its own text, input action, and callback or ability. You can attach it to existing actors or create new interactable static meshes, and adjust the interaction point as needed.
 
+### InteractionOption
+```lua
+{
+    Text =  "string", -- The text to be displayed on the interaction option
+    SubText = "string", -- The SubText to be displayed below the interaction option
+    Input = "string", -- The path to the InputAction data asset
+    Action? = function() end, -- The function to be used when no ability is specified
+    Ability? = "string", -- The ability to be used when no callback Action is specified
+}
+```
+
 ## Variables
 
 <VariableDeclaration type="Class" name="Interactable" />
@@ -53,7 +64,7 @@ print(InteractableActor.Object) -- AActor
 
 | Type              |       Name        | Default | Description                                                              |
 | ---------------  | :----------------- | ----- | ----------------------------------------------------------------------  |
-| table | `InteractionData`   |  | A table of interaction tables.  |
+| table<[InteractionOption](#interactionoption)> | `InteractionData`   |  | A table of interaction tables.  |
 | string? | `StaticMeshPath`  |   | The path to a static mesh asset to be created as the interactable. (Optional) |
 | [Transform](../global-variables/structs.md/#transform)? | `Transform`  |    |  The transform to spawn the static mesh with. (Optional) |
 
