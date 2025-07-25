@@ -34,7 +34,7 @@ local UI = WebUI('test', 'https://google.com', WidgetVisibility.Visible, true, t
 | Type              |       Name        | Default | Description                                                              |
 | ---------------  | :----------------- | ----- | ----------------------------------------------------------------------  |
 | string | `Name`   |  | Unique identifier for logs.  |
-| string | `Path`  |   | Web URL or HTML file path (e.g. "https://google.com" or "file://path/to/index.html") |
+| string | `Path`  |   | Web URL or HTML file path (e.g. "https://google.com" or "blui://path/to/index.html") |
 | [WidgetVisibility]() | `Visibility`  |   `WidgetVisibilty[Visible]`   |  Visibility of WebUI Widget |
 | boolean               | `IsTransparent` | `true` | Supports transparent background |
 | boolean               | `AutoResize`   | `true`  | Auto-resize to full viewport |
