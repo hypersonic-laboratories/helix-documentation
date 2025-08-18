@@ -3,7 +3,7 @@ title: Artificial Intelligence
 tags: [scripting]
 ---
 
-Every [Character](/scripting-reference/classes/character.mdx) spawned without a [Player](/scripting-reference/classes/player.mdx) possessing it will automatically be possessed by an **AI** Controller. Which means you can use Character methods such as `:MoveTo()` and `:LookAt()`.
+Every Character spawned without a Player possessing it will automatically be possessed by an **AI** Controller. Which means you can use Character methods such as `:MoveTo()` and `:LookAt()`.
 In HELIX, AI as well as Physics are things distributed through Clients to be calculated and shared with the other Players, which means the **AI** will only work if there is a Player connected to the server
 
 ///info
