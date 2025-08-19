@@ -34,24 +34,13 @@ nav:
   - Tutorials:
     - tutorials/index.md
     - General Tutorials:
-      # - tutorials/serverClient.md
-      - ... | flat | tutorials/tutorialImports/*.md
-      - ... | flat | tutorials/tutorialImports/creating-assets/*.md
-      - World Creation:
-        - ... | flat | tutorials/tutorialImports/world-creation/*.md
-      - Character:
-        - ... | flat | tutorials/tutorialImports/creating-assets/characters/*.md
-      - HSimpleVehicle:
-        - ... | flat | tutorials/tutorialImports/creating-assets/HSimpleVehicle/*.md
-    - Reference:
-      - tutorials/vault.md
-      - tutorials/keyTerms.md
-      # - tutorials/betterPractices.md
-      - ... | flat | tutorials/referenceImports/*.md
-      - Servers:
-        - ... | flat | tutorials/referenceImports/server-manual/*.md
-      - Default Assets:
-        - ... | flat | tutorials/referenceImports/default-asset-pack/*.md
+      - tutorials/account_creation.md
+      - ... | flat | tutorials/vault_package_management.md
+      - ... | flat | tutorials/create_publish_worlds.md
+      - ... | flat | tutorials/buildmode.md
+      - ... | flat | tutorials/create_join_servers.md
+      - ... | flat | tutorials/workspaces.md
+      - ... | flat | tutorials/creatorkit.md
   - Scripting:
     - scripting/index.md
     - Key References:

@@ -1,4 +1,4 @@
-## **HELIX Developer Tutorial: Build Mode**
+# Build Mode
 
 *A guide to editing, asset placement, dependencies, and map handling in HELIX Build Mode*
 

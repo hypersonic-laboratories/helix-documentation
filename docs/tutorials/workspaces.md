@@ -1,4 +1,4 @@
-# Dev Tutorial: Workspaces
+# Workspaces
 
 ## **HELIX Developer Tutorial: How Workspaces Work**
 

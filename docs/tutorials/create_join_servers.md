@@ -1,4 +1,4 @@
-# Dev Tutorial: Creating and Joining Servers
+# Creating and Joining Servers
 
 ## **HELIX Developer Tutorial: Hosting & Joining Multiplayer Games**
 

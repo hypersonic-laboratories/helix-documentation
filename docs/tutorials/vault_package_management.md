@@ -1,4 +1,4 @@
-## **HELIX Developer Tutorial: Using the Vault**
+# Vault & Package management
 
 *A guide to package management, dependencies, caching, and versioning on the HELIX platform*
 

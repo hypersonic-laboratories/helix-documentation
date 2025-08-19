@@ -1,4 +1,4 @@
-## **HELIX Developer Tutorial: Worlds & Workspaces**
+# Creating & Publishing worlds
 
 *A guide to creating, editing, and publishing Worlds in HELIX*
 
