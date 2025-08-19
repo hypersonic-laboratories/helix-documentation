@@ -5,7 +5,7 @@ icon: material/book-open-variant
 
 # Getting Started
 
-Welcome to the documentation for [HELIX](https://helixgame.com/){.external}, the ultimate open world roleplaying platform.
+Welcome to the official documentation for [HELIX](https://helixgame.com/){.external}, the ultimate open-world roleplaying platform.
 
 ![Banner Image](../_images/getting_started/banner.png)
 
@@ -15,11 +15,11 @@ HELIX is an open-world multiplayer sandbox platform, specifically designed for r
 
 <div class="annotate" markdown>
 
-- :fontawesome-solid-people-line: **Built By Creators, For Creators**{.whiter} - We see you. We see your ingenuity, your creativity, as you modify games in beautiful, frustrating ways, fighting the very systems you rely on. *HELIX is different.* Time to know what it feels like to be empowered alongside a community of creators.
+- :fontawesome-solid-people-line: **Built By Creators, For Creators**{.whiter} - We built HELIX from the ground up to be as easy to develop on as it is to play on. Leverage the full power of our scripting API, extensive library of packages, and creation tools to import any type of custom asset and create any type of multiplayer experiene you can imagine.
 
-- :material-chart-areaspline: **We Succeed When You Succeed**{.whiter} - With access to the [Add-on Vault](../tutorials/vault.md) (1) and extensive documentation, we strive to help you excel. Not to mention features like one-click-publishing and full IP ownership!
+- :material-chart-areaspline: **Full IP Ownership**{.whiter} - Modders are always at the risk of being shut down as they're building on top of another game's IP. With HELIX, you retain full IP ownership of any original work that you create and publish on the platform.
 
-- :material-arrow-up-box: **Delightful Tooling**{.whiter} - HELIX is built on top of the well-used Unreal 5 game engine, allowing for unparalleled graphical fidelity and customization. We also provide an intuitive and powerful Lua API alongside a host of other useful tools.
+- :material-arrow-up-box: **Community-First Development**{.whiter} - We're building HELIX alongside our community. We deeply value your feedback and directly incorporate community-requested features into the product. If you have any suggestions about the gameplay or development experience, don't hesitate to reach out on our Discord.
 </div>
 
 1.  The Add-on Vault is a central repository of shared assets that contains
