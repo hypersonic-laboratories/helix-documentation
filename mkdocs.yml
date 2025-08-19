@@ -19,8 +19,6 @@ nav:
     - getting_started/index.md
     - Start Here:
       - getting_started/install.md
-      - getting_started/creatorTools.md
-      - getting_started/help.md
       - getting_started/firstGame.md
     - Coming From Other Platforms:
       # - getting_started/comingGmod.md
