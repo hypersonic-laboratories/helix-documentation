@@ -217,3 +217,16 @@ Defines the shape of a sound or light attenuation volume
 | `AttenuationShape.Capsule` | Capsule shape, elongated along one axis |
 | `AttenuationShape.Box` | Box-shaped volume |
 | `AttenuationShape.Cone` | Directional cone shape |
+
+---
+
+## DoorType
+<EnumDeclaration type="Enum" name="DoorType" />
+Defines the shape of a sound or light attenuation volume
+
+| **Name** | **Description** |
+|----------|------------------|
+| `DoorType.Classic` | Standard  |
+| `DoorType.Swinging` | Capsule shape, elongated along one axis |
+| `DoorType.Sliding` | Box-shaped volume |
+| `DoorType.Garage` | Directional cone shape |
