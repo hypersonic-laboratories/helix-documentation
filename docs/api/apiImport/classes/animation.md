@@ -4,7 +4,7 @@ description: Animation provides methods to interact with Animations on Actors, l
 tags: [static-class]
 ---
 <HeaderDeclaration type="Class" name="Animation" />
-
+The Animation class provides methods for controlling animations on actors in your game. As a static module, you access its methods directly without instantiation. The class supports playing and stopping animations with extensive customization through the [FHelixPlayAnimParams](#fhelixplayanimparams) struct.
 
 /// info
 `Animation` is a static module — you don’t instantiate it, but can access its methods.
