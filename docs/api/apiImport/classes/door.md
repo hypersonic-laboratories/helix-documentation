@@ -17,7 +17,7 @@ local myDoor = Door(DoorType.Classic, SpawnTransform, '/Path/To/StaticMesh.Stati
 
 | Name           | Type        | Default      | Description                                                             |
 |----------------|-------------|--------------|-------------------------------------------------------------------------|
-| `DoorType`      | [DoorType](../../global-variables/enums#doortype)    | `EDoorType.Classic`    | Type of door to be spawned |
+| `DoorType`      | [DoorType](../global-variables/enums#doortype)    | `EDoorType.Classic`    | Type of door to be spawned |
 | `Transform`   | `Transform`    | **Required** | Spawn transform to spawn the door actor at |
 | `StaticMesh`          | `string`  | **Optional**  | The static mesh to use on the door, if any. (Door types have their own default mesh) |
 
