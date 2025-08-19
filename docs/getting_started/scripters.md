@@ -4,8 +4,6 @@ title: Scripters
 
 # Scripters
 
-Thanks for doing the hard work that makes everything functional and interesting! :computer:
-
 ### Useful Links
 
 <div class="grid cards" markdown>
