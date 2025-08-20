@@ -1,4 +1,4 @@
-# Creator kit
+# Creator Kit
 
 
 The **HELIX Creator Kit** is an Unreal Editor project that lets you cook/package your maps, 3D assets, Blueprints, animations, and audio for use in **HELIX.**  You can use them in **HELIX Build** **Mode**(the sandbox editor) or upload to the **HELIX Vault** (the developer marketplace). Support for characters, vehicles, doors, and other entity types is coming soon.  Features include automatic thumbnail generation, with more functionality in development.
