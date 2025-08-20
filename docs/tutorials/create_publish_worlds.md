@@ -1,4 +1,4 @@
-# Creating & Publishing worlds
+# Creating & Publishing Worlds
 
 *A guide to creating, editing, and publishing Worlds in HELIX*
 
@@ -57,21 +57,21 @@ A World typically contains:
 
 1. Press **Create World**.
     
-    ![image.png](attachment:4dc52f15-2352-4e5a-9185-f73092ada2e6:image.png)
+    ![image.png](https://r2.fivemanage.com/ElKst3CCVvlhlgHiaH5IM/create_publish_worlds_1.png)
     
 2. A **local workspace** is created.
     
-    ![image.png](attachment:2ca3c60b-e9c6-4d08-a7e9-26b9669b3da7:image.png)
+    ![image.png](https://r2.fivemanage.com/ElKst3CCVvlhlgHiaH5IM/create_publish_worlds_2.png)
     
 3. The workspace is editable in build mode.
     
-    ![image.png](attachment:dc8292eb-5fa9-46c2-8a65-05c29fe39d34:image.png)
+    ![image.png](https://r2.fivemanage.com/ElKst3CCVvlhlgHiaH5IM/create_publish_worlds_3.png)
     
 4. Save changes to keep them locally.
 5. **Drafts tab** shows saved workspaces.
 6. Publish to make the world available on the HELIX server.
 
-![image.png](attachment:13c838e5-49e9-4dd2-bac7-496516af8170:image.png)
+![image.png](https://r2.fivemanage.com/ElKst3CCVvlhlgHiaH5IM/create_publish_worlds_4.png)
 
 ---
 
@@ -95,7 +95,7 @@ A World typically contains:
 - Publish as **World**:
     - Publishes the complete bundle (map + scripts + assets).
 
-![image.png](attachment:ec315325-cd9b-4169-8e61-9aab1df23f24:image.png)
+![image.png](https://r2.fivemanage.com/ElKst3CCVvlhlgHiaH5IM/create_publish_worlds_5.png)
 
 ---
 

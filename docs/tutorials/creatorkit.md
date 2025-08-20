@@ -34,17 +34,17 @@ This guide walks you through preparing a HELIX package using the Creator Kit and
 
 1. In your UE project, right-click the **folder** containing your assets → **Migrate**.
     
-    ![image.png](attachment:50ce50e2-5e16-4297-b55d-a3db6e4dbedf:image.png)
+    ![image.png](https://r2.fivemanage.com/ElKst3CCVvlhlgHiaH5IM/creatorkit_1.png)
     
 
 1. Confirm only that folder is selected and click **OK**.
     
-    ![image.png](attachment:be0b5369-ad6c-4b19-8706-c157a74deff5:image.png)
+    ![image.png](https://r2.fivemanage.com/ElKst3CCVvlhlgHiaH5IM/creatorkit_2.png)
     
 
 1. Choose the **Content** folder (that you choice in Step 1.1) inside **Creator Kit** as the destination.
     
-    ![image.png](attachment:50fddc38-76e9-4890-98c2-99af5653eeba:image.png)
+    ![image.png](https://r2.fivemanage.com/ElKst3CCVvlhlgHiaH5IM/creatorkit_3.png)
     
 
 💡 **Important:** Keep all assets in a **single folder** under `Content/`. Avoid external plugins or references.
@@ -56,7 +56,7 @@ This guide walks you through preparing a HELIX package using the Creator Kit and
 1. Open the `.uproject` file in Creator Kit.
 2. Confirm the migrated folder (e.g., `QA_HoldingCells`) appears in the Content Browser.
 
-![image.png](attachment:1a43f2fc-14ec-4d70-9fd2-45505399f899:image.png)
+![image.png](https://r2.fivemanage.com/ElKst3CCVvlhlgHiaH5IM/creatorkit_4.png)
 
 ---
 
@@ -67,7 +67,7 @@ This guide walks you through preparing a HELIX package using the Creator Kit and
     
     *(This temporary widget will be replaced by a streamlined UI in future builds.)*
     
-    ![image.png](attachment:df078eec-6c56-48e9-b751-853f4a42ccf4:image.png)
+    ![image.png](https://r2.fivemanage.com/ElKst3CCVvlhlgHiaH5IM/creatorkit_5.png)
     
 
 1. Configure settings:
@@ -76,16 +76,16 @@ This guide walks you through preparing a HELIX package using the Creator Kit and
     - **Type:** Choose **Map**.
     - **Scene/Level:** Pick a map inside `QA_HoldingCells/Maps` (e.g., `QA_Holding_Cells_A`).
         
-        ![image.png](attachment:e9c8fe6e-f4ed-480f-bd7b-8d510b0ba6cc:image.png)
+        ![image.png](https://r2.fivemanage.com/ElKst3CCVvlhlgHiaH5IM/creatorkit_6.png)
         
 
 1. Click **Generate** and wait for completion.
     - Processing may take 5 minutes to over an hour, depending on asset complexity.
     - Progress notifications appear in the editor’s bottom-right corner.
 
-![image.png](attachment:ccca249e-7000-4ad0-99bb-a0f0a4250b39:image.png)
+![image.png](https://r2.fivemanage.com/ElKst3CCVvlhlgHiaH5IM/creatorkit_7.png)
 
-![image.png](attachment:bb2c19b3-b096-43aa-a614-0e4b901ea33a:image.png)
+![image.png](https://r2.fivemanage.com/ElKst3CCVvlhlgHiaH5IM/creatorkit_8.png)
 
 ---
 
@@ -97,7 +97,7 @@ This guide walks you through preparing a HELIX package using the Creator Kit and
     - Client files
     - Server files
 
-![image.png](attachment:5e1ffb8e-4aed-4c71-be21-671d46a7939b:image.png)
+![image.png](https://r2.fivemanage.com/ElKst3CCVvlhlgHiaH5IM/creatorkit_9.png)
 
 ---
 
@@ -106,24 +106,24 @@ This guide walks you through preparing a HELIX package using the Creator Kit and
 1. Launch a **packaged build of HELIX** (e.g., Steam build).
 2. Click **Create World** (top right).
     
-    ![image.png](attachment:a9b59c5c-6d72-460d-97e0-4554e4d62820:image.png)
+    ![image.png](https://r2.fivemanage.com/ElKst3CCVvlhlgHiaH5IM/creatorkit_10.png)
     
 
 1. Once loaded, press **N** to open the Map Editor.
     
-    ![image.png](attachment:b07f8267-b98e-4207-8bca-99ea40331aef:image.png)
+    ![image.png](https://r2.fivemanage.com/ElKst3CCVvlhlgHiaH5IM/creatorkit_11.png)
     
 
 1. Go to **File → Load Package**.
 2. Navigate to `Creator Kit/Paks/Map/{YourPak}/configFile.json` and select it.
     
-    ![image.png](attachment:bfae570f-99dc-4719-8804-d0a37f91533e:image.png)
+    ![image.png](https://r2.fivemanage.com/ElKst3CCVvlhlgHiaH5IM/creatorkit_12.png)
     
 
 1. Your assets should now appear in the editor, organized into folders.
     - Example: drag and drop `QA_Holding_Cells_A` into the world.
 
-![image.png](attachment:3cde24e6-77e8-4260-ab1d-db093b9ca905:image.png)
+![image.png](https://r2.fivemanage.com/ElKst3CCVvlhlgHiaH5IM/creatorkit_13.png)
 
 ---
 

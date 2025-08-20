@@ -39,7 +39,7 @@ A workspace becomes **persistent** when you:
 2. **Publish** it for the first time.
 3. **Auto-save** it using the quick-save function (no name prompt).
 
-![image.png](attachment:889af7d1-e409-401b-b0bf-b08f764b5d1f:image.png)
+![image.png](https://r2.fivemanage.com/ElKst3CCVvlhlgHiaH5IM/workspaces_1.png)
 
 When saved:
 
@@ -61,7 +61,7 @@ When joining a world with an existing draft:
     - There may be **local changes** you could overwrite.
     - There may be **remote changes** that require a fresh copy.
     
-    ![image.png](attachment:374575f0-a629-47c1-b21f-056803ebbe30:image.png)
+    ![image.png](https://r2.fivemanage.com/ElKst3CCVvlhlgHiaH5IM/workspaces_2.png)
     
 
 ---
@@ -108,7 +108,7 @@ When joining a world with an existing draft:
     - Linked workspace → option to “Update World.”
     - Detached workspace → option to “Publish as New World.”
 
-![image.png](attachment:84e75b86-a134-467f-9fd7-ee7de5fa6c19:image.png)
+![image.png](https://r2.fivemanage.com/ElKst3CCVvlhlgHiaH5IM/workspaces_3.png)
 
 ---
 

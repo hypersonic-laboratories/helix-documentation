@@ -22,14 +22,14 @@ Multiplayer in HELIX allows you to host **Listen Servers** that other players ca
     - The **Create Server** button is disabled until the package is downloaded.
 3. Go to the **world’s detail page** and click **Create Server**.
     
-    ![image.png](attachment:ff6d39a8-3fa3-46f6-9a06-76f30630bb5a:image.png)
+    ![image.png](https://r2.fivemanage.com/ElKst3CCVvlhlgHiaH5IM/create_join_servers_1.png)
     
 4. **Name** the server (optional).
 5. Click **Create and Join**:
     - The session becomes visible to other players in the server list.
     - Anyone can join your session once it appears.
 
-![image.png](attachment:a6b902fa-b1cc-49ff-99e2-bc713e0048fe:image.png)
+![image.png](https://r2.fivemanage.com/ElKst3CCVvlhlgHiaH5IM/create_join_servers_2.png)
 
 ---
 
@@ -45,7 +45,7 @@ You can join in two ways:
 - **Download the world** first if not already downloaded.
 - Click **Join**.
 
-![image.png](attachment:832b523f-472e-449a-8ac8-575b5e3e2cc7:image.png)
+![image.png](https://r2.fivemanage.com/ElKst3CCVvlhlgHiaH5IM/create_join_servers_3.png)
 
 ### **Option B: Join from the Global Servers Tab**
 
@@ -55,7 +55,7 @@ You can join in two ways:
 - **Download the corresponding world** before joining.
 - Click **Join**.
 
-![image.png](attachment:46ad5b05-2037-4bbf-b7cf-3cd07a38f0d4:image.png)
+![image.png](https://r2.fivemanage.com/ElKst3CCVvlhlgHiaH5IM/create_join_servers_4.png)
 
 ---
 

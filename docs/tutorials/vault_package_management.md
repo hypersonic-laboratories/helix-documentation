@@ -1,4 +1,4 @@
-# Vault & Package management
+# Vault & Package Management
 
 *A guide to package management, dependencies, caching, and versioning on the HELIX platform*
 
@@ -24,7 +24,7 @@
     - Show packages cached locally on your machine.
 - Sort packages in different orders.
 
-![image.png](attachment:ea13325f-23ec-4dbd-beae-376fa6102eea:image.png)
+![image.png](https://r2.fivemanage.com/ElKst3CCVvlhlgHiaH5IM/vault_package_management_1.png)
 
 ---
 
@@ -35,7 +35,7 @@
     - All dependencies are automatically downloaded.
 - **Known issue:** Sometimes requires multiple clicks to start download.
 
-![image.png](attachment:c6f72c5b-814e-43e5-93ee-cb39c69efbdc:image.png)
+![image.png](https://r2.fivemanage.com/ElKst3CCVvlhlgHiaH5IM/vault_package_management_2.png)
 
 ---
 
@@ -66,7 +66,7 @@ Screenshot in the next build, now the UI is broken
     - Only latest version details are visible in the package details view.
     - Other versions exist but are hidden.
 
-![image.png](attachment:340f6961-2596-4e7e-8e03-adebd2502384:image.png)
+![image.png](https://r2.fivemanage.com/ElKst3CCVvlhlgHiaH5IM/vault_package_management_3.png)
 
 ---
 
@@ -77,8 +77,7 @@ Screenshot in the next build, now the UI is broken
 - You can navigate through dependencies from this view.
 - A **Downloads sidebar** exists but is not yet fully implemented.
 
-![image.png](attachment:17418a6c-e955-428c-a0bc-6c1f7c7e3dca:image.png)
-
+![image.png](https://r2.fivemanage.com/ElKst3CCVvlhlgHiaH5IM/vault_package_management_4.png)
 ---
 
 ### **7. Deleting Packages**
@@ -89,7 +88,7 @@ Screenshot in the next build, now the UI is broken
     - If no dependencies → can delete from server and it will be removed from the Vault.
 - You **cannot** delete a package that has dependent packages.
 
-![image.png](attachment:61225dd3-64b5-44a5-a486-b430958299a3:image.png)
+![image.png](https://r2.fivemanage.com/ElKst3CCVvlhlgHiaH5IM/vault_package_management_5.png)
 
 ---
 
@@ -104,7 +103,7 @@ Screenshot in the next build, now the UI is broken
     2. **QRE Map** – dynamic, can be updated at runtime in build mode.
         - No packages can depend on a QRE map.
 
-![image.png](attachment:f39b2067-6264-4375-af1a-b0d91795235c:image.png)
+![image.png](https://r2.fivemanage.com/ElKst3CCVvlhlgHiaH5IM/vault_package_management_6.png)
 
 ---
 
@@ -124,7 +123,7 @@ Screenshot in the next build, now the UI is broken
 - Example:
     - If a dependency is deleted from cache, the main package will prompt you to download it again.
 
-![image.png](attachment:1cd615c9-da2e-459c-bc75-c44eca357017:image.png)
+![image.png](https://r2.fivemanage.com/ElKst3CCVvlhlgHiaH5IM/vault_package_management_7.png)
 
 ---
 

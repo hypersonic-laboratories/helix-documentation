@@ -40,7 +40,7 @@
     - **Best practice:** Hold **Shift** while dragging.
         - The object only spawns when you release the mouse, reducing instability.
 
-![image.png](attachment:3038aa39-84f9-4064-8f64-b288e1c7aae4:image.png)
+![image.png](https://r2.fivemanage.com/ElKst3CCVvlhlgHiaH5IM/buildmode_1.png)
 
 ---
 
@@ -51,15 +51,15 @@
     - Add dependencies.
     - View and manage downloaded packages.
     
-    ![image.png](attachment:9f5aba6a-2fb1-45e7-88d5-c56c18e03864:image.png)
+    ![image.png](https://r2.fivemanage.com/ElKst3CCVvlhlgHiaH5IM/buildmode_2.png)
     
-    ![image.png](attachment:05e63103-31b5-44c7-8ad1-296e8c214a61:image.png)
+    ![image.png](https://r2.fivemanage.com/ElKst3CCVvlhlgHiaH5IM/buildmode_3.png)
     
 - Added dependencies appear in:
     - **Dependencies list**.
     - **Downloads tab** (with live progress).
     
-    ![image.png](attachment:2b58bef8-0eb9-4de2-bd9d-a311a79a0897:image.png)
+    ![image.png](https://r2.fivemanage.com/ElKst3CCVvlhlgHiaH5IM/buildmode_4.png)
     
 - **Pack files:** If dependency is a `.pak`, its assets mount into the **Library** tab.
 

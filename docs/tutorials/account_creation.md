@@ -12,7 +12,7 @@ This guide walks you through the core **user account management** features in HE
         
         If the name already exists, you’ll receive an error.
         
-        ![image.png](attachment:22025c31-fcec-4caa-b5da-11831a86c5bf:image.png)
+        ![image.png](https://r2.fivemanage.com/ElKst3CCVvlhlgHiaH5IM/account_creation_1.png)
         
 3. Once the account is successfully created, you can proceed to the login tab.
 
@@ -24,7 +24,7 @@ This guide walks you through the core **user account management** features in HE
 2. Enter your **e-mail** and **password**. 
 3. Click **Log In** to enter the game.
 
-![image.png](attachment:653d0b1f-0fdc-40e7-85b4-127341d9e0b1:image.png)
+![image.png](https://r2.fivemanage.com/ElKst3CCVvlhlgHiaH5IM/account_creation_2.png)
 
 ---
 
@@ -32,13 +32,13 @@ This guide walks you through the core **user account management** features in HE
 
 1. Navigate to the **Edit Profile** page.
     
-    ![image.png](attachment:fe42ee8b-2989-4915-94aa-82b771e862ff:image.png)
+    ![image.png](https://r2.fivemanage.com/ElKst3CCVvlhlgHiaH5IM/account_creation_3.png)
     
 2. Update any available fields — these changes will appear **in real-time** on the right-hand preview pane.
 3. Click **Save** to commit your changes.
     - All updates are stored on the server.
 
-![image.png](attachment:8555ad86-3d7d-4e1c-a800-d9c3d4fe96d3:image.png)
+![image.png](https://r2.fivemanage.com/ElKst3CCVvlhlgHiaH5IM/account_creation_4.png)
 
 ---
 
@@ -58,7 +58,7 @@ This guide walks you through the core **user account management** features in HE
 - Owners/creators of certain in-game assets or packages are displayed in the profile view.
 - For now, avatars use a placeholder image until the avatar system is complete.
 
-![image.png](attachment:4a70c6a2-6fce-439e-a5a6-474ce7d9542b:image.png)
+![image.png](https://r2.fivemanage.com/ElKst3CCVvlhlgHiaH5IM/account_creation_5.png)
 
 ---
 
