@@ -39,6 +39,7 @@ nav:
       - ... | flat | tutorials/create_join_servers.md
       - ... | flat | tutorials/workspaces.md
       - ... | flat | tutorials/creatorkit.md
+      - ... | flat | tutorials/creatorhub.md
   - Scripting:
     - scripting/index.md
     - Key References:
