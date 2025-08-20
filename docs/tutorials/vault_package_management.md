@@ -4,6 +4,16 @@
 
 ---
 
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/igSBWW4rHAo?list=PLpvikbDcD_mgusf_RJ5lqTD7NbFzrI47z"
+          style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+          frameborder="0"
+          allowfullscreen>
+  </iframe>
+</div>
+
+
+
 ### **1. What is the Vault?**
 
 - The **HELIX Vault** is a **directory of packages** stored on HELIX’s backend servers
@@ -132,3 +142,4 @@ Screenshot in the next build, now the UI is broken
 - Dependency graph display shows incorrect data.
 - Some UI elements (tabs, download sidebar) are incomplete.
 - State logic for package availability can be complex and is still under refinement.
+

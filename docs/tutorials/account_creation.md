@@ -4,6 +4,18 @@ This guide walks you through the core **user account management** features in HE
 
 ---
 
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/ILTImavYpC8?list=PLpvikbDcD_mgusf_RJ5lqTD7NbFzrI47z&index=4"
+          style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+          frameborder="0"
+          allowfullscreen>
+  </iframe>
+</div>
+
+
+
+
+
 ### **1. Creating a New User Account**
 
 1. Open the **Account Creation** screen.
@@ -92,3 +104,4 @@ This guide walks you through the core **user account management** features in HE
 **Status:**
 
 The account system is functional but in an **active development and bug-fix phase**. Expect updates and improvements in the coming days.
+

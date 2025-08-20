@@ -4,6 +4,15 @@
 
 ---
 
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/-vktTGVAez8?list=PLpvikbDcD_mgusf_RJ5lqTD7NbFzrI47z"
+          style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+          frameborder="0"
+          allowfullscreen>
+  </iframe>
+</div>
+
+
 ### **1. What is Build Mode?**
 
 - **Build Mode** is a **sandbox runtime editor** in HELIX.
@@ -117,3 +126,4 @@
 - Use **Shift + Drag** for large/complex objects.
 - Convert maps to dynamic ones if they’ll contain interactive content.
 - Save workspaces frequently.
+
