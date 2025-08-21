@@ -26,7 +26,7 @@ These are the essential controls for navigating and building in HELIX.
 
 Build Mode allows you to place and edit assets in your world. *(Note: Build Mode is disabled in multiplayer.)*
 
-![image.png](https://r2.fivemanage.com/ElKst3CCVvlhlgHiaH5IM/basiccontrols_1.png)
+![image.png](https://r2.fivemanage.com/ElKst3CCVvlhlgHiaH5IM/basiccontrols_2.png)
 
 ### Entering Build Mode
 
