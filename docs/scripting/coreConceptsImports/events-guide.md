@@ -68,5 +68,5 @@ to update the client interface or synchronize client state based on server-side 
 - param `any`
 
 ```lua title="Example"
-TriggerClientEvent('myClientEvent', player, 100)
+TriggerClientEvent(player, 'myClientEvent', 100)
 ```
