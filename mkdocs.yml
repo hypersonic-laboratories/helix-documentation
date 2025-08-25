@@ -41,6 +41,7 @@ nav:
       - ... | flat | tutorials/workspaces.md
       - ... | flat | tutorials/creatorkit.md
       - ... | flat | tutorials/creatorhub.md
+      - ... | flat | tutorials/photomode.md
   - Scripting:
     - scripting/index.md
     - Key References:
