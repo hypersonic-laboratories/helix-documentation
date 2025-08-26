@@ -17,6 +17,7 @@ copyright: "&copy; 2024 HELIX&reg; is a registered trademark of Hypersonic Labs"
 nav:
   - Getting Started:
     - getting_started/index.md
+    - getting_started/firstworld.md
     - Start Here:
       - getting_started/install.md
       - getting_started/firstGame.md
