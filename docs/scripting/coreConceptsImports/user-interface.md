@@ -12,7 +12,7 @@ With WebUI you can load HTML pages which integrate with your Packages in Lua usi
 
 ```lua title="index.lua"
 -- Spawns a WebUI with the HTML file you just created
-UI = WebUI("My UI", "index.html")
+UI = WebUI("My-UI", "index.html")
 
 UI:RegisterEventHandler('Ready', function(data)
     print(data.arg)
@@ -42,7 +42,7 @@ function changeColour(colour) {
 }
 
 // Triggers "Ready" on Lua
-fetch('http://127.0.0.1:8091/My UI/Ready', {
+fetch('http://127.0.0.1:8091/My-UI/Ready', {
     method: 'POST',
     mode: 'no-cors',
     headers: {
