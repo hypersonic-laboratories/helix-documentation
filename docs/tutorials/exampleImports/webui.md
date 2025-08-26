@@ -16,7 +16,14 @@ local ui = WebUI("MainMenu", "https://example.com")
 ```lua title="Displaying Local File"
 -- Loads a packaged HTML file with a fixed size
 -- size is optional, preferred to use css for sizing
-local shopUI = WebUI("Shop", "blui://UI/shop.html", nil, true, false, 800, 600)
+local shopUI = WebUI("Shop", "UI/shop.html", nil, true, false, 800, 600)
+```
+
+```lua title="Displaying Local File"
+-- Destroys the widget when the package is unloaded to support hot-reloading
+function onShutdown()
+    if shopUI then shopUI:Destroy() end
+end
 ```
 
 ```js title="Listen for Lua"
