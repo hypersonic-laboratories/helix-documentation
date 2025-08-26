@@ -12,7 +12,7 @@ With WebUI you can load HTML pages which integrate with your Packages in Lua usi
 
 ```lua title="index.lua"
 -- Spawns a WebUI with the HTML file you just created
-UI = WebUI("My UI", "blui://path/to/index.html")
+UI = WebUI("My UI", "index.html")
 
 UI:RegisterEventHandler('Ready', function(data)
     print(data.arg)
