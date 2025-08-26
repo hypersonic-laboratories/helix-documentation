@@ -58,3 +58,22 @@ fetch('http://127.0.0.1:8091/MainMenu/submitForm', {
   })
 })
 ```
+
+---
+
+WebUI is still under development and has some known issues. As a temporary measure, we recommend following this template if you want the widget to be displayed at the start of the game and to support hot-reloading:
+
+```lua title="main.lua"
+local UI = nil
+
+-- Delay loading to work around the race condition that steals inputs from the widget at the beginning of the game
+Timer.Delay(HWorld, 2.5, function()
+    UI = WebUI('MyUI', 'index.html')
+    -- ...
+end)
+
+-- Destroy the widget when the package is unloaded to support hot-reloading
+function onShutdown()
+    if UI then UI:Destroy() end
+end
+```
