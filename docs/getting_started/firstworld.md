@@ -1,11 +1,11 @@
-# Creating your first world
+# Creating Your First World
 
 This guide walks you through the **concept of Worlds and Servers in HELIX**, and shows you step by step how to create, script, and publish your first World.
 
 ---
 
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-  <iframe src="https://youtu.be/embed/Q283bqr40P0"
+  <iframe src="https://youtube.com/embed/Q283bqr40P0"
           style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
           frameborder="0"
           allowfullscreen>
