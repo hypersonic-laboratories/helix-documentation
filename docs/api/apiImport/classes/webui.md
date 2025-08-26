@@ -45,14 +45,6 @@ local UI = WebUI('test', 'https://google.com', WidgetVisibility.Visible, true, t
 
 <FunctionsDeclaration type="Class" name="WebUI" />
 
-### BringToFront
-Brings this WebUI to front of all widgets
-```lua
-UI:BringToFront()
-```
-
----
-
 ### RegisterEventHandler
 Registers a Lua event by name with args
 ```lua
