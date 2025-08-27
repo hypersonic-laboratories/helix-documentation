@@ -47,7 +47,7 @@ RegisterServerEvent('TestServer', function(controller, str, num, bool, nil_val, 
     print('  Table:', tbl, 'Type:', type(tbl))
     print('--------------------------------------------')
 
-    controller:TriggerClientEvent('TestClient', str, num, bool, nil_val, vec, tbl)
+    TriggerClientEvent(controller, 'TestClient', str, num, bool, nil_val, vec, tbl)
 end)
 ```
 
@@ -60,7 +60,7 @@ This method works for client -> client and server -> client
 
 ```lua title="Example"
 -- Inside a server event or server-side function
-controller:TriggerClientEvent('TestClient', "Hello from Server", 100, true, nil, Vector(100, 100, 100), { value = 42 })
+TriggerClientEvent(controller, 'TestClient', "Hello from Server", 100, true, nil, Vector(100, 100, 100), { value = 42 })
 ```
 
 ---
@@ -72,5 +72,5 @@ This method works for server -> server and client -> server
 
 ```lua title="Example"
 -- Inside client logic
-controller:TriggerServerEvent('TestServer', 'Hello from Client', 100, true, nil, Vector(100, 100, 100), { key = 'value' })
+TriggerServerEvent('TestServer', 'Hello from Client', 100, true, nil, Vector(100, 100, 100), { key = 'value' })
 ```
