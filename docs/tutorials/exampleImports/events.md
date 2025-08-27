@@ -54,7 +54,7 @@ end)
 ---
 
 ## Triggering Client Events
-Use `controller:TriggerClientEvent(name, ...)` from the server to send a message to a specific client.
+Use `TriggerClientEvent(controller, name, ...)` from the server to send a message to a specific client.
 All extra arguments are automatically serialized and passed into the client handler.
 This method works for client -> client and server -> client
 
@@ -66,7 +66,7 @@ TriggerClientEvent(controller, 'TestClient', "Hello from Server", 100, true, nil
 ---
 
 ## Triggering Server Events
-Use `controller:TriggerServerEvent(name, ...)` from the client to send a message to the server.
+Use `TriggerServerEvent(name, ...)` from the client to send a message to the server.
 All arguments will be received by the registered server handler with the triggering controller passed in automatically.
 This method works for server -> server and client -> server
 
