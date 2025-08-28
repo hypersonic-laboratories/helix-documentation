@@ -67,8 +67,9 @@ sky:SetSkyMode(1)
 
 ### `SetCloudCoverage`
 Sets the density of clouds in the sky.
+Accepted range: 0-10
 ```lua
-sky:SetCloudCoverage(0.75)
+sky:SetCloudCoverage(5.0)
 ```
 ---
 
