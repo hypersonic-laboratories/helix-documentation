@@ -22,7 +22,7 @@ Traces are the same concept as **Raycasting**
 ---
 
 ## 🔍 What Is the Player Looking At?
-This example runs a trace every 100ms from the center of the screen out into the world.
+This example runs a trace every 1 second from the center of the screen out into the world.
 
 ```lua title="Example"
 Timer.SetInterval(function()
