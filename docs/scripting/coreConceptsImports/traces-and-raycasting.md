@@ -4,116 +4,76 @@ tags: [scripting]
 ---
 
 # Traces & Raycasting
-Traces (also known as **Raycasts**) are a powerful way to detect what’s in front of the player or along any path in your game world.
-By casting an invisible line from one point to another, you can detect objects, get hit positions, and interact with the world dynamically at runtime.
+Traces (also known as raycasts) let you detect what’s in front of the player or along any path in your game world. By casting an invisible line between two points, you can detect objects, get hit positions, and interact with the world at runtime.
 
 ---
 
 ## 🧠 What Is a Trace?
-A **trace** checks for collisions along a straight line between two 3D points: a **start** and **end**.
-HELIX uses the physics system to return detailed info if something was hit — such as:
+A trace checks for collisions along a straight line between two 3D points: start and end. HELIX uses the physics system to return details like:
 
 - Which entity was hit
 - The world position of the hit
 - The type of surface or object
 
-Traces are the same concept as **Raycasting** in other engines like Unity or Unreal.
+Traces are the same concept as **Raycasting**
 
 ![Traces example](/img/docs/traces-raycasting.jpg)
 
 ---
 
 ## 🔍 What Is the Player Looking At?
-This example runs a trace every 100ms from the center of the screen out into the world.
+This example runs a trace every 1 second from the center of the screen out into the world.
 
 ```lua title="Example"
--- Run every 100ms
 Timer.SetInterval(function()
+    local w, h = HPlayer:GetViewportSize()
+    local sp = UE.FVector2D(w * 0.5, h * 0.5)
 
-    -- Get the center of the player's screen
-    local screen_center = Viewport.GetViewportSize() / 2
+    local pos, dir = UE.FVector(), UE.FVector()
+    if not UE.UGameplayStatics.DeprojectScreenToWorld(HPlayer, sp, pos, dir) then return end
 
-    -- Convert screen center to a 3D world position + direction
-    local deprojected = Viewport.DeprojectScreenToWorld(screen_center)
+    local start = pos + dir * 25.0
+    local stop  = start + dir * 5000.0
+    local hit   = Trace:LineSingle(start, stop, UE.ETraceTypeQuery.Visibility, UE.EDrawDebugTrace.None)
 
-    -- Trace 5000 units outward in the direction the player is looking
-    local start = deprojected.Position
-    local stop = deprojected.Position + deprojected.Direction * 5000
+    Debug.DrawLine(start, stop, UE.FLinearColor.Yellow, 1.2, 3.0)
 
-    -- Specify what types of objects we want to detect
-    local collision = CollisionChannel.WorldStatic | CollisionChannel.PhysicsBody
-
-    -- Define the behavior of the trace
-    local mode = TraceMode.ReturnEntity | TraceMode.DrawDebug
-
-    -- Perform the trace
-    local result = Trace.LineSingle(start, stop, collision, mode)
-
-    -- If it hits something
-    if result.Success then
-
-        local color = Color(1, 0, 0) -- Red if no entity
-
-        if result.Entity then
-            color = Color(0, 1, 0) -- Green if it hit an entity
-
-            -- You can check what kind of actor was hit:
-            -- if result.Entity:GetType() == "Character" then ...
-        end
-
-        -- Draw a debug point at the hit location
-        Debug.DrawPoint(result.Location, color, 5, 10)
+    if hit then
+        local actor = (hit.GetActor and hit:GetActor()) or hit.Actor
+        local p = hit.ImpactPoint or hit.Location or start
+        Debug.DrawPoint(p, UE.FLinearColor.Green, 1.2, 12.0)
+        print("Trace HIT:", actor and actor:GetName() or "nil")
     end
-end, 100)
+end, 1000)
 ```
 
 ---
 
 ## ⚙️ Collision Filtering
-Traces can be filtered by **Collision Channels**, which define what types of objects the trace can interact with. This allows you to ignore irrelevant objects or target only specific types like characters, props, or world geometry.
-You can **combine multiple channels** using the `|` (bitwise OR) operator:
+Traces use a collision channel to decide what responds. For general “what’s under the crosshair,” UE.ETraceTypeQuery.Visibility is a good default.
 
 ```lua title="Example"
-local collision = CollisionChannel.WorldStatic | CollisionChannel.PhysicsBody
+local hit = Trace:LineSingle(start, stop, UE.ETraceTypeQuery.Visibility, UE.EDrawDebugTrace.None)
 ```
-
-### Common Collision Channels
-
-- `WorldStatic` – Static objects like walls or terrain
-- `PhysicsBody` – Movable physics-enabled props
-- `Pawn` – Characters, NPCs, or players
 
 ---
 
-## 🧪 Debugging Tools
-Use trace debug options to **visualize raycasts** in the game world. This helps you confirm direction, distance, and what was hit.
-
-### TraceMode Flags
-
-- `TraceMode.DrawDebug` – Draws a colored line showing the trace
-- `TraceMode.ReturnEntity` – Includes entity hit results (not just position)
-
-You can also manually draw visuals with the `Debug` library:
+## 🧪 Visual Debug
+You can draw your own helpers while tuning traces:
 
 ```lua title="Example"
--- Draw a point where the trace hit
-Debug.DrawPoint(position, color, duration, size)
+-- Point at the hit location
+Debug.DrawPoint(position, UE.FLinearColor.Green, 2.0, 12.0)
 
--- Draw a line for custom traces
-Debug.DrawLine(start_position, end_position, color, duration, thickness)
+-- Custom line
+Debug.DrawLine(start_position, end_position, UE.FLinearColor.Yellow, 2.0, 2.0)
 ```
-
-These are especially useful when tuning aiming systems, line-of-sight checks, or precise interactions.
 
 ---
 
 ## ✅ Summary
 
-- **Traces** let you detect objects between two 3D points (like a laser)
-- Use `Trace.LineSingle()` to raycast between a start and end position
-- Use `CollisionChannel` to decide what kind of objects to detect
-- Add `TraceMode` flags to control output and debugging behavior
-- Use `Debug` tools to draw lines and points for visual feedback
-- Great for aiming, detecting hits, line-of-sight, and interaction systems
-
-Traces are a core part of building responsive gameplay logic in HELIX. Master them early—they’re used everywhere!
+- Cast a line between two points to detect objects and hits.
+- Use Trace:LineSingle(start, stop, UE.ETraceTypeQuery.Visibility, ...) for simple “look” traces.
+- Draw debug lines/points to visualize behavior during development.
+- Great for aiming, line-of-sight, interactions, and world queries.
