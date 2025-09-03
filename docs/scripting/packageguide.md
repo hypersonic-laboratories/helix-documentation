@@ -10,12 +10,12 @@ A Lua package is a self-contained set of Lua scripts and related assets that can
 This structure allows for flexible, organized scripting and content loading.
 
 ## 📁 Package Directory Structure
-All Lua packages are located under the `Content/Script/` directory.
+All Lua packages are located under the `Workspace/scripts/` directory.
 Each subfolder inside this directory represents a single Lua package. Every package must include a `package.json` file to define its structure, including which files to load.
 
 ```title="Example"
-Content
-└── Script
+Workspace
+└── scripts
     ├── MyPackage
     │   ├── client.lua
     │   ├── server.lua
@@ -28,7 +28,7 @@ Content
 
 ## 📜 Defining Which Packages to Load
 
-The `config.json` file located in `Content/Script/` acts as the entry point for loading Lua packages.
+The `config.json` file located in `Workspace/scripts/` acts as the entry point for loading Lua packages.
 It contains a simple JSON structure with a `packages` key, which is a list of package folder names you want to load in order.
 
 ```json title="Example"
