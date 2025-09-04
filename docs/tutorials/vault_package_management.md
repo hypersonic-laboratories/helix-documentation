@@ -137,9 +137,3 @@ Screenshot in the next build, now the UI is broken
 
 ---
 
-### **11. Known Issues & Limitations**
-
-- Dependency graph display shows incorrect data.
-- Some UI elements (tabs, download sidebar) are incomplete.
-- State logic for package availability can be complex and is still under refinement.
-

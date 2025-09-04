@@ -1,6 +1,6 @@
 # Account Creation
 
-This guide walks you through the core **user account management** features in HELIX, including account creation, login, profile editing, and password reset. It also covers current known issues and upcoming improvements.
+This guide walks you through the core **user account management** features in HELIX, including account creation, login, profile editing, and password reset.
 
 ---
 
@@ -74,25 +74,8 @@ This guide walks you through the core **user account management** features in HE
 
 ---
 
-### **6. Known Issues**
 
-1. **Profile Title Not Updating**
-    - Changes to the title field don’t appear until the game restarts.
-2. **Login & Password Reset Bugs**
-    - Some users report issues logging in or resetting passwords.
-    - The reset flow works if followed precisely:
-        1. Click **Forgot Password**.
-        2. Enter your email.
-        3. Wait for the reset email.
-        4. Set your new password.
-        5. Return to login and sign in with the updated credentials.
-3. **Infinite Dialog Loop**
-    - Closing certain password reset dialogs in unusual ways can cause multiple overlapping dialogs, leading to a loop.
-    - This bug has been reproduced and is currently being fixed.
-
----
-
-### **7. Upcoming Fixes (Target: End of Week)**
+### **6. Upcoming Fixes (Target: End of Week)**
 
 - Fully functional avatar, banner, and location settings.
 - Fix for profile title updates.

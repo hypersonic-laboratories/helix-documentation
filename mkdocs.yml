@@ -57,6 +57,8 @@ nav:
       - ... | flat | api/apiImport/global-variables/*.md
     - Classes:
       - ... | flat | api/apiImport/classes/*.md
+  - Known Issues:
+    - known_issues/known_issues.md
 
 
 # Extra styling
