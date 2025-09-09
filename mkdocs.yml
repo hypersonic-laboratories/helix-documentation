@@ -291,6 +291,13 @@ plugins:
       redirect_maps:
         'index.md': 'getting_started/index.md'
 
+  # https://github.com/shu307/mkdocs-nav-weight
+  - mkdocs-nav-weight:
+      index_weight: -10
+      warning: false
+      reverse: true
+
+
   # https://github.com/orbikm/mkdocs-ezlinks-plugin
   # - ezlinks #disabled for now, was causing issues #ignore yml errors
 
