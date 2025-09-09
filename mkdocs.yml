@@ -42,7 +42,7 @@ nav:
       - ... | flat | tutorials/creatorkit.md
       - ... | flat | tutorials/creatorhub.md
       - ... | flat | tutorials/photomode.md
-  - Scripting:
+  - Scripting Tips:
     - scripting/index.md
     - Key References:
       - scripting/codeeditor.md
@@ -57,9 +57,12 @@ nav:
       - ... | flat | api/apiImport/global-variables/*.md
     - Classes:
       - ... | flat | api/apiImport/classes/*.md
-  - Known Issues:
-    - known_issues/known_issues.md
-
+  - News & Updates:
+    - General:
+      - news_updates/public_roadmap.md
+      - news_updates/known_issues.md
+    - Release Notes:
+      - news_updates/release_notes/*.md
 
 # Extra styling
 # https://squidfunk.github.io/mkdocs-material/customization/?h=#additional-css
