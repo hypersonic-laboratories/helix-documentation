@@ -3,9 +3,9 @@ icon: octicons/file-code-24
 status: change
 ---
 
-# Scripting
+# Scripting Tips
 
-Welcome to the HELIX Scripting section.
+Welcome to the HELIX Scripting Tips section.
 This is your starting point for learning how to build with HELIX using Lua. Here you'll find essential concepts,
 practical code examples, and focused guides that walk you through key systems and patterns.
 
