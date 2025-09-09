@@ -1,5 +1,5 @@
 ---
-icon: material/news
+icon: material/newspaper
 ---
 
 # News & Updates
