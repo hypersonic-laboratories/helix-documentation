@@ -58,11 +58,12 @@ nav:
     - Classes:
       - ... | flat | api/apiImport/classes/*.md
   - News & Updates:
+    - news_updates/index.md
     - General:
       - news_updates/public_roadmap.md
       - news_updates/known_issues.md
     - Release Notes:
-      - news_updates/release_notes/*.md
+      - ... | flat | news_updates/release_notes/*.md
 
 # Extra styling
 # https://squidfunk.github.io/mkdocs-material/customization/?h=#additional-css
