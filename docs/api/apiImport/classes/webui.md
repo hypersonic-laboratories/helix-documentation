@@ -15,13 +15,14 @@ This class supports all JS frameworks available, such as Vue.JS, React.JS, etc. 
 <ConstructorDeclaration type="Class" name="WebUI" />
 
 ```lua
-local UI = WebUI('test', 'Package/UI/index.html')
+local UI = WebUI('test', 'Package/UI/index.html', true)
 ```
 
 | Type              |       Name        | Default | Description                                                              |
 | ---------------  | :----------------- | ----- | ----------------------------------------------------------------------  |
 | string | `Name`   |  | Unique identifier for logs.  |
 | string | `Path`  |   | Web URL or HTML file path (e.g. "https://google.com" or "PackageName/Directory/index.html") |
+| boolean | `ConsumeInput` | `false` | Whether the UI should consume mouse and keyboard input focus |
 
 ## Functions
 
@@ -61,6 +62,14 @@ UI:LoadHTML([[
     </body>
 </html>
 ]])
+```
+
+---
+
+### Destroy
+Deactivates and destroys the WebUI Instance
+```lua
+UI:Destroy()
 ```
 
 ---
