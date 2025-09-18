@@ -62,6 +62,7 @@ nav:
     - General:
       - news_updates/public_roadmap.md
       - news_updates/known_issues.md
+      - news_updates/devlog.md
     - Release Notes:
       - ... | flat | news_updates/release_notes/*.md
 

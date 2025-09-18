@@ -64,7 +64,7 @@ Triggers a client-side event from the server, targeting specific clients or broa
 to update the client interface or synchronize client state based on server-side decisions
 
 - eventName `string`
-- player `number`
+- player `controller`
 - param `any`
 
 ```lua title="Example"
