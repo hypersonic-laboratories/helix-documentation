@@ -6,6 +6,9 @@ The DS can be either published (registered with a Creator Hub) or unpublished. I
 
 All parameters can be passed as [URL parameters](https://dev.epicgames.com/documentation/en-us/unreal-engine/command-line-arguments-in-unreal-engine#additionalparameters) (Map name is `/Game/Helix/Levels/L_HelixStartup.umap`), as command line arguments, or set as environment variables, in that order of precedence.
 
+One can also specify them directly in Steam:
+![image.png](https://r2.fivemanage.com/Xspz7pZ6XgY1ICg3KwrkM/steamwebhelper_4N8LdvOaeH.png)
+
 ## Common
 
 <table style="border-collapse: collapse; width: 100%;">
@@ -125,6 +128,16 @@ A typical command line to start a published DS:
 
 `.\SandboxServer.exe -HELIX_USER_TOKEN=”...” -HELIX_SERVER_SLUG="sandbox-simple-server" -HELIX_HEARTBEAT_PERIOD=30`
 
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/3bvEie6l6CU"
+          style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+          frameborder="0"
+          allowfullscreen>
+  </iframe>
+</div>
+
+<br>
+
 A typical command line to start an unpublished local DS from an existing workspace:
 
 `.\SandboxServer.exe -HELIX_WORKSPACE_ID="9d4c5900-472e-eac2-4abc-06926640bbf5"`
@@ -132,6 +145,14 @@ A typical command line to start an unpublished local DS from an existing workspa
 A typical command line to start an unpublished DS from a published World:
 
 `.\SandboxServer.exe -HELIX_USER_EMAIL=”” -HELIX_USER_PASSWORD=”” -HELIX_PACKAGE_SLUG="sandbox-simple-map"`
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/0ZHsIxZ6Azw"
+          style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+          frameborder="0"
+          allowfullscreen>
+  </iframe>
+</div>
 
 ## Client
 
