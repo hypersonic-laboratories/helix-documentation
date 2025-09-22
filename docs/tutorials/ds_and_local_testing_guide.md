@@ -11,77 +11,16 @@ One can also specify them directly in Steam:
 
 ## Common
 
-<table style="border-collapse: collapse; width: 100%;">
-  <tr>
-    <th style="border: 1px solid black; padding: 5px;">Name</th>
-    <th style="border: 1px solid black; padding: 5px;">Description</th>
-  </tr>
-  <tr>
-    <td style="border: 1px solid black; padding: 5px;">
-      HELIX_USER_EMAIL<br>
-      HELIX_USER_PASSWORD
-    </td>
-    <td style="border: 1px solid black; padding: 5px;">
-      Explicit user credentials. Most useful when the application is running in headless mode (without the UI) and there are no credentials cached locally (i.e., on a standalone DS).
-    </td>
-  </tr>
-  <tr>
-    <td style="border: 1px solid black; padding: 5px;">
-      HELIX_WORKSPACE_ID
-    </td>
-    <td style="border: 1px solid black; padding: 5px;">
-      ID of a local Workspace Draft. On Windows local Workspaces are located in <code>%LOCALAPPDATA%\Helix\Workspaces</code> folder.
-    </td>
-  </tr>
-  <tr>
-    <td style="border: 1px solid black; padding: 5px;">
-      HELIX_SERVER_SLUG
-    </td>
-    <td style="border: 1px solid black; padding: 5px;">
-      The Server Slug of a published server from the Creator Hub.
-    </td>
-  </tr>
-  <tr>
-    <td style="border: 1px solid black; padding: 5px;">
-      HELIX_SERVER_ID
-    </td>
-    <td style="border: 1px solid black; padding: 5px;">
-      The Server ID of a published server from the Creator Hub.
-    </td>
-  </tr>
-  <tr>
-    <td style="border: 1px solid black; padding: 5px;">
-      HELIX_PACKAGE_SLUG
-    </td>
-    <td style="border: 1px solid black; padding: 5px;">
-      The Package (World) Slug from the Creator Hub.
-    </td>
-  </tr>
-  <tr>
-    <td style="border: 1px solid black; padding: 5px;">
-      HELIX_PACKAGE_VERSION_ID
-    </td>
-    <td style="border: 1px solid black; padding: 5px;">
-      The Package (World) Version ID from the Creator Hub.
-    </td>
-  </tr>
- <tr>
-  <td style="border: 1px solid black; padding: 5px;">
-      HELIX_LOCAL_PAKS
-    </td>
-    <td style="border: 1px solid black; padding: 5px;">
-      A <code>|</code> delimited list of paths to local folders created with a Creator Kit.
-    </td>
-  </tr>
- <tr>
-  <td style="border: 1px solid black; padding: 5px;">
-      HELIX_LEVEL_ASSET
-    </td>
-    <td style="border: 1px solid black; padding: 5px;">
-      Full Object Path to the Level Asset that will replace the Default Blank Level hosting a Helix World.
-    </td>
-  </tr>
-</table>
+| **Name** | **Description** |
+|----------|------------------|
+| `HELIX_USER_EMAIL` `HELIX_USER_PASSWORD` | Explicit user credentials. Most useful when the application is running in headless mode (without the UI) and there are no credentials cached locally (i.e., on a standalone DS). |
+| `HELIX_WORKSPACE_ID` | ID of a local Workspace Draft. On Windows local Workspaces are located in `%LOCALAPPDATA%\Helix\Workspaces` folder. |
+| `HELIX_SERVER_SLUG` | The Server Slug of a published server from the Creator Hub. |
+| `HELIX_SERVER_ID` | The Server ID of a published server from the Creator Hub. |
+| `HELIX_PACKAGE_SLUG` | The Package (World) Slug from the Creator Hub. |
+| `HELIX_PACKAGE_VERSION_ID` | The Package (World) Version ID from the Creator Hub. |
+| `HELIX_LOCAL_PAKS` | A `\|` delimited list of paths to local folders created with a Creator Kit. |
+| `HELIX_LEVEL_ASSET` | Full Object Path to the Level Asset that will replace the Default Blank Level hosting a Helix World. |
 
 <div style="border-left: 4px solid #f0c040; background-color: #f0f0f0; padding: 10px; margin: 10px 0;">
 💡 The load targets are listed in order of precedence. I.e. if a Workspace ID is provided, it will be loaded without trying other options. The Server Slug follows that and so on.
@@ -93,36 +32,11 @@ One can also specify them directly in Steam:
 
 ## Server
 
-<table style="border-collapse: collapse; width: 100%;">
-  <tr>
-    <th style="border: 1px solid black; padding: 5px;">Name</th>
-    <th style="border: 1px solid black; padding: 5px;">Description</th>
-  </tr>
-  <tr>
-    <td style="border: 1px solid black; padding: 5px;">
-      HELIX_USER_TOKEN
-    </td>
-    <td style="border: 1px solid black; padding: 5px;">
-      The Server Token of a published server from the Creator Hub. Should be used instead of explicit user credentials (login/password) for a published DS.
-    </td>
-  </tr>
-  <tr>
-    <td style="border: 1px solid black; padding: 5px;">
-      HELIX_HEARTBEAT_PERIOD
-    </td>
-    <td style="border: 1px solid black; padding: 5px;">
-      The server heartbeat period in seconds. Controls the server’s online status and IP address discovery. Should be set to a value of less than 10 min for a published DS.
-    </td>
-  </tr>
-  <tr>
-    <td style="border: 1px solid black; padding: 5px;">
-      HELIX_NUCLEUS_PORT
-    </td>
-    <td style="border: 1px solid black; padding: 5px;">
-      <code>Experimental!</code> Enables the Nucleus web admin panel on a server on a specified TCP port. Should not be used on public servers because authorization mechanisms are not implemented yet.
-    </td>
-  </tr>  
-</table>
+| **Name** | **Description** |
+|----------|------------------|
+| `HELIX_USER_TOKEN` | The Server Token of a published server from the Creator Hub. Should be used instead of explicit user credentials (login/password) for a published DS. |
+| `HELIX_HEARTBEAT_PERIOD` | The server heartbeat period in seconds. Controls the server’s online status and IP address discovery. Should be set to a value of less than 10 min for a published DS. |
+| `HELIX_NUCLEUS_PORT` |  `Experimental!` Enables the Nucleus web admin panel on a server on a specified TCP port. Should not be used on public servers because authorization mechanisms are not implemented yet. |
 
 A typical command line to start a published DS:
 
@@ -156,22 +70,9 @@ A typical command line to start an unpublished DS from a published World:
 
 ## Client
 
-<table style="border-collapse: collapse; width: 100%;">
-  <tr>
-    <th style="border: 1px solid black; padding: 5px;">Name</th>
-    <th style="border: 1px solid black; padding: 5px;">Description</th>
-  </tr>
-  <tr>
-    <td style="border: 1px solid black; padding: 5px;">
-      HELIX_CONNECT
-    </td>
-    <td style="border: 1px solid black; padding: 5px;">
-      An address of a server to connect to. When connecting to a published Server by Slug or ID, it can be any non-empty value, e.g.
--HELIX_CONNECT=1.<br><br>
-<code>Important!</code> When connecting to a server like this, the client needs to specify the exact same load target (Workspace, Server, World etc.) as the server.<br>
-    </td>
-  </tr>  
-</table>
+| **Name** | **Description** |
+|----------|------------------|
+| `HELIX_CONNECT` | An address of a server to connect to. When connecting to a published Server by Slug or ID, it can be any non-empty value, e.g. *-HELIX_CONNECT=1.* <br>`Important!` When connecting to a server like this, the client needs to specify the exact same load target (Workspace, Server, World etc.) as the server. |
 
 A typical command line to connect to an unpublished local DS started from an existing workspace:
 
