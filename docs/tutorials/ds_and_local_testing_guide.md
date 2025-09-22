@@ -1,6 +1,6 @@
-# DS and local testing guide
+# Local Testing with Dedicated Server (DS)
 
-The HELIX application accepts several configuration parameters, which are primarily useful for running a dedicated server (DS) or supporting specific local testing scenarios.
+The HELIX Client and Dedicated Server (DS) accept several configuration parameters, which are primarily useful for local testing scenarios.
 
 The DS can be either published (registered with a Creator Hub) or unpublished. In the case of a published DS, the server will have its unique ID and will be displayed in the Servers tab of the Game Client according to visibility rules. Unpublished DSs are usually run on a local machine for testing but can also be run on a LAN or internet server. Connecting game clients to unpublished servers is not possible from the Main Menu yet and must be done manually with configuration parameters.
 
