@@ -22,13 +22,9 @@ One can also specify them directly in Steam:
 | `HELIX_LOCAL_PAKS` | A `\|` delimited list of paths to local folders created with a Creator Kit. |
 | `HELIX_LEVEL_ASSET` | Full Object Path to the Level Asset that will replace the Default Blank Level hosting a Helix World. |
 
-<div style="border-left: 4px solid #f0c040; background-color: #f0f0f0; padding: 10px; margin: 10px 0;">
-💡 The load targets are listed in order of precedence. I.e. if a Workspace ID is provided, it will be loaded without trying other options. The Server Slug follows that and so on.
-</div>
-<br>
-<div style="border-left: 4px solid #f0c040; background-color: #f0f0f0; padding: 10px; margin: 10px 0;">
-💡 A Package usually refers to a World package, which is equivalent to pressing the Join World button from the Main Menu. But it also can be any package from the Vault (e.g. a Map) which is equivalent to pressing the Preview button.
-</div>
+>💡 The load targets are listed in order of precedence. I.e. if a Workspace ID is provided, it will be loaded without trying other options. The Server Slug follows that and so on. 
+
+>💡 A Package usually refers to a World package, which is equivalent to pressing the Join World button from the Main Menu. But it also can be any package from the Vault (e.g. a Map) which is equivalent to pressing the Preview button.
 
 ## Server
 
