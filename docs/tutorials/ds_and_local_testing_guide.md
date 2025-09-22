@@ -30,7 +30,7 @@ One can also specify them directly in Steam:
       HELIX_WORKSPACE_ID
     </td>
     <td style="border: 1px solid black; padding: 5px;">
-      ID of a local Workspace Draft. On Windows local Workspaces are located in <pre><code>%LOCALAPPDATA%\Helix\Workspaces</code></pre> folder.
+      ID of a local Workspace Draft. On Windows local Workspaces are located in <code>%LOCALAPPDATA%\Helix\Workspaces</code> folder.
     </td>
   </tr>
   <tr>
@@ -70,7 +70,7 @@ One can also specify them directly in Steam:
       HELIX_LOCAL_PAKS
     </td>
     <td style="border: 1px solid black; padding: 5px;">
-      A `|` delimited list of paths to local folders created with a Creator Kit.
+      A <code>|</code> delimited list of paths to local folders created with a Creator Kit.
     </td>
   </tr>
  <tr>
@@ -86,7 +86,7 @@ One can also specify them directly in Steam:
 <div style="border-left: 4px solid #f0c040; background-color: #f0f0f0; padding: 10px; margin: 10px 0;">
 💡 The load targets are listed in order of precedence. I.e. if a Workspace ID is provided, it will be loaded without trying other options. The Server Slug follows that and so on.
 </div>
-
+<br>
 <div style="border-left: 4px solid #f0c040; background-color: #f0f0f0; padding: 10px; margin: 10px 0;">
 💡 A Package usually refers to a World package, which is equivalent to pressing the Join World button from the Main Menu. But it also can be any package from the Vault (e.g. a Map) which is equivalent to pressing the Preview button.
 </div>
@@ -119,7 +119,7 @@ One can also specify them directly in Steam:
       HELIX_NUCLEUS_PORT
     </td>
     <td style="border: 1px solid black; padding: 5px;">
-      <pre><code>Experimental!</code></pre> Enables the Nucleus web admin panel on a server on a specified TCP port. Should not be used on public servers because authorization mechanisms are not implemented yet.
+      <code>Experimental!</code> Enables the Nucleus web admin panel on a server on a specified TCP port. Should not be used on public servers because authorization mechanisms are not implemented yet.
     </td>
   </tr>  
 </table>
@@ -168,7 +168,7 @@ A typical command line to start an unpublished DS from a published World:
     <td style="border: 1px solid black; padding: 5px;">
       An address of a server to connect to. When connecting to a published Server by Slug or ID, it can be any non-empty value, e.g.
 -HELIX_CONNECT=1.<br><br>
-<pre><code>Important!</code></pre> When connecting to a server like this, the client needs to specify the exact same load target (Workspace, Server, World etc.) as the server.<br>
+<code>Important!</code> When connecting to a server like this, the client needs to specify the exact same load target (Workspace, Server, World etc.) as the server.<br>
     </td>
   </tr>  
 </table>
