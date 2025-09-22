@@ -58,6 +58,19 @@ TriggerServerEvent('myServerEvent', 100)
 
 ---
 
+### `TriggerLocalServerEvent`
+
+Triggers a registered server-side event from the server without affecting or interacting with any client
+
+- eventName `string`
+- param `any`
+
+```lua title="Example"
+TriggerLocalServerEvent('myServerEvent', 100)
+```
+
+---
+
 ### `TriggerClientEvent`
 
 Triggers a client-side event from the server, targeting specific clients or broadcasting to all clients. Typically used
@@ -69,4 +82,17 @@ to update the client interface or synchronize client state based on server-side 
 
 ```lua title="Example"
 TriggerClientEvent(player, 'myClientEvent', 100)
+```
+
+---
+
+### `TriggerLocalClientEvent`
+
+Locally triggers a registered client event from the client allowing for cross-package communication via events without affecting other clients or interacting with the server
+
+- eventName `string`
+- param `any`
+
+```lua title="Example"
+TriggerLocalClientEvent('myClientEvent', 100)
 ```
