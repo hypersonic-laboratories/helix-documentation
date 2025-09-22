@@ -56,11 +56,23 @@ end)
 ## Triggering Client Events
 Use `TriggerClientEvent(controller, name, ...)` from the server to send a message to a specific client.
 All extra arguments are automatically serialized and passed into the client handler.
-This method works for client -> client and server -> client
+This method works for server -> client
 
 ```lua title="Example"
--- Inside a server event or server-side function
+-- Inside a server context
 TriggerClientEvent(controller, 'TestClient', "Hello from Server", 100, true, nil, Vector(100, 100, 100), { value = 42 })
+```
+
+---
+
+## Triggering Local Client Events
+Use `TriggerLocalClientEvent(name, ...)` from the client to send a message to another lua package, contained to the same client it's called from.
+All extra arguments are automatically serialized and passed into the client handler.
+This method works for client -> client
+
+```lua title="Example"
+-- Inside a client context
+TriggerLocalClientEvent('TestClient', "Hello from Server", 100, true, nil, Vector(100, 100, 100), { value = 42 })
 ```
 
 ---
@@ -68,9 +80,21 @@ TriggerClientEvent(controller, 'TestClient', "Hello from Server", 100, true, nil
 ## Triggering Server Events
 Use `TriggerServerEvent(name, ...)` from the client to send a message to the server.
 All arguments will be received by the registered server handler with the triggering controller passed in automatically.
-This method works for server -> server and client -> server
+This method works for client -> server
 
 ```lua title="Example"
--- Inside client logic
+-- Inside a client context
 TriggerServerEvent('TestServer', 'Hello from Client', 100, true, nil, Vector(100, 100, 100), { key = 'value' })
+```
+
+---
+
+## Triggering Local Server Events
+Use `TriggerLocalServerEvent(name, ...)` from the server to send a message to the server allowing for cross-package communication without relying on the client.
+All arguments will be received by the registered server handler.
+This method works for server -> server
+
+```lua title="Example"
+-- Inside a server context
+TriggerLocalServerEvent('TestServer', 'Hello from Client', 100, true, nil, Vector(100, 100, 100), { key = 'value' })
 ```
