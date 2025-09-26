@@ -41,8 +41,8 @@ local InteractableActor = Interactable({
         Text = 'Interact', -- Base text on interaction option
         SubText = 'Press F to interact', -- Subtext on interaction option
         Input = '/Game/Input/Actions/IA_Interact.IA_Interact', -- Input Action Mapping
-        Action = function(CubeActor) -- Callback function used for Lua interaction
-            print('Interaction pressed on', CubeActor.Object)
+        Action = function(CubeActor, Instigator) -- Callback function used for Lua interaction
+            print('Interaction pressed on:', CubeActor, 'By:', Instigator)
         end,
     },
 }, '/Engine/VREditor/BasicMeshes/SM_Cube_01.SM_Cube_01', InteractableTransform)
