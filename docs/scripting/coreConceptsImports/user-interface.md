@@ -47,7 +47,9 @@ ue.interface.broadcast('Ready', JSON.stringify({arg: 'This is an argument', bool
 
 ---
 
-WebUI is still under development and has some known issues. As a temporary measure, we recommend following this template if you want the widget to be displayed at the start of the game and to support hot-reloading:
+///info Note: You can open the Developer Tools by pressing Ctrl+Shift+I. ///
+
+WebUI is still under development and has some known issues. As a temporary measure, we recommend following this template if you want the widget to support hot-reloading:
 
 ```lua title="main.lua"
 local UI = WebUI('My-UI', 'PackageName/index.html')

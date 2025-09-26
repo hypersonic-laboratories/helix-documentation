@@ -62,7 +62,7 @@ ue.interface.broadcast('EventName', JSON.stringify({user: 'qwerty'}));
 
 ---
 
-WebUI is still under development and has some known issues. As a temporary measure, we recommend following this template if you want the widget to be displayed at the start of the game and to support hot-reloading:
+WebUI is still under development and has some known issues. As a temporary measure, we recommend following this template if you want the widget to support hot-reloading:
 
 ```lua title="main.lua"
 local UI = WebUI('MyUI', 'PackageName/index.html')
