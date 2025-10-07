@@ -43,6 +43,7 @@ nav:
       - ... | flat | tutorials/creatorkit.md
       - ... | flat | tutorials/creatorhub.md
       - ... | flat | tutorials/photomode.md
+      - ... | flat | tutorials/FabIssues/common_issues_importing_fab.md
   - Scripting Tips:
     - scripting/index.md
     - Key References:
