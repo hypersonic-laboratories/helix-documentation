@@ -16,8 +16,11 @@ This guide covers the **most common issues** you may encounter when importing a 
 Before you begin, make sure you’re familiar with the full workflow:
 
 1. **Download your pack from Fab** → [fab.com](https://www.fab.com/)
+
 2. **Download the Creator Kit** and review the docs → [Creator Kit Docs](https://www.notion.so/Creator-Kit-V1-0-277504d392e6801390b0e13b910a2aee?pvs=21)
+
 3. **Open the Creator Hub** → [hub.helixgame.com](https://hub.helixgame.com/)
+
 4. **Install HELIX** on Steam
 
 ---
@@ -34,8 +37,11 @@ After migrating your project folder into the **Creator Kit Content** folder, and
 ## Nanite meshes
 
 For the best optimization in HELIX,  you need to convert all your meshes into Nanite.
+
 1 - In the Content Browser, select your project folder
+
 2 - In the Filters tab select only Static Mesh, then select all the static meshes from your project
+
 3 - Right click on them, then select Nanite>, then click on “Enable Nanite (X Meshes)”
 
 ![Content Browser 01_10_2025 13_30_13.png](Content_Browser_01_10_2025_13_30_13.png)
@@ -64,18 +70,26 @@ To fix this:
 - Drop both static meshes into you 3D viewport, next to each other.
     
     1 - Select the SM_Object
+
     2 - Change to Modeling Mode
+
     3 - Click on the Mesh icon
+
     4 - Click on the Tri Select option
     
 
 ![CreatorKit - Unreal Editor 01_10_2025 15_01_28.png](CreatorKit_-_Unreal_Editor_01_10_2025_15_01_28.png)
 
 1 - Then change the Selection Mode to “By Material (Connected)”
+
 2 - Click on the Glass mesh of the object
+
 3 - Delete it
+
 4 - Click on the Accept button
+
 5 - Save your Static Mesh
+
 (You may remove the extra unused material ID, but it can brake the other IDs, so may just put a default material instead)
 
 ![CreatorKit - Unreal Editor 01_10_2025 15_01_53.png](CreatorKit_-_Unreal_Editor_01_10_2025_15_01_53.png)
@@ -85,8 +99,11 @@ Then do the same for the other SM_Object_Glass static mesh, easy way is to selec
 After you can remove the extra materials by:
 
 1 - In the Modeling Mode
+
 2 - Click on the Attribs icon
+
 3 - Expand the Materials section
+
 4 - Click on the Down Arrow of the material and click on Delete for all the opaque materials
 
 ![CreatorKit - Unreal Editor 01_10_2025 15_59_01.png](CreatorKit_-_Unreal_Editor_01_10_2025_15_59_01.png)
@@ -94,8 +111,11 @@ After you can remove the extra materials by:
 Then open both Static meshes and check:
 
 - Collisions on both meshes
+
 - Nanite enabled on the opaque material mesh
+
 - Nanite desabled on the translucent material mesh
+
 - Materials are well set up on both meshes
 
 ![SM_case 01_10_2025 16_27_52.png](SM_case_01_10_2025_16_27_52.png)
@@ -118,8 +138,11 @@ You can also adjust the material parameters for its material instance, that can 
 All the textures should be converted to Virtual Textures (VT):
 
 1 - Select your project folder in the Content Browser
+
 2 - In the Filters tab choose only “Texture”, then select all the textures of your project
+
 3 - Right click on them, and click on “Convert to Virtual Texture”
+
 4 - Then click OK
 
 ![Content Browser 01_10_2025 13_31_41.png](Content_Browser_01_10_2025_13_31_41.png)
@@ -149,9 +172,13 @@ If after converting textures to VT, some of the master materials are not display
 Some decals are not using power of two textures. This will result in failing the convertion to Virtual Texture.
 
 To fix this:
+
 1 - Open the texture
+
 2 - Change the “Padding and Resizing” option to “Stretch to Power Of Two”
+
 3 - Check the box “Virtual Texture Streaming”
+
 4- Save your changes
 
 ![T_paperpages_03 01_10_2025 18_12_47.png](T_paperpages_03_01_10_2025_18_12_47.png)
@@ -191,8 +218,11 @@ Make sure to set Megalight On, for all the lights of your scene.
 ![Silent_City - Unreal Editor 26_09_2025 15_24_32.png](Silent_City_-_Unreal_Editor_26_09_2025_15_24_32.png)
 
 1 - Select the light
+
 2 - Search for Mega in the Details panel
+
 3 - Check the Allow MegaLights option
+
 4 - Make sure the Shadow Method is set to Virtual Shadow Map
 
 ## Collisions
@@ -253,8 +283,10 @@ Make sure that you have a Player Start in your map, named “PlayerStart”, and
 ![Silent_City - Unreal Editor 29_09_2025 09_52_25.png](Silent_City_-_Unreal_Editor_29_09_2025_09_52_25.png)
 
 1 - Go to the Outliner tab
+
 2 - Search for player
-3 - Double click on the Player Srart
+
+3 - Double click on the Player Start
 
 ### Missing Player Start
 
@@ -263,7 +295,9 @@ If there is no Player Start in your map:
 ![Place Actors 29_09_2025 10_02_10.png](Place_Actors_29_09_2025_10_02_10.png)
 
 1 - Go on the Place Actors tab
+
 2 - Click on Basic icon
+
 3 - Drag and drop in your map the Player Start actor
 
 ## Game Mode
@@ -273,6 +307,8 @@ Make sure that there is no game mode already set in your map.
 ![Silent_City - Unreal Editor 29_09_2025 09_54_14.png](Silent_City_-_Unreal_Editor_29_09_2025_09_54_14.png)
 
 1 - Go on the World Settings tab
+
 2 - Go to the Game Mode section
 Make sure that there is nothing in “GameMode Override”
+
 3 - If there is a game mode file, click on the return arrow icon to remove it.
