@@ -42,12 +42,14 @@ function changeColour(colour) {
 }
 
 // Triggers "Ready" on Lua
-ue.interface.broadcast('Ready', JSON.stringify({arg: 'This is an argument', boolArg: true}))
+hEvent('Ready', {arg: 'This is an argument', boolArg: true})
 ```
 
 ---
 
-///info Note: You can open the Developer Tools by pressing Ctrl+Shift+I. ///
+///info 
+Note: You can open the Developer Tools by pressing Ctrl+Shift+I. 
+///
 
 WebUI is still under development and has some known issues. As a temporary measure, we recommend following this template if you want the widget to support hot-reloading:
 
