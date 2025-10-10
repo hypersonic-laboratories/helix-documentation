@@ -25,7 +25,7 @@ Please ensure your project is on **Unreal Engine 5.5.4**. Both HELIX and Creator
 2. **Extract QA_HoldingCells** and open the `.uproject` file with the marketplace engine.
 3. Right-click the folder with your assets → **Migrate**. 
     
-    ![image (5).png](https://r2.fivemanage.com/ElKst3CCVvlhlgHiaH5IM/creatorkit2_1.png)
+    ![image (5).png](https://r2.fivemanage.com/ElKst3CCVvlhlgHiaH5IM/creatorkit2_3.png)
     
 
 <aside>
@@ -37,7 +37,7 @@ You can also migrate a single asset/level. Unreal Engine will automatically incl
 
 1. In the migration window, make sure **only your asset folder** is selected → click **OK**.
     
-    ![image (6).png](https://r2.fivemanage.com/ElKst3CCVvlhlgHiaH5IM/creatorkit2_2.png)
+    ![image (6).png](https://r2.fivemanage.com/ElKst3CCVvlhlgHiaH5IM/creatorkit2_4.png)
     
 
 <aside>
@@ -51,12 +51,12 @@ To keep dependencies correct, all assets must:
 
 1. Navigate to your **Creator Kit Lite > Content** folder → click **Select Folder**.
     
-    ![image (7).png](https://r2.fivemanage.com/ElKst3CCVvlhlgHiaH5IM/creatorkit2_3.png)
+    ![image (7).png](https://r2.fivemanage.com/ElKst3CCVvlhlgHiaH5IM/creatorkit2_5.png)
     
 
 1. Open Creator Kit Lite’s `.uproject` file. Your **QA_HoldingCells** folder should now appear in the Content Browser.
 
-![image (9).png](https://r2.fivemanage.com/ElKst3CCVvlhlgHiaH5IM/creatorkit2_4.png)
+![image (9).png](https://r2.fivemanage.com/ElKst3CCVvlhlgHiaH5IM/creatorkit2_6.png)
 
 ---
 
@@ -135,7 +135,7 @@ To keep dependencies correct, all assets must:
 
 # ➕ Preparing for Publishing
 
-Step 6 is only for testing that your package functions properly inside HELIX.
+The "Testing Package" step is only for testing that your package functions properly inside HELIX.
 
 To actually publish a world that uses your newly created package, you must:
 
