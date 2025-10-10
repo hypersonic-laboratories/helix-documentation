@@ -78,7 +78,7 @@ To keep dependencies correct, all assets must:
 ![image (11).png](https://r2.fivemanage.com/ElKst3CCVvlhlgHiaH5IM/creatorkit2_6.png)
 
 1. Fill in the configuration:
-- **Name** → must match the folder name (only lowercase letters/numbers, no spaces or symbols)
+- **Name** → must match the folder name (no spaces or symbols)
 - **Path** → select the `QA_HoldingCells` folder
 - **Type** → Map
 - **Scene Path** → choose a map inside `QA_HoldingCells/Maps` (e.g. `QA_Holding_Cells_A`)
