@@ -45,6 +45,7 @@ nav:
       - ... | flat | tutorials/photomode.md
       - ... | flat | tutorials/FabIssues/common_issues_importing_fab.md
       - ... | flat | tutorials/ConvertingFivemAssets/converting-assets.md
+      - ... | flat | tutorials/porting-tutorial.md
   - Scripting Tips:
     - scripting/index.md
     - Key References:
