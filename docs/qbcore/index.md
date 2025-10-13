@@ -1,5 +1,4 @@
 ---
-icon: material/code-json
 status: change
 ---
 

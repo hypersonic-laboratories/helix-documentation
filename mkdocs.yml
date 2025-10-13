@@ -74,6 +74,8 @@ nav:
       - ... | flat | qbcore/qbcore-api/player-functions.md
       - ... | flat | qbcore/qbcore-api/client-functions.md
       - ... | flat | qbcore/qbcore-api/server-functions.md
+    - QBCore Packages:
+      - ... | flat | qbcore/qbcore-packages/*.md
   - News & Updates:
     - news_updates/index.md
     - General:
