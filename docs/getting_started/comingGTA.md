@@ -114,7 +114,9 @@ Below are some direct comparisons between how things are done in FiveM versus HE
 - :material-book-open-variant: __View tutorials and examples__<br>
   Learn by example with step-by-step guides and real-world use cases<br><br>
   [:material-file-document-check-outline: General Tutorials](../tutorials/index.md)<br>
-  [:material-file-document-arrow-right-outline: Scripting Tutorials](../scripting/index.md)
+  [:material-file-document-arrow-right-outline: Scripting Tutorials](../scripting/index.md)<br>
+  [:material-file-document-arrow-right-outline: QBCore Documentation](https://development.helix-documentation.pages.dev/qbcore/)<br>
+  [:material-file-document-arrow-right-outline: HELIX Porting Tutorial](https://development.helix-documentation.pages.dev/tutorials/porting-tutorial/)
 
 - :material-file-code-outline: __Browse the API__<br>
   Dive into the full HELIX API and see everything at your fingertips<br><br>
