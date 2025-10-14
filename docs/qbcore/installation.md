@@ -22,8 +22,11 @@ git clone https://github.com/hypersonic-laboratories/qbcore-rp
 ---
 
 ## 2. Create A Workspace
-Launch the HELIX client, click "Create World" & configure it. Click continue, once loaded into the world press the "N" key to open build mode.
-Select the code icon that shows a tooltip stating "Edit Scripts". Save the world.
+Launch the HELIX client, click "Create World" & configure it.
+Click continue, once loaded into the world press the `N` key to open build mode.
+In the bottom left-hand corner select vault. Search for `shells`, select it and hit `Add To World`.
+Also within the vault, search for the `RP Downtown Map`, select it and hit `Add To World`.
+Select the code icon that shows a tooltip stating `Edit Scripts`.
 Once that's selected it will open Windows Explorer with the correct directory. Proceed to next step.
 
 ---
@@ -55,21 +58,14 @@ This is already setup by default from the github repository.
 
 ---
 
-## 5. Open Build Mode
-Press the `N` key to open build mode, in the bottom left-hand corner select vault. Search for `shells`, select it and hit `Add To World`.
-Also within the vault, search for the `RP Downtown Map`, select it and hit `Add To World`.
-Press the `Save` button. Proceed to the next step.
-
----
-
-## 6. Start Coding
-Once QBCore is in place, open build mode and save. Press escape and leave world, rejoin world.
+## 5. Start Coding
+Once QBCore is in place, press the `Save` button inside build mode. At this point you are safe to leave and rejoin the world.
 All QBCore Lua APIs will now be available.
 You can immediately begin creating scripts, resources, and game modes using the QBCore framework.
 
 ---
 
-## 7. Keep QBCore Updated
+## 6. Keep QBCore Updated
 Pull the latest changes periodically to stay up-to-date:
 
 ```bash
