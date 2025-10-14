@@ -1,4 +1,4 @@
-# Downloading Packages
+# Getting Started with QBCore
 
 This guide will help you set up QBCore for HELIX so you can start developing right away.
 QBCore is distributed as a single GitHub repository containing all of its Lua packages.
@@ -55,14 +55,21 @@ This is already setup by default from the github repository.
 
 ---
 
-## 5. Start Coding
+## 5. Open Build Mode
+Press the `N` key to open build mode, in the bottom left-hand corner select vault. Search for `shells`, select it and hit `Add To World`.
+Also within the vault, search for the `RP Downtown Map`, select it and hit `Add To World`.
+Press the `Save` button. Proceed to the next step.
+
+---
+
+## 6. Start Coding
 Once QBCore is in place, open build mode and save. Press escape and leave world, rejoin world.
 All QBCore Lua APIs will now be available.
 You can immediately begin creating scripts, resources, and game modes using the QBCore framework.
 
 ---
 
-## 6. Keep QBCore Updated
+## 7. Keep QBCore Updated
 Pull the latest changes periodically to stay up-to-date:
 
 ```bash
