@@ -41,7 +41,7 @@ QBCore
 │           │   ├── stress: number
 │           │   ├── isdead: boolean
 │           │   └── ...
-│           ├── position: vector3
+│           ├── position: Vector
 │           └── items: table (inventory items)
 ```
 
