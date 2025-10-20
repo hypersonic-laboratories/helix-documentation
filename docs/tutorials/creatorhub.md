@@ -1,4 +1,4 @@
-# Creator Hub
+# Manage Assets using Creator Hub
 
 The **Creator Hub** allows you to create, configure, and publish packages such as maps, worlds, characters, and addons.
 
