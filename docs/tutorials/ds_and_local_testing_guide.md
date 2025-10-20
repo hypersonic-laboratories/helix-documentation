@@ -1,12 +1,6 @@
-# Dedicated Server
+# Run a Dedicated Server
 
-HELIX can be started with configuration parameters that let you:
-
-- Host a **dedicated server (DS)**
-- Run **local tests** with your own Workspaces or Worlds
-- Connect clients directly to unpublished servers
-
-This guide explains the most common parameters, how to set them, and provides example commands for both servers and clients.
+Players can connect to HELIX worlds via Listen Servers or Dedicated Servers. This guide tells you how to run a Dedicated Server instance of a HELIX world.
 
 ---
 
