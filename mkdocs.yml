@@ -32,7 +32,7 @@ nav:
       # - getting_started/animators.md
   - Tutorials:
     - tutorials/index.md
-    - General Tutorials:
+    - General Concepts:
       - tutorials/account_creation.md
       - ... | flat | tutorials/vault_package_management.md
       - ... | flat | tutorials/create_publish_worlds.md
@@ -46,6 +46,15 @@ nav:
       - ... | flat | tutorials/FabIssues/common_issues_importing_fab.md
       - ... | flat | tutorials/ConvertingFivemAssets/converting-assets.md
       - ... | flat | tutorials/porting-tutorial.md
+    - Importing Custom Assets:
+      - tutorials/custom_maps.md
+      - tutorials/custom_characters.md
+      - tutorials/custom_cc_assets.md
+      - tutorials/custom_animations.md
+      - tutorials/custom_vehicles.md
+      - tutorials/custom_shells.md
+      - tutorials/custom_blueprints.md
+      - tutorials/custom_ui.md
   - Scripting Tips:
     - scripting/index.md
     - Key References:
