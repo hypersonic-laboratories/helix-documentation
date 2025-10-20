@@ -1,4 +1,4 @@
-# HELIX Tutorial: Converting FiveM Assets to HELIX
+# Convert FiveM Assets to HELIX
 
 This guide explains how to convert your **FiveM assets** — such as shells, interiors, and props — into **HELIX-compatible assets** that can be imported into Unreal Engine and uploaded to the **HELIX Vault**.
 
