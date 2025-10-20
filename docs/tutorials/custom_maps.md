@@ -1,4 +1,4 @@
-# Import Custom Maps
+# Import Maps
 
 Coming soon.
 
