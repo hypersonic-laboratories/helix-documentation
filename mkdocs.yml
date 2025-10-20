@@ -42,10 +42,6 @@ nav:
       - ... | flat | tutorials/workspaces.md
       - ... | flat | tutorials/creatorkit.md
       - ... | flat | tutorials/creatorhub.md
-      - ... | flat | tutorials/photomode.md
-      - ... | flat | tutorials/FabIssues/common_issues_importing_fab.md
-      - ... | flat | tutorials/ConvertingFivemAssets/converting-assets.md
-      - ... | flat | tutorials/porting-tutorial.md
     - Importing Custom Assets:
       - tutorials/custom_maps.md
       - tutorials/custom_characters.md
@@ -55,6 +51,11 @@ nav:
       - tutorials/custom_shells.md
       - tutorials/custom_blueprints.md
       - tutorials/custom_ui.md
+    - Misc:
+      - tutorials/FabIssues/common_issues_importing_fab.md
+      - tutorials/ConvertingFivemAssets/converting-assets.md
+      - tutorials/porting-tutorial.md
+      - tutorials/photomode.md
   - Scripting Tips:
     - scripting/index.md
     - Key References:
