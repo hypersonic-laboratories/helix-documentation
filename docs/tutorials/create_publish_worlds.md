@@ -1,4 +1,4 @@
-# Creating & Publishing Worlds
+# Create & Publish Your First World
 
 *A guide to creating, editing, and publishing Worlds in HELIX*
 
