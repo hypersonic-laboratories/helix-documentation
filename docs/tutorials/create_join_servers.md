@@ -1,8 +1,6 @@
-# Creating and Joining Servers
+# Host or Join Listen Servers
 
-## **HELIX Developer Tutorial: Hosting & Joining Multiplayer Games**
-
-*A guide to creating and connecting to multiplayer servers in HELIX*
+*A guide to hosting and connecting to multiplayer server instances of HELIX worlds*
 
 ---
 
