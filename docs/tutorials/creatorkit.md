@@ -1,5 +1,8 @@
-# Creator Kit
+# Import Custom Assets Using Creator Kit
 
+*A guide to importing, testing, and publishing custom assets using the HELIX Creator Kit*
+
+---
 
 # 📦 Preparing a Package
 
