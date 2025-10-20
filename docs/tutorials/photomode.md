@@ -1,4 +1,4 @@
-# Photo Mode
+# How to Use Photo Mode
 
 Photo Mode lets you capture cinematic screenshots of your HELIX worlds with full control over the camera, filters, and visual effects.
 
