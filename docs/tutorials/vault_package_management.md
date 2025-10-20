@@ -1,4 +1,4 @@
-# Vault & Package Management
+# Intro to Packages & HELIX Vault
 
 *A guide to package management, dependencies, caching, and versioning on the HELIX platform*
 
