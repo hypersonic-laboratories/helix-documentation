@@ -1,6 +1,4 @@
-# Workspaces
-
-## **HELIX Developer Tutorial: How Workspaces Work**
+# Add Lua Scripts to Your World with Workspaces
 
 *A technical overview of workspace creation, persistence, detachment, and duplication*
 
