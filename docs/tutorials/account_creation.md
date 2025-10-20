@@ -1,4 +1,4 @@
-# Account Creation
+# Create a HELIX Account
 
 This guide walks you through the core **user account management** features in HELIX, including account creation, login, profile editing, and password reset.
 
