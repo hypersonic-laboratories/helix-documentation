@@ -1,3 +1,5 @@
+# Run a Dedicated Server
+
 HELIX can be started with configuration parameters that let you:
 
 - Host a **dedicated server (DS)**
