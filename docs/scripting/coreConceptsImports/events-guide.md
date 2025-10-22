@@ -15,7 +15,7 @@ communication
 ### `RegisterServerEvent`
 
 Registers a new event on the server, allowing clients to trigger this event remotely. Use this to define server-side
-logic that should respond to client actions or requests. The first parameter will always be the triggering player
+logic that should respond to client actions or requests. **The first parameter will always be the triggering player**
 
 - eventName `string`
 - callback `function`
@@ -73,11 +73,11 @@ TriggerLocalServerEvent('myServerEvent', 100)
 
 ### `TriggerClientEvent`
 
-Triggers a client-side event from the server, targeting specific clients or broadcasting to all clients. Typically used
+Triggers a client-side event from the server, targeting specific clients. Typically used
 to update the client interface or synchronize client state based on server-side decisions
 
-- eventName `string`
 - player `controller`
+- eventName `string`
 - param `any`
 
 ```lua title="Example"
@@ -95,4 +95,17 @@ Locally triggers a registered client event from the client allowing for cross-pa
 
 ```lua title="Example"
 TriggerLocalClientEvent('myClientEvent', 100)
+```
+
+---
+
+### `BroadcastEvent`
+
+Server-side only function to trigger an event on all connected clients
+
+- eventName `string`
+- param `any`
+
+```lua title="Example"
+BroadcastEvent('myClientEvent', 100)
 ```
