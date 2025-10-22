@@ -37,17 +37,25 @@ end
 ### Lua Events
 
 ```js title="Listen for Lua"
-// Register JavaScript function as usual
-function setUser(name, id, active) {
-  console.log("User from Lua:", name, id, active)
+// Create JavaScript function to handle message
+function setUser(data) {
+  console.log("User from Lua:", data.name, data.id, data.active)
 }
+
+window.addEventHandler('message', (event) => {
+    switch(event.data.name) {
+        case "setUser":
+            setUser(event.data.args[0]);
+            break;
+    }
+})
 ```
 
 ---
 
 ```lua title="Send to JavaScript"
--- Call the JavaScript function named `setUser` with 3 arguments
-shopUI:CallFunction("setUser", "Joshua", 42, true)
+-- Send Event named `setUser` to JavaScript with arguments
+shopUI:SendEvent("setUser", {name = "Joshua", id = 42, active = true})
 ```
 
 ---
@@ -87,14 +95,6 @@ shopUI:RegisterEventHandler('EventName', function(data, cb)
     end
 
     cb(false)
-end)
-```
-
----
-
-```lua title="Bind to delegate for when Browser is ready"
-shopUI.Browser.OnLoadCompleted:Add(my_webui.Browser, function()
-    shopUI:CallFunction('setUser', 'qwerty', true)
 end)
 ```
 

@@ -22,11 +22,40 @@ local UI = WebUI('test', 'Package/UI/index.html', true)
 | ---------------  | :----------------- | ----- | ----------------------------------------------------------------------  |
 | string | `Name`   |  | Unique identifier for logs.  |
 | string | `Path`  |   | Web URL or HTML file path (e.g. "https://google.com" or "PackageName/Directory/index.html") |
-| boolean | `ConsumeInput` | `false` | Whether the UI should consume mouse and keyboard input focus |
+| number | `InputMode` | `0` | Which input mode the UI is assigned |
 
 ## Functions
 
 <FunctionsDeclaration type="Class" name="WebUI" />
+
+### BringToFront
+Brings the interface to the top of the UI stack
+```lua
+UI:BringToFront()
+```
+
+---
+
+### SetStackOrder
+Sets the Z-Index for the UI in the stack
+```lua
+UI:SetStackOrder(1)
+```
+
+---
+
+### SetInputMode
+Sets what type of input the UI receives
+
+- 0 = Game Only (No Input)
+- 1 = UI Only (Full Input)
+- 2 = Game and UI (Mouse Focus)
+
+```lua
+UI:SetInputMode(1)
+```
+
+---
 
 ### RegisterEventHandler
 Registers a Lua event by name with args
@@ -36,32 +65,10 @@ UI:RegisterEventHandler('Test', function(arg1) print(arg1) end)
 
 ---
 
-### CallFunction
-Call a JS function by name with args, used to trigger logic, like an event
+### SendEvent
+Sends an event by name to JS with args through message events
 ```lua
-UI:CallFunction('Test', 'This is a test event!')
-```
-
----
-
-### LoadURL
-Loads a new URL
-```lua
-UI:LoadURL('https://youtube.com/')
-```
-
----
-
-### LoadHTML
-Loads a raw HTML string
-```lua
-UI:LoadHTML([[
-<html>
-    <body>
-        <h1 style='color: red'>Test</h1>
-    </body>
-</html>
-]])
+UI:SendEvent('Test', {test = true})
 ```
 
 ---
@@ -73,17 +80,3 @@ UI:Destroy()
 ```
 
 ---
-
-### GetName
-Gets the name of this WebUI instance
-```lua
-UI:GetName()
-```
-
----
-
-### ExecuteJS
-Executes arbitrary JavaScript
-```lua
-UI:ExecuteJS('alert("This is a test alert!");')
-```

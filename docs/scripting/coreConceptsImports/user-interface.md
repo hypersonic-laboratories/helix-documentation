@@ -12,12 +12,12 @@ With WebUI you can load HTML pages which integrate with your Packages in Lua usi
 
 ```lua title="index.lua"
 -- Spawns a WebUI with the HTML file you just created
-UI = WebUI("My-UI", "PackageName/UI/index.html")
+UI = WebUI('My-UI', 'PackageName/UI/index.html')
 
 UI:RegisterEventHandler('Ready', function(data)
     print(data.arg)
 
-    UI:CallFunction('changeColour', 'red')
+    UI:SendEvent('changeColour', 'red')
 end)
 ```
 
@@ -34,12 +34,20 @@ end)
 ```
 
 ```javascript title="UI/index.js"
-// Register for "changeColour" from Lua
+// Create for "changeColour" from Lua
 function changeColour(colour) {
     console.log('Event Triggered!');
     let text = document.getElementById('text');
     text.style.color = colour;
 }
+
+window.addEventListener('message', (event) => {
+    switch(event.data.name) {
+        case "changeColour":
+            changeColour(event.data.args[0]);
+            break;
+    }
+})
 
 // Triggers "Ready" on Lua
 hEvent('Ready', {arg: 'This is an argument', boolArg: true})
