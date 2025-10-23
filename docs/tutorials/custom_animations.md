@@ -1,4 +1,4 @@
-# Import animations
+# Import Animations
 
 This guide walks you through the complete process of acquiring animation packs from Fab, adapting them for the standard Helix character rig, and packaging them as an Addon for the **Helix Vault** using the **Creator Kit**.
 
