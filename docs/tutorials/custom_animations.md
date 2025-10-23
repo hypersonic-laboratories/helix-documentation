@@ -8,7 +8,7 @@ The process for adapting animations differs depending on whether the asset pack 
 
 First, you need to get your animation assets from the marketplace and add them to the **Creator Kit** project.
 
-1. Acquire your desired animation pack from Fab.com (formerly the Unreal Marketplace).
+1. Acquire your desired animation pack from [Fab](https://fab.com) (formerly the Unreal Marketplace).
 2. Open the **Epic Games Launcher** and navigate to the **Unreal Engine** -> **Library** tab.
 3. Locate your newly acquired pack in the **Fab Library** section and click **Add To Project**.
 
@@ -125,7 +125,7 @@ With your animations successfully adapted and moved to your package folder, you 
 
 ## 5. Bonus - Importing mixamo animations
 
-It's also possible to download animations from [Mixamo.com](https://mixamo.com) and import them into Creator Kit with same retargeting steps done for `UE4` rig-based packs.
+It's also possible to download animations from [Mixamo.com](http://mixamo.com) and import them into Creator Kit with same retargeting steps done for `UE4` rig-based packs.
 
 1. Find an animation you'd like to use from Mixamo and use **Y-Bot** as your character for best retargeting results.
 
