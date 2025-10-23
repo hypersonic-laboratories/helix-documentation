@@ -30,7 +30,7 @@ The Animation class provides methods for controlling animations on actors in you
 | `bUseMotionWarping` | `boolean` | `false` | If `true`, the actor will warp towards the `WarpTargetTransform` during the animation. Animation asset should have root motion enabled on its flags for this to work. |
 | `WarpTargetTransform` | `Transform` | `Identity` | The world-space transform to use as the motion warping target. |
 | `WarpTargetName` | `string` | `None` | The name of the motion warp target in the animation notify. Leave it as `None` if not sure about what to use. This will auto-create a motion warping window if no window exists. If there is at least one window in the animation, it will be automatically selected. |
-| `AnimSlotName` | `string` | `None` | If the `AnimationAsset` is an anim sequence, this specifies which animation slot to play it in. `NAME_None` or `FullBody` plays on the full body. `UpperBody` plays the animation on the upper body. Not used if provided animation asset is an anim montage. |
+| `AnimSlotName` | `string` | `DefaultSlot` | If the `AnimationAsset` is an anim sequence, this specifies which animation slot to play it in. `DefaultSlot` or `FullBody` plays on the full body. `UpperBody` plays the animation on the upper body. Not used if provided animation asset is an anim montage. |
 | `BlendInTime` | `number` | `0.25` | Blend-in duration if the animation is played as a dynamic montage. Not used if provided animation asset is an anim montage. |
 | `BlendOutTime` | `number` | `0.25` | Blend-out duration if the animation is played as a dynamic montage. Not used if provided animation asset is an anim montage. |
 
