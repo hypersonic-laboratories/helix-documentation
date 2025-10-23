@@ -45,21 +45,17 @@ For this example use case, we will try to load a [packaged custom animation sequ
 4. To play an animation with [Animation API](https://development.helix-documentation.pages.dev/api/apiImport/classes/animation/) after a player is spawned, add the server lua script below into  `WORKSPACE_ID/scripts/main/server/main.lua` path in your workspace. If the file doesn't exist, create it.
 
     ```lua
-    -- Register a function to listen for player joined event
+    -- Register a function to listen for player joined global event
     RegisterServerEvent('PlayerJoined', function(source)
-        local MyController = UE.UGameplayStatics.GetPlayerController(HWorld, 0)
-        local TargetActor = MyController:K2_GetPawn()
-
-        -- Since this is an animation sequence, we need to provide a slot name to play it as dynamic montage
+        local MyCharacter = HPlayer:K2_GetPawn()
         local AnimParams = UE.FHelixPlayAnimParams()
-        AnimParams.AnimSlotName = "DefaultSlot"
 
         coroutine.resume(
             coroutine.create(function(delayTime)
                 UE.UKismetSystemLibrary.Delay(_G.HWorld, delayTime)
 
                 -- Our custom package is named "Addon_MyFirstAnimationPack", and animation sequence asset inside is named "AS_Crying"
-                local result = Animation.Play(TargetActor, '/Game/Addon_MyFirstAnimationPack/AS_Crying.AS_Crying', AnimParams, function() print('Animation Ended') end)
+                local result = Animation.Play(MyCharacter, '/Game/Addon_MyFirstAnimationPack/AS_Crying.AS_Crying', AnimParams, function() print('Animation Ended') end)
                 print('Animation play result: ', result)
             end),
             1.0
