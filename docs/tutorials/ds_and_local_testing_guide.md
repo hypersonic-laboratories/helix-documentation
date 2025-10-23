@@ -1,35 +1,97 @@
 # Run a Dedicated Server
 
-Players can connect to HELIX worlds via Listen Servers or Dedicated Servers. This guide tells you how to run a Dedicated Server instance of a HELIX world.
+Setting up a dedicated server on HELIX is straightforward and takes just a few minutes. Follow this guide to get your server up and running!
 
 ---
 
-## 🔑 How It Works
+## Step 1: Create Your World
 
-Servers can be:
+1. Launch the HELIX game client
+2. Follow the [world creation guide](create_publish_worlds.md) to create and publish your world
 
-- **Published** → Registered in Creator Hub, with a unique ID. Visible in the *Servers* tab of the Game Client (based on visibility rules).
-- **Unpublished** → Run locally for testing or hosted on LAN/Internet. Not visible in the *Servers* tab; you must connect manually with parameters.
+## Step 2: Access Creator Hub
 
-Parameters can be set in three ways (in order of priority):
+1. Navigate to the [Creator Hub](https://hub.helixgame.com/)
+2. Log in with your credentials
+3. Select **Server Management** from the sidebar
 
-1. Command line arguments or [URL parameters](https://dev.epicgames.com/documentation/en-us/unreal-engine/command-line-arguments-in-unreal-engine#additionalparameters)
-    
-    *(Default startup map: `/Game/Helix/Levels/L_HelixStartup.umap`)*
-    
-2. Environment variables
-3. Steam launch options
+## Step 3: Register Your Server
 
-📌 Example in Steam:
+1. Click the **Create Server** button
+2. Configure your server settings:
+   - **Server Name**: Choose a display name for your server
+   - **Slug**: Create a unique identifier (cannot be changed later—keep it short!)
+   - **Description**: Add details about your server
+   - **Visibility**: Check the box to make your server public, or leave unchecked for private
+   - **World**: Select the world you created in Step 1
+   - **Settings**: Set content rating, max players, tags, and preview images
+3. Click **Create Server**
+4. **IMPORTANT**: Copy and save your server token immediately—you'll need it in the next step
+5. Registration complete!
 
-![image.png](https://r2.fivemanage.com/ElKst3CCVvlhlgHiaH5IM/ds.png)
+## Step 4: Configure Firewall (If Needed)
 
-## Common
+If you're hosting on a dedicated machine or behind a firewall, you'll need to open port 7777:
+
+1. Open **port 7777** for both **TCP** and **UDP** protocols
+2. Configure port forwarding on your router if hosting from home
+3. Allow the port through Windows Firewall or your system's firewall software
+
+**Note**: If you're using a hosting provider, check their documentation for port configuration.
+
+## Step 5: Launch Your Server
+
+### Install the Dedicated Server
+1. Open your Steam library on your dedicated machine
+2. Locate **HELIX Dedicated Server** (requires access)
+3. Install the application
+
+### Create the Startup Script
+1. Create a new file named `start_server.bat` on your server machine's desktop
+2. Add the following content:
+```bat
+@echo off
+cd /d "C:\Program Files (x86)\Steam\steamapps\common\HELIX Dedicated Server"
+SandboxServer.exe -HELIX_USER_TOKEN="" -HELIX_SERVER_SLUG="" -HELIX_HEARTBEAT_PERIOD=30 -log
+```
+
+3. Configure the script:
+   - **Path**: Update the `cd /d` path if your installation differs (find it by right-clicking HELIX Dedicated Server in Steam → **Browse Local Files**)
+   - **Token**: Paste your token from Step 3 between the quotes after `HELIX_USER_TOKEN`
+   - **Slug**: Enter your server slug between the quotes after `HELIX_SERVER_SLUG`
+4. Save the file and run it
+5. Verify your server shows as **Online** in Creator Hub's Server Management section
+
+## Step 6: Update Your Server
+
+Your server is linked to the world you selected in Step 3. To update your server:
+
+1. Make changes to your world on your local machine
+2. Save and publish the updated world
+3. Restart your dedicated server to load the latest version
+
+The server will automatically pull the newest published version of your world.
+
+## Step 7: Connect to Your Server
+
+### Public Servers
+- Visible to all players in the **Servers** tab of the HELIX client
+- Anyone can browse and join
+
+### Private Servers
+- Only visible to you when logged into the same account used to create the server
+- Find it in the **Servers** tab and click **Join**
+
+---
+
+## Launch Options
+
+### Common
 
 | **Name** | **Description** |
 | --- | --- |
-| `HELIX_USER_EMAIL
-HELIX_USER_PASSWORD` | Explicit user credentials. Most useful when the application is running in headless mode (without the UI) and there are no credentials cached locally (i.e., on a standalone DS). |
+| `HELIX_USER_EMAIL` |
+| `HELIX_USER_PASSWORD` | Explicit user credentials. Most useful when the application is running in headless mode (without the UI) and there are no credentials cached locally (i.e., on a standalone DS). |
 | `HELIX_WORKSPACE_ID` | ID of a local Workspace Draft. On Windows local Workspaces are located in `%LOCALAPPDATA%\Helix\Workspaces` folder. |
 | `HELIX_SERVER_SLUG` | The Server Slug of a published server from the Creator Hub. |
 | `HELIX_SERVER_ID` | The Server ID of a published server from the Creator Hub. |
@@ -38,21 +100,7 @@ HELIX_USER_PASSWORD` | Explicit user credentials. Most useful when the applicati
 | `HELIX_LOCAL_PAKS` | A `|` delimited list of paths to local folders created with a Creator Kit. |
 | `HELIX_LEVEL_ASSET` | Full Object Path to the Level Asset that will replace the Default Blank Level hosting a Helix World. |
 
-<aside>
-💡
-
-The load targets are listed in order of precedence. I.e. if a Workspace ID is provided, it will be loaded without trying other options. The Server Slug follows that and so on.
-
-</aside>
-
-<aside>
-💡
-
-A Package usually refers to a World package, which is equivalent to pressing the Join World button from the Main Menu. But it also can be any package from the Vault (e.g. a Map) which is equivalent to pressing the Preview button.
-
-</aside>
-
-## Server
+### Server
 
 | **Name** | **Description** |
 | --- | --- |
@@ -60,42 +108,8 @@ A Package usually refers to a World package, which is equivalent to pressing the
 | `HELIX_HEARTBEAT_PERIOD` | The server heartbeat period in seconds. Controls the server’s online status and IP address discovery. Should be set to a value of less than 10 min for a published DS. |
 | `HELIX_NUCLEUS_PORT` | Experimental! Enables the Nucleus web admin panel on a server on a specified TCP port. Should not be used on public servers because authorization mechanisms are not implemented yet. |
 
-Command line to start a published DS:
-
-```bash
-.\SandboxServer.exe -HELIX_USER_TOKEN="..." -HELIX_SERVER_SLUG="sandbox-simple-server" -HELIX_HEARTBEAT_PERIOD=30
-```
-
-<video controls width="100%">
-  <source src="https://r2.fivemanage.com/ElKst3CCVvlhlgHiaH5IM/2025-09-16_23-26-43.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
-
-Command line to start an unpublished local DS from an existing workspace:
-
-```bash
-.\SandboxServer.exe -HELIX_WORKSPACE_ID="9d4c5900-472e-eac2-4abc-06926640bbf5"
-```
-
-Command line to start an unpublished DS from a published World:
-
-```bash
-.\SandboxServer.exe -HELIX_USER_EMAIL="" -HELIX_USER_PASSWORD="" -HELIX_PACKAGE_SLUG="sandbox-simple-map"
-```
-
-<video controls width="100%">
-  <source src="https://r2.fivemanage.com/ElKst3CCVvlhlgHiaH5IM/2025-09-16_23-15-47.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
-
-## Client
+### Client
 
 | **Name** | **Description** |
 | --- | --- |
-| `HELIX_CONNECT` | An address of a server to connect to. When connecting to a published Server by Slug or ID, it can be any non-empty value, e.g. `*-HELIX_CONNECT=1*`<br><br>Important! When connecting to a server like this, the client needs to specify the exact same load target (Workspace, Server, World etc.) as the server. |
-
-Command line to connect to an unpublished local DS started from an existing workspace:
-
-```bash
-.\SandboxGame.exe -HELIX_WORKSPACE_ID="9d4c5900-472e-eac2-4abc-06926640bbf5" -HELIX_CONNECT="127.0.0.1"
-```
+| `HELIX_CONNECT` | An IP address of a server to connect to. When connecting to a published Server by Slug or ID, it can be any non-empty value, e.g. `*-HELIX_CONNECT=1*`<br><br>Important! When connecting to a server like this, the client needs to specify the exact same load target (Workspace, Server, World etc.) as the server. |
