@@ -51,6 +51,7 @@ nav:
       - tutorials/custom_shells.md
       - tutorials/custom_blueprints.md
       - tutorials/custom_ui.md
+      - tutorials/reference_custom_assets.md
     - Misc:
       - tutorials/FabIssues/common_issues_importing_fab.md
       - tutorials/ConvertingFivemAssets/converting-assets.md
