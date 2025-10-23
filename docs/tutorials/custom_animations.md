@@ -15,6 +15,7 @@ First, you need to get your animation assets from the marketplace and add them t
     ![image.png](CustomAnimImages/1.png)
 
 4. From the project list, select **CreatorKit**.
+
     > **Important:** Ensure the **Creator Kit** editor is closed during this process. Wait for the launcher to download and import all assets.
 
     ![image.png](CustomAnimImages/2.png)
