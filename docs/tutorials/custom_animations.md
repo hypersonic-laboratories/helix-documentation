@@ -125,7 +125,7 @@ With your animations successfully adapted and moved to your package folder, you 
 
 ## 5. Bonus - Importing mixamo animations
 
-It's also possible to download animations from [Mixamo.com](http://mixamo.com) and import them into Creator Kit with same retargeting steps done for `UE4` rig-based packs.
+It's also possible to download animations from [Mixamo.com](http://www.mixamo.com) and import them into Creator Kit with same retargeting steps done for `UE4` rig-based packs.
 
 1. Find an animation you'd like to use from Mixamo and use **Y-Bot** as your character for best retargeting results.
 
