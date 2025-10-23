@@ -42,11 +42,9 @@ For this example use case, we will try to load a packaged [custom animation sequ
 
     ![image.png](ReferenceCustomAssetsImages/3_3.png)
 
-4. To play an animation with [Animation API](https://development.helix-documentation.pages.dev/api/apiImport/classes/animation/) after a player is spawned, add the server lua script below into corresponding folder in your workspace. If the file doesn't exist, create it.
+4. To play an animation with [Animation API](https://development.helix-documentation.pages.dev/api/apiImport/classes/animation/) after a player is spawned, add the server lua script below into  `WORKSPACE_ID/scripts/main/server/main.lua` path in your workspace. If the file doesn't exist, create it.
 
     ```lua
-    -- Target File: WORKSPACE_ID/scripts/main/server/main.lua
-
     -- Register a function to listen for player joined event
     RegisterServerEvent('PlayerJoined', function(source)
         local MyController = UE.UGameplayStatics.GetPlayerController(HWorld, 0)
