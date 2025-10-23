@@ -152,4 +152,4 @@ It's also possible to download animations from [Mixamo.com](http://www.mixamo.co
 
 ## 6. Using Packaged Custom Animations In Worlds
 
-Please to refer [Use Custom Assets](https://development.helix-documentation.pages.dev/tutorials/reference_custom_assets) to use your packaged custom animations in your worlds.
+Please refer to [Use Custom Assets](https://development.helix-documentation.pages.dev/tutorials/reference_custom_assets) to use your packaged custom animations in your worlds.
