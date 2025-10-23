@@ -33,7 +33,6 @@ nav:
   - Tutorials:
     - tutorials/index.md
     - General Concepts:
-      - tutorials/account_creation.md
       - ... | flat | tutorials/vault_package_management.md
       - ... | flat | tutorials/create_publish_worlds.md
       - ... | flat | tutorials/ds_and_local_testing_guide.md
