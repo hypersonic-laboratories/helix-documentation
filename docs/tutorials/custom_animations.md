@@ -69,9 +69,9 @@ This is the simpler method, used for modern packs that are already compatible wi
 
     ![image.png](CustomAnimImages/8.png)
 
-### Option B: For `UE4` Rig-Based Packs (Retarget Animation)
+### Option B: For `UE4` or Custom Rig-Based Packs (Retarget Animation)
 
-This method is for older packs built for the `UE4` Mannequin. It uses the **IK Retargeting** system to create new, compatible animations.
+This method is for older packs built for the `UE4` Mannequin or packs using a custom rig. It uses the **IK Retargeting** system to create new, compatible animations.
 
 1. Select all the **Animation Sequence** assets you wish to package.
 2. Right-click the selection and choose **Retarget Animation Assets** -> **Duplicate and Retarget Animation Assets**.
