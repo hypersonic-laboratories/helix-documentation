@@ -122,3 +122,30 @@ With your animations successfully adapted and moved to your package folder, you 
 5. Once cooking is complete, a file explorer window will automatically open, displaying your final `.pak` file. Your animation pack is now ready to be uploaded to the **Helix Vault**!
 
     ![image.png](CustomAnimImages/10.png)
+
+## 5. Bonus - Importing mixamo animations
+
+It's also possible to download animations from [Mixamo.com](Mixamo.com) and import them into Creator Kit with same retargeting steps done for `UE4` rig-based packs.
+
+1. Find an animation you'd like to use from Mixamo and use **Y-Bot** as your character for best retargeting results.
+
+    ![image.png](CustomAnimImages/11.png)
+
+2. Click **Download** button after tweaking your animation.
+3. On the new window, select options as shown on the image below and click **Download** button. This will download an `.fbx` file, ready to be imported into Creator Kit.
+
+    ![image.png](CustomAnimImages/12.png)
+
+4. Create a temporary folder in Creator Kit project, and click **Import** in content browser to import your mixamo animation `.fbx` file.
+
+    ![image.png](CustomAnimImages/14.png)
+
+5. This will import character mesh, materials and animation sequence asset into the target folder.
+
+    ![image.png](CustomAnimImages/13.png)
+
+6. Follow the same steps starting from `Option B: For UE4 rig-based packs (retarget animation)` section for your imported animation sequence. While retargeting, make sure source & target skeletal meshes are selected correctly. Source mesh should be the skeletal mesh imported from your `.fbx` file in that case, as shown on the image below.
+
+    ![image.png](CustomAnimImages/15.png)
+
+    ![image.png](CustomAnimImages/16.png)
