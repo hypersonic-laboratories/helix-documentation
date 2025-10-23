@@ -69,6 +69,6 @@ For this example use case, we will try to load a [packaged custom animation sequ
 
     ![image.png](ReferenceCustomAssetsImages/4_2.png)
 
-5. Observe your character plays the custom animation asset after a second.
+5. Observe your character plays the custom animation after a second.
 
     ![image.png](ReferenceCustomAssetsImages/5.png)
