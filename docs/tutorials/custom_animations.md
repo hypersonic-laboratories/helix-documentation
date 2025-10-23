@@ -6,6 +6,7 @@ The process for adapting animations differs depending on whether the asset pack 
 
 ## 1 - Acquiring & importing marketplace assets
 First, you need to get your animation assets from the marketplace and add them to the **Creator Kit** project.
+
 1. Acquire your desired animation pack from Fab.com (formerly the Unreal Marketplace).
 2. Open the **Epic Games Launcher** and navigate to the **Unreal Engine** -> **Library** tab.
 3. Locate your newly acquired pack in the **Fab Library** section and click **Add To Project**.
@@ -19,6 +20,7 @@ First, you need to get your animation assets from the marketplace and add them t
 
 ## 2 - Setting up your Helix addon package
 Next, you will use the **Helix Packaging Tool** to create a dedicated folder for your new addon.
+
 1. Launch the **Creator Kit** editor.
 2. Access the **Helix Packaging Tool** from the main toolbar.
 3. In the packaging tool window, click **New Package**.
@@ -40,6 +42,7 @@ This is the most critical step. The method you use depends on the skeleton the a
 
 ### Option A: For UE5 rig-based packs (replace skeleton)
 This is the simpler method, used for modern packs that are already compatible with the `UE5` skeleton.
+
 1. Select all the **Animation Sequence** assets you wish to package.
 2. Right-click the selection and choose **Replace Skeleton...**
 
@@ -59,6 +62,7 @@ This is the simpler method, used for modern packs that are already compatible wi
 
 ### Option B: For `UE4` rig-based packs (retarget animation)
 This method is for older packs built for the `UE4` Mannequin. It uses the **IK Retargeting** system to create new, compatible animations.
+
 1. Select all the **Animation Sequence** assets you wish to package.
 2. Right-click the selection and choose **Retarget Animation Assets** -> **Duplicate and Retarget Animation Assets**.
 
@@ -91,6 +95,7 @@ This method is for older packs built for the `UE4` Mannequin. It uses the **IK R
 
 ## 4 - Finalizing and cooking the package
 With your animations successfully adapted and moved to your package folder, you can make final adjustments and "cook" the final `.pak` file.
+
 1. Open the animation assets inside your package folder (e.g., **Content/Addon_MyFirstAnimationPack**).
 2. Perform any necessary final adjustments. This is a good time to:
     - Enable/Disable **Root Motion**.
