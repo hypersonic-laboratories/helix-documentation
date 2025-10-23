@@ -4,7 +4,7 @@ This guide walks you through the complete process of acquiring animation packs f
 
 The process for adapting animations differs depending on whether the asset pack was designed for the older Unreal Engine 4 skeleton or the modern Unreal Engine 5 rig. This guide covers both scenarios.
 
-## 1. Acquiring & importing marketplace assets
+## 1. Acquiring & Importing Marketplace Assets
 
 First, you need to get your animation assets from the marketplace and add them to the **Creator Kit** project.
 
@@ -21,7 +21,7 @@ First, you need to get your animation assets from the marketplace and add them t
 
 ---
 
-## 2. Setting up your Helix addon package
+## 2. Setting Up Your Helix Addon Package
 
 Next, you will use the **Helix Packaging Tool** to create a dedicated folder for your new addon.
 
@@ -43,11 +43,11 @@ Next, you will use the **Helix Packaging Tool** to create a dedicated folder for
 
 ---
 
-## 3. Adapting animations for the Helix rig
+## 3. Adapting Animations For The Helix Rig
 
 This is the most critical step. The method you use depends on the skeleton the asset pack was built for. Follow the section that matches your asset pack.
 
-### Option A: For UE5 rig-based packs (replace skeleton)
+### Option A: For UE5 Rig-Based Packs (Replace Skeleton)
 
 This is the simpler method, used for modern packs that are already compatible with the `UE5` skeleton.
 
@@ -68,7 +68,7 @@ This is the simpler method, used for modern packs that are already compatible wi
 
     ![image.png](CustomAnimImages/8.png)
 
-### Option B: For `UE4` rig-based packs (retarget animation)
+### Option B: For `UE4` Rig-Based Packs (Retarget Animation)
 
 This method is for older packs built for the `UE4` Mannequin. It uses the **IK Retargeting** system to create new, compatible animations.
 
@@ -104,7 +104,7 @@ This method is for older packs built for the `UE4` Mannequin. It uses the **IK R
 
 ---
 
-## 4. Finalizing and cooking the package
+## 4. Finalizing and Cooking The Package
 
 With your animations successfully adapted and moved to your package folder, you can make final adjustments and "cook" the final `.pak` file.
 
@@ -123,9 +123,9 @@ With your animations successfully adapted and moved to your package folder, you 
 
     ![image.png](CustomAnimImages/10.png)
 
-## 5. Bonus - Importing mixamo animations
+## 5. (Bonus) Importing Animations From Mixamo
 
-It's also possible to download animations from [Mixamo.com](http://www.mixamo.com) and import them into Creator Kit with same retargeting steps done for `UE4` rig-based packs.
+It's also possible to download animations from [Mixamo.com](http://www.mixamo.com) and import them into Creator Kit for packaging with same retargeting steps done for `UE4` rig-based packs.
 
 1. Find an animation you'd like to use from Mixamo and use **Y-Bot** as your character for best retargeting results.
 
@@ -144,7 +144,7 @@ It's also possible to download animations from [Mixamo.com](http://www.mixamo.co
 
     ![image.png](CustomAnimImages/13.png)
 
-6. Follow the same steps starting from `Option B: For UE4 rig-based packs (retarget animation)` section for your imported animation sequence. While retargeting, make sure source & target skeletal meshes are selected correctly. Source mesh should be the skeletal mesh imported from your `.fbx` file in that case, as shown on the image below.
+6. Follow the same steps starting from `Option B: For UE4 Rig-Based Packs (Retarget Animation)` section for your imported animation sequence. While retargeting, make sure source & target skeletal meshes are selected correctly. Source mesh should be the skeletal mesh imported from your `.fbx` file in that case, as shown on the image below.
 
     ![image.png](CustomAnimImages/15.png)
 
