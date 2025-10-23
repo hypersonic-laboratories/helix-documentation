@@ -1,6 +1,6 @@
 # Import Animations
 
-This guide walks you through the complete process of acquiring animation packs from Fab, adapting them for the standard Helix character rig, and packaging them as an Addon for the **Helix Vault** using the **Creator Kit**.
+This guide walks you through the complete process of acquiring animation packs from Fab, adapting them for the standard HELIX character rig, and packaging them as an Addon for the **HELIX Vault** using the [Creator Kit](https://development.helix-documentation.pages.dev/tutorials/creatorkit).
 
 The process for adapting animations differs depending on whether the asset pack was designed for the older Unreal Engine 4 skeleton or the modern Unreal Engine 5 rig. This guide covers both scenarios.
 
@@ -21,12 +21,12 @@ First, you need to get your animation assets from the marketplace and add them t
 
 ---
 
-## 2. Setting Up Your Helix Addon Package
+## 2. Setting Up Your HELIX Addon Package
 
-Next, you will use the **Helix Packaging Tool** to create a dedicated folder for your new addon.
+Next, you will use the **HELIX Packaging Tool** to create a dedicated folder for your new addon.
 
 1. Launch the **Creator Kit** editor.
-2. Access the **Helix Packaging Tool** from the main toolbar.
+2. Access the **HELIX Packaging Tool** from the main toolbar.
 3. In the packaging tool window, click **New Package**.
 
     ![image.png](CustomAnimImages/5.png)
@@ -43,7 +43,7 @@ Next, you will use the **Helix Packaging Tool** to create a dedicated folder for
 
 ---
 
-## 3. Adapting Animations For The Helix Rig
+## 3. Adapting Animations For The HELIX Rig
 
 This is the most critical step. The method you use depends on the skeleton the asset pack was built for. Follow the section that matches your asset pack.
 
@@ -56,7 +56,7 @@ This is the simpler method, used for modern packs that are already compatible wi
 
     ![image.png](CustomAnimImages/4.png)
 
-3. In the dialog, select **SK_Unified** from the list. This is the primary skeleton used by default for Helix characters. Click **OK**.
+3. In the dialog, select **SK_Unified** from the list. This is the primary skeleton used by default for HELIX characters. Click **OK**.
 
     ![image.png](CustomAnimImages/4_1.png)
 
@@ -100,7 +100,7 @@ This method is for older packs built for the `UE4` Mannequin. It uses the **IK R
 
     ![image.png](CustomAnimImages/4_7.png)
 
-10. The engine will now process and retarget all selected animations, creating new copies in your package folder that are compatible with the Helix skeleton.
+10. The engine will now process and retarget all selected animations, creating new copies in your package folder that are compatible with the HELIX skeleton.
 
 ---
 
@@ -114,12 +114,12 @@ With your animations successfully adapted and moved to your package folder, you 
     - Add **Animation Notifies** (AnimNotifies) for events like footsteps or impacts.
     - Add or modify **Animation Curves**.
     - Adjust play rate or other settings.
-3. Return to the **Helix Packaging Tool** window.
-4. With your package selected, click the **Package** button. This process will cook your assets into the final `.pak` file format required by the **Helix Vault**. This may take some time.
+3. Return to the **HELIX Packaging Tool** window.
+4. With your package selected, click the **Package** button. This process will cook your assets into the final `.pak` file format required by the **HELIX Vault**. This may take some time.
 
     ![image.png](CustomAnimImages/7.png)
 
-5. Once cooking is complete, a file explorer window will automatically open, displaying your final `.pak` file. Your animation pack is now ready to be uploaded to the **Helix Vault**!
+5. Once cooking is complete, a file explorer window will automatically open, displaying your final `.pak` file. Your animation pack is now ready to be uploaded to the **HELIX Vault**!
 
     ![image.png](CustomAnimImages/10.png)
 
