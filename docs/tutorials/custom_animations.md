@@ -84,24 +84,25 @@ This method is for older packs built for the `UE4` Mannequin. It uses the **IK R
     ![image.png](CustomAnimImages/4_3.png)
 
 5. For **Target Skeleton**, choose **SKM_Manny** located in **Content/Characters/Heroes/Unified/**.
+
     > **Note:** Your project may contain multiple assets named **SKM_Manny**. Ensure you select the one from the **Unified** folder, as shown in the screenshot. This is the mesh associated with our **SK_Unified** skeleton.
 
     ![image.png](CustomAnimImages/4_4.png)
 
-6. You can typically leave **Generate Auto Retargeter** checked to automatically map bones. For advanced use cases where the automatic mapping is incorrect, you can uncheck this and provide your own custom **IK Rig** and **IK Retargeter** assets.
-7. Review the list of animations to be generated. You can uncheck any you don't need. Click **Export Animations** button.
+7. You can typically leave **Generate Auto Retargeter** checked to automatically map bones. For advanced use cases where the automatic mapping is incorrect, you can uncheck this and provide your own custom **IK Rig** and **IK Retargeter** assets.
+8. Review the list of animations to be generated. You can uncheck any you don't need. Click **Export Animations** button.
 
     ![image.png](CustomAnimImages/4_5.png)
 
-8. On the new window, select your helix package folder (e.g., **Content/Addon_MyFirstAnimationPack**) as the destination. Click **Export**.
+9. On the new window, select your helix package folder (e.g., **Content/Addon_MyFirstAnimationPack**) as the destination. Click **Export**.
 
     ![image.png](CustomAnimImages/4_6.png)
 
-9. Click **Export** button again in next window.
+10. Click **Export** button again in next window.
 
     ![image.png](CustomAnimImages/4_7.png)
 
-10. The engine will now process and retarget all selected animations, creating new copies in your package folder that are compatible with the HELIX skeleton.
+11. The engine will now process and retarget all selected animations, creating new copies in your package folder that are compatible with the HELIX skeleton.
 
 ---
 
