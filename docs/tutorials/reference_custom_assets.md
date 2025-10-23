@@ -24,7 +24,7 @@ After creating a reference variable to your asset, you can pass it into other fu
 
 ### Example: Play Custom Animation Asset On Player Character With Lua
 
-For this example use case, we will try to load a packaged [custom animation sequence asset](https://development.helix-documentation.pages.dev/tutorials/custom_animations/) and play it on player character with a Lua script.
+For this example use case, we will try to load a [packaged custom animation sequence asset](https://development.helix-documentation.pages.dev/tutorials/custom_animations/) and play it on player character with a Lua script.
 
 1. After creating your workspace, open build mode and import the package you created in **Creator Kit HELIX Packaging Tool**. To do that, click **File** -> **Load Package** from top bar, navigate to your package folder cooked by Creator Kit, and select `configFile.json` in the folder.
 
