@@ -71,3 +71,14 @@ RegisterClientEvent('HEvent:ExitedVehicle', function(seat)
     print('Exited vehicle, seat: ' .. seat)
 end)
 ```
+
+---
+
+## `HEvent:VoiceStateChanged`
+Client event that can be listened to for when the user is talking
+
+```lua title="Example"
+RegisterClientEvent('HEvent:VoiceStateChanged', function(isTalking)
+    print('Is User Talking: ' .. tostring(isTalking))
+end)
+```
