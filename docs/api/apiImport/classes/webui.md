@@ -15,7 +15,7 @@ This class supports all JS frameworks available, such as Vue.JS, React.JS, etc. 
 <ConstructorDeclaration type="Class" name="WebUI" />
 
 ```lua
-local UI = WebUI('test', 'Package/UI/index.html', true)
+local UI = WebUI('test', 'Package/UI/index.html', 0)
 ```
 
 | Type              |       Name        | Default | Description                                                              |
