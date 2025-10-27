@@ -50,7 +50,10 @@ nav:
       - tutorials/custom_shells.md
       - tutorials/custom_blueprints.md
       - tutorials/custom_ui.md
+    - Using Custom Assets:
       - tutorials/reference_custom_assets.md
+      - tutorials/use_custom_animations.md
+      - tutorials/use_custom_blueprints.md
     - Misc:
       - tutorials/FabIssues/common_issues_importing_fab.md
       - tutorials/ConvertingFivemAssets/converting-assets.md
