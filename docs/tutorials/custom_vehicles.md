@@ -1,10 +1,6 @@
-# Dev Tutorial: Building a Multi-Part Vehicle
+# Import Vehicles
 
----
-
-# **HELIX Tutorial: Building a Multi-Part Vehicle (Doors, Glass, Seats, Steering, Tires & Lights)**
-
-This guide shows you how to prep meshes, set pivots, import into Unreal, assemble your vehicle Blueprint, and wire up doors, glass, seats, steering, tires (with deflation), and lights—then test the vehicle inside HELIX.
+This guide shows you how to import a custom vehicle. You'll learn how to prep meshes, set pivots, import into Unreal, assemble your vehicle Blueprint, and wire up doors, glass, seats, steering, tires (with deflation), and lights - then finally test the vehicle inside HELIX.
 
 ---
 
