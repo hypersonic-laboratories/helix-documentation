@@ -114,6 +114,17 @@ HVehicle:SetHandBrakeInput(enabled)
 
 ---
 
+
+#### Horn
+Sets the horn state for the vehicle.
+```lua
+HVehicle:Horn(state)
+```
+
+- state: `boolean` - Horn state
+
+---
+
 ### Engine Control
 
 #### HoldStarter
@@ -249,6 +260,16 @@ HVehicle:IsBraking()
 ```
 ##### Returns
 `boolean`: True if the vehicle is braking, false otherwise.
+
+---
+
+#### GetEngineHealth
+Returns the health of the engine.
+```lua
+HVehicle:GetEngineHealth()
+```
+#### Returns
+`number`: The engine health in the range of 0-1.
 
 ---
 
@@ -438,3 +459,156 @@ HVehicle:GetMaxSpeedForNavMovement()
 ```
 ##### Returns
 `number`: The maximum speed for nav movement.
+
+---
+
+### Lights & Sirens
+#### SetRightIndicator
+Sets the right indicator state.
+```lua
+HVehicle:SetRightIndicator(NewState)
+```
+
+- NewState: `boolean` - New right indicator state
+
+---
+
+#### SetReverseLight
+Sets the reverse light state.
+```lua
+HVehicle:SetReverseLight(NewState)
+```
+
+- NewState: `boolean` - New reverse light state
+
+---
+
+#### SetRedLightIntensity
+Sets the red light intensity.
+```lua
+HVehicle:SetRedLightIntensity(Value)
+```
+
+- Value: `number` - Red light intensity value
+
+---
+
+#### SetLightsEmissiveStrength
+Sets the lights emissive strength.
+```lua
+HVehicle:SetLightsEmissiveStrength(Value)
+```
+
+- Value: `number` - Emissive strength value
+
+---
+
+#### SetLeftIndicator
+Sets the left indicator state.
+```lua
+HVehicle:SetLeftIndicator(NewState)
+```
+
+- NewState: `boolean` - New left indicator state
+
+---
+
+#### SetIndicatorLightsIntensity
+Sets the indicator lights intensity.
+```lua
+HVehicle:SetIndicatorLightsIntensity(Value)
+```
+
+- Value: `number` - Indicator lights intensity value
+
+---
+
+#### SetIndicatorAnimationSpeed
+Sets the indicator animation speed.
+```lua
+HVehicle:SetIndicatorAnimationSpeed(Value)
+```
+
+- Value: `number` - Animation speed value
+
+---
+
+#### SetHazardLight
+Sets the hazard light state.
+```lua
+HVehicle:SetHazardLight(NewState)
+```
+
+- NewState: `boolean` - New hazard light state
+
+---
+
+#### SetBrakeLight
+Sets the brake light state.
+```lua
+HVehicle:SetBrakeLight(NewState)
+```
+
+- NewState: `boolean` - New brake light state
+
+---
+
+#### SetSirenState
+Sets the siren state.
+```lua
+HVehicle:SetSirenState(state)
+```
+
+- state: `boolean` - New siren state, if a siren is present
+
+---
+
+#### SetSirenEmissionStrength
+Sets the siren light emission strength.
+```lua
+HVehicle:SetSirenEmissionStrength(Amount)
+```
+
+- Amount: `number` - Emission strength value
+
+---
+
+#### SetSirenRedColor
+Sets the siren light red color.
+```lua
+HVehicle:SetSirenRedColor(NewColor)
+```
+
+- NewColor: [LinearColor](../global-variables/structs.md#linearcolor) - New red color for the siren light
+
+---
+
+#### SetSirenBlueColor
+Sets the siren light blue color.
+```lua
+HVehicle:SetSirenBlueColor(NewColor)
+```
+
+- NewColor: [LinearColor](../global-variables/structs.md#linearcolor) - New blue color for the siren light
+
+---
+
+#### SetSirenBaseColor
+Sets the siren light base color.
+```lua
+HVehicle:SetSirenBaseColor(NewColor)
+```
+
+- NewColor: [LinearColor](../global-variables/structs.md#linearcolor) - New base color for the siren light
+
+---
+
+#### SetSirenAnimationSpeed
+Sets the siren light animation speed.
+```lua
+HVehicle:SetSirenAnimationSpeed(Speed)
+```
+
+- Speed: `number` - Animation speed value
+
+---
