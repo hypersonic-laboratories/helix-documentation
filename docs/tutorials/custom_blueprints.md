@@ -8,7 +8,7 @@ First, you need to get the blueprint assets you would like to package into **Cre
 
 For this tutorial, we have a blueprint based clock system pack, which has a main clock actor blueprint, materials, textures, widgets, and sound files.
 
-![image.png](CustomBlueprintImages/4.png)
+![image.png](CustomBPImages/4.png)
 
 1. Launch the **Creator Kit** editor.
 
@@ -16,23 +16,23 @@ For this tutorial, we have a blueprint based clock system pack, which has a main
 
 3. In the packaging tool window, click **New Package**.
 
-  ![image.png](CustomAnimImages/1.png)
+  ![image.png](CustomAnimImages/5.png)
 
 5. Enter a unique Package Name (e.g., ClockSystem).
 
 7. Select **Addon** as the **Package Type**.
 
-   ![image.png](CustomBlueprintImages/8.png)
+   ![image.png](CustomBPImages/8.png)
 
 9. Click **Add New Package**. This action creates a dedicated folder for your assets (e.g., **Content/Addon_ClockSystem**).
 
 10. Move (or create) the blueprints and all the dependent assets into the package folder you've just created.
 
-  ![image.png](CustomBlueprintImages/1.png)
+  ![image.png](CustomBPImages/1.png)
   
-  ![image.png](CustomBlueprintImages/2.png)
+  ![image.png](CustomBPImages/2.png)
   
-  ![image.png](CustomBlueprintImages/3.png)
+  ![image.png](CustomBPImages/3.png)
 
 ## 2. Finalizing and Cooking The Package
 
@@ -40,7 +40,7 @@ For this tutorial, we have a blueprint based clock system pack, which has a main
 
 2. Make sure you have defined all the required functions, events, variables etc. in your blueprints to later access them with Lua inside Helix after importing your package there.
 
-  ![image.png](CustomBlueprintImages/5.png)
+  ![image.png](CustomBPImages/5.png)
 
 4. Return to the HELIX Packaging Tool window.
 
@@ -48,7 +48,7 @@ For this tutorial, we have a blueprint based clock system pack, which has a main
 
 6. Once cooking is complete, a file explorer window will automatically open, displaying your final `.pak` files. Your blueprint addon pack is now ready to be uploaded to the **HELIX Vault**!
 
-  ![image.png](CustomBlueprintImages/9.png)
+  ![image.png](CustomBPImages/9.png)
 
 ## 3. Using Packaged Custom Blueprints In Worlds
 
