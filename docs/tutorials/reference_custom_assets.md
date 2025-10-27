@@ -20,4 +20,8 @@ For example, to access a package named `Addon_MyFirstAnimationPack` with an anim
 local CustomAnimationAsset = UE.UObject.Load('/Game/Addon_MyFirstAnimationPack/AS_Crying.AS_Crying')
 ```
 
+You can get the full path of an asset by right clicking to it in build mode interface and selecting **Copy Object Path** in the dropdown menu.
+
+![image.png](CustomBPImages/12.png)
+
 After creating a reference variable to your asset, you can pass it into other functions in your Lua scripts.
