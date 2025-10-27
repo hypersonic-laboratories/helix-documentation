@@ -1,6 +1,6 @@
 # Use Custom Assets
 
-This guide walks you through how to use custom package assets inside of your world via Blueprints or Lua.
+This guide walks you through how to use your imported custom package assets within your world, using Blueprints or Lua.
 
 ## 1. By Blueprint
 
