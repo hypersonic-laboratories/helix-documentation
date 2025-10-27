@@ -1,4 +1,4 @@
-# Import Character Assets (Clothes, Accessories)
+# Import Wearables
 
 Coming soon.
 
