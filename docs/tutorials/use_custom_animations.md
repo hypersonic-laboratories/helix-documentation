@@ -1,10 +1,6 @@
 # Use Custom Animations
 
-## 1. By Blueprint
-
-[examples coming soon]
-
-## 2. By Lua
+## 1. By Lua
 
 For this example use case, we will try to load a [packaged custom animation sequence asset](https://development.helix-documentation.pages.dev/tutorials/custom_animations/) and play it on player character with a Lua script.
 
@@ -54,3 +50,7 @@ For this example use case, we will try to load a [packaged custom animation sequ
 5. Observe your character plays the custom animation after a second.
 
     ![image.png](ReferenceCustomAssetsImages/5.png)
+
+## 2. By Blueprint
+
+[examples coming soon]
