@@ -318,3 +318,179 @@ Returns the `number` of tracked players
 ```lua title="Example"
 local playerCount = HPlayer:GetCount()
 ```
+### `JoinVoiceChannel`
+Joins particular voice channel id. Only callable by the server/host.
+
+- InChannelId `number`
+
+```lua title="Example"
+HPlayer:JoinVoiceChannel()
+```
+
+---
+
+### `LeaveVoiceChannel`
+Leaves particular voice channel id. Only callable by the server/host.
+
+- InChannelId `number`
+
+```lua title="Example"
+HPlayer:LeaveVoiceChannel()
+```
+
+---
+
+### `IsInVoiceChannel`
+Checks if player is present in a provided voice channel. Only callable by the server/host.
+
+- InChannelId `number`
+- <span style="color: #facc15;">returns:</span> `boolean`
+
+```lua title="Example"
+local isInVoiceChannel = HPlayer:IsInVoiceChannel()
+```
+
+---
+
+### `MuteInVoiceChannel`
+Mutes this player in a particular voice channel. The player can't talk, but is still able to hear others. Only callable by the server/host.
+
+- InChannelId `number`
+
+```lua title="Example"
+HPlayer:MuteInVoiceChannel()
+```
+
+---
+
+### `UnmuteInVoiceChannel`
+Unmutes this player in a particular voice channel. Only callable by the server/host.
+
+- InChannelId `number`
+
+```lua title="Example"
+HPlayer:UnmuteInVoiceChannel()
+```
+
+---
+
+### `IsMutedInVoiceChannel`
+Checks if player is muted inside a particular voice channel. Only callable by the server/host.
+
+- InChannelId `number`
+- <span style="color: #facc15;">returns:</span> `boolean`
+
+```lua title="Example"
+local isMuted = HPlayer:IsMutedInVoiceChannel()
+```
+
+---
+
+### `MuteForOtherPlayer`
+Mutes this player for another player. The other player won't be able to hear this player. Only callable by the server/host.
+
+- InOtherPlayer `APlayerState`
+
+```lua title="Example"
+HPlayer:MuteForOtherPlayer()
+```
+
+---
+
+### `UnmuteForOtherPlayer`
+Unmutes this player for another player. Only callable by the server/host.
+
+- InOtherPlayer `APlayerState`
+
+```lua title="Example"
+HPlayer:UnmuteForOtherPlayer()
+```
+
+---
+
+### `IsMutedForOtherPlayer`
+Checks if player is muted for another player. Only callable by the server/host.
+
+- InOtherPlayer `APlayerState`
+- <span style="color: #facc15;">returns:</span> `boolean`
+
+```lua title="Example"
+local isMuted = HPlayer:IsMutedForOtherPlayer()
+```
+
+---
+
+### `GetVoiceChannels`
+Returns all voice channel ids that the player belongs to. Only callable by the server/host.
+
+- <span style="color: #facc15;">returns:</span> `table`
+
+```lua title="Example"
+local channelIds = HPlayer:GetVoiceChannels()
+```
+
+---
+
+### `IsTalking`
+Checks if the player is currently talking. Only callable by the **local** player.
+
+- <span style="color: #facc15;">returns:</span> `boolean`
+
+```lua title="Example"
+local isTalking = HPlayer:IsTalking()
+```
+
+---
+
+### `GetVoiceAmplitude`
+Returns current amplitude of the voice during talking. Only callable by the **local** player.
+
+- <span style="color: #facc15;">returns:</span> `number`
+
+```lua title="Example"
+local amplitude = HPlayer:GetVoiceAmplitude()
+```
+
+---
+
+### `SetMicNoiseGateThreshold`
+Sets threshold at which the voice noise gate cuts off the voice. Only callable by the **local** player.
+
+- InThreshold `number`
+
+```lua title="Example"
+HPlayer:SetMicNoiseGateThreshold()
+```
+
+---
+
+### `SetMicSilenceDetectionThreshold`
+Sets threshold at which the voice system interprets our voice as "silence". When the silence is detected, no information about the audio will be sent. Only callable by the **local** player.
+
+- InThreshold `number`
+
+```lua title="Example"
+HPlayer:SetMicSilenceDetectionThreshold()
+```
+
+---
+
+### `GetMicNoiseGateThreshold`
+Returns threshold at which the voice noise gate cuts off the voice. Only callable by the **local** player.
+
+- <span style="color: #facc15;">returns:</span> `number`
+
+```lua title="Example"
+local threshold = HPlayer:GetMicNoiseGateThreshold()
+```
+
+---
+
+### `GetMicSilenceDetectionThreshold`
+Returns threshold at which the voice system interprets our voice as "silence". When the silence is detected. Only callable by the **local** player.
+
+- <span style="color: #facc15;">returns:</span> `number`
+
+```lua title="Example"
+local threshold = HPlayer:GetMicSilenceDetectionThreshold()
+```
