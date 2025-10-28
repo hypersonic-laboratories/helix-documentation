@@ -1,4 +1,4 @@
-# Import Vehicles
+# Custom Vehicles
 
 This guide shows you how to import a custom vehicle. You'll learn how to prep meshes, set pivots, import into Unreal, assemble your vehicle Blueprint, and wire up doors, glass, seats, steering, tires (with deflation), and lights - then finally test the vehicle inside HELIX.
 

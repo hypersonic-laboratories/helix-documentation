@@ -41,7 +41,8 @@ nav:
       - ... | flat | tutorials/workspaces.md
       - ... | flat | tutorials/creatorkit.md
       - ... | flat | tutorials/creatorhub.md
-    - Importing Custom Assets:
+    - Custom Assets:
+      - tutorials/reference_custom_assets.md
       - tutorials/custom_maps.md
       - tutorials/custom_characters.md
       - tutorials/custom_cc_assets.md
@@ -50,10 +51,6 @@ nav:
       - tutorials/custom_shells.md
       - tutorials/custom_blueprints.md
       - tutorials/custom_ui.md
-    - Using Custom Assets:
-      - tutorials/reference_custom_assets.md
-      - tutorials/use_custom_animations.md
-      - tutorials/use_custom_blueprints.md
     - Misc:
       - tutorials/FabIssues/common_issues_importing_fab.md
       - tutorials/ConvertingFivemAssets/converting-assets.md

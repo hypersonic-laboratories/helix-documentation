@@ -1,4 +1,4 @@
-# Import Wearables
+# Custom Wearables
 
 Coming soon.
 

@@ -1,4 +1,4 @@
-# Import Blueprints
+# Custom Blueprints
 
 This guide walks you through the process of packaging blueprint assets as an Addon for the HELIX Vault using the Creator Kit.
 

@@ -1,4 +1,4 @@
-# Import UI
+# Custom UI
 
 There are two main ways of creating user interfaces (UIs) for your HELIX world: UMG and WebUI.
 

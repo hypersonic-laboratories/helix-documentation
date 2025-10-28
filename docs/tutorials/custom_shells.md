@@ -1,4 +1,4 @@
-# Import Shells
+# Custom Shells
 
 Shells are standalone modular buildings, interiors, or structures that can be used to extend the functionalities of any map without editing the level asset itself. Examples of shells include apartment units, job sites, hospitals, bunkers, etc.
 
