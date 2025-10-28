@@ -11,7 +11,7 @@ The server and client directly downloads the latest World package and its packag
 ## Step 1: Create Your World
 
 1. Launch the HELIX game client
-2. Follow the [world creation guide](create_publish_worlds.md) to create and publish your world
+2. Follow the [world creation guide](create_helix_world.md) to create and publish your world
 
 ## Step 2: Access Creator Hub
 
