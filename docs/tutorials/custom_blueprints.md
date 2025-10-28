@@ -2,6 +2,8 @@
 
 This guide walks you through the process of packaging blueprint assets as an Addon for the HELIX Vault using the Creator Kit.
 
+---
+
 ## 1. Preparing Blueprint Assets To Package
 
 First, you need to get the blueprint assets you would like to package into **Creator Kit**. Packaging blueprints is technically not different than packaging any type of Addon `.pak` file.
@@ -34,6 +36,8 @@ For this tutorial, we have a blueprint based clock system pack, which has a main
   
     ![image.png](CustomBPImages/3.png)
 
+---
+
 ## 2. Finalizing and Cooking The Package
 
 1. Make sure all the depending assets by your blueprint are placed inside package folder. If one of those assets are placed outside of the created package folder, created .pak file will have missing dependencies and this might cause crashes or runtime errors during playthrough with this package.
@@ -51,6 +55,8 @@ For this tutorial, we have a blueprint based clock system pack, which has a main
 6. Once cooking is complete, a file explorer window will automatically open, displaying your final `.pak` files. Your blueprint addon pack is now ready to be uploaded to the **HELIX Vault**!
 
     ![image.png](CustomBPImages/9.png)
+
+---
 
 ## 3. Using Packaged Custom Blueprints In Worlds
 
