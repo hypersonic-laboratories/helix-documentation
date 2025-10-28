@@ -31,7 +31,7 @@ nav:
       # - getting_started/mappers.md
       # - getting_started/animators.md
   - Tutorials:
-    - tutorials/index.md
+    # - tutorials/index.md
     - Start Here:
       # - ... | flat | tutorials/vault_package_management.md
       # - ... | flat | tutorials/create_publish_worlds.md

@@ -1,10 +1,10 @@
-# Manage Assets using Creator Hub
+# Publish Package to Vault
 
-The **Creator Hub** allows you to create, configure, and publish packages such as maps, worlds, characters, and addons.
+You can use **Creator Hub** to upload packages (such as maps, worlds, characters, and addons) created using [Creator Kit](creatorkit.md) to the Vault.
 
-👉 Access it here: [hub.helixgame.com/dashboard/packages/manager](https://hub.helixgame.com/dashboard/packages/manager)
+👉 Access Creator Hub here: [hub.helixgame.com/dashboard/packages/manager](https://hub.helixgame.com/dashboard/packages/manager)
 
-Follow the steps below to upload your package.
+Follow the steps below to upload a package.
 
 ---
 
