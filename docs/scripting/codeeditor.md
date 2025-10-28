@@ -1,5 +1,5 @@
 ---
-title: Code Editor
+title: Code Editor Setup
 tags: [scripting]
 ---
 <HeaderDeclaration type="scripting" name="code-editor" />
