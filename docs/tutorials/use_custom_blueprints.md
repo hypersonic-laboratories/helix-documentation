@@ -54,9 +54,13 @@ For this example use case, we will try to load a [packaged custom blueprint asse
 
 7. After walking towards the clock, the widget becomes accessible.
 
-<video controls>
-    <source src="CustomBPImages/15.mp4" type="video/mp4">
-</video>
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://youtube.com/embed/O9OXYgnxmpo?si=ueKFLQS0FXjRbz-X"
+          style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+          frameborder="0"
+          allowfullscreen>
+  </iframe>
+</div>
 
 9. Now let's call an event we've previously defined in the blueprint. Our `SetCustomTime` event changes the time shown on the clock.
 
