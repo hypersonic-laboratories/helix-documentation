@@ -4,7 +4,7 @@ You can host a HELIX Dedicated Server in just a few minutes. Follow this guide t
 
 First, it's very important to understand that a HELIX server differs greatly from a traditional game server that you may be used to (such as FiveM server). A HELIX server is an **instance of a HELIX World** - the server itself does NOT contain any logic or assets - instead, those are contained within the World package. You do not connect remotely to a HELIX server to update its logic or assets. Instead, you must publish a new version of the HELIX world to Vault, then restart your server.
 
-The server and client directly downloads the latest World package and its package dependencies from the Vault CDN. The server maintains the authoritative game state and replicates updates to all clients. Read [this guide](create_helix_world.md) to understand how HELIX worlds and servers work before proceeding.
+The server and client directly downloads the latest World package and its package dependencies from the Vault CDN. The server maintains the authoritative game state and replicates updates to all clients. Read [this guide](../scripting/client_server_guide.md) to understand how HELIX worlds and servers work before proceeding.
 
 ---
 
