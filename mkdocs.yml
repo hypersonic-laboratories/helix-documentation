@@ -60,8 +60,8 @@ nav:
   - Scripting Tips:
     - scripting/index.md
     - Key References:
-      - scripting/codeeditor.md
       - scripting/packageguide.md
+      - scripting/codeeditor.md
     - Core Concepts:
       - ... | flat | scripting/coreConceptsImports/*.md
     - Code Examples:
