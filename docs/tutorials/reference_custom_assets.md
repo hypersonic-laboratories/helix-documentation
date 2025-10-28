@@ -22,6 +22,8 @@ You can get the full path of an asset by right clicking to it in build mode inte
 
 After creating a reference variable to your asset, you can pass it into other functions in your Lua scripts.
 
+---
+
 ## 2. By Blueprint
 
 [examples coming soon]

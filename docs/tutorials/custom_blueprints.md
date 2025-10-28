@@ -2,8 +2,6 @@
 
 This guide walks you through the process of packaging blueprint assets as an Addon for the HELIX Vault using the Creator Kit.
 
----
-
 ## 1. Preparing Blueprint Assets To Package
 
 First, you need to get the blueprint assets you would like to package into **Creator Kit**. Packaging blueprints is technically not different than packaging any type of Addon `.pak` file.

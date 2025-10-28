@@ -69,6 +69,8 @@ For this example use case, we will try to load a [packaged custom blueprint asse
     ClockActor:SetCustomTime(0,30,5) -- second, minute, hour
     ```
 
+---
+
 ## 2. By Blueprint
 
 [examples coming soon]

@@ -125,6 +125,8 @@ With your animations successfully adapted and moved to your package folder, you 
 
     ![image.png](CustomAnimImages/10.png)
 
+---
+
 ## 5. (Bonus) Importing Animations From Mixamo
 
 It's also possible to download animations from [Mixamo.com](http://www.mixamo.com) and import them into Creator Kit for packaging with same retargeting steps done for `UE4` rig-based packs.
@@ -151,6 +153,8 @@ It's also possible to download animations from [Mixamo.com](http://www.mixamo.co
     ![image.png](CustomAnimImages/15.png)
 
     ![image.png](CustomAnimImages/16.png)
+
+---
 
 ## 6. Using Packaged Custom Animations In Worlds
 
