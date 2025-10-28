@@ -61,6 +61,7 @@ nav:
     - scripting/index.md
     - Key References:
       - scripting/packageguide.md
+      - scripting/client_server_guide.md
       - scripting/codeeditor.md
     - Core Concepts:
       - ... | flat | scripting/coreConceptsImports/*.md
