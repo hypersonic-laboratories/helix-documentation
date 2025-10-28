@@ -1,13 +1,16 @@
 ---
-title: Package Guide
+title: Lua Scripting Guide
 tags: [scripting]
 ---
 <HeaderDeclaration type="scripting" name="package" />
 
-# Introduction to Lua Packages
-Your project runs using a modular Lua package system.
-A Lua package is a self-contained set of Lua scripts and related assets that can be loaded and initialized dynamically based on configuration files.
-This structure allows for flexible, organized scripting and content loading.
+# Lua Scripting in HELIX
+You can add game logic to your [HELIX World](../tutorials/create_helix_world.md) using Blueprints and Lua scripts. This tutorial walks you through how to get started with Lua scripting. A detailed Blueprint scripting guide will be added soon.
+
+HELIX is powered by a modular Lua package system. A Lua package is a self-contained set of Lua scripts and related assets that can be loaded and initialized dynamically based on configuration files. This structure allows for flexible, organized scripting and content loading.
+
+## 🧠 Server-Client Relationship in HELIX
+Before we get started, be sure to read [this guide](client_server_guide.md) first to understand how clients and servers work in HELIX and Unreal Engine. You do not need to run and connect to a separate server executable to develop or test gameplay. Read the guide as this information is highly relevant for all aspects of HELIX development.
 
 ## 📁 Package Directory Structure
 All Lua packages are located under the `Workspace/scripts/` directory.
