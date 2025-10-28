@@ -52,11 +52,17 @@ For this example use case, we will try to load a [packaged custom blueprint asse
 
     ![image.png](CustomBPImages/7.png)
 
-7. Now let's call an event we've previously defined in the blueprint. Our `SetCustomTime` event changes the time shown on the clock.
+7. After walking towards the clock, the widget becomes accessible.
+
+<video controls>
+    <source src="CustomBPImages/15.mp4" type="video/mp4">
+</video>
+
+9. Now let's call an event we've previously defined in the blueprint. Our `SetCustomTime` event changes the time shown on the clock.
 
     ![image.png](CustomBPImages/5.png)
 
-8. After restarting the game to clean the level from previous changes, we add the function call below at end of our `main.lua` script to execute our custom event on spawned blueprint actor. The same syntax can be used for calling any function in spawned actors.
+10. After restarting the game to clean the level from previous changes, we add the function call below at end of our `main.lua` script to execute our custom event on spawned blueprint actor. The same syntax can be used for calling any function in spawned actors.
 
     ```lua
     -- Manually set time on spawned clock with our blueprint defined event
