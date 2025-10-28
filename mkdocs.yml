@@ -33,14 +33,15 @@ nav:
   - Tutorials:
     - tutorials/index.md
     - General Concepts:
-      - ... | flat | tutorials/vault_package_management.md
-      - ... | flat | tutorials/create_publish_worlds.md
-      - ... | flat | tutorials/ds_and_local_testing_guide.md
-      - ... | flat | tutorials/buildmode.md
-      - ... | flat | tutorials/create_join_servers.md
-      - ... | flat | tutorials/workspaces.md
-      - ... | flat | tutorials/creatorkit.md
-      - ... | flat | tutorials/creatorhub.md
+      # - ... | flat | tutorials/vault_package_management.md
+      # - ... | flat | tutorials/create_publish_worlds.md
+      - tutorials/create_helix_world.md
+      - tutorials/dedicated_server.md
+      # - ... | flat | tutorials/buildmode.md
+      # - ... | flat | tutorials/create_join_servers.md
+      # - ... | flat | tutorials/workspaces.md
+      - tutorials/creatorkit.md
+      - tutorials/creatorhub.md
     - Custom Assets:
       - tutorials/reference_custom_assets.md
       - tutorials/custom_maps.md
