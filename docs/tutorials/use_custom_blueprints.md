@@ -18,13 +18,13 @@ For this example use case, we will try to load a [packaged custom blueprint asse
 
     ![image.png](CustomBPImages/12.png)
 
-4. Now we need to write our Lua script to spawn our blueprint actor. Click **Edit Scripts** button and open your workspace folder.
+4. Now we need to write our Lua script to spawn our blueprint actor. Click **Edit Scripts** button and open the workspace folder.
 
     ![image.png](ReferenceCustomAssetsImages/3_2.png)
 
     ![image.png](ReferenceCustomAssetsImages/3_3.png)
 
-5. To spawn our blueprint actor locally in the client, we add the client lua script below into `WORKSPACE_ID/scripts/main/client/main.lua` path in your workspace. If the file doesn't exist, create it.
+5. To spawn our blueprint actor locally in the client, we add the client lua script below into `WORKSPACE_ID/scripts/main/client/main.lua` path in the workspace.
 
     ```lua
     -- Load clock actor class from package. The path is copied from build mode interface as explained in the 3rd step.
