@@ -22,7 +22,7 @@ HELIX is an open-world multiplayer sandbox platform, specifically designed for r
 - :material-arrow-up-box: **Community-First Development**{.whiter} - We're building HELIX alongside our community. We deeply value your feedback and directly incorporate community-requested features into the product. If you have any suggestions about the gameplay or development experience, don't hesitate to reach out on our Discord.
 </div>
 
-<!--1.  The Add-on Vault is a central repository of shared assets that contains
+<!-- 1.  The Add-on Vault is a central repository of shared assets that contains
     everything you need to build your worlds and RP servers. Discover thousands of add-ons and mods from maps, characters, vehicles, weapons, Lua scripts to entire game modes!
 
  , and mututally-beneficial monetization! (2) 
@@ -39,7 +39,7 @@ HELIX is an open-world multiplayer sandbox platform, specifically designed for r
 
     [:material-folder-download-outline: Install](install.md)
 
-    [:material-controller-classic-outline: Create Your First World](/tutorials/create_helix_world.md)
+    [:material-controller-classic-outline: Create Your First World](../tutorials/create_helix_world.md)
 
 -   __Disciple specific tooling__
 
