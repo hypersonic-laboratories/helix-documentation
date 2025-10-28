@@ -2,11 +2,7 @@
 
 This guide walks you through how to use your imported custom package assets within your world, using Blueprints or Lua.
 
-## 1. By Blueprint
-
-[examples coming soon]
-
-## 2. By Lua
+## 1. By Lua
 
 Any kind of asset inside a [Workspace](https://development.helix-documentation.pages.dev/tutorials/workspaces/) imported package can be accessed with:
 
@@ -25,3 +21,7 @@ You can get the full path of an asset by right clicking to it in build mode inte
 ![image.png](CustomBPImages/12.png)
 
 After creating a reference variable to your asset, you can pass it into other functions in your Lua scripts.
+
+## 2. By Blueprint
+
+[examples coming soon]
