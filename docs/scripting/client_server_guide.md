@@ -2,6 +2,8 @@
 
 *How clients and servers work in HELIX.*
 
+---
+
 ## How the Server-Client Relationship Works in HELIX
 Unlike FiveM or other traditional multiplayer frameworks, HELIX (powered by Unreal Engine) doesn’t require you to connect to a separate server executable to develop or test gameplay. This is because Unreal Engine’s multiplayer architecture works differently under the hood. 
 
@@ -17,6 +19,8 @@ The host instance (whether it's a client or a Dedicated Server) is always consid
 ### Testing Multiplayer Functionality With Multiple Local Clients
 
 Click the dropdown arrow next to "Play" button in BM toolbar and select the number of client instances to launch. In this case, the client that was launched first serves as both the client and server, and other client instances connect to it locally.
+
+---
 
 ## How [Dedicated Servers](dedicated_server.md) Work
 
