@@ -1,4 +1,4 @@
-# Create Your First HELIX Server
+# Create Your First HELIX World
 
 *A comprehensive guide to developing and publishing servers on HELIX. We'll cover core concepts such as Workspaces, Packages, Worlds, Creator Kit, Blueprints, Build Mode, and more.*
 
