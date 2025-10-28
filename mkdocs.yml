@@ -20,7 +20,7 @@ nav:
     - Start Here:
       - getting_started/install.md
       - getting_started/basic_controls.md
-      - getting_started/firstworld.md
+      - tutorials/create_helix_world.md
     - Coming From Other Platforms:
       # - getting_started/comingGmod.md
       - getting_started/comingGTA.md
@@ -32,7 +32,7 @@ nav:
       # - getting_started/animators.md
   - Tutorials:
     - tutorials/index.md
-    - General Concepts:
+    - Start Here:
       # - ... | flat | tutorials/vault_package_management.md
       # - ... | flat | tutorials/create_publish_worlds.md
       - tutorials/create_helix_world.md
