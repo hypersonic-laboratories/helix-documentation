@@ -127,6 +127,8 @@ For this tutorial, we will be importing a simple cap accessory for our character
 
     ![image.png](WearableTutImages/17.png)
 
-## 4. On Your Own
+---
+
+## 6. On Your Own
 
 Once you've followed these steps, [uploaded your package](https://development.helix-documentation.pages.dev/tutorials/creatorhub/) to **Creator HUB**, and imported it into your world, your new clothing piece will be available for players joining your public world.
