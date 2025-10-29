@@ -90,7 +90,7 @@ For this tutorial, we will be importing a simple cap accessory for our character
 
     ![image.png](WearableTutImages/11.png)
 
-9. Once cooking is complete, a file explorer window will automatically open, displaying your final `.pak` files. Your blueprint addon pack is now ready to be uploaded to the **HELIX Vault**!
+9. Once cooking is complete, a file explorer window will automatically open, displaying your final `.pak` files. Your wearable is now ready to be uploaded to the **HELIX Vault**!
 
     ![image.png](WearableTutImages/12.png)
 
