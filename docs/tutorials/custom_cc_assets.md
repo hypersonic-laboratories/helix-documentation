@@ -4,7 +4,7 @@ This guide walks you through the process of packaging wearable clothing assets f
 
 ## 1. Creating Your Wearable Clothing Asset
 
-Use your favorite modeling tool to create & skin a clothing piece for HELIX character by using the resources shared on [Google Drive](https://drive.google.com/drive/folders/1-MvqAmLsBm7l50mMmdH_BEen8xaUID0O?usp=sharing).
+Use your favorite modeling tool to create and skin a clothing piece for the HELIX character by using the resources available on [Google Drive](https://drive.google.com/drive/folders/1-MvqAmLsBm7l50mMmdH_BEen8xaUID0O?usp=sharing).
 
 ![image.png](WearableTutImages/13.png)
 
@@ -12,7 +12,7 @@ Use your favorite modeling tool to create & skin a clothing piece for HELIX char
 
 ## 2. Preparing Your Wearable Clothing Package
 
-After acquiring an `.fbx` file for the clothing piece you've created on previous step, we need to import it into **Creator Kit**.
+After acquiring an `.fbx` file for the clothing piece you created in the previous step, we need to import it into **Creator Kit**.
 
 For this tutorial, we will be importing a simple cap accessory for our character.
 
@@ -54,7 +54,7 @@ For this tutorial, we will be importing a simple cap accessory for our character
 
     ![image.png](WearableTutImages/6.png)
 
-2. Next, open your skeletal mesh asset. Tweak any required parameters, and ensure you have LOD data generated for your mesh. This is required for your mesh to not impact performance for distant characters wearing your clothing. You can set LOD count to 8 and click regenerate to automatically generate LODs for your mesh, as shown below.
+2. Next, open your skeletal mesh asset. Tweak any required parameters, and ensure you have LOD data generated for your mesh. This ensures your mesh does not negatively impact performance for distant characters wearing your clothing. You can set LOD count to 8 and click regenerate to automatically generate LODs for your mesh, as shown below.
 
     ![image.png](WearableTutImages/7.png)
 
@@ -72,7 +72,7 @@ For this tutorial, we will be importing a simple cap accessory for our character
 
     ![image.png](WearableTutImages/8.png)
 
-3. Choose **Character Customization Data Asset** from the new window. This data asset is responsible with categorizing your clothing and storing required parameters.
+3. Choose **Character Customization Data Asset** from the new window. This data asset is responsible for categorizing your clothing and storing the required parameters.
 
     ![image.png](WearableTutImages/9.png)
 
@@ -96,7 +96,7 @@ For this tutorial, we will be importing a simple cap accessory for our character
 
 ---
 
-## 3. Testing Your Clothing
+## 5. Testing Your Clothing
 
 ### 1. In Creator Kit
 
