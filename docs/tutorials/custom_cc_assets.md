@@ -1,10 +1,10 @@
 # Custom Wearables
 
-This guide walks you through the process of packaging wearable clothing assets for the HELIX Vault using the Creator Kit.
+This guide walks you through the process of packaging wearable clothing assets for the **HELIX Vault** using the Creator Kit.
 
 ## 1. Creating Your Wearable Clothing Asset
 
-Use your favorite modeling tool to create & skin a clothing piece for Helix character by using the resources shared on [Google Drive](https://drive.google.com/drive/folders/1-MvqAmLsBm7l50mMmdH_BEen8xaUID0O?usp=sharing).
+Use your favorite modeling tool to create & skin a clothing piece for HELIX character by using the resources shared on [Google Drive](https://drive.google.com/drive/folders/1-MvqAmLsBm7l50mMmdH_BEen8xaUID0O?usp=sharing).
 
 ![image.png](WearableTutImages/13.png)
 
@@ -109,7 +109,7 @@ For this tutorial, we will be importing a simple cap accessory for our character
     ![image.png](WearableTutImages/18.png)
 
 
-### 2. In Helix
+### 2. In HELIX
 
 1. Create a draft world and import the `.pak` file you've cooked in **Creator Kit**.
 
