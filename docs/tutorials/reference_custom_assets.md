@@ -1,4 +1,4 @@
-# Reference Custom Assets
+# How To Reference Custom Assets
 
 This guide walks you through how to use your imported custom package assets within your world, using Blueprints or Lua.
 
