@@ -22,29 +22,29 @@ For this tutorial, we will be importing a simple cap accessory for our character
 
 3. In the packaging tool window, click **New Package**.
 
-5. Enter a unique Package Name (e.g., MyNewWearable).
+4. Enter a unique Package Name (e.g., MyNewWearable).
 
-7. Select **Wearable** as the **Package Type**.
+5. Select **Wearable** as the **Package Type**.
 
     ![image.png](WearableTutImages/1.png)
 
-9. Click **Add New Package**. This action creates a dedicated folder for your assets (e.g., **Content/Wearable_MyNewWearable**).
+6. Click **Add New Package**. This action creates a dedicated folder for your assets (e.g., **Content/Wearable_MyNewWearable**).
 
     ![image.png](WearableTutImages/2.png)
 
-10. Go into the folder you've created and click **Import** button in content browser. Choose your `.fbx` file
+7. Go into the folder you've created and click **Import** button in content browser. Choose your `.fbx` file
 
     ![image.png](WearableTutImages/3.png)
 
-11. On the next window, find **Skeleton** field and choose **SK_Unified** from the list. This ensures your mesh is encoded with the project's main skeleton asset, making it compatible with character customization system.
+8. On the next window, find **Skeleton** field and choose **SK_Unified** from the list. This ensures your mesh is encoded with the project's main skeleton asset, making it compatible with character customization system.
 
     ![image.png](WearableTutImages/4.png)
 
-12. After clicking import, you should observe a mesh, a physics asset and a material created in your folder.
+9. After clicking import, you should observe a mesh, a physics asset and a material created in your folder.
 
     ![image.png](WearableTutImages/5.png)
 
-13. Optionally, you can also import additional textures and a thumbnail image for your clothing in the same folder.
+10. Optionally, you can also import additional textures and a thumbnail image for your clothing in the same folder.
 
 ---
 
@@ -54,7 +54,7 @@ For this tutorial, we will be importing a simple cap accessory for our character
 
     ![image.png](WearableTutImages/6.png)
 
-2. Next, open your skeletal mesh asset. Tweak any required parameters, and ensure you have LOD data generated for your mesh. This is required for your mesh to not impact performance for less significant characters wearing your clothing. You can set LOD count to 8 and click regenerate to automatically generate LODs for your mesh, as shown below.
+2. Next, open your skeletal mesh asset. Tweak any required parameters, and ensure you have LOD data generated for your mesh. This is required for your mesh to not impact performance for distant characters wearing your clothing. You can set LOD count to 8 and click regenerate to automatically generate LODs for your mesh, as shown below.
 
     ![image.png](WearableTutImages/7.png)
 
@@ -82,7 +82,7 @@ For this tutorial, we will be importing a simple cap accessory for our character
 
     ![image.png](WearableTutImages/10.png)
 
-6. Ensure available parameters for your clothing type are set properly before finalizing. You can learn more about the available parameters from [here](WIP).
+6. Ensure available parameters for your clothing type are set properly before finalizing. You can learn more about the available parameters from [here (WIP)]().
 
 7. Return to the HELIX Packaging Tool window.
 
