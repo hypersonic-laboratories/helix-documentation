@@ -43,7 +43,6 @@ nav:
       - tutorials/creatorkit.md
       - tutorials/creatorhub.md
     - Custom Assets:
-      - tutorials/reference_custom_assets.md
       - tutorials/custom_maps.md
       - tutorials/custom_characters.md
       - tutorials/custom_cc_assets.md
@@ -53,6 +52,7 @@ nav:
       - tutorials/custom_blueprints.md
       - tutorials/custom_ui.md
     - Misc:
+      - tutorials/reference_custom_assets.md
       - tutorials/FabIssues/common_issues_importing_fab.md
       - tutorials/ConvertingFivemAssets/converting-assets.md
       - tutorials/porting-tutorial.md
