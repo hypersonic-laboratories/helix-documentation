@@ -68,7 +68,7 @@ For this tutorial, we will be using a robot character mesh acquired from Fab.
 
 5. Create a new sub-entry inside your new entry, and give it a meaningful name.
 
-6. Fill the required parameters for your custom mesh. Usually, you should leave the **Head Mesh** field empty, and assign your full body custom mesh to **Body Mesh** field. Choose gender for the one closest to your character mesh body. This will ensure the correct invisible base mesh is used while playing animations for your custom character mesh.
+6. Fill the required parameters for your custom mesh. Usually, you should leave the **Head Mesh** field empty, and assign your full body custom mesh to **Body Mesh** field. Choose gender type for the one closest to your character mesh body proportions. This will ensure the correct invisible base mesh is used while playing animations for your custom mesh.
 
     ![image.png](CustomMeshImages/5.png)
 
