@@ -1,6 +1,6 @@
 # Custom Wearables
 
-This guide walks you through the process of packaging wearable clothing assets for the **Creator HUB** using the Creator Kit.
+This guide walks you through the process of packaging wearable clothing assets for the [Creator HUB](https://development.helix-documentation.pages.dev/tutorials/creatorhub/) using the [Creator Kit](https://development.helix-documentation.pages.dev/tutorials/creatorkit).
 
 ## 1. Creating Your Wearable Clothing Asset
 
@@ -90,7 +90,7 @@ For this tutorial, we will be importing a simple cap accessory for our character
 
     ![image.png](WearableTutImages/11.png)
 
-9. Once cooking is complete, a file explorer window will automatically open, displaying your final `.pak` files. Your wearable is now [ready to be uploaded](https://development.helix-documentation.pages.dev/tutorials/creatorhub/) to the **Creator HUB**!
+9. Once cooking is complete, a file explorer window will automatically open, displaying your final `.pak` files. Your wearable is now ready to be uploaded to the **Creator HUB**!
 
     ![image.png](WearableTutImages/12.png)
 
@@ -131,4 +131,4 @@ For this tutorial, we will be importing a simple cap accessory for our character
 
 ## 6. On Your Own
 
-Once you've followed these steps, [uploaded your package](https://development.helix-documentation.pages.dev/tutorials/creatorhub/) to **Creator HUB**, and imported it into your world, your new clothing piece will be available for players joining your public world!
+Once you've followed these steps, uploaded your package to **Creator HUB**, and imported it into your world, your new clothing piece will be available for players joining your public world!

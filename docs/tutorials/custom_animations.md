@@ -1,6 +1,6 @@
 # Custom Animations
 
-This guide walks you through the complete process of acquiring animation packs from Fab, adapting them for the standard HELIX character rig, and packaging them as an Addon for the **Creator HUB** using the [Creator Kit](https://development.helix-documentation.pages.dev/tutorials/creatorkit).
+This guide walks you through the complete process of acquiring animation packs from Fab, adapting them for the standard HELIX character rig, and packaging them as an Addon for the [Creator HUB](https://development.helix-documentation.pages.dev/tutorials/creatorhub/) using the [Creator Kit](https://development.helix-documentation.pages.dev/tutorials/creatorkit).
 
 The process for adapting animations differs depending on whether the asset pack was designed for the older Unreal Engine 4 skeleton or the modern Unreal Engine 5 rig. This guide covers both scenarios.
 
