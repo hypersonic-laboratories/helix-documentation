@@ -44,8 +44,8 @@ nav:
       - tutorials/creatorhub.md
     - Custom Assets:
       - tutorials/custom_maps.md
-      - tutorials/custom_characters.md
       - tutorials/custom_cc_assets.md
+      - tutorials/custom_characters.md
       - tutorials/custom_animations.md
       - tutorials/custom_vehicles.md
       - tutorials/custom_shells.md
