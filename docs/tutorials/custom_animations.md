@@ -158,7 +158,7 @@ It's also possible to download animations from [Mixamo.com](http://www.mixamo.co
 
 ### 1. By Lua
 
-For this example use case, we will try to load a [packaged custom animation sequence asset](https://development.helix-documentation.pages.dev/tutorials/custom_animations/) and play it on player character with a Lua script.
+For this example use case, we will try to load our packaged custom animation sequence asset and play it on player character with a Lua script.
 
 1. After creating your workspace, open build mode and import the package you created in **Creator Kit HELIX Packaging Tool**. To do that, click **File** -> **Load Package** from top bar, navigate to your package folder cooked by Creator Kit, and select `configFile.json` in the folder.
 
