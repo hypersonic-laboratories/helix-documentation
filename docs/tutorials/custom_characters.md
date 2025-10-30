@@ -112,8 +112,6 @@ For this tutorial, we will be using a robot character mesh acquired from Fab.
 
 4. Your imported custom character mesh should be available in the **Custom** tab.
 
-    ![image.png](CustomMeshImages/12.png)
-
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
   <iframe src="https://www.youtube.com/embed/eM2_7DWIIqM?si=qELiLj1TaBILbGUP"
           style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
