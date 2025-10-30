@@ -44,7 +44,7 @@ For this tutorial, we will be using a robot character mesh acquired from Fab.
 
 ## 3. Tweaking Your Custom Character Mesh
 
-1. Open the automatically created physics asset and ensure the capsule covers the mesh approximately. This is required for your mesh bounds are properly calculated for FOV based occlusion. If this is not done properly, you mesh can disappear randomly from certain camera angles during gameplay. Check [Physics Asset Editor Documentation](https://dev.epicgames.com/documentation/en-us/unreal-engine/physics-asset-editor-in-unreal-engine) for more information.
+1. Open the automatically created physics asset and ensure the capsule covers the mesh approximately. This is required for your mesh bounds are properly calculated for FOV based occlusion. If this is not done properly, you mesh can disappear randomly from certain camera angles during gameplay. Please check [Physics Asset Editor Documentation](https://dev.epicgames.com/documentation/en-us/unreal-engine/physics-asset-editor-in-unreal-engine) for more information.
 
     ![image.png](CustomMeshImages/8.png)
 
@@ -68,7 +68,7 @@ For this tutorial, we will be using a robot character mesh acquired from Fab.
 
 5. Create a new sub-entry inside your new entry, and give it a meaningful name.
 
-6. Fill the required parameters for your custom mesh. Usually, you should leave the **Head Mesh** field empty, and assign your full body custom mesh to **Body Mesh** field.
+6. Fill the required parameters for your custom mesh. Usually, you should leave the **Head Mesh** field empty, and assign your full body custom mesh to **Body Mesh** field. Choose gender for the one closest to your character mesh body. This will ensure the correct invisible base mesh is used while playing animations for your custom character mesh.
 
     ![image.png](CustomMeshImages/5.png)
 
