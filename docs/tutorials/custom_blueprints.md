@@ -62,7 +62,7 @@ For this tutorial, we have a blueprint based clock system pack, which has a main
 
 ### 1. By Lua
 
-For this example use case, we will try to load a [packaged custom blueprint asset](https://development.helix-documentation.pages.dev/tutorials/custom_blueprints/) and spawn it on world with a Lua script. Then, we will define a custom event in the actor blueprint and call it from Lua script.
+For this example use case, we will try to load our packaged custom blueprint asset and spawn it on world with a Lua script. Then, we will define a custom event in the actor blueprint and call it from Lua script.
 
 1. After creating your workspace, open build mode and import the package you created in **Creator Kit HELIX Packaging Tool**. To do that, click **File** -> **Load Package** from top bar, navigate to your package folder cooked by Creator Kit, and select `configFile.json` in the folder.
 
