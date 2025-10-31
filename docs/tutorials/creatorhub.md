@@ -32,6 +32,7 @@ Follow the steps below to upload a package.
         - World
         - Character
         - Addon
+        - Script
         - Other
     - **Content Rating** – Choose the appropriate age rating:
         - Everyone
@@ -57,6 +58,14 @@ Follow the steps below to upload a package.
 
 ## 3. Upload Package Files
 
+### Script Packages
+
+You must upload your entire package folder (which typically contains subfolders such as Server, Client, Shared) as a **single zip file**.
+
+For script packages you can skip the next step. No version config file upload is needed.
+
+### Other Packages (Addon, Map, etc)
+
 You must upload at least one package file. All files must be in **PAK format**.
 
 - **Client Files** – Files that run on the user’s device.
@@ -66,7 +75,7 @@ You must upload at least one package file. All files must be in **PAK format**.
 <aside>
 💡
 
-If you followed the  [**Creator Kit tutorial](https://development.helix-documentation.pages.dev/tutorials/creatorkit)** on how to cook your packages, you should already have the necessary files ready for upload.
+If you followed the  [**Creator Kit tutorial](creatorkit.md)** on how to cook your packages, you should already have the necessary files ready for upload.
 
 </aside>
 
@@ -76,7 +85,7 @@ If you followed the  [**Creator Kit tutorial](https://development.helix-document
 
 ## 4. Version Config (Optional)
 
-Upload a `config.json` file if your package needs specific execution settings.
+Upload a `config.json` file if your package needs specific execution settings. You can skip this step for script type packages.
 
 This file should define:
 
