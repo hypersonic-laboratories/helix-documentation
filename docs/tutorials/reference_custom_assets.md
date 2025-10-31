@@ -1,10 +1,10 @@
-# How To Reference Custom Assets
+# How to Reference Custom Assets
 
 This guide walks you through how to use your imported custom package assets within your world, using Blueprints or Lua.
 
 ## 1. By Lua
 
-Any kind of asset inside a [Workspace](https://development.helix-documentation.pages.dev/tutorials/workspaces/) imported package can be accessed with:
+Any kind of asset inside of an imported/mounted package can be accessed with:
 
 ```lua
 local CustomAsset = UE.UObject.Load('Game/YourPackageName/PathToYourAsset/YourAssetName.YourAssetName')

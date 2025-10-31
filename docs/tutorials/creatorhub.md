@@ -58,13 +58,15 @@ Follow the steps below to upload a package.
 
 ## 3. Upload Package Files
 
-### Script Packages
+### For Script Packages
 
 You must upload your entire package folder (which typically contains subfolders such as Server, Client, Shared) as a **single zip file**.
 
 For script packages you can skip the next step. No version config file upload is needed.
 
-### Other Packages (Addon, Map, etc)
+![image.png](CreatorHubImages/upload_zip.png)
+
+### For Other Packages (Addon, Map, etc)
 
 You must upload at least one package file. All files must be in **PAK format**.
 

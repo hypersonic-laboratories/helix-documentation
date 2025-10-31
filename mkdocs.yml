@@ -53,10 +53,12 @@ nav:
       - tutorials/custom_ui.md
     - Misc:
       - tutorials/reference_custom_assets.md
+      - tutorials/default_materials.md
       - tutorials/FabIssues/common_issues_importing_fab.md
       - tutorials/ConvertingFivemAssets/converting-assets.md
       - tutorials/porting-tutorial.md
       - tutorials/photomode.md
+      - tutorials/build_mode.md
   - Scripting Tips:
     - scripting/index.md
     - Key References:

@@ -1,4 +1,4 @@
-# Use Build Mode
+# How to Use Build Mode
 
 *Note: As of now, creators must use Build Mode to create and publish worlds. Soon it will become purely optional, as creators will be able to publish worlds and packages directly from within Creator Kit.*
 

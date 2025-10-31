@@ -24,7 +24,7 @@
         - Hosted on a dedicated machine, connect via IP address.
         - Persistence, higher player counts.
 - The **Vault** is the centralized **package manager** in HELIX. Packages (including Worlds) are uploaded, versioned, and downloaded from Vault and cached/updated locally. It is comparable to **npm** in NodeJS or **pip** in Python.
-- The **Creator Kit** is an Unreal Engine plugin released by HELIX to package custom assets to be imported into HELIX worlds. You can download it and get started [here](creator.kit.md).
+- The **Creator Kit** is an Unreal Engine plugin released by HELIX to package custom assets to be imported into HELIX worlds. You can download it and get started [here](creatorkit.md).
 
 **Key Differences:**
 
@@ -74,7 +74,7 @@ You can import and use any type of custom asset (Blueprints, Classes, UIs, meshe
 You can publish your world as **Public** or **Private**. Once published, users with permissions will be able to see and join your world in the Client > **Worlds tab** or see it in [helixgame.com/worlds](https://helixgame.com/worlds).
 
 /// Warning!
-**IMPORTANT!** If your world contains imported custom assets from the previous step, **you must publish those local packages to the Vault first and add them as dependencies** before being able to publish your world. Follow [this guide](https://development.helix-documentation.pages.dev/tutorials/creatorhub/) to publish packages to Vault.
+**IMPORTANT!** If your world contains imported custom assets from the previous step, **you must publish those local packages to the Vault first and add them as dependencies** before being able to publish your world. Follow [this guide](creatorhub.md) to publish packages to Vault.
 ///
 
 Press the **Publish button** in Build Mode (rocket icon) to upload latest changes to Vault, and select Public/Private. This automatically **zips up your local workspace** and uploads it to Vault.
@@ -88,7 +88,7 @@ You can see and edit your local draft worlds in Client > Worlds tab > **Drafts f
 
 ### **Host Dedicated Server**
 
-Follow [this guide](https://development.helix-documentation.pages.dev/tutorials/ds_and_local_testing_guide/) to host a Dedicated Server of your world. This guide will soon be updated to cover **HELIX Instant Hosting**.
+Follow [this guide](dedicated_server.md) to host a Dedicated Server of your world. This guide will soon be updated to cover **HELIX Instant Hosting**.
 
 ### **Update World / Server**
 
