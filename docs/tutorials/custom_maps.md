@@ -16,7 +16,7 @@ For this tutorial, we will be using a police station package acquired from Fab.
 
     ![image.png](CustomMapImages/1.png)
 
-2. Right click to root folder containing all assets in content browser and click **Migrate**. Make sure all assets are gathered inside one root folder (e.g, PoliceStation/...), so it will be easier to move your assets into package folder in **Creator Kit**.
+2. Right click to root folder containing all assets in content browser and click **Migrate**. Make sure all assets are gathered inside one root folder (e.g, PoliceDepartment/...), so it will be easier to move your assets into package folder in **Creator Kit**.
 
     ![image.png](CustomMapImages/2.png)
 
@@ -52,7 +52,7 @@ For this tutorial, we will be using a police station package acquired from Fab.
 
     ![image.png](CustomMapImages/9.png)
 
-12. Now, it's needed to move your level assets into this new package folder. For current scenario, we have a `Content/PoliceStation` folder with all the required assets for our map.
+12. Now, it's needed to move your level assets into this new package folder. For current scenario, we have a `Content/PoliceDepartment` folder with all the required assets for our map.
 
 13. Select all the folders (or just the root folder) you want to migrate, and then drag&drop them into your new package folder (e.g., **Content/Map_MyPoliceStationMap**). 
 
