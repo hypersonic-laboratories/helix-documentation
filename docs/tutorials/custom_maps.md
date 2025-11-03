@@ -1,6 +1,6 @@
 # Custom Maps
 
-This guide walks you through the process of packaging custom maps for the [Creator HUB](https://development.helix-documentation.pages.dev/tutorials/creatorhub/) by using the [Creator Kit](https://development.helix-documentation.pages.dev/tutorials/creatorkit).
+This guide walks you through the process of packaging custom maps for the [Creator Hub](https://development.helix-documentation.pages.dev/tutorials/creatorhub/) by using the [Creator Kit](https://development.helix-documentation.pages.dev/tutorials/creatorkit).
 
 ## 1. Acquiring Your Custom Map
 
@@ -174,7 +174,7 @@ If your level has door meshes that you want to make interactable by players, you
 
 3. Click package button and wait for cook process to complete.
 
-4. Once cooking is complete, a file explorer window will automatically open, displaying your final `.pak` files. Your custom character mesh is now ready to be uploaded to the **Creator HUB**!
+4. Once cooking is complete, a file explorer window will automatically open, displaying your final `.pak` files. Your custom character mesh is now ready to be uploaded to the **Creator Hub**!
 
     ![image.png](CustomMapImages/25.png)
 
@@ -210,4 +210,4 @@ As shown on the previous steps, you can directly test your map in **Creator Kit*
 
 ## 7. On Your Own
 
-Once you've followed these steps and uploaded your package to **Creator HUB**, your should be able to create new worlds with your custom map package!
+Once you've followed these steps and uploaded your package to **Creator Hub**, your should be able to create new worlds with your custom map package!

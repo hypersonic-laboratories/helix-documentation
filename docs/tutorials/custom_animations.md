@@ -1,6 +1,6 @@
 # Custom Animations
 
-This guide walks you through the complete process of acquiring animation packs from Fab, adapting them for the standard HELIX character rig, and packaging them as an Addon for the [Creator HUB](https://development.helix-documentation.pages.dev/tutorials/creatorhub/) using the [Creator Kit](https://development.helix-documentation.pages.dev/tutorials/creatorkit).
+This guide walks you through the complete process of acquiring animation packs from Fab, adapting them for the standard HELIX character rig, and packaging them as an Addon for the [Creator Hub](https://development.helix-documentation.pages.dev/tutorials/creatorhub/) using the [Creator Kit](https://development.helix-documentation.pages.dev/tutorials/creatorkit).
 
 The process for adapting animations differs depending on whether the asset pack was designed for the older Unreal Engine 4 skeleton or the modern Unreal Engine 5 rig. This guide covers both scenarios.
 
@@ -115,11 +115,11 @@ With your animations successfully adapted and moved to your package folder, you 
     - Add or modify **Animation Curves**.
     - Adjust play rate or other settings.
 3. Return to the **HELIX Packaging Tool** window.
-4. With your package selected, click the **Package** button. This process will cook your assets into the final `.pak` file format required by the **Creator HUB**. This may take some time.
+4. With your package selected, click the **Package** button. This process will cook your assets into the final `.pak` file format required by the **Creator Hub**. This may take some time.
 
     ![image.png](CustomAnimImages/7.png)
 
-5. Once cooking is complete, a file explorer window will automatically open, displaying your final `.pak` file. Your animation pack is now ready to be uploaded to the **Creator HUB**!
+5. Once cooking is complete, a file explorer window will automatically open, displaying your final `.pak` file. Your animation pack is now ready to be uploaded to the **Creator Hub**!
 
     ![image.png](CustomAnimImages/10.png)
 

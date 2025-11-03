@@ -1,6 +1,6 @@
 # Custom Blueprints
 
-This guide walks you through the process of packaging blueprint assets as an Addon for the [Creator HUB](https://development.helix-documentation.pages.dev/tutorials/creatorhub/) using the [Creator Kit](https://development.helix-documentation.pages.dev/tutorials/creatorkit).
+This guide walks you through the process of packaging blueprint assets as an Addon for the [Creator Hub](https://development.helix-documentation.pages.dev/tutorials/creatorhub/) using the [Creator Kit](https://development.helix-documentation.pages.dev/tutorials/creatorkit).
 
 If you're new to Unreal Blueprints, you can check out this [tutorial](https://www.youtube.com/watch?v=Xw9QEMFInYU) for an introduction to how they work.
 
@@ -48,11 +48,11 @@ For this tutorial, we have a blueprint based clock system pack, which has a main
 
 4. Return to the HELIX Packaging Tool window.
 
-5. With your package selected, click the **Package** button. This process will cook your assets into the final `.pak` file format required by the **Creator HUB**. This may take some time.
+5. With your package selected, click the **Package** button. This process will cook your assets into the final `.pak` file format required by the **Creator Hub**. This may take some time.
 
     ![image.png](CustomBPImages/8.png)
 
-6. Once cooking is complete, a file explorer window will automatically open, displaying your final `.pak` files. Your blueprint addon pack is now ready to be uploaded to the **Creator HUB**!
+6. Once cooking is complete, a file explorer window will automatically open, displaying your final `.pak` files. Your blueprint addon pack is now ready to be uploaded to the **Creator Hub**!
 
     ![image.png](CustomBPImages/9.png)
 

@@ -1,6 +1,6 @@
 # Custom Character Meshes
 
-This guide walks you through the process of packaging custom character mesh assets for the [Creator HUB](https://development.helix-documentation.pages.dev/tutorials/creatorhub/) using the [Creator Kit](https://development.helix-documentation.pages.dev/tutorials/creatorkit).
+This guide walks you through the process of packaging custom character mesh assets for the [Creator Hub](https://development.helix-documentation.pages.dev/tutorials/creatorhub/) using the [Creator Kit](https://development.helix-documentation.pages.dev/tutorials/creatorkit).
 
 ## 1. Acquiring Your Custom Character Mesh Asset
 
@@ -74,11 +74,11 @@ For this tutorial, we will be using a robot character mesh acquired from Fab.
 
 7. Return to the HELIX Packaging Tool window.
 
-8. With your package selected, click the **Package** button. This process will cook your assets into the final `.pak` file format required by the HELIX Creator HUB. This may take some time.
+8. With your package selected, click the **Package** button. This process will cook your assets into the final `.pak` file format required by the HELIX Creator Hub. This may take some time.
 
     ![image.png](CustomMeshImages/9.png)
 
-9. Once cooking is complete, a file explorer window will automatically open, displaying your final `.pak` files. Your custom character mesh is now ready to be uploaded to the **Creator HUB**!
+9. Once cooking is complete, a file explorer window will automatically open, displaying your final `.pak` files. Your custom character mesh is now ready to be uploaded to the **Creator Hub**!
 
     ![image.png](CustomMeshImages/7.png)
 
@@ -124,4 +124,4 @@ For this tutorial, we will be using a robot character mesh acquired from Fab.
 
 ## 6. On Your Own
 
-Once you've followed these steps, uploaded your package to **Creator HUB**, and imported it into your world, your new custom character mesh will be available for players joining your public world!
+Once you've followed these steps, uploaded your package to **Creator Hub**, and imported it into your world, your new custom character mesh will be available for players joining your public world!
