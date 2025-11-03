@@ -126,17 +126,17 @@ If your level has door meshes that you want to make interactable by players, you
 
 7. You can tweak the handle location by playing in the level from editor and find the best transform value for the handle component.
 
-    [Video_21_3 Here]
+    [Video Coming Soon]
 
 8. After your door is fully tweaked, you can play in editor and test it out!
 
-    [Video_22 Here]
+    [Video Coming Soon]
 
 9. Now we will replace another door in the level, this time by using `BP_Door_Swinging`, which is acts like entrance doors on the markets etc.
 
     ![image.png](CustomMapImages/21_2.png)
 
-    [Video_23 Here]
+    [Video Coming Soon]
 
 10. If required, you can create a child blueprint from the HELIX template door blueprints, tweak defaults as you like, and reuse them in your custom map. Make sure the new blueprint is placed in your map package folder. See [Custom Blueprints](https://development.helix-documentation.pages.dev/tutorials/custom_blueprints/) for more information.
 
@@ -180,7 +180,7 @@ As shown on the previous steps, you can directly test your map in **Creator Kit*
 
 3. If import was successful, your new world should be automatically created with your custom map placed in. If you don't see your map on the spawn location, or your character starts falling down just after game starts, ensure you have a valid **Player Start** actor placed in your level as explained in the previous steps.
 
-[Video 28 Here]
+[Video Coming Soon]
 
 ---
 
