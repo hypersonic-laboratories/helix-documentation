@@ -44,41 +44,39 @@ For this tutorial, we will be using a police station package acquired from Fab.
 
 9. In the packaging tool window, click **New Package**.
 
-10. Enter a unique Package Name (e.g., MyPoliceStationMap).
-
-11. Select **Map** as the **Package Type**.
+10. Enter a unique Package Name (e.g., MyPoliceStationMap), and select **Map** as the **Package Type**.
 
     ![image.png](CustomMapImages/8.png)
 
-12. Click **Add New Package**. This action creates a dedicated folder for your assets (e.g., **Content/Map_MyPoliceStationMap**).
+11. Click **Add New Package**. This action creates a dedicated folder for your assets (e.g., **Content/Map_MyPoliceStationMap**).
 
     ![image.png](CustomMapImages/9.png)
 
-13. Now, it's needed to move your level assets into this new package folder. For current scenario, we have a `Content/PoliceStation` folder with all the required assets for our map.
+12. Now, it's needed to move your level assets into this new package folder. For current scenario, we have a `Content/PoliceStation` folder with all the required assets for our map.
 
-14. Select all the folders (or just the root folder) you want to migrate, and then drag&drop them into your new package folder (e.g., **Content/Map_MyPoliceStationMap**). 
+13. Select all the folders (or just the root folder) you want to migrate, and then drag&drop them into your new package folder (e.g., **Content/Map_MyPoliceStationMap**). 
 
     ![image.png](CustomMapImages/10_1.png)
 
     ![image.png](CustomMapImages/10_2.png)
 
-15. Select **Move Here** from the dropdown menu.
+14. Select **Move Here** from the dropdown menu.
 
     ![image.png](CustomMapImages/10_3.png)
 
     ![image.png](CustomMapImages/10_4.png)
 
-16. After process is done, right click to your old migrated folder and click **Update Redirector References** from dropdown menu. This will clean redirector assets automatically created during the previous step.
+15. After process is done, right click to your old migrated folder and click **Update Redirector References** from dropdown menu. This will clean redirector assets automatically created during the previous step.
 
     ![image.png](CustomMapImages/11_1.png)
 
-17. Click red **Delete Unreferenced Redirectors** button on next window and wait. This might take a while.
+16. Click red **Delete Unreferenced Redirectors** button on next window and wait. This might take a while.
 
     ![image.png](CustomMapImages/11_2.png)
 
     ![image.png](CustomMapImages/11_3.png)
 
-18. After process is done, you should have a custom map package with all your assets placed in.
+17. After process is done, you should have a custom map package with all your assets placed in.
 
     ![image.png](CustomMapImages/12.png)
 
@@ -168,7 +166,7 @@ If your level has door meshes that you want to make interactable by players, you
 
 ### 1. In Creator Kit
 
-1. As shown on the previous steps, you can directly test your map in **Creator Kit** by pressing play button from editor toolbar. This doesn't require you to cook package.
+As shown on the previous steps, you can directly test your map in **Creator Kit** by pressing play button from editor toolbar. This doesn't require you to cook package.
 
 ### 2. In HELIX
 
