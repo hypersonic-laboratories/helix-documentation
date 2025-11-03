@@ -164,7 +164,7 @@ If your level has door meshes that you want to make interactable by players, you
 
 ### 1. In Creator Kit
 
-As shown on the previous steps, you can directly test your map in **Creator Kit** by pressing play button from editor toolbar. This doesn't require you to cook package.
+As shown on the previous steps, you can directly test your map in **Creator Kit** by pressing play button from editor toolbar. This doesn't require you to cook any package.
 
 ### 2. In HELIX
 
