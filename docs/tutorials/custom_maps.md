@@ -138,7 +138,9 @@ If your level has door meshes that you want to make interactable by players, you
 
     [Video_23 Here]
 
-10. Check [Door Lua API](https://development.helix-documentation.pages.dev/api/apiImport/classes/door/) documentation for more information about doors.
+10. If required, you can create a child blueprint from the HELIX template door blueprints, tweak defaults as you like, and reuse them in your custom map. Make sure the new blueprint is placed in your map package folder. See [Custom Blueprints](https://development.helix-documentation.pages.dev/tutorials/custom_blueprints/) for more information.
+
+11. See [Door Lua API](https://development.helix-documentation.pages.dev/api/apiImport/classes/door/) for more information about available properties for doors.
 
 ---
 
