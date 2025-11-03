@@ -136,11 +136,9 @@ If your level has door meshes that you want to make interactable by players, you
 
     ![image.png](CustomMapImages/21_2.png)
 
-10. The video below shows how to replace those doors with our swinging door blueprint.
-
     [Video_23 Here]
 
-11. Check [Door Lua API](https://development.helix-documentation.pages.dev/api/apiImport/classes/door/) documentation for more information about doors.
+10. Check [Door Lua API](https://development.helix-documentation.pages.dev/api/apiImport/classes/door/) documentation for more information about doors.
 
 ---
 
