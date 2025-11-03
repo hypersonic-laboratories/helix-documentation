@@ -88,7 +88,7 @@ For this tutorial, we will be using a police station package acquired from Fab.
 
     ![image.png](CustomMapImages/13.png)
 
-2. [WIP]
+2. HELIX currently utilizes **Lumen** for dynamic lighting, and static lighting is not supported. Make sure lighting actors in your map are set to **Dynamic** mobility for them to work properly in builds.
 
 ---
 
