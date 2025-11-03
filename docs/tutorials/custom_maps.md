@@ -4,13 +4,13 @@ This guide walks you through the process of packaging custom maps for the [Creat
 
 ## 1. Acquiring Your Custom Map
 
-Either use **Creator Kit** to create your own custom map, or get a map package from [Fab](https://fab.com).
+Either use **Creator Kit** to create your own custom map, or get a map asset from [Fab](https://fab.com).
 
 ---
 
 ## 2. Preparing Your Custom Map Package
 
-For this tutorial, we will be using a police station package acquired from Fab.
+For this tutorial, we will be using a police station asset acquired from Fab.
 
 1. Launch the project downloaded from Fab. It's needed to migrate assets from downloaded project into **Creator Kit** project.
 
