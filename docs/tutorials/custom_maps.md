@@ -176,7 +176,7 @@ As shown on the previous steps, you can directly test your map in **Creator Kit*
 
     ![image.png](CustomMapImages/27.png)
 
-3. If import was successful, your new world should automatically spawn with your custom map placed in. If you don't see your map on the spawn location, or your character starts falling down just after game starts, ensure you have a valid **Player Start** actor placed in your level as explained in the previous steps.
+3. If import was successful, your new world should be automatically created with your custom map placed in. If you don't see your map on the spawn location, or your character starts falling down just after game starts, ensure you have a valid **Player Start** actor placed in your level as explained in the previous steps.
 
 [Video 28 Here]
 
