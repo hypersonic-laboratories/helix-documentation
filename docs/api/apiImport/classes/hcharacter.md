@@ -1,72 +1,137 @@
 ---
 title: HCharacter
-description: HCharacters represents Actors which can be possessed, can move and interact with world.
-sidebar_position: 0
 tags: [class]
 ---
+<HeaderDeclaration type="Class" name="HCharacter"/>
+HCharacter spawns a customizable player character into the world with support for animation, mesh overrides, ragdoll physics, and attachments.
+It is designed for gameplay characters that need full control over visuals, input, skeletal sockets, and interactions.
+This class is ideal for roleplay systems, test bots, or any scenario where you need a fully controllable humanoid character
 
-<HeaderDeclaration type="Class" name="HCharacter" />
+/// tip
+`HCharacter` is an `Actor` so it inherits all functions from [Actor](actor.md)
+///
 
-
-HCharacters are Skeletal Meshes using Unreal's Metahuman Skeleton, with animations and interactivity already natively integrated into HELIX. It is possible to import any Skeletal Mesh (which uses Unreal's Metahuman Skeleton to this HCharacter.
-
-
-## Examples
-
-```lua title="Server/Index.lua"
--------------------------------------------------------------------------------------
--- The following example spawns a HCharacter with the Helix Customizable character --
--- when players join the server and destroys them when they leave.                 --
--------------------------------------------------------------------------------------
-
--- Function to spawn a Character to a player
-function SpawnCharacter(player)
-    Console.Log("Spawn player")
-     local new_character = HCharacter(Vector(0, 0, 0), Rotator(0, 0, 0), player)
-    -- Possess the new Character
-    player:Possess(new_character)
-end
-
--- Subscribes to an Event which is triggered when Players join the server (i.e. Spawn)
-Player.Subscribe("Spawn", SpawnCharacter)
-
--- Iterates for all already connected players and give them a Character as well
--- This will make sure you also get a Character when you reload the package
-Package.Subscribe("Load", function()
-    for k, player in pairs(Player.GetAll()) do
-        SpawnCharacter(player)
-    end
-end)
-
--- When Player leaves the server, destroy it's Character
-Player.Subscribe("Destroy", function(player)
-    local character = player:GetControlledCharacter()
-    if (character) then
-        character:Destroy()
-    end
-end)
-
-
-```
-
-
-## Constructors
-
+## Constructor
 <ConstructorDeclaration type="Class" name="HCharacter" />
 
+```lua title="Example"
+local char = HCharacter(Vector(0,0,100), Quat(0,0,0,1), player)
+player:Possess(char:GetPawn())
+```
 
-## Static Functions
-
-<StaticFunctionsDeclaration type="Class" name="HCharacter" />
-
+| Name            | Type       | Default    | Description                                                     |
+|-----------------|------------|------------|-----------------------------------------------------------------|
+| `location`       | `Vector`   | `(0,100,100)` | Spawn position                                                  |
+| `rotation`       | `Quat`     | `(0,0,0,1)`   | Spawn orientation                                               |
+| `player`         | `APlayerController`        | **Required** | Player controller to possess the character       |
+| `collision_type` | `string`   | `"Pawn"`      | Collision profile                                               |
+| `gravity_enabled`| `boolean`  | `true`        | Whether gravity is applied to the pawn                          |
+| `max_health`     | `number`   | `100`         | Character's starting health                                     |
+| `death_sound`    | `SoundCue` | `nil`         | Optional death sound                                            |
+| `pain_sound`     | `SoundCue` | `nil`         | Optional hurt sound                                             |
 
 ## Functions
 
-<FunctionsDeclaration type="Class" name="HCharacter" />
+### `PlayAnimation`
+Plays a montage animation on the character.
+```lua
+char:PlayAnimation(MyMontage, 1.0, "StartSection")
+```
+---
 
+### `StopAnimation`
+Stops an active montage with an optional blend-out.
+```lua
+char:StopAnimation(0.25, MyMontage)
+```
+---
 
-## Events
+### `AddStaticMeshAttached`
+Attaches a static mesh to a bone/socket on the character.
+```lua
+char:AddStaticMeshAttached("bag", BagMesh, "spine_03")
+```
+---
 
-<EventsDeclaration type="Class" name="HCharacter" />
+### `RemoveStaticMeshAttached`
+Removes a previously attached mesh by ID.
+```lua
+char:RemoveStaticMeshAttached("bag")
+```
+---
 
+### `RemoveAllStaticMeshesAttached`
+Removes all attached meshes from the character.
+```lua
+char:RemoveAllStaticMeshesAttached()
+```
+---
 
+### `SetInputEnabled`
+Enables or disables player input for movement and look.
+```lua
+char:SetInputEnabled(false)
+```
+---
+
+### `SetRagdollMode`
+Toggles ragdoll physics on or off.
+```lua
+char:SetRagdollMode(true)
+```
+---
+
+### `SetMesh`
+Overrides the character’s skeletal mesh.
+```lua
+char:SetMesh(UE.UObject.Load("/Game/MyMeshes/MyCustomMesh.MyCustomMesh"))
+```
+---
+
+### `GetPawn`
+Returns the underlying `ACharacter` actor.
+```lua
+local pawn = char:GetPawn()
+```
+---
+
+### `GetPlayer`
+Returns the controlling `APlayerController`.
+```lua
+local pc = char:GetPlayer()
+```
+---
+
+### `GetTeam`
+Returns the team value assigned to the character.
+```lua
+local t = char:GetTeam()
+```
+---
+
+### `GetMesh`
+Returns the name of the currently assigned skeletal mesh.
+```lua
+print(char:GetMesh())
+```
+---
+
+### `GetBoneTransform`
+Returns a `FTransform` for a bone name (e.g., `"hand_r"`).
+```lua
+local transform = char:GetBoneTransform("spine_03")
+```
+---
+
+### `IsInRagdollMode`
+Returns true if ragdoll physics are currently active.
+```lua
+if char:IsInRagdollMode() then ...
+```
+---
+
+### `IsInputEnabled`
+Returns whether input is currently enabled.
+```lua
+print(char:IsInputEnabled())
+```

@@ -1,69 +1,79 @@
 ---
 title: Traces & Raycasting
-description: How to use Traces & Raycasting to gather world information in runtime
-sidebar_position: 7
 tags: [scripting]
-status: old
 ---
 
---8<-- "old.md"
+# Traces & Raycasting
+Traces (also known as raycasts) let you detect what’s in front of the player or along any path in your game world. By casting an invisible line between two points, you can detect objects, get hit positions, and interact with the world at runtime.
 
+---
 
- How to use Traces & Raycasting to gather world information in runtime.
+## 🧠 What Is a Trace?
+A trace checks for collisions along a straight line between two 3D points: start and end. HELIX uses the physics system to return details like:
 
-**Traces** offer a method for reaching out in your maps and getting feedback on what is present along a line segment. You use them by providing two end points (a start and end location) and the physics system “traces” a line segment between those points, reporting any Actors that it hits. Traces are essentially the same as **Raycasts** or **Raytraces** in other software packages.
+- Which entity was hit
+- The world position of the hit
+- The type of surface or object
 
-![](/img/docs/traces-raycasting.jpg)
+Traces are the same concept as **Raycasting**
 
-The following example will show you how to get what and where the player is looking at.
+![Traces example](/img/docs/traces-raycasting.jpg)
 
-```lua title="Client/Index.lua"
--- Traces at each 100ms
+---
+
+## 🔍 What Is the Player Looking At?
+This example runs a trace every 1 second from the center of the screen out into the world.
+
+```lua title="Example"
 Timer.SetInterval(function()
-    -- Gets the middle of the screen
-    local viewport_2D_center = Viewport.GetViewportSize() / 2
+    local w, h = HPlayer:GetViewportSize()
+    local sp = UE.FVector2D(w * 0.5, h * 0.5)
 
-    -- Deprojects to get the 3D Location for the middle of the screen
-    local viewport_3D = Viewport.DeprojectScreenToWorld(viewport_2D_center)
+    local pos, dir = UE.FVector(), UE.FVector()
+    if not UE.UGameplayStatics.DeprojectScreenToWorld(HPlayer, sp, pos, dir) then return end
 
-    -- Makes a trace with the 3D Location and it's direction multiplied by 5000
-    -- Meaning it will trace 5000 units in that direction
-    local trace_max_distance = 5000
+    local start = pos + dir * 25.0
+    local stop  = start + dir * 5000.0
+    local hit   = Trace:LineSingle(start, stop, UE.ETraceTypeQuery.Visibility, UE.EDrawDebugTrace.None)
 
-    local start_location = viewport_3D.Position
-    local end_location = viewport_3D.Position + viewport_3D.Direction * trace_max_distance
+    Debug.DrawLine(start, stop, UE.FLinearColor.Yellow, 1.2, 3.0)
 
-    -- Determine at which object we will be tracing for (WorldStatic - StaticMeshes - and PhysicsBody - Props)
-    local collision_trace = CollisionChannel.WorldStatic | CollisionChannel.PhysicsBody
-
-    -- Sets the trace modes (we want it to return Entity and Draws a Debug line)
-    local trace_mode = TraceMode.ReturnEntity | TraceMode.DrawDebug
-
-    -- Last parameter as true means it will draw a Debug Line in the traced segment
-    local trace_result = Trace.LineSingle(start_location, end_location, collision_trace, trace_mode)
-
-    -- If hit something draws a Debug Point at the location
-    if (trace_result.Success) then
-
-        -- Makes the point Red or Green if hit an Actor
-        local color = Color(1, 0, 0) -- Red
-
-        if (trace_result.Entity) then
-            color = Color(0, 1, 0) -- Green
-
-            -- Here you can check which actor you hit like
-            -- if (trace_result.Entity:GetType() == "Character") then ...
-        end
-
-        -- Draws a Debug Point at the Hit location for 5 seconds with size 10
-        Debug.DrawPoint(trace_result.Location, color, 5, 10)
+    if hit then
+        local actor = (hit.GetActor and hit:GetActor()) or hit.Actor
+        local p = hit.ImpactPoint or hit.Location or start
+        Debug.DrawPoint(p, UE.FLinearColor.Green, 1.2, 12.0)
+        print("Trace HIT:", actor and actor:GetName() or "nil")
     end
-end, 100)
+end, 1000)
 ```
 
-///tip
+---
 
-As you could see, we can pass bit-wise operators to Trace for more than one [CollisionChannel](/scripting-reference/glossary/enums.mdx#collisionchannel) at once! Use `|` between the **CollisionChannels** to achieve that.
+## ⚙️ Collision Filtering
+Traces use a collision channel to decide what responds. For general “what’s under the crosshair,” UE.ETraceTypeQuery.Visibility is a good default.
 
-///
+```lua title="Example"
+local hit = Trace:LineSingle(start, stop, UE.ETraceTypeQuery.Visibility, UE.EDrawDebugTrace.None)
+```
 
+---
+
+## 🧪 Visual Debug
+You can draw your own helpers while tuning traces:
+
+```lua title="Example"
+-- Point at the hit location
+Debug.DrawPoint(position, UE.FLinearColor.Green, 2.0, 12.0)
+
+-- Custom line
+Debug.DrawLine(start_position, end_position, UE.FLinearColor.Yellow, 2.0, 2.0)
+```
+
+---
+
+## ✅ Summary
+
+- Cast a line between two points to detect objects and hits.
+- Use Trace:LineSingle(start, stop, UE.ETraceTypeQuery.Visibility, ...) for simple “look” traces.
+- Draw debug lines/points to visualize behavior during development.
+- Great for aiming, line-of-sight, interactions, and world queries.

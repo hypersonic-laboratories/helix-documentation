@@ -11,17 +11,16 @@ repo_url: https://github.com/hypersonic-laboratories/helix-documentation
 edit_uri: edit/development/docs/
 
 # Copyright
-copyright: "&copy; 2024 HELIX&trade; is a trademark of Hypersonic Labs"
+copyright: "&copy; 2024 HELIX&reg; is a registered trademark of Hypersonic Labs"
 
 ###------------------------------If you add or remove a page, you must update it here!!!-------------------------------------------------###
 nav:
-  - Getting Started: 
+  - Getting Started:
     - getting_started/index.md
     - Start Here:
       - getting_started/install.md
-      - getting_started/creatorTools.md
-      - getting_started/help.md
-      - getting_started/firstGame.md
+      - getting_started/basic_controls.md
+      - tutorials/create_helix_world.md
     - Coming From Other Platforms:
       # - getting_started/comingGmod.md
       - getting_started/comingGTA.md
@@ -32,54 +31,73 @@ nav:
       # - getting_started/mappers.md
       # - getting_started/animators.md
   - Tutorials:
-    - tutorials/index.md
-    - General Tutorials:
-      # - tutorials/serverClient.md
-      - ... | flat | tutorials/tutorialImports/*.md
-      - ... | flat | tutorials/tutorialImports/creating-assets/*.md
-      - World Creation:
-        - ... | flat | tutorials/tutorialImports/world-creation/*.md
-      - Character:
-        - ... | flat | tutorials/tutorialImports/creating-assets/characters/*.md
-      - HSimpleVehicle:
-        - ... | flat | tutorials/tutorialImports/creating-assets/HSimpleVehicle/*.md
-    - Reference:
-      - tutorials/vault.md
-      - tutorials/keyTerms.md
-      # - tutorials/betterPractices.md
-      - ... | flat | tutorials/referenceImports/*.md
-      - Servers:
-        - ... | flat | tutorials/referenceImports/server-manual/*.md
-      - Default Assets:
-        - ... | flat | tutorials/referenceImports/default-asset-pack/*.md
-  - Scripting:
+    # - tutorials/index.md
+    - Start Here:
+      # - ... | flat | tutorials/vault_package_management.md
+      # - ... | flat | tutorials/create_publish_worlds.md
+      - tutorials/create_helix_world.md
+      - tutorials/dedicated_server.md
+      # - ... | flat | tutorials/buildmode.md
+      # - ... | flat | tutorials/create_join_servers.md
+      # - ... | flat | tutorials/workspaces.md
+      - tutorials/creatorkit.md
+      - tutorials/creatorhub.md
+    - Custom Assets:
+      - tutorials/custom_maps.md
+      - tutorials/custom_cc_assets.md
+      - tutorials/custom_characters.md
+      - tutorials/custom_animations.md
+      - tutorials/custom_vehicles.md
+      - tutorials/custom_shells.md
+      - tutorials/custom_blueprints.md
+      - tutorials/custom_ui.md
+    - Misc:
+      - tutorials/reference_custom_assets.md
+      - tutorials/default_materials.md
+      - tutorials/FabIssues/common_issues_importing_fab.md
+      - tutorials/ConvertingFivemAssets/converting-assets.md
+      - tutorials/porting-tutorial.md
+      - tutorials/photomode.md
+      - tutorials/build_mode.md
+  - Scripting Tips:
     - scripting/index.md
     - Key References:
-      - scripting/editorSetup.md
-      - scripting/introLua.md
-      - scripting/luaStyleGuide.md
-      - scripting/qbcore.md
+      - scripting/packageguide.md
+      - scripting/client_server_guide.md
+      - scripting/codeeditor.md
     - Core Concepts:
       - ... | flat | scripting/coreConceptsImports/*.md
     - Code Examples:
-      - tutorials/doors.md
       - ... | flat | tutorials/exampleImports/*.md
   - API:
     - api/index.md
-    - Glossary:
-      - ... | flat | api/apiImport/glossary/*.md
+    - Global Variables:
+      - ... | flat | api/apiImport/global-variables/*.md
     - Classes:
-      - Base Classes:
-        - ... | flat | api/apiImport/classes/base-classes/*.md
-      - Static Classes:
-        - ... | flat | api/apiImport/static-classes/*.md
-      - Utility Classes:
-        - ... | flat | api/apiImport/utility-classes/*.md
-      - All Other Classes:
-        - ... | flat | api/apiImport/classes/*.md
-    - Structs:
-      - ... | flat | api/apiImport/structs/*.md
-
+      - ... | flat | api/apiImport/classes/*.md
+  - QBCore:
+    - qbcore/index.md
+    - Installation Guide:
+      - qbcore/installation.md
+    - Player Guide:
+      - qbcore/playerguide.md
+    - QBCore API:
+      - ... | flat | qbcore/qbcore-api/core-object.md
+      - ... | flat | qbcore/qbcore-api/shared-file.md
+      - ... | flat | qbcore/qbcore-api/player-data.md
+      - ... | flat | qbcore/qbcore-api/player-functions.md
+      - ... | flat | qbcore/qbcore-api/client-functions.md
+      - ... | flat | qbcore/qbcore-api/server-functions.md
+    - QBCore Packages:
+      - ... | flat | qbcore/qbcore-packages/*.md
+  - News & Updates:
+    - news_updates/index.md
+    - General:
+      - news_updates/public_roadmap.md
+      - news_updates/known_issues.md
+      - news_updates/devlog.md
+    - Release Notes:
+      - ... | flat | news_updates/release_notes/*.md
 
 # Extra styling
 # https://squidfunk.github.io/mkdocs-material/customization/?h=#additional-css
@@ -115,19 +133,19 @@ theme:
   custom_dir: _overrides
   language: en
   font:
-    text: Inter
+    text: Tomorrow
     code: JetBrains Mono
   favicon: _images/favicon.ico
   logo: _images/logo2.svg
   icon:
     repo: fontawesome/brands/github
-    annotation: material/plus-circle 
+    annotation: material/plus-circle
   palette:
     scheme: slate-helix #toggle between 'slate' (default dark) and 'helix' (custom) and 'helix-slate' (custom, less dark)
   features:
     # https://squidfunk.github.io/mkdocs-material/setup/adding-a-git-repository/#code-actions
     - content.action.edit #Also adds comment issue button, via _overrides/partials/actions.html
-    
+
     # https://squidfunk.github.io/mkdocs-material/reference/code-blocks
     - content.code.annotate
     - content.code.copy
@@ -181,38 +199,28 @@ extra:
           note: >-
             Thanks for your feedback! Help us improve this page by using our
             using our <a href="https://github.com/hypersonic-laboratories/helix-documentation/issues/new" target="_blank" rel="noopener">feedback form</a>.
-  consent:
-    title: Cookie Consent
-    description: >-
-      We use cookies to recognize your repeated visits and preferences, as well
-      as to measure the effectiveness of our documentation and whether users
-      find what they're searching for. With your consent, you're helping us to
-      make our documentation better.
   generator: false #No mention of MkDocs-Material in footer
   social: #TODO: ACTUAL LINKS, not just placeholders
     - icon: fontawesome/brands/discord
-      link: https://discord.helixgame.com
+      link: https://discord.gg/helixgame
       name: Discord
     - icon: fontawesome/brands/youtube
-      link: https://www.youtube.com/HELIXGames
+      link: https://www.youtube.com/@play_HELIX
       name: YouTube
     - icon: fontawesome/brands/reddit
-      link: https://www.reddit.com/r/HELIXGame
+      link: https://www.reddit.com/r/play_HELIX/
       name: Reddit
-    - icon: fontawesome/brands/facebook
-      link: https://www.facebook.com/helixgame
-      name: Facebook
     - icon: fontawesome/brands/instagram
-      link: https://www.instagram.com/helixgame
+      link: https://www.instagram.com/playhelix
       name: Instagram
     - icon: fontawesome/brands/twitter
-      link: https://twitter.com/helixgame
+      link: https://twitter.com/play_helix
       name: Twitter
     - icon: fontawesome/brands/twitch
-      link: https://twitch.tv/helixgame
+      link: https://www.twitch.tv/playhelix
       name: Twitch
     - icon: fontawesome/brands/tiktok
-      link: https://www.tiktok.com/@helixgame
+      link: https://www.tiktok.com/@play_helix
       name: TikTok
 
 markdown_extensions:
@@ -252,7 +260,7 @@ markdown_extensions:
       insert: true
       superscript: true
   - pymdownx.emoji:
-      emoji_index: !!python/name:material.extensions.emoji.twemoji 
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
   - pymdownx.escapeall #ignore yml errors
   - pymdownx.highlight:
@@ -316,6 +324,13 @@ plugins:
   - redirects:
       redirect_maps:
         'index.md': 'getting_started/index.md'
+
+  # https://github.com/shu307/mkdocs-nav-weight
+  - mkdocs-nav-weight:
+      index_weight: -10
+      warning: false
+      reverse: true
+
 
   # https://github.com/orbikm/mkdocs-ezlinks-plugin
   # - ezlinks #disabled for now, was causing issues #ignore yml errors

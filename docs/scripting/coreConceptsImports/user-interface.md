@@ -1,88 +1,71 @@
 ---
 title: User Interface
-description: How to display information in the Screen for the Player
-sidebar_position: 5
 tags: [scripting, ui]
-status: old
 ---
 
---8<-- "old.md"
-
-
-import { ReferenceLink } from '@site/docs/components/_nanos.mdx';
-
-How to display information in the Screen for the Player.
-
-In HELIX there are 2 official ways of plotting screen data: **WebUI** and **Canvas**.
-
-/// warning
-
-We highly recommend using **WebUI** instead of **Canvas** to create your UIs 😉.
-
-///
-
-
 ## WebUI
-
-With WebUI you can load HTML pages which integrate with your Packages in Lua using Events.
-
-### Basic WebUI Setup
-
-This sample code shows how to add a basic page using HTML+JavaScript with the WebUI class.
+With WebUI you can load HTML pages which integrate with your Packages in Lua using Events
 
 ///info
-
 **Note:** All WebUI code runs on Client side!
-
 ///
 
-```lua title="Client/Index.lua"
+```lua title="index.lua"
 -- Spawns a WebUI with the HTML file you just created
-MyUI = WebUI("My UI", "file://UI/index.html")
+UI = WebUI('My-UI', 'PackageName/UI/index.html')
 
--- When the HTML is ready, triggers an Event in there
-MyUI:Subscribe("Ready", function()
-    MyUI:CallEvent("MyAwesomeEvent", "Hello! You are ready!")
-end)
+UI:RegisterEventHandler('Ready', function(data)
+    print(data.arg)
 
-MyUI:Subscribe("MyAwesomeAnswer", function(param1)
-    Console.Log("Received an answer! Message: " .. param1)
+    UI:SendEvent('changeColour', 'red')
 end)
 ```
 
-```html title="Client/UI/index.html"
+```html title="UI/index.html"
 <html>
     <head>
-        <script src="index.js"></script>
+        <title>WebUI Test</title>
+        <script src='./index.js'>
     </head>
     <body>
-        Hello World!
+        <h1 id='text' style='color: black; display: flex; align-content: center; align-items: center;'>This is a test WebUI Document!</h1>
     </body>
 </html>
 ```
 
-```javascript title="Client/UI/index.js"
-// Register for "MyAwesomeEvent" from Lua
-Events.Subscribe("MyAwesomeEvent", function(param1) {
-    console.log("Triggered! " + param1);
+```javascript title="UI/index.js"
+// Create for "changeColour" from Lua
+function changeColour(colour) {
+    console.log('Event Triggered!');
+    let text = document.getElementById('text');
+    text.style.color = colour;
+}
 
-    // Triggers "MyAwesomeAnswer" on Lua
-    Events.Call("MyAwesomeAnswer", "Hey there!");
+window.addEventListener('message', (event) => {
+    switch(event.data.name) {
+        case "changeColour":
+            changeColour(event.data.args[0]);
+            break;
+    }
 })
+
+// Triggers "Ready" on Lua
+hEvent('Ready', {arg: 'This is an argument', boolArg: true})
 ```
 
-![WebUI results](/img/docs/01_UserInterface.png)
+---
 
-This will output:
+///info 
+Note: You can open the Developer Tools by pressing Ctrl+Shift+I. 
+///
 
-```text
-[WebUI]  Triggered! Hello! You are ready!
-[Script] Received an answer! Message: Hey there!
+WebUI is still under development and has some known issues. As a temporary measure, we recommend following this template if you want the widget to support hot-reloading:
+
+```lua title="main.lua"
+local UI = WebUI('My-UI', 'PackageName/index.html')
+
+-- Destroy the widget when the package is unloaded to support hot-reloading
+function onShutdown()
+    if UI then UI:Destroy() end
+end
 ```
-
-<ReferenceLink href="getting-started/code-examples/basic-hud-html">Basic HUD (HTML)</ReferenceLink>
-
-## Canvas
-
-<ReferenceLink href="getting-started/code-examples/basic-hud-canvas">Basic HUD (Canvas)</ReferenceLink>
-
