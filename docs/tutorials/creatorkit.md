@@ -13,7 +13,7 @@ Creator Kit requires a copy of UE5.5 to function. You can install both for free.
    - IMPORTANT: Make sure to select **5.5.x** from the dropdown list. Creator Kit **will NOT work** if you install an older or newer version of UE5 (i.e. UE5.7.0)
    - [screenshot of 5.5 selection in Launcher, emphasize 5.5 version]
 
-3. **Download Creator Kit:** [Download Link](https://drive.google.com/file/d/15tv5piYJuZ-_dHiJ5v_lbWXf4OkdwjMm/view?usp=sharing)
+3. **Download Creator Kit:** [Download Link](https://drive.google.com/file/d/1n7psGcmGrH9LkJY1vz-Bjd5oQIjOW_kJ/view?usp=sharing)
 
 4. Open CreatorKit.uproject using UE5.5.
 
