@@ -1,6 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
 :root {
   /* Company colors */
-  --helix-color-mint: #01ffd1;
+  --helix-color-mint: #ededed;
   --helix-color-mint-rgb: 1, 255, 209;
   --helix-color-mint-dark: #003032;
   --helix-color-red: #ff6b61;
@@ -9,14 +11,14 @@
   --helix-color-gray-dark: #28282a;
 
   /* Extra Site Colors */
-  --helix-color-mint-hover: #02cca7;
+  --helix-color-mint-hover: #f7f7f7;
   --helix-color-gray-light: #f7f7f7;
 
   --helix-color-card-border: var(--helix-color-gray-dark);
   --helix-color-card-background: #1e1e24;
 
   /* More Site Colors (unvetted) */
-  --helix-black: #000000;
+  --helix-black: #0a0a0a;
   --helix-not-quite-black: #141414;
   --helix-not-quite-black-rgb: 10, 10, 10;
   --helix-white: #ededed;
@@ -29,102 +31,34 @@
   --md-status--warning: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48IS0tIFVwbG9hZGVkIHRvOiBTVkcgUmVwbywgd3d3LnN2Z3JlcG8uY29tLCBHZW5lcmF0b3I6IFNWRyBSZXBvIE1peGVyIFRvb2xzIC0tPgo8c3ZnIHdpZHRoPSI4MDBweCIgaGVpZ2h0PSI4MDBweCIgdmlld0JveD0iMCAwIDUxMiA1MTIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHRpdGxlPmlvbmljb25zLXY1LXI8L3RpdGxlPjxwYXRoIGQ9Ik04NS41Nyw0NDYuMjVINDI2LjQzYTMyLDMyLDAsMCwwLDI4LjE3LTQ3LjE3TDI4NC4xOCw4Mi41OGMtMTIuMDktMjIuNDQtNDQuMjctMjIuNDQtNTYuMzYsMEw1Ny40LDM5OS4wOEEzMiwzMiwwLDAsMCw4NS41Nyw0NDYuMjVaIiBzdHlsZT0iZmlsbDpub25lO3N0cm9rZTojMDAwMDAwO3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2Utd2lkdGg6MzJweCIvPjxwYXRoIGQ9Ik0yNTAuMjYsMTk1LjM5bDUuNzQsMTIyLDUuNzMtMTIxLjk1YTUuNzQsNS43NCwwLDAsMC01Ljc5LTZoMEE1Ljc0LDUuNzQsMCwwLDAsMjUwLjI2LDE5NS4zOVoiIHN0eWxlPSJmaWxsOm5vbmU7c3Ryb2tlOiMwMDAwMDA7c3Ryb2tlLWxpbmVjYXA6cm91bmQ7c3Ryb2tlLWxpbmVqb2luOnJvdW5kO3N0cm9rZS13aWR0aDozMnB4Ii8+PHBhdGggZD0iTTI1NiwzOTcuMjVhMjAsMjAsMCwxLDEsMjAtMjBBMjAsMjAsMCwwLDEsMjU2LDM5Ny4yNVoiLz48L3N2Zz4=);
   --md-status--change: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iMTE4LjMwN3B4IiBoZWlnaHQ9IjEyMi44OHB4IiB2aWV3Qm94PSIwIDAgMTE4LjMwNyAxMjIuODgiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDExOC4zMDcgMTIyLjg4IiB4bWw6c3BhY2U9InByZXNlcnZlIj48Zz48cGF0aCBkPSJNMTAuMDMsMzUuNjczYzIuMjQ1LTEwLjQ5Niw3LjIwMS0xOS4xNzYsMTQuMjQ2LTI1LjM2MkMzMi41MDQsMy4wODYsNDMuNDk4LTAuNjc0LDU2LjI3MSwwLjEgYzEuOTE2LDAuMTEzLDMuMzc3LDEuNzU4LDMuMjY1LDMuNjc0Yy0wLjExMywxLjkxNi0xLjc1NywzLjM3OC0zLjY3MywzLjI2NUM0NC45ODgsNi4zNzksMzUuNzEsOS41MDksMjguODQ4LDE1LjUzNSBjLTYuNDgzLDUuNjkzLTEwLjg4MywxNC4wMjgtMTIuNTEyLDI0LjI1OGwwLjYzOSwwLjI2NGwxMC4zODktNy4xNzJjMS40MjUtMC45ODYsMy4zOC0wLjYzLDQuMzY3LDAuNzk1IGMwLjk4NiwxLjQyNiwwLjYzLDMuMzgxLTAuNzk1LDQuMzY2bC0xNi41NTcsMTEuNDNjLTEuNDI1LDAuOTg2LTMuMzgsMC42My00LjM2Ni0wLjc5NWMtMC4wNjItMC4wODktMC4xMTgtMC4xOC0wLjE2OS0wLjI3MiBMOS44NCw0OC40MDlMMC4zOSwzMS4xNDZjLTAuODM2LTEuNTItMC4yODItMy40MzEsMS4yMzgtNC4yNjdjMS41Mi0wLjgzNiwzLjQzLTAuMjgyLDQuMjY2LDEuMjM4TDEwLjAzLDM1LjY3M0wxMC4wMywzNS42NzN6IE05OS4wMzIsMjMuMTA4bC0wLjIwNiwwLjE1OWwxLjAxNiwxMi41ODNjMC4xNDIsMS43MjgtMS4xNDUsMy4yNDMtMi44NzIsMy4zODRjLTEuNzI3LDAuMTQyLTMuMjQyLTEuMTQ1LTMuMzg0LTIuODcyIEw5MS45NjcsMTYuMzFjLTAuMTQyLTEuNzI4LDEuMTQ0LTMuMjQzLDIuODcxLTMuMzg0YzAuMTA4LTAuMDA5LDAuMjE1LTAuMDEzLDAuMzItMC4wMTFsMC4wMDEtMC4wMDJsMTkuNjc1LDAuNDQ2IGMxLjczNCwwLjAzNiwzLjExMiwxLjQ3MSwzLjA3NiwzLjIwNmMtMC4wMzUsMS43MzQtMS40NzEsMy4xMTEtMy4yMDYsMy4wNzVsLTkuNjUtMC4yMTljMy43NjksNC40MzcsNi43OTksOS40MjIsOS4wMSwxNC43NjIgYzIuNzc1LDYuNjk4LDQuMjQzLDEzLjkyMiw0LjI0MywyMS4yODFjMCwzLjYzLTAuMzU4LDcuMjUtMS4wNjQsMTAuODEyYy0wLjcsMy41MzUtMS43NTUsNy4wMjEtMy4xNTMsMTAuNDA5IGMtMC43MjksMS43NzMtMi43NTcsMi42Mi00LjUzLDEuODkxYy0xLjc3My0wLjcyOS0yLjYxOS0yLjc1Ny0xLjg5MS00LjUyOWMxLjIwNy0yLjkyNCwyLjEyNS01Ljk3NCwyLjc0NS05LjEwNCBjMC42MTYtMy4xMDQsMC45MjgtNi4yNzksMC45MjgtOS40NzhjMC02LjQ3Ni0xLjI3OS0xMi44MDQtMy42OTgtMTguNjQzQzEwNS41ODMsMzEuODUsMTAyLjY4NCwyNy4yMDcsOTkuMDMyLDIzLjEwOCBMOTkuMDMyLDIzLjEwOHogTTcyLjY1OCwxMDkuODZjLTUuNzI5LDEuMDQ3LTExLjU1OCwxLjE4MS0xNy4yNzcsMC40MjdjLTcuMTcyLTAuOTQzLTE0LjE2Mi0zLjI4OC0yMC41NTItNi45NzhsLTAuMDEtMC4wMDYgbC0wLjAwMywwLjAwNmMtMy4xNC0xLjgxMy02LjA5Ny0zLjkzNC04LjgzMi02LjMyOGMtMi43My0yLjM5Mi01LjIyMy01LjA0NS03LjQzNy03LjkyM2MtMS4xNzItMS41MTktMC44OTItMy42OTksMC42MjUtNC44NzEgczMuNjk5LTAuODkyLDQuODcxLDAuNjI2YzEuOTQ4LDIuNTMzLDQuMTMxLDQuODU3LDYuNTEyLDYuOTQzYzIuMzc3LDIuMDgyLDQuOTcsMy45MzksNy43NDMsNS41NGwtMC4wMDMsMC4wMDYgYzUuNTg4LDMuMjI1LDExLjcwNSw1LjI3NCwxNy45ODMsNi4xMDFjNS4zNSwwLjcwNSwxMC44MjQsMC41MTcsMTYuMTk2LTAuNTkzbC0wLjAzNS0wLjI2NGwtMTEuNDA1LTUuNDExIGMtMS41NjYtMC43NDEtMi4yMzYtMi42MTItMS40OTUtNC4xNzljMC43NDEtMS41NjcsMi42MTMtMi4yMzYsNC4xOC0xLjQ5NWwxOC4xNzcsOC42MjRjMS41NjYsMC43NDEsMi4yMzUsMi42MTIsMS40OTQsNC4xOCBjLTAuMDQ2LDAuMDk3LTAuMDk3LDAuMTkxLTAuMTUsMC4yODJsMC4wMDIsMC4wMDFsLTEwLjIyNSwxNi44MTZjLTAuODk4LDEuNDgzLTIuODMsMS45NTktNC4zMTQsMS4wNjEgYy0xLjQ4NC0wLjg5Ny0xLjk2LTIuODI5LTEuMDYyLTQuMzEzTDcyLjY1OCwxMDkuODZMNzIuNjU4LDEwOS44NnoiLz48L2c+PC9zdmc+);
 }
+.md-content p,
+.md-content ul,
+.md-tooltip2 {
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    Helvetica,
+    Arial,
+    sans-serif;
+}
 .notice {
-  position: relative;
-  width: 100%;
-  height: 30px;
-  flex-shrink: 0;
-  pointer-events: none;
-  background-color: #ce2318;
-  backdrop-filter: blur(10px);
-  color: #f2f2f2;
-  font-size: 14px;
-  line-height: 18px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   font-weight: 550;
-  text-align: center;
 }
-@media screen and (max-width: 600px) {
-  .notice {
-    height: 50px;
-    padding: 0 12px;
-  }
+.md-content a {
+  color: #04ffd1;
+  font-weight: 600;
 }
-@media screen and (max-width: 350px) {
-  .notice {
-    font-size: 12px;
-    line-height: 16px;
-  }
-}
-.modal-wrapper {
-  height: 100vh;
-  width: 100%;
-  top: 0;
-  left: 0;
-  z-index: 1000;
-  position: fixed;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: rgba(0, 0, 0, 0.6);
-}
-.modal {
-  width: 550px;
-  flex-shrink: 0;
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: center;
-  position: relative;
-  background-color: #161616;
-  box-shadow:
-    inset 0 0 0 1px rgba(255, 255, 255, 0.1),
-    0 1px 16px rgba(0, 0, 0, 0.4);
-  border-radius: 8px;
-  padding: 24px;
-  padding-top: 14px;
-}
-.modal > p {
-  font-weight: 400;
-  font-size: 15px;
-  color: #fff;
-  text-align: center;
-  line-height: 16px;
-  min-width: 0;
-}
-.modal > button {
-  background: var(--helix-color-mint);
-  padding: 10px 18px;
-  line-height: 14px;
-  user-select: none;
-  margin-top: 10px;
-  color: #000;
-  font-size: 13px;
-  font-weight: 550;
-  display: flex;
-  flex-shrink: 0;
-  align-items: center;
-  justify-content: center;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-.modal > button:hover {
-  opacity: 0.8;
-}
-@media screen and (max-width: calc(550px + 24px)) {
-  .modal {
-    width: calc(100% - 24px);
-    padding: 20px;
-  }
-  .modal > button {
-    height: 40px;
-    padding: 0;
-    width: 100%;
-    font-size: 15px;
-    line-height: 16px;
-  }
+.md-nav,
+.notice,
+.md-tabs__list {
+  font-family:
+    Geist,
+    -apple-system,
+    BlinkMacSystemFont,
+    Helvetica,
+    Arial,
+    sans-serif;
 }
 
 /* Slate theme customized to helix colors - base code from:
@@ -142,12 +76,7 @@ https://github.com/squidfunk/mkdocs-material/blob/master/src/templates/assets/st
   --md-default-fg-color--light: hsla(var(--md-hue), 15%, 90%, 0.56);
   --md-default-fg-color--lighter: hsla(var(--md-hue), 15%, 90%, 0.32);
   --md-default-fg-color--lightest: hsla(var(--md-hue), 15%, 90%, 0.12);
-  --md-default-bg-color: hsla(
-    var(--md-hue),
-    15%,
-    10%,
-    1
-  ); /* Changed all bg colors */
+  --md-default-bg-color: var(--helix-black); /* Changed all bg colors */
   --md-default-bg-color--light: hsla(var(--md-hue), 15%, 10%, 0.54);
   --md-default-bg-color--lighter: hsla(var(--md-hue), 15%, 10%, 0.26);
   --md-default-bg-color--lightest: hsla(var(--md-hue), 15%, 10%, 0.07);
@@ -231,7 +160,7 @@ https://github.com/squidfunk/mkdocs-material/blob/master/src/templates/assets/st
   .md-header {
     box-shadow: none;
     backdrop-filter: saturate(1.8) blur(20px);
-    background-color: var(--helix-not-quite-black);
+    background-color: var(--helix-black);
   }
 
   /* Add header nav bar underline */
@@ -448,6 +377,19 @@ https://github.com/squidfunk/mkdocs-material/blob/master/src/templates/assets/st
   }
 }
 
+.md-typeset h1 {
+  font-size: 30px;
+}
+.md-typeset h2 {
+  font-size: 24px;
+}
+.md-typeset h3 {
+  font-size: 20px;
+}
+p {
+  font-size: 18px;
+}
+
 /* Change max grid width (wider page) */
 .md-grid {
   max-width: 70rem;
@@ -455,7 +397,7 @@ https://github.com/squidfunk/mkdocs-material/blob/master/src/templates/assets/st
 
 /* Make top tabs larger */
 .md-tabs__link {
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   font-weight: 600;
 }
 
@@ -478,11 +420,9 @@ li.md-tabs__item.md-tabs__item--active {
   padding-right: 0.9rem;
 }
 
-/* ToDo: indent sidebar items slightly, but only on left and --active shouldn't unindent */
-/* :not(div[class='md-sidebar--secondary']) */
-/* a[class='md-nav__link'], a[class='md-nav__link--active'] {
-  padding-left: 0.5rem;
-} */
+.md-nav {
+  font-size: 0.6rem;
+}
 
 /* Toc also brighter */
 .md-nav__title {
@@ -496,6 +436,26 @@ li.md-tabs__item.md-tabs__item--active {
   ) !important; /* Doesn't work for first element unless important override */
 }
 
+.md-nav__link--active {
+  background-color: var(--helix-color-gray-dark);
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% calc(100% - 8px),
+    calc(100% - 8px) 100%,
+    0 100%,
+    0 0
+  );
+}
+
+.md-nav__link--active .md-ellipsis {
+  padding: 5px 0 5px 5px;
+}
+
+.md-nav__link--passed {
+  color: inherit;
+}
+
 /* Force GitHub link to not display */
 .md-header__source,
 .md-nav__source {
@@ -507,20 +467,6 @@ li.md-tabs__item.md-tabs__item--active {
   color: var(--helix-color-gray);
 }
 
-/* 
-Statuses:
-
-Inbuilt: 
--status (!) 
--status--new {!}
--status--deprecated {||}
--status--encrypted \^/
-
-Custom (svg -> base64):
--status--warning /!\
-
-Note: New and Deprecated also exist, but not shown here 
-*/
 .md-status--placeholder::after {
   mask-image: var(--md-status--new);
   -webkit-mask-image: var(--md-status--new);
@@ -549,7 +495,6 @@ a.external::after {
   width: 11px;
   height: 11px;
   margin-left: 4px;
-  /* Fill color hardcorded for now */
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3C!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--%3E%3Cpath fill='%2363E6BE' d='M352 0c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9L370.7 96 201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L416 141.3l41.4 41.4c9.2 9.2 22.9 11.9 34.9 6.9s19.8-16.6 19.8-29.6V32c0-17.7-14.3-32-32-32H352zM80 32C35.8 32 0 67.8 0 112V432c0 44.2 35.8 80 80 80H400c44.2 0 80-35.8 80-80V320c0-17.7-14.3-32-32-32s-32 14.3-32 32V432c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16V112c0-8.8 7.2-16 16-16H192c17.7 0 32-14.3 32-32s-14.3-32-32-32H80z'/%3E%3C/svg%3E");
   background-position: center;
   background-repeat: no-repeat;
@@ -590,17 +535,25 @@ a.external::after {
   margin-right: 15px;
   padding: 6px 14px;
   font-weight: 400;
-  font-size: 20px;
+  font-size: 15px;
   text-align: center;
   text-transform: uppercase;
   text-decoration: none;
   text-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
   cursor: pointer;
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% calc(100% - 8px),
+    calc(100% - 8px) 100%,
+    0 100%,
+    0 0
+  );
 }
 
 .download-button svg {
-  height: 20px;
+  height: 15px;
   margin-bottom: 2px;
   margin-right: 2px;
   vertical-align: text-bottom;
@@ -753,4 +706,101 @@ table:not([class]) a {
 /* Ensure display property for nested tables within specific context */
 .md-typeset__table table:not([class]) {
   display: table;
+}
+.notice {
+  position: relative;
+  width: 100%;
+  height: 30px;
+  flex-shrink: 0;
+  pointer-events: none;
+  background-color: #ce2318;
+  backdrop-filter: blur(10px);
+  color: #f2f2f2;
+  font-size: 14px;
+  line-height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 550;
+  text-align: center;
+}
+@media screen and (max-width: 600px) {
+  .notice {
+    height: 50px;
+    padding: 0 12px;
+  }
+}
+@media screen and (max-width: 350px) {
+  .notice {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+.modal-wrapper {
+  height: 100vh;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.modal {
+  width: 550px;
+  flex-shrink: 0;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  position: relative;
+  background-color: #161616;
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.1),
+    0 1px 16px rgba(0, 0, 0, 0.4);
+  border-radius: 8px;
+  padding: 24px;
+  padding-top: 14px;
+}
+.modal > p {
+  font-weight: 400;
+  font-size: 15px;
+  color: #fff;
+  text-align: center;
+  line-height: 16px;
+  min-width: 0;
+}
+.modal > button {
+  background: var(--helix-color-mint);
+  padding: 10px 18px;
+  line-height: 14px;
+  user-select: none;
+  margin-top: 10px;
+  color: #000;
+  font-size: 13px;
+  font-weight: 550;
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.modal > button:hover {
+  opacity: 0.8;
+}
+@media screen and (max-width: calc(550px + 24px)) {
+  .modal {
+    width: calc(100% - 24px);
+    padding: 20px;
+  }
+  .modal > button {
+    height: 40px;
+    padding: 0;
+    width: 100%;
+    font-size: 15px;
+    line-height: 16px;
+  }
 }

@@ -1,62 +1,231 @@
 ---
 title: Canvas
-description: Canvas is an entity which you can draw onto it.
-sidebar_position: 0
+description: Canvas is an entity which you can draw onto it
 tags: [class]
 ---
-
 <HeaderDeclaration type="Class" name="Canvas" />
 
-
-## Examples
-
-```lua title=Client/Index.lua
--- Spawns a Canvas
-local my_canvas = Canvas(
-  true,
-  Color.TRANSPARENT,
-  0,
-  true
-)
-
--- Subscribes for Update, we can only Draw inside this event
-my_canvas:Subscribe("Update", function(self, width, height)
-  -- Draws a Text in the middle of the screen
-  self:DrawText("Hello World!", Vector2D(width / 2, height / 2))
-
-  -- Draws a red line Horizontally
-  self:DrawLine(Vector2D(0, height / 2), Vector2D(width, height / 2), 10, Color.RED)
-end)
-
--- Forces the canvas to repaint, this will make it trigger the Update event
-my_canvas:Repaint()
-
--- Applies the Canvas material into a Prop
-any_prop:SetMaterialFromCanvas(my_canvas)
-```
-
-///tip
-
-You can use the output Texture from a Canvas with [:SetMaterialFromCanvas()](/scripting-reference/classes/base-classes/paintable.mdx#setmaterialfromcanvas) method!
-
+/// danger | Unfinished Section
+- The API for this class is currently under construction!
 ///
 
+## Variables
+<VariableDeclaration type="Class" name="Canvas" />
 
-## Constructors
+| Name              |       Type             |
+| ----------------  | -------------------------------------- |
+| ScreenPosition          | [Vector2D](../global-variables/structs.md#vector2d) |
+| is_visible        |    `boolean`      |
 
+
+## Constructor
 <ConstructorDeclaration type="Class" name="Canvas" />
 
+```lua
+local CanvasActor = Canvas(
+    true, 
+    Color.TRANSPARENT, 
+    -1,
+    true, 
+    true, 
+    100, 
+    100, 
+    Vector2D(0, 0)
+)
+```
 
-## Static Functions
-
-<StaticFunctionsDeclaration type="Class" name="Canvas" />
-
+| Type              |       Name        | Default | Description                                                              |
+| ---------------  | :----------------- | ----- | ----------------------------------------------------------------------  |
+| boolean      | `is_visible`               | `true`                | Whether the canvas is visible.                        |
+| [Color](../global-variables/structs.md#color) | `clear_color`        | `Color.TRANSPARENT`     | The color used to clear the canvas.                   |
+| number       | `auto_repaint_rate`        | `-1`                  | The frequency at which the canvas automatically repaints. `-1` disables auto repaint. |
+| boolean      | `should_clear_before_update` | `true`                | Whether the canvas should be cleared before each update. |
+| boolean      | `auto_resize`              | `true`                | Whether the canvas should automatically resize.        |
+| number      | `width`                    | `0`                   | The width of the canvas in pixels.                    |
+| number      | `height`                   | `0`                   | The height of the canvas in pixels.                   |
+| [Vector2D](../global-variables/structs.md#vector2d) | `screen_position` | `(0, 0)`               | The screen position of the canvas.                    |
 
 ## Functions
-
 <FunctionsDeclaration type="Class" name="Canvas" />
 
+### DrawBox
+Adds a draw box instruction in to the draw command queue
 
-## Events
+- ScreenPosition `Vector2D`
+- ScreenSize `Vector2D`
+- Thickness `number`
+- RenderColor? `LinearColor`
 
-<EventsDeclaration type="Class" name="Canvas" />
+```lua
+Canvas:DrawBox(Vector2D(500, 500), Vector2D(100, 200), 5, Color.WHITE)
+```
+
+---
+
+### DrawLine
+Adds a draw line instruction in to the draw command queue.
+
+- ScreenPositionA `Vector2D`
+- ScreenPositionB `Vector2D`
+- Thickness `number`
+- RenderColor `LinearColor`
+
+```lua
+Canvas:DrawLine(Vector2D(300, 500), Vector2D(800, 300), 5, Color.WHITE)
+```
+
+### DrawMaterial
+Adds a draw material instruction in to the draw command queue for drawing material instances onto the canvas.
+
+- RenderMaterial `UMaterialInterface`
+- ScreenPosition `Vector2D`
+- ScreenSize `Vector2D`
+- CoordinatePosition `Vector2D`
+- CoordinateSize `Vector2D`
+- Rotation `number`
+- PivotPoint? `Vector2D`
+
+```lua
+Canvas:DrawMaterial('', Vector2D(500, 500), Vector2D(800, 400), Vector2D(0, 0), Vector2D(100, 100), 45, Vector2D(0, 0))
+```
+
+### DrawMaterialFromWebUI
+Draws a web UI instance as a material interface on the canvas.
+```lua
+Canvas:DrawMaterialFromWebUI()
+```
+
+### DrawMaterialFromSceneCapture
+```lua
+Canvas:DrawMaterialFromSceneCapture()
+```
+
+### DrawText
+Adds a draw text instruction in to the draw command queue.
+
+- RenderText `string`
+- ScreenPosition `Vector2D`
+- Font `FontType`
+- Scale? `Vector2D`
+- Color? `LinearColor`
+- Kerning? `number`
+- CentreX? `boolean`
+- CentreY? `boolean`
+- ShadowColor? `LinearColor`
+- ShadowOffset? `Vector2D`
+- Outlined? `boolean`
+- OutlineColor? `LinearColor`
+
+```lua
+Canvas:DrawText('Hello, this is text!', Vector2D(1000, 500), FontType.Roboto, 24, Color.WHITE, 0, false, false, Color.TRANSPARENT, Vector2D(1, 1), false, Color.BLACK)
+```
+
+### DrawTexture
+Adds a draw texture instruction in to the draw command queue. Draws a specified texture on the canvas.
+
+- RenderTexture `UTexture`
+- Position `Vector2D`
+- Size `Vector2D`
+- CoordinatePosition `Vector2D`
+- CoordinateSize? `Vector2D`
+- RenderColor `LinearColor`
+- BlendMode? `BlendMode`
+- Rotation? `number`
+- PivotPoint? `Vector2D`
+
+```lua
+Canvas:DrawTexture(UE.UObject.Load(''), Vector2D(1000, 500), Vector2D(500, 500), Vector2D(0, 0), Vector2D(1, 1), Color.WHITE, 0, 0, Vector2D(0.5, 0.5))
+```
+
+### DrawPolygon
+Adds a draw polygon instruction to the draw command queue. Draws a regular polygon with the specified number of sides, position, radius, and color. Optionally accepts a texture and blend mode.
+
+- RenderTexture `UTexture`
+- ScreenPosition `Vector2D`
+- Radius? `Vector2D`
+- NumberOfSides? `number`
+- RenderColor `LinearColor`
+
+```lua
+Canvas:DrawPolygon(texture, Vector2D(500, 500), 100, 6, Color.WHITE, 0)
+```
+
+### DrawRect
+Adds a filled rectangle instruction to the draw command queue. Draws a rectangle at the given position and size, with an optional texture, color, and blend mode.
+
+- RenderTexture `UTexture`
+- ScreenPosition `Vector2D`
+- Size `Vector2D`
+- RenderColor? `LinearColor`
+- BlendMode `BlendMode`
+
+```lua
+Canvas:DrawRect(texture, Vector2D(500, 500), Vector2D(200, 100), Color.WHITE, 0)
+```
+
+### SetAutoRepaintRate
+Sets the automatic repaint rate for the canvas. Use `-1` to disable auto repaint, or `0` to repaint every frame.
+
+- NewRate `number`
+
+```lua
+Canvas:SetAutoRepaintRate(0.1) -- Repaints every 0.1 seconds
+```
+
+### GetSize
+Returns the current size of the canvas as a `Vector2D`.
+```lua
+local size = Canvas:GetSize()
+```
+
+### Resize
+Resizes the canvas to the specified width and height if auto-resize is disabled.
+
+- Width `number`
+- Height `number`
+
+```lua
+Canvas:Resize(800, 600)
+```
+
+### SetScreenPosition
+Sets the screen position (offset) of the canvas.
+
+- NewScreenPosition `Vector2D`
+
+```lua
+Canvas:SetScreenPosition(Vector2D(100, 100))
+```
+
+### SetAutoResize
+Enables or disables automatic resizing of the canvas.
+
+- AutoResize `boolean`
+
+```lua
+Canvas:SetAutoResize(true)
+```
+
+### SetVisibility
+Sets whether the canvas is visible.
+
+- Visible `boolean`
+
+```lua
+Canvas:SetVisibility(false)
+```
+
+### Repaint
+Forces the canvas to repaint immediately.
+```lua
+Canvas:Repaint()
+```
+
+### Clear
+Clears the canvas with the specified color and repaints.
+
+- NewColor `LinearColor`
+
+```lua
+Canvas:Clear(Color.BLACK)
+```

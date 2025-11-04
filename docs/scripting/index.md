@@ -1,24 +1,17 @@
 ---
 icon: octicons/file-code-24
-status: wip
+status: change
 ---
 
-# Scripting
+# Scripting Tips
 
-/// warning | WIP Content Ahead
-Note that all pages beyone here were written for previous versions of Helix, and may not be perfectly up to date. I'm working on updating them, but it'll take a while - so be aware. The last edited date is in the bottom left of each page, as a way to track recency.
+Welcome to the HELIX Scripting Tips section.
+This is your starting point for learning how to build with HELIX using Lua. Here you'll find essential concepts,
+practical code examples, and focused guides that walk you through key systems and patterns.
+
+Whether you're brand new to scripting or coming from platforms like FiveM, this section will help you get up to speed
+quickly and write clean, modular, and scalable code for your projects.
+
+/// Tip
+Start with the core concepts if you're new, or dive into examples and guides to see HELIX scripting in action.
 ///
-
-## Quickstart
-
-1. Start VS Code from the top center of [Studio](../getting_started/creatorTools.md) :material-earth: icon
-2. Install `vscode-lua` and `vscode-helix` for lua language support and Helix API autocomplete
-3. Get coding with our [API reference](../api/index.md)
-
-/// note | Autocomplete
-The autocomplete plugin is heavily WIP, but we'll get it updated as soon as we can!
-///
-
-### Alternate Workflows
-
-- The launcher allows you to start a server directly (:material-console: for any existing project), allowing you to ignore the Studio UI if you don't need/want it!

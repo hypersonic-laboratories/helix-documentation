@@ -1,4 +1,3 @@
-// Add left/right buttons to navigate pages
 keyboard$.subscribe((key) => {
   // Do nothing when "search" active
   if (key.mode === "search") return;
@@ -37,7 +36,8 @@ keyboard$.subscribe((key) => {
 
   const button = (() => {
     const p = document.createElement("p");
-    p.innerHTML = "This documentation is a work in progress. Information may be out of date or inaccurate.";
+    p.innerHTML =
+      "This documentation is a work in progress. Information may be out of date or inaccurate.";
     modal.appendChild(p);
 
     const button = document.createElement("button");

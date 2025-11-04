@@ -1,0 +1,1 @@
+Only then can you publish your world, ensuring players can access the required package.

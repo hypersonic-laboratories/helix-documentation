@@ -1,117 +1,137 @@
 ---
 title: Authority Concepts
-description: All you need to know about Authority & Network Authority concepts.
-sidebar_position: 2
 tags: [scripting]
-status: old
 ---
 
---8<-- "old.md"
+# Authority Concepts
 
+## What Is Authority?
+In multiplayer scripting, **authority** refers to which side (Client or Server) has control over a spawned class or entity. Some classes can **only** be spawned on the **Server**, some only on the **Client**, and others can be spawned on **either side**. The side that spawns a class is considered the **Authority** of that object.
 
-All you need to know about Authority & Network Authority concepts.
+---
 
-import { Structs, BasicType, AuthorityType, Classes } from '@site/docs/components/_nanos.mdx';
+## Method and Event Availability by Authority
+Some API methods and events are restricted to specific authority contexts:
 
-## Authority
+### Server Side Only
+**Methods and events** that can only be called from the **Server**.
 
-Some Classes can only be spawned on the Server, others can only be spawned in the Client, and there are some which can be spawned in both Server or Client. The side which the Class is spawned is called **Authority**.
+### Client Side Only
+**Methods and events** that can only be called from the **Client**.
 
+### Authority Side
+**Methods and events** that can only be used on the **side that originally spawned the entity**.
 
-### Methods and Events Availability
+### Network Authority Side
+**Methods and events** that can be used by:
+- The **Server**
+- The **Client**, if the **Local Player** is the Network Authority of the entity
 
-Some methods and events in the API are only available on a specific side \(Client or Server\), others are only available in the side which spawned it Authority side\):
+### Both Sides
+Methods and events that can be safely called on either the **Client** or **Server**.
 
-#### <AuthorityType.ServerOnly />**`Server Side`**
-Method or Events which can only be called in the **Server** side.
-
-#### <AuthorityType.ClientOnly />**`Client Side`**
-Methods or Events which can only be called in the **Client** side.
-
-#### <AuthorityType.AuthorityOnly />**`Authority Side`**
-Methods or Events which can only be called in the side which spawned it.
-
-#### <AuthorityType.NetworkAuthority />**`Network Authority Side`**
-Methods or Events which can be called in the **Server** and also in the **Client** if the Local Player is the Network Authority of that entity.
-
-#### <AuthorityType.Both />**`Both Sides`**
-Methods or Events which can only be called in any side.
-
-///tip
-
-All entities spawned in the **Server** will be automatically synced in the **Client**. I.e. you can access it's methods and get all data from it without needing to manually sync it.
-
-In the same way, entities spawned in the **Client** will only exist for that Client, trying to send those entities to the server will cause errors.
-
+/// tip
+- All entities spawned on the **Server** are automatically synchronized with **Clients**. This means Clients can interact with server-spawned entities without manually syncing them.
+- However, entities spawned **only on the Client** exist exclusively for that Client and cannot be accessed by the Server — attempting to do so will result in errors.
 ///
 
+---
 
-## Network Authority
+## What Is Network Authority?
 
-Another important concept in HELIX is the **Network Authority**. We have a _"distributed network authority"_ concept, which means the work of calculating physics and AI (for example) are automatically assigned and distributed to the clients. In general, if an [Actor](/scripting-reference/classes/base-classes/actor.mdx) is near an in-game Character, it's physics will be calculated by that player's device. The Player that is responsible for calculating and sharing the results is called **Network Authority**.
+Your platform uses a **Distributed Network Authority** model. This means that physics and AI calculations are automatically assigned to appropriate Clients instead of always being computed on the Server.
 
-The Player assigned is automatically calculated by the server and takes some things into consideration, this calculation is only made if the Player is possessing a Character:
+The **Network Authority** is the **player responsible for calculating and syncing the behavior** of an entity. This assignment is dynamic and decided by the server based on specific conditions.
 
-* The **distance** from the Character to the object
-* If the Character is **grabbing** a <Classes.Prop />
-* If the Character is **handling** a [Pickable](/scripting-reference/classes/base-classes/pickable.mdx)
-* If the Character is **driving** a Vehicle
-* If the Character has just **shot** something
+### When Does a Player Become the Network Authority?
 
-In all this cases, the Player will be automatically assigned to be the **Network Authority** of that Object.
+A player becomes the Network Authority of an object when:
 
+- Their character is **close** to the object
+- They are **grabbing** a prop
+- They are **handling** a pickable object
+- They are **driving** a vehicle
+- They have **fired a weapon** that interacted with it
 
-### Overriding the current Network Authority
+---
 
-It is possible to override the current Network Authority of a specific entity by using the method `:SetNetworkAuthority()`.
+## Overriding Network Authority
 
-///tip
+You can manually assign a new Network Authority using:
 
-Under certain circumstances, actors may not be in **Distributed Network Authority** mode. This means they cannot have their current network authority changed. Example: if a player is driving a Vehicle or using a Weapon, mandatorily he is the the Vehicle and Weapons's Network Authority, and this cannot be overwritten through scripting. To validate if an Actor can have it overridden, you can use the method `:IsNetworkDistributed()`.
+- `:SetNetworkAuthority()`
 
+To disable automatic reassignment to other players:
+
+- `:SetNetworkAuthorityAutoDistributed(false)`
+
+/// tip
+- You can check if an entity supports network authority override by calling `:IsNetworkDistributed()`.
 ///
-
-
-You can also prevent it from being automatically distributed to other Players by calling `:SetNetworkAuthorityAutoDistributed(false)`.
 
 /// warning
-
-Always remember to restore the automatic **Network Authority Distribution** by calling `:SetNetworkAuthorityAutoDistributed(true)`. Otherwise that entity may behave completely weird.
-
+- Always remember to re-enable automatic authority distribution after manual overrides by calling `:SetNetworkAuthorityAutoDistributed(true)`.
+- If you forget, the entity may behave unpredictably.
 ///
 
+---
 
-#### Examples of actions that are only executed by the Network Authority of that Actor
+## Checking Authority in Code
+Use these methods to determine what type of authority your script is running under:
 
-* Objects Physics sync (including when calling `:SetForce()`).
-* NPCs walking with `:MoveTo()` or `:Follow()`.
+- `:IsAuthority()`
+Returns `true` if the current context owns the actor (i.e., it was spawned on this side or this side is responsible for it).
+This is useful for gating logic to run only on the authoritative side (like spawning effects or triggering server-only logic).
 
+- `:IsLocallyControlled()`
+Returns `true` if the current context is the local player’s controlling side.
+This can be `true` on the Client for the player's own character, even if the Server has general authority over most game logic.
 
-### Debugging Network & Network Authority
+/// tip
+Use `:IsAuthority()` to check ownership or authoritative control of actors.
+Use `:IsLocallyControlled()` to check if the local player should control or see certain behavior, such as camera effects or input-based interactions.
+///
 
-We've added a new option in the settings to **Draw Network Debug** information in the World, you can toggle it in the settings (*Settings -> Debug -> Draw Network Debug*), it will draw squares on each entity and traces representing their networked movement.
+---
 
-![](/img/docs/debug-visualizer.jpg)
+## Behavior Limited to the Network Authority
 
-#### Entity Square Colors Meaning
+Only the current **Network Authority** of an actor will execute certain actions, such as:
 
-The Square in the entities represent the state in the Network Authority and it's health.
+- **Physics sync** (e.g., calling `:SetForce()`)
+- **AI/NPC movement** using `:MoveTo()` or `:Follow()`
 
-| Color | Meaning |
-| :--- | :--- |
-| **<span style={{"color": "#306CCE"}}>BLUE</span>** | You **are the current Network Authority** of that entity. <br/>You are sharing sync data to the other players. |
-| **WHITE** | You **are not the Network Authority** and the entity is sleeping. <br/>The current Network Authority is not sending sync data because the entity is sleeping. |
-| **<span style={{"color": "#00A400"}}>GREEN</span>** | You **are not the Network Authority** and the entity is being synced in a **good** cadence (no lag). |
-| **<span style={{"color": "#FFA500"}}>ORANGE</span>** | You **are not the Network Authority** and the entity is being synced in an **ok** cadence (small lag - < 100ms). |
-| **<span style={{"color": "#FF0000"}}>RED</span>** | You **are not the Network Authority** and the entity is being synced in an **bad** cadence (big lag - > 100ms, maybe even with packet loss). |
+---
 
+## Debugging Network Authority
 
-#### Entity Trace Colors Meaning
+Enable **Network Debug** mode in:
 
-The Traces in the entities represent the network data received from the server. If you are the network authority you won't see the traces. The arrow points from where the entity is currently in your machine and where it should be accordingly to the network authority.
+**Settings → Debug → Draw Network Debug**
 
-| Color | Meaning |
-| :--- | :--- |
-| **<span style={{"color": "#00A400"}}>GREEN</span>** | The entity is being synced in a **good** cadence (no lag). |
-| **<span style={{"color": "#FFA500"}}>ORANGE</span>** | The entity is being synced in an **ok** cadence (small lag - < 100ms). |
-| **<span style={{"color": "#FF0000"}}>RED</span>** | The entity is being synced in an **bad** cadence (big lag - > 100ms, maybe even with packet loss). |
+This will display colored squares and movement traces over networked entities.
+
+### Square Colors (Entity Authority State)
+
+| Color   | Meaning |
+|---------|---------|
+| **Blue**   | You **are** the Network Authority for this entity |
+| **White**  | You **are not** the Network Authority; the entity is idle |
+| **Green**  | You **are not** the Authority; sync is **good** |
+| **Orange** | You **are not** the Authority; sync is **okay** (< 100ms delay) |
+| **Red**    | You **are not** the Authority; sync is **poor** (> 100ms delay or packet loss) |
+
+### Trace Colors (Sync Accuracy)
+
+If you're not the Network Authority, you'll see arrows showing sync offsets.
+
+| Color   | Meaning |
+|---------|---------|
+| **Green**  | Sync is good |
+| **Orange** | Sync has minor delay (< 100ms) |
+| **Red**    | Sync is poor (> 100ms) |
+
+---
+
+**Visual Example:**
+![Network Debug Visualizer](/img/docs/debug-visualizer.jpg)
