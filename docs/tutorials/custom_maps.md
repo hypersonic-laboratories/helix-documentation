@@ -1,6 +1,6 @@
 # Custom Maps
 
-This guide walks you through the process of packaging custom maps for the [Creator Hub](https://development.helix-documentation.pages.dev/tutorials/creatorhub/) by using the [Creator Kit](https://development.helix-documentation.pages.dev/tutorials/creatorkit).
+This guide walks you through the process of packaging custom maps for the [Creator Hub](creatorhub.md) by using the [Creator Kit](creatorkit.md).
 
 ## 1. Acquiring Your Custom Map
 
@@ -90,6 +90,8 @@ For this tutorial, we will be using a police station asset acquired from Fab.
 
 2. HELIX currently utilizes **Lumen** for dynamic lighting, and static lighting is not supported. Make sure lighting actors in your map are set to **Dynamic** mobility for them to work properly in builds.
 
+3. HELIX provides a set of base materials that creators can use when building custom maps. It’s strongly recommended to create your materials by deriving from these base materials. Doing so helps reduce package size and maintain optimal rendering performance in your level. For more details, see [Default Materials Guide](https://docs.helixgame.com/tutorials/default_materials/).
+
 ---
 
 ## 4. (Bonus) Adding Interactable Doors To Your Custom Map
@@ -156,9 +158,9 @@ If your level has door meshes that you want to make interactable by players, you
   </iframe>
 </div>
 
-10. If required, you can create a child blueprint from the HELIX template door blueprints, tweak defaults as you like, and reuse them in your custom map. Make sure the new blueprint is placed in your map package folder. See [Custom Blueprints](https://development.helix-documentation.pages.dev/tutorials/custom_blueprints/) for more information.
+10. If required, you can create a child blueprint from the HELIX template door blueprints, tweak defaults as you like, and reuse them in your custom map. Make sure the new blueprint is placed in your map package folder. See [Custom Blueprints](custom_blueprints.md) for more information.
 
-11. See [Door Lua API](https://development.helix-documentation.pages.dev/api/apiImport/classes/door/) for more information about available properties for doors.
+11. See [Door Lua API](../api/apiImport/classes/door.md) for more information about available properties for doors.
 
 ---
 

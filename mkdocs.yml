@@ -4,7 +4,7 @@ site_description: API Documentation & Tutorials for the HELIX Platform.
 site_author: Hypersonic Laboratories
 
 # Site URL
-site_url: https://development.helix-documentation.pages.dev #Can add ENV flag, e.g. !ENV [MKDOCS_SITE_URL, "https://development.helixdocs-1s1.pages.dev/"]
+site_url: https://docs.helixgame.com/ #Can add ENV flag, e.g. !ENV [MKDOCS_SITE_URL, "https://development.helixdocs-1s1.pages.dev/"]
 
 # Repository (for editing pages)
 repo_url: https://github.com/hypersonic-laboratories/helix-documentation
@@ -24,10 +24,10 @@ nav:
     - Coming From Other Platforms:
       # - getting_started/comingGmod.md
       - getting_started/comingGTA.md
-    - Hubs:
-      - getting_started/scripters.md
-      - getting_started/rpServerOwners.md
-      - getting_started/artists.md
+    # - Hubs:
+      # - getting_started/scripters.md
+      # - getting_started/rpServerOwners.md
+      # - getting_started/artists.md
       # - getting_started/mappers.md
       # - getting_started/animators.md
   - Tutorials:
@@ -42,6 +42,7 @@ nav:
       # - ... | flat | tutorials/workspaces.md
       - tutorials/creatorkit.md
       - tutorials/creatorhub.md
+      - tutorials/in_world_purchases.md
     - Custom Assets:
       - tutorials/custom_maps.md
       - tutorials/custom_cc_assets.md

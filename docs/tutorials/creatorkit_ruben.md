@@ -121,7 +121,7 @@ The "Testing Package" step is only for testing that your package functions prope
 
 To actually publish a world that uses your newly created package, you must:
 
-1. **Publish your package to the Vault** using the [Creator Hub](https://development.helix-documentation.pages.dev/tutorials/creatorhub).
+1. **Publish your package to the Vault** using the [Creator Hub](creatorhub).
 2. Once published, create or edit your world project.
 3. Add the published Vault package as a **dependency** to your world.
     

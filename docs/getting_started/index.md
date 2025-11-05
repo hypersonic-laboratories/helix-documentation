@@ -37,7 +37,7 @@ HELIX is an open-world multiplayer sandbox platform, specifically designed for r
 
     The best way to learn is by doing. Make your first game quickly and easily in this step-by-step tutorial!
 
-    [:material-folder-download-outline: Install](install.md)
+    <!-- [:material-folder-download-outline: Install](install.md) -->
 
     [:material-controller-classic-outline: Create Your First World](../tutorials/create_helix_world.md)
 
@@ -45,17 +45,17 @@ HELIX is an open-world multiplayer sandbox platform, specifically designed for r
 
 	Whatever you specialize in, we've got the right tools for you. 
 
-    [:octicons-command-palette-16: Scripters](scripters.md)
+    [:octicons-command-palette-16: Scripters](../scripting/packageguide.md)
 
-    [:octicons-server-16: RP Server Owners](rpServerOwners.md)
+    <!-- [:octicons-server-16: RP Server Owners](rpServerOwners.md) -->
 
-    [:material-palette-outline: Artists](artists.md)
+    [:material-palette-outline: Artists](../tutorials/creatorkit.md#-create-a-new-package)
     
 -   __View tutorials and examples__
 
     See how it's done directly, either step-by-step or through examples.
 
-    [:material-file-document-check-outline: General Tutorials](../tutorials/index.md)
+    <!-- [:material-file-document-check-outline: General Tutorials](../tutorials/create_helix_world.md) -->
 
     [:material-file-document-arrow-right-outline: Scripting Tutorials](../scripting/index.md)
 

@@ -32,7 +32,7 @@ Build Mode allows you to place and edit assets in your world. *(Note: Build Mode
 
 - Press **N** to toggle Build Mode.
 
-> 📖 Learn more in the [Build Mode tutorial](https://development.helix-documentation.pages.dev/tutorials/buildmode).
+> 📖 Learn more in the [Build Mode tutorial](../tutorials/build_mode.md).
 > 
 
 ### Camera & Navigation

@@ -1,6 +1,6 @@
 # Custom Wearables
 
-This guide walks you through the process of packaging wearable clothing assets for the [Creator Hub](https://development.helix-documentation.pages.dev/tutorials/creatorhub/) using the [Creator Kit](https://development.helix-documentation.pages.dev/tutorials/creatorkit).
+This guide walks you through the process of packaging wearable clothing assets for the [Creator Hub](creatorhub.md) using the [Creator Kit](creatorkit.md).
 
 ## 1. Creating Your Wearable Clothing Asset
 

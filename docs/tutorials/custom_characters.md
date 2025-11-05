@@ -1,6 +1,6 @@
 # Custom Character Meshes
 
-This guide walks you through the process of packaging custom character mesh assets for the [Creator Hub](https://development.helix-documentation.pages.dev/tutorials/creatorhub/) using the [Creator Kit](https://development.helix-documentation.pages.dev/tutorials/creatorkit).
+This guide walks you through the process of packaging custom character mesh assets for the [Creator Hub](creatorhub.md) using the [Creator Kit](creatorkit.md).
 
 ## 1. Acquiring Your Custom Character Mesh Asset
 
@@ -24,7 +24,7 @@ For this tutorial, we will be using a robot character mesh acquired from Fab.
 
 4. Enter a unique Package Name (e.g., MyCustomCharacterMesh).
 
-5. Select **Wearable** as the **Package Type**. The workflow with custom character meshes is very similar to [wearable assets](https://development.helix-documentation.pages.dev/tutorials/custom_cc_assets/). So, the same package type is designed to work with both.
+5. Select **Wearable** as the **Package Type**. The workflow with custom character meshes is very similar to [wearable assets](custom_cc_assets.md). So, the same package type is designed to work with both.
 
     ![image.png](CustomMeshImages/1.png)
 

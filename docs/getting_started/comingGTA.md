@@ -10,6 +10,11 @@ Welcome FiveM developers! :wave:
 Discover why developing in HELIX is a game-changer — and how it improves on what you're used to in FiveM. Let's explore
 the key differences.
 
+Quick Links:
+
+- [Convert your FiveM assets to HELIX](../tutorials/ConvertingFivemAssets/converting-assets.md)
+- [Port your FiveM scripts to HELIX](../tutorials/porting-tutorial.md)
+
 <div class="grid cards" markdown>
 
 - :fontawesome-solid-people-line: __Built By Modders, For Modders__<br>
@@ -102,21 +107,17 @@ Below are some direct comparisons between how things are done in FiveM versus HE
 
 - :material-rocket-launch-outline: __Quickstart__<br>
   The fastest way to learn is by jumping in. Follow this guided tutorial to build your first game in minutes<br><br>
-  [:material-folder-download-outline: Install HELIX](install.md)<br>
-  [:material-controller-classic-outline: Make Your First Game](firstGame.md)
+  [:material-controller-classic-outline: Create Your First World](../tutorials/create_helix_world.md)
 
 - :material-toolbox-outline: __Disciple specific tooling__<br>
   No matter your focus, HELIX has tailored tools to support your workflow<br><br>
-  [:octicons-command-palette-16: Scripters](scripters.md)<br>
-  [:octicons-server-16: RP Server Owners](rpServerOwners.md)<br>
-  [:material-palette-outline: Artists](artists.md)
+  [:octicons-command-palette-16: Scripters](../scripting/packageguide.md)<br>
+  [:material-palette-outline: Artists](../tutorials/creatorkit.md#-create-a-new-package)
 
 - :material-book-open-variant: __View tutorials and examples__<br>
   Learn by example with step-by-step guides and real-world use cases<br><br>
-  [:material-file-document-check-outline: General Tutorials](../tutorials/index.md)<br>
   [:material-file-document-arrow-right-outline: Scripting Tutorials](../scripting/index.md)<br>
-  [:material-file-document-arrow-right-outline: QBCore Documentation](https://development.helix-documentation.pages.dev/qbcore/)<br>
-  [:material-file-document-arrow-right-outline: HELIX Porting Tutorial](https://development.helix-documentation.pages.dev/tutorials/porting-tutorial/)
+  [:material-file-document-arrow-right-outline: QBCore Documentation](../qbcore/index.md)
 
 - :material-file-code-outline: __Browse the API__<br>
   Dive into the full HELIX API and see everything at your fingertips<br><br>
