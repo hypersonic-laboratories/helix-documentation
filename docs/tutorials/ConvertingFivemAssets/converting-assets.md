@@ -120,7 +120,7 @@ Before packaging with the **HELIX Creator Kit**, confirm:
 - ✅ Collision behaves properly
 - ✅ Scale and pivot alignment look right
 
-Then use the **Creator Kit** to generate a `.pak` and upload it to the **HELIX Vault**.  To download and use the HELIX Creator Kit, please see [this tutorial](https://development.helix-documentation.pages.dev/tutorials/creatorkit/).
+Then use the **Creator Kit** to generate a `.pak` and upload it to the **HELIX Vault**.  To download and use the HELIX Creator Kit, please see [this tutorial](../creatorkit.md).
 
 ---
 

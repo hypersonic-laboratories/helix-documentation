@@ -17,7 +17,7 @@ Before you begin, make sure you’re familiar with the full workflow:
 
 1. **Download your pack from Fab** → [fab.com](https://www.fab.com/)
 
-2. **Download the Creator Kit** and review the docs → [Creator Kit Docs](https://development.helix-documentation.pages.dev/tutorials/creatorkit/)
+2. **Download the Creator Kit** and review the docs → [Creator Kit Docs](../creatorkit.md)
 
 3. **Open the Creator Hub** → [hub.helixgame.com](https://hub.helixgame.com/)
 

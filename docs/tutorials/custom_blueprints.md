@@ -1,6 +1,6 @@
 # Custom Blueprints
 
-This guide walks you through the process of packaging blueprint assets as an Addon for the [Creator Hub](https://development.helix-documentation.pages.dev/tutorials/creatorhub/) using the [Creator Kit](https://development.helix-documentation.pages.dev/tutorials/creatorkit).
+This guide walks you through the process of packaging blueprint assets as an Addon for the [Creator Hub](creatorhub.md) using the [Creator Kit](creatorkit.md).
 
 If you're new to Unreal Blueprints, you can check out this [tutorial](https://www.youtube.com/watch?v=Xw9QEMFInYU) for an introduction to how they work.
 

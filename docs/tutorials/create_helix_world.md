@@ -57,17 +57,17 @@ A **Workspace** is a **local folder** that stores all files for a World you are 
 
 ### **Add Gameplay Logic**
 
-You can use Lua or Blueprints in your workspace to add gameplay logic to your world. Follow [this guide](../scripting/packageguide.md) to get familiar with Lua scripting on HELIX and [Get Started with QBCore](https://development.helix-documentation.pages.dev/qbcore/installation/) to start with the QBCore RP server template. Blueprint scripting guide will be coming soon.
+You can use Lua or Blueprints in your workspace to add gameplay logic to your world. Follow [this guide](../scripting/packageguide.md) to get familiar with Lua scripting on HELIX and [Get Started with QBCore](../qbcore/installation/) to start with the QBCore RP server template. Blueprint scripting guide will be coming soon.
 
 ### **Add Package Dependencies**
 
-You can add  packages (including frameworks such as [QBCore](https://development.helix-documentation.pages.dev/qbcore/)) to your world to extend its functionality. Press the **Vault button** on bottom navbar to browse and add packages. You can see the download progress in the **Downloads** UI.
+You can add  packages (including frameworks such as [QBCore](../qbcore/)) to your world to extend its functionality. Press the **Vault button** on bottom navbar to browse and add packages. You can see the download progress in the **Downloads** UI.
 
 Any package you add from Vault is **not directly editable**. Only files within your workspace are editable. You can reference and call classes, functions, assets from added packages in your own gameplay logic, as well as pass data and variables to/from them.
 
 ### **Import Custom Assets from Creator Kit**
 
-You can import and use any type of custom asset (Blueprints, Classes, UIs, meshes, textures, materials, etc) in your world by following [these guides](https://development.helix-documentation.pages.dev/tutorials/custom_blueprints/).
+You can import and use any type of custom asset (Blueprints, Classes, UIs, meshes, textures, materials, etc) in your world by following [these guides](creatorkit.md#-create-a-new-package).
 
 ### **Publish World**
 
