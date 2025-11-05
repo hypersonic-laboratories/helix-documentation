@@ -90,7 +90,7 @@ For this tutorial, we will be using a police station asset acquired from Fab.
 
 2. HELIX currently utilizes **Lumen** for dynamic lighting, and static lighting is not supported. Make sure lighting actors in your map are set to **Dynamic** mobility for them to work properly in builds.
 
-3. HELIX provides a set of base materials that creators can use when building custom maps. It’s strongly recommended to create your materials by deriving from these base materials. Doing so helps reduce package size and maintain optimal rendering performance in your level. 3. HELIX has base materials for creators to utilize in their custom maps, and it's recommended to derive your materials from them. This is intended to reduce package size and ensure your level has optimal performance for material rendering. For more details, see [Default Materials Guide](https://docs.helixgame.com/tutorials/default_materials/).
+3. HELIX provides a set of base materials that creators can use when building custom maps. It’s strongly recommended to create your materials by deriving from these base materials. Doing so helps reduce package size and maintain optimal rendering performance in your level. 3. For more details, see [Default Materials Guide](https://docs.helixgame.com/tutorials/default_materials/).
 
 ---
 
