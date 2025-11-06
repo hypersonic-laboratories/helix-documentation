@@ -58,7 +58,7 @@ Signature: `(Instigator, TargetActor, EventType)`:
 - `TargetActor (AActor*)`: The actor being targeted. This can be nil (e.g., for a Cancel event).
 - `EventType (EHXRayEventType)`: The type of event that occurred. (See Enums section below).
 
-#### Lua Example:
+#### Lua Example
 
 ```lua
 local function OnXRayEvent(Instigator, TargetActor, EventType)
@@ -124,7 +124,7 @@ This delegate exists on the component itself. It will only fire when the actor t
 
 Signature: `(Instigator, TargetActor, EventType)`
 
-#### Lua Example:
+#### Lua Example
 
 ```lua
 -- 'MyActor' is a specific actor we want to monitor
