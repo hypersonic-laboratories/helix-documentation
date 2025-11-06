@@ -1,4 +1,8 @@
-# Binding To Player X-Ray Events
+---
+title: Binding Into Player X-Ray Events
+tags: [scripting]
+---
+# Binding Into Player X-Ray Events
 
 This document outlines how to use the HELIX X-Ray system in Lua to create custom logic for player X-Ray events, such as displaying new UI widgets or triggering other in-game actions.
 
@@ -26,7 +30,9 @@ local XRayComponent = MyActor:AddComponentByClass(UHXRayTargetActorComponent, fa
 local XRayComponent = MyActor:FindComponentByClass(UHXRayTargetActorComponent)
 ```
 
->*Note: Player characters already have this component attached by default.
+/// Note
+Player characters already have this component attached by default.
+///
 
 ## API Reference
 
