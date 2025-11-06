@@ -10,24 +10,24 @@ The system is built around events that are broadcasted to the local player. You 
 
 ## Making an Actor X-Ray Detectable
 
-Before any events can be triggered for an actor, it must be marked as detectable by the X-Ray system. You have two options:
+Before any events can be triggered for an actor, it must be marked as detectable by the X-Ray system with one of the methods below:
 
-1. Add a Tag (Simple): This is the easiest method if you only need the actor to be focusable.
+1. By Adding a Tag: This is the easiest method if you only need the actor to be focusable.
 
 ```lua
 -- 'MyActor' is a variable holding the AActor object
 MyActor.Tags:Add("xray")
 ```
 
-2. Add the Component (Advanced): This method is required if you want to listen for X-Ray events directly on the actor's component.
+2. By Adding the Component: This method is required if you want to listen for X-Ray events directly on the actor's component.
 
 ```lua
 -- 'MyActor' is a variable holding the AActor object
 -- This assumes the component is registered with UnLua as "HXRayTargetActorComponent"
-local XRayComponent = MyActor:AddComponentByClass(UHXRayTargetActorComponent, false, UE.FTransform(), false)
+local XRayComponent = MyActor:AddComponentByClass(UE.UHXRayTargetActorComponent, false, UE.FTransform(), false)
 
 -- You can also get it if it already exists
-local XRayComponent = MyActor:FindComponentByClass(UHXRayTargetActorComponent)
+local XRayComponent = MyActor:GetComponentByClass(UE.UHXRayTargetActorComponent)
 ```
 
 /// Note
@@ -115,7 +115,7 @@ You must first add or get the UHXRayTargetActorComponent from a specific actor.
 
 ```lua
 -- 'MyActor' is a variable holding the AActor object
-local XRayComponent = MyActor:FindComponentByClass(UHXRayTargetActorComponent)
+local XRayComponent = MyActor:GetComponentByClass(UHXRayTargetActorComponent)
 ```
 
 #### Delegate: OnXRayStateChangedEvent
@@ -128,11 +128,11 @@ Signature: `(Instigator, TargetActor, EventType)`
 
 ```lua
 -- 'MyActor' is a specific actor we want to monitor
-local XRayComponent = MyActor:FindComponentByClass(UHXRayTargetActorComponent)
+local XRayComponent = MyActor:GetComponentByClass(UHXRayTargetActorComponent)
 
 if not XRayComponent then
     -- Add the component if it doesn't exist
-    XRayComponent = MyActor:AddComponentByClass(UHXRayTargetActorComponent, false, UE.FTransform(), false)
+    XRayComponent = MyActor:AddComponentByClass(UE.UHXRayTargetActorComponent, false, UE.FTransform(), false)
 end
 
 local function OnMyActorXRayEvent(Instigator, TargetActor, EventType)
