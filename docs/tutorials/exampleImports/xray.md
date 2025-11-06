@@ -36,7 +36,7 @@ Player characters already have this component attached by default.
 
 ## API Reference
 
-### 1. Global Events (World Subsystem)
+### Global Events (World Subsystem)
 
 This is the primary and most common way to listen for X-Ray events. Events are broadcasted globally for the local player.
 
@@ -105,7 +105,7 @@ local CurrentState = XRaySubsystem:GetCurrentXRayState()
 local FocusedActor = XRaySubsystem:GetFocusedActor()
 ```
 
-### 2. Actor-Specific Events (Actor Component)
+### Actor-Specific Events (Actor Component)
 
 This method is for more granular control. The event only fires for the specific actor that has the component.
 
