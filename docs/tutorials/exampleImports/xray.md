@@ -42,7 +42,7 @@ This is the primary and most common way to listen for X-Ray events. Events are b
 
 #### Accessing the Subsystem
 
-You must first get the UHXRayWorldSubsystem from the HWorld.
+You must first get the `UHXRayWorldSubsystem` from the `HWorld`.
 
 ```lua
 -- Get the X-Ray subsystem from the HWorld global
@@ -111,7 +111,7 @@ This method is for more granular control. The event only fires for the specific 
 
 #### Accessing the Component
 
-You must first add or get the UHXRayTargetActorComponent from a specific actor.
+You must first add or get the `UHXRayTargetActorComponent` from a specific actor.
 
 ```lua
 -- 'MyActor' is a variable holding the AActor object
