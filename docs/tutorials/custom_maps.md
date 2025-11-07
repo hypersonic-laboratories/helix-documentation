@@ -100,7 +100,7 @@ If your level has door meshes that you want to make interactable by players, you
 
 ![image.png](CustomMapImages/14.png)
 
-1. You can find all the available template blueprints for different door types in `Helix/Blueprints/Door` folder.
+1. You can find all the available template blueprints for different door types in `HelixDoors` plugin, within `Plugins/HelixDoors/Blueprints` folder in content browser.
 
     ![image.png](CustomMapImages/15.png)
 
