@@ -94,15 +94,15 @@ The server will automatically pull the newest published version of your world.
 
 | **Name** | **Description** |
 | --- | --- |
-| `HELIX_USER_EMAIL` |
-| `HELIX_USER_PASSWORD` | Explicit user credentials. Most useful when the application is running in headless mode (without the UI) and there are no credentials cached locally (i.e., on a standalone DS). |
+| `HELIX_USER_PASSWORD`<br>`HELIX_USER_EMAIL` | Explicit user credentials. Most useful when the application is running in headless mode (without the UI) and there are no credentials cached locally (i.e., on a standalone DS). |
 | `HELIX_WORKSPACE_ID` | ID of a local Workspace Draft. On Windows local Workspaces are located in `%LOCALAPPDATA%\Helix\Workspaces` folder. |
 | `HELIX_SERVER_SLUG` | The Server Slug of a published server from the Creator Hub. |
 | `HELIX_SERVER_ID` | The Server ID of a published server from the Creator Hub. |
 | `HELIX_PACKAGE_SLUG` | The Package (World) Slug from the Creator Hub. |
 | `HELIX_PACKAGE_VERSION_ID` | The Package (World) Version ID from the Creator Hub. |
-| `HELIX_LOCAL_PAKS` | A `|` delimited list of paths to local folders created with a Creator Kit. |
 | `HELIX_LEVEL_ASSET` | Full Object Path to the Level Asset that will replace the Default Blank Level hosting a Helix World. |
+| `HELIX_SIDELOAD_PAKS` | A `\|` delimited list of paths to local folders created with a Creator Kit. |
+| `HELIX_SYSTEM_DEPENDENCIES` | A `\|` delimited list of Package Version IDs that will be automatically added to every new World as dependencies. |
 
 ### Server
 
@@ -110,6 +110,7 @@ The server will automatically pull the newest published version of your world.
 | --- | --- |
 | `HELIX_USER_TOKEN` | The Server Token of a published server from the Creator Hub. Should be used instead of explicit user credentials (login/password) for a published DS. |
 | `HELIX_HEARTBEAT_PERIOD` | The server heartbeat period in seconds. Controls the server’s online status and IP address discovery. Should be set to a value of less than 10 min for a published DS. |
+| `HELIX_HEARTBEAT_ADDRESS` | The server heartbeat IP address. If specified will override the automatic IP discovery. |
 | `HELIX_NUCLEUS_PORT` | Experimental! Enables the Nucleus web admin panel on a server on a specified TCP port. Should not be used on public servers because authorization mechanisms are not implemented yet. |
 
 ### Client
