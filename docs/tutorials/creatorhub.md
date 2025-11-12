@@ -29,9 +29,9 @@ Follow the steps below to upload a package.
     - **Description** – Write a short summary of what your package does or contains.
     - **Package Type** – Select from:
         - Map
-        - World
         - Character
         - Addon
+        - Wearable
         - Script
         - Other
     - **Content Rating** – Choose the appropriate age rating:
@@ -60,9 +60,16 @@ Follow the steps below to upload a package.
 
 ### For Script Packages
 
-You must upload your entire package folder (which typically contains subfolders such as Server, Client, Shared) as a **single zip file**.
+You must upload your Script package as a **single zip file**. The archive should be organized in one of two ways:
+- **Signle Lua package** – The `package.json` file must be in the archive's root, with folders such as Server, Client, and Shared alongside it.
+- **Multiple Lua sub-packages** – The archive must contain one or multiple folders, each of which is treated as a Lua package in the same way as subfolders in `Workspace/scripts/`. A `config.json` file may also be included, but it is optional.
 
-For script packages you can skip the next step. No version config file upload is needed.
+<aside>
+💡
+
+The WebUI URL must start with the package slug, e.g. `/my-package-slug/html/index.html` for a single package or `/my-package-slug/subpackage-name/html/index.html` for a subpackage.
+
+</aside>
 
 ![image.png](CreatorHubImages/upload_zip.png)
 
@@ -85,7 +92,7 @@ If you followed the  [**Creator Kit tutorial](creatorkit.md)** on how to cook yo
 
 ---
 
-## 4. Version Config (Optional)
+## 4. Version Config
 
 Upload a `config.json` file if your package needs specific execution settings. You can skip this step for script type packages.
 
