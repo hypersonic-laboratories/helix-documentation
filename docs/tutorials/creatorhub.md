@@ -94,14 +94,7 @@ If you followed the  [**Creator Kit tutorial](creatorkit.md)** on how to cook yo
 
 ## 4. Version Config
 
-Upload a `config.json` file if your package needs specific execution settings. You can skip this step for script type packages.
-
-This file should define:
-
-- **execution_path**
-- **MountFolder**
-
-You can skip this step if your package doesn’t need it.
+Upload a `config.json` file if your package type requires one.
 
 ![image.png](https://r2.fivemanage.com/ElKst3CCVvlhlgHiaH5IM/creatorhub_5.png)
 
