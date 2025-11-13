@@ -4,117 +4,94 @@ description: Interactables are actors that allow you to mark another actor as in
 sidebar_position: 0
 tags: [class, client]
 ---
+`Interactable` allows you to spawn a `HInteractableActor` in the world with one or more
+interaction options. Each option supports text, subtext, input action, ability class,
+and a Lua callback fired when the player interacts.
 
-<HeaderDeclaration type="Class" name="Interactable" image="/img/docs/interactable.webp" />
 
-The `Interactable` class lets you make any actor in your scene interactable by players. It displays a customizable prompt and supports multiple interaction options, each with its own text, input action, and callback or ability. You can attach it to existing actors or create new interactable static meshes, and adjust the interaction point as needed.
+## Constructor
 
-### InteractionOption
-```lua
-{
-    Text =  "string", -- The text to be displayed on the interaction option
-    SubText = "string", -- The SubText to be displayed below the interaction option
-    Input = "string", -- The path to the InputAction data asset
-    Action? = function() end, -- The function to be used when no ability is specified
-    Ability? = "string", -- The ability to be used when no callback Action is specified
-}
-```
+- <mark style="color:yellow;">returns</mark>: `table`
 
-## Variables
+```lua title="Example"
+local CubeActor = StaticMesh(Vector(0, 0, 0), Rotator(), '/Engine/BasicShapes/Cube.Cube')
 
-<VariableDeclaration type="Class" name="Interactable" />
-
-| Name              |       Type             |
-| ----------------  | -------------------------------------- |
-| Options          | [TArray](../global-variables/structs.md/#tarray)\<FInteractionOption\>|
-| InteractableProp | [AStaticMeshActor](https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Runtime/Engine/Engine/AStaticMeshActor?application_version=5.5) |
-
-## Constructors
-
-<ConstructorDeclaration type="Class" name="Interactable" />
-
-```lua
-local InteractableTransform = Transform()
-InteractableTransform.Translation = Vector(0, 0, 0)
 local InteractableActor = Interactable({
     {
-        Text = 'Interact', -- Base text on interaction option
-        SubText = 'Press F to interact', -- Subtext on interaction option
-        Input = '/Game/Input/Actions/IA_Interact.IA_Interact', -- Input Action Mapping
-        Action = function(CubeActor, Instigator) -- Callback function used for Lua interaction
-            print('Interaction pressed on:', CubeActor, 'By:', Instigator)
-        end,
-    },
-}, '/Engine/VREditor/BasicMeshes/SM_Cube_01.SM_Cube_01', InteractableTransform)
--- StaticMeshPath, Transform
-```
-```lua
-local CubeActor = StaticMesh(Vector(0, 0, 0), Rotator(), '/Engine/VREditor/BasicMeshes/SM_Cube_01.SM_Cube_01')
-local InteractableActor = Interactable({
-    {
-        Text = 'Interact', -- Base text on interaction option
-        SubText = 'Press F to interact', -- Subtext on interaction option
-        Input = '/Game/Input/Actions/IA_Interact.IA_Interact', -- Input Action Mapping
-        Ability = '/Engine/Characters/Heroes/Abilities/GA_Hero_Heal.GA_Hero_Heal_C', -- Ability class
+        Text = "Open Crate",
+        SubText = "Press E",
+        Ability = nil,
+        Input = "/Game/Input/Actions/IA_Interact.IA_Interact",
+        Action = function(self, instigator)
+            print("Crate opened!")
+        end
     }
-})
+}, "/Game/Props/Crate/SM_Crate.SM_Crate", Transform(Vector(0, 0, 200)))
+
 InteractableActor:SetInteractableProp(CubeActor)
 print(InteractableActor.Object) -- AActor
 ```
 
-| Type              |       Name        | Default | Description                                                              |
-| ---------------  | :----------------- | ----- | ----------------------------------------------------------------------  |
-| table<[InteractionOption](#interactionoption)> | `InteractionData`   |  | A table of interaction tables.  |
-| string? | `StaticMeshPath`  |   | The path to a static mesh asset to be created as the interactable. (Optional) |
-| [Transform](../global-variables/structs.md/#transform)? | `Transform`  |    |  The transform to spawn the static mesh with. (Optional) |
+| Parameter        | Type                     | Description                                 |
+|-----------------|--------------------------|---------------------------------------------|
+| Options         | table                    | Table of interaction options keyed by ID    |
+| StaticMeshPath  | string?                  | Optional mesh path                          |
+| Transform       | Transform?               | Optional spawn transform                    |
+
+Each entry in **Options** may contain:
+
+| Field    | Type                     |
+|----------|---------------------------|
+| Text     | string                    |
+| SubText  | string                    |
+| Ability  | UClass?                   |
+| Input    | UInputAction or string    |
+| Action   | function                  |
 
 ## Functions
 
-<FunctionsDeclaration type="Class" name="Interactable" />
+### `SetInteractableProp`
+Sets the Actor to be used for interactions if attaching to a pre-existing actor
 
+- actor: `Actor` — the actor or actor wrapper to associate with this interactable
 
-### SetInteractableProp
-Sets the Actor to be used for interactions if attaching to a pre-existing actor.
-```lua
-local CubeActor = StaticMesh(Vector(0, 0, 0), Rotator(), '/Engine/VREditor/BasicMeshes/SM_Cube_01.SM_Cube_01')
-Interactable:SetInteractableProp(CubeActor)
+```lua title="Example"
+local CubeActor = StaticMesh(Vector(0, 0, 0), Rotator(), '/Engine/BasicShapes/Cube.Cube')
+InteractableActor:SetInteractableProp(CubeActor)
 ```
 
 ---
 
-### MakeStaticMesh
-The interactable creates its own static mesh instead of relying on another actor.
+### `AddInteractionOption`
+Adds an interaction option to the interactable
 
-* Returns: [UStaticMeshComponent](https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Runtime/Engine/Components/UStaticMeshComponent?application_version=5.5)
-```lua
-Interactable:MakeStaticMesh(UE.UObject.Load('/Engine/VREditor/BasicMeshes/SM_Cube_01.SM_Cube_01'), false)
-```
-/// info
-This is the default behaviour for this class if the optional parameters are present.
-///
----
+- option: `FInteractionOption` — interaction option struct to add
 
-### AddInteractionOption
-Adds an interaction option to the interactable.
-```lua
+```lua title="Example"
 local Option = UE.FInteractionOption()
 Option.Text = 'Interact'
 Option.InputAction = '/Game/Input/Actions/IA_Interact.IA_Interact'
-Interactable:AddInteractionOption(Option)
+InteractableActor:AddInteractionOption(Option)
 ```
 
 ---
 
-### SetInteractionPointRelativeLocation
-Sets the relative location of the interaction point.
-```lua
-Interactable:SetInteractionPointRelativeLocation(Vector(0, 0, 0))
+### `SetInteractionPointRelativeLocation`
+Sets the relative location of the interaction point
+
+- location: `Vector` — local offset from the actor origin
+
+```lua title="Example"
+InteractableActor:SetInteractionPointRelativeLocation(Vector(0, 0, 0))
 ```
 
 ---
 
-### SetInteractivePointAbsoluteLocation
-Sets the absolute location of the interaction point.
-```lua
-Interactable:SetInteractionPointAbsoluteLocation(Vector(0, 0, 0))
+### `SetInteractivePointAbsoluteLocation`
+Sets the absolute location of the interaction point
+
+- location: `Vector` — world-space position for the interaction point
+
+```lua title="Example"
+InteractableActor:SetInteractionPointAbsoluteLocation(Vector(0, 0, 0))
 ```
