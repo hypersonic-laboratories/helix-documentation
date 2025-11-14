@@ -66,6 +66,8 @@ nav:
       - scripting/packageguide.md
       - scripting/client_server_guide.md
       - scripting/codeeditor.md
+      - scripting/bone_list.md
+      - scripting/anim_list.md
     - Core Concepts:
       - ... | flat | scripting/coreConceptsImports/*.md
     - Code Examples:
