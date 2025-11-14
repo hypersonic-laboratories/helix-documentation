@@ -68,6 +68,7 @@ nav:
       - scripting/codeeditor.md
       - scripting/bone_list.md
       - scripting/anim_list.md
+      - scripting/input_keys.md
     - Core Concepts:
       - ... | flat | scripting/coreConceptsImports/*.md
     - Code Examples:
