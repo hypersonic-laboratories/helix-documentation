@@ -12,7 +12,7 @@ It is the building‑block for creating 2‑D user interfaces in‑game.
 ///
 
 /// tip
-Most widget‑specific functions are *not* exposed directly as Lua methods.  
+Most widget‑specific functions are *not* exposed directly as Lua methods.
 Use `CallBlueprintEvent()` to invoke any function or event on the underlying UWidget / UUserWidget.
 ///
 
@@ -54,98 +54,138 @@ vbox:AddChild(btn)
 <FunctionsDeclaration type="Class" name="Widget" />
 
 ### `SetVisibility`
-Sets the visibility of the widget on screen.
+Sets the visibility of the widget on screen
+
+- visibility: `number` - 0 Hidden, 1 Visible, 2 VisibleNotHitTestable
+
 ```lua
-my_widget:SetVisibility(WidgetVisibility.Hidden)
+my_widget:SetVisibility(0)
 ```
+
 ---
 
 ### `GetVisibility`
-Returns the current visibility state.
+Returns the current visibility state
+
+- <mark style="color:yellow;">returns</mark>: `ESlateVisibility`
+
 ```lua
-local isVisible = my_widget:GetVisibility() 
+local isVisible = my_widget:GetVisibility()
 ```
+
 ---
 
 ### `SetFocus`
-Gives keyboard / game‑pad focus to this widget.  
+Gives keyboard / game‑pad focus to this widget
+
 ```lua
 my_widget:SetFocus()
 ```
+
 ---
 
 ### `BringToFront`
-Moves this widget to the top‑most Z‑order.
+Moves this widget to the top‑most Z‑order
+
 ```lua
 my_widget:BringToFront()
 ```
+
 ---
 
 ### `AddToViewport`
-Adds the widget to the game viewport and stretches it full‑screen.
+Adds the widget to the game viewport and stretches it full‑screen
+
 ```lua
 my_widget:AddToViewport()
 ```
+
 ---
 
 ### `AddChild`
-Adds another widget as a child, if parent widget is a Panel.
+Adds another widget as a child, if parent widget is a Panel
+
+- widget: `enum`
+
 ```lua
 local child = Widget(NativeWidget.Text)
 parent:AddChild(child)
 ```
+
 ---
 
 ### `SetContentForSlot`
-Sets the widget for a given slot by name, if this is a **UserWidget**.
+Sets the widget for a given slot by name, if this is a **UserWidget**
+
+- name: `string`
+- widget: `UWidget`
+
 ```lua
 my_widget:SetContentForSlot("InventorySlot", some_other_widget)
 ```
+
 ---
 
 ### `SetCanvasLayout`
-Sets anchors / position / size when the widget is a child of a **CanvasPanel**.
+Sets anchors / position / size when the widget is a child of a **CanvasPanel**
+
+- position: `Vector2D`
+- size: `Vector2D`
+
 ```lua
 my_widget:SetCanvasLayout(Vector2D(50,50), Vector2D(200,100))
 ```
+
 ---
 
 ### `CallBlueprintEvent`
-Calls any Blueprint function or event on the underlying widget and returns its results.
+Calls any Blueprint function or event on the underlying widget and returns its results
+
+- widget: `enum`
+
 ```lua
 local my_text = Widget(NativeWidget.Text)
 my_text:CallBlueprintEvent("SetText", "Hello World!")
 ```
+
 ---
 
 ### `BindBlueprintEventDispatcher`
-Binds a Blueprint dispatcher and returns the Lua callback reference.
+Binds a Blueprint dispatcher and returns the Lua callback reference
+
 ```lua
 my_button:BindBlueprintEventDispatcher("OnClicked", function()
     print("Button clicked!")
 end)
 ```
+
 ---
 
 ### `UnbindBlueprintEventDispatcher`
-Unbinds a previously bound dispatcher.
+Unbinds a previously bound dispatcher
+
 ```lua
 my_button:UnbindBlueprintEventDispatcher("OnClicked", cb)
 ```
+
 ---
 
 ### `SetBlueprintPropertyValue`
-Sets a Blueprint variable directly.
+Sets a Blueprint variable directly
+
 ```lua
 my_widget:SetBlueprintPropertyValue("bIsEnabled", false)
 ```
+
 ---
 
 ### `GetBlueprintPropertyValue`
-Gets a Blueprint variable value.
+Gets a Blueprint variable value
+
 ```lua
 local enabled = my_widget:GetBlueprintPropertyValue("bIsEnabled")
 ```
+
 ---
 
 ## NativeWidget ↔ Unreal Widget map
