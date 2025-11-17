@@ -14,7 +14,7 @@ local myCapture = SceneCapture(
     Rotator(-45, 0, 0),
     1920,
     1080,
-    SceneCaptureSource.SCS_FinalColorLDR,
+    SceneCaptureSource.FinalColorLDR,
     false
 )
 ```
@@ -25,7 +25,7 @@ local myCapture = SceneCapture(
 | `Rotation`        | `Rotator` | `(0, 0, 0)`         | World orientation for the capture camera                          |
 | `Width`           | `number`  | `1920`              | Render target width in pixels                                     |
 | `Height`          | `number`  | `1080`              | Render target height in pixels                                    |
-| `CaptureSource`   | `enum`    | `SCS_FinalColorLDR` | What the camera captures (see Capture Sources below)              |
+| `CaptureSource`   | `enum`    | `FinalColorLDR`     | What the camera captures (see Capture Sources below)              |
 | `bFollowPlayer`   | `boolean` | `false`             | Whether to automatically follow the player's camera               |
 
 ## Properties
@@ -101,7 +101,7 @@ local mirror = SceneCapture(
     nil,                                            -- Rotation (will use player camera)
     1920,                                           -- Full HD
     1080,
-    UE.ESceneCaptureSource.SCS_FinalColorLDR,
+    SceneCaptureSource.FinalColorLDR,
     true                                            -- Auto-follow player
 )
 ```
@@ -154,7 +154,7 @@ local depthCapture = SceneCapture(
     Rotator(0, 0, 0),
     1920,
     1080,
-    SceneCaptureSource.SCS_SceneDepth,  -- Capture depth
+    SceneCaptureSource.SceneDepth,  -- Capture depth
     false
 )
 
