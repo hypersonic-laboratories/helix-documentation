@@ -18,7 +18,8 @@ local cube = StaticMesh(
     Vector(0, 0, 100),
     Rotator(0, 0, 0),
     "/Engine/BasicShapes/Shape_Cube.Shape_Cube",
-    CollisionType.StaticOnly
+    CollisionType.StaticOnly,
+    false
 )
 ```
 
@@ -27,7 +28,8 @@ local cube = StaticMesh(
 | `Location`  | `Vector`   | `(0,0,0)`           | World position to spawn the mesh                        |
 | `Rotation`  | `Rotator`  | `(0,0,0)`           | Initial rotation of the mesh actor                      |
 | `MeshPath`  | `string`   | **Required**        | Asset path to a UStaticMesh (e.g. `Shape_Cube`)         |
-| [`CollType`](../global-variables/enums.md/#collisiontype)  | `enum`     | `CollisionType.Auto` |
+| [`CollType`](../global-variables/enums.md/#collisiontype)  | `enum`               | `CollisionType.Auto` |
+| `bStationary`  | `boolean`                     | **Required**                     | Sets mobility        |
 
 ## Functions
 
