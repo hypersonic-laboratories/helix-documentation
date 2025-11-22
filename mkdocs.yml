@@ -132,8 +132,8 @@ validation:
     unrecognized_links: info
 
 # Add snippets #TODO: enable, but need to configure build to watch
-watch:
-  - docs/blueprints
+# watch:
+#   - docs/blueprints
 
 # MkDocs-Material Theme + customization
 theme:
