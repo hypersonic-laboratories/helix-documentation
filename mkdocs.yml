@@ -60,6 +60,10 @@ nav:
       - tutorials/porting-tutorial.md
       - tutorials/photomode.md
       - tutorials/build_mode.md
+  - Blueprints:
+    - blueprints/blueprints.md
+    - Persistent Data:
+      - blueprints/PersistentData/persistent_data.md
   - Scripting Tips:
     - scripting/index.md
     - Key References:
@@ -128,8 +132,8 @@ validation:
     unrecognized_links: info
 
 # Add snippets #TODO: enable, but need to configure build to watch
-# watch:
-#   - _snippets
+watch:
+  - docs/blueprints
 
 # MkDocs-Material Theme + customization
 theme:
