@@ -76,7 +76,7 @@ The **Select** node requires the same three inputs as **Execute**:
 
 - **Target**: Connect your Database reference
 - **Query**: Connect a **Create Query** node containing your SELECT statement
-- **Parameters**: Connect an **Empty Parameters** (an empty array of strings) since SELECT queries do not use parameters
+- **Parameters**: Connect a parameters array if your SELECT query uses parameters (e.g., for WHERE clauses), or an **Empty Parameters** (an empty array of strings) if no parameters are needed.
 
 /// info | Checking for Results
 The **Select** node returns a collection of results from your query. You can check if results exist by using the **LENGTH** node to get the count of returned rows, then compare it to zero using an equality operator (`==`) to determine if the query returned any data.
