@@ -10,14 +10,17 @@ The Door class creates functional, interactable doors at specified locations in 
 ```lua title="Example"
 local SpawnTransform = Transform()
 SpawnTransform.Translation = Vector(0, 0, 151.0)
-local myDoor = Door(DoorType.Classic, SpawnTransform, '/Path/To/StaticMesh.StaticMesh')
+local myDoor = Door(DoorType.Classic, SpawnTransform, '/Path/To/StaticMesh.StaticMesh', {
+    bSupportsLocking = true,
+})
 ```
 
 | Name           | Type        | Default      | Description                                                             |
 |----------------|-------------|--------------|-------------------------------------------------------------------------|
-| `DoorType`      | [DoorType](../global-variables/enums#doortype)    | `EDoorType.Classic`    | Type of door to be spawned |
+| `DoorType`      | [DoorType](../global-variables/enums.md#doortype)    | `DoorType.Classic`    | Type of door to be spawned |
 | `Transform`   | `Transform`    | **Required** | Spawn transform to spawn the door actor at |
 | `StaticMesh`          | `string`  | **Optional**  | The static mesh to use on the door, if any. (Door types have their own default mesh) |
+| `DoorProperties`   | `table` | **Optional**   |  Properties to set on the door, used for spawning and replication  |
 
 ## Properties
 
@@ -118,16 +121,6 @@ Change the static mesh of the door actor.
 
 ```lua title="Example"
 myDoor:SetStaticMesh('/Path/To/NewStaticMesh.NewStaticMesh')
-```
-
----
-
-### `ApplyDoorProperties`
-Apply parameter changes to the door instance. Call on server after making changes to the door.
-
-```lua title="Example"
-myDoor.DoorDamping = 50.0
-myDoor:ApplyDoorProperties()
 ```
 
 ---
