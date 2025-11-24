@@ -64,6 +64,8 @@ nav:
     - blueprints/blueprints.md
     - Persistent Data:
       - blueprints/PersistentData/persistent_data.md
+    - Dynamic Materials:
+      - blueprints/DynamicMaterials/dynamic_materials.md
   - Scripting Tips:
     - scripting/index.md
     - Key References:

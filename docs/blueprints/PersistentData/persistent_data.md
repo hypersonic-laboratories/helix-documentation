@@ -1,4 +1,4 @@
-# Persistent Data
+# SQLite and Blueprints
 
 ## Initializing a Database Connection
 
