@@ -34,9 +34,9 @@ This is the simpler method, used for modern packs that are already compatible wi
 
     ![image.png](CustomAnimImages/u_1.png)
 
-/// info | Note
-Alternatively, you can also create a new package folder from HELIX Packaging Tool and move your assets or import source files into this created folder.
-///
+    /// info | Note
+    Alternatively, you can also create a new package folder from HELIX Packaging Tool and move your assets or import source files into this created folder.
+    ///
 
 3. If your folder has any asset type unrelated to animations (textures, materials, levels, skeletal meshes etc.), remove them to reduce clutter.
 
@@ -89,9 +89,9 @@ This method is for older packs built for the `UE4` Mannequin or packs using a cu
 
     ![image.png](CustomAnimImages/4_4.png)
 
-/// info | Note
-Your project may contain multiple assets named **SKM_Manny**. Ensure you select the one from the **Unified** folder, as shown in the screenshot. This is the mesh associated with our **SK_Unified** skeleton.
-///
+    /// info | Note
+    Your project may contain multiple assets named **SKM_Manny**. Ensure you select the one from the **Unified** folder, as shown in the screenshot. This is the mesh associated with our **SK_Unified** skeleton.
+    ///
 
 11. You can typically leave **Generate Auto Retargeter** checked to automatically map bones. For advanced use cases where the automatic mapping is incorrect, you can uncheck this and provide your own custom **IK Rig** and **IK Retargeter** assets.
 
