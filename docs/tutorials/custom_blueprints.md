@@ -18,12 +18,11 @@ For this tutorial, we have a blueprint based clock system pack, which has a main
 
     ![image.png](CustomBPImages/u_1.png)
 
-/// info | Note
-Alternatively, you can also create a new package from HELIX Packaging Tool and move your assets or import source files into this created package folder.
+    /// info | Note
+    Alternatively, you can also create a new package from HELIX Packaging Tool and move your assets or import source files into this created package folder.
 
-![image.png](CustomBPImages/0.png)
-
-///
+    ![image.png](CustomBPImages/0.png)
+    ///
 
 ---
 
