@@ -14,33 +14,28 @@ For this tutorial, we have a blueprint based clock system pack, which has a main
 
 1. Launch the **Creator Kit** editor.
 
-2. Access the **HELIX Packaging Tool** from the main toolbar.
+2. Find your imported Fab asset folder and right click to it. Select **Convert to Package (Addon)**. This will make it possible to directly cook this folder with HELIX Packaging Tool.
 
-3. In the packaging tool window, click **New Package**.
+    ![image.png](CustomBPImages/u_1.png)
 
-    ![image.png](CustomAnimImages/5.png)
+/// info | Note
+Alternatively, you can also create a new package from HELIX Packaging Tool and move your assets or import source files into this created package folder.
 
-5. Enter a unique Package Name (e.g., ClockSystem).
+![image.png](CustomBPImages/0.png)
 
-7. Select **Addon** as the **Package Type**.
-
-    ![image.png](CustomBPImages/0.png)
-
-9. Click **Add New Package**. This action creates a dedicated folder for your assets (e.g., **Content/Addon_ClockSystem**).
-
-10. Move (or create) the blueprints and all the dependent assets into the package folder you've just created.
-
-    ![image.png](CustomBPImages/1.png)
-  
-    ![image.png](CustomBPImages/2.png)
-  
-    ![image.png](CustomBPImages/3.png)
+///
 
 ---
 
 ## 2. Finalizing and Cooking The Package
 
 1. Make sure all the depending assets by your blueprint are placed inside package folder. If one of those assets are placed outside of the created package folder, created .pak file will have missing dependencies and this might cause crashes or runtime errors during playthrough with this package.
+
+    ![image.png](CustomBPImages/1.png)
+  
+    ![image.png](CustomBPImages/2.png)
+  
+    ![image.png](CustomBPImages/3.png)
 
 2. Make sure you have defined all the required functions, events, variables etc. in your blueprints to later access them with Lua inside Helix after importing your package there.
 
