@@ -28,7 +28,7 @@ For this tutorial, we will be importing a simple cap accessory for our character
 
     ![image.png](WearableTutImages/1.png)
 
-6. Click **Add New Package**. This action creates a dedicated folder for your assets (e.g., **Content/Wearable_MyNewWearable**).
+6. Click **Add New Package**. This action creates a dedicated plugin folder for your assets (e.g., **Plugins/Wearable_MyNewWearable**).
 
     ![image.png](WearableTutImages/2.png)
 
