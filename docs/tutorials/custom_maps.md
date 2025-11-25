@@ -40,45 +40,9 @@ For this tutorial, we will be using a police station asset acquired from Fab.
 
     ![image.png](CustomMapImages/7.png)
 
-8. Access the **HELIX Packaging Tool** from the main toolbar.
+8. To convert your migrated folder into a HELIX package, right click to the folder in content browser, and select **Convert to Package (Map)**. This will create required metadata and make your folder visible in HELIX packaging tool.
 
-9. In the packaging tool window, click **New Package**.
-
-10. Enter a unique Package Name (e.g., MyPoliceStationMap), and select **Map** as the **Package Type**.
-
-    ![image.png](CustomMapImages/8.png)
-
-11. Click **Add New Package**. This action creates a dedicated folder for your assets (e.g., **Content/Map_MyPoliceStationMap**).
-
-    ![image.png](CustomMapImages/9.png)
-
-12. Now, it's needed to move your level assets into this new package folder. For current scenario, we have a `Content/PoliceDepartment` folder with all the required assets for our map.
-
-13. Select all the folders (or just the root folder) you want to migrate, and then drag&drop them into your new package folder (e.g., **Content/Map_MyPoliceStationMap**). 
-
-    ![image.png](CustomMapImages/10_1.png)
-
-    ![image.png](CustomMapImages/10_2.png)
-
-14. Select **Move Here** from the dropdown menu.
-
-    ![image.png](CustomMapImages/10_3.png)
-
-    ![image.png](CustomMapImages/10_4.png)
-
-15. After process is done, right click to your old migrated folder and click **Update Redirector References** from dropdown menu. This will clean redirector assets automatically created during the previous step.
-
-    ![image.png](CustomMapImages/11_1.png)
-
-16. Click red **Delete Unreferenced Redirectors** button on next window and wait. This might take a while.
-
-    ![image.png](CustomMapImages/11_2.png)
-
-    ![image.png](CustomMapImages/11_3.png)
-
-17. After process is done, you should have a custom map package with all your assets placed in.
-
-    ![image.png](CustomMapImages/12.png)
+    ![image.png](CustomMapImages/u_1.png)
 
 ---
 
@@ -166,9 +130,11 @@ If your level has door meshes that you want to make interactable by players, you
 
 ## 5. Finalizing and Cooking The Package
 
-1. Make sure all the depending assets by your custom character mesh are placed inside same package folder. If one of those assets are placed outside of the created package folder, cooked `.pak` file will have missing dependencies and this might cause crashes or runtime errors during playthrough with this package.
+1. Make sure all the depending assets by your custom map are placed inside same package folder. If one of those assets are placed outside of the created package folder, cooked `.pak` file will have missing dependencies and this might cause crashes or runtime errors during playthrough with this package.
 
 2. Return to the HELIX Packaging Tool window.
+
+    ![image.png](CustomMapImages/u_2.png)
 
 3. Go into your package and choose **Main Asset** to the level asset you would like to use for your package. This is should be the persistent level you used for your map.
 
@@ -176,7 +142,7 @@ If your level has door meshes that you want to make interactable by players, you
 
 3. Click package button and wait for cook process to complete.
 
-4. Once cooking is complete, a file explorer window will automatically open, displaying your final `.pak` files. Your custom character mesh is now ready to be uploaded to the **Creator Hub**!
+4. Once cooking is complete, a file explorer window will automatically open, displaying your final `.pak` files. Your custom map is now ready to be uploaded to the **Creator Hub**!
 
     ![image.png](CustomMapImages/25.png)
 
