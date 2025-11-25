@@ -2,21 +2,38 @@
 
 This guide walks you through the process of packaging custom maps for the [Creator Hub](creatorhub.md) by using the [Creator Kit](creatorkit.md).
 
-## 1. Acquiring Your Custom Map
+## 1. Creating a new Map Package on Creator Kit
+
+1. In your CreatorKit project, open the the Package window and click the **New Package** button.
+
+![image.png](CustomMapImages/Map1.png)
+
+2. Write a name for your Map package and select **Map** on the Type field.
+
+![image.png](CustomMapImages/Map2.png)
+
+3. The location of your package folder will show up. You can always navigate back to this folder on the Package Manager **Browse** button.
+
+![image.png](CustomMapImages/Map3.png)
+
+
+## 2. Acquiring Your Custom Map
 
 Either use **Creator Kit** to create your own custom map, or get a map asset from [Fab](https://fab.com).
 
+Remember all the content of your map package should be on the folder highligthed on the previous step.
+
 ---
 
-## 2. Preparing Your Custom Map Package
+## 3. Importing a map
 
 For this tutorial, we will be using a police station asset acquired from Fab.
 
-1. Launch the project downloaded from Fab. To use this custom map in HELIX, it's needed to migrate all assets from the downloaded project into **Creator Kit** project.
+1. Launch the project downloaded from Fab. It's needed to migrate assets from downloaded project into **Creator Kit** project.
 
     ![image.png](CustomMapImages/1.png)
 
-2. Right click to root folder containing all assets in content browser and click **Migrate**. Make sure all assets are gathered inside one root folder (e.g, PoliceDepartment/...), so it will be easier to move your assets into package folder in **Creator Kit**.
+2. Right click to root folder containing all assets in content browser and click **Migrate**, it is also ok to migrate the entire content folder, since the plugin workflow will take care of placing everything into your plugin content folder. Alternative, you can find the specific **Level** you want to migrate, right click the level and click migrate. Unreal will handle the dependencies.
 
     ![image.png](CustomMapImages/2.png)
 
@@ -24,25 +41,21 @@ For this tutorial, we will be using a police station asset acquired from Fab.
 
     ![image.png](CustomMapImages/3.png)
 
-4. On the next window, find your **Creator Kit** installation's `Content` folder and select it.
+4. On the next window, find your **Creator Kit** installation's, go into plugins and find the package you just created. In this case we are going to import it into Map_MyNewMap. Then open the `Content` folder and select it.
 
-    ![image.png](CustomMapImages/4.png)
+    ![image.png](CustomMapImages/NewPlugin1.png)
 
-5. Your assets will be copied into **Creator Kit** `Content` folder with same folder structure after process is done.
+5. Your assets will be copied into your **Creator Kit** plugin `Content` folder with same folder structure after process is done.
 
     ![image.png](CustomMapImages/5.png)
 
 6. Close the custom map project and launch the **Creator Kit** project. Ensure your custom map is migrated into **Creator Kit** correctly.
 
-    ![image.png](CustomMapImages/6.png)
+    ![image.png](CustomMapImages/NewPlugin2.png)
 
 7. Ensure you can play in your migrated custom map without any errors/warnings caused by migration process.
 
     ![image.png](CustomMapImages/7.png)
-
-8. To convert your migrated folder into a HELIX package, right click to the folder in content browser, and select **Convert to Package (Map)**. This will create required metadata and make your folder visible in HELIX packaging tool.
-
-    ![image.png](CustomMapImages/u_1.png)
 
 ---
 
@@ -130,11 +143,9 @@ If your level has door meshes that you want to make interactable by players, you
 
 ## 5. Finalizing and Cooking The Package
 
-1. Make sure all the depending assets by your custom map are placed inside same package folder. If one of those assets are placed outside of the created package folder, cooked `.pak` file will have missing dependencies and this might cause crashes or runtime errors during playthrough with this package.
+1. Make sure all the depending assets by your Map are placed inside same plugin package folder. If one of those assets are placed outside of the created package folder, cooked `.pak` file will have missing dependencies and this might cause crashes or runtime errors during playthrough with this package.
 
 2. Return to the HELIX Packaging Tool window.
-
-    ![image.png](CustomMapImages/u_2.png)
 
 3. Go into your package and choose **Main Asset** to the level asset you would like to use for your package. This is should be the persistent level you used for your map.
 
@@ -142,7 +153,7 @@ If your level has door meshes that you want to make interactable by players, you
 
 3. Click package button and wait for cook process to complete.
 
-4. Once cooking is complete, a file explorer window will automatically open, displaying your final `.pak` files. Your custom map is now ready to be uploaded to the **Creator Hub**!
+4. Once cooking is complete, a file explorer window will automatically open, displaying your final `.pak` files. Your custom character mesh is now ready to be uploaded to the **Creator Hub**!
 
     ![image.png](CustomMapImages/25.png)
 
