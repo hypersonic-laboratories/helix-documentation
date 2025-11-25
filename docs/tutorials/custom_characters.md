@@ -28,11 +28,15 @@ For this tutorial, we will be using a robot character mesh acquired from Fab.
 
     ![image.png](CustomMeshImages/1.png)
 
-6. Click **Add New Package**. This action creates a dedicated folder for your assets (e.g., **Content/Wearable_MyCustomCharacterMesh**).
+6. Click **Add New Package**. This action creates a dedicated folder for your assets (e.g., **Plugins/Wearable_MyCustomCharacterMesh**).
 
 7. If you have an `.fbx` file to import into project, select `SK_Unified` as target skeleton during the import process.
 
-8. If you're using a character pack, just simply move textures, materials and character mesh into the package folder. After all assets are moved, **Right Click** to your mesh asset and assign `SK_Unified` as target skeleton. This ensures your mesh is encoded with the project's main skeleton asset, making it compatible with HELIX character animations.
+8. If you're using a character pack acquired from Fab, just simply move textures, materials and character mesh into your package folder. Fix redirectors if required.
+
+> Note: Alternatively, you can also right click to your pack folder in content browser and select **Convert to Package (Wearable)** to create a package in-place. In that case, steps 2-6 are not required. ![image.png](CustomMeshImages/u_1.png)
+
+9. After your package folder is ready, **Right Click** to your mesh asset and assign `SK_Unified` as target skeleton. This ensures your mesh is encoded with the project's main skeleton asset, making it compatible with HELIX character animations.
 
     ![image.png](CustomMeshImages/2.png)
 
