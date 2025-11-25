@@ -37,7 +37,7 @@ For this tutorial, we will be using a robot character mesh acquired from Fab.
 8. If you're using a character pack acquired from Fab, just simply move textures, materials and character mesh into your package folder. Fix redirectors if required.
 
 /// info | Note
-Alternatively, you can also right click to your pack folder in content browser and select **Convert to Package (Wearable)** to create a package in-place. In that case, steps 2-6 are not required.
+Alternatively, you can also right click to your pack folder imported from Fab and select **Convert to Package (Wearable)** to create a package in-place. In that case, steps 2-6 are not required.
 
 ![image.png](CustomMeshImages/u_1.png)
 ///
