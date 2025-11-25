@@ -6,7 +6,9 @@ This guide walks you through the process of packaging custom character mesh asse
 
 Either use your favorite modeling tool to create and skin a custom character mesh, or get a character mesh from [Fab](https://fab.com), compatible with **Unreal Engine 5 Manny Rig**.
 
-> Note: Support for skeleton types different than Unreal Engine 5 Manny is currently in progress. We're planning to utilize **IKRig** to allow retargeting any kind of humanoid character rig to HELIX character soon.
+/// info | Warning
+Support for skeleton types other than Unreal Engine 5 Manny is currently not supported. We're planning to utilize **IKRig** to allow retargeting any kind of humanoid character rig to HELIX character soon.
+///
 
 ![image.png](CustomMeshImages/0.png)
 
@@ -34,7 +36,11 @@ For this tutorial, we will be using a robot character mesh acquired from Fab.
 
 8. If you're using a character pack acquired from Fab, just simply move textures, materials and character mesh into your package folder. Fix redirectors if required.
 
-> Note: Alternatively, you can also right click to your pack folder in content browser and select **Convert to Package (Wearable)** to create a package in-place. In that case, steps 2-6 are not required. ![image.png](CustomMeshImages/u_1.png)
+/// info | Note
+Alternatively, you can also right click to your pack folder in content browser and select **Convert to Package (Wearable)** to create a package in-place. In that case, steps 2-6 are not required.
+
+![image.png](CustomMeshImages/u_1.png)
+///
 
 9. After your package folder is ready, **Right Click** to your mesh asset and assign `SK_Unified` as target skeleton. This ensures your mesh is encoded with the project's main skeleton asset, making it compatible with HELIX character animations.
 

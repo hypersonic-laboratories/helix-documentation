@@ -60,7 +60,9 @@ For this tutorial, we will be importing a simple cap accessory for our character
 
 3. Finally, you can open your material and tweak it as you like. If there are extra textures required for your clothing, you can import them into same package folder and reference in your material.
 
-    > Note: Material parameter binding into Character Customization UI is currently in progress and will be documented soon. This will allow you to customize color or other properties of your clothing from the character customization UI within game.
+/// info | Note
+Material parameter binding into Character Customization UI is currently in progress and will be documented soon. This will allow you to customize color or other properties of your clothing from the character customization UI within game.
+///
 
 ---
 
