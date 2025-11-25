@@ -22,85 +22,92 @@ First, you need to get your animation assets from the marketplace and add them t
 
 ## 2. Setting Up Your HELIX Addon Package
 
-Next, you will use the **HELIX Packaging Tool** to create a dedicated folder for your new addon.
-
-1. Launch the **Creator Kit** editor.
-2. Access the **HELIX Packaging Tool** from the main toolbar.
-3. In the packaging tool window, click **New Package**.
-
-    ![image.png](CustomAnimImages/5.png)
-
-4. Enter a unique **Package Name** (e.g., `MyFirstAnimationPack`).
-5. Select **Addon** as the **Package Type**.
-6. Click **Add New Package**. This action creates a dedicated folder for your assets (e.g., **Content/Addon_MyFirstAnimationPack**).
-
-    ![image.png](CustomAnimImages/6.png)
-
-7. In the **Content Browser**, locate the main folder for the animation assets you imported in Section 1.
-
-    ![image.png](CustomAnimImages/3.png)
-
----
-
-## 3. Adapting Animations For The HELIX Rig
-
-This is the most critical step. The method you use depends on the skeleton the asset pack was built for. Follow the section that matches your asset pack.
+Next, you will use the **HELIX Packaging Tool** to prepare your package folder.
 
 ### Option A: For UE5 Rig-Based Packs (Replace Skeleton)
 
 This is the simpler method, used for modern packs that are already compatible with the `UE5` skeleton.
 
-1. Select all the **Animation Sequence** assets you wish to package.
-2. Right-click the selection and choose **Replace Skeleton...**
+1. Launch the **Creator Kit** editor.
+
+2. Find your imported Fab asset folder and right click to it. Select **Convert to Package (Addon)**. This will make it possible to directly cook this folder with HELIX Packaging Tool.
+
+    ![image.png](CustomAnimImages/u_1.png)
+
+/// info | Note
+Alternatively, you can also create a new package folder from HELIX Packaging Tool and move your assets or import source files into this created folder.
+///
+
+3. If your folder has any asset type unrelated to animations (textures, materials, levels, skeletal meshes etc.), remove them to reduce clutter.
+
+4. Select all the **Animation Sequence** assets in your package folder.
+
+5. Right-click the selection and choose **Replace Skeleton...**
 
     ![image.png](CustomAnimImages/4.png)
 
-3. In the dialog, select **SK_Unified** from the list. This is the primary skeleton used by default for HELIX characters. Click **OK**.
+6. In the dialog, select **SK_Unified** from the list. This is the primary skeleton used by default for HELIX characters. Click **OK**.
 
     ![image.png](CustomAnimImages/4_1.png)
 
-4. Verify that the selected animations now reference the **SK_Unified** skeleton. Save all modified assets (`Ctrl+ShiftS`).
+7. Verify that the selected animations now reference the **SK_Unified** skeleton. Save all modified assets (`Ctrl+ShiftS`).
 
     ![image.png](CustomAnimImages/9.png)
-
-5. In the **Content Browser**, move all the modified animation assets into your package folder (e.g., **Content/Addon_MyFirstAnimationPack**).
-
-    ![image.png](CustomAnimImages/8.png)
 
 ### Option B: For `UE4` or Custom Rig-Based Packs (Retarget Animation)
 
 This method is for older packs built for the `UE4` Mannequin or packs using a custom rig. It uses the **IK Retargeting** system to create new, compatible animations.
 
-1. Select all the **Animation Sequence** assets you wish to package.
-2. Right-click the selection and choose **Retarget Animation Assets** -> **Duplicate and Retarget Animation Assets**.
+1. Launch the **Creator Kit** editor.
+
+2. Access the **HELIX Packaging Tool** from the main toolbar.
+
+3. In the packaging tool window, click **New Package**.
+
+    ![image.png](CustomAnimImages/5.png)
+
+4. Enter a unique **Package Name** (e.g., `MyFirstAnimationPack`) and select **Addon** as the **Package Type**.
+
+5. Click **Add New Package**. This action creates a dedicated folder for your assets (e.g., **Plugins/Addon_MyFirstAnimationPack**).
+
+    ![image.png](CustomAnimImages/6.png)
+
+6. In the **Content Browser**, locate the main folder for the animation assets you imported in Section 1.
+
+    ![image.png](CustomAnimImages/u_5.png)
+
+
+8. Select all the **Animation Sequence** assets in your package folder, right-click the selection, and choose **Retarget Animation Assets** -> **Duplicate and Retarget Animation Assets**.
 
     ![image.png](CustomAnimImages/4_2.png)
 
-3. The Animation Retargeting window will open.
-4. For **Source Skeleton**, select the original skeleton from the downloaded pack (e.g., **SK_Mannequin**).
+9. The Animation Retargeting window will open. For **Source Skeleton**, select the original skeleton from the downloaded pack (e.g., **SK_Mannequin**).
 
     ![image.png](CustomAnimImages/4_3.png)
 
-5. For **Target Skeleton**, choose **SKM_Manny** located in **Content/Characters/Heroes/Unified/**.
-
-    > **Note:** Your project may contain multiple assets named **SKM_Manny**. Ensure you select the one from the **Unified** folder, as shown in the screenshot. This is the mesh associated with our **SK_Unified** skeleton.
+10. For **Target Skeleton**, choose **SKM_Manny** located in **Content/Characters/Heroes/Unified** folder.
 
     ![image.png](CustomAnimImages/4_4.png)
 
-7. You can typically leave **Generate Auto Retargeter** checked to automatically map bones. For advanced use cases where the automatic mapping is incorrect, you can uncheck this and provide your own custom **IK Rig** and **IK Retargeter** assets.
-8. Review the list of animations to be generated. You can uncheck any you don't need. Click **Export Animations** button.
+/// info | Note
+Your project may contain multiple assets named **SKM_Manny**. Ensure you select the one from the **Unified** folder, as shown in the screenshot. This is the mesh associated with our **SK_Unified** skeleton.
+///
+
+11. You can typically leave **Generate Auto Retargeter** checked to automatically map bones. For advanced use cases where the automatic mapping is incorrect, you can uncheck this and provide your own custom **IK Rig** and **IK Retargeter** assets.
+
+12. Review the list of animations to be generated. You can uncheck any you don't need. Click **Export Animations** button.
 
     ![image.png](CustomAnimImages/4_5.png)
 
-9. On the new window, select your helix package folder (e.g., **Content/Addon_MyFirstAnimationPack**) as the destination. Click **Export**.
+13. On the new window, select your helix package folder (e.g., **Plugins/Addon_MyFirstAnimationPack**) as the destination. Click **Export**.
 
     ![image.png](CustomAnimImages/4_6.png)
 
-10. Click **Export** button again in next window.
+14. Click **Export** button again in next window.
 
     ![image.png](CustomAnimImages/4_7.png)
 
-11. The engine will now process and retarget all selected animations, creating new copies in your package folder that are compatible with the HELIX skeleton.
+15. The engine will now process and retarget all selected animations, creating new copies in your package folder that are compatible with the HELIX skeleton.
 
 ---
 
@@ -108,13 +115,16 @@ This method is for older packs built for the `UE4` Mannequin or packs using a cu
 
 With your animations successfully adapted and moved to your package folder, you can make final adjustments and "cook" the final `.pak` file.
 
-1. Open the animation assets inside your package folder (e.g., **Content/Addon_MyFirstAnimationPack**).
+1. Open the animation assets inside your package folder (e.g., **Plugins/Addon_MyFirstAnimationPack**).
+
 2. Perform any necessary final adjustments. This is a good time to:
     - Enable/Disable **Root Motion**.
     - Add **Animation Notifies** (AnimNotifies) for events like footsteps or impacts.
     - Add or modify **Animation Curves**.
     - Adjust play rate or other settings.
+
 3. Return to the **HELIX Packaging Tool** window.
+
 4. With your package selected, click the **Package** button. This process will cook your assets into the final `.pak` file format required by the **Creator Hub**. This may take some time.
 
     ![image.png](CustomAnimImages/7.png)
@@ -134,6 +144,7 @@ It's also possible to download animations from [Mixamo.com](http://www.mixamo.co
     ![image.png](CustomAnimImages/11.png)
 
 2. Click **Download** button after tweaking your animation.
+
 3. On the new window, select options as shown on the image below and click **Download** button. This will download an `.fbx` file, ready to be imported into Creator Kit.
 
     ![image.png](CustomAnimImages/12.png)
