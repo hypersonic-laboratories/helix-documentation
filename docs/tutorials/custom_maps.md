@@ -12,7 +12,7 @@ Either use **Creator Kit** to create your own custom map, or get a map asset fro
 
 For this tutorial, we will be using a police station asset acquired from Fab.
 
-1. Launch the project downloaded from Fab. It's needed to migrate assets from downloaded project into **Creator Kit** project.
+1. Launch the project downloaded from Fab. To use this custom map in HELIX, it's needed to migrate all assets from the downloaded project into **Creator Kit** project.
 
     ![image.png](CustomMapImages/1.png)
 
