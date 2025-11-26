@@ -108,19 +108,19 @@ For this example use case, we will try to load our packaged custom blueprint ass
 
 7. After walking towards the clock, the widget becomes accessible.
 
-<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-  <iframe src="https://youtube.com/embed/O9OXYgnxmpo?si=ueKFLQS0FXjRbz-X"
-          style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
-          frameborder="0"
-          allowfullscreen>
-  </iframe>
-</div>
+    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+      <iframe src="https://youtube.com/embed/O9OXYgnxmpo?si=ueKFLQS0FXjRbz-X"
+              style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+              frameborder="0"
+              allowfullscreen>
+      </iframe>
+    </div>
 
-9. Now let's call an event we've previously defined in the blueprint. Our `SetCustomTime` event changes the time shown on the clock.
+8. Now let's call an event we've previously defined in the blueprint. Our `SetCustomTime` event changes the time shown on the clock.
 
     ![image.png](CustomBPImages/5.png)
 
-10. After restarting the game to clean the level from previous changes, we add the function call below at end of our `main.lua` script to execute our custom event on spawned blueprint actor. The same syntax can be used for calling any function in spawned actors.
+9. After restarting the game to clean the level from previous changes, we add the function call below at end of our `main.lua` script to execute our custom event on spawned blueprint actor. The same syntax can be used for calling any function in spawned actors.
 
     ```lua
     -- Manually set time on spawned clock with our blueprint defined event
