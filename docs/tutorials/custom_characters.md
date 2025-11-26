@@ -10,6 +10,10 @@ Either use your favorite modeling tool to create and skin a custom character mes
 Support for skeleton types other than Unreal Engine 5 Manny is currently not supported. We're planning to utilize **IKRig** to allow retargeting any kind of humanoid character rig to HELIX character soon.
 ///
 
+/// warning | Warning
+Custom character meshes does not support wearables, and they will be disabled in game character customization UI if a custom character mesh is chosen.
+///
+
 ![image.png](CustomMeshImages/0.png)
 
 ---
