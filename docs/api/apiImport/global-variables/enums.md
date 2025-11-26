@@ -61,6 +61,17 @@ Rules that define how objects attach and maintain transforms
 
 ---
 
+## DetachmentRule
+<EnumDeclaration type="Enum" name="DetachmentRule" />
+Rules that define how objects detach and maintain transforms
+
+| **Name**                      | **Description**                          |
+| ----------------------------- | ---------------------------------------- |
+| `DetachmentRule.KeepRelative` | Keeps relative transform when detaching |
+| `DetachmentRule.KeepWorld`    | Maintains world transform.               |
+
+---
+
 ## ConstraintMotion
 <EnumDeclaration type="Enum" name="ConstraintMotion" />
 Used in physics constraints to restrict axis movement
@@ -228,8 +239,8 @@ Defines the shape of a sound or light attenuation volume
 |----------|------------------|
 | `DoorType.Classic` | Standard  |
 | `DoorType.Swinging` | Capsule shape, elongated along one axis |
-| `DoorType.Sliding` | Box-shaped volume |
-| `DoorType.Garage` | Directional cone shape |
+| `DoorType.Sliding` | Sliding door, like store doors |
+| `DoorType.Garage` | Garage-like door, based on the sliding door |
 
 ---
 
