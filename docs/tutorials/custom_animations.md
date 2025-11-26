@@ -35,7 +35,7 @@ This is the simpler method, used for modern packs that are already compatible wi
     ![image.png](CustomAnimImages/u_1.png)
 
     /// info | Note
-    Alternatively, you can also create a new package folder from HELIX Packaging Tool and move your assets or import source files into this created folder.
+    Alternatively, you can also create a new package folder from HELIX Packaging Tool and move your assets or import source files into the created folder.
     ///
 
 3. If your folder has any asset type unrelated to animations (textures, materials, levels, skeletal meshes etc.), remove them to reduce clutter.
