@@ -68,7 +68,7 @@ After acquiring the template asset we need to put them to use in an image editor
 
 2. Select **Data Asset** and set **Character Customization Data Asset** as the class
 
-3.Rename your new data asset (e.g. MyNewFaceTattoos)
+3. Rename your new data asset (e.g. MyNewFaceTattoos)
 
 4. Open your new Data Asset.
 
@@ -97,7 +97,9 @@ After acquiring the template asset we need to put them to use in an image editor
 6. We’d recommend enabling both “Has Color Picker” and “Has Remove Button”
 
 7. Under Material Parameters see ***HERE***  for options
-     The most important that you must set is Intensity
+   
+     The most important variable that you add and set is Intensity _(the rest are optional)_
+   
         Type: Float 
         Selected part name: None
         Material Slot Name: body_skin
@@ -107,6 +109,7 @@ After acquiring the template asset we need to put them to use in an image editor
         Value: 1 (This is important. This is the opacity of your tattoo)
         Min: 0
         Max: 1
+   
 9. Once you’re done, Save your data table and all assets you’ve added to you package folder.
 
 ---
@@ -153,4 +156,5 @@ After acquiring the template asset we need to put them to use in an image editor
 
 ## 8. Ready To Rock
 Once you've followed these steps, uploaded your package to Creator Hub, and imported it into your world, your new wearable items will be available for players joining your public world!
+
 
