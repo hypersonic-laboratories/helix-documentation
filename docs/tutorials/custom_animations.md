@@ -38,19 +38,17 @@ This is the simpler method, used for modern packs that are already compatible wi
     Alternatively, you can also create a new package folder from HELIX Packaging Tool and move your assets or import source files into the created folder.
     ///
 
-3. If your folder has any asset type unrelated to animations (textures, materials, levels, skeletal meshes etc.), remove them to reduce clutter.
+3. Select all the **Animation Sequence** assets in your package folder.
 
-4. Select all the **Animation Sequence** assets in your package folder.
-
-5. Right-click the selection and choose **Replace Skeleton...**
+4. Right-click the selection and choose **Replace Skeleton...**
 
     ![image.png](CustomAnimImages/4.png)
 
-6. In the dialog, select **SK_Unified** from the list. This is the primary skeleton used by default for HELIX characters. Click **OK**.
+5. In the dialog, select **SK_Unified** from the list. This is the primary skeleton used by default for HELIX characters. Click **OK**.
 
     ![image.png](CustomAnimImages/4_1.png)
 
-7. Verify that the selected animations now reference the **SK_Unified** skeleton. Save all modified assets (`Ctrl+ShiftS`).
+6. Verify that the selected animations now reference the **SK_Unified** skeleton. Save all modified assets (`Ctrl+ShiftS`).
 
     ![image.png](CustomAnimImages/9.png)
 
@@ -122,14 +120,16 @@ With your animations successfully adapted and moved to your package folder, you 
     - Add **Animation Notifies** (AnimNotifies) for events like footsteps or impacts.
     - Add or modify **Animation Curves**.
     - Adjust play rate or other settings.
+  
+3. If your package folder has any asset type unrelated to animations (textures, materials, levels, skeletal meshes etc.), remove them to reduce clutter.
 
-3. Return to the **HELIX Packaging Tool** window.
+4. Return to the **HELIX Packaging Tool** window.
 
-4. With your package selected, click the **Package** button. This process will cook your assets into the final `.pak` file format required by the **Creator Hub**. This may take some time.
+5. With your package selected, click the **Package** button. This process will cook your assets into the final `.pak` file format required by the **Creator Hub**. This may take some time.
 
     ![image.png](CustomAnimImages/7.png)
 
-5. Once cooking is complete, a file explorer window will automatically open, displaying your final `.pak` file. Your animation pack is now ready to be uploaded to the **Creator Hub**!
+6. Once cooking is complete, a file explorer window will automatically open, displaying your final `.pak` file. Your animation pack is now ready to be uploaded to the **Creator Hub**!
 
     ![image.png](CustomAnimImages/10.png)
 
