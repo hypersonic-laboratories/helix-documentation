@@ -11,7 +11,7 @@ Support for skeleton types other than Unreal Engine 5 Manny is currently not sup
 ///
 
 /// warning | Warning
-Custom character meshes does not support wearables, and they will be disabled in game character customization UI if a custom character mesh is chosen.
+Custom character meshes do not support [wearables](https://development.helix-documentation.pages.dev/tutorials/custom_cc_assets), and they will be disabled in character customization game UI if a custom character mesh is chosen.
 ///
 
 ![image.png](CustomMeshImages/0.png)
