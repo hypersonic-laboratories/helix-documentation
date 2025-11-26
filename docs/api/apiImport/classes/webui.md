@@ -3,19 +3,16 @@ title: WebUI
 description: ''
 tags: [class]
 ---
-
 WebUI is a class that creates and manages web-based user interfaces within an application. It allows developers to display web content (URLs or HTML) as interactive widgets with full browser functionality.
 
 /// note
 This class supports all JS frameworks available, such as Vue.JS, React.JS, etc. WebUI is powered by **Chromium (CEF)**.
 ///
 
-## Constructors
-
-<ConstructorDeclaration type="Class" name="WebUI" />
+## Constructor
 
 ```lua
-local UI = WebUI('test', 'Package/UI/index.html', 0)
+local UI = WebUI('test', 'Package/UI/index.html')
 ```
 
 | Type              |       Name        | Default | Description                                                              |
@@ -26,11 +23,10 @@ local UI = WebUI('test', 'Package/UI/index.html', 0)
 
 ## Functions
 
-<FunctionsDeclaration type="Class" name="WebUI" />
-
 ### BringToFront
 Brings the interface to the top of the UI stack
-```lua
+
+```lua title="Example"
 UI:BringToFront()
 ```
 
@@ -38,7 +34,10 @@ UI:BringToFront()
 
 ### SetStackOrder
 Sets the Z-Index for the UI in the stack
-```lua
+
+- order: `number`
+
+```lua title="Example"
 UI:SetStackOrder(1)
 ```
 
@@ -51,7 +50,7 @@ Sets what type of input the UI receives
 - 1 = UI Only (Full Input)
 - 2 = Game and UI (Mouse Focus)
 
-```lua
+```lua title="Example"
 UI:SetInputMode(1)
 ```
 
@@ -59,15 +58,27 @@ UI:SetInputMode(1)
 
 ### RegisterEventHandler
 Registers a Lua event by name with args
-```lua
-UI:RegisterEventHandler('Test', function(arg1) print(arg1) end)
+
+- eventName: `string`
+- function: `function`
+- callback: `any?` - optional
+
+```lua title="Example"
+UI:RegisterEventHandler('Test', function(arg1, cb)
+    print('Received from JS: '.. arg1)
+    cb(arg1)
+end)
 ```
 
 ---
 
 ### SendEvent
 Sends an event by name to JS with args through message events
-```lua
+
+- eventName: `string`
+- payload: `any`
+
+```lua title="Example"
 UI:SendEvent('Test', {test = true})
 ```
 
@@ -75,8 +86,11 @@ UI:SendEvent('Test', {test = true})
 
 ### Destroy
 Deactivates and destroys the WebUI Instance
-```lua
+
+/// tip
+Call this on the global onShutdown function
+///
+
+```lua title="Example"
 UI:Destroy()
 ```
-
----

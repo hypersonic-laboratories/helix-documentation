@@ -3,7 +3,6 @@ title: Billboard
 description: Billboard displays a flat 2D sprite that always faces the camera
 tags: [class]
 ---
-<HeaderDeclaration type="Class" name="Billboard" image="/img/docs/billboard.webp" />
 Billboard spawns a 2D sprite in 3D space that always faces the camera.
 This is commonly used for markers, indicators, floating icons, or simple world labels.
 The billboard can be screen-size scaled or world-size scaled and can be textured using any valid sprite or texture asset
@@ -13,12 +12,11 @@ The billboard can be screen-size scaled or world-size scaled and can be textured
 ///
 
 ## Constructor
-<ConstructorDeclaration type="Class" name="Billboard" />
 
 ```lua title="Example"
-local marker = Billboard(
+local my_billboard = Billboard(
     Vector(0, 0, 200),
-    "/Game/UI/Icons/Icon_Marker.Icon_Marker",
+    '/Engine/EngineResources/DefaultTexture',
     Vector2D(64, 64),
     true
 )
@@ -32,35 +30,66 @@ local marker = Billboard(
 | `bScreenSpace`  | `boolean`   | `false`      | If true, sprite maintains size in screen space (UI-style)               |
 
 ## Functions
-<FunctionsDeclaration type="Class" name="Billboard" />
 
 ### `SetUV`
-Change the sprite's UVs
+Change which part of the texture (image) the sprite displays.
+
+- X: `number` — how far to move right from the left edge of the texture (start position on the X axis)
+- Y: `number` — how far to move down from the top edge of the texture (start position on the Y axis)
+- Width: `number` — how wide the visible part of the texture should be
+- Height: `number` — how tall the visible part of the texture should be
+
+In simple terms, this function lets you crop the sprite to show only a specific rectangular area of the texture.
+
 ```lua title="Example"
-my_billboard:SetUV(100, 100, 100, 100) -- X, Y, Width, Height
+my_billboard:SetUV(100, 100, 100, 100) -- shows a 100x100 section starting 100px right and 100px down
 ```
+
 ---
 
 ### `SetSpriteAndUV`
-Change the sprite texture and the UV's used by this component
+Change the sprite’s texture and which part of that texture (UVs) is displayed.
+
+- TexturePath: `Texture2D` — the texture (image) you want to display on the sprite
+- X: `number` — how far to move right from the left edge of the texture (start position on the X axis)
+- Y: `number` — how far to move down from the top edge of the texture (start position on the Y axis)
+- Width: `number` — how wide the visible part of the texture should be
+- Height: `number` — how tall the visible part of the texture should be
+
+In simple terms, this sets a new image for the sprite and tells it which rectangular section of that image to show.
+
 ```lua title="Example"
 local texture = UE.UObject.Load(TexturePath)
-my_billboard:SetSpriteAndUV(texture, 100, 100, 100, 100)
+my_billboard:SetSpriteAndUV(texture, 100, 100, 100, 100) -- loads a new texture and shows a 100x100 area starting 100px right and 100px down
 ```
+
 ---
 
 ### `SetSprite`
-Change the sprite texture used by this component
+Change the texture (image) used by this sprite component.
+
+- TexturePath: `Texture2D` — the texture you want the sprite to display
+
+In simple terms, this replaces the sprite’s current image with a new one.
+
 ```lua title="Example"
 local texture = UE.UObject.Load(TexturePath)
-my_billboard:SetSprite(texture)
+my_billboard:SetSprite(texture) -- changes the sprite’s image to the loaded texture
 ```
+
 ---
 
 ### `SetOpacityMaskRefVal`
-Changed the opacity masked used by this component
-Typical values: `0.3` to `0.5`
-Range: `0.0` to `1.0`
+Change how transparent or solid parts of the sprite are, based on an opacity mask value.
+
+- Typical values: `0.3` to `0.5`
+- Range: `0.0` (fully transparent) to `1.0` (fully opaque)
+
+- RefVal: `number` — the reference value that controls how much of the texture is visible
+
+In simple terms, this controls the cutoff point for transparency.
+Lower values make more of the texture see-through, while higher values make it appear more solid.
+
 ```lua title="Example"
 my_billboard:SetOpacityMaskRefVal(0.5)
 ```

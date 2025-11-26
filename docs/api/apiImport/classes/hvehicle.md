@@ -1,16 +1,13 @@
 ---
 title: HVehicle
 description: HELIX vehicle!
-sidebar_position: 0
 tags: [class]
 ---
-<HeaderDeclaration type="Class" name="HVehicle" />
 HVehicle constructor and functions. This allows you to spawn a vehicle actor in the world and perform logical actions through class methods. This class also provides getter methods, allowing you to obtain data relating to specific vehicle actors.
 
-## Examples
 
-```lua
-local VehicleActor = HVehicle(
+```lua title="Example"
+local vehicle = HVehicle(
     UE.FVector(-7940, 3400, 150),
     UE.FRotator(0, 180, 0),
     '/abcca-dax-veh/PongaseraGt/Blueprint/BP_PongaseraGtVehicle.BP_PongaseraGtVehicle_C',
@@ -18,35 +15,21 @@ local VehicleActor = HVehicle(
     true
 )
 
-VehicleActor:SetFuel(1.0)
+vehicle:SetFuel(1.0)
 ```
 
+## Constructor
+
+- <mark style="color:yellow;">returns</mark>: `table` — HVehicle wrapper with `.Object` (vehicle actor) and `.Movement` (`UModularMovementComponent`)
+
 ```lua
-local VehicleActor = HVehicle(
-    UE.FVector(-7940, 3400, 150),
-    UE.FRotator(0, 180, 0),
+local vehicle = HVehicle(
+    Vector(0, 0, 0),
+    Rotator(0, 0, 0),
     '/abcca-dax-veh/PongaseraGt/Blueprint/BP_PongaseraGtVehicle.BP_PongaseraGtVehicle_C',
     'QueryAndPhysics',
     true
 )
-
-print(VehicleActor.Object) -- AActor
-print(VehicleActor.Movement) -- UModularMovementComponent
-```
-
-## Variables
-
-| Name              |       Type             |
-| ----------------  | ------------------- |
-| Movement          | UModularMovementComponent   |
-
-
-## Constructors
-
-<ConstructorDeclaration type="Class" name="HVehicle" />
-
-```lua
-local VehicleActor = HVehicle(Vector(0, 0, 0), Rotator(0, 0, 0), '/abcca-dax-veh/PongaseraGt/Blueprint/BP_PongaseraGtVehicle.BP_PongaseraGtVehicle_C', 'QueryAndPhysics', true)
 ```
 
 | Type              |       Name        | Default | Description                                                              |
@@ -57,558 +40,610 @@ local VehicleActor = HVehicle(Vector(0, 0, 0), Rotator(0, 0, 0), '/abcca-dax-veh
 | string | `CollisionType` | `QueryAndPhysics` | One of "NoCollision", "QueryOnly", "PhysicsOnly", "QueryAndPhysics" |
 | boolean | `GravityEnabled` | `true` | Whether physics gravity is enabled |
 
-### Returns
-```lua
-table: {
-    Object: AActor,
-    Movement: UModularMovementComponent,
-}
-```
-
 ## Functions
 
-<FunctionsDeclaration type="Class" name="HVehicle" />
-
-#### SetThrottleInput
+### `SetThrottleInput`
 Sets the throttle input for the vehicle.
-```lua
-HVehicle:SetThrottleInput(value)
+
+- value: `number` — throttle value, typically `0.0` or `1.0` (on/off)
+
+```lua title="Example"
+vehicle:SetThrottleInput(1.0) -- full throttle
 ```
 
-| Type | Name  | Description |
-|------|-------|-------------|
-| number | `value` | The throttle input value (`0.0` or `1.0`, like bool). |
-
 ---
-#### SetSteeringInput
+
+### `SetSteeringInput`
 Sets the steering input for the vehicle.
-```lua
-HVehicle:SetSteeringInput(value)
+
+- value: `number` — steering input in range `-1.0` (full left) to `1.0` (full right)
+
+```lua title="Example"
+vehicle:SetSteeringInput(-0.5) -- steer left
 ```
 
-| Type | Name  | Description |
-|------|-------|-------------|
-| number | `value` | The steering input value (`-1.0` to `1.0`). |
-
 ---
-#### SetBrakeInput
+
+### `SetBrakeInput`
 Sets the brake input for the vehicle.
-```lua
-HVehicle:SetBrakeInput(value)
+
+- value: `number` — brake input in range `0.0` (no brake) to `1.0` (full brake)
+
+```lua title="Example"
+vehicle:SetBrakeInput(1.0) -- hard brake
 ```
-
-| Type | Name  | Description |
-|------|-------|-------------|
-| number | `value` | The brake input value (`0.0` to `1.0`). |
-
----
-#### SetHandBrakeInput
-Sets the handbrake input for the vehicle.
-```lua
-HVehicle:SetHandBrakeInput(enabled)
-```
-
-| Type    | Name     | Description                      |
-|---------|----------|----------------------------------|
-| boolean | `enabled`  | Whether to enable or disable the handbrake. |
 
 ---
 
+### `SetHandBrakeInput`
+Sets the handbrake state for the vehicle.
 
-#### Horn
+- enabled: `boolean` — `true` to enable handbrake, `false` to release
+
+```lua title="Example"
+vehicle:SetHandBrakeInput(true)
+```
+
+---
+
+
+#### `Horn`
 Sets the horn state for the vehicle.
-```lua
-HVehicle:Horn(state)
-```
 
-- state: `boolean` - Horn state
+- state: `boolean` — `true` to honk, `false` to stop
+
+```lua title="Example"
+vehicle:Horn(true)
+```
 
 ---
 
 ### Engine Control
 
-#### HoldStarter
+#### `HoldStarter`
 Holds the engine starter for a specified duration.
-```lua
-HVehicle:HoldStarter(startTime)
+
+- startTime: `number` — time to hold the starter in seconds (default `0.0`)
+
+```lua title="Example"
+vehicle:HoldStarter(0.5)
 ```
 
-| Type   | Name      | Default | Description                   |
-|--------|-----------|---------|-------------------------------|
-| number | `startTime` | `0.0`   | The time to hold the starter. |
-
 ---
-#### ReleaseStarter
+
+#### `ReleaseStarter`
 Releases the engine starter.
-```lua
-HVehicle:ReleaseStarter()
-```
----
-#### StopEngine
-Stops the engine.
-```lua
-HVehicle:StopEngine()
-```
----
-#### SetEngineHealth
-Sets the health of the engine.
-```lua
-HVehicle:SetEngineHealth(health)
+
+```lua title="Example"
+vehicle:ReleaseStarter()
 ```
 
-| Type   | Name    | Description                        |
-|--------|---------|------------------------------------|
-| number | `health`  | The engine health value (`0.0` to `1.0`). |
+---
+
+#### `StopEngine`
+Stops the engine.
+
+```lua title="Example"
+vehicle:StopEngine()
+```
+
+
+---
+
+#### `SetEngineHealth`
+Sets the engine health.
+
+- `health: number` — engine health value in range `0.0` (destroyed) to `1.0` (full)
+
+```lua title="Example"
+vehicle:SetEngineHealth(0.75)
+```
+
+---
+
+#### `GetEngineHealth`
+Gets the engine/vehicle health.
+
+- <mark style="color:yellow;">returns</mark>: `number|nil` — health in range `0.0` to `1.0`, or `nil` if movement is missing
+
+```lua title="Example"
+local health = vehicle:GetEngineHealth() or 0.0
+```
 
 ---
 
 ### Fuel System
 
-#### AddFuel
-Adds fuel to the vehicle's current fuel level (`0.0` to `1.0`).
-```lua
-HVehicle:AddFuel(amount)
-```
+#### `AddFuel`
+Adds fuel to the vehicle’s current fuel level.
 
-| Type   | Name   | Description                    |
-|--------|--------|--------------------------------|
-| number | `amount` | The amount of fuel to add.     |
+- `amount: number` — amount of fuel to add (use `0.0`–`1.0` scale)
+
+```lua title="Example"
+vehicle:AddFuel(0.1)
+```
 
 ---
-#### SetFuel
-Sets the fuel level of the vehicle (`0.0` to `1.0`).
-```lua
-HVehicle:SetFuel(amount)
-```
 
-| Type   | Name   | Description                   |
-|--------|--------|-------------------------------|
-| number | `amount` | The fuel level to set.        |
+#### `SetFuel`
+Sets the fuel level of the vehicle.
+
+- `amount: number` — new fuel level in range `0.0` to `1.0`
+
+```lua title="Example"
+vehicle:SetFuel(0.5)
+```
 
 ---
-#### GetFuelRatio
-Gets the fuel level of the vehicle (`0.0` to `1.0`).
-```lua
-HVehicle:GetFuelRatio(number)
+
+#### `GetFuelRatio`
+Gets the current fuel ratio of the vehicle.
+
+- <mark style="color:yellow;">returns</mark>: `number` — fuel level in range `0.0` to `1.0` (defaults to `0.0` if missing)
+
+```lua title="Example"
+local fuel = vehicle:GetFuelRatio()
 ```
-##### Returns
-`number`: The current fuel level.
 
 ---
 
 ### State Queries
 
-#### IsInReverse
-Returns if the vehicle is in reverse.
-```lua
-HVehicle:IsInReverse()
-```
-##### Returns
-`boolean`: True if the vehicle is in reverse, false otherwise.
+#### `IsInReverse`
+Returns if the vehicle is currently in reverse gear.
 
----
-#### GetRPMRatio
-Returns the current RPM of the vehicle (`0.0` to `1.0`).
-```lua
-HVehicle:GetRPMRatio()
-```
+- <mark style="color:yellow;">returns</mark>: `boolean` — `true` if in reverse, otherwise `false`
 
-##### Returns
-`number`: The current RPM of the vehicle.
-
----
-#### GetNumberOfWheels
-Returns the number of wheels on the vehicle.
-```lua
-HVehicle:GetNumberOfWheels()
+```lua title="Example"
+if vehicle:IsInReverse() then
+    -- show reverse icon
+end
 ```
-##### Returns
-`number`: The number of wheels on the vehicle.
-
----
-#### GetNumberOfWheelsTouchingGround
-Returns the number of wheels touching the ground.
-```lua
-HVehicle:GetNumberOfWheelsTouchingGround()
-```
-##### Returns
-`number`: The number of wheels touching the ground.
-
----
-#### GetNumberOfDriveWheelsTouchingGround
-Returns the number of drive wheels touching the ground.
-```lua
-HVehicle:GetNumberOfDriveWheelsTouchingGround()
-```
-##### Returns
-`number`: The number of drive wheels touching the ground.
-
----
-#### GetMassPerWheel
-Returns the mass per wheel of the vehicle.
-```lua
-HVehicle:GetMassPerWheel()
-```
-##### Returns
-`number`: The mass per wheel of the vehicle.
-
----
-#### IsBraking
-Returns whether the vehicle is braking.
-```lua
-HVehicle:IsBraking()
-```
-##### Returns
-`boolean`: True if the vehicle is braking, false otherwise.
 
 ---
 
-#### GetEngineHealth
-Returns the health of the engine.
-```lua
-HVehicle:GetEngineHealth()
+#### `GetRPMRatio`
+Gets the normalized engine RPM.
+
+- <mark style="color:yellow;">returns</mark>: `number` — RPM ratio between `0.0` and `1.0`
+
+```lua title="Example"
+local rpm = vehicle:GetRPMRatio()
 ```
-#### Returns
-`number`: The engine health in the range of 0-1.
+
+---
+
+#### `GetNumberOfWheels`
+Returns the total number of wheels on the vehicle.
+
+- <mark style="color:yellow;">returns</mark>: `integer` — wheel count
+
+```lua title="Example"
+print("Wheels:", vehicle:GetNumberOfWheels())
+```
+
+---
+
+#### `GetNumberOfWheelsTouchingGround`
+Returns how many wheels are currently touching the ground.
+
+- <mark style="color:yellow;">returns</mark>: `integer` — number of wheels on ground
+
+```lua title="Example"
+local grounded = vehicle:GetNumberOfWheelsTouchingGround()
+```
+
+---
+
+#### `GetNumberOfDriveWheelsTouchingGround`
+Returns how many drive wheels are drive wheels and touching the ground.
+
+- <mark style="color:yellow;">returns</mark>: `integer` — number of drive wheels on ground
+
+```lua title="Example"
+local drivenGrounded = vehicle:GetNumberOfDriveWheelsTouchingGround()
+```
+
+---
+
+#### `GetMassPerWheel`
+Returns the mass per wheel.
+
+- <mark style="color:yellow;">returns</mark>: `number` — mass per wheel
+
+```lua title="Example"
+local massPerWheel = vehicle:GetMassPerWheel()
+```
+
+---
+
+#### `IsBraking`
+Returns whether the vehicle is currently braking.
+
+- <mark style="color:yellow;">returns</mark>: `boolean` — `true` if braking, otherwise `false`
+
+```lua title="Example"
+if vehicle:IsBraking() then
+    -- brake lights logic
+end
+```
 
 ---
 
 ### Sleep & Airborne
 
-#### SetCanSleep
-Sets whether the vehicle can sleep.
-```lua
-HVehicle:SetCanSleep(enabled)
-```
+#### `SetCanSleep`
+Controls whether the vehicle is allowed to go to sleep (physics idle).
 
-| Type    | Name     | Description                     |
-|---------|----------|---------------------------------|
-| boolean | `enabled`  | Whether to enable or disable sleeping. |
+- enabled: `boolean` — `true` to allow sleeping, `false` to prevent
+
+```lua title="Example"
+vehicle:SetCanSleep(false)
+```
 
 ---
-#### SetSleeping
-Sets whether the vehicle is sleeping.
-```lua
-HVehicle:SetSleeping(enabled)
-```
 
-| Type    | Name     | Description                     |
-|---------|----------|---------------------------------|
-| boolean | `enabled`  | Whether to enable or disable sleeping. |
+#### `SetSleeping`
+Forces the vehicle into or out of sleeping state.
+
+- enabled: `boolean` — `true` to force sleeping, `false` to wake
+
+```lua title="Example"
+vehicle:SetSleeping(true)
+```
 
 ---
-#### ApplyAirbornePhysics
-Sets whether to apply airborne physics.
-```lua
-HVehicle:ApplyAirbornePhysics(enabled)
-```
 
-| Type    | Name     | Description                            |
-|---------|----------|----------------------------------------|
-| boolean | `enabled`  | Whether to enable or disable airborne physics. |
+#### `ApplyAirbornePhysics`
+Applies airborne physics behavior once (used when the vehicle is in the air).
+
+```lua title="Example"
+vehicle:ApplyAirbornePhysics()
+```
 
 ### Setup & Data Access
 
-#### GetSetup
-Returns the vehicle's setup data.
-```lua
-HVehicle:GetSetup()
+#### `GetSetup`
+Returns the vehicle’s setup data.
+
+- <mark style="color:yellow;">returns</mark>: `UModularVehicleData | nil` — setup data or `nil`
+
+```lua title="Example"
+local setup = vehicle:GetSetup()
 ```
-##### Returns
-`UModularVehicleData`: The vehicle's setup data.
 
 ---
 
 ### Debugging & Utilities
 
-#### GetWheels
-Returns an array of wheels on the vehicle.
-```lua
-HVehicle:GetWheels()
+#### `GetWheels`
+Returns the wheels on the vehicle.
+
+- <mark style="color:yellow;">returns</mark>: `table` — array-like table of `UModularWheel` objects
+
+```lua title="Example"
+local wheels = vehicle:GetWheels()
 ```
-##### Returns
-`TArray_UModularWheel_`: An array of wheels on the vehicle.
 
 ---
-#### UpdateComponents
-Adds wheels onto the vehicle.
-```lua
-HVehicle:UpdateComponents()
-```
 
-| Type              | Name             | Description                          |
-|-------------------|------------------|--------------------------------------|
-| TArray_UModularWheel_ | additionalWheels | An array of additional wheels to add. |
+#### `UpdateComponents`
+Updates vehicle components with additional wheels.
+
+- additionalWheels: `table` — array-like table of `UModularWheel` objects to add
+
+```lua title="Example"
+vehicle:UpdateComponents(extraWheels)
+```
 
 ---
 
 ### AI & Navigation
 
-#### RequestDirectMove
-Requests a direct move to a specified velocity.
-```lua
-HVehicle:RequestDirectMove(moveVelocity, forceMaxSpeed)
-```
+#### `RequestDirectMove`
+Requests a direct move towards a velocity (AI/navigation helper).
 
-| Type     | Name         | Default | Description                         |
-|----------|--------------|---------|-------------------------------------|
-| [Vector](../global-variables/structs.md/#vector)  | moveVelocity |         | The target velocity for the vehicle. |
-| boolean?  | forceMaxSpeed| `false` | Whether to force the maximum speed.  |
+- moveVelocity: `Vector` — desired movement velocity
+- forceMaxSpeed: `boolean` — `true` to force max speed, `false` to respect limits (default `false`)
 
----
-#### RequestPathMove
-Requests movement through a new move input.
-```lua
-HVehicle:RequestPathMove(inputVector)
-```
-
-| Type     | Name       | Description                       |
-|----------|------------|-----------------------------------|
-| [Vector](../global-variables/structs.md/#vector)  | inputVector | The target input vector for the vehicle. |
-
----
-#### StopActiveMovement
-Stops applying further movement (usually zeros acceleration).
-```lua
-HVehicle:StopActiveMovement()
+```lua title="Example"
+vehicle:RequestDirectMove(Vector(1000, 0, 0), false)
 ```
 
 ---
-#### StopMovementKeepPathing
-Stops movement immediately (reset velocity) but keeps following current path.
-```lua
-HVehicle:StopMovementKeepPathing()
+
+#### `RequestPathMove`
+Requests movement through a new move input vector (AI/navigation helper).
+
+- inputVector: `Vector` — movement input direction/magnitude
+
+```lua title="Example"
+vehicle:RequestPathMove(Vector(1, 0, 0))
+```
+
+---
+
+#### `StopActiveMovement`
+Stops applying further movement (usually zeroes acceleration).
+
+```lua title="Example"
+vehicle:StopActiveMovement()
+```
+
+---
+
+#### `StopMovementKeepPathing`
+Stops movement immediately but continues following the current navigation path.
+
+```lua title="Example"
+vehicle:StopMovementKeepPathing()
 ```
 
 ---
 
 ### Replication & Cosmetic Sync
 
-#### SetCosmeticDataOnServer
-Sets the cosmetic data on the server.
-```lua
-HVehicle:SetCosmeticDataOnServer(data)
-```
+#### `SetCosmeticDataOnServer`
+Sets replicated cosmetic data on the server.
 
-| Type            | Name | Description                |
-|-----------------|------|----------------------------|
-| FRepCosmeticData | `data` | The cosmetic data to set.  |
+- data: `FRepCosmeticData` — cosmetic data struct
+
+```lua title="Example"
+vehicle:SetCosmeticDataOnServer(cosmeticData)
+```
 
 ---
 
 ### Extra Nav Movement Helpers
 
-#### IsFlying
-Returns whether the vehicle is on the ground.
-```lua
-HVehicle:IsFlying()
+#### `IsFlying`
+Whether the vehicle is considered flying.
+
+- <mark style="color:yellow;">returns</mark>: `boolean` — `true` if flying
+
+```lua title="Example"
+if vehicle:IsFlying() then
+    -- airborne logic
+end
 ```
-##### Returns
-`boolean`: true if the vehicle is on the ground, false otherwise.
 
 ---
-#### IsFalling
-Returns whether the vehicle is falling.
-```lua
-HVehicle:IsFalling()
+
+#### `IsFalling`
+Whether the vehicle is falling.
+
+- <mark style="color:yellow;">returns</mark>: `boolean` — `true` if falling
+
+```lua title="Example"
+if vehicle:IsFalling() then
+    -- falling logic
+end
 ```
-##### Returns
-`boolean`: true if the vehicle is falling, false otherwise.
 
 ---
-#### IsMovingOnGround
-Returns whether the vehicle is moving on the ground.
-```lua
-HVehicle:IsMovingOnGround()
+
+#### `IsMovingOnGround`
+Whether the vehicle is moving on the ground.
+
+- <mark style="color:yellow;">returns</mark>: `boolean` — `true` if moving on ground
+
+```lua title="Example"
+if vehicle:IsMovingOnGround() then
+    -- traction logic
+end
 ```
-##### Returns
-`boolean`: true if the vehicle is moving on the ground, false otherwise.
 
 ---
-#### IsSwimming
-Returns whether the vehicle is swimming (moving through fluid volume).
-```lua
-HVehicle:IsSwimming()
+
+#### `IsSwimming`
+Whether the vehicle is swimming (moving through fluid).
+
+- <mark style="color:yellow;">returns</mark>: `boolean` — `true` if swimming
+
+```lua title="Example"
+if vehicle:IsSwimming() then
+    -- water logic
+end
 ```
-##### Returns
-`boolean`: true if the vehicle is swimming, false otherwise.
 
 ---
-#### IsCrouching
-Returns if the vehicle is crouching.
-```lua
-HVehicle:IsCrouching()
+
+#### `IsCrouching`
+Whether the nav movement considers the vehicle “crouching” (rare for vehicles, but exposed).
+
+- <mark style="color:yellow;">returns</mark>: `boolean` — `true` if crouching
+
+```lua title="Example"
+if vehicle:IsCrouching() then
+    -- low-profile logic
+end
 ```
-##### Returns
-`boolean`: true if the vehicle is crouching, false otherwise.
 
 ---
-#### GetVelocityForNavMovement
-Gets the current velocity of the nav agent.
-```lua
-HVehicle:GetVelocityForNavMovement()
+
+#### `GetVelocityForNavMovement`
+Gets the current velocity used by nav movement.
+
+- <mark style="color:yellow;">returns</mark>: `Vector` — current nav velocity (defaults to `Vector(0,0,0)`)
+
+```lua title="Example"
+local vel = vehicle:GetVelocityForNavMovement()
 ```
-##### Returns
-`FVector`: The current velocity of the nav agent.
 
 ---
-#### GetMaxSpeedForNavMovement
-Gets the maximum speed of the nav agent.
-```lua
-HVehicle:GetMaxSpeedForNavMovement()
+
+#### `GetMaxSpeedForNavMovement`
+Gets the maximum speed used for navigation.
+
+- <mark style="color:yellow;">returns</mark>: `number` — max nav speed
+
+```lua title="Example"
+local maxSpeed = vehicle:GetMaxSpeedForNavMovement()
 ```
-##### Returns
-`number`: The maximum speed for nav movement.
 
 ---
 
 ### Lights & Sirens
-#### SetRightIndicator
-Sets the right indicator state.
-```lua
-HVehicle:SetRightIndicator(NewState)
-```
 
-- NewState: `boolean` - New right indicator state
+### `SetRightIndicator`
+Sets the right indicator/blinker state.
+
+- `NewState: boolean` — `true` to enable, `false` to disable
+
+```lua title="Example"
+vehicle:SetRightIndicator(true)
+```
 
 ---
 
-#### SetReverseLight
+### `SetLeftIndicator`
+Sets the left indicator/blinker state.
+
+- `NewState: boolean` — `true` to enable, `false` to disable
+
+```lua title="Example"
+vehicle:SetLeftIndicator(true)
+```
+
+---
+
+#### `SetReverseLight`
 Sets the reverse light state.
-```lua
-HVehicle:SetReverseLight(NewState)
-```
 
-- NewState: `boolean` - New reverse light state
+- `NewState: boolean` — `true` to enable, `false` to disable
+
+```lua title="Example"
+vehicle:SetReverseLight(true)
+```
 
 ---
 
-#### SetRedLightIntensity
-Sets the red light intensity.
-```lua
-HVehicle:SetRedLightIntensity(Value)
-```
+#### `SetRedLightIntensity`
+Sets the red light intensity (e.g. emergency light).
 
-- Value: `number` - Red light intensity value
+- Value: `number` — red light intensity
+
+```lua title="Example"
+vehicle:SetRedLightIntensity(5.0)
+```
 
 ---
 
-#### SetLightsEmissiveStrength
-Sets the lights emissive strength.
-```lua
-HVehicle:SetLightsEmissiveStrength(Value)
-```
+#### `SetLightsEmissiveStrength`
+Sets overall light emissive strength.
 
-- Value: `number` - Emissive strength value
+- Value: `number` — emissive strength
+
+```lua title="Example"
+vehicle:SetLightsEmissiveStrength(3.0)
+```
 
 ---
 
-#### SetLeftIndicator
-Sets the left indicator state.
-```lua
-HVehicle:SetLeftIndicator(NewState)
-```
+#### `SetIndicatorLightsIntensity`
+Sets indicator light intensity.
 
-- NewState: `boolean` - New left indicator state
+- Value: `number` — indicator light intensity
+
+```lua title="Example"
+vehicle:SetIndicatorLightsIntensity(4.0)
+```
 
 ---
 
-#### SetIndicatorLightsIntensity
-Sets the indicator lights intensity.
-```lua
-HVehicle:SetIndicatorLightsIntensity(Value)
-```
+#### `SetIndicatorAnimationSpeed`
+Sets indicator blink animation speed.
 
-- Value: `number` - Indicator lights intensity value
+- Value: `number` — animation speed
+
+```lua title="Example"
+vehicle:SetIndicatorAnimationSpeed(1.5)
+```
 
 ---
 
-#### SetIndicatorAnimationSpeed
-Sets the indicator animation speed.
-```lua
-HVehicle:SetIndicatorAnimationSpeed(Value)
-```
+#### `SetHazardLight`
+Sets the hazard lights state.
 
-- Value: `number` - Animation speed value
+- NewState: `boolean` — `true` to enable hazards, `false` to disable
+
+```lua title="Example"
+vehicle:SetHazardLight(true)
+```
 
 ---
 
-#### SetHazardLight
-Sets the hazard light state.
-```lua
-HVehicle:SetHazardLight(NewState)
-```
+#### `SetBrakeLight`
+Sets the brake light state manually.
 
-- NewState: `boolean` - New hazard light state
+- `NewState: boolean` — `true` to enable, `false` to disable
+
+```lua title="Example"
+vehicle:SetBrakeLight(true)
+```
 
 ---
 
-#### SetBrakeLight
-Sets the brake light state.
-```lua
-HVehicle:SetBrakeLight(NewState)
-```
+#### `SetSirenState`
+Toggles the siren state if a siren component is present.
 
-- NewState: `boolean` - New brake light state
+- `state: boolean` — `true` to enable siren, `false` to disable
+
+```lua title="Example"
+vehicle:SetSirenState(true)
+```
 
 ---
 
-#### SetSirenState
-Sets the siren state.
-```lua
-HVehicle:SetSirenState(state)
-```
+#### `SetSirenEmissionStrength`
+Sets siren light emission strength.
 
-- state: `boolean` - New siren state, if a siren is present
+- `Amount: number` — emission strength
+
+```lua title="Example"
+vehicle:SetSirenEmissionStrength(2.0)
+```
 
 ---
 
-#### SetSirenEmissionStrength
-Sets the siren light emission strength.
-```lua
-HVehicle:SetSirenEmissionStrength(Amount)
-```
+#### `SetSirenRedColor`
+Sets the siren red color.
 
-- Amount: `number` - Emission strength value
+- NewColor: `LinearColor` — new red color
+
+```lua title="Example"
+vehicle:SetSirenRedColor(LinearColor(1, 0, 0, 1))
+```
 
 ---
 
-#### SetSirenRedColor
-Sets the siren light red color.
-```lua
-HVehicle:SetSirenRedColor(NewColor)
-```
+#### `SetSirenBlueColor`
+Sets the siren blue color.
 
-- NewColor: [LinearColor](../global-variables/structs.md#linearcolor) - New red color for the siren light
+- NewColor: `LinearColor` — new blue color
+
+```lua title="Example"
+vehicle:SetSirenBlueColor(LinearColor(0, 0, 1, 1))
+```
 
 ---
 
-#### SetSirenBlueColor
-Sets the siren light blue color.
-```lua
-HVehicle:SetSirenBlueColor(NewColor)
-```
+#### `SetSirenBaseColor`
+Sets the siren base color.
 
-- NewColor: [LinearColor](../global-variables/structs.md#linearcolor) - New blue color for the siren light
+- NewColor: `LinearColor` — new base color
+
+```lua title="Example"
+vehicle:SetSirenBaseColor(LinearColor(1, 1, 1, 1))
+```
 
 ---
 
-#### SetSirenBaseColor
-Sets the siren light base color.
-```lua
-HVehicle:SetSirenBaseColor(NewColor)
+#### `SetSirenAnimationSpeed`
+Sets the siren animation speed.
+
+- Speed: `number` — animation speed multiplier
+
+```lua title="Example"
+vehicle:SetSirenAnimationSpeed(1.2)
 ```
-
-- NewColor: [LinearColor](../global-variables/structs.md#linearcolor) - New base color for the siren light
-
----
-
-#### SetSirenAnimationSpeed
-Sets the siren light animation speed.
-```lua
-HVehicle:SetSirenAnimationSpeed(Speed)
-```
-
-- Speed: `number` - Animation speed value
-
----

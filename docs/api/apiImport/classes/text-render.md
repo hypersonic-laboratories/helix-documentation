@@ -40,35 +40,54 @@ local text = TextRender(
 <FunctionsDeclaration type="Class" name="TextRender" />
 
 ### `SetText`
-Updates the text content.
-```lua
+Updates the text content
+
+- message: `string`
+
+```lua title="Example"
 text:SetText("Updated Message")
 ```
+
 ---
 
 ### `SetTextRenderColor`
-Changes the text color.
-```lua
+Changes the text color
+
+- Color: [Color](../global-variables/structs.md/#color)
+
+```lua title="Example"
 text:SetTextRenderColor(Color(255, 0, 0, 255)) -- red
 ```
+
 ---
 
 ### `SetFont`
-Changes the font to an engine enum or a loaded asset.
-```lua
+Changes the font to an engine enum or a loaded asset
+
+- Font: [FontType](../global-variables/enums.md/#fonttype)
+
+```lua title="Example"
 text:SetFont(FontType.RobotoMono)
 ```
+
 ---
 
 ### `SetXScale`
-Sets horizontal scale (width).
-```lua
+Sets horizontal scale (width)
+
+- scale: `number`
+
+```lua title="Example"
 text:SetXScale(2.0)
 ```
+
 ---
 
 ### `SetYScale`
-Sets vertical scale (depth).
-```lua
+Sets vertical scale (depth)
+
+- scale: `number`
+
+```lua title="Example"
 text:SetYScale(1.0)
 ```

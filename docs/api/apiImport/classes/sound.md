@@ -1,31 +1,15 @@
 ---
 title: Sound
 description: Class for playing in-game 2D and 3D sounds
-sidebar_position: 0
 tags: [class]
 ---
+The `Sound` class provides a high-level interface for playing and controlling both 2D and 3D audio in-game.
+It allows you to spawn sounds at specific locations, adjust playback properties such as volume, pitch, and attenuation, and apply effects like fading, filtering, and modulation.
+The class also exposes functions for querying playback state, retrieving audio analysis data (such as FFT and envelope data), and customizing audio routing and parameters.
 
-<HeaderDeclaration type="Class" name="Sound" image="/img/docs/sound.webp" />
+## Constructor
 
-The `Sound` class provides a high-level interface for playing and controlling both 2D and 3D audio in-game. It allows you to spawn sounds at specific locations, adjust playback properties such as volume, pitch, and attenuation, and apply effects like fading, filtering, and modulation. The class also exposes functions for querying playback state, retrieving audio analysis data (such as FFT and envelope data), and customizing audio routing and parameters.
-
-## Examples
-
-```lua
-local SoundActor = Sound(
-    Vector(-7940, 7402, 150),
-    '/Engine/VREditor/Sounds/UI/Enter_Play',
-    false,
-    false,
-    1.0,
-    1.0,
-    400,
-    600,
-    AttenuationFunction.Linear,
-    true
-)
-```
-```lua
+```lua title="Example"
 local SoundActor = Sound(
     Vector(-7940, 7402, 150),
     '/Engine/VREditor/Sounds/UI/Enter_Play',
@@ -42,23 +26,6 @@ print(SoundActor.Object) -- AActor
 print(SoundActor.Component) -- UAudioComponent
 ```
 
-## Variables
-
-| Name              |       Type             |
-| ----------------  | ------------------- |
-| Component          | [UAudioComponent](https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Runtime/Engine/Components/UAudioComponent?application_version=5.5)    |
-
-
-## Constructors
-
-<ConstructorDeclaration type="Class" name="Sound" />
-```lua
-local SoundActor = Sound(Vector(0, 0, 0),
-'/Engine/VREditor/Sounds/UI/Enter_Play',
-false, false, 1.0, 1.0, 400, 600,
-AttenuationFunction.Linear, true)
-```
-
 | Type              |       Name        | Default | Description                                                              |
 | ---------------  | :----------------- | ----- | ----------------------------------------------------------------------  |
 | [Vector](../global-variables/structs.md/#vector) | `Location`   |  | The location to spawn the decal at.  |
@@ -71,677 +38,530 @@ AttenuationFunction.Linear, true)
 | number | `FalloffDistance` | | The falloff distance for sound attenuation. |
 | AttenuationFunction NOTE: Needs Enum | `AttenuationFunction` | | The attenuation function enum to use for sound attenuation. |
 
-
-### Returns
-```ts
-table: {
-    Object: AActor,
-    Component: UAudioComponent,
-}
-```
-
 ## Functions
 
-<FunctionsDeclaration type="Class" name="Sound" />
-
-### Play
-
+### `Play`
 Starts playing the targeted audio component’s sound.
 
-```lua
-Sound:Play(StartTime)
-```
+- startTime: `number` - Time offset (in seconds) to begin playback from
 
-| Type | Name | Default | Description |
-| ---- | ---- | ------- | ----------- |
-| number | `StartTime` | `0` | Time offset (in seconds) to begin playback from. |
+```lua title="Example"
+SoundActor:Play(30)
+```
 
 ---
 
-### Stop
-
+### `Stop`
 Stops the audio component’s sound immediately and issues any relevant delegates.
 
-```lua
-Sound:Stop()
+```lua title="Example"
+SoundActor:Stop()
 ```
 
 ---
 
-### StopDelayed
-
+### `StopDelayed`
 Cues a stop request after a given delay (in seconds). Stops immediately if `DelayTime <= 0`.
 
-```lua
-Sound:StopDelayed(DelayTime)
-```
+- delayTime: `number` - Delay before stopping the sound
 
-| Type | Name | Default | Description |
-| ---- | ---- | ------- | ----------- |
-| number | `DelayTime` | | Delay before stopping the sound. |
+```lua title="Example"
+SoundActor:StopDelayed(delayTime)
+```
 
 ---
 
-### FadeIn
+### `FadeIn`
+Fades the sound in over a duration with optional volume curve
 
-Fades the sound in over a duration with optional volume curve.
+- FadeInDuration: `number` — Duration of the fade-in.
+- FadeVolumeLevel: `number` (default: 1.0) — Target volume level.
+- StartTime: `number` (default: 0) — Optional start time offset in seconds.
+- FadeCurve: `EAudioFaderCurve` (default: Linear) — Curve shape used for fading.
 
-```lua
-Sound:FadeIn(FadeInDuration, FadeVolumeLevel, StartTime, FadeCurve)
+```lua title="Example"
+SoundActor:FadeIn(FadeInDuration, FadeVolumeLevel, StartTime, FadeCurve)
 ```
-
-| Type | Name | Default | Description |
-| ---- | ---- | ------- | ----------- |
-| number | `FadeInDuration` | | Duration of fade-in. |
-| number | `FadeVolumeLevel` | `1.0` | Target volume level. |
-| number | `StartTime` | `0` | Start time offset (optional). |
-| [EAudioFaderCurve](https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Runtime/Engine/Components/EAudioFaderCurve?application_version=5.5) | `FadeCurve` | `Linear` | Curve shape used for fading. |
 
 ---
 
-### FadeOut
+### `FadeOut`
+Fades the sound out over a duration with optional volume curve
 
-Fades the sound out over a duration with optional volume curve.
+- FadeOutDuration: `number` - duration of fade-out
+- FadeVolumeLevel: `number` - final volume level (default: `0`)
+- FadeCurve: `EAudioFaderCurve` — curve shape used for fading
 
-```lua
-Sound:FadeOut(FadeOutDuration, FadeVolumeLevel, FadeCurve)
+```lua title="Example"
+SoundActor:FadeOut(FadeOutDuration, FadeVolumeLevel, FadeCurve)
 ```
-
-| Type | Name | Default | Description |
-| ---- | ---- | ------- | ----------- |
-| number | `FadeOutDuration` | | Duration of fade-out. |
-| number | `FadeVolumeLevel` | `0.0` | Final volume level. |
-| [EAudioFaderCurve](https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Runtime/Engine/Components/EAudioFaderCurve?application_version=5.5) | `FadeCurve` | `Linear` | Curve shape used for fading. |
 
 ---
 
-### SetPaused
+### `SetPaused`
+Pauses or resumes the audio component’s playback
 
-Pauses or resumes the audio component’s playback.
+- bPause: `boolean`
 
-```lua
-Sound:SetPaused(bPause)
+```lua title="Example"
+SoundActor:SetPaused(bPause)
 ```
-
-| Type | Name | Default | Description |
-| ---- | ---- | ------- | ----------- |
-| boolean | `bPause` | | Whether to pause the sound (`true`) or resume it (`false`). |
 
 ---
 
-### SetVolumeMultiplier
+### `SetVolumeMultiplier`
+Sets a new global volume multiplier for the sound
 
-Sets a new global volume multiplier for the sound.
+- NewVolumeMultiplier: `number`
 
-```lua
-Sound:SetVolumeMultiplier(NewVolumeMultiplier)
+```lua title="Example"
+SoundActor:SetVolumeMultiplier(NewVolumeMultiplier)
 ```
-
-| Type | Name | Default | Description |
-| ---- | ---- | ------- | ----------- |
-| number | `NewVolumeMultiplier` | | New volume multiplier (0.0 to 1.0 typically). |
 
 ---
 
-### SetPitchMultiplier
+### `SetPitchMultiplier`
+Sets a new pitch multiplier for the sound
 
-Sets a new pitch multiplier for the sound.
+- NewPitchMultiplier: `number` - Multiplier for playback pitch (e.g., 1.0 is normal pitch)
 
-```lua
-Sound:SetPitchMultiplier(NewPitchMultiplier)
+```lua title="Example"
+SoundActor:SetPitchMultiplier(NewPitchMultiplier)
 ```
-
-| Type | Name | Default | Description |
-| ---- | ---- | ------- | ----------- |
-| number | `NewPitchMultiplier` | | Multiplier for playback pitch (e.g., 1.0 is normal pitch). |
 
 ---
 
-### SetUISound
+### `SetUISound`
+Marks the sound as UI sound (used for mixing purposes)
 
-Marks the sound as UI sound (used for mixing purposes).
+- bInUISound: `boolean` - Whether this sound should be treated as a UI sound
 
-```lua
-Sound:SetUISound(bInUISound)
+```lua title="Example"
+SoundActor:SetUISound(bInUISound)
 ```
-
-| Type | Name | Default | Description |
-| ---- | ---- | ------- | ----------- |
-| boolean | `bInUISound` | | Whether this sound should be treated as a UI sound. |
 
 ---
 
-### SetSound
+### `SetSound`
+Changes the sound asset being played by the component
 
-Changes the sound asset being played by the component.
+- NewSound: [USoundBase](https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Runtime/Engine/Sound/USoundBase?application_version=5.5)
 
-```lua
-Sound:SetSound(NewSound)
+```lua title="Example"
+SoundActor:SetSound(NewSound)
 ```
-
-| Type | Name | Default | Description |
-| ---- | ---- | ------- | ----------- |
-| [USoundBase](https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Runtime/Engine/Sound/USoundBase?application_version=5.5) | `NewSound` | | The new sound asset to play. |
 
 ---
 
-### SetLowPassFilterEnabled
+### `SetLowPassFilterEnabled`
+Enables/disables a low-pass filter for this sound
 
-Enables/disables a low-pass filter for this sound.
+- InLowPassFilterEnabled: `boolean` - Whether the LPF is enabled
 
-```lua
-Sound:SetLowPassFilterEnabled(InLowPassFilterEnabled)
+```lua title="Example"
+SoundActor:SetLowPassFilterEnabled(InLowPassFilterEnabled)
 ```
-
-| Type | Name | Default | Description |
-| ---- | ---- | ------- | ----------- |
-| boolean | `InLowPassFilterEnabled` | | Whether the LPF is enabled. |
 
 ---
 
-### SetLowPassFilterFrequency
+### `SetLowPassFilterFrequency`
+Sets the cutoff frequency (Hz) for the low-pass filter
 
-Sets the cutoff frequency (Hz) for the low-pass filter.
+- InLowPassFilterFrequency: `number` - Frequency threshold for LPF (in Hz)
 
-```lua
-Sound:SetLowPassFilterFrequency(InLowPassFilterFrequency)
+```lua title="Example"
+SoundActor:SetLowPassFilterFrequency(InLowPassFilterFrequency)
 ```
-
-| Type | Name | Default | Description |
-| ---- | ---- | ------- | ----------- |
-| number | `InLowPassFilterFrequency` | | Frequency threshold for LPF (in Hz). |
 
 ---
 
-### SetHighPassFilterEnabled
+### `SetHighPassFilterEnabled`
+Enables/disables a high-pass filter for this sound
 
-Enables/disables a high-pass filter for this sound.
+- InHighPassFilterEnabled: `boolean` - Whether the HPF is enabled
 
-```lua
-Sound:SetHighPassFilterEnabled(InHighPassFilterEnabled)
+```lua title="Example"
+SoundActor:SetHighPassFilterEnabled(InHighPassFilterEnabled)
 ```
-
-| Type | Name | Default | Description |
-| ---- | ---- | ------- | ----------- |
-| boolean | `InHighPassFilterEnabled` | | Whether the HPF is enabled. |
 
 ---
 
-### SetHighPassFilterFrequency
+### `SetHighPassFilterFrequency`
+Sets the cutoff frequency (Hz) for the high-pass filter
 
-Sets the cutoff frequency (Hz) for the high-pass filter.
+- InHighPassFilterFrequency: `number` - Frequency threshold for HPF (in Hz)
 
-```lua
-Sound:SetHighPassFilterFrequency(InHighPassFilterFrequency)
+```lua title="Example"
+SoundActor:SetHighPassFilterFrequency(InHighPassFilterFrequency)
 ```
-
-| Type | Name | Default | Description |
-| ---- | ---- | ------- | ----------- |
-| number | `InHighPassFilterFrequency` | | Frequency threshold for HPF (in Hz). |
 
 ---
 
-### SetSubmixSend
+### `SetSubmixSend`
+Sets the send level to a specific submix
 
-Sets the send level to a specific submix.
+- Submix: [USoundSubmixBase](https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Runtime/Engine/Sound/USoundSubmixBase?application_version=5.5)
+- SendLevel: `number` - Volume level of the send
 
-```lua
-Sound:SetSubmixSend(Submix, SendLevel)
+```lua title="Example"
+SoundActor:SetSubmixSend(Submix, SendLevel)
 ```
-
-| Type | Name | Default | Description |
-| ---- | ---- | ------- | ----------- |
-| [USoundSubmixBase](https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Runtime/Engine/Sound/USoundSubmixBase?application_version=5.5) | `Submix` | | Submix to send sound to. |
-| number | `SendLevel` | | Volume level of the send. |
 
 ---
 
-### SetAudioBusSendPreEffect
+### `SetAudioBusSendPreEffect`
+Sets how much audio is sent to an Audio Bus before source effects
 
-Sets how much audio is sent to an Audio Bus before source effects.
+- AudioBus: [UAudioBus](https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Runtime/Engine/Sound/UAudioBus?application_version=5.5) - Audio bus to send to pre-effects
+- AudioBusSendLevel: `number` - Volume level of the send
 
-```lua
-Sound:SetAudioBusSendPreEffect(AudioBus, AudioBusSendLevel)
+```lua title="Example"
+SoundActor:SetAudioBusSendPreEffect(AudioBus, AudioBusSendLevel)
 ```
-
-| Type | Name | Default | Description |
-| ---- | ---- | ------- | ----------- |
-| [UAudioBus](https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Runtime/Engine/Sound/UAudioBus?application_version=5.5) | `AudioBus` | | Audio bus to send to pre-effects. |
-| number | `AudioBusSendLevel` | | Volume level of the send. |
 
 ---
 
-### SetAudioBusSendPostEffect
+### `SetAudioBusSendPostEffect`
+Sets how much audio is sent to an Audio Bus after source effects
 
-Sets how much audio is sent to an Audio Bus after source effects.
+- AudioBus: [UAudioBus](https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Runtime/Engine/Sound/UAudioBus?application_version=5.5) - Audio bus to send to pre-effects
+- AudioBusSendLevel: `number` - Volume level of the send
 
-```lua
-Sound:SetAudioBusSendPostEffect(AudioBus, AudioBusSendLevel)
+```lua title="Example"
+SoundActor:SetAudioBusSendPostEffect(AudioBus, AudioBusSendLevel)
 ```
-
-| Type | Name | Default | Description |
-| ---- | ---- | ------- | ----------- |
-| [UAudioBus](https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Runtime/Engine/Sound/UAudioBus?application_version=5.5) | `AudioBus` | | Audio bus to send to post-effects. |
-| number | `AudioBusSendLevel` | | Volume level of the send. |
 
 ---
 
-### SetSourceBusSendPreEffect
+### `SetSourceBusSendPreEffect`
+Sets the send level to a Source Bus before effect processing
 
-Sets the send level to a Source Bus before effect processing.
+- SoundSourceBus: [USoundSourceBus](https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Runtime/Engine/Sound/USoundSourceBus?application_version=5.5) - Source bus to send to pre-effects
+- SourceBusSendLevel: `number` - Volume level of the send
 
-```lua
-Sound:SetSourceBusSendPreEffect(SoundSourceBus, SourceBusSendLevel)
+```lua title="Example"
+SoundActor:SetSourceBusSendPreEffect(SoundSourceBus, SourceBusSendLevel)
 ```
-
-| Type | Name | Default | Description |
-| ---- | ---- | ------- | ----------- |
-| [USoundSourceBus](https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Runtime/Engine/Sound/USoundSourceBus?application_version=5.5) | `SoundSourceBus` | | Source bus to send to pre-effects. |
-| number | `SourceBusSendLevel` | | Volume level of the send. |
 
 ---
 
-### SetSourceBusSendPostEffect
+### `SetSourceBusSendPostEffect`
+Sets the send level to a Source Bus after effect processing
 
-Sets the send level to a Source Bus after effect processing.
+- SoundSourceBus: [USoundSourceBus](https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Runtime/Engine/Sound/USoundSourceBus?application_version=5.5) - Source bus to send to pre-effects
+- SourceBusSendLevel: `number` - Volume level of the send
 
-```lua
-Sound:SetSourceBusSendPostEffect(SoundSourceBus, SourceBusSendLevel)
+```lua title="Example"
+SoundActor:SetSourceBusSendPostEffect(SoundSourceBus, SourceBusSendLevel)
 ```
-
-| Type | Name | Default | Description |
-| ---- | ---- | ------- | ----------- |
-| [USoundSourceBus](https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Runtime/Engine/Sound/USoundSourceBus?application_version=5.5) | `SoundSourceBus` | | Source bus to send to post-effects. |
-| number | `SourceBusSendLevel` | | Volume level of the send. |
 
 ---
 
-### AdjustVolume
+### `AdjustVolume`
+Adjusts the playback volume smoothly over time using a curve
 
-Adjusts the playback volume smoothly over time using a curve.
+- AdjustVolumeDuration: `number` - Time to reach the target volume
+- AdjustVolumeLevel: `number` - Target volume level
+- FadeCurve: [EAudioFaderCurve](https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Runtime/Engine/Components/EAudioFaderCurve?application_version=5.5) - Curve used for adjustment
 
-```lua
-Sound:AdjustVolume(AdjustVolumeDuration, AdjustVolumeLevel, FadeCurve)
+```lua title="Example"
+SoundActor:AdjustVolume(AdjustVolumeDuration, AdjustVolumeLevel, FadeCurve)
 ```
-
-| Type | Name | Default | Description |
-| ---- | ---- | ------- | ----------- |
-| number | `AdjustVolumeDuration` | | Time to reach the target volume. |
-| number | `AdjustVolumeLevel` | | Target volume level. |
-| [EAudioFaderCurve](https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Runtime/Engine/Components/EAudioFaderCurve?application_version=5.5) | `FadeCurve` | `Linear` | Curve used for adjustment. |
 
 ---
 
-### IsPlaying
+### `IsPlaying`
+Returns whether the sound is currently playing
 
-Returns whether the sound is currently playing.
+- <mark style="color:yellow;">returns</mark>: `boolean`
 
-```lua
-Sound:IsPlaying()
+```lua title="Example"
+local bPlaying = SoundActor:IsPlaying()
 ```
-
-#### Returns
-`boolean`: `true` if the sound is playing, `false` otherwise.
 
 ---
 
-### IsVirtualized
+### `IsVirtualized`
+Returns whether the sound is virtualized (paused due to distance or other factors)
 
-Returns whether the sound is virtualized (paused due to distance or other factors).
+- <mark style="color:yellow;">returns</mark>: `boolean`
 
-```lua
-Sound:IsVirtualized()
+```lua title="Example"
+local bVirtualized = SoundActor:IsVirtualized()
 ```
-
-#### Returns
-`boolean`: `true` if the sound is virtualized, `false` otherwise.
 
 ---
 
-### GetPlayState
+### `GetPlayState`
+Returns the current play state of the audio component
 
-Returns the current play state of the audio component.
+- <mark style="color:yellow;">returns</mark>: [EAudioComponentPlayState](https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Runtime/Engine/Components/EAudioComponentPlayState?application_version=5.5) - Enum indicating current playback state
 
-```lua
-Sound:GetPlayState()
+```lua title="Example"
+local playState = SoundActor:GetPlayState()
 ```
-
-#### Returns
-[EAudioComponentPlayState](https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Runtime/Engine/Components/EAudioComponentPlayState?application_version=5.5): Enum indicating current playback state.
 
 ---
 
-### HasCookedFFTData
+### `HasCookedFFTData`
+Checks if the current sound has precomputed FFT data available
 
-Checks if the current sound has precomputed FFT data available.
+- <mark style="color:yellow;">returns</mark>: `boolean`
 
-```lua
-Sound:HasCookedFFTData()
+```lua title="Example"
+local hCookedF = SoundActor:HasCookedFFTData()
 ```
-
-#### Returns
-`boolean`: `true` if FFT data is available.
 
 ---
 
-### HasCookedAmplitudeEnvelopeData
+### `HasCookedAmplitudeEnvelopeData`
+Checks if the current sound has amplitude envelope data
 
-Checks if the current sound has amplitude envelope data.
+- <mark style="color:yellow;">returns</mark>: `boolean`
 
-```lua
-Sound:HasCookedAmplitudeEnvelopeData()
+```lua title="Example"
+local hCookedA = SoundActor:HasCookedAmplitudeEnvelopeData()
 ```
-
-#### Returns
-`boolean`: `true` if amplitude envelope data exists.
 
 ---
 
-### GetCookedEnvelopeDataForAllPlayingSounds
+### `GetCookedEnvelopeDataForAllPlayingSounds`
+Gets the current-time amplitude envelope data of the sounds playing on the audio component.
+Envelope data is not averaged or interpolated. Instead an array of data with all playing sound waves with cooked data is returned.
 
-Gets the current-time amplitude envelope data of the sounds playing on the audio component. Envelope data is not averaged or interpolated. Instead an array of data with all playing sound waves with cooked data is returned.
+- <mark style="color:yellow;">returns</mark>: `boolean | TArray`
 
-```lua
+```lua title="Example"
 local OutEnvelopeData = UE.TArray()
-local DataFound = Sound:GetCookedEnvelopeDataForAllPlayingSounds(OutEnvelopeData)
+local DataFound = SoundActor:GetCookedEnvelopeDataForAllPlayingSounds(OutEnvelopeData)
 ```
 OR
-```lua
-local DataFound, OutEnvelopeData = Sound:GetCookedEnvelopeDataForAllPlayingSounds(OutEnvelopeData)
-```
 
-#### Returns
-`boolean`: `true` if data exists and audio is playing.</br>
-`TArray<`[FSoundWaveEnvelopeDataPerSound](https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Runtime/Engine/Sound/FSoundWaveEnvelopeDataPerSound?application_version=5.5)`>`: Array of envelope data.
+```lua title="Example"
+local DataFound, OutEnvelopeData = SoundActor:GetCookedEnvelopeDataForAllPlayingSounds(OutEnvelopeData)
+```
 
 ---
 
-### GetCookedEnvelopeData
+### `GetCookedEnvelopeData`
+Gets the current amplitude envelope value of the sound
 
-Gets the current amplitude envelope value of the sound.
+- OutEnvelopeData: `number` - Output variable for the current envelope value
+- <mark style="color:yellow;">returns</mark>: `boolean`
 
-```lua
-Sound:GetCookedEnvelopeData(OutEnvelopeData)
+```lua title="Example"
+local gCookedE = SoundActor:GetCookedEnvelopeData(OutEnvelopeData)
 ```
-
-| Type | Name | Default | Description |
-| ---- | ---- | ------- | ----------- |
-| number | `OutEnvelopeData` | | Output variable for the current envelope value. |
-
-#### Returns
-`boolean`: `true` if valid data was retrieved.
 
 ---
 
-### GetCookedFFTDataForAllPlayingSounds
-
+### `GetCookedFFTDataForAllPlayingSounds`
 Gets the current-time cooked spectral data of the sounds playing on the audio component.
 Spectral data is not averaged or interpolated. Instead an array of data with all playing sound waves with cooked data is returned.
 
-```lua
+- <mark style="color:yellow;">returns</mark>: `boolean | TArray`
+
+```lua title="Example"
 local OutSoundWaveSpectralData = UE.TArray()
-local DataFound = Sound:GetCookedFFTDataForAllPlayingSounds(OutEnvelopeData)
+local DataFound = SoundActor:GetCookedFFTDataForAllPlayingSounds(OutEnvelopeData)
 ```
 OR
-```lua
-local DataFound, OutEnvelopeData = Sound:GetCookedFFTDataForAllPlayingSounds(OutEnvelopeData)
-```
 
-#### Returns
-`boolean`: `true` if data exists and audio is playing.</br>
-`TArray<`[FSoundWaveSpectralDataPerSound](https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Runtime/Engine/Sound/FSoundWaveSpectralDataPerSound?application_version=5.5)`>`: Array of envelope data.
+```lua title="Example"
+local DataFound, OutEnvelopeData = SoundActor:GetCookedFFTDataForAllPlayingSounds(OutEnvelopeData)
+```
 
 ---
 
-### GetCookedFFTData
+### `GetCookedFFTData`
+Gets the spectral FFT data for specified frequencies
 
-Gets the spectral FFT data for specified frequencies.
+- FrequenciesToGet: `TArray` - List of frequencies to retrieve data for
+- OutSoundWaveSpectralData: `TArray` - Output array for spectral data
+- <mark style="color:yellow;">returns</mark>: `boolean`
 
-```lua
-Sound:GetCookedFFTData(FrequenciesToGet, OutSoundWaveSpectralData)
+```lua title="Example"
+SoundActor:GetCookedFFTData(FrequenciesToGet, OutSoundWaveSpectralData)
 ```
-
-| Type | Name | Default | Description |
-| ---- | ---- | ------- | ----------- |
-| TArray<number> | `FrequenciesToGet` | | List of frequencies to retrieve data for. |
-| TArray<FSoundWaveSpectralData> | `OutSoundWaveSpectralData` | | Output array for spectral data. |
-
-#### Returns
-`boolean`: `true` if data was successfully retrieved.
 
 ---
 
-### SetIntParameter
+### `SetIntParameter`
+Sets a named integer parameter on the sound
 
-Sets a named integer parameter on the sound.
+- InName: `string` - Name of the parameter
+- InInt: `integer` - Value to set
 
-```lua
-Sound:SetIntParameter(InName, InInt)
+```lua title="Example"
+SoundActor:SetIntParameter(InName, InInt)
 ```
-
-| Type | Name | Default | Description |
-| ---- | ---- | ------- | ----------- |
-| string | `InName` | | Name of the parameter. |
-| integer | `InInt` | | Value to set. |
 
 ---
 
-### SetFloatParameter
+### `SetFloatParameter`
+Sets a named float parameter on the sound
 
-Sets a named float parameter on the sound.
+- InName: `string` - Name of the parameter
+- InFloat: `number` - Value to set
 
-```lua
-Sound:SetFloatParameter(InName, InFloat)
+```lua title="Example"
+SoundActor:SetFloatParameter(InName, InFloat)
 ```
-
-| Type | Name | Default | Description |
-| ---- | ---- | ------- | ----------- |
-| string | `InName` | | Name of the parameter. |
-| number | `InFloat` | | Value to set. |
 
 ---
 
-### SetBoolParameter
+### `SetBoolParameter`
+Sets a named boolean parameter on the sound
 
-Sets a named boolean parameter on the sound.
+- InName: `string` - Name of the parameter
+- InBool: `boolean` - Value to set
 
-```lua
-Sound:SetBoolParameter(InName, InBool)
+```lua title="Example"
+SoundActor:SetBoolParameter(InName, InBool)
 ```
-
-| Type | Name | Default | Description |
-| ---- | ---- | ------- | ----------- |
-| string | `InName` | | Name of the parameter. |
-| boolean | `InBool` | | Value to set. |
 
 ---
 
-### SetWaveParameter
+### `SetWaveParameter`
+Sets a named wave parameter on the sound
 
-Sets a named wave parameter on the sound.
+- InName: string - Name of the parameter
+- InWave: [USoundWave](https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Runtime/Engine/Sound/USoundWave?application_version=5.5) - Wave to assign
 
-```lua
-Sound:SetWaveParameter(InName, InWave)
+```lua title="Example"
+SoundActor:SetWaveParameter(InName, InWave)
 ```
-
-| Type | Name | Default | Description |
-| ---- | ---- | ------- | ----------- |
-| string | `InName` | | Name of the parameter. |
-| [USoundWave](https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Runtime/Engine/Sound/USoundWave?application_version=5.5) | `InWave` | | Wave to assign. |
 
 ---
 
-### SetAttenuationSettings
+### `SetAttenuationSettings`
+Sets the attenuation settings for the sound
 
-Sets the attenuation settings for the sound.
+- InAttenuationSettings: [USoundAttenuation](https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Runtime/Engine/Sound/USoundAttenuation?application_version=5.5) - The sound attenuation instance used to be set
 
-```lua
-Sound:SetAttenuationSettings(InAttenuationSettings)
+```lua title="Example"
+SoundActor:SetAttenuationSettings(InAttenuationSettings)
 ```
-
-| Type | Name | Default | Description |
-| ---- | ---- | ------- | ----------- |
-| [USoundAttenuation](https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Runtime/Engine/Sound/USoundAttenuation?application_version=5.5) | `InAttenuationSettings` | | The sound attenuation instance used to be set. |
 
 ---
 
-### SetAttenuationOverrides
+### `SetAttenuationOverrides`
+Sets the attenuation settings for the sound by overriding
 
-Sets the attenuation settings for the sound by overriding.
+- InAttenuationSettings: [FSoundAttenuationSettings](https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Runtime/Engine/Sound/FSoundAttenuationSettings?application_version=5.5) - The sound attenuation structure used to override the attenuation settings
 
-```lua
-Sound:SetAttenuationOverrides(InAttenuationSettings)
+```lua title="Example"
+SoundActor:SetAttenuationOverrides(InAttenuationSettings)
 ```
-
-| Type | Name | Default | Description |
-| ---- | ---- | ------- | ----------- |
-| [FSoundAttenuationSettings](https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Runtime/Engine/Sound/FSoundAttenuationSettings?application_version=5.5) | `InAttenuationSettings` | | The sound attenuation structure used to override the attenuation settings. |
 
 ---
 
-### AdjustAttenuation
+### `AdjustAttenuation`
+Modifies the attenuation settings on the component
 
-Modifies the attenuation settings on the component.
+- InAttenuationSettings: [FSoundAttenuationSettings](https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Runtime/Engine/Sound/FSoundAttenuationSettings?application_version=5.5) - Updated settings to apply
 
-```lua
-Sound:AdjustAttenuation(InAttenuationSettings)
+```lua title="Example"
+SoundActor:AdjustAttenuation(InAttenuationSettings)
 ```
-
-| Type | Name | Default | Description |
-| ---- | ---- | ------- | ----------- |
-| [FSoundAttenuationSettings](https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Runtime/Engine/Sound/FSoundAttenuationSettings?application_version=5.5) | `InAttenuationSettings` | | Updated settings to apply. |
 
 ---
 
-### BP_GetAttenuationSettingsToApply
+### `BP_GetAttenuationSettingsToApply`
+Retrieves the current attenuation settings applied to the sound
 
-Retrieves the current attenuation settings applied to the sound.
+- OutAttenuationSettings: [FSoundAttenuationSettings](https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Runtime/Engine/Sound/FSoundAttenuationSettings?application_version=5.5) - Output structure to receive settings
+- <mark style="color:yellow;">returns</mark>: `boolean`
 
-```lua
-Sound:BP_GetAttenuationSettingsToApply(OutAttenuationSettings)
+```lua title="Example"
+local success = SoundActor:BP_GetAttenuationSettingsToApply(OutAttenuationSettings)
 ```
-
-| Type | Name | Default | Description |
-| ---- | ---- | ------- | ----------- |
-| [FSoundAttenuationSettings](https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Runtime/Engine/Sound/FSoundAttenuationSettings?application_version=5.5) | `OutAttenuationSettings` | | Output structure to receive settings. |
-
-#### Returns
-`boolean`: `true` if settings were retrieved.
 
 ---
 
-### SetOutputToBusOnly
+### `SetOutputToBusOnly`
+Controls whether the audio is output only to the bus
 
-Controls whether the audio is output only to the bus.
+- bInOutputToBusOnly: `boolean` - Whether to route output only to the bus
 
-```lua
-Sound:SetOutputToBusOnly(bInOutputToBusOnly)
+```lua title="Example"
+SoundActor:SetOutputToBusOnly(bInOutputToBusOnly)
 ```
-
-| Type | Name | Default | Description |
-| ---- | ---- | ------- | ----------- |
-| boolean | `bInOutputToBusOnly` | | Whether to route output only to the bus. |
 
 ---
 
-### SetOverrideAttenuation
+### `SetOverrideAttenuation`
+Overrides the default attenuation behavior
 
-Overrides the default attenuation behavior.
+- bInOverrideAttenuation: `boolean` - Whether to override attenuation settings
 
-```lua
-Sound:SetOverrideAttenuation(bInOverrideAttenuation)
+```lua title="Example"
+SoundActor:SetOverrideAttenuation(bInOverrideAttenuation)
 ```
-
-| Type | Name | Default | Description |
-| ---- | ---- | ------- | ----------- |
-| boolean | `bInOverrideAttenuation` | | Whether to override attenuation settings. |
 
 ---
 
-### SetModulationRouting
+### `SetModulationRouting`
+Sets modulation routing for a destination
 
-Sets modulation routing for a destination.
+- Modulators: [USoundModulatorBase](https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Runtime/AudioExtensions/USoundModulatorBase?application_version=5.5) - Modulators to use
+- Destination: [EModulationDestination](https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Runtime/Engine/Sound/EModulationDestination?application_version=5.5) - Where to apply modulation
+- RoutingMethod: [EModulationRouting](https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Runtime/Engine/Sound/EModulationRouting?application_version=5.5) - Method of routing modulators
 
-```lua
-Sound:SetModulationRouting(Modulators, Destination, RoutingMethod)
+```lua title="Example"
+SoundActor:SetModulationRouting(Modulators, Destination, RoutingMethod)
 ```
-
-| Type | Name | Default | Description |
-| ---- | ---- | ------- | ----------- |
-| TSet<[USoundModulatorBase](https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Runtime/AudioExtensions/USoundModulatorBase?application_version=5.5)> | `Modulators` | | Modulators to use. |
-| [EModulationDestination](https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Runtime/Engine/Sound/EModulationDestination?application_version=5.5) | `Destination` | | Where to apply modulation. |
-| [EModulationRouting](https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Runtime/Engine/Sound/EModulationRouting?application_version=5.5) | `RoutingMethod` | | Method of routing modulators. |
 
 ---
 
-### AddModulationRouting
+### `AddModulationRouting`
+Adds modulators to existing modulation routing
 
-Adds modulators to existing modulation routing.
+- Modulators: [USoundModulatorBase](https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Runtime/AudioExtensions/USoundModulatorBase?application_version=5.5) - Modulators to add
+- Destination: [EModulationDestination](https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Runtime/Engine/Sound/EModulationDestination?application_version=5.5) - Where to apply added modulators
 
-```lua
-Sound:AddModulationRouting(Modulators, Destination)
+```lua title="Example"
+SoundActor:AddModulationRouting(Modulators, Destination)
 ```
-
-| Type | Name | Default | Description |
-| ---- | ---- | ------- | ----------- |
-| TSet<[USoundModulatorBase](https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Runtime/AudioExtensions/USoundModulatorBase?application_version=5.5) | `Modulators` | | Modulators to add. |
-| [EModulationDestination](https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Runtime/Engine/Sound/EModulationDestination?application_version=5.5) | `Destination` | | Where to apply added modulators. |
 
 ---
 
-### RemoveModulationRouting
+### `RemoveModulationRouting`
+Removes modulators from existing routing
 
-Removes modulators from existing routing.
+- Modulators: [USoundModulatorBase](https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Runtime/AudioExtensions/USoundModulatorBase?application_version=5.5) - Modulators to remove
+- Destination: [EModulationDestination](https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Runtime/Engine/Sound/EModulationDestination?application_version=5.5) - Where to remove modulators from
 
-```lua
-Sound:RemoveModulationRouting(Modulators, Destination)
+```lua title="Example"
+SoundActor:RemoveModulationRouting(Modulators, Destination)
 ```
-
-| Type | Name | Default | Description |
-| ---- | ---- | ------- | ----------- |
-| TSet<[USoundModulatorBase](https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Runtime/AudioExtensions/USoundModulatorBase?application_version=5.5) | `Modulators` | | Modulators to remove. |
-| [EModulationDestination](https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Runtime/Engine/Sound/EModulationDestination?application_version=5.5) | `Destination` | | Where to remove modulators from. |
 
 ---
 
-### GetModulators
+### `GetModulators`
+Gets active modulators for a given modulation destination
 
-Gets active modulators for a given modulation destination.
+- Destination: [EModulationDestination](https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Runtime/Engine/Sound/EModulationDestination?application_version=5.5) - Which destination to query
+- <mark style="color:yellow;">returns</mark>: `TSet` [USoundModulatorBase](https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Runtime/AudioExtensions/USoundModulatorBase?application_version=5.5)
 
-```lua
-Sound:GetModulators(Destination)
+```lua title="Example"
+SoundActor:GetModulators(Destination)
 ```
-
-| Type | Name | Default | Description |
-| ---- | ---- | ------- | ----------- |
-| [EModulationDestination](https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Runtime/Engine/Sound/EModulationDestination?application_version=5.5) | `Destination` | | Which destination to query. |
-
-#### Returns
-`TSet<USoundModulatorBase>`: Set of active modulators.
 
 ---
 
-### PlayQuantized
+### `PlayQuantized`
+Plays the sound aligned to a quantization boundary using a clock handle
 
-Plays the sound aligned to a quantization boundary using a clock handle.
+- WorldContextObject: UObject - Context object, for example the world.
+- InClockHandle: [UQuartzClockHandle](https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Runtime/AudioMixer/Quartz/UQuartzClockHandle?application_version=5.5) - Handle to the clock.
+- InQuantizationBoundary: [FQuartzQuantizationBoundary](https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Runtime/Engine/Sound/FQuartzQuantizationBoundary?application_version=5.5) - Quantization boundary.
+- InDelegate: Delegate - Delegate to call on completion.
+- InStartTime: number (default: `0`) - Optional start time.
+- InFadeInDuration: number (default: `0`) - Fade-in duration.
+- InFadeVolumeLevel: number (default: `1.0`) - Target volume.
+- InFadeCurve: [EAudioFaderCurve](https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Runtime/Engine/Components/EAudioFaderCurve?application_version=5.5) (default: `Linear`) - Fade curve.
 
-```lua
-Sound:PlayQuantized(WorldContextObject, InClockHandle, InQuantizationBoundary, InDelegate, InStartTime, InFadeInDuration, InFadeVolumeLevel, InFadeCurve)
+```lua title="Example"
+SoundActor:PlayQuantized(WorldContextObject, InClockHandle, InQuantizationBoundary, InDelegate, InStartTime, InFadeInDuration, InFadeVolumeLevel, InFadeCurve)
 ```
-
-| Type | Name | Default | Description |
-| ---- | ---- | ------- | ----------- |
-| UObject | `WorldContextObject` | | Context object, for example the world. |
-| [UQuartzClockHandle](https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Runtime/AudioMixer/Quartz/UQuartzClockHandle?application_version=5.5) | `InClockHandle` | | Handle to the clock. |
-| [FQuartzQuantizationBoundary](https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Runtime/Engine/Sound/FQuartzQuantizationBoundary?application_version=5.5) | `InQuantizationBoundary` | | Quantization boundary. |
-| Delegate | `InDelegate` | | Delegate to call on completion. |
-| number | `InStartTime` | `0` | Optional start time. |
-| number | `InFadeInDuration` | `0` | Fade-in duration. |
-| number | `InFadeVolumeLevel` | `1.0` | Target volume. |
-| [EAudioFaderCurve](https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Runtime/Engine/Components/EAudioFaderCurve?application_version=5.5) | `InFadeCurve` | `Linear` | Fade curve. |
-
----
-
-## Events
-
-<EventsDeclaration type="Class" name="Sound" />

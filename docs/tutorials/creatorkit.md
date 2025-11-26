@@ -13,7 +13,8 @@ Creator Kit requires a copy of UE5.5 to function. You can install both for free.
    - IMPORTANT: Make sure to select **5.5.x** from the dropdown list. Creator Kit **will NOT work** if you install an older or newer version of UE5 (i.e. UE5.7.0)
    - [screenshot of 5.5 selection in Launcher, emphasize 5.5 version]
 
-3. **Download Creator Kit:** [Download Link](https://drive.google.com/file/d/1n7psGcmGrH9LkJY1vz-Bjd5oQIjOW_kJ/view?usp=sharing)
+<!-- Added only one link since this will go live once the new version is out. -->
+3. **Download Creator Kit:** [Download link](https://drive.google.com/file/d/1i5TIJntWBQLVgpLNk_e6EOO-SnOq3kxM/view?usp=drive_link).
 
 4. Open CreatorKit.uproject using UE5.5.
 
@@ -34,7 +35,7 @@ Creator Kit can be used to package any Unreal asset for use in HELIX. This inclu
 
 Use the HELIX Packing Tool from the main toolbar to create and manage packages.
 
-   - [Screenshot]
+   ![image.png](CreatorKit/CK_Toolbar.png)
 
 ---
 
@@ -42,9 +43,16 @@ Use the HELIX Packing Tool from the main toolbar to create and manage packages.
 
 ## Ensure ALL Referenced Assets Are Inside The Package Folder
 
-When you create a new package using Creator Kit, it will create a new folder in the Content Browser with the selected package type and name (i.e. "Addon_MyFirstPackage").
+When you create a new package using Creator Kit, it will create a new **plugin** with the selected package type and name (i.e. "Addon_MyFirstPackage").
 
-Ensure that every asset is contained within this folder, otherwise it will cause your world to break and clients to crash. Be extra careful when you are migrating assets from Fab or another Unreal Engine project, as by default Unreal will copy the assets into the root /Content folder. In the Migrate > Select Folder dialog, make sure to select the /Content/Addon_MyFirstPackage folder. Any references to assets that are outside the package folder will result in a crash.
+Ensure that every asset is contained within this folder. You can always navigate to this folder from the Packing Tool.
+
+![image.png](CustomMapImages/Map3.png)
+
+You can migrate content from other projects, directly into the plugin content folder.
+
+![image.png](CustomMapImages/NewPlugin1.png)
+
 
 ## Package Types
 

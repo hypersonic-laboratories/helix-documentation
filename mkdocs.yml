@@ -60,12 +60,21 @@ nav:
       - tutorials/porting-tutorial.md
       - tutorials/photomode.md
       - tutorials/build_mode.md
+  - Blueprints:
+    - blueprints/blueprints.md
+    - Persistent Data:
+      - blueprints/PersistentData/persistent_data.md
+    - Dynamic Materials:
+      - blueprints/DynamicMaterials/dynamic_materials.md
   - Scripting Tips:
     - scripting/index.md
     - Key References:
       - scripting/packageguide.md
       - scripting/client_server_guide.md
       - scripting/codeeditor.md
+      - scripting/bone_list.md
+      - scripting/anim_list.md
+      - scripting/input_keys.md
     - Core Concepts:
       - ... | flat | scripting/coreConceptsImports/*.md
     - Code Examples:
@@ -126,7 +135,7 @@ validation:
 
 # Add snippets #TODO: enable, but need to configure build to watch
 # watch:
-#   - _snippets
+#   - docs/blueprints
 
 # MkDocs-Material Theme + customization
 theme:

@@ -230,3 +230,18 @@ Defines the shape of a sound or light attenuation volume
 | `DoorType.Swinging` | Capsule shape, elongated along one axis |
 | `DoorType.Sliding` | Box-shaped volume |
 | `DoorType.Garage` | Directional cone shape |
+
+---
+
+## Capture Sources
+Specifies what render data the scene capture should output to its render target
+
+| Capture Source                              | Description                                    |
+|---------------------------------------------|------------------------------------------------|
+| `SceneCaptureSource.FinalColorLDR`  | Final color with tone mapping (most common)    |
+| `SceneCaptureSource.FinalColorHDR`  | Final color without tone mapping               |
+| `SceneCaptureSource.SceneColorHDR`  | Scene color before post-processing             |
+| `SceneCaptureSource.SceneDepth`     | Scene depth buffer                             |
+| `SceneCaptureSource.DeviceDepth`    | Device depth buffer                            |
+| `SceneCaptureSource.Normal`         | World space normals                            |
+| `SceneCaptureSource.BaseColor`      | Base color only                                |

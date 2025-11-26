@@ -2,3 +2,5 @@
 /site
 /Lib
 /Scripts
+/.venv
+/.cursor

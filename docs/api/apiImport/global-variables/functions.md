@@ -7,6 +7,23 @@ tags: [globals]
 HELIX provides a library of global functions that can be used in Lua packages!
 Consider these to be "shortcut" functions making your scripting experience better!
 
+## 🌎 World Functions
+
+| Function | Description | Returns |
+|----------|-------------|---------|
+| `SetHUDVisibility` | Sets the visibility of each HUD aspect | None |
+
+```lua title="SetHUDVisibility"
+-- Disable all HUD aspects
+SetHUDVisibility({
+    Healthbar = false,
+    Inventory = false,
+    Speedometer = false,
+    WeaponState = false,
+    Shortcuts = false,
+})
+```
+
 ## 🎮 Player Functions
 
 | Function | Description | Returns |
