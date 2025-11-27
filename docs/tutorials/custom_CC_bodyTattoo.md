@@ -1,4 +1,4 @@
-# Body Tattoo - Longer Format
+# Custom Body Tattoos
 
 This guide walks you through the process of creating and packaging body tattoos for the Creator Hub using the Creator Kit.
 
@@ -22,7 +22,7 @@ To acquire these assets:
 
 5. Use the settings outlined here and hit Export
 
-![image.png](image.png)
+    ![image.png](Images_Wearables/BodyTattoo/IMG_Wearables_TattooBody_ModelExport.png)
 
 6. Now find T_BodyTextureTemplate
 
