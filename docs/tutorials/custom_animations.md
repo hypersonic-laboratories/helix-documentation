@@ -191,20 +191,14 @@ For this example use case, we will try to load our packaged custom animation seq
 
     ```lua
     -- Register a function to listen for player joined global event
-    RegisterServerEvent('PlayerJoined', function(source)
-        local MyCharacter = HPlayer:K2_GetPawn()
+    RegisterServerEvent('HEvent:PlayerReady', function(source)
         local AnimParams = UE.FHelixPlayAnimParams()
-
-        coroutine.resume(
-            coroutine.create(function(delayTime)
-                UE.UKismetSystemLibrary.Delay(_G.HWorld, delayTime)
-
-                -- Our custom package is named "Addon_MyFirstAnimationPack", and animation sequence asset inside is named "AS_Crying"
-                local result = Animation.Play(MyCharacter, '/Game/Addon_MyFirstAnimationPack/AS_Crying.AS_Crying', AnimParams, function() print('Animation Ended') end)
-                print('Animation play result: ', result)
-            end),
-            1.0
-        )
+        Timer.Delay(HWorld, 2, function()
+            local MyCharacter = GetPlayerPawn(source)
+            -- Our custom package is named "Addon_MyFirstAnimationPack", and animation sequence asset inside is named "AS_Crying"
+            local result = Animation.Play(MyCharacter, '/Game/Addon_MyFirstAnimationPack/AS_Crying.AS_Crying', AnimParams, function() print('Animation Ended') end)
+            print('Animation play result: ', result)
+        end)
     end)
     ```
 

@@ -8,6 +8,8 @@ The Animation class provides methods for controlling animations on actors in you
 
 /// info
 `Animation` is a static module — you don’t instantiate it, but can access its methods.
+
+Animations are automatically replicated to other Clients when called from either Client/Server.
 ///
 
 
