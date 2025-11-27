@@ -109,6 +109,8 @@ After acquiring the template asset we need to put them to use in an image editor
         Value: 1 (This is important. This is the opacity of your tattoo)
         Min: 0
         Max: 1
+
+    ![image.png](Images_Wearables/IMG_Wearables_TattooBody_DA_SetupOverview.png)
    
 9. Once you’re done, Save your data table and all assets you’ve added to you package folder.
 
@@ -156,5 +158,6 @@ After acquiring the template asset we need to put them to use in an image editor
 
 ## 8. Ready To Rock
 Once you've followed these steps, uploaded your package to Creator Hub, and imported it into your world, your new wearable items will be available for players joining your public world!
+
 
 
