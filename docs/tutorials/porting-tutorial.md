@@ -463,8 +463,8 @@ $.post('https://resource-name/buttonClicked', JSON.stringify({
 **HELIX:**
 
 ```lua
--- HELIX - WebUI Subscribe
-myWebUI:Subscribe('buttonClicked', function(data)
+-- HELIX - WebUI Listen to events sent by the UI
+myWebUI:RegisterEventHandler('buttonClicked', function(data)
     print('Button clicked with data:', data)
 end)
 
