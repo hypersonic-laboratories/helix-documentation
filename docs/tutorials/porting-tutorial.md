@@ -401,7 +401,7 @@ SendNUIMessage({
 
 -- In HTML/JS
 window.addEventListener('message', function(event) {
-    if ([event.data](http://event.data).action === 'openUI') {
+    if (event.data.action === 'openUI') {
         // Handle UI
     }
 })
