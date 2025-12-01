@@ -4,11 +4,7 @@ This guide walks you through the process of packaging custom character mesh asse
 
 ## 1. Acquiring Your Custom Character Mesh Asset
 
-Either use your favorite modeling tool to create and skin a custom character mesh, or get a character mesh from [Fab](https://fab.com), compatible with **Unreal Engine 5 Manny Rig**.
-
-/// warning | Warning
-Support for skeleton types other than Unreal Engine 5 Manny is currently not supported. We're planning to utilize **IKRig** to allow retargeting any kind of humanoid character rig to HELIX character soon.
-///
+Either use your favorite modeling tool to create and skin a custom character mesh, or get a character mesh from [Fab](https://fab.com).
 
 /// warning | Warning
 Custom character meshes do not support [wearables](https://development.helix-documentation.pages.dev/tutorials/custom_cc_assets), and they will be disabled in character customization game UI if a custom character mesh is chosen.
@@ -46,29 +42,67 @@ For this tutorial, we will be using a robot character mesh acquired from Fab.
     ![image.png](CustomMeshImages/u_1.png)
     ///
 
-9. After your package folder is ready, **Right Click** to your mesh asset and assign `SK_Unified` as target skeleton. This ensures your mesh is encoded with the project's main skeleton asset, making it compatible with HELIX character animations.
+9. Optionally, you can also import a thumbnail image for your custom character mesh in the same folder.
+
+---
+
+## 3. Setting Up Your Custom Character Mesh
+
+### 3.1 Unreal Engine 5 Rig Based Character Mesh
+
+If your character mesh is using same skeleton with Unreal Engine 5 Manny/Quinn and has similar proportions with them, you can directly use your mesh without need of runtime retargeting.
+
+1. **Right Click** to your character skeletal mesh and assign `SK_Unified` as target skeleton. This ensures your mesh is encoded with the project's main skeleton asset.
 
     ![image.png](CustomMeshImages/2.png)
 
     ![image.png](CustomMeshImages/3.png)
 
-9. Optionally, you can also import a thumbnail image for your custom character mesh in the same folder.
+### 3.2 Custom Rig Based Character Mesh
+
+If your character mesh is using a custom rig (including old Unreal Engine 4 mannequin skeleton), it will need additional steps to set-up an IK Rig retageter to make it compatible with HELIX characters.
+
+/// info | Warning
+Please note that runtime retargeting has an additional CPU cost per character rendered on screen. If you're planning your mesh to be used by mass number of characters in your world, please prefer rigging your character with Unreal Engine 5 skeleton and follow the steps in 3.1 to directly use your mesh without need of retargeting.
+///
+
+1. Create IK Rig & IK retargeter assets [WIP]
+
+2. Add custom data asset [WIP]
 
 ---
 
-## 3. Tweaking Your Custom Character Mesh
+## 4. Tweaking Up Your Custom Character Mesh
 
-1. Open the automatically created physics asset and ensure the capsule covers the mesh approximately. This is required for your mesh bounds are properly calculated for FOV based occlusion. If this is not done properly, you mesh can disappear randomly from certain camera angles during gameplay. Please check [Physics Asset Editor Documentation](https://dev.epicgames.com/documentation/en-us/unreal-engine/physics-asset-editor-in-unreal-engine) for more information.
+Custom character meshes has additional requirements to ensure they have optimal performance and fully compatible with gameplay systems in HELIX.
+
+/// info | Warning
+If one of those steps are not applied properly, HELIX package manager will fail to cook your character mesh and show you corresponding errors.
+///
+
+1. Ensure a physics asset is assigned to your skeletal mesh within its **Physics Asset** property. Open the physics asset and also ensure the capsule covers the mesh approximately. This is required for your mesh bounds are properly calculated for FOV based occlusion. If this is not done properly, you mesh can disappear randomly from certain camera angles during gameplay. Please check [Physics Asset Editor Documentation](https://dev.epicgames.com/documentation/en-us/unreal-engine/physics-asset-editor-in-unreal-engine) for more information.
 
     ![image.png](CustomMeshImages/8.png)
 
-2. Next, open your skeletal mesh asset. Tweak any required parameters, and ensure you have LOD data generated for your mesh. This ensures your mesh does not negatively impact performance for distant characters wearing your clothing. You can set LOD count to 4 and click regenerate to automatically generate LODs for your mesh, as shown below.
+2. In your skeletal mesh asset, make sure you have LOD data generated for your mesh. This ensures your mesh does not negatively impact performance for distant characters using your custom character mesh. You can set LOD count to 4 and click regenerate to automatically generate LODs for your mesh, as shown below.
 
     ![image.png](CustomMeshImages/4.png)
 
+3. In your skeleton asset, ensure you have required sockets added. [WIP]
+
 ---
 
-## 4. Finalizing and Cooking The Package
+## 5. Post Animation Physics Simulation Support
+
+/// info | Warning
+Post process animation blueprint support is experimental and creators are responsible with ensuring their custom character physics implementation is optimed for performance.
+///
+
+1. Create post process animation blueprint [WIP]
+
+---
+
+## 6. Finalizing and Cooking The Package
 
 1. Make sure all the depending assets by your custom character mesh are placed inside same package folder. If one of those assets are placed outside of the created package folder, cooked `.pak` file will have missing dependencies and this might cause crashes or runtime errors during playthrough with this package.
 
