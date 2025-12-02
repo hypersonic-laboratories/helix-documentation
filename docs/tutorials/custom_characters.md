@@ -262,4 +262,4 @@ This method doesn't require you to cook the package on the previous steps. As lo
 
 ## 6. On Your Own
 
-Once you've followed these steps, uploaded your package to **Creator Hub**, and imported it into your world, your new custom character mesh will be available for players joining your public world!
+Once you've followed these steps, uploaded your package to [Creator Hub](creatorhub.md), and imported it into your world, your new custom character mesh will be available for players joining your public world!
