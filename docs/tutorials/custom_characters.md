@@ -37,7 +37,7 @@ For this tutorial, we will be using a robot character mesh acquired from Fab.
     /// info | Note
     Alternatively, you can also right click to your pack folder imported from Fab and select **Convert to Package (Wearable)** to create a package in-place. In that case, steps 2-6 are not required.
 
-    ![image.png](CustomMeshImages/u_1.png)
+    ![image.png](CustomMeshImages/u_0.png)
     ///
 
 8. Optionally, you can also import a thumbnail image for your custom character mesh in the same folder.
@@ -56,17 +56,81 @@ If your character mesh is using same skeleton with Unreal Engine 5 Manny/Quinn a
 
     ![image.png](CustomMeshImages/3.png)
 
+2. If you get errors about bone merge process being failed or missing bones on target skeleton, that means your character mesh is not compatible with this method and you should follow thesteps in [3.2](https://development.helix-documentation.pages.dev/tutorials/custom_characters/#32-custom-rig-based-character-mesh) instead.
+
 ### 3.2 Custom Rig Based Character Mesh
 
 If your character mesh is using a custom rig (including old Unreal Engine 4 mannequin skeleton), it will need additional steps to set-up an IK Rig retageter to get it compatible with HELIX characters.
 
 /// warning | Warning
-Please note that runtime retargeting has an additional CPU cost per character rendered on screen. If you're planning your mesh to be used by mass number of characters in your world, please prefer rigging your character with Unreal Engine 5 skeleton and follow the steps in 3.1 to directly use your mesh without need of retargeting.
+Please note that runtime retargeting has an additional CPU cost per character rendered on screen. If you're planning your mesh to be used by mass number of characters in your world, please prefer rigging it with Unreal Engine 5 skeleton and follow the steps in [3.1](https://development.helix-documentation.pages.dev/tutorials/custom_characters/#31-unreal-engine-5-rig-based-character-mesh) to directly use it without need of retargeting.
 ///
 
-1. Create IK Rig & IK retargeter assets [WIP]
+1. **Right Click** to your custom character mesh in content browser and select **Create** -> **IK Rig**. IK Rig is asset is used to define bone chains and IK targets to use during retargeting process.
 
-2. Add custom data asset [WIP]
+    ![image.png](CustomMeshImages/u_1.png)
+
+2. Open the IK Rig asset you've created. Then click **Auto Create Retarget Chains** and **Auto Create IK** buttons on top bar in order. Unreal Engine is usually good at auto detecting your bone chains and automatically define them within the asset.
+
+    ![image.png](CustomMeshImages/u_2.png)
+
+    ![image.png](CustomMeshImages/u_3.png)
+
+    ![image.png](CustomMeshImages/u_4.png)
+
+3. Ensure if the generated bone chains look correct on the right panel, and your character got **Yellow Cubes** on each hand and feet. Those cubes presents IK targets. If auto generation was successfull, pulling these cubes should move your charater limbs without any visual issues on execute IK body correction on top of it.
+
+    ![image.png](CustomMeshImages/u_4.gif)
+
+4. If there are issues with auto generated bone chains or IK targets, this usually happens if your character has an uncommon bone naming style or hierarchy, and you need to manually create each bone chain for your skeleton. Please check [IK Rig Documentation](https://dev.epicgames.com/documentation/en-us/unreal-engine/ik-rig-in-unreal-engine?application_version=5.5) for more information about manually setting up an IK Rig asset for skeletons.
+
+5. After IK Rig asset is ready, we need to create an IK Retargeter asset to define how animations should be retargeted from HELIX character invisible base mesh to your custom mesh. To do that, **Right Click** to an empty space in your package folder, and select **Animation** -> **Retargeting** -> **IK Retargeter**. Open the created asset.
+
+    ![image.png](CustomMeshImages/u_5.png)
+
+6. Select `IK_Unified_CosmeticsRetarget` as **Source IKRig Asset**. Select either `SKM_Manny` or `SKM_Quinn` as **Source Preview Mesh** according to closest one to your custom mesh proportions for better results. This property will define the source skeleton we'll retarget the animations from during runtime.
+
+    ![image.png](CustomMeshImages/u_6.png)
+
+7. Select the IK Rig asset you've just created on previous steps as **Target IKRig Asset**. This property will define the target skeleton we'll retarget the animations to during runtime.
+
+    ![image.png](CustomMeshImages/u_7.png)
+
+8. Both characters now should be visible on the preview panel. You can tweak **Target Mesh Offset** on the right panel to place your mesh near retarget source mesh as shown below.
+
+    ![image.png](CustomMeshImages/u_8.png)
+
+9. On the bottom right panel, **Chain Mapping** tab should automatically match your IK Rig asset bone chains with each other. Ensure each chain is mapped correctly. If there are missing chain assignments, assign the the missing chains manually.
+
+    ![image.png](CustomMeshImages/u_9.png)
+
+10. To ensure your IK Retargeter works correctly, go to **Asset Browser** tab on bottom right panel, and play one of the available animations. If your custom character plays the animations without any visual issues, this means your IK Retargeter setup is ready!
+
+    ![image.png](CustomMeshImages/u_10.gif)
+
+11. If there are issues with retargeting results, you might need to further tweak your bone chains in your IK Rig and IK Retargeter assets. Please check [IK Rig Retargeting Documentation](https://dev.epicgames.com/documentation/en-us/unreal-engine/ik-rig-animation-retargeting-in-unreal-engine?application_version=5.5) for more information.
+
+12. Go into your skeletal mesh asset and find **Asset User Data** property. Click **+** symbol to create a new asset user data instance.
+
+    ![image.png](CustomMeshImages/u_11.png)
+
+    /// warning | Warning
+    Do not confuse **Asset User Data** with **Asset User Data Editor Only**. They are separate properties and only the former should be modified.
+    ///
+
+13. Select `HELIX Cosmetics Body Mesh Asset User Data` from the dropdown menu. This asset is used to define how your mesh should be used with HELIX characters during runtime.
+
+    ![image.png](CustomMeshImages/u_12.png)
+
+14. Assign the IK Retargeter asset you've created on the previous steps into **Retargeter** field.
+
+    ![image.png](CustomMeshImages/u_13.png)
+
+15. If you need your character body mesh to get retargeted differently during first person view mode, you can create another IK Retargeter asset and assign into **First Person Retargeter** field.
+
+16. If your character body mesh has a neck & head section which can obscure camera during first person view mode, add the bone names covering those mesh sections into **First Person Bone Hide List** field. Usually, you should put names such as `head`, `neck_01`, `neck_02` etc. in this list.
+
+17. Your mesh should be ready for runtime retargeting after following those steps.
 
 ---
 
@@ -86,17 +150,26 @@ If one of those steps are not applied properly, HELIX package manager will fail 
 
     ![image.png](CustomMeshImages/4.png)
 
-3. In your skeleton asset, ensure you have required sockets added. Please check [Skeletal Mesh Sockets](https://dev.epicgames.com/documentation/en-us/unreal-engine/skeletal-mesh-sockets-in-unreal-engine?application_version=5.5) for more information. [WIP]
+3. In your skeleton asset, ensure you have required sockets added. Please check [Skeletal Mesh Sockets](https://dev.epicgames.com/documentation/en-us/unreal-engine/skeletal-mesh-sockets-in-unreal-engine?application_version=5.5) for more information.
+
+    /// note | List of Required Sockets
+    - weapon_r_socket
+    - weapon_l_socket
+    ///
+
+    [Video Here]
 
 ---
 
-## 5. Post Animation Physics Simulation Support
+## 5. Post-Anim Physics Simulation Support (Optional)
 
 /// warning | Warning
 Post process animation blueprint support is experimental and creators are responsible with ensuring their custom character physics implementation is optimed for performance.
 ///
 
-1. Create post process animation blueprint. Please check [Rigid Body Documentation](https://dev.epicgames.com/documentation/en-us/unreal-engine/animation-blueprint-rigid-body-in-unreal-engine?application_version=5.5) [Anim Dynamics Documentation](https://dev.epicgames.com/documentation/en-us/unreal-engine/animation-blueprint-animdynamics-in-unreal-engine?application_version=5.5) for more information. [WIP]
+1. Custom character meshes can simulate post-anim physics with post-process animation blueprints. Please check [Rigid Body Documentation](https://dev.epicgames.com/documentation/en-us/unreal-engine/animation-blueprint-rigid-body-in-unreal-engine?application_version=5.5) [Anim Dynamics Documentation](https://dev.epicgames.com/documentation/en-us/unreal-engine/animation-blueprint-animdynamics-in-unreal-engine?application_version=5.5) for more information about how to create one for your character if applicable.
+
+2. After creating your post-process animation blueprint, assign it to **Post-Process Anim Blueprint**
 
 ---
 
