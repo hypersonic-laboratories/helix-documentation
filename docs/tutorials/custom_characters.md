@@ -152,11 +152,7 @@ Ensure all of your skeleton bones have unit scale (1.0). If your character bones
 
 ## 4. Tweaking Your Custom Character Mesh
 
-Custom character meshes have additional requirements to ensure they have optimal performance and fully compatible with gameplay systems in HELIX.
-
-/// warning | Warning
-If one of those steps are not applied properly, HELIX package manager will fail to cook your character mesh and show you corresponding errors.
-///
+Custom character meshes have additional requirements to ensure they have optimal performance and fully compatible with gameplay systems in HELIX. Those steps are required to successfully package your assets.
 
 1. Ensure a physics asset is assigned to your skeletal mesh within its **Physics Asset** property. Then, open the corresponding physics asset and ensure the capsules cover the mesh approximately. This is required for your mesh bounds to be properly calculated for FOV based occlusion. If this is not done properly, your mesh can disappear randomly from certain camera angles during gameplay. Please check [Physics Asset Editor Documentation](https://dev.epicgames.com/documentation/en-us/unreal-engine/physics-asset-editor-in-unreal-engine?application_version=5.5) for more information.
 
