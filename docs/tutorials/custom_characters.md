@@ -185,9 +185,11 @@ Custom character meshes optionally can simulate post-anim physics with post-proc
 Post-process animation blueprint support is experimental and creators are responsible with ensuring their custom character physics implementation is optimized for performance.
 ///
 
-1. After creating a post-process animation blueprint, assign it to **Post-Process Anim Blueprint** field of your skeletal mesh asset. Also make sure to set a LOD threshold for your animation blueprint in the next **Post-Process AnimBP LOD Threshold** field, according to LOD count of your mesh. If your mesh has 4 LODs, it usually makes sense to set this as 2. After the threshold, post-process animation blueprint will be disabled to save performance during runtime.
+1. After creating a post-process animation blueprint, assign it to **Post-Process Anim Blueprint** field of your skeletal mesh asset.
 
     ![image.png](CustomMeshImages/u_14.png)
+
+2. Make sure to also set a LOD threshold for your animation blueprint in the next **Post-Process AnimBP LOD Threshold** field, according to LOD count of your mesh. For example, if your mesh has 4 LODs, it usually makes sense to set this as half of the value, 2. This will ensure your performance heavy physics implementation won't be executed for non-significant characters on the screen. 
 
 ---
 
