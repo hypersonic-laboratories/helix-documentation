@@ -32,9 +32,7 @@ For this tutorial, we will be using a robot character mesh acquired from Fab.
 
 6. Click **Add New Package**. This action creates a dedicated folder for your assets (e.g., **Plugins/Wearable_MyCustomCharacterMesh**).
 
-7. If you have an `.fbx` file to import into project, select `SK_Unified` as target skeleton during the import process.
-
-8. If you're using a character pack acquired from Fab, just simply move textures, materials and character mesh into your package folder. Fix redirectors if required.
+7. If you're using a character pack acquired from Fab, just simply move textures, materials and character mesh into your package folder. Otherwise, if you have an `.fbx` file to import into project, import it directly into the created folder. Fix redirectors if required.
 
     /// info | Note
     Alternatively, you can also right click to your pack folder imported from Fab and select **Convert to Package (Wearable)** to create a package in-place. In that case, steps 2-6 are not required.
@@ -42,7 +40,7 @@ For this tutorial, we will be using a robot character mesh acquired from Fab.
     ![image.png](CustomMeshImages/u_1.png)
     ///
 
-9. Optionally, you can also import a thumbnail image for your custom character mesh in the same folder.
+8. Optionally, you can also import a thumbnail image for your custom character mesh in the same folder.
 
 ---
 
@@ -60,9 +58,9 @@ If your character mesh is using same skeleton with Unreal Engine 5 Manny/Quinn a
 
 ### 3.2 Custom Rig Based Character Mesh
 
-If your character mesh is using a custom rig (including old Unreal Engine 4 mannequin skeleton), it will need additional steps to set-up an IK Rig retageter to make it compatible with HELIX characters.
+If your character mesh is using a custom rig (including old Unreal Engine 4 mannequin skeleton), it will need additional steps to set-up an IK Rig retageter to get it compatible with HELIX characters.
 
-/// info | Warning
+/// warning | Warning
 Please note that runtime retargeting has an additional CPU cost per character rendered on screen. If you're planning your mesh to be used by mass number of characters in your world, please prefer rigging your character with Unreal Engine 5 skeleton and follow the steps in 3.1 to directly use your mesh without need of retargeting.
 ///
 
@@ -72,33 +70,33 @@ Please note that runtime retargeting has an additional CPU cost per character re
 
 ---
 
-## 4. Tweaking Up Your Custom Character Mesh
+## 4. Tweaking Your Custom Character Mesh
 
-Custom character meshes has additional requirements to ensure they have optimal performance and fully compatible with gameplay systems in HELIX.
+Custom character meshes have additional requirements to ensure they have optimal performance and fully compatible with gameplay systems in HELIX.
 
-/// info | Warning
+/// warning | Warning
 If one of those steps are not applied properly, HELIX package manager will fail to cook your character mesh and show you corresponding errors.
 ///
 
-1. Ensure a physics asset is assigned to your skeletal mesh within its **Physics Asset** property. Open the physics asset and also ensure the capsule covers the mesh approximately. This is required for your mesh bounds are properly calculated for FOV based occlusion. If this is not done properly, you mesh can disappear randomly from certain camera angles during gameplay. Please check [Physics Asset Editor Documentation](https://dev.epicgames.com/documentation/en-us/unreal-engine/physics-asset-editor-in-unreal-engine) for more information.
+1. Ensure a physics asset is assigned to your skeletal mesh within its **Physics Asset** property. Then, open the corresponding physics asset and ensure the capsules cover the mesh approximately. This is required for your mesh bounds to be properly calculated for FOV based occlusion. If this is not done properly, your mesh can disappear randomly from certain camera angles during gameplay. Please check [Physics Asset Editor Documentation](https://dev.epicgames.com/documentation/en-us/unreal-engine/physics-asset-editor-in-unreal-engine?application_version=5.5) for more information.
 
     ![image.png](CustomMeshImages/8.png)
 
-2. In your skeletal mesh asset, make sure you have LOD data generated for your mesh. This ensures your mesh does not negatively impact performance for distant characters using your custom character mesh. You can set LOD count to 4 and click regenerate to automatically generate LODs for your mesh, as shown below.
+2. In your skeletal mesh asset, make sure you have LOD data generated for your mesh. This ensures your mesh does not negatively impact performance for distant characters using your custom character mesh. You can set LOD count to 4 and click regenerate to automatically generate LODs for your mesh, as shown below. Please check [Skeletal Mesh LODs Documentation](https://dev.epicgames.com/documentation/en-us/unreal-engine/skeletal-mesh-lods-in-unreal-engine?application_version=5.5) for more information.
 
     ![image.png](CustomMeshImages/4.png)
 
-3. In your skeleton asset, ensure you have required sockets added. [WIP]
+3. In your skeleton asset, ensure you have required sockets added. Please check [Skeletal Mesh Sockets](https://dev.epicgames.com/documentation/en-us/unreal-engine/skeletal-mesh-sockets-in-unreal-engine?application_version=5.5) for more information. [WIP]
 
 ---
 
 ## 5. Post Animation Physics Simulation Support
 
-/// info | Warning
+/// warning | Warning
 Post process animation blueprint support is experimental and creators are responsible with ensuring their custom character physics implementation is optimed for performance.
 ///
 
-1. Create post process animation blueprint [WIP]
+1. Create post process animation blueprint. Please check [Rigid Body Documentation](https://dev.epicgames.com/documentation/en-us/unreal-engine/animation-blueprint-rigid-body-in-unreal-engine?application_version=5.5) [Anim Dynamics Documentation](https://dev.epicgames.com/documentation/en-us/unreal-engine/animation-blueprint-animdynamics-in-unreal-engine?application_version=5.5) for more information. [WIP]
 
 ---
 
@@ -106,7 +104,7 @@ Post process animation blueprint support is experimental and creators are respon
 
 1. Make sure all the depending assets by your custom character mesh are placed inside same package folder. If one of those assets are placed outside of the created package folder, cooked `.pak` file will have missing dependencies and this might cause crashes or runtime errors during playthrough with this package.
 
-2. Right click to an empty space in your package folder, and choose **Miscellaneous** -> **Data Asset**.
+2. **Right Click** to an empty space in your package folder, and choose **Miscellaneous** -> **Data Asset**.
 
 3. Choose **Character Customization Data Asset** from the new window. This data asset is responsible for categorizing your clothing and storing the required parameters.
 
@@ -132,15 +130,15 @@ Post process animation blueprint support is experimental and creators are respon
 
 ---
 
-## 5. Testing Your Custom Character Mesh
+## 7. Testing Your Custom Character Mesh
 
 ### 1. In Creator Kit
 
-1. This method doesn't require you to cook the package on the previous steps. As long as you placed all the required assets in your package folder in Creator Kit, and created the data asset as explained, it automatically becomes available for editor playthroughs.
+This method doesn't require you to cook the package on the previous steps. As long as you placed all the required assets in your package folder in Creator Kit, and created the data asset as explained above, it will automatically become available for editor playthroughs.
 
-2. Press play in **Creator Kit** editor, and press **P** button to show the **Character Customization UI** for your character.
+1. Press play in **Creator Kit** editor, and press **P** button to show the **Character Customization UI** for your character.
 
-3. In the shown UI, you should be able to navigate to your new custom mesh in **Custom** tab and click on it to test on the character.
+2. In the shown UI, you should be able to navigate to your new custom mesh in **Custom** tab and click on it to test on the character.
 
     ![image.png](CustomMeshImages/6.png)
 
@@ -152,21 +150,21 @@ Post process animation blueprint support is experimental and creators are respon
 
     ![image.png](CustomMeshImages/10.png)
 
-2. If import was successful, you should see your custom character mesh asset on left panel.
+2. If import was successful, you should see the corresponding custom character mesh assets on left panel.
 
     ![image.png](CustomMeshImages/11.png)
 
-3. Importing also makes your custom character mesh automatically available in **Character Customization UI**. Go back to the game from build mode, and press **P** button.
+3. Importing also makes your custom character mesh automatically available in **Character Customization UI**. You can go back to the game from build mode, and press **P** button.
 
 4. Your imported custom character mesh should be available in the **Custom** tab.
 
-<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-  <iframe src="https://www.youtube.com/embed/eM2_7DWIIqM?si=qELiLj1TaBILbGUP"
-          style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
-          frameborder="0"
-          allowfullscreen>
-  </iframe>
-</div>
+    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+    <iframe src="https://www.youtube.com/embed/eM2_7DWIIqM?si=qELiLj1TaBILbGUP"
+            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+            frameborder="0"
+            allowfullscreen>
+    </iframe>
+    </div>
 
 ---
 
