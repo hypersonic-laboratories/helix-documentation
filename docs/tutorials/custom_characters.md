@@ -169,11 +169,10 @@ If one of those steps are not applied properly, HELIX package manager will fail 
 3. In your skeleton asset, ensure you have required sockets added. Please check [Skeletal Mesh Sockets](https://dev.epicgames.com/documentation/en-us/unreal-engine/skeletal-mesh-sockets-in-unreal-engine?application_version=5.5) for more information.
 
     /// note | List of Required Sockets
-    - weapon_r_socket
-    - weapon_l_socket
+    - **weapon_l_socket**: Left hand socket used in HELIX to attach held items. Usually should added under hand_l or weapon_l bone of your rig.
+    - **weapon_r_socket**: Right hand socket used in HELIX to attach held items and weapons. Usually should added under hand_r or weapon_r bone of your rig.
+    * *The list will be updated with more sockets in the future*
     ///
-
-    [Video Here]
 
 ---
 
