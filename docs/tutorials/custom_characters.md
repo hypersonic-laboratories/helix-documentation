@@ -4,10 +4,14 @@ This guide walks you through the process of packaging custom character mesh asse
 
 ## 1. Acquiring Your Custom Character Mesh Asset
 
-Either use your favorite modeling tool to create and skin a custom character mesh, or get a character mesh from [Fab](https://fab.com).
+Either use your favorite modeling tool to create and skin a custom character mesh, or get a character mesh from [Fab](https://fab.com). If required, you can access our Unreal Engine 5 [Manny](https://drive.google.com/file/d/1qTCsg0_hac0-UlHvduxTFSdeNumvkxAh/view?usp=drive_link) and [Quinn](https://drive.google.com/file/d/1BqRV-v3xmHjGly0AYyxDAInhHAFltRhq/view?usp=drive_link) skeletal meshes to use as reference from the links.
 
 /// warning | Warning
 Custom character meshes do not support [wearables](https://development.helix-documentation.pages.dev/tutorials/custom_cc_assets), and they will be disabled in character customization game UI if a custom character mesh is chosen.
+///
+
+/// warning | Warning
+Custom character meshes ideally should use similar proportions to Unreal Engine 5 Manny/Quinn. More the difference, more possibility of certain gameplay features being broken with the custom mesh.
 ///
 
 ![image.png](CustomMeshImages/0.png)
@@ -64,6 +68,10 @@ If your character mesh is using a custom rig (including old Unreal Engine 4 mann
 
 /// warning | Warning
 Please note that runtime retargeting has an additional CPU cost per character rendered on screen. If you're planning your mesh to be used by mass number of characters in your world, please prefer rigging it with Unreal Engine 5 skeleton and follow the steps in [3.1](https://development.helix-documentation.pages.dev/tutorials/custom_characters/#31-unreal-engine-5-rig-based-character-mesh) to directly use it without need of retargeting.
+///
+
+/// warning | Warning
+Ensure all of your skeleton bones have unit scale (1.0). If your character bones were scaled inside Maya/Blender during rigging (especially the root bone), this is not supported and your custom mesh will fail to retarget animations.
 ///
 
 1. **Right Click** to your custom character mesh in content browser and select **Create** -> **IK Rig**. IK Rig is asset is used to define bone chains and IK targets to use during retargeting process.
