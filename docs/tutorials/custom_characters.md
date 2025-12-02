@@ -4,7 +4,11 @@ This guide walks you through the process of packaging custom character mesh asse
 
 ## 1. Acquiring Your Custom Character Mesh Asset
 
-Either use your favorite modeling tool to create and skin a custom character mesh, or get a character mesh from [Fab](https://fab.com). If required, you can access our Unreal Engine 5 [Manny](https://drive.google.com/file/d/1qTCsg0_hac0-UlHvduxTFSdeNumvkxAh/view?usp=drive_link) and [Quinn](https://drive.google.com/file/d/1BqRV-v3xmHjGly0AYyxDAInhHAFltRhq/view?usp=drive_link) skeletal meshes to use as reference from the links.
+Either use your favorite modeling tool to create and skin a custom character mesh, or get a character mesh from [Fab](https://fab.com).
+
+/// note | Source Assets
+If required, you can download our HELIX Unreal Engine 5 [Manny](https://drive.google.com/file/d/1qTCsg0_hac0-UlHvduxTFSdeNumvkxAh/view?usp=drive_link) and [Quinn](https://drive.google.com/file/d/1BqRV-v3xmHjGly0AYyxDAInhHAFltRhq/view?usp=drive_link) base skeletal mesh source files to use as reference on your character work.
+///
 
 /// warning | Warning
 Custom character meshes do not support [wearables](https://development.helix-documentation.pages.dev/tutorials/custom_cc_assets), and they will be disabled in character customization game UI if a custom character mesh is chosen.
