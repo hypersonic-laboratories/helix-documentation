@@ -15,7 +15,7 @@ Custom character meshes do not support [wearables](https://development.helix-doc
 ///
 
 /// warning | Warning
-Custom character meshes ideally should use similar proportions to Unreal Engine 5 Manny/Quinn. More the difference, more possibility of certain gameplay features being broken with the custom mesh.
+Custom character meshes should closely match the proportions of the standard Unreal Engine 5 Manny/Quinn mannequins. This is not a strict requirement; however, substantial differences in limb length, body proportions, or overall scale may cause animation or gameplay systems to behave incorrectly, including interaction traces, collision/hit detection, IK solvers, and ability logic.
 ///
 
 ![image.png](CustomMeshImages/0.png)
