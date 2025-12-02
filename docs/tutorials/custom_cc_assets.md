@@ -92,7 +92,7 @@ For this tutorial, we will be importing a simple cap accessory for our character
 
     ![image.png](WearableTutImages/10.png)
 
-6. Ensure available parameters for your clothing type are set properly before finalizing. You can learn more about the available parameters from [here (WIP)]().
+6. Ensure available parameters for your clothing type are set properly before finalizing.
 
 7. Return to the HELIX Packaging Tool window.
 
