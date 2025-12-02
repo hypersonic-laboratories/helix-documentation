@@ -84,6 +84,10 @@ Ensure all of your skeleton bones have unit scale (1.0). If your character bones
 
 2. Open the IK Rig asset you've created. Then click **Auto Create Retarget Chains** and **Auto Create IK** buttons on top bar in order. Unreal Engine is usually good at auto detecting your bone chains and automatically define them within the asset.
 
+    /// warning | Warning
+    If you click **Auto Create IK** button multiple times by mistake, this might create duplicate IK targets, and they should be removed back from skeleton hierarchy panel and **Solver Stack** tab on the left side.
+    ///
+
     ![image.png](CustomMeshImages/u_2.png)
 
     ![image.png](CustomMeshImages/u_3.png)
