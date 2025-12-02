@@ -177,7 +177,7 @@ If one of those steps are not applied properly, HELIX package manager will fail 
 
 ---
 
-## 5. Post-Anim Physics Simulation Support (Optional)
+## 5. (Optional) Post-Anim Physics Simulation Support
 
 Custom character meshes optionally can simulate post-anim physics with post-process animation blueprints. Please check [Rigid Body Documentation](https://dev.epicgames.com/documentation/en-us/unreal-engine/animation-blueprint-rigid-body-in-unreal-engine?application_version=5.5) and [Anim Dynamics Documentation](https://dev.epicgames.com/documentation/en-us/unreal-engine/animation-blueprint-animdynamics-in-unreal-engine?application_version=5.5) for more information about how to create one for your character if applicable.
 
