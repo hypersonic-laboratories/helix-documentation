@@ -100,7 +100,7 @@ Ensure all of your skeleton bones have unit scale (1.0). If your character bones
 
 4. If there are issues with auto generated bone chains or IK targets, this usually happens if your character has an uncommon bone naming style or hierarchy, and you need to manually create each bone chain for your skeleton. Please check [IK Rig Documentation](https://dev.epicgames.com/documentation/en-us/unreal-engine/ik-rig-in-unreal-engine?application_version=5.5) for more information about manually setting up an IK Rig asset for skeletons.
 
-5. After IK Rig asset is ready, we need to create an IK Retargeter asset to define how animations should be retargeted from HELIX character invisible base mesh to your custom mesh. To do that, **Right Click** to an empty space in your package folder, and select **Animation** -> **Retargeting** -> **IK Retargeter**. Open the created asset.
+5. After IK Rig asset is ready, we need to create an IK Retargeter asset to define how animations should be retargeted from HELIX character base mesh to your custom mesh. To do that, **Right Click** to an empty space in your package folder, and select **Animation** -> **Retargeting** -> **IK Retargeter**. Open the created asset.
 
     ![image.png](CustomMeshImages/u_5.png)
 
@@ -205,7 +205,7 @@ Post-process animation blueprint support is experimental and creators are respon
 
 5. Create a new sub-entry inside your new entry, and give it a meaningful name.
 
-6. Fill the required parameters for your custom mesh. Usually, you should leave the **Head Mesh** field empty, and assign your full body custom mesh to **Body Mesh** field. Choose gender type for the one closest to your character mesh body proportions. This will ensure the correct invisible base mesh is used while playing animations for your custom mesh.
+6. Fill the required parameters for your custom mesh. Usually, you should leave the **Head Mesh** field empty, and assign your full body custom mesh to **Body Mesh** field. Choose gender type for the one closest to your character mesh body proportions. This will ensure the correct base mesh is used while playing animations for your custom mesh.
 
     ![image.png](CustomMeshImages/5.png)
 
