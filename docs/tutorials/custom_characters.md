@@ -46,7 +46,7 @@ For this tutorial, we will be using a robot character mesh acquired from Fab.
 
 ## 3. Setting Up Your Custom Character Mesh
 
-### 3.1 Unreal Engine 5 Rig Based Character Mesh
+### 3.1. Unreal Engine 5 Rig Based Character Mesh
 
 If your character mesh is using same skeleton with Unreal Engine 5 Manny/Quinn and has similar proportions with them, you can directly use your mesh without need of runtime retargeting.
 
@@ -58,7 +58,7 @@ If your character mesh is using same skeleton with Unreal Engine 5 Manny/Quinn a
 
 2. If you get errors about bone merge process being failed or missing bones on target skeleton, that means your character mesh is not compatible with this method and you should follow thesteps in [3.2](https://development.helix-documentation.pages.dev/tutorials/custom_characters/#32-custom-rig-based-character-mesh) instead.
 
-### 3.2 Custom Rig Based Character Mesh
+### 3.2. Custom Rig Based Character Mesh
 
 If your character mesh is using a custom rig (including old Unreal Engine 4 mannequin skeleton), it will need additional steps to set-up an IK Rig retageter to get it compatible with HELIX characters.
 
@@ -163,13 +163,15 @@ If one of those steps are not applied properly, HELIX package manager will fail 
 
 ## 5. Post-Anim Physics Simulation Support (Optional)
 
+Custom character meshes optionally can simulate post-anim physics with post-process animation blueprints. Please check [Rigid Body Documentation](https://dev.epicgames.com/documentation/en-us/unreal-engine/animation-blueprint-rigid-body-in-unreal-engine?application_version=5.5) [Anim Dynamics Documentation](https://dev.epicgames.com/documentation/en-us/unreal-engine/animation-blueprint-animdynamics-in-unreal-engine?application_version=5.5) for more information about how to create one for your character if applicable.
+
 /// warning | Warning
-Post process animation blueprint support is experimental and creators are responsible with ensuring their custom character physics implementation is optimed for performance.
+Post-process animation blueprint support is experimental and creators are responsible with ensuring their custom character physics implementation is optimized for performance.
 ///
 
-1. Custom character meshes can simulate post-anim physics with post-process animation blueprints. Please check [Rigid Body Documentation](https://dev.epicgames.com/documentation/en-us/unreal-engine/animation-blueprint-rigid-body-in-unreal-engine?application_version=5.5) [Anim Dynamics Documentation](https://dev.epicgames.com/documentation/en-us/unreal-engine/animation-blueprint-animdynamics-in-unreal-engine?application_version=5.5) for more information about how to create one for your character if applicable.
+1. After creating a post-process animation blueprint, assign it to **Post-Process Anim Blueprint** field of your skeletal mesh asset. Also make sure to set a LOD threshold for your animation blueprint in the next **Post-Process AnimBP LOD Threshold** field, according to LOD count of your mesh. If your mesh has 4 LODs, it usually makes sense to set this as 2. After the threshold, post-process animation blueprint will be disabled to save performance during runtime.
 
-2. After creating your post-process animation blueprint, assign it to **Post-Process Anim Blueprint**
+    ![image.png](CustomMeshImages/u_14.png)
 
 ---
 
