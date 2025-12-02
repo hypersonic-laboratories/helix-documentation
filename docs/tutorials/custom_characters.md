@@ -94,7 +94,7 @@ Ensure all of your skeleton bones have unit scale (1.0). If your character bones
 
     ![image.png](CustomMeshImages/u_4.png)
 
-3. Ensure if the generated bone chains look correct on the right panel, and your character got **Yellow Cubes** on each hand and feet. Those cubes presents IK targets. If auto generation was successfull, pulling these cubes should move your charater limbs without any visual issues on execute IK body correction on top of it.
+3. Ensure if the generated bone chains look correct on the right panel, and your character got **yellow cubes** on each hand and feet. Those cubes represents IK targets. If auto generation was successfull, pulling these cubes should move your charater limbs without any visual issues on execute IK body correction on top of it.
 
     ![image.png](CustomMeshImages/u_4.gif)
 
