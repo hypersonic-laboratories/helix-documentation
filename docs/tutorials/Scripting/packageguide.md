@@ -1,5 +1,5 @@
 ---
-title: Lua Scripting Guide
+title: Lua Package
 tags: [scripting]
 ---
 <HeaderDeclaration type="scripting" name="package" />

@@ -1,5 +1,5 @@
 ---
-title: Using Timers for Cooldown Functionality
+title: Timers
 tags: [scripting]
 ---
 # Using Timers for Cooldown Functionality
@@ -18,10 +18,10 @@ function CastFireball(playerID)
         print("Fireball is on cooldown!")
         return
     end
-    
+
     -- Cast the spell
     print("Fireball cast!")
-    
+
     -- Start cooldown
     playerCooldowns[playerID] = true
     Timer.SetTimeout(function()
@@ -35,14 +35,14 @@ end
 -- Player respawn with countdown timer
 function RespawnPlayer(playerID)
     print("You died! Respawning in 10 seconds...")
-    
+
     -- Creating coroutine to not halt game and allow yielding
     Timer.CreateThread(function()
         for i = 10, 1, -1 do
             print("Respawning in " .. i .. " seconds...")
             Timer.Wait(1000)
         end
-        
+
         print("Respawning now!")
         -- Respawn player logic here
     end)

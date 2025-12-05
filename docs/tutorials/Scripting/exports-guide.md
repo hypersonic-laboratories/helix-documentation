@@ -1,5 +1,5 @@
 ---
-title: Exports Guide
+title: Exports
 description: Complete guide to using exports for inter-package communication in Lua
 tags: [ scripting ]
 ---

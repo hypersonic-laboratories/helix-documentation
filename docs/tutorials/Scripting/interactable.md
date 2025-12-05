@@ -1,9 +1,9 @@
 ---
-title: Creating Interactable Actors
+title: Interactables
 tags: [scripting]
 ---
 # Creating Interactable Actors
-This page provides real-world examples of how to create interactive objects using the `Interactable` class. 
+This page provides real-world examples of how to create interactive objects using the `Interactable` class.
 /// note
 Interactables should only be created on the server due to them leveraging the **Gameplay Ability System (GAS)** for interactions. This means that action callbacks are executed on the server.
 ///
@@ -115,7 +115,7 @@ local BellTower = Interactable({
             Timer.CreateThread(function()
                 local MeshComponent = BellActor:K2_GetComponentsByClass(UE.UStaticMeshComponent)[1]
                 local InitialRotation = MeshComponent:K2_GetComponentRotation()
-                
+
                 -- Single loop with damping sine wave
                 for i = 0, 300, 3 do
                     local time = i / 100.0
@@ -125,7 +125,7 @@ local BellTower = Interactable({
                     MeshComponent:K2_SetRelativeRotation(NewRotation, false, nil, true) -- Works if Transform is replicated
                     Timer.Wait(0.03)
                 end
-                
+
                 MeshComponent:K2_SetRelativeRotation(InitialRotation, false, nil, true) -- Works if Transform is replicated
             end)
         end,

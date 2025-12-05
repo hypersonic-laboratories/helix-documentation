@@ -1,5 +1,5 @@
 ---
-title: Communicating with Events
+title: Events
 tags: [scripting]
 ---
 # Communicating with Events
@@ -97,4 +97,13 @@ This method works for server -> server
 ```lua title="Example"
 -- Inside a server context
 TriggerLocalServerEvent('TestServer', 'Hello from Client', 100, true, nil, Vector(100, 100, 100), { key = 'value' })
+```
+
+---
+
+## Broadcasting an Event
+Use `BroadcastEvent(name, ...)` from the server to send a message to all connected clients
+
+```lua title="Example"
+BroadcastEvent('myClientEvent', 100)
 ```
