@@ -2,7 +2,9 @@
 
 This guide walks you through the process of creating and packaging Custom Shoes using the [Creator Kit](https://github.com/Hyper-Ross/helix-documentation/blob/Ross_CC_Tattoos/docs/tutorials/creatorkit.md).
 
-Before you start, have your shoe model created and ready. It’ll be easier to start with one shoe and mirror it after placement. If you have shoes for both feet I’d suggest deleting one and keeping the other or you’ll likely need to do your mesh placement in a 3d modelling package.
+Before you start, have your shoe model created and ready. It’ll be easier to start with one shoe and mirror it after placement. If you have shoes for both feet I’d suggest deleting one and keeping the other or you’ll likely need to do your mesh placement in a 3d modelling package. Follow Shoe Mesh prepeartion to make sure your can follow the tutorial closer.
+
+If you're creating open foot shoes, e.g. sandals and flip flops, step "**3. Shoe Setup**" will look different for you. You'll need to export the body template mesh, import it into you modelling package and adjust the mesh to fit exactly. You may need to be more methodical with your custom weight painting too.
 
 ---
 
