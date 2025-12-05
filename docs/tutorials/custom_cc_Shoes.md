@@ -1,4 +1,4 @@
-# Shoes
+# Custom Shoes
 
 This guide walks you through the process of creating and packaging Custom Shoes using the [Creator Kit](https://github.com/Hyper-Ross/helix-documentation/blob/Ross_CC_Tattoos/docs/tutorials/creatorkit.md).
 
