@@ -1,6 +1,23 @@
 # Animations
 
-## ANIMATION SEQUENCES
+## Code Example
+
+```lua title="Example"
+-- Start Animation
+
+local bSuccess = Animation.Play(
+    GetPlayerPawn(),
+    'Prefix/Animation.Animation', -- use prefix shown below each category!
+    UE.FHelixPlayAnimParams(), function()
+    print('Animation Ended')
+end)
+
+-- Stop Animation
+
+Animation.Stop(TargetActor)
+```
+
+## Animation Sequences
 
 ### Actions
 
@@ -4516,7 +4533,7 @@ Test/Rifle/Rifle_Moving_Ready_Pose.Rifle_Moving_Ready_Pose
 Unarmed/MM_Unarmed_Idle_Ready.MM_Unarmed_Idle_Ready
 ```
 
-## ANIMATION MONTAGES
+## Animation Montages
 
 ```
 Phone/AM_Scroll_Moblie.AM_Scroll_Moblie
