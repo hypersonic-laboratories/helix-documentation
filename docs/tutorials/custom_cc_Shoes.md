@@ -20,7 +20,7 @@ For the purpose of this tutorial I’ll be using one shoe and mirroring it in un
 3. Right click the object in the viewport OR press Alt+P
 4. Select Parent > Clear and Keep Transformation 
 
-![image.png](image.png)
+    ![IMG_Shoes_RemoveSkeletonDependancy.png](Images_Wearables/Shoes/IMG_Shoes_RemoveSkeletonDependancy.png)
 
 1. Then delete all objects and bones other than your one shoe mesh
 
@@ -29,7 +29,7 @@ For the purpose of this tutorial I’ll be using one shoe and mirroring it in un
 1. Enter edit mode by pressing TAB 
 2. Enter wireframe mode 
 
-![image.png](image%201.png)
+    ![IMG_Shoes_Wireframe.png](Images_Wearables/Shoes/IMG_Shoes_Wireframe.png)
 
 1. Drag select one of the shoes so it’s highlighted orange
 2. Press the Delete key
@@ -38,7 +38,7 @@ For the purpose of this tutorial I’ll be using one shoe and mirroring it in un
 5. Now using the move gizmo align you remaining shoe so the heel area is aligned with the world origin
 6. Also rotate your shoe on the z axis if it’s not straight
 
-![image.png](image%202.png)
+    ![IMG_Shoes_ShoePlacement.png](Images_Wearables/Shoes/IMG_Shoes_ShoePlacement.png)
 
 After making the required adjustments, export your shoe model out as a `.fbx`.
 
@@ -52,18 +52,18 @@ After making the required adjustments, export your shoe model out as a `.fbx`.
 4. Enter a unique Package Name (e.g. **MyNewShoes01**).
 5. Select **Wearable** as the **Package Type**.
     
-    ![image.png](https://github.com/Hyper-Ross/helix-documentation/raw/Ross_CC_Tattoos/docs/tutorials/WearableTutImages/1.png)
+    ![image.png](WearableTutImages/1.png)
     
 6. Click **Add New Package**. This action creates a dedicated plugin folder for your assets (e.g., **Plugins/Wearable_MyNewShoes01**).
     
-    ![image.png](https://github.com/Hyper-Ross/helix-documentation/raw/Ross_CC_Tattoos/docs/tutorials/WearableTutImages/2.png)
+    ![image.png](WearableTutImages/2.png)
     
 7. Go into the folder you've created and click the **Import** button in content browser. Choose your `.fbx` shoe model file. (You can also drag it into the Content Browser from Windows File Explorer)
 8. Do the same import procedure for any and all textures
 
 ---
 
-## **3. Shoe setup**
+## **3. Shoe Setup**
 
 Please note, shoes are not cross compatible between genders, you will have to do these steps for male and female separately.
 
@@ -77,7 +77,7 @@ Please note, shoes are not cross compatible between genders, you will have to do
 8. Set the Preset Mirror direction to Forward and set the transform location to 0,0,0
 9. If your shoe has mirrored correctly to the other foot, press Accept
 
-![image.png](image%203.png)
+    ![IMG_Shoes_MirrorInUE5.png](Images_Wearables/Shoes/IMG_Shoes_MirrorInUE5.png)
 
 1. Now got to **xForm** and Press **Edit Pivot**.
 2. Set the Box Positions to World Origin and hit **Accept**.
@@ -97,7 +97,7 @@ Please note, shoes are not cross compatible between genders, you will have to do
 7. Set **Skeletal Mesh Prefix** to **SKM_.**
 8. Press **Convert.**
 
-![image.png](image%204.png)
+    ![IMG_Shoes_SmToSKConversion.png](Images_Wearables/Shoes/IMG_Shoes_SmToSKConversion.png)
 
 1. Save the newly created skeletal mesh.
 2. You can now delete the Static Mesh from the project as we wont need it.
@@ -113,7 +113,7 @@ Please note, shoes are not cross compatible between genders, you will have to do
 5. Under Weight Transfer, assign the male or female body you used as a placement guide to the Source Skeletal Mesh input.
 6. Make sure the LOD is set to LOD0, Source profile is Default Mesh select mode is Target, Location is 0,0,0 and hit **Accept**.
 
-![image.png](image%205.png)
+    ![IMG_Shoes_TransferWeights.png](Images_Wearables/Shoes/IMG_Shoes_TransferWeights.png)
 
 ---
 
@@ -141,7 +141,7 @@ Please note, shoes are not cross compatible between genders, you will have to do
 7. We’d recommend enabling both “Has Color Picker” and “Has Remove Button”
 8. The material parameters can be left blank for now as this will depend on your material setup.
 
-![image.png](image%206.png)
+    ![IMG_Shoes_DataAssetSetup.png](Images_Wearables/Shoes/IMG_Shoes_DataAssetSetup.png)
 
 ---
 
@@ -150,11 +150,11 @@ Please note, shoes are not cross compatible between genders, you will have to do
 1. Return to the HELIX Packaging Tool window.
 2. With your package selected, click the **Package** button. This process will cook your assets into the final `.pak` file format required by the HELIX Creator Hub. This may take some time.
     
-    ![image.png](https://github.com/Hyper-Ross/helix-documentation/raw/Ross_CC_Tattoos/docs/tutorials/WearableTutImages/11.png)
+    ![image.png](WearableTutImages/11.png)
     
 3. Once cooking is complete, a file explorer window will automatically open, displaying your final `.pak` files. Your wearable is now ready to be uploaded to the **Creator Hub**!
     
-    ![image.png](https://github.com/Hyper-Ross/helix-documentation/raw/Ross_CC_Tattoos/docs/tutorials/WearableTutImages/12.png)
+    ![image.png](WearableTutImages/12.png)
     
     ---
     
@@ -171,9 +171,9 @@ Please note, shoes are not cross compatible between genders, you will have to do
 
 1. Create a draft world and import the `.pak` file you've cooked in **Creator Kit**.
     
-    ![image.png](https://github.com/Hyper-Ross/helix-documentation/raw/Ross_CC_Tattoos/docs/tutorials/WearableTutImages/14.png)
+    ![image.png](WearableTutImages/14.png)
     
-    ![image.png](https://github.com/Hyper-Ross/helix-documentation/raw/Ross_CC_Tattoos/docs/tutorials/WearableTutImages/15.png)
+    ![image.png](WearableTutImages/15.png)
     
 2. If import was successful, you should see your assets in the left panel.
 3. Importing also makes your wearables automatically available in **Character Customization UI**. Go back to the game from build mode, and the press **P** key.
