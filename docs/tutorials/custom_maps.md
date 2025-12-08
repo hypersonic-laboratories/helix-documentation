@@ -69,6 +69,12 @@ For this tutorial, we will be using a police station asset acquired from Fab.
 
 3. HELIX provides a set of base materials that creators can use when building custom maps. It’s strongly recommended to create your materials by deriving from these base materials. Doing so helps reduce package size and maintain optimal rendering performance in your level. For more details, see [Default Materials Guide](https://docs.helixgame.com/tutorials/default_materials/).
 
+4. Some gameplay systems in HELIX utilizes Unreal Navigation System for NPC characters and also to automatically move player characters towards target location when required. Please check [Basic Navigation Documentation](https://dev.epicgames.com/documentation/en-us/unreal-engine/basic-navigation-in-unreal-engine?application_version=5.5) to see how to add a navigation bounds volume to your level and build a navigation mesh before cooking your package.
+
+   /// warning | Warning
+   If your level doesn't have a valid navmesh data, NPC characters will fail to move in your level, and player characters will fail to move towards vehicles after interaction.
+   ///
+
 ---
 
 ## 4. (Bonus) Adding Interactable Doors To Your Custom Map
