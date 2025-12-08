@@ -71,9 +71,13 @@ For this tutorial, we will be using a police station asset acquired from Fab.
 
 4. Some gameplay systems in HELIX utilizes Unreal Navigation System for NPC characters and also to automatically move player characters towards target location when required. Please check [Basic Navigation Documentation](https://dev.epicgames.com/documentation/en-us/unreal-engine/basic-navigation-in-unreal-engine?application_version=5.5) to see how to add a navigation bounds volume to your level and build a navigation mesh before cooking your package.
 
-   /// warning | Warning
-   If your level doesn't have a valid navmesh data, NPC characters will fail to move in your level, and player characters will fail to move towards vehicles after interaction.
-   ///
+    /// warning | Warning
+    If your level doesn't have a valid navmesh data, NPC characters will fail to move in your level, and player characters will fail to move towards vehicles after interaction.
+    ///
+
+    /// info | Note
+    HELIX uses static nav mesh generation with nav modifier support. Please check [Navigation Components Documentation](https://dev.epicgames.com/documentation/en-us/unreal-engine/navigation-components-in-unreal-engine) to see how to affect navigation in your level with nav modifiers dynamically in runtime, if needed.
+    ///
 
 ---
 
