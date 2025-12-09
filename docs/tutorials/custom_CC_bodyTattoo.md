@@ -70,6 +70,8 @@ Now that you have your Quixel Mixer project setup,w e can being to setup our lay
 
 9. With the newly create white layer selected add a mask denoted by the square with the squiggle at the bottom of the layer stack 
 
+    ![IMG_Wearables_TattooBody_QuixelMixer_TattooLayer.png](Images_Wearables/BodyTattoo/IMG_Wearables_TattooBody_QuixelMixer_TattooLayer.png)
+
 10. Then switch from 3d mode to 2d mode and paint the whole square to reveal the textured layer again
 
 11. Switch back to 3D mode
