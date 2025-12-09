@@ -52,8 +52,8 @@ nav:
       - tutorials/custom_shells.md
       - tutorials/custom_blueprints.md
       - tutorials/custom_ui.md
-      - tutorials/custom_cc_FaceTattoo.mb
-      - tutorials/custom_CC_bodyTattoo.mb
+      - tutorials/custom_cc_FaceTattoo.md
+      - tutorials/custom_CC_bodyTattoo.md
     - Misc:
       - tutorials/reference_custom_assets.md
       - tutorials/default_materials.md
