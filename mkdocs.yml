@@ -54,6 +54,8 @@ nav:
       - tutorials/custom_ui.md
       - tutorials/custom_cc_FaceTattoo.md
       - tutorials/custom_CC_bodyTattoo.md
+      - tutorials/custom_CC_Hair.md
+      - tutorials/custom_cc_Shoes.md
     - Misc:
       - tutorials/reference_custom_assets.md
       - tutorials/default_materials.md
