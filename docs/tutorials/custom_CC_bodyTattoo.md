@@ -139,9 +139,13 @@ Now that you’re ready to paint, it can be a good idea to import brush alphas i
 
 5. Select Wearable as the Package Type.
 
+    ![image.png](WearableTutImages/1.png)
+
 6. Click Add New Package. This action creates a dedicated plugin folder for your assets (e.g., Plugins/Wearable_MyNewWearable).
 
-7. Go into the folder you've created and click Import button in content browser. Choose your texture file
+    ![image.png](WearableTutImages/2.png)
+
+7. In the folder you've just created, click the **Import** button in Xontent Browser. Choose your texture file
 
 # 8. Data Asset Initial Setup
 
