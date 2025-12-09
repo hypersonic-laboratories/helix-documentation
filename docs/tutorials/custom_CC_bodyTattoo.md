@@ -133,6 +133,8 @@ Now that you’re ready to paint, it can be a good idea to import brush alphas i
 
 2. Access the HELIX Packaging Tool from the main toolbar.
 
+    ![IMG_CreatorKitPackageManager.png](Images_Wearables/IMG_CreatorKitPackageManager.png)
+
 3. In the packaging tool window, click New Package.
 
 4. Enter a unique Package Name (e.g., MyNewWearable).
