@@ -102,6 +102,8 @@ Now that you’re ready to paint, it can be a good idea to import brush alphas i
 
 3. Place the new black layer above the character texture and below the white tattoo paint layer
 
+    ![IMG_Wearables_TattooBody_QuixelMixer_ConvertToBnWMask.png](Images_Wearables/BodyTattoo/IMG_Wearables_TattooBody_QuixelMixer_ConvertToBnWMask.png)
+
 4. Now go to the export tab
     1. Set Export Target to Custom
     2. Define your export path
@@ -110,6 +112,8 @@ Now that you’re ready to paint, it can be a good idea to import brush alphas i
     5. Untick all layers other than albedo. 
     6. Set your desired export resolution e.g. 4096x4096
     7. Then press export to disk.
+    
+    ![IMG_Wearables_TattooBody_QuixelMixer_ExportSettings.png](Images_Wearables/BodyTattoo/IMG_Wearables_TattooBody_QuixelMixer_ExportSettings.png)
 
 # 6. Preparing your tattoo texture
 
