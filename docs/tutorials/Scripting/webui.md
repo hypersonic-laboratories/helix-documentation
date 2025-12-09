@@ -1,5 +1,5 @@
 ---
-title: Creating Web User Interface
+title: WebUI
 tags: [scripting]
 ---
 # Creating Web User Interface
