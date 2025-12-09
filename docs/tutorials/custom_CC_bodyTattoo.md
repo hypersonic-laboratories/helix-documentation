@@ -1,4 +1,4 @@
-# Custom Body Tattoos
+# Body Tattoos
 
 This guide walks you through the process of creating and packaging body tattoos for the Creator Hub using the Creator Kit.
 
