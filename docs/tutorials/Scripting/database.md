@@ -1,5 +1,5 @@
 ---
-title: Database Communication
+title: Database
 tags: [scripting]
 ---
 # Database Communication

@@ -1,5 +1,5 @@
 ---
-title: Binding Into Player X-Ray Events
+title: X-Ray
 tags: [scripting]
 ---
 # Binding Into Player X-Ray Events
