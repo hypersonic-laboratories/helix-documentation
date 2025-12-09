@@ -44,6 +44,8 @@ After acquiring the template assets we need to put them to use in a texture pain
 
 6. Then upload the template SM_BodyCombined.fbx to the Model slot
 
+    ![IMG_Wearables_TattooBody_QuixelMixer_Setup.png](Images_Wearables/BodyTattoo/IMG_Wearables_TattooBody_QuixelMixer_Setup.png)
+
 # 3. 3D Texture Painting Layer Setup
 
 Now that you have your Quixel Mixer project setup,w e can being to setup our layers
