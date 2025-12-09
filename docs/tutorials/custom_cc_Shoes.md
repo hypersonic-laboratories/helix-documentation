@@ -113,7 +113,8 @@ Please note, shoes are not cross compatible between genders, you will have to do
 3. Enable the Editing Tools
 4. Press the skin tab and select Edit Weights
 5. Under Weight Transfer, assign the male or female body you used as a placement guide to the Source Skeletal Mesh input.
-6. Make sure the LOD is set to LOD0, Source profile is Default Mesh select mode is Target, Location is 0,0,0 and hit **Accept**.
+6. Make sure the LOD is set to LOD0, Source profile is Default Mesh select mode is Target, Location is 0,0,0 and hit Transfer Weights.
+7. Then press **Accept**.
 
     ![IMG_Shoes_TransferWeights.png](Images_Wearables/Shoes/IMG_Shoes_TransferWeights.png)
 

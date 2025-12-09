@@ -1,6 +1,8 @@
-# Custom Body Tattoos
+# Body Tattoos
 
 This guide walks you through the process of creating and packaging body tattoos for the Creator Hub using the Creator Kit.
+
+<iframe src="https://youtube.com/embed/Q283bqr40P0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" frameborder="0" allowfullscreen> </iframe>
 
 # 1. Acquire Your Required Template Resources
 
@@ -44,6 +46,8 @@ After acquiring the template assets we need to put them to use in a texture pain
 
 6. Then upload the template SM_BodyCombined.fbx to the Model slot
 
+    ![IMG_Wearables_TattooBody_QuixelMixer_Setup.png](Images_Wearables/BodyTattoo/IMG_Wearables_TattooBody_QuixelMixer_Setup.png)
+
 # 3. 3D Texture Painting Layer Setup
 
 Now that you have your Quixel Mixer project setup,w e can being to setup our layers
@@ -60,13 +64,19 @@ Now that you have your Quixel Mixer project setup,w e can being to setup our lay
 
 6. Expand the Placement drop down and change it from Box projection to Tilling 
 
+    ![IMG_Wearables_TattooBody_QuixelMixer_BodyLayer.png](Images_Wearables/BodyTattoo/IMG_Wearables_TattooBody_QuixelMixer_BodyLayer.png)
+
 7. Now add a new solid layer above the textured layer
 
 8. Next to Albedo click the grey circle and select the colour white
 
 9. With the newly create white layer selected add a mask denoted by the square with the squiggle at the bottom of the layer stack 
 
+    ![IMG_Wearables_TattooBody_QuixelMixer_TattooLayer.png](Images_Wearables/BodyTattoo/IMG_Wearables_TattooBody_QuixelMixer_TattooLayer.png)
+
 10. Then switch from 3d mode to 2d mode and paint the whole square to reveal the textured layer again
+
+    ![IMG_Wearables_TattooBody_QuixelMixer_2D3D.png](Images_Wearables/BodyTattoo/IMG_Wearables_TattooBody_QuixelMixer_2D3D.png)
 
 11. Switch back to 3D mode
 
@@ -82,6 +92,8 @@ Now that you’re ready to paint, it can be a good idea to import brush alphas i
 
 2. Click the faded circle (the current brush shape) and upload your own alpha mask
 
+    ![IMG_Wearables_TattooBody_QuixelMixer_CustomStamp.png](Images_Wearables/BodyTattoo/IMG_Wearables_TattooBody_QuixelMixer_CustomStamp.png)
+
 3. Then you can paint you tattoo mask wherever you’d like on the character
 
 # 5. How to Export
@@ -92,6 +104,8 @@ Now that you’re ready to paint, it can be a good idea to import brush alphas i
 
 3. Place the new black layer above the character texture and below the white tattoo paint layer
 
+    ![IMG_Wearables_TattooBody_QuixelMixer_ConvertToBnWMask.png](Images_Wearables/BodyTattoo/IMG_Wearables_TattooBody_QuixelMixer_ConvertToBnWMask.png)
+
 4. Now go to the export tab
     1. Set Export Target to Custom
     2. Define your export path
@@ -100,6 +114,8 @@ Now that you’re ready to paint, it can be a good idea to import brush alphas i
     5. Untick all layers other than albedo. 
     6. Set your desired export resolution e.g. 4096x4096
     7. Then press export to disk.
+    
+    ![IMG_Wearables_TattooBody_QuixelMixer_ExportSettings.png](Images_Wearables/BodyTattoo/IMG_Wearables_TattooBody_QuixelMixer_ExportSettings.png)
 
 # 6. Preparing your tattoo texture
 
@@ -119,15 +135,21 @@ Now that you’re ready to paint, it can be a good idea to import brush alphas i
 
 2. Access the HELIX Packaging Tool from the main toolbar.
 
+    ![IMG_CreatorKitPackageManager.png](Images_Wearables/IMG_CreatorKitPackageManager.png)
+
 3. In the packaging tool window, click New Package.
 
 4. Enter a unique Package Name (e.g., MyNewWearable).
 
 5. Select Wearable as the Package Type.
 
+    ![image.png](WearableTutImages/1.png)
+
 6. Click Add New Package. This action creates a dedicated plugin folder for your assets (e.g., Plugins/Wearable_MyNewWearable).
 
-7. Go into the folder you've created and click Import button in content browser. Choose your texture file
+    ![image.png](WearableTutImages/2.png)
+
+7. In the folder you've just created, click the **Import** button in Xontent Browser. Choose your texture file
 
 # 8. Data Asset Initial Setup
 
