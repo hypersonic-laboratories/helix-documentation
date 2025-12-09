@@ -74,6 +74,8 @@ Now that you have your Quixel Mixer project setup,w e can being to setup our lay
 
 10. Then switch from 3d mode to 2d mode and paint the whole square to reveal the textured layer again
 
+    ![IMG_Wearables_TattooBody_QuixelMixer_2D3D.png](Images_Wearables/BodyTattoo/IMG_Wearables_TattooBody_QuixelMixer_2D3D.png)
+
 11. Switch back to 3D mode
 
 12. Press x to invert paint colour
@@ -87,6 +89,8 @@ Now that you’re ready to paint, it can be a good idea to import brush alphas i
 1. In the recently opened brush panel to the left of the viewport, go to brush shape
 
 2. Click the faded circle (the current brush shape) and upload your own alpha mask
+
+    ![IMG_Wearables_TattooBody_QuixelMixer_CustomStamp.png](Images_Wearables/BodyTattoo/IMG_Wearables_TattooBody_QuixelMixer_CustomStamp.png)
 
 3. Then you can paint you tattoo mask wherever you’d like on the character
 
