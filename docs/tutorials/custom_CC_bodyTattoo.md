@@ -62,6 +62,8 @@ Now that you have your Quixel Mixer project setup,w e can being to setup our lay
 
 6. Expand the Placement drop down and change it from Box projection to Tilling 
 
+    ![IMG_Wearables_TattooBody_QuixelMixer_BodyLayer.png](Images_Wearables/BodyTattoo/IMG_Wearables_TattooBody_QuixelMixer_BodyLayer.png)
+
 7. Now add a new solid layer above the textured layer
 
 8. Next to Albedo click the grey circle and select the colour white
