@@ -68,6 +68,7 @@ After making the required adjustments, export your shoe model out as a `.fbx`.
 ## **3. Shoe Setup**
 
 Please note, shoes are not cross compatible between genders, you will have to do these steps for male and female separately.
+If you have trouble dragging your shoe mesh into the scene, create a temporary level in your wearable plugin folder by pressing right click, search and select level. Right click it, save and open it. Then follow the in scene steps there
 
 1. Find the Male and Female body template inside of **CKTemplateAssets/CharacterCreator/SkeletalMeshes**
 2. Drag the appropriate mesh into the scene. The male mesh if you’re creating shoes for a male or the female skeletal mesh if your shoes are for a female.
