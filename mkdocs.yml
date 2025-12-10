@@ -52,6 +52,10 @@ nav:
       - tutorials/custom_shells.md
       - tutorials/custom_blueprints.md
       - tutorials/custom_ui.md
+      - tutorials/custom_cc_FaceTattoo.md
+      - tutorials/custom_CC_bodyTattoo.md
+      - tutorials/custom_CC_Hair.md
+      - tutorials/custom_cc_Shoes.md
     - Misc:
       - tutorials/reference_custom_assets.md
       - tutorials/default_materials.md
@@ -60,25 +64,14 @@ nav:
       - tutorials/porting-tutorial.md
       - tutorials/photomode.md
       - tutorials/build_mode.md
+    - Scripting:
+      - ... | flat | tutorials/Scripting/*.md
   - Blueprints:
     - blueprints/blueprints.md
     - Persistent Data:
       - blueprints/PersistentData/persistent_data.md
     - Dynamic Materials:
       - blueprints/DynamicMaterials/dynamic_materials.md
-  - Scripting Tips:
-    - scripting/index.md
-    - Key References:
-      - scripting/packageguide.md
-      - scripting/client_server_guide.md
-      - scripting/codeeditor.md
-      - scripting/bone_list.md
-      - scripting/anim_list.md
-      - scripting/input_keys.md
-    - Core Concepts:
-      - ... | flat | scripting/coreConceptsImports/*.md
-    - Code Examples:
-      - ... | flat | tutorials/exampleImports/*.md
   - API:
     - api/index.md
     - Global Variables:
@@ -173,7 +166,7 @@ theme:
     - navigation.instant
     - navigation.instant.prefetch
     - navigation.instant.progress
-    - navigation.sections
+    # - navigation.sections
     - navigation.prune
     - navigation.indexes
     - navigation.top
