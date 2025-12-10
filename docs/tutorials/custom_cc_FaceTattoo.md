@@ -2,7 +2,7 @@
 
 This guide walks you through the process of creating and packaging Face Tattoos for the [Creator Hub](creatorhub.md) using the [Creator Kit](creatorkit.md).
 
-<iframe src="https://youtube.com/embed/Q283bqr40P0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" frameborder="0" allowfullscreen> </iframe>
+<iframe src="https://youtube.com/embed/BgX7PzguWWI?si=RNOkwJNMAGAxdQU_" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" frameborder="0" allowfullscreen> </iframe>
 
 ## 1. Acquire Your Required Template Resources
 
@@ -160,6 +160,7 @@ After acquiring the template asset we need to put them to use in an image editor
 
 ## 8. Ready To Rock
 Once you've followed these steps, uploaded your package to Creator Hub, and imported it into your world, your new wearable items will be available for players joining your public world!
+
 
 
 
