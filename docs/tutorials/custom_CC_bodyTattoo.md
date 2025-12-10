@@ -2,7 +2,9 @@
 
 This guide walks you through the process of creating and packaging body tattoos for the Creator Hub using the Creator Kit.
 
-<iframe src="https://youtube.com/embed/Q283bqr40P0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" frameborder="0" allowfullscreen> </iframe>
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+    <iframe src="https://youtube.com/embed/Q283bqr40P0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" frameborder="0" allowfullscreen> </iframe>
+</div>
 
 # 1. Acquire Your Required Template Resources
 
@@ -10,7 +12,7 @@ Within the creator kit project you will find a folder called CKTemplateAssets.
 
 This folder contains template assets that may be required or helpful in the creation of your own assets.
 
-For this tutorial we will need SM_BodyCombined.fbx which will act as a model template for 3d painting and T_BodyTextureTemplate to provide more contextual visualisation or visual aid for 2d texture painting  
+For this tutorial we will need SM_BodyCombined.fbx which will act as a model template for 3d painting and T_BodyTextureTemplate to provide more contextual visualisation or visual aid for 2d texture painting
 
 To acquire these assets:
 
@@ -34,7 +36,7 @@ To acquire these assets:
 
 After acquiring the template assets we need to put them to use in a texture painting application such as Quixel mixer
 
-1. Launch Quixel Mixer 
+1. Launch Quixel Mixer
 
 2. Create a new project (e.g. Body Tattoos)
 
@@ -62,7 +64,7 @@ Now that you have your Quixel Mixer project setup,w e can being to setup our lay
 
 5. Then press Load and Import the T_BodyTextureTemplate
 
-6. Expand the Placement drop down and change it from Box projection to Tilling 
+6. Expand the Placement drop down and change it from Box projection to Tilling
 
     ![IMG_Wearables_TattooBody_QuixelMixer_BodyLayer.png](Images_Wearables/BodyTattoo/IMG_Wearables_TattooBody_QuixelMixer_BodyLayer.png)
 
@@ -70,7 +72,7 @@ Now that you have your Quixel Mixer project setup,w e can being to setup our lay
 
 8. Next to Albedo click the grey circle and select the colour white
 
-9. With the newly create white layer selected add a mask denoted by the square with the squiggle at the bottom of the layer stack 
+9. With the newly create white layer selected add a mask denoted by the square with the squiggle at the bottom of the layer stack
 
     ![IMG_Wearables_TattooBody_QuixelMixer_TattooLayer.png](Images_Wearables/BodyTattoo/IMG_Wearables_TattooBody_QuixelMixer_TattooLayer.png)
 
@@ -110,11 +112,11 @@ Now that you’re ready to paint, it can be a good idea to import brush alphas i
     1. Set Export Target to Custom
     2. Define your export path
     3. Name your texture
-    4. Untick Export Model 
-    5. Untick all layers other than albedo. 
+    4. Untick Export Model
+    5. Untick all layers other than albedo.
     6. Set your desired export resolution e.g. 4096x4096
     7. Then press export to disk.
-    
+
     ![IMG_Wearables_TattooBody_QuixelMixer_ExportSettings.png](Images_Wearables/BodyTattoo/IMG_Wearables_TattooBody_QuixelMixer_ExportSettings.png)
 
 # 6. Preparing your tattoo texture
@@ -127,7 +129,7 @@ Now that you’re ready to paint, it can be a good idea to import brush alphas i
 
 4. Add colour fill to your image to define the tattoo colour
 
-5. Save as png with transparency 
+5. Save as png with transparency
 
 # 7. Creator Kit Package setup
 
@@ -185,7 +187,7 @@ Now that you’re ready to paint, it can be a good idea to import brush alphas i
 
 7. Under Material Parameters see the attacked list for options
     1. The most important that you must set is Intensity
-        1. Type: Float 
+        1. Type: Float
         2. Selected part name: None
         3. Material Slot Name: body_skin
         4. Parameter Name: Tatoo 01 Intensity

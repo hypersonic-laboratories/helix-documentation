@@ -2,7 +2,9 @@
 
 This guide walks you through the process of creating and packaging Face Tattoos for the [Creator Hub](creatorhub.md) using the [Creator Kit](creatorkit.md).
 
-<iframe src="https://youtube.com/embed/Q283bqr40P0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" frameborder="0" allowfullscreen> </iframe>
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+    <iframe src="https://youtube.com/embed/Q283bqr40P0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" frameborder="0" allowfullscreen> </iframe>
+</div>
 
 ## 1. Acquire Your Required Template Resources
 
@@ -99,10 +101,10 @@ After acquiring the template asset we need to put them to use in an image editor
 6. We’d recommend enabling both “Has Color Picker” and “Has Remove Button”
 
 7. Under Material Parameters see ***HERE***  for options
-   
+
      The most important variable that you add and set is Intensity _(the rest are optional)_
-   
-        Type: Float 
+
+        Type: Float
         Selected part name: None
         Material Slot Name: body_skin
         Parameter Name: Tatoo 01 Intensity
@@ -113,7 +115,7 @@ After acquiring the template asset we need to put them to use in an image editor
         Max: 1
 
     ![image.png](Images_Wearables/FaceTattoo/IMG_Wearables_TattooFace_DA_SetupOverview.png)
-   
+
 9. Once you’re done, Save your data table and all assets you’ve added to you package folder.
 
 ---
