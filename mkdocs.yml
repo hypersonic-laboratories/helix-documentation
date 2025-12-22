@@ -24,6 +24,8 @@ nav:
     - Coming From Other Platforms:
       # - getting_started/comingGmod.md
       - getting_started/comingGTA.md
+    - Contributing:
+      - getting_started/contributing-i18n.md
     # - Hubs:
       # - getting_started/scripters.md
       # - getting_started/rpServerOwners.md
@@ -163,9 +165,10 @@ theme:
     - navigation.tracking
     - navigation.tabs
     - navigation.tabs.sticky
-    - navigation.instant
-    - navigation.instant.prefetch
-    - navigation.instant.progress
+    # navigation.instant disabled - incompatible with i18n language switcher
+    # - navigation.instant
+    # - navigation.instant.prefetch
+    # - navigation.instant.progress
     # - navigation.sections
     - navigation.prune
     - navigation.indexes
@@ -317,9 +320,6 @@ plugins:
       auto_caption: false
       caption_position: bottom
 
-  # https://github.com/timvink/mkdocs-git-revision-date-localized-plugin
-  - git-revision-date-localized
-
   # https://github.com/lukasgeiter/mkdocs-awesome-pages-plugin
   - awesome-pages
 
@@ -333,6 +333,33 @@ plugins:
       index_weight: -10
       warning: false
       reverse: true
+
+  # https://ultrabug.github.io/mkdocs-static-i18n/
+  - i18n:
+      docs_structure: suffix
+      fallback_to_default: true
+      reconfigure_material: true
+      reconfigure_search: true
+      languages:
+        - locale: en
+          default: true
+          name: English
+          build: true
+        - locale: pt-BR
+          name: Português (BR)
+          build: true
+        - locale: es
+          name: Español
+          build: true
+        - locale: de
+          name: Deutsch
+          build: true
+        - locale: fr
+          name: Français
+          build: true
+
+  # https://github.com/timvink/mkdocs-git-revision-date-localized-plugin
+  - git-revision-date-localized
 
 
   # https://github.com/orbikm/mkdocs-ezlinks-plugin
