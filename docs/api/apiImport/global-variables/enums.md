@@ -256,3 +256,16 @@ Specifies what render data the scene capture should output to its render target
 | `SceneCaptureSource.DeviceDepth`    | Device depth buffer                            |
 | `SceneCaptureSource.Normal`         | World space normals                            |
 | `SceneCaptureSource.BaseColor`      | Base color only                                |
+
+---
+
+## XrayState
+Specifies the current Xray interaction state for a target actor
+
+| Xray State                              | Description                                    |
+|---------------------------------------------|------------------------------------------------|
+| `XrayState.None`  | No Xray interaction active    |
+| `XrayState.BeginFocus`  | Player has started focusing on the target               |
+| `XrayState.EndFocus`  | Player has stopped focusing on the target             |
+| `XrayState.Reveal`     | Player has released Xray key whilst target is in focus |
+| `XrayState.Cancel`    | Xray interaction has been cancelled            |
