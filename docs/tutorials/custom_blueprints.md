@@ -14,33 +14,27 @@ For this tutorial, we have a blueprint based clock system pack, which has a main
 
 1. Launch the **Creator Kit** editor.
 
-2. Access the **HELIX Packaging Tool** from the main toolbar.
+2. Find your imported Fab asset folder and right click to it. Select **Convert to Package (Addon)**. This will make it possible to directly cook this folder with HELIX Packaging Tool.
 
-3. In the packaging tool window, click **New Package**.
+    ![image.png](CustomBPImages/u_1.png)
 
-    ![image.png](CustomAnimImages/5.png)
-
-5. Enter a unique Package Name (e.g., ClockSystem).
-
-7. Select **Addon** as the **Package Type**.
+    /// info | Note
+    Alternatively, you can also create a new package from HELIX Packaging Tool and move your assets or import source files into this created package folder.
 
     ![image.png](CustomBPImages/0.png)
-
-9. Click **Add New Package**. This action creates a dedicated folder for your assets (e.g., **Content/Addon_ClockSystem**).
-
-10. Move (or create) the blueprints and all the dependent assets into the package folder you've just created.
-
-    ![image.png](CustomBPImages/1.png)
-  
-    ![image.png](CustomBPImages/2.png)
-  
-    ![image.png](CustomBPImages/3.png)
+    ///
 
 ---
 
 ## 2. Finalizing and Cooking The Package
 
 1. Make sure all the depending assets by your blueprint are placed inside package folder. If one of those assets are placed outside of the created package folder, created .pak file will have missing dependencies and this might cause crashes or runtime errors during playthrough with this package.
+
+    ![image.png](CustomBPImages/1.png)
+  
+    ![image.png](CustomBPImages/2.png)
+  
+    ![image.png](CustomBPImages/3.png)
 
 2. Make sure you have defined all the required functions, events, variables etc. in your blueprints to later access them with Lua inside Helix after importing your package there.
 
@@ -114,19 +108,19 @@ For this example use case, we will try to load our packaged custom blueprint ass
 
 7. After walking towards the clock, the widget becomes accessible.
 
-<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-  <iframe src="https://youtube.com/embed/O9OXYgnxmpo?si=ueKFLQS0FXjRbz-X"
-          style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
-          frameborder="0"
-          allowfullscreen>
-  </iframe>
-</div>
+    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+      <iframe src="https://youtube.com/embed/O9OXYgnxmpo?si=ueKFLQS0FXjRbz-X"
+              style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+              frameborder="0"
+              allowfullscreen>
+      </iframe>
+    </div>
 
-9. Now let's call an event we've previously defined in the blueprint. Our `SetCustomTime` event changes the time shown on the clock.
+8. Now let's call an event we've previously defined in the blueprint. Our `SetCustomTime` event changes the time shown on the clock.
 
     ![image.png](CustomBPImages/5.png)
 
-10. After restarting the game to clean the level from previous changes, we add the function call below at end of our `main.lua` script to execute our custom event on spawned blueprint actor. The same syntax can be used for calling any function in spawned actors.
+9. After restarting the game to clean the level from previous changes, we add the function call below at end of our `main.lua` script to execute our custom event on spawned blueprint actor. The same syntax can be used for calling any function in spawned actors.
 
     ```lua
     -- Manually set time on spawned clock with our blueprint defined event

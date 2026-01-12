@@ -4,7 +4,15 @@ This guide walks you through the process of packaging wearable clothing assets f
 
 ## 1. Creating Your Wearable Clothing Asset
 
-Use your favorite modeling tool to create and skin a clothing piece for the HELIX character by using the resources available on [Google Drive](https://drive.google.com/drive/folders/1-MvqAmLsBm7l50mMmdH_BEen8xaUID0O?usp=sharing).
+You can use the resources available on [Google Drive](https://drive.google.com/drive/folders/1-MvqAmLsBm7l50mMmdH_BEen8xaUID0O?usp=sharing) to create compatible clothing pieces for HELIX characters.
+
+/// warning | Warning
+HELIX characters use **Metahuman Rig** as cosmetic representation by default, and custom wearable support is only available for this cosmetic type.
+///
+
+/// note | Source Assets
+If required, you can download metahuman [Male Body](https://drive.google.com/file/d/1yX3N7yHKZYzXyua2fEfmunT2jqY7zHXR/view?usp=drive_link), [Female Body](https://drive.google.com/file/d/1shIjTgwJfpWw9707R9PVmyCUWYfRns-6/view?usp=drive_link), and [Head](https://drive.google.com/file/d/1pCj4H_F1CCBJxtbo-1JQNwA4jo0X4ruW/view?usp=drive_link) skeletal mesh source files to use as reference on your work. We currently use **medium height** & **normal weight** variations for metahumans as base.
+///
 
 ![image.png](WearableTutImages/13.png)
 
@@ -28,7 +36,7 @@ For this tutorial, we will be importing a simple cap accessory for our character
 
     ![image.png](WearableTutImages/1.png)
 
-6. Click **Add New Package**. This action creates a dedicated folder for your assets (e.g., **Content/Wearable_MyNewWearable**).
+6. Click **Add New Package**. This action creates a dedicated plugin folder for your assets (e.g., **Plugins/Wearable_MyNewWearable**).
 
     ![image.png](WearableTutImages/2.png)
 
@@ -60,7 +68,9 @@ For this tutorial, we will be importing a simple cap accessory for our character
 
 3. Finally, you can open your material and tweak it as you like. If there are extra textures required for your clothing, you can import them into same package folder and reference in your material.
 
-    > Note: Material parameter binding into Character Customization UI is currently in progress and will be documented soon. This will allow you to customize color or other properties of your clothing from the character customization UI within game.
+    /// info | Note
+    Material parameter binding into Character Customization UI is currently in progress and will be documented soon. This will allow you to customize color or other properties of your clothing from the character customization UI within game.
+    ///
 
 ---
 
@@ -82,7 +92,7 @@ For this tutorial, we will be importing a simple cap accessory for our character
 
     ![image.png](WearableTutImages/10.png)
 
-6. Ensure available parameters for your clothing type are set properly before finalizing. You can learn more about the available parameters from [here (WIP)]().
+6. Ensure available parameters for your clothing type are set properly before finalizing.
 
 7. Return to the HELIX Packaging Tool window.
 

@@ -2,13 +2,30 @@
 
 This guide walks you through the process of packaging custom maps for the [Creator Hub](creatorhub.md) by using the [Creator Kit](creatorkit.md).
 
-## 1. Acquiring Your Custom Map
+## 1. Creating a new Map Package on Creator Kit
+
+1. In your CreatorKit project, open the the Package window and click the **New Package** button.
+
+![image.png](CustomMapImages/Map1.png)
+
+2. Write a name for your Map package and select **Map** on the Type field.
+
+![image.png](CustomMapImages/Map2.png)
+
+3. The location of your package folder will show up. You can always navigate back to this folder on the Package Manager **Browse** button.
+
+![image.png](CustomMapImages/Map3.png)
+
+
+## 2. Acquiring Your Custom Map
 
 Either use **Creator Kit** to create your own custom map, or get a map asset from [Fab](https://fab.com).
 
+Remember all the content of your map package should be on the folder highligthed on the previous step.
+
 ---
 
-## 2. Preparing Your Custom Map Package
+## 3. Importing a map
 
 For this tutorial, we will be using a police station asset acquired from Fab.
 
@@ -16,7 +33,7 @@ For this tutorial, we will be using a police station asset acquired from Fab.
 
     ![image.png](CustomMapImages/1.png)
 
-2. Right click to root folder containing all assets in content browser and click **Migrate**. Make sure all assets are gathered inside one root folder (e.g, PoliceDepartment/...), so it will be easier to move your assets into package folder in **Creator Kit**.
+2. Right click to root folder containing all assets in content browser and click **Migrate**, it is also ok to migrate the entire content folder, since the plugin workflow will take care of placing everything into your plugin content folder. Alternative, you can find the specific **Level** you want to migrate, right click the level and click migrate. Unreal will handle the dependencies.
 
     ![image.png](CustomMapImages/2.png)
 
@@ -24,61 +41,21 @@ For this tutorial, we will be using a police station asset acquired from Fab.
 
     ![image.png](CustomMapImages/3.png)
 
-4. On the next window, find your **Creator Kit** installation's `Content` folder and select it.
+4. On the next window, find your **Creator Kit** installation's, go into plugins and find the package you just created. In this case we are going to import it into Map_MyNewMap. Then open the `Content` folder and select it.
 
-    ![image.png](CustomMapImages/4.png)
+    ![image.png](CustomMapImages/NewPlugin1.png)
 
-5. Your assets will be copied into **Creator Kit** `Content` folder with same folder structure after process is done.
+5. Your assets will be copied into your **Creator Kit** plugin `Content` folder with same folder structure after process is done.
 
     ![image.png](CustomMapImages/5.png)
 
 6. Close the custom map project and launch the **Creator Kit** project. Ensure your custom map is migrated into **Creator Kit** correctly.
 
-    ![image.png](CustomMapImages/6.png)
+    ![image.png](CustomMapImages/NewPlugin2.png)
 
 7. Ensure you can play in your migrated custom map without any errors/warnings caused by migration process.
 
     ![image.png](CustomMapImages/7.png)
-
-8. Access the **HELIX Packaging Tool** from the main toolbar.
-
-9. In the packaging tool window, click **New Package**.
-
-10. Enter a unique Package Name (e.g., MyPoliceStationMap), and select **Map** as the **Package Type**.
-
-    ![image.png](CustomMapImages/8.png)
-
-11. Click **Add New Package**. This action creates a dedicated folder for your assets (e.g., **Content/Map_MyPoliceStationMap**).
-
-    ![image.png](CustomMapImages/9.png)
-
-12. Now, it's needed to move your level assets into this new package folder. For current scenario, we have a `Content/PoliceDepartment` folder with all the required assets for our map.
-
-13. Select all the folders (or just the root folder) you want to migrate, and then drag&drop them into your new package folder (e.g., **Content/Map_MyPoliceStationMap**). 
-
-    ![image.png](CustomMapImages/10_1.png)
-
-    ![image.png](CustomMapImages/10_2.png)
-
-14. Select **Move Here** from the dropdown menu.
-
-    ![image.png](CustomMapImages/10_3.png)
-
-    ![image.png](CustomMapImages/10_4.png)
-
-15. After process is done, right click to your old migrated folder and click **Update Redirector References** from dropdown menu. This will clean redirector assets automatically created during the previous step.
-
-    ![image.png](CustomMapImages/11_1.png)
-
-16. Click red **Delete Unreferenced Redirectors** button on next window and wait. This might take a while.
-
-    ![image.png](CustomMapImages/11_2.png)
-
-    ![image.png](CustomMapImages/11_3.png)
-
-17. After process is done, you should have a custom map package with all your assets placed in.
-
-    ![image.png](CustomMapImages/12.png)
 
 ---
 
@@ -92,6 +69,16 @@ For this tutorial, we will be using a police station asset acquired from Fab.
 
 3. HELIX provides a set of base materials that creators can use when building custom maps. It’s strongly recommended to create your materials by deriving from these base materials. Doing so helps reduce package size and maintain optimal rendering performance in your level. For more details, see [Default Materials Guide](https://docs.helixgame.com/tutorials/default_materials/).
 
+4. Some gameplay systems in HELIX utilizes Unreal Navigation System for NPC characters and also to automatically move player characters towards target location when required. Please check [Basic Navigation Documentation](https://dev.epicgames.com/documentation/en-us/unreal-engine/basic-navigation-in-unreal-engine?application_version=5.5) to see how to add a navigation bounds volume to your level and build a navigation mesh before cooking your package.
+
+    /// warning | Warning
+    If your level doesn't have a valid navmesh data, NPC characters will fail to move in your level, and player characters will fail to move towards vehicles after interaction.
+    ///
+
+    /// info | Note
+    HELIX uses static nav mesh generation with nav modifier support. Please check [Navigation Components Documentation](https://dev.epicgames.com/documentation/en-us/unreal-engine/navigation-components-in-unreal-engine) to see how to affect navigation in your level with nav modifiers dynamically in runtime, if needed.
+    ///
+
 ---
 
 ## 4. (Bonus) Adding Interactable Doors To Your Custom Map
@@ -100,7 +87,7 @@ If your level has door meshes that you want to make interactable by players, you
 
 ![image.png](CustomMapImages/14.png)
 
-1. You can find all the available template blueprints for different door types in `Helix/Blueprints/Door` folder.
+1. You can find all the available template blueprints for different door types in `HelixDoors` plugin, within `Plugins/HelixDoors/Blueprints` folder in content browser.
 
     ![image.png](CustomMapImages/15.png)
 
@@ -128,35 +115,35 @@ If your level has door meshes that you want to make interactable by players, you
 
 7. You can tweak the handle location by playing in the level from editor and find the best transform value for the handle component.
 
-<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-  <iframe src="https://youtube.com/embed/pvT46ot4wfU?si=eeqvZvWVsqAoshFp"
-          style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
-          frameborder="0"
-          allowfullscreen>
-  </iframe>
-</div>
+    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+      <iframe src="https://youtube.com/embed/pvT46ot4wfU?si=eeqvZvWVsqAoshFp"
+              style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+              frameborder="0"
+              allowfullscreen>
+      </iframe>
+    </div>
 
 8. After your door is fully tweaked, you can play in editor and test it out!
 
-<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-  <iframe src="https://youtube.com/embed/RiNXVfrfgeU?si=V1rBtR0Q8yOswVBT"
-          style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
-          frameborder="0"
-          allowfullscreen>
-  </iframe>
-</div>
+    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+      <iframe src="https://youtube.com/embed/RiNXVfrfgeU?si=V1rBtR0Q8yOswVBT"
+              style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+              frameborder="0"
+              allowfullscreen>
+      </iframe>
+    </div>
 
 9. Now we will replace another door in the level, this time by using `BP_Door_Swinging`, which is acts like entrance doors on the markets etc.
 
     ![image.png](CustomMapImages/21_2.png)
 
-<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-  <iframe src="https://youtube.com/embed/Vy1U2Um0KgY?si=qWNrv-Rscqb6zrEK"
-          style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
-          frameborder="0"
-          allowfullscreen>
-  </iframe>
-</div>
+    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+      <iframe src="https://youtube.com/embed/Vy1U2Um0KgY?si=qWNrv-Rscqb6zrEK"
+              style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+              frameborder="0"
+              allowfullscreen>
+      </iframe>
+    </div>
 
 10. If required, you can create a child blueprint from the HELIX template door blueprints, tweak defaults as you like, and reuse them in your custom map. Make sure the new blueprint is placed in your map package folder. See [Custom Blueprints](custom_blueprints.md) for more information.
 
@@ -166,7 +153,7 @@ If your level has door meshes that you want to make interactable by players, you
 
 ## 5. Finalizing and Cooking The Package
 
-1. Make sure all the depending assets by your custom character mesh are placed inside same package folder. If one of those assets are placed outside of the created package folder, cooked `.pak` file will have missing dependencies and this might cause crashes or runtime errors during playthrough with this package.
+1. Make sure all the depending assets by your Map are placed inside same plugin package folder. If one of those assets are placed outside of the created package folder, cooked `.pak` file will have missing dependencies and this might cause crashes or runtime errors during playthrough with this package.
 
 2. Return to the HELIX Packaging Tool window.
 
@@ -200,13 +187,13 @@ As shown on the previous steps, you can directly test your map in **Creator Kit*
 
 3. If import was successful, your new world should be automatically created with your custom map placed in. If you don't see your map on the spawn location, or your character starts falling down just after game starts, ensure you have a valid **Player Start** actor placed in your level as explained in the previous steps.
 
-<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-  <iframe src="https://youtube.com/embed/S3ikj9rI9s8?si=YdcmI64ysvrKTH9H"
-          style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
-          frameborder="0"
-          allowfullscreen>
-  </iframe>
-</div>
+    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+      <iframe src="https://youtube.com/embed/S3ikj9rI9s8?si=YdcmI64ysvrKTH9H"
+              style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+              frameborder="0"
+              allowfullscreen>
+      </iframe>
+    </div>
 
 ---
 
