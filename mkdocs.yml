@@ -15,12 +15,19 @@ copyright: "&copy; 2024 HELIX&reg; is a registered trademark of Hypersonic Labs"
 
 ###------------------------------If you add or remove a page, you must update it here!!!-------------------------------------------------###
 nav:
-  - Getting Started:
+  - About:
     - getting_started/index.md
     - Start Here:
       - getting_started/install.md
       - getting_started/basic_controls.md
       - tutorials/create_helix_world.md
+    - Concepts:
+      # - about/scripting.md
+      - about/lix.md
+      - about/hosting.md
+      - about/vault.md
+      - about/collectibles_market.md
+      - about/ip_ownership.md
     - Coming From Other Platforms:
       # - getting_started/comingGmod.md
       - getting_started/comingGTA.md

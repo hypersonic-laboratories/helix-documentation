@@ -1,7 +1,3 @@
----
-status: change
----
-
 # Install Helix
 
 ## Make a HELIX Account

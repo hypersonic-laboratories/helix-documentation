@@ -1,11 +1,11 @@
 ---
-title: Getting Started
+title: Introduction
 icon: material/book-open-variant
 ---
 
-# Getting Started
+# Introduction
 
-Welcome to the official documentation for [HELIX](https://helixgame.com/){.external}, the ultimate open-world roleplaying platform.
+Welcome to the official documentation for [HELIX](https://helixgame.com/){.external}, the ultimate open-world multiplayer sandbox platform.
 
 ![Banner Image](../_images/getting_started/banner.png)
 
