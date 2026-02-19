@@ -151,7 +151,27 @@ If your level has door meshes that you want to make interactable by players, you
 
 ---
 
-## 5. Finalizing and Cooking The Package
+## 5. (Bonus) Adding Seatable Entities To Your Custom Map
+
+If your level has seatable assets such as benches, beds, chairs etc, you can take additional steps to make them interactable by players.
+
+![image.png](CustomMapImages/u_3.png)
+
+1. After selecting the actor you would like to convert in your level, click **Add Component** button in properties panel and select `Helix Seatable Entity Component` from the list. This component provides all the required functionality for your actor.
+
+    ![image.png](CustomMapImages/u_4.png)
+
+2. After adding the component, tweak its location to center the spot where character should be seated on your actor. The direction of the arrow should be same as character's seated direction. The sphere radius defines interaction radius for your actor, which also can be tweaked from component properties.
+
+    ![image.png](CustomMapImages/u_5.png)
+
+3. Lastly, choose the most suitable entity type for your actor from the `SeatableEntity` property of the component. This changes the animations played during the interaction.
+
+     ![image.png](CustomMapImages/u_6.png)
+
+---
+
+## 6. Finalizing and Cooking The Package
 
 1. Make sure all the depending assets by your Map are placed inside same plugin package folder. If one of those assets are placed outside of the created package folder, cooked `.pak` file will have missing dependencies and this might cause crashes or runtime errors during playthrough with this package.
 
@@ -169,7 +189,7 @@ If your level has door meshes that you want to make interactable by players, you
 
 ---
 
-## 6. Testing Your Custom Map
+## 7. Testing Your Custom Map
 
 ### 1. In Creator Kit
 
@@ -197,6 +217,6 @@ As shown on the previous steps, you can directly test your map in **Creator Kit*
 
 ---
 
-## 7. On Your Own
+## 8. On Your Own
 
 Once you've followed these steps and uploaded your package to **Creator Hub**, your should be able to create new worlds with your custom map package!
