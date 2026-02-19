@@ -4,7 +4,7 @@ This guide walks you through the process of packaging wearable clothing assets f
 
 ## 1. Creating Your Wearable Clothing Asset
 
-You can use the resources available on [Google Drive](https://drive.google.com/drive/folders/1812fAmwFCqwf7hKeIHdj9c9_Ujc9FyLk?usp=sharing) to create compatible clothing pieces for HELIX characters.
+You can use the resources available on [Google Drive](https://drive.google.com/drive/folders/1812fAmwFCqwf7hKeIHdj9c9_Ujc9FyLk?usp=drive_link) to create compatible clothing pieces for HELIX characters.
 
 /// warning | Warning
 HELIX characters use **Metahuman Rig** as cosmetic representation by default, and custom wearable support is only available for this cosmetic type.
