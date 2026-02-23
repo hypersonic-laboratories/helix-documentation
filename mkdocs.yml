@@ -207,7 +207,7 @@ extra:
           name: This page could be improved
           data: 0
           note: >-
-            Thanks for your feedback! Help us improve this page by <a href="https://github.com/hypersonic-laboratories/helix-documentation/issues/new" target="_blank" rel="noopener">feedback form</a>.
+            Thanks for your feedback! Help us improve this page by using our <a href="https://github.com/hypersonic-laboratories/helix-documentation/issues/new" target="_blank" rel="noopener">feedback form</a>.
   generator: false #No mention of MkDocs-Material in footer
   social: #TODO: ACTUAL LINKS, not just placeholders
     - icon: fontawesome/brands/discord
