@@ -100,6 +100,21 @@ nav:
       - ... | flat | qbcore/qbcore-api/server-functions.md
     - QBCore Packages:
       - ... | flat | qbcore/qbcore-packages/*.md
+  - HelixJS:
+    - helixjs/index.md
+    - API Reference:
+      - helixjs/api/index.md
+      - helixjs/api/helix.md
+      - helixjs/api/player.md
+      - helixjs/api/database.md
+      - helixjs/api/webui.md
+      - helixjs/api/input.md
+      - helixjs/api/state.md
+    - Tutorials:
+      - helixjs/tutorials/script-loader.md
+      - helixjs/tutorials/database.md
+      - helixjs/tutorials/webui-and-events.md
+      - helixjs/tutorials/endpoints-and-rpc.md
   - News & Updates:
     - news_updates/index.md
     - General:
