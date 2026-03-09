@@ -4,19 +4,11 @@
 
 **HELIX Studio** is a customized version of Unreal Editor that allows you to create, test, and publish **HELIX Worlds** along with various types of **Packages** for HELIX, such as **Maps**, **Vehicles**, and **Wearables**.
 
-<aside>
-💡
+> [!NOTE]
+> Most information regarding the preparation of individual assets (such as meshes, materials or levels) and interaction with the Engine using Blueprints in Unreal Editor is also applicable to **HELIX Studio**.
 
-Most information regarding the preparation of individual assets (such as meshes, materials or levels) and interaction with the Engine using Blueprints in Unreal Editor is also applicable to **HELIX Studio**.
-
-</aside>
-
-<aside>
-💡
-
-**HELIX Studio** is in early development. There will be bugs and missing features, but as an early tester, there are opportunities to help shape the platform from the ground up.
-
-</aside>
+> [!WARNING]
+> **HELIX Studio** is in early development. There will be bugs and missing features, but as an early tester, there are opportunities to help shape the platform from the ground up.
 
 ## **First Steps**
 
@@ -36,23 +28,15 @@ All HELIX-related features can be accessed through the toolbar menu:
 
 ![image.png](StudioImages/image%202.png)
 
-<aside>
-💡
-
-The vast majority of Unreal's standard project settings should be considered immutable. Altering any of these may lead to compatibility issues with the HELIX game client.
-
-</aside>
+> [!NOTE]
+> The vast majority of Unreal's standard project settings should be considered immutable. Altering any of these may lead to compatibility issues with the HELIX game client.
 
 ## **Worlds and Packages in** HELIX **Studio**
 
 Every project in **HELIX Studio** represents a **HELIX World**, which may contain packages as dependencies. Packages are structured as content plugins.
 
-<aside>
-💡
-
-Your World does not need to be published. You can use it for local testing of your packages. 
-
-</aside>
+> [!NOTE]
+> Your World does not need to be published. You can use it for local testing of your packages. 
 
 When using a **Blank** template, you should see a single package of type **Map:**
 
@@ -62,12 +46,8 @@ You can create additional packages by selecting **HELIX** -> **PACKAGES** -> **N
 
 ![image.png](StudioImages/image%204.png)
 
-<aside>
-💡
-
-The package type is selected upon creation and cannot be changed later.
-
-</aside>
+> [!NOTE]
+> The package type is selected upon creation and cannot be changed later.
 
 ### **Map Packages**
 
@@ -77,45 +57,29 @@ The package type is selected upon creation and cannot be changed later.
 
 ![image.png](StudioImages/image%205.png)
 
-<aside>
-💡
-
-When changing a level asset or creating a new map package, you must leave and re-open the World to apply those changes.
-
-</aside>
+> [!NOTE]
+> When changing a level asset or creating a new map package, you must leave and re-open the World to apply those changes.
 
 ### **Other Packages**
 
 **Addon** packages are the most generic type, as they do not assume any specific structure and are not treated in any particular way. You can add various standard assets, such as static and skeletal meshes, textures, materials, and different types of blueprints, and rely on them in your World.
 
-<aside>
-💡
-
-There are also packages with specific semantics, such as **Wearable** and **Vehicle** packages. Separate tutorials will cover these.
-
-</aside>
+> [!NOTE]
+> There are also packages with specific semantics, such as **Wearable** and **Vehicle** packages. Separate tutorials will cover these.
 
 ### **Worlds**
 
 A **World** does not contain any assets itself. It only references other packages.
 
-<aside>
-💡
-
-This means that no assets from the main project’s content are packaged or published. Use them strictly for local testing.
-
-</aside>
+> [!NOTE]
+> This means that no assets from the main project’s content are packaged or published. Use them strictly for local testing.
 
 Besides basic metadata, the World can also contain scripts (Lua or JS) used to implement gameplay logic while relying on HELIX API and referenced packages:
 
 ![image.png](StudioImages/image%206.png)
 
-<aside>
-💡
-
-Please refer to the scripting tutorial for more information on the structure and semantics of the **Scripts** folder.
-
-</aside>
+> [!NOTE]
+> Please refer to the scripting tutorial for more information on the structure and semantics of the **Scripts** folder.
 
 ### **Dependencies**
 
@@ -129,19 +93,11 @@ Similarly, packages can have dependencies from the Vault, but they can also depe
 
 ![image.png](StudioImages/image%208.png)
 
-<aside>
-💡
+> [!NOTE]
+> Asset visibility is not currently enforced, so you must be careful not to access assets from another package without explicit dependencies.
 
-Asset visibility is not currently enforced, so you must be careful not to access assets from another package without explicit dependencies.
-
-</aside>
-
-<aside>
-💡
-
-There is a known issue where, after adding or removing package dependencies from the Vault, you may need to leave and re-open the World for the changes to take effect.
-
-</aside>
+> [!NOTE]
+> There is a known issue where, after adding or removing package dependencies from the Vault, you may need to leave and re-open the World for the changes to take effect.
 
 ## **Testing in Editor**
 
@@ -151,12 +107,8 @@ We encourage creators to test their packages and Worlds using the **Play in Edit
 
 Testing with a **DS**, along with emulating network latency, provides the closest experience to a real-world packaged game.
 
-<aside>
-💡
-
-Standalone Game mode and running multiple processes for testing in general are not currently supported.
-
-</aside>
+> [!NOTE]
+> Standalone Game mode and running multiple processes for testing in general are not currently supported.
 
 ## **Publishing**
 
@@ -166,9 +118,5 @@ You can access Publishing options from the properties dialog of either the World
 
 By default, not only the current package or World, but also all its dependencies will be selected for publishing. You can intentionally skip some packages by deselecting them.
 
-<aside>
-💡
-
-Adding preview images or a user access list directly from **HELIX Studio** is not yet supported. This should be done through the **Creator Hub** after publishing from **HELIX Studio**.
-
-</aside>
+> [!NOTE]
+> Adding preview images or a user access list directly from **HELIX Studio** is not yet supported. This should be done through the **Creator Hub** after publishing from **HELIX Studio**.
