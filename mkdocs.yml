@@ -47,6 +47,7 @@ nav:
       # - ... | flat | tutorials/buildmode.md
       # - ... | flat | tutorials/create_join_servers.md
       # - ... | flat | tutorials/workspaces.md
+      - tutorials/studio.md
       - tutorials/creatorkit.md
       - tutorials/creatorhub.md
       - tutorials/in_world_purchases.md
