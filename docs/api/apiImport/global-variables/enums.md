@@ -106,17 +106,16 @@ Predefined weather presets compatible with Ultra Dynamic Sky. Use with `SetWeath
 
 ---
 
-## NotificationPosition
-<EnumDeclaration type="Enum" name="NotificationPosition" />
+## NotificationType
+<EnumDeclaration type="Enum" name="NotificationType" />
 Controls where on the screen a UI notification appears
 
 | **Name**                           | **Description**       |
 | ---------------------------------- | --------------------- |
-| `NotificationPosition.Center`      | Center of the screen |
-| `NotificationPosition.TopLeft`     | Top-left corner.      |
-| `NotificationPosition.TopRight`    | Top-right corner.     |
-| `NotificationPosition.BottomLeft`  | Bottom-left corner.   |
-| `NotificationPosition.BottomRight` | Bottom-right corner.  |
+| `NotificationType.Success`         | Green success notification with a tick |
+| `NotificationType.Error`           | Red error notification with a cross    |
+| `NotificationType.Info`            | Blue information notification with an info symbol |
+| `NotificationType.Update`          | Turqoise download update notification |
 
 ---
 
