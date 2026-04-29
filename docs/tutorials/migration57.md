@@ -72,9 +72,10 @@ Suggested steps to achieve this, using the default **Creator Kit** packages as a
 
             ![image.jpg](MigrationImages/11.jpg)
 
-6. [Optional] There is an extra step to do if your package has dependencies. If that's the case, please [refer to this guide](studio.md#dependencies). In short, you need to selected it in the Properties menu:
+6. [Optional] In case your package has dependencies, you need to select it in the Properties menu ([please refer to this guide for details](studio.md#dependencies)).
 
-    ![image.png](StudioImages/image%208.png)
+    ??? note "reveal screenshot"
+        ![image.png](StudioImages/image%208.png)
 
 7. Test your migrated packages inside **HELIX Studio** ([refer to this guide](studio.md#testing-in-editor)).
 
