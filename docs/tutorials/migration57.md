@@ -44,11 +44,6 @@ Suggested steps to achieve this, using the default **Creator Kit** packages as a
         - Open the **World Map** package properties and set your Level asset as the **Main Asset**:
             
             ![image.jpg](MigrationImages/7.jpg)
-        
-            ??? note "Extra step to do if your package has dependencies!"
-                Your package may have dependencies on other packages. If that's the case, please [refer to this guide](studio.md#dependencies). In short, you need to selected it in the Properties menu:
-
-                ![image.png](StudioImages/image%208.png)
 
         <br>
            
@@ -77,6 +72,10 @@ Suggested steps to achieve this, using the default **Creator Kit** packages as a
 
             ![image.jpg](MigrationImages/11.jpg)
 
-6. Test your migrated packages inside **HELIX Studio** ([refer to this guide](studio.md#testing-in-editor)).
+6. [Optional] There is an extra step to do if your package has dependencies. If that's the case, please [refer to this guide](studio.md#dependencies). In short, you need to selected it in the Properties menu:
 
-7. Publish the migrated & tested packages to the Vault following the [**HELIX** Studio User Guide](studio.md#publishing).
+    ![image.png](StudioImages/image%208.png)
+
+7. Test your migrated packages inside **HELIX Studio** ([refer to this guide](studio.md#testing-in-editor)).
+
+8. Publish the migrated & tested packages to the Vault following the [**HELIX** Studio User Guide](studio.md#publishing).
