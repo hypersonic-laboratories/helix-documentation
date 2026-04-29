@@ -44,12 +44,6 @@ Suggested steps to achieve this, using the default **Creator Kit** packages as a
         - Open the **World Map** package properties and set your Level asset as the **Main Asset**:
             
             ![image.jpg](MigrationImages/7.jpg)
-
-        <br>
-           
-        - Close properties, then **leave** the World and join it again:
-            
-            ![image.jpg](MigrationImages/8.jpg)
          
         <br>
            
