@@ -159,7 +159,9 @@ Now when you have everything you need for your new world, you need to recreate i
 
 3. [Follow this guide](studio.md#worlds-and-packages-in-helix-studio) to add all dependencies you need for your new World, test it and publish.
 
-4. At this stage, your World has been migrated to 5.7 and can be played in game client. To find it, open **HELIX Game** client and go to WORLDS.
+4. Once it's published, open it in **HELIX Game** client and update its "content" and "scripts" folders by following the instructions from Step 4 in the [Via HELIX Game Client](migration57.md#via-helix-game-client) section. Then save and republish your World.
+
+5. At this stage, your World has been migrated to 5.7 and can be played in game client. To find it, open **HELIX Game** client and go to WORLDS.
 
 ****
 
