@@ -72,6 +72,7 @@ nav:
       - tutorials/porting-tutorial.md
       - tutorials/photomode.md
       - tutorials/build_mode.md
+      - tutorials/migration57.md
     - Scripting:
       - ... | flat | tutorials/Scripting/*.md
   - Blueprints:

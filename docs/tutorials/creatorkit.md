@@ -1,4 +1,14 @@
-# Install Creator Kit
+# Install Creator Kit (deprecated)
+
+/// warning | Warning
+**Creator Kit** is no longer supported by **HELIX Game**. It was replaced by **HELIX Studio**.
+
+If you have packages created using **Creator Kit** (Unreal Engine 5.5), please follow [this guide](migration57.md) to migrate them to Unreal Engine 5.7 using **HELIX Studio**. Only packages created UE 5.7 will be compatible with **HELIX Game** client going forward.
+
+If you want to create new packages, please follow the [**HELIX Studio User Guide**](studio.md) instead.
+///
+
+****
 
 The **Creator Kit** is an Unreal Engine plugin released by HELIX to package custom assets to be imported into HELIX worlds. Some very basic knowledge of the Unreal Engine 5 Editor is recommended before using Creator Kit. There are plenty of high-quality tutorials online covering the basics of UE5, such as this [Unreal in 100 Seconds](https://www.youtube.com/watch?v=DXDe-2BC4cE) video.
 
