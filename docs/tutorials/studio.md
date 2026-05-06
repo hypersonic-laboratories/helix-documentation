@@ -16,7 +16,13 @@ Most information regarding the preparation of individual assets (such as meshes,
 
 ## **First Steps**
 
-You can run **HELIX Studio** through the **Steam**. If you have access to **HELIX Game** and you cannot see **HELIX Studio**, ensure you don't have any filters enabled in **Steam Library**, or try to search for "HELIX" or "Studio". 
+You can run **HELIX Studio** through the **Steam**. To do that, you will need to obtain and redeem a Steam key as per steps below:
+
+1. Go to https://helixgame.com/download.
+2. Sign into your **HELIX** account.
+3. Copy your Steam key and follow the on-screen instructions to redeem it on Steam and download **HELIX** and **HELIX Studio**. 
+
+If you cannot see **HELIX Studio** on Steam, ensure you don't have any filters enabled in **Steam Library**, or try to search for "HELIX" or "Studio". 
 
 ![image.png](StudioImages/image%2011.png)
 
