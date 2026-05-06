@@ -97,7 +97,7 @@ World and Draft (unpublished World) packages need to be migrated to 5.7 in a dif
 
 1. Preparing packages
 
-    If your old World and Draft has dependencies (map, addons etc), you first need to migrate them to 5.7 by following the steps above.
+    If your old World or Draft has dependencies (map, addons etc), you first need to migrate them to 5.7 by following the steps above.
 
     /// info | Note
     When migrating your packages, make sure to select "PUBLISH TO VAULT" and not just "PACKAGE LOCALLY", as it is not possible to publish a World that depends on unpublished packages. If you are happy to keep your World only as a Draft (unpublished World), you can still import packages locally for testing.
@@ -105,7 +105,7 @@ World and Draft (unpublished World) packages need to be migrated to 5.7 in a dif
 
 2. Finding the unsupported World's local folder
 
-    >💡 If your old World doesn't have scripts and are using HELIX Studio instead of HELIX Game client for migration, you do not need to do this step.
+    >💡 If your old World doesn't have scripts and you are using **HELIX Studio** instead of **HELIX Game** client for migration, you do not need to do this step.
 
     <br>
 
@@ -115,11 +115,19 @@ World and Draft (unpublished World) packages need to be migrated to 5.7 in a dif
 
     2. Find your unsupported World, click on it, then click on BROWSE to open it in your local folder.
 
+        ![image.jpg](MigrationImages/12.jpg)
+
         /// info | Note
         If you no longer have this World locally, instead of BROWSE you will see DOWNLOAD button first, click to download it.
         ///
+        
+        ![image.jpg](MigrationImages/13.jpg)
+
+        <br>
 
     3. Keep this folder of the unsupported World open, you will need it later.
+
+        ![image.jpg](MigrationImages/14.jpg)
 
 <br>
 
@@ -127,23 +135,49 @@ World and Draft (unpublished World) packages need to be migrated to 5.7 in a dif
 
 Now when you have everything you need for your new world, you need to recreate it either in **HELIX Game** client or in **HELIX Studio**.
 
+/// info | Note
+If your old World has assets that were previously spawned in Build Mode, follow the steps for the **HELIX Game** client (not **HELIX Studio**) as this will respawn all assets automatically.
+///
+
 <br>
 
 ##### Via HELIX Game Client
 
 1. Launch the game client.
 
-2. From the main menu, go to WORLDS and click "CREATE WORLD" button. If you are using a Map package, before clicking "CONTINUE", change your map by clicking "VAULT", navigating to your Map package, and clicking "CREATE WORLD" there.
+2. From the Main Menu, go to WORLDS and click "CREATE WORLD" button. If you are using a Map package, before clicking "CONTINUE", change your map by clicking "VAULT", navigating to your Map package, and clicking "CREATE WORLD" there.
+
+    ![image.jpg](MigrationImages/15.jpg)
+
+    <br>
+
+    ![image.jpg](MigrationImages/16.jpg)
+
+    <br>
 
 3. Press N to open Build mode, click on VAULT, find the corresponding packages and click "ADD TO WORLD".
 
-4. While still in Build Mode, click the "Edit Scripts" button at the top. This will save your World and open its local folder.
+4. While still in Build Mode, click the "Edit Scripts" button at the top. This will save your World and open its local folder. Go up a level (to go from Scripts to the root folder of the World).
 
-5. Exit the world (if you don't exit, your changes will be overwritten).
+    ![image.jpg](MigrationImages/17.jpg)
 
-6. Go up a level (to go from Scripts to the root folder of the World). Earlier in "Pre-Conditions" Step 2, you opened a local folder of your unsupported World that you are now converting. Copy "content" and "scripts" folder from that folder over the same folders in your new World's local folder.
+    <br>
 
-7. At this stage, your Draft has been migrated to 5.7 and can be played in game client. You can find it in WORLDS -> MY DRAFTS. If you wish, you can now re-enter and publish it from inside the Build Mode as usual.
+5. <ins>Exit the World</ins> (if you don't exit, your changes will be overwritten).
+
+6. Earlier in ["Pre-Conditions"](migration57.md#pre-conditions) Step 2, you opened a local folder of your unsupported World that you are now converting. Copy "content" and "scripts" folder from that folder over the same folders in your new World's local folder.
+
+    ![image.jpg](MigrationImages/18.jpg)
+
+    <br>
+
+    ![image.jpg](MigrationImages/19.jpg)
+
+    <br>
+
+7. At this stage, your Draft has been migrated to 5.7 and can be played in **HELIX Game** client. You can find it in WORLDS -> MY DRAFTS. If you wish, you can now re-enter and publish it from inside the Build Mode as usual.
+
+    ![image.jpg](MigrationImages/20.jpg)
 
 <br>
 
@@ -157,7 +191,15 @@ Now when you have everything you need for your new world, you need to recreate i
 
 4. [Optional] If you need to migrate your scripts, navigate to File -> Open Current Project Directory.
 
-5. [Optional] Copy over the "scripts" folder from your old World into the new World's Studio Project. Do not migrate "content" folder, this folder comes from Build Mode and is not suitable for Studio projects.
+    ![image.jpg](MigrationImages/21.jpg)
+
+    <br>
+
+5. [Optional] Copy over the "scripts" folder from your old World (Step 2 in the [Pre-Conditions](migration57.md#pre-conditions) section) into the new World's Studio Project. Do not migrate "content" folder, this folder comes from Build Mode and is not suitable for Studio projects.
+
+    ![image.jpg](MigrationImages/22.jpg)
+
+    <br>
 
 6. [Optional] If your old World had assets spawned via Build Mode, you will need to redo this inside the Studio Project in Unreal Engine.
 
