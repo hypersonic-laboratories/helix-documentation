@@ -187,9 +187,9 @@ theme:
     - navigation.tracking
     - navigation.tabs
     - navigation.tabs.sticky
-    - navigation.instant
-    - navigation.instant.prefetch
-    - navigation.instant.progress
+    # - navigation.instant
+    # - navigation.instant.prefetch
+    # - navigation.instant.progress
     # - navigation.sections
     - navigation.prune
     - navigation.indexes
@@ -202,6 +202,13 @@ theme:
   #TODO: don't include MkDocs' JS?
 
 extra:
+  alternate:
+    - name: English
+      link: ""
+      lang: en
+    - name: 繁體中文
+      link: zh-TW/
+      lang: zh-TW
   status:
     placeholder: Placeholder (Mostly Empty)
     wip: Work In Progress
@@ -340,11 +347,38 @@ plugins:
       auto_caption: false
       caption_position: bottom
 
-  # https://github.com/timvink/mkdocs-git-revision-date-localized-plugin
-  - git-revision-date-localized
-
   # https://github.com/lukasgeiter/mkdocs-awesome-pages-plugin
   - awesome-pages
+
+  - i18n:
+      docs_structure: suffix
+      reconfigure_material: true
+      languages:
+        - locale: en
+          name: English
+          default: true
+          build: true
+        - locale: zh-TW
+          name: 繁體中文
+          build: true
+          nav_translations:
+            About: 關於
+            Start Here: 從這裡開始
+            Concepts: 核心概念
+            Coming From Other Platforms: 從其他平台轉來
+            Tutorials: 教學指南
+            Custom Assets: 自訂素材
+            Misc: 其他
+            Scripting: 腳本開發
+            Blueprints: 藍圖系統
+            API: API 參考資料
+            News & Updates: 新聞與更新
+            General: 一般資訊
+            Release Notes: 版本說明
+
+  # https://github.com/timvink/mkdocs-git-revision-date-localized-plugin
+  - git-revision-date-localized:
+      fallback_to_build_date: true
 
   # https://github.com/mkdocs/mkdocs-redirects
   - redirects:
