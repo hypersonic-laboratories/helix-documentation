@@ -64,6 +64,10 @@ nav:
       - tutorials/custom_CC_bodyTattoo.md
       - tutorials/custom_CC_Hair.md
       - tutorials/custom_cc_Shoes.md
+    - HelixMap:
+      - tutorials/HelixMap/index.md
+      - tutorials/HelixMap/runtime.md
+      - tutorials/HelixMap/settings.md
     - Misc:
       - tutorials/reference_custom_assets.md
       - tutorials/default_materials.md
