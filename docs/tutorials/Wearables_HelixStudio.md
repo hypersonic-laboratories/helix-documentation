@@ -27,7 +27,7 @@ To create a pack use the Packages dropdown in the toolbar above the viewport. If
 
 1. Navigate to `Packages>Manage Packages>New Package`
 
-![image.png](image.png)
+![image.png](HelixStudio_Images/Wearables/image.png)
 
 1. Enter a unique Package Name (e.g. Sports Shirts).
 2. Select the appropriate package type for your package e.g. **Wearable** 
@@ -133,7 +133,7 @@ To do this:
 8. Also make sure Add Leaf Bone is deselected
 9. To avoid any doubt, copy my setting from the image below
 
-![image.png](image%203.png)
+![image.png](HelixStudio_Images/Wearables/image%203.png)
 
 ---
 
