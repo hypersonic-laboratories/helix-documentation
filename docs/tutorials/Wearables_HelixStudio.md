@@ -14,7 +14,7 @@ To integrate your wearables into Helix, you must first download and Launch Helix
 4. Define the project save location and project name
 5. Hit create
     
-    ![Screenshot 2026-05-20 123753.png](WearableTutImages/Screenshot_2026-05-20_123753.png)
+    ![Screenshot 2026-05-20 123753.png](HelixStudio_Images/Wearables/Screenshot_2026-05-20_123753.png)
     
 
 ---
@@ -35,7 +35,7 @@ To create a pack use the Packages dropdown in the toolbar above the viewport. If
 4. Create a unique package URL. (Currently we use “-” for spacing e.g. wearable-johns-sneakers and don't allow uppercase characters)
 5. Click **Create Package**. This action creates a dedicated plugin folder for your assets (e.g., **Plugins/SportsShirts**). - This will be where you put all of your custom content that will make up your pack.
 
-![image.png](WearableTutImages/image%201.png)
+![image.png](HelixStudio_Images/Wearables/image%201.png)
 
 ---
 
@@ -65,7 +65,7 @@ To export the template assets to use in a modelling package of your choice e.g. 
 3. In the export window, make sure you have Level Of Detail ticked under the Mesh tab. `(This will be important because if you’re making custom Level of Detail models, you should model them around the corresponding level of detail mesh to prevent clipping)`
 4. Do this for all required template assets 
 
-![image.png](WearableTutImages/image%202.png)
+![image.png](HelixStudio_Images/Wearables/image%202.png)
 
 ---
 
@@ -143,11 +143,11 @@ Next you want to import you model into Helix Studio. You must import your assets
 
 1. Navigate to Packages>ManagePackages>YourPackageName
 
-![image.png](WearableTutImages/image%204.png)
+![image.png](HelixStudio_Images/Wearables/image%204.png)
 
 1. With your package window open you can press “OPEN IN CONTENT BROWSER”. this will take you to the location of your package.
 
-![image.png](WearableTutImages/image%205.png)
+![image.png](HelixStudio_Images/Wearables/image%205.png)
 
 #### Skeletal Mesh Import
 
@@ -165,7 +165,7 @@ When your content browser is now inside of the correct folder you can add your m
 
 If when you open up your wearable by double clicking it and play a preview animation on your mesh, you may see some weight issues as demonstrated in the below image.
 
-![image.png](WearableTutImages/image%206.png)
+![image.png](HelixStudio_Images/Wearables/image%206.png)
 
 If this happens to you it’s important you adjust your weight painting. You can do this in your modelling package or directly in Helix Studio. However there’s a quick way that could potentially fix this.
 
@@ -177,7 +177,7 @@ If this happens to you it’s important you adjust your weight painting. You can
 6. Set location and rotation to 0,0,0
 7. Next hit Transfer Weights and then press “Apply to Asset”
 
-![image.png](WearableTutImages/image%207.png)
+![image.png](HelixStudio_Images/Wearables/image%207.png)
 
 #### Material Creation (Basic Custom Material)
 
@@ -191,7 +191,7 @@ To create a standard material for your assets presuming you already have texture
 6. Now drag your textures from Helix Studios content browser, into the material graph
 7. Next hook up the RGB values from your textures to the corresponding output pins by left click dragging the pins
 
-![image.png](WearableTutImages/image%208.png)
+![image.png](HelixStudio_Images/Wearables/image%208.png)
 
 > *You may notice in this example I have used the R,G,B channels for the bottom texture. That is a packed Occlusion, Roughness & Metallic map (aka ORM). You don't need to worry about that right now but if you have 2/3 grayscale textures e.g. Occlusion, roughness & metallic it’s good practice and optimal to pack these into the color channels of a packed texture.*
 > 
@@ -225,7 +225,7 @@ If you have a tileable texture you can hook the texture output pin into a multip
     1. To assign your mesh to the slot you can search for it in the drop down or select it in your content browser, go back to the Data Asset tab and press the arrow just under the drop down search field
 6. If you’re using a material that is setup for overrides use the Auto-Fill From Mesh button to begin the integration. *(Optional)* *This can be left blank for now as this will depend on your material setup.*
 
-![image.png](WearableTutImages/image%209.png)
+![image.png](HelixStudio_Images/Wearables/image%209.png)
 
 ---
 
@@ -239,7 +239,7 @@ To test in Helix Studio follow the steps below
 
 1. Press play in the **Helix Studio** editor. The play button is just above your viewport. (You can also press Alt + P) 
 
-![image.png](WearableTutImages/image%2010.png)
+![image.png](HelixStudio_Images/Wearables/image%2010.png)
 
 1. Once the game simulation and your character has loaded, Press the P key to open character creator.
 2. In the character creator UI, be sure to select the gender that your asset has been created for. You can switch gender using the buttons in the top left of the viewport
@@ -255,7 +255,7 @@ To use you’re wearable/s directly inside Helix you need to Package/ Publish it
 1. Navigate to `Packages>ManagePackages>YourPackageName`
 2. Finalise all field appropriately. 
     
-    ![Screenshot 2026-05-26 154348.png](WearableTutImages/Screenshot_2026-05-26_154348.png)
+    ![Screenshot 2026-05-26 154348.png](HelixStudio_Images/Wearables/Screenshot_2026-05-26_154348.png)
     
 3. Hit Publish
 4. In the publish window you have multiple options
@@ -274,7 +274,7 @@ To view your current published package you can use the Creator Hub.
 
 To access the creator hub, navigate to `Account>Creator Hub`.
 
-![Screenshot 2026-05-28 123201.png](WearableTutImages/Screenshot_2026-05-28_123201.png)
+![Screenshot 2026-05-28 123201.png](HelixStudio_Images/Wearables/Screenshot_2026-05-28_123201.png)
 
 This will open your web browser. Once you’re signed into your helix account, you should be able to see all of your uploaded packages, manage their details etc.
 
@@ -286,13 +286,13 @@ This will open your web browser. Once you’re signed into your helix account, y
 2. Navigate to the Vault tab
 3. Locate your uploaded package (Tip: You can filter by “MY PUBLISHED”)
 
-![image.png](WearableTutImages/image%2011.png)
+![image.png](HelixStudio_Images/Wearables/image%2011.png)
 
 1. Open it by clicking it and pressing “Preview”
 
 This will load a blank test world and have your package ready to go. Simple follow the same steps as testing in Helix Studio e.g. launching character creator and your wearable will be there.
 
-![Screenshot 2026-05-28 123425.png](WearableTutImages/Screenshot_2026-05-28_123425.png)
+![Screenshot 2026-05-28 123425.png](HelixStudio_Images/Wearables/Screenshot_2026-05-28_123425.png)
 
 ---
 
