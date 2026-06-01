@@ -14,9 +14,9 @@ Every function targets the active client world automatically — no `WorldContex
 
 Setters silently no-op if no map source is active. Source-specific setters (e.g. `SetMinimapZoom` only applies to tiled sources) are silently ignored by incompatible backends.
 
-## Side-effect classes
+## Side-effect types
 
-Each setter belongs to one class:
+Each setter belongs to one type:
 
 - **Hot** — applied instantly with no source restart. Safe to call every frame.
 - **Re-init** — the active source is destroyed and recreated. There's a brief visual hitch.
@@ -26,7 +26,7 @@ Each setter belongs to one class:
 ## Minimap Settings
 
 ### `SetMinimapAltitude`
-Set the minimap capture altitude in centimetres. Class: **Hot**.
+Set the minimap capture altitude in centimetres. Type: **Hot**.
 
 ```lua title="Example"
 HMap.SetMinimapAltitude(3000)
@@ -35,7 +35,7 @@ HMap.SetMinimapAltitude(3000)
 ---
 
 ### `SetMinimapProjectionMode`
-Set the minimap projection mode. `0` = Orthographic (flat top-down), `1` = Perspective (3D high-altitude look). Class: **Re-init**.
+Set the minimap projection mode. `0` = Orthographic (flat top-down), `1` = Perspective (3D high-altitude look). Type: **Re-init**.
 
 ```lua title="Example"
 HMap.SetMinimapProjectionMode(0)
@@ -44,7 +44,7 @@ HMap.SetMinimapProjectionMode(0)
 ---
 
 ### `SetMinimapRotateWithPlayer`
-Toggle minimap player-up rotation (the map image rotates so the player always faces up). Class: **Hot**.
+Toggle minimap player-up rotation (the map image rotates so the player always faces up). Type: **Hot**.
 
 ```lua title="Example"
 HMap.SetMinimapRotateWithPlayer(true)
@@ -53,7 +53,7 @@ HMap.SetMinimapRotateWithPlayer(true)
 ---
 
 ### `SetMinimapUseCameraYaw`
-Choose the yaw source for minimap rotation and the local-player arrow. `true` = camera yaw, `false` = pawn actor yaw. Class: **Hot**.
+Choose the yaw source for minimap rotation and the local-player arrow. `true` = camera yaw, `false` = pawn actor yaw. Type: **Hot**.
 
 ```lua title="Example"
 HMap.SetMinimapUseCameraYaw(true)
@@ -62,7 +62,7 @@ HMap.SetMinimapUseCameraYaw(true)
 ---
 
 ### `SetMinimapTileWorldSize`
-Set the per-tile world size in centimetres (tile grid geometry). Class: **Re-bake**.
+Set the per-tile world size in centimetres (tile grid geometry). Type: **Re-bake**.
 
 ```lua title="Example"
 HMap.SetMinimapTileWorldSize(5000)
@@ -71,7 +71,7 @@ HMap.SetMinimapTileWorldSize(5000)
 ---
 
 ### `SetMinimapTileResolution`
-Set the per-tile render-target resolution in pixels. Range `[64, 4096]`. Class: **Re-bake**.
+Set the per-tile render-target resolution in pixels. Range `[64, 4096]`. Type: **Re-bake**.
 
 ```lua title="Example"
 HMap.SetMinimapTileResolution(512)
@@ -80,7 +80,7 @@ HMap.SetMinimapTileResolution(512)
 ---
 
 ### `SetMinimapMapCenter`
-Set the captured-area XY center in centimetres. Overridden by the level's Map Settings volume if present. Class: **Re-bake**.
+Set the captured-area XY center in centimetres. Overridden by the level's Map Settings volume if present. Type: **Re-bake**.
 
 ```lua title="Example"
 HMap.SetMinimapMapCenter(0, 0)
@@ -89,7 +89,7 @@ HMap.SetMinimapMapCenter(0, 0)
 ---
 
 ### `SetMinimapMapExtent`
-Set the captured-area XY extent in centimetres. Overridden by the level's Map Settings volume if present. Class: **Re-bake**.
+Set the captured-area XY extent in centimetres. Overridden by the level's Map Settings volume if present. Type: **Re-bake**.
 
 ```lua title="Example"
 HMap.SetMinimapMapExtent(60000, 60000)
@@ -98,7 +98,7 @@ HMap.SetMinimapMapExtent(60000, 60000)
 ---
 
 ### `SetMinimapBakeBaseZ`
-Set the world Z base for the bake camera. Camera Z = `BakeBaseZ + CaptureAltitude`. Overridden by the level's Map Settings volume if present. Class: **Re-bake**.
+Set the world Z base for the bake camera. Camera Z = `BakeBaseZ + CaptureAltitude`. Overridden by the level's Map Settings volume if present. Type: **Re-bake**.
 
 ```lua title="Example"
 HMap.SetMinimapBakeBaseZ(0)
@@ -107,7 +107,7 @@ HMap.SetMinimapBakeBaseZ(0)
 ---
 
 ### `SetMinimapIconSize`
-Set the minimap icon pixel size. Range `[1.0, 256.0]`. Class: **Hot**.
+Set the minimap icon pixel size. Range `[1.0, 256.0]`. Type: **Hot**.
 
 ```lua title="Example"
 HMap.SetMinimapIconSize(3.0)
@@ -116,7 +116,7 @@ HMap.SetMinimapIconSize(3.0)
 ---
 
 ### `SetMinimapZoom`
-Set the minimap zoom. `1.0` = max zoom in (1 tile fills the widget), `0.0` = max zoom out (2.25 tiles visible). Range `[0.0, 1.5]`. Tiled minimap sources only; ignored by full-screen sources. Class: **Hot**.
+Set the minimap zoom. `1.0` = max zoom in (1 tile fills the widget), `0.0` = max zoom out (2.25 tiles visible). Range `[0.0, 1.5]`. Tiled minimap sources only; ignored by full-screen sources. Type: **Hot**.
 
 ```lua title="Example"
 HMap.SetMinimapZoom(0.5)
@@ -137,7 +137,7 @@ print(Settings.Minimap.MinimapZoom)
 ## Full-Map Settings
 
 ### `SetFullMapRadius`
-Set the full-map ortho half-extent in centimetres. `SceneCaptureFullScreen` only. Class: **Hot**.
+Set the full-map ortho half-extent in centimetres. `SceneCaptureFullScreen` only. Type: **Hot**.
 
 ```lua title="Example"
 HMap.SetFullMapRadius(30000)
@@ -146,7 +146,7 @@ HMap.SetFullMapRadius(30000)
 ---
 
 ### `SetFullMapAltitude`
-Set the full-map capture altitude in centimetres. Class: **Hot**.
+Set the full-map capture altitude in centimetres. Type: **Hot**.
 
 ```lua title="Example"
 HMap.SetFullMapAltitude(3000)
@@ -155,7 +155,7 @@ HMap.SetFullMapAltitude(3000)
 ---
 
 ### `SetFullMapResolution`
-Set the full-map render-target resolution. Treated as RT height in pixels; width is derived from the viewport aspect ratio. Range `[64, 4096]`. Class: **Re-init**.
+Set the full-map render-target resolution. Treated as RT height in pixels; width is derived from the viewport aspect ratio. Range `[64, 4096]`. Type: **Re-init**.
 
 ```lua title="Example"
 HMap.SetFullMapResolution(512)
@@ -164,7 +164,7 @@ HMap.SetFullMapResolution(512)
 ---
 
 ### `SetFullMapProjectionMode`
-Set the full-map projection mode. `0` = Orthographic, `1` = Perspective. Class: **Re-init**.
+Set the full-map projection mode. `0` = Orthographic, `1` = Perspective. Type: **Re-init**.
 
 ```lua title="Example"
 HMap.SetFullMapProjectionMode(0)
@@ -173,7 +173,7 @@ HMap.SetFullMapProjectionMode(0)
 ---
 
 ### `SetFullMapMapCenter`
-Set the full-map baked map center in centimetres. Overridden by the level's Map Settings volume if present. Class: **Re-bake**.
+Set the full-map baked map center in centimetres. Overridden by the level's Map Settings volume if present. Type: **Re-bake**.
 
 ```lua title="Example"
 HMap.SetFullMapMapCenter(0, 0)
@@ -182,7 +182,7 @@ HMap.SetFullMapMapCenter(0, 0)
 ---
 
 ### `SetFullMapBakeBaseZ`
-Set the full-map baked capture base Z. Camera Z = `BakeBaseZ + CaptureAltitude`. Class: **Re-bake**.
+Set the full-map baked capture base Z. Camera Z = `BakeBaseZ + CaptureAltitude`. Type: **Re-bake**.
 
 ```lua title="Example"
 HMap.SetFullMapBakeBaseZ(0)
@@ -191,7 +191,7 @@ HMap.SetFullMapBakeBaseZ(0)
 ---
 
 ### `SetFullMapIconSize`
-Set the full-map icon pixel size. Range `[1.0, 256.0]`. Class: **Hot**.
+Set the full-map icon pixel size. Range `[1.0, 256.0]`. Type: **Hot**.
 
 ```lua title="Example"
 HMap.SetFullMapIconSize(3.0)
@@ -200,7 +200,7 @@ HMap.SetFullMapIconSize(3.0)
 ---
 
 ### `SetFullMapMaxZoom`
-Set the maximum zoom-in ratio relative to `CaptureRadius`. `MinCaptureRadius = CaptureRadius / MaxZoom`. `SceneCaptureFullScreen` only. Class: **Hot**.
+Set the maximum zoom-in ratio relative to `CaptureRadius`. `MinCaptureRadius = CaptureRadius / MaxZoom`. `SceneCaptureFullScreen` only. Type: **Hot**.
 
 ```lua title="Example"
 HMap.SetFullMapMaxZoom(3.0)
@@ -209,7 +209,7 @@ HMap.SetFullMapMaxZoom(3.0)
 ---
 
 ### `SetFullMapZoomScaleStep`
-Set the zoom scale added or removed per scroll tick. Shared between both full-map sources. Class: **Hot**.
+Set the zoom scale added or removed per scroll tick. Shared between both full-map sources. Type: **Hot**.
 
 ```lua title="Example"
 HMap.SetFullMapZoomScaleStep(0.25)
@@ -218,7 +218,7 @@ HMap.SetFullMapZoomScaleStep(0.25)
 ---
 
 ### `SetFullMapZoomInterpSpeed`
-Set the zoom-animation lerp speed (higher = snappier). Class: **Hot**.
+Set the zoom-animation lerp speed (higher = snappier). Type: **Hot**.
 
 ```lua title="Example"
 HMap.SetFullMapZoomInterpSpeed(8.0)
@@ -227,7 +227,7 @@ HMap.SetFullMapZoomInterpSpeed(8.0)
 ---
 
 ### `SetFullMapPanInterpSpeed`
-Set the drag-pan animation lerp speed (higher = snappier). Class: **Hot**.
+Set the drag-pan animation lerp speed (higher = snappier). Type: **Hot**.
 
 ```lua title="Example"
 HMap.SetFullMapPanInterpSpeed(12.0)
@@ -236,7 +236,7 @@ HMap.SetFullMapPanInterpSpeed(12.0)
 ---
 
 ### `SetFullMapOpenOnPlayer`
-Toggle whether the full-map opens zoomed in on the player (`true`) or zoomed out on `MapCenter` (`false`). Class: **Read-once** — applied at next widget activation.
+Toggle whether the full-map opens zoomed in on the player (`true`) or zoomed out on `MapCenter` (`false`). Type: **Read-once** — applied at next widget activation.
 
 ```lua title="Example"
 HMap.SetFullMapOpenOnPlayer(true)
@@ -337,6 +337,6 @@ HMap.RemoveMarkerAt(Handle)
 
 ## See also
 
-- [Configuring the map on Helix Studio](../../../tutorials/HelixMap/index.md) — editor-side setup and baking.
+- [Configuring the map on Helix Studio](../../../tutorials/HelixMap/studio.md) — editor-side setup and baking.
 - [Configuring the map at runtime](../../../tutorials/HelixMap/runtime.md) — markers and settings from Lua.
 - [Map Settings Object](../../../tutorials/HelixMap/settings.md) — reference for every map setting.

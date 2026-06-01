@@ -5,7 +5,7 @@ description: Reference for every property on the Map Settings actor
 
 # Map Settings Object
 
-A companion reference to [Configuring the map on Helix Studio](index.md). It documents every property on the **Map Settings** actor (`Map Settings` in Place Actors). For the setup walkthrough, start with the tutorial.
+A companion reference to [Configuring the map on Helix Studio](studio.md). It documents every property on the **Map Settings** actor (`Map Settings` in Place Actors). For the setup walkthrough, start with the tutorial.
 
 The actor holds the **Box** (map bounds), two **source pickers**, a **Minimap settings** struct, a **Full-map settings** struct, and — when a pre-baked source is selected — **Bake settings** and the baked data asset.
 

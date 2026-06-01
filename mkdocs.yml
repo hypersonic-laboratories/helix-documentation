@@ -67,7 +67,7 @@ nav:
       # - tutorials/custom_CC_Hair.md
       # - tutorials/custom_cc_Shoes.md
     - HelixMap:
-      - tutorials/HelixMap/index.md
+      - tutorials/HelixMap/studio.md
       - tutorials/HelixMap/runtime.md
       - tutorials/HelixMap/settings.md
     - Misc:
