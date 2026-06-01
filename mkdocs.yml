@@ -53,17 +53,19 @@ nav:
       - tutorials/in_world_purchases.md
     - Custom Assets:
       - tutorials/custom_maps.md
-      - tutorials/custom_cc_assets.md
+      # - tutorials/custom_cc_assets.md
+      - tutorials/custom_cc_wearables.md
+      - tutorials/custom_cc_metahumans.md
       - tutorials/custom_characters.md
       - tutorials/custom_animations.md
       - tutorials/custom_vehicles.md
       - tutorials/custom_shells.md
       - tutorials/custom_blueprints.md
       - tutorials/custom_ui.md
-      - tutorials/custom_cc_FaceTattoo.md
-      - tutorials/custom_CC_bodyTattoo.md
-      - tutorials/custom_CC_Hair.md
-      - tutorials/custom_cc_Shoes.md
+      # - tutorials/custom_cc_FaceTattoo.md
+      # - tutorials/custom_CC_bodyTattoo.md
+      # - tutorials/custom_CC_Hair.md
+      # - tutorials/custom_cc_Shoes.md
     - HelixMap:
       - tutorials/HelixMap/index.md
       - tutorials/HelixMap/runtime.md
