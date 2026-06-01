@@ -1,4 +1,4 @@
-# Creating Custom MetaHumans
+# Custom MetaHumans
 
 This guide walks you through creating a custom MetaHuman head in **Helix Studio**, packaging it as a wearable vault package, and registering it so it appears in the in-game character creator.
 
@@ -18,7 +18,7 @@ By the end you will have a custom MetaHuman head that players can select and equ
 
 Launch Helix Studio and create either a **new wearable sample project** or a **blank project** to start from.
 
-![Creating a new project in Helix Studio](images/01-create-project.png)
+![Creating a new project in Helix Studio](custom_cc_metahumans_assets/01-create-project.png)
 
 ---
 
@@ -28,9 +28,13 @@ Launch Helix Studio and create either a **new wearable sample project** or a **b
 2. Fill in the details for your wearable vault package. Set the **type** to **Wearable**.
 3. Click **Create Package**.
 
-![New Package dialog with type set to Wearable](images/02-new-package.png)
+![New Package dialog with type set to Wearable](custom_cc_metahumans_assets/02-new-package.png)
+
+![New Package dialog with type set to Wearable](custom_cc_metahumans_assets/03-new-package.png)
 
 Package creation generates a new plugin folder named after your package. This folder is the **root** where you gather all MetaHuman-related assets.
+
+![New Package dialog with type set to Wearable](custom_cc_metahumans_assets/04-new-package.png)
 
 ---
 
@@ -40,11 +44,15 @@ Package creation generates a new plugin folder named after your package. This fo
 2. Right-click an empty area in the content browser and choose **MetaHuman → MetaHuman Creator**.
 3. Name your MetaHuman character asset and open it.
 
-![MetaHuman Creator entry in the content browser context menu](images/03-metahuman-creator-entry.png)
+![MetaHuman Creator entry in the content browser context menu](custom_cc_metahumans_assets/05-metahuman-creator-entry.png)
 
 You are presented with the character editor.
 
-![MetaHuman character editor](images/04-character-editor.png)
+![MetaHuman character editor](custom_cc_metahumans_assets/06-character-editor.png)
+
+/// note | Feature Parity
+The MetaHuman Creator UI is tailored to HELIX requirements. Some features available in standard Unreal Engine may not be available in the HELIX MetaHuman character creator.
+///
 
 ---
 
@@ -52,7 +60,7 @@ You are presented with the character editor.
 
 To display skin textures on the character, select **Topology → Skin** from the viewport toolbar menu.
 
-![Topology menu with Skin selected](images/05-topology-skin.png)
+![Topology menu with Skin selected](custom_cc_metahumans_assets/07-topology-skin.png)
 
 ---
 
@@ -60,9 +68,15 @@ To display skin textures on the character, select **Topology → Skin** from the
 
 Open the **Body** section from the side toolbar and click the body type you want.
 
-> **Important:** The body type determines gender compatibility for items. Choose the correct body type, see the [Body Type Compatibility](#body-type-compatibility) note below.
+![Body section with body type options](custom_cc_metahumans_assets/08-body-type.png)
 
-![Body section with body type options](images/06-body-type.png)
+/// warning | Body Type Compatibility
+The body type determines gender compatibility for items, so choose it carefully. If you select a **female** body type and then create a **male** head on top of it, the height difference between the two MetaHuman bodies will make the head incompatible with male facial accessories and hair.
+///
+
+/// note | Body Sculpting
+Body sculpting is **not currently supported**, and the generated body mesh is not used by the character creator. Adjust body proportions in the character creator UI instead.
+///
 
 ---
 
@@ -70,7 +84,7 @@ Open the **Body** section from the side toolbar and click the body type you want
 
 Open the **Head** section from the side toolbar to begin sculpting.
 
-![Head sculpting section](images/07-head-sculpt.png)
+![Head sculpting section](custom_cc_metahumans_assets/09-head-sculpt.png)
 
 For detailed head sculpting controls, see the [MetaHuman Head Controls documentation](https://dev.epicgames.com/documentation/metahuman/head-controls).
 
@@ -81,7 +95,7 @@ To tweak the overall scale of your character, use the **Head Scale** slider insi
 - Reset the head to its identity state.
 - Align the neck to the body after modifying the head.
 
-![Transform tool with Head Scale slider](images/08-head-scale.png)
+![Transform tool with Head Scale slider](custom_cc_metahumans_assets/10-head-scale.png)
 
 ---
 
@@ -94,11 +108,17 @@ Open the **Materials** section to tweak your character's textures. Here you can 
 - Teeth
 - Makeup
 
-![Materials section](images/09-materials.png)
+![Materials section](custom_cc_metahumans_assets/11-materials.png)
 
 For detailed material controls, see the [MetaHuman Materials documentation](https://dev.epicgames.com/documentation/metahuman/materials-controls).
 
-> **Recommendation:** Avoid adding makeup to custom heads unless you have a specific reason. See the [Makeup Conflicts](#makeup-conflicts) note below.
+/// note | Skin Color Behavior
+Even though skin color is configurable in the character creator UI, the skin color chosen in MetaHuman Creator also affects your custom head. The MetaHuman Creator color becomes the **base** skin color once the head is selected, and the in-UI skin color override is applied **additively** on top of it.
+///
+
+/// warning | Makeup Conflicts
+You can add makeup to your character, but makeup added in MetaHuman Creator will conflict with makeup added through the character creator UI, and the MetaHuman Creator makeup is **always visible**. Unless you have a specific reason, do not add makeup to custom heads.
+///
 
 ---
 
@@ -108,8 +128,6 @@ After finalizing your character, click the following buttons in the top toolbar:
 
 1. **Download Texture Sources**
 2. **Create Joints Only Rig**
-
-![Download Texture Sources and Create Joints Only Rig buttons](images/10-rigging-buttons.png)
 
 This may prompt you to log into an Epic account for the cloud rigging process.
 
@@ -122,20 +140,34 @@ Once rigging completes, click **Assembly** in the side toolbar.
 1. Set **Root Directory** to your new package plugin folder.
 2. Set the assembly type to **HELIX Optimized**.
 
-![Assembly settings with HELIX Optimized type](images/11-assembly-settings.png)
+![Assembly settings with HELIX Optimized type](custom_cc_metahumans_assets/12-assembly-settings.png)
+
+![Assembly settings with HELIX Optimized type](custom_cc_metahumans_assets/13-assembly-settings.png)
 
 3. Ensure there are **no face or body material baking overrides**. Click the trash can icons next to those fields to clear any overrides.
 
-![Clearing material baking overrides](images/12-clear-overrides.png)
+![Clearing material baking overrides](custom_cc_metahumans_assets/14-clear-overrides.png)
 
-> **Note:** MetaHuman Creator can export higher-resolution textures via override parameters, but this is **not recommended** for performance reasons. Use the HELIX Optimized defaults by clearing any override parameters.
+/// note | Texture Resolution
+MetaHuman Creator can export higher-resolution textures via override parameters, but this is **not recommended** for performance reasons. Use the HELIX Optimized defaults by clearing any override parameters.
+///
 
 4. Once every field is correct, click **Assemble** and wait for the export to complete.
+
+![Rigging process](custom_cc_metahumans_assets/15-progress.png)
 
 The export creates two folders: **Body** and **Face**. You will use:
 
 - **`T_Body_VC_VT`**, the base skin texture in `Body/Baked/`.
 - The custom head mesh from the **`Face`** folder.
+
+![Folder contents](custom_cc_metahumans_assets/15-face-mesh-asset.png)
+
+![Folder contents](custom_cc_metahumans_assets/15-body-skin-texture-asset.png)
+
+/// warning | LOD Data
+The generated head mesh should have **3 LODs** and use the LOD data exported from MetaHuman Creator. Modifying the mesh's LOD data may cause it to stop working correctly in the character creator.
+///
 
 ---
 
@@ -143,12 +175,12 @@ The export creates two folders: **Body** and **Face**. You will use:
 
 1. Open the **`DA_Wearables`** data asset inside your package folder.
 
-![DA_Wearables data asset](images/13-da-wearables.png)
+![DA_Wearables data asset](custom_cc_metahumans_assets/16-da-wearables.png)
 
 2. Select the **Face Types** category in the left panel, then click **+ Add** above it.
 3. Double-click the tile's name section and give it a meaningful string ID (e.g. `M_Face_MyCustomMetahuman`).
 
-![Adding a new Face Type entry](images/14-add-face-type.png)
+![Adding a new Face Type entry](custom_cc_metahumans_assets/17-add-face-type.png)
 
 4. In the properties panel, configure the entry:
 
@@ -160,7 +192,7 @@ The export creates two folders: **Body** and **Face**. You will use:
 | **Preset Icon** | An icon, if you have one |
 | **Preset Skeletal Mesh** | Assign your new head mesh |
 
-![Face Type properties panel](images/15-face-type-properties.png)
+![Face Type properties panel](custom_cc_metahumans_assets/18-face-type-properties.png)
 
 ---
 
@@ -173,7 +205,7 @@ To support runtime skin coloring:
 
 This adds a **Skin Tint** template to **Slot 7**, where the head's skin material resides. If it does not populate automatically, add the template type to Slot 7 manually.
 
-![Material Override Template with Skin Tint in Slot 7](images/16-material-override.png)
+![Material Override Template with Skin Tint in Slot 7](custom_cc_metahumans_assets/19-material-override.png)
 
 3. Save the data asset.
 
@@ -186,7 +218,7 @@ This adds a **Skin Tint** template to **Slot 7**, where the head's skin material
 3. Go to the **Head** section, your custom head mesh should appear in the list.
 4. Click it to apply your custom head to the character.
 
-![Custom head appearing in the in-game character creator](images/17-pie-test.png)
+![Custom head appearing in the in-game character creator](custom_cc_metahumans_assets/20-pie-test.png)
 
 ---
 
@@ -194,14 +226,18 @@ This adds a **Skin Tint** template to **Slot 7**, where the head's skin material
 
 After equipping different hairstyles or facial accessories, you may notice clipping against your custom head. This typically happens when the head is heavily sculpted and differs noticeably in proportion from the identity MetaHuman head.
 
+![Offset transform fields for attachments](custom_cc_metahumans_assets/20-offset-transforms-before.png)
+
 To fix this, tweak the following fields on your head mesh entry in the data asset:
 
 - **Head Accessory Offset Transform**
 - **Hair Offset Transform**
 
-![Offset transform fields for attachments](images/18-offset-transforms.png)
+![Offset transform fields for attachments](custom_cc_metahumans_assets/20-offset-transforms-after.png)
 
-> The further you sculpt the forehead from the identity head, the harder existing hair and facial accessories are to fit. You will need to provide a custom scale per attachment type when adding the face to the data asset.
+/// note | Heavily Sculpted Heads
+The further you sculpt the forehead from the identity head, the harder existing hair and facial accessories are to fit. You will need to provide a custom scale per attachment type when adding the face to the data asset.
+///
 
 ---
 
@@ -213,7 +249,7 @@ Once everything works as expected, publish your package so it is available for d
 2. Adjust the publish fields to your liking.
 3. Click **Publish** to make your custom MetaHuman available for download in the **HELIX Vault**.
 
-![Vault publish window](images/19-publish-vault.png)
+![Vault publish window](custom_cc_metahumans_assets/21-publish-vault.png)
 
 Your package can now be tested on game builds.
 
@@ -227,26 +263,6 @@ Instead of sculpting a head manually, you can also:
 - Import a **DNA file** authored in Blender/Maya.
 - Conform a MetaHuman identity from a photo scan or a static mesh.
 
+![Conform Window](custom_cc_metahumans_assets/22-bonus.png)
+
 See the [Mesh to MetaHuman documentation](https://dev.epicgames.com/documentation/metahuman/mesh-to-metahuman) for details.
-
----
-
-## Notes & Tips
-
-### Body Type Compatibility
-Choosing the correct body type is critical. If you select a **female** body type and then create a **male** head on top of it, the height difference between the two MetaHuman bodies will make the head incompatible with male facial accessories and hair.
-
-### Skin Color Behavior
-Even though skin color is configurable in the character creator UI, the skin color chosen in MetaHuman Creator also affects your custom head. The MetaHuman Creator color becomes the **base** skin color once the head is selected, and the in-UI skin color override is applied **additively** on top of it.
-
-### Makeup Conflicts
-You can add makeup to your character, but makeup added in MetaHuman Creator will conflict with makeup added through the character creator UI, and the MetaHuman Creator makeup is **always visible**. Unless you have a specific reason, do not add makeup to custom heads.
-
-### Body Sculpting
-Body sculpting is **not currently supported**, and the generated body mesh is not used by the character creator. Adjust body proportions in the character creator UI instead.
-
-### Feature Parity
-The MetaHuman Creator UI is tailored to HELIX requirements. Some features available in standard Unreal Engine may not be available in the HELIX MetaHuman character creator.
-
-### LOD Data
-The generated head mesh should have **3 LODs** and use the LOD data exported from MetaHuman Creator. Modifying the mesh's LOD data may cause it to stop working correctly in the character creator.

@@ -1,4 +1,4 @@
-# Wearables
+# Custom Wearables
 
 This guide walks you through the process of creating and packaging custom wearables using Helix Studio. This tutorial is applicable to: Clothing (e.g. shoes, shirts, bottoms, underwear, outfits) Hair (facial and head), accessories (e.g. Hats, gloves, masks, necklaces, glasses). Some specific adjustments may need to be made depending on the asset type, such as dynamic hair sim.
 
