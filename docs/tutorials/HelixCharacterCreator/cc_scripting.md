@@ -7,14 +7,14 @@ tags: [helix-cosmetics, character-creator]
 
 The HELIX Character Creator exposes all clothing, body, and appearance functionality through two C++ interfaces. Both are blueprint exposed, so every function below is callable from Blueprint **and** from Lua with no wrapper layer.
 
-- **`IHCharacterCosmetics`** — implemented by the character pawn. Mesh access, identity, and the entry point to the cosmetics system.
-- **`IHCosmeticsSystem`** — the cosmetics system itself. All clothing query/equip/override/visibility logic lives here.
+- **`IHCharacterCosmetics`** - implemented by the character pawn. Mesh access, identity, and the entry point to the cosmetics system.
+- **`IHCosmeticsSystem`** - the cosmetics system itself. All clothing query/equip/override/visibility logic lives here.
 
 You always start from a character reference, fetch its cosmetics system once, then call the system functions directly.
 
 ## Access pattern
 
-The clothing API is **not** on the character. The character only exposes mesh/identity data and `GetCosmeticsSystem()`. Every clothing operation is two hops:
+The clothing API is **not** on the character, it's an actor component attached to character instead. The character only exposes mesh/identity data and `GetCosmeticsSystem()`. Every clothing operation is two hops:
 
 ```lua title="Getting the cosmetics system"
 -- `Character` is the pawn (implements IHCharacterCosmetics).
@@ -27,7 +27,7 @@ end
 System:EquipCosmeticItem('Hoodie_Black_01')
 ```
 
-`GetCosmeticsSystem()` returns a `TScriptInterface<IHCosmeticsSystem>`. In UnLua you call its functions directly with `:` — no manual cast required.
+`GetCosmeticsSystem()` returns a `TScriptInterface<IHCosmeticsSystem>`. In UnLua you call its functions directly with `:`, no manual cast required.
 
 /// warning | Initial load
 Cosmetics are streamed asynchronously. Before the first load completes, the system may be absent or the loadout empty. Gate early access with `Character:IsInitialCosmeticsLoadDone()`.
@@ -68,7 +68,7 @@ A small local `Tag(name)` / `MakeTagContainer(names)` helper at the top of your 
 
 Every wearable, body mesh, and appearance layer occupies exactly one **slot**, identified by a gameplay tag under `Cosmetic.Slot`. Equipping an item resolves its slot from the database; equipping into an occupied slot replaces the previous item.
 
-### Body — modular base meshes
+### Body - modular base meshes
 
 | Tag | Description |
 |---|---|
@@ -78,7 +78,7 @@ Every wearable, body mesh, and appearance layer occupies exactly one **slot**, i
 | `Cosmetic.Slot.Body.Hands` | Base hands mesh. |
 | `Cosmetic.Slot.Body.Feet` | Base feet mesh. |
 
-### Clothing — wearable garments
+### Clothing - wearable garments
 
 | Tag | Description |
 |---|---|
@@ -92,7 +92,7 @@ Every wearable, body mesh, and appearance layer occupies exactly one **slot**, i
 | `Cosmetic.Slot.Clothing.Underwear.Bottom` | Lower underwear layer. |
 | `Cosmetic.Slot.Clothing.Underwear.Leg` | Secondary lower layer (tights, stockings). |
 
-### Accessory — attached props, grouped by body zone
+### Accessory - attached props, grouped by body zone
 
 | Tag | Description |
 |---|---|
@@ -104,7 +104,7 @@ Every wearable, body mesh, and appearance layer occupies exactly one **slot**, i
 | `Cosmetic.Slot.Accessory.Hands.Gloves` | Hand covering item. |
 | `Cosmetic.Slot.Accessory.Hands.Nails` | Nail mesh or material. |
 
-### Appearance — non-mesh visual layers
+### Appearance - non-mesh visual layers
 
 | Tag | Description |
 |---|---|
@@ -273,9 +273,10 @@ local isCustom = System:IsCustomSlotActive()
 
 ## Equipping and unequipping
 
-:::warning Equip calls are asynchronous
-Equip functions return as soon as the request is **dispatched** — not when the item is applied. A `true` return means the request was accepted (item ID non-empty); it does **not** guarantee the item exists in the database, and the loadout will not reflect the change until DB lookup and asset streaming complete. Do not query the loadout immediately after equipping and expect the new state.
-:::
+/// warning | Equip calls are asynchronous
+Equip functions return as soon as the request is **dispatched**, not when the item is applied. A `true` return means the request was accepted (item ID non-empty); it does **not** guarantee the item exists in the database, and the loadout will not reflect the change until DB lookup and asset streaming complete. Do not query the loadout immediately after equipping and expect the new state.
+///
+
 
 ### `EquipCosmeticItem`
 Equip a single item by its database ID. The slot is resolved from the DB entry; any existing item in that slot is replaced.
@@ -456,9 +457,9 @@ System:ClearMaterialOverridesFromSlot(Tag('Cosmetic.Slot.Clothing.Top'))
 
 Runtime hide requests temporarily hide a slot without unequipping it. Requests are **refcounted**: multiple systems can independently request the same slot be hidden, and the slot reappears only when every push has been matched by a pop. Use this for transient states (entering a vehicle, a cutscene, a helmet toggle) rather than permanent changes.
 
-:::warning Always match push with pop
+/// warning | Always match push with pop
 Every `PushRuntimeHideRequest` must be balanced by a `PopRuntimeHideRequest`. Leaking pushes leaves slots stuck hidden. Use `ClearRuntimeHideRequests` only as a deliberate reset, and `ClearAllRuntimeHideRequests` only as an emergency clear.
-:::
+///
 
 ### `PushRuntimeHideRequest`
 Add a hide request for the given slots (increments their counters).
