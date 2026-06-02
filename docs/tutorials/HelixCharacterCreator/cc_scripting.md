@@ -24,7 +24,7 @@ if not System then
     return
 end
 
-System:EquipCosmeticItem('Hoodie_Black_01')
+System:EquipCosmeticItem('ee0dd5a7-24e8-3192-a308-e9fb78e12491') -- Database ID for M_Top_1 clothing
 ```
 
 `GetCosmeticsSystem()` returns a `TScriptInterface<IHCosmeticsSystem>`. In UnLua you call its functions directly with `:`, no manual cast required.
@@ -197,7 +197,7 @@ local All = System:GetEquippedItemIDs(UE.FGameplayTagContainer())
 Returns `true` if the given item ID is equipped in any slot.
 
 ```lua title="Example"
-if System:IsCosmeticItemEquipped('Hoodie_Black_01') then
+if System:IsCosmeticItemEquipped('ee0dd5a7-24e8-3192-a308-e9fb78e12491') then -- Database ID for M_Top_1 clothing
     -- ...
 end
 ```
@@ -282,7 +282,7 @@ Equip functions return as soon as the request is **dispatched**, not when the it
 Equip a single item by its database ID. The slot is resolved from the DB entry; any existing item in that slot is replaced.
 
 ```lua title="Example"
-System:EquipCosmeticItem('Hoodie_Black_01')
+System:EquipCosmeticItem('ee0dd5a7-24e8-3192-a308-e9fb78e12491') -- Database ID for M_Top_1 clothing
 ```
 
 ---
@@ -310,10 +310,10 @@ Equip multiple items in one batch. More efficient than looping `EquipCosmeticIte
 
 ```lua title="Example - dress a character in one call"
 local Items = UE.TArray(UE.FString)
-Items:Add('Hoodie_Black_01')      -- Cosmetic.Slot.Clothing.Top
-Items:Add('Jeans_Blue_01')        -- Cosmetic.Slot.Clothing.Bottoms
-Items:Add('Sneakers_White_01')    -- Cosmetic.Slot.Clothing.Shoes
-Items:Add('Cap_Red_01')           -- Cosmetic.Slot.Accessory.Head.Hat
+Items:Add('ee0dd5a7-24e8-3192-a308-e9fb78e12491')   -- Cosmetic.Slot.Clothing.Top. Database ID for M_Top_1 clothing
+Items:Add('5e3620d7-0853-3831-80d1-b45092b0f785')   -- Cosmetic.Slot.Clothing.Bottoms. Database ID for M_Bottoms_Black_Short clothing
+Items:Add('fb7b19ef-493b-36e9-8e1b-5de70db5e976')   -- Cosmetic.Slot.Clothing.Shoes. Database ID for M_Shoes_Out_Boots clothing
+Items:Add('7e9ffbdd-4916-374f-9a35-86c73b0b9232')   -- Cosmetic.Slot.Accessory.Head.Hat. Database ID for M_Hat_Cap clothing.
 
 System:EquipCosmeticItems(Items)
 ```
@@ -324,7 +324,7 @@ System:EquipCosmeticItems(Items)
 Unequip the given item ID if equipped. Returns `true` if it was found and removed.
 
 ```lua title="Example"
-System:UnequipCosmeticItem('Cap_Red_01')
+System:UnequipCosmeticItem('7e9ffbdd-4916-374f-9a35-86c73b0b9232') -- Database ID for M_Hat_Cap clothing.
 ```
 
 ---
