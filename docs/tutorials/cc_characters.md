@@ -1,4 +1,4 @@
-# Custom Character Meshes
+# Creating Custom Characters
 
 This guide walks you through the process of packaging custom character mesh assets for the [Creator Hub](creatorhub.md) using the [Creator Kit](creatorkit.md).
 

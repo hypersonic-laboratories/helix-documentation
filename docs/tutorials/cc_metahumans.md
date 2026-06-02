@@ -1,4 +1,4 @@
-# Custom MetaHumans
+# Creating Custom MetaHumans
 
 This guide walks you through creating a custom MetaHuman head in **Helix Studio**, packaging it as a wearable vault package, and registering it so it appears in the in-game character creator.
 
