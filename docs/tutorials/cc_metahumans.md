@@ -51,7 +51,7 @@ Launch Helix Studio and create either a **new wearable sample project** or a **b
 
     ![MetaHuman character editor](custom_cc_metahumans_assets/06-character-editor.png)
 
-    /// note | Feature Parity
+    /// note | Note
     The MetaHuman Character UI is tailored to HELIX requirements. Some features available in standard Unreal Engine may not be available in the HELIX MetaHuman character creator.
     ///
 
@@ -71,11 +71,11 @@ Open the **Body** section from the side toolbar and click the body type you want
 
 ![Body section with body type options](custom_cc_metahumans_assets/08-body-type.png)
 
-/// warning | Body Type Compatibility
+/// warning | Warning
 The body type determines gender compatibility for items, so choose it carefully. If you select a **female** body type try to use it for male characters, the height difference between the two MetaHuman bodies will make the generated head incompatible with male facial accessories and hair.
 ///
 
-/// note | Body Sculpting
+/// note | Note
 Body sculpting is **currently not supported**, and the generated body mesh won't be used by the character creator. You can adjust body proportions in the HELIX Character Creator's body section instead.
 ///
 
@@ -98,7 +98,7 @@ To tweak the overall scale of your character, use the **Head Scale** slider insi
 
 ![Transform tool with Head Scale slider](custom_cc_metahumans_assets/10-head-scale.png)
 
-/// note | Neck Alignment
+/// note | Note
 It's recommended to align the neck to body after finalizing the head sculpting, to ensure neck proportions match the head size.
 ///
 
@@ -117,11 +117,11 @@ Open the **Materials** section to tweak your character's textures. Here you can 
 
 For detailed material controls, see the [MetaHuman Materials documentation](https://dev.epicgames.com/documentation/metahuman/materials-controls).
 
-/// note | Skin Color Behavior
+/// note | Note
 Even though skin color is also configurable in the HELIX Character Creator UI, the skin color chosen in MetaHuman Creator still affects your character when the head is selected. The skin color originating from MetaHuman Creator becomes the **base** skin color once the head is selected, and the in-UI skin color override is applied **additively** on top of it.
 ///
 
-/// warning | Makeup Conflicts
+/// warning | Warning
 You can add makeup to your character from MetaHuman Creator, but they will conflict with makeup added through the HELIX Character Creator UI, and the MetaHuman Creator makeup will be **always visible**. Unless you have a specific reason, do not add makeup to custom heads.
 ///
 
@@ -154,7 +154,7 @@ Once rigging completes, click **Assembly** in the side toolbar.
 
     ![Clearing material baking overrides](custom_cc_metahumans_assets/14-clear-overrides.png)
 
-    /// note | Texture Resolution
+    /// note | Note
     MetaHuman Creator can export higher-resolution textures via override parameters, but this is **not recommended** for performance reasons. Use the HELIX Optimized defaults by clearing any override parameters.
     ///
 
@@ -172,7 +172,7 @@ Once rigging completes, click **Assembly** in the side toolbar.
 
     ![Folder contents](custom_cc_metahumans_assets/15-face-mesh-asset.png)
 
-    /// warning | LOD Data
+    /// warning | Warning
     The generated head mesh should have **3 LODs** and use the LOD data exported from MetaHuman Creator. Modifying the mesh's LOD data may cause it to stop working correctly in the HELIX Character Creator. It's not recommended to do any modifications to LOD setup of exported heads.
     ///
 
@@ -249,7 +249,7 @@ To fix this, tweak the following fields on your head mesh entry in the data asse
 
 ![Offset transform fields for attachments](custom_cc_metahumans_assets/20-offset-transforms-after.png)
 
-/// note | Heavily Sculpted Heads
+/// note | Note
 The further you sculpt the forehead from the identity head, the harder existing hair and facial accessories are to fit. You will need to provide custom scale values as described in this step to better fit attachments to your custom head mesh.
 ///
 
