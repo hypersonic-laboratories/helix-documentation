@@ -25,16 +25,18 @@ Launch Helix Studio and create either a **new wearable sample project** or a **b
 ## 2. Create a Wearable Vault Package
 
 1. From the toolbar menu, select **Packages → Manage Packages → New Package**.
+
+    ![New Package dialog with type set to Wearable](custom_cc_metahumans_assets/02-new-package.png)
+
 2. Fill in the details for your wearable vault package. Set the **type** to **Wearable**.
+
+    ![New Package dialog with type set to Wearable](custom_cc_metahumans_assets/03-new-package.png)
+
 3. Click **Create Package**.
 
-![New Package dialog with type set to Wearable](custom_cc_metahumans_assets/02-new-package.png)
+    Package creation generates a new plugin folder named after your package. This folder is the **root** where you gather all MetaHuman-related assets.
 
-![New Package dialog with type set to Wearable](custom_cc_metahumans_assets/03-new-package.png)
-
-Package creation generates a new plugin folder named after your package. This folder is the **root** where you gather all MetaHuman-related assets.
-
-![New Package dialog with type set to Wearable](custom_cc_metahumans_assets/04-new-package.png)
+    ![New Package dialog with type set to Wearable](custom_cc_metahumans_assets/04-new-package.png)
 
 ---
 
@@ -42,17 +44,16 @@ Package creation generates a new plugin folder named after your package. This fo
 
 1. Open your new package plugin folder.
 2. Right-click an empty area in the content browser and choose **MetaHuman → MetaHuman Creator**.
+
+    ![MetaHuman Creator entry in the content browser context menu](custom_cc_metahumans_assets/05-metahuman-creator-entry.png)
+
 3. Name your MetaHuman character asset and open it.
 
-![MetaHuman Creator entry in the content browser context menu](custom_cc_metahumans_assets/05-metahuman-creator-entry.png)
+    ![MetaHuman character editor](custom_cc_metahumans_assets/06-character-editor.png)
 
-You are presented with the character editor.
-
-![MetaHuman character editor](custom_cc_metahumans_assets/06-character-editor.png)
-
-/// note | Feature Parity
-The MetaHuman Creator UI is tailored to HELIX requirements. Some features available in standard Unreal Engine may not be available in the HELIX MetaHuman character creator.
-///
+    /// note | Feature Parity
+    The MetaHuman Creator UI is tailored to HELIX requirements. Some features available in standard Unreal Engine may not be available in the HELIX MetaHuman character creator.
+    ///
 
 ---
 
@@ -140,34 +141,34 @@ Once rigging completes, click **Assembly** in the side toolbar.
 1. Set **Root Directory** to your new package plugin folder.
 2. Set the assembly type to **HELIX Optimized**.
 
-![Assembly settings with HELIX Optimized type](custom_cc_metahumans_assets/12-assembly-settings.png)
+    ![Assembly settings with HELIX Optimized type](custom_cc_metahumans_assets/12-assembly-settings.png)
 
-![Assembly settings with HELIX Optimized type](custom_cc_metahumans_assets/13-assembly-settings.png)
+    ![Assembly settings with HELIX Optimized type](custom_cc_metahumans_assets/13-assembly-settings.png)
 
 3. Ensure there are **no face or body material baking overrides**. Click the trash can icons next to those fields to clear any overrides.
 
-![Clearing material baking overrides](custom_cc_metahumans_assets/14-clear-overrides.png)
+    ![Clearing material baking overrides](custom_cc_metahumans_assets/14-clear-overrides.png)
 
-/// note | Texture Resolution
-MetaHuman Creator can export higher-resolution textures via override parameters, but this is **not recommended** for performance reasons. Use the HELIX Optimized defaults by clearing any override parameters.
-///
+    /// note | Texture Resolution
+    MetaHuman Creator can export higher-resolution textures via override parameters, but this is **not recommended** for performance reasons. Use the HELIX Optimized defaults by clearing any override parameters.
+    ///
 
 4. Once every field is correct, click **Assemble** and wait for the export to complete.
 
-![Rigging process](custom_cc_metahumans_assets/15-progress.png)
+    ![Rigging process](custom_cc_metahumans_assets/15-progress.png)
 
-The export creates two folders: **Body** and **Face**. You will use:
+    The export creates two folders: **Body** and **Face**. You will use:
 
-- **`T_Body_VC_VT`**, the base skin texture in `Body/Baked/`.
-- The custom head mesh from the **`Face`** folder.
+    - **`T_Body_VC_VT`**, the base skin texture in `Body/Baked/`.
+    - The custom head mesh from the **`Face`** folder.
 
-![Folder contents](custom_cc_metahumans_assets/15-face-mesh-asset.png)
+    ![Folder contents](custom_cc_metahumans_assets/15-face-mesh-asset.png)
 
-![Folder contents](custom_cc_metahumans_assets/15-body-skin-texture-asset.png)
+    ![Folder contents](custom_cc_metahumans_assets/15-body-skin-texture-asset.png)
 
-/// warning | LOD Data
-The generated head mesh should have **3 LODs** and use the LOD data exported from MetaHuman Creator. Modifying the mesh's LOD data may cause it to stop working correctly in the character creator.
-///
+    /// warning | LOD Data
+    The generated head mesh should have **3 LODs** and use the LOD data exported from MetaHuman Creator. Modifying the mesh's LOD data may cause it to stop working correctly in the character creator.
+    ///
 
 ---
 
@@ -175,12 +176,12 @@ The generated head mesh should have **3 LODs** and use the LOD data exported fro
 
 1. Open the **`DA_Wearables`** data asset inside your package folder.
 
-![DA_Wearables data asset](custom_cc_metahumans_assets/16-da-wearables.png)
+    ![DA_Wearables data asset](custom_cc_metahumans_assets/16-da-wearables.png)
 
 2. Select the **Face Types** category in the left panel, then click **+ Add** above it.
 3. Double-click the tile's name section and give it a meaningful string ID (e.g. `M_Face_MyCustomMetahuman`).
 
-![Adding a new Face Type entry](custom_cc_metahumans_assets/17-add-face-type.png)
+    ![Adding a new Face Type entry](custom_cc_metahumans_assets/17-add-face-type.png)
 
 4. In the properties panel, configure the entry:
 
@@ -203,9 +204,9 @@ To support runtime skin coloring:
 1. Expand the **Material Override Template** section.
 2. Click **Auto-Fill From Mesh**.
 
-This adds a **Skin Tint** template to **Slot 7**, where the head's skin material resides. If it does not populate automatically, add the template type to Slot 7 manually.
+    This adds a **Skin Tint** template to **Slot 7**, where the head's skin material resides. If it does not populate automatically, add the template type to Slot 7 manually.
 
-![Material Override Template with Skin Tint in Slot 7](custom_cc_metahumans_assets/19-material-override.png)
+    ![Material Override Template with Skin Tint in Slot 7](custom_cc_metahumans_assets/19-material-override.png)
 
 3. Save the data asset.
 
@@ -218,7 +219,7 @@ This adds a **Skin Tint** template to **Slot 7**, where the head's skin material
 3. Go to the **Head** section, your custom head mesh should appear in the list.
 4. Click it to apply your custom head to the character.
 
-![Custom head appearing in the in-game character creator](custom_cc_metahumans_assets/20-pie-test.png)
+    ![Custom head appearing in the in-game character creator](custom_cc_metahumans_assets/20-pie-test.png)
 
 ---
 
@@ -249,9 +250,9 @@ Once everything works as expected, publish your package so it is available for d
 2. Adjust the publish fields to your liking.
 3. Click **Publish** to make your custom MetaHuman available for download in the **HELIX Vault**.
 
-![Vault publish window](custom_cc_metahumans_assets/21-publish-vault.png)
+    ![Vault publish window](custom_cc_metahumans_assets/21-publish-vault.png)
 
-Your package can now be tested on game builds.
+    Your package can now be tested on game builds.
 
 ---
 
