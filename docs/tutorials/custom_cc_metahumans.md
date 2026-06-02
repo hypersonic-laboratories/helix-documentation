@@ -10,7 +10,7 @@ By the end you will have a custom MetaHuman head that players can select and equ
 
 - Helix Studio installed.
 - An Epic account (required for the cloud rigging step).
-- Familiarity with the Unreal Engine content browser and Play-in-Editor (PIE).
+- Familarity with MetaHuman Creator for sculpting a custom head shape.
 
 ---
 
