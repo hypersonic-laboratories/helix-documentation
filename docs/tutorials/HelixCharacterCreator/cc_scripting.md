@@ -274,7 +274,7 @@ local isCustom = System:IsCustomSlotActive()
 ## Equipping and unequipping
 
 /// warning | Equip calls are asynchronous
-Equip functions return as soon as the request is **dispatched**, not when the item is applied. A `true` return means the request was accepted (item ID non-empty); it does **not** guarantee the item exists in the database, and the loadout will not reflect the change until DB lookup and asset streaming complete. Do not query the loadout immediately after equipping and expect the new state.
+Equip functions return as soon as the request is **dispatched**, not when the item is applied. A `true` return means the request was accepted (item ID non-empty); it does **not** guarantee the item exists in the database, and the loadout will not reflect the change until DB lookup and asset streaming complete. Do not query the loadout immediately after equipping and expect the new state. Instead, bind to [`OnCosmeticsUpdated`](#oncosmeticsupdated): it fires once the requested change has been applied to the character, with the resulting loadout. This is the correct way to sequence logic that depends on an equip/unequip having taken effect.
 ///
 
 
@@ -643,12 +643,24 @@ An inline `function() end` has no stable identity, so you cannot unbind it later
 ### `OnCosmeticsUpdated`
 Fires after the cosmetic loadout changes, whether the change was local or arrived via replication. Callback receives the new `FHCosmeticLoadout`.
 
+Because equip/unequip/override calls are asynchronous (see [Equipping and unequipping](#equipping-and-unequipping)), this is the canonical signal that a requested change has actually been applied to the character. Bind to it instead of polling the loadout after an equip call.
+
 Bind / unbind: `BindOnCosmeticsUpdated(Delegate)` / `UnbindOnCosmeticsUpdated(Delegate)`
 
 ```lua title="Example"
 System:BindOnCosmeticsUpdated(function(NewLoadout)
     print('Outfit changed. Gender:', NewLoadout.Gender, 'Body:', NewLoadout.BodyType)
 end)
+```
+
+```lua title="Example - act once an equip has landed"
+-- The equip is async; this callback runs when the new item is actually applied.
+System:BindOnCosmeticsUpdated(function(NewLoadout)
+    if System:IsCosmeticItemEquipped('7e9ffbdd-4916-374f-9a35-86c73b0b9232') then -- M_Hat_Cap
+        -- safe to run logic that depends on the hat being on the character
+    end
+end)
+System:EquipCosmeticItem('7e9ffbdd-4916-374f-9a35-86c73b0b9232')
 ```
 
 ---
