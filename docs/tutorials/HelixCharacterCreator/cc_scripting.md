@@ -523,108 +523,11 @@ local count = System:GetRuntimeHideRequestCount(
 
 ## Events
 
-The cosmetics system broadcasts multicast delegates when the loadout or identity changes, or when the dedicated customization UI opens and closes. Subscribe to react to changes instead of polling the loadout.
-
-Each event exposes a matching pair of interface functions, `BindOn<Event>` / `UnbindOn<Event>`. `Bind` adds your callback (deduplicated — binding the same object+function twice is a no-op); `Unbind` removes it. Pass the callback as a `{ self, self.Method }` pair; UnLua builds the delegate from it. The **same** pair must be passed to `Unbind` for the removal to match, since dynamic delegates are identified by their bound object and function name.
-
-When the broadcast fires, the pair form invokes your callback with `self` first, then the event arguments — i.e. define handlers with the `:` method syntax (`function MyClass:Handler(Arg)`).
+The cosmetics system broadcasts multicast delegates when the loadout or identity changes, and when the dedicated customization UI opens and closes. Subscribe to react to changes instead of polling the loadout.
 
 /// warning | Keep the callback owner alive, and always unbind
 The bound object (the first element of the pair) must outlive the binding. If it is garbage collected while still bound, the broadcast will fail or assert. Always `Unbind` in your teardown path (`EndPlay`, widget `Destruct`, etc.).
 ///
-
-/// note | Server vs client
-`OnCosmeticsUpdated` fires on every machine that receives the change, including simulated proxies via replication. The customization UI events (`Started` / `Finished`) are local to the machine running the UI and never fire on a dedicated server.
-///
-
-### `OnCosmeticsUpdated`
-Fires after the cosmetic loadout changes, whether the change was made locally or arrived via replication. Callback receives the new `FHCosmeticLoadout`.
-
-`BindOnCosmeticsUpdated(Delegate)` / `UnbindOnCosmeticsUpdated(Delegate)`
-
-```lua title="Example"
-local System = Character:GetCosmeticsSystem()
-System:BindOnCosmeticsUpdated({ self, self.HandleCosmeticsUpdated })
-
--- Callback signature: (self, NewLoadout)
-function MyClass:HandleCosmeticsUpdated(NewLoadout)
-    print('Loadout changed. Gender:', NewLoadout.Gender)
-end
-```
-
----
-
-### `OnCosmeticsGenderChanged`
-Fires after the loadout gender changes. May coincide with a base mesh swap and rebuild. Callback receives the new `EHCharacterCosmeticsGender`.
-
-`BindOnCosmeticsGenderChanged(Delegate)` / `UnbindOnCosmeticsGenderChanged(Delegate)`
-
-```lua title="Example"
-System:BindOnCosmeticsGenderChanged({ self, self.HandleGenderChanged })
-
-function MyClass:HandleGenderChanged(NewGender)
-    print('Gender is now:', NewGender)
-end
-```
-
----
-
-### `OnCosmeticsBodyTypeChanged`
-Fires after the loadout body type changes. Callback receives the new `EHCosmeticBodyType`.
-
-`BindOnCosmeticsBodyTypeChanged(Delegate)` / `UnbindOnCosmeticsBodyTypeChanged(Delegate)`
-
-```lua title="Example"
-System:BindOnCosmeticsBodyTypeChanged({ self, self.HandleBodyTypeChanged })
-
-function MyClass:HandleBodyTypeChanged(NewBodyType)
-    print('Body type is now:', NewBodyType)
-end
-```
-
----
-
-### `OnCosmeticsCustomizationStarted`
-Fires after the character begins being edited in the dedicated customization UI. No parameters.
-
-`BindOnCosmeticsCustomizationStarted(Delegate)` / `UnbindOnCosmeticsCustomizationStarted(Delegate)`
-
-```lua title="Example"
-System:BindOnCosmeticsCustomizationStarted({ self, self.HandleCustomizationStarted })
-
-function MyClass:HandleCustomizationStarted()
-    -- e.g. holster weapons, freeze movement while in the wardrobe
-end
-```
-
----
-
-### `OnCosmeticsCustomizationFinished`
-Fires after the character leaves the dedicated customization UI. Callback receives `bool bCancelled` — `true` if the player discarded changes, `false` if committed.
-
-`BindOnCosmeticsCustomizationFinished(Delegate)` / `UnbindOnCosmeticsCustomizationFinished(Delegate)`
-
-```lua title="Example"
-System:BindOnCosmeticsCustomizationFinished({ self, self.HandleCustomizationFinished })
-
-function MyClass:HandleCustomizationFinished(bCancelled)
-    if not bCancelled then
-        -- player committed; persist the new look
-    end
-end
-```
-
-/// note | Blueprint
-From Blueprint the same `BindOn<Event>` / `UnbindOn<Event>` interface functions are available. With a concrete component reference (not just the interface) you can also use the standard **Assign** / **Bind Event** nodes on the component's `BlueprintAssignable` delegate properties directly.
-///
-
----
-
-## Events
-
-The cosmetics system broadcasts multicast delegates when the loadout or identity changes, and when the dedicated customization UI opens and closes. Subscribe to react to changes instead of polling the loadout.
-
-Each event exposes a matching pair of interface functions: `BindOn<Event>` adds a callback (deduplicated), `UnbindOn<Event>` removes it. Pass the callback as a plain function directly in the delegate argument.
 
 ```lua title="Inline callback"
 System:BindOnCosmeticsUpdated(function(NewLoadout)
@@ -632,18 +535,10 @@ System:BindOnCosmeticsUpdated(function(NewLoadout)
 end)
 ```
 
-/// warning | Unbinding needs the same function reference
-An inline `function() end` has no stable identity, so you cannot unbind it later. If you intend to unbind, store the function in a variable (e.g. on `self`) and pass that **same reference** to both `Bind` and `Unbind`. Keep the owning object alive for as long as the binding exists, and always unbind in your teardown path (`EndPlay`, widget destruct).
-///
-
-/// note | Server vs client
-`OnCosmeticsUpdated`, `OnCosmeticsGenderChanged`, and `OnCosmeticsBodyTypeChanged` fire on every machine that receives the change, including simulated proxies via replication. The customization UI events (`Started` / `Finished`) are local to the machine running the UI and never fire on a dedicated server.
-///
-
 ### `OnCosmeticsUpdated`
 Fires after the cosmetic loadout changes, whether the change was local or arrived via replication. Callback receives the new `FHCosmeticLoadout`.
 
-Because equip/unequip/override calls are asynchronous (see [Equipping and unequipping](#equipping-and-unequipping)), this is the canonical signal that a requested change has actually been applied to the character. Bind to it instead of polling the loadout after an equip call.
+Because equip/unequip/override calls are asynchronous (see [Equipping and unequipping](#equipping-and-unequipping)), this is the signal that a requested change has actually been applied to the character. Bind to it instead of polling the loadout after an equip call.
 
 Bind / unbind: `BindOnCosmeticsUpdated(Delegate)` / `UnbindOnCosmeticsUpdated(Delegate)`
 
@@ -692,7 +587,7 @@ end)
 ---
 
 ### `OnCosmeticsCustomizationStarted`
-Fires after the character begins being edited in the dedicated customization UI. No parameters.
+Fires after the character begins being edited in the dedicated customization UI. No parameters. Only fired on locally controlled clients.
 
 Bind / unbind: `BindOnCosmeticsCustomizationStarted(Delegate)` / `UnbindOnCosmeticsCustomizationStarted(Delegate)`
 
@@ -705,7 +600,7 @@ end)
 ---
 
 ### `OnCosmeticsCustomizationFinished`
-Fires after the character leaves the dedicated customization UI. Callback receives a `bool bCancelled` - `true` if the player discarded changes, `false` if they committed.
+Fires after the character leaves the dedicated customization UI. Callback receives a `bool bCancelled` - `true` if the player discarded changes, `false` if they committed. Only fired on locally controlled clients.
 
 Bind / unbind: `BindOnCosmeticsCustomizationFinished(Delegate)` / `UnbindOnCosmeticsCustomizationFinished(Delegate)`
 
@@ -716,10 +611,6 @@ System:BindOnCosmeticsCustomizationFinished(function(bCancelled)
     end
 end)
 ```
-
-/// note | Blueprint
-From Blueprint the same `BindOn<Event>` / `UnbindOn<Event>` interface functions are available. With a concrete component reference you can also use the standard "Assign / Bind Event" nodes on the component's `BlueprintAssignable` delegate properties.
-///
 
 ---
 
