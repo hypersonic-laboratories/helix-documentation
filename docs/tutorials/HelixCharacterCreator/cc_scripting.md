@@ -521,6 +521,196 @@ local count = System:GetRuntimeHideRequestCount(
 
 ---
 
+## Events
+
+The cosmetics system broadcasts multicast delegates when the loadout or identity changes, or when the dedicated customization UI opens and closes. Subscribe to react to changes instead of polling the loadout.
+
+Each event exposes a matching pair of interface functions, `BindOn<Event>` / `UnbindOn<Event>`. `Bind` adds your callback (deduplicated — binding the same object+function twice is a no-op); `Unbind` removes it. Pass the callback as a `{ self, self.Method }` pair; UnLua builds the delegate from it. The **same** pair must be passed to `Unbind` for the removal to match, since dynamic delegates are identified by their bound object and function name.
+
+When the broadcast fires, the pair form invokes your callback with `self` first, then the event arguments — i.e. define handlers with the `:` method syntax (`function MyClass:Handler(Arg)`).
+
+/// warning | Keep the callback owner alive, and always unbind
+The bound object (the first element of the pair) must outlive the binding. If it is garbage collected while still bound, the broadcast will fail or assert. Always `Unbind` in your teardown path (`EndPlay`, widget `Destruct`, etc.).
+///
+
+/// note | Server vs client
+`OnCosmeticsUpdated` fires on every machine that receives the change, including simulated proxies via replication. The customization UI events (`Started` / `Finished`) are local to the machine running the UI and never fire on a dedicated server.
+///
+
+### `OnCosmeticsUpdated`
+Fires after the cosmetic loadout changes, whether the change was made locally or arrived via replication. Callback receives the new `FHCosmeticLoadout`.
+
+`BindOnCosmeticsUpdated(Delegate)` / `UnbindOnCosmeticsUpdated(Delegate)`
+
+```lua title="Example"
+local System = Character:GetCosmeticsSystem()
+System:BindOnCosmeticsUpdated({ self, self.HandleCosmeticsUpdated })
+
+-- Callback signature: (self, NewLoadout)
+function MyClass:HandleCosmeticsUpdated(NewLoadout)
+    print('Loadout changed. Gender:', NewLoadout.Gender)
+end
+```
+
+---
+
+### `OnCosmeticsGenderChanged`
+Fires after the loadout gender changes. May coincide with a base mesh swap and rebuild. Callback receives the new `EHCharacterCosmeticsGender`.
+
+`BindOnCosmeticsGenderChanged(Delegate)` / `UnbindOnCosmeticsGenderChanged(Delegate)`
+
+```lua title="Example"
+System:BindOnCosmeticsGenderChanged({ self, self.HandleGenderChanged })
+
+function MyClass:HandleGenderChanged(NewGender)
+    print('Gender is now:', NewGender)
+end
+```
+
+---
+
+### `OnCosmeticsBodyTypeChanged`
+Fires after the loadout body type changes. Callback receives the new `EHCosmeticBodyType`.
+
+`BindOnCosmeticsBodyTypeChanged(Delegate)` / `UnbindOnCosmeticsBodyTypeChanged(Delegate)`
+
+```lua title="Example"
+System:BindOnCosmeticsBodyTypeChanged({ self, self.HandleBodyTypeChanged })
+
+function MyClass:HandleBodyTypeChanged(NewBodyType)
+    print('Body type is now:', NewBodyType)
+end
+```
+
+---
+
+### `OnCosmeticsCustomizationStarted`
+Fires after the character begins being edited in the dedicated customization UI. No parameters.
+
+`BindOnCosmeticsCustomizationStarted(Delegate)` / `UnbindOnCosmeticsCustomizationStarted(Delegate)`
+
+```lua title="Example"
+System:BindOnCosmeticsCustomizationStarted({ self, self.HandleCustomizationStarted })
+
+function MyClass:HandleCustomizationStarted()
+    -- e.g. holster weapons, freeze movement while in the wardrobe
+end
+```
+
+---
+
+### `OnCosmeticsCustomizationFinished`
+Fires after the character leaves the dedicated customization UI. Callback receives `bool bCancelled` — `true` if the player discarded changes, `false` if committed.
+
+`BindOnCosmeticsCustomizationFinished(Delegate)` / `UnbindOnCosmeticsCustomizationFinished(Delegate)`
+
+```lua title="Example"
+System:BindOnCosmeticsCustomizationFinished({ self, self.HandleCustomizationFinished })
+
+function MyClass:HandleCustomizationFinished(bCancelled)
+    if not bCancelled then
+        -- player committed; persist the new look
+    end
+end
+```
+
+/// note | Blueprint
+From Blueprint the same `BindOn<Event>` / `UnbindOn<Event>` interface functions are available. With a concrete component reference (not just the interface) you can also use the standard **Assign** / **Bind Event** nodes on the component's `BlueprintAssignable` delegate properties directly.
+///
+
+---
+
+## Events
+
+The cosmetics system broadcasts multicast delegates when the loadout or identity changes, and when the dedicated customization UI opens and closes. Subscribe to react to changes instead of polling the loadout.
+
+Each event exposes a matching pair of interface functions: `BindOn<Event>` adds a callback (deduplicated), `UnbindOn<Event>` removes it. Pass the callback as a plain function directly in the delegate argument.
+
+```lua title="Inline callback"
+System:BindOnCosmeticsUpdated(function(NewLoadout)
+    print('Loadout changed. Gender:', NewLoadout.Gender)
+end)
+```
+
+/// warning | Unbinding needs the same function reference
+An inline `function() end` has no stable identity, so you cannot unbind it later. If you intend to unbind, store the function in a variable (e.g. on `self`) and pass that **same reference** to both `Bind` and `Unbind`. Keep the owning object alive for as long as the binding exists, and always unbind in your teardown path (`EndPlay`, widget destruct).
+///
+
+/// note | Server vs client
+`OnCosmeticsUpdated`, `OnCosmeticsGenderChanged`, and `OnCosmeticsBodyTypeChanged` fire on every machine that receives the change, including simulated proxies via replication. The customization UI events (`Started` / `Finished`) are local to the machine running the UI and never fire on a dedicated server.
+///
+
+### `OnCosmeticsUpdated`
+Fires after the cosmetic loadout changes, whether the change was local or arrived via replication. Callback receives the new `FHCosmeticLoadout`.
+
+Bind / unbind: `BindOnCosmeticsUpdated(Delegate)` / `UnbindOnCosmeticsUpdated(Delegate)`
+
+```lua title="Example"
+System:BindOnCosmeticsUpdated(function(NewLoadout)
+    print('Outfit changed. Gender:', NewLoadout.Gender, 'Body:', NewLoadout.BodyType)
+end)
+```
+
+---
+
+### `OnCosmeticsGenderChanged`
+Fires after the loadout gender changes. Callback receives the new `EHCharacterCosmeticsGender`.
+
+Bind / unbind: `BindOnCosmeticsGenderChanged(Delegate)` / `UnbindOnCosmeticsGenderChanged(Delegate)`
+
+```lua title="Example"
+System:BindOnCosmeticsGenderChanged(function(NewGender)
+    print('Gender is now:', NewGender)
+end)
+```
+
+---
+
+### `OnCosmeticsBodyTypeChanged`
+Fires after the loadout body type changes. Callback receives the new `EHCosmeticBodyType`.
+
+Bind / unbind: `BindOnCosmeticsBodyTypeChanged(Delegate)` / `UnbindOnCosmeticsBodyTypeChanged(Delegate)`
+
+```lua title="Example"
+System:BindOnCosmeticsBodyTypeChanged(function(NewBodyType)
+    print('Body type is now:', NewBodyType)
+end)
+```
+
+---
+
+### `OnCosmeticsCustomizationStarted`
+Fires after the character begins being edited in the dedicated customization UI. No parameters.
+
+Bind / unbind: `BindOnCosmeticsCustomizationStarted(Delegate)` / `UnbindOnCosmeticsCustomizationStarted(Delegate)`
+
+```lua title="Example"
+System:BindOnCosmeticsCustomizationStarted(function()
+    -- e.g. holster weapons, freeze movement
+end)
+```
+
+---
+
+### `OnCosmeticsCustomizationFinished`
+Fires after the character leaves the dedicated customization UI. Callback receives a `bool bCancelled` - `true` if the player discarded changes, `false` if they committed.
+
+Bind / unbind: `BindOnCosmeticsCustomizationFinished(Delegate)` / `UnbindOnCosmeticsCustomizationFinished(Delegate)`
+
+```lua title="Example"
+System:BindOnCosmeticsCustomizationFinished(function(bCancelled)
+    if not bCancelled then
+        -- persist the new look
+    end
+end)
+```
+
+/// note | Blueprint
+From Blueprint the same `BindOn<Event>` / `UnbindOn<Event>` interface functions are available. With a concrete component reference you can also use the standard "Assign / Bind Event" nodes on the component's `BlueprintAssignable` delegate properties.
+///
+
+---
+
 ## Mesh and identity (character interface)
 
 These live on `IHCharacterCosmetics` (the character pawn), not the system. Useful for retargeting and attaching to the visible cosmetic mesh.
@@ -613,10 +803,10 @@ local function DressCharacter(Character)
 
     -- Batch-equip a new look.
     local Items = UE.TArray(UE.FString)
-    Items:Add('Jacket_Leather_01')   -- Top
-    Items:Add('Jeans_Black_01')      -- Bottoms
-    Items:Add('Boots_Combat_01')     -- Shoes
-    Items:Add('Sunglasses_01')       -- Face.Eyewear
+    Items:Add('ee0dd5a7-24e8-3192-a308-e9fb78e12491')   -- Cosmetic.Slot.Clothing.Top. Database ID for M_Top_1 clothing
+    Items:Add('5e3620d7-0853-3831-80d1-b45092b0f785')   -- Cosmetic.Slot.Clothing.Bottoms. Database ID for M_Bottoms_Black_Short clothing
+    Items:Add('fb7b19ef-493b-36e9-8e1b-5de70db5e976')   -- Cosmetic.Slot.Clothing.Shoes. Database ID for M_Shoes_Out_Boots clothing
+    Items:Add('7e9ffbdd-4916-374f-9a35-86c73b0b9232')   -- Cosmetic.Slot.Accessory.Head.Hat. Database ID for M_Hat_Cap clothing.
     System:EquipCosmeticItems(Items)
 
     -- Tint the jacket.
@@ -684,5 +874,62 @@ local function PrintLoadout(Character)
                 tostring(Entry.SlotTag.TagName), Entry.ItemID))
         end
     end
+end
+```
+---
+
+### React to cosmetic changes
+
+Subscribe on init, react to loadout and UI-state changes, and unbind on teardown. The callbacks are stored on `self` so the exact same references can be handed to `UnbindOn*` later - inline functions could not be removed.
+
+```lua title="Reactive subscription with teardown"
+function MyClass:StartWatchingCosmetics(Character)
+    if not Character:IsInitialCosmeticsLoadDone() then
+        return false
+    end
+
+    local System = Character:GetCosmeticsSystem()
+    if not System then
+        return false
+    end
+
+    self.CosmeticsSystem = System
+
+    -- Store references so UnbindOn* can match the exact same delegate.
+    self.OnCosmeticsUpdated = function(NewLoadout)
+        local equipped = self.CosmeticsSystem:GetEquippedItemIDs(UE.FGameplayTagContainer())
+        print('Outfit changed, equipped item count:', equipped:Length())
+    end
+
+    self.OnCustomizationStarted = function()
+        self:SetMovementLocked(true)        -- lock the pawn down while in the wardrobe
+    end
+
+    self.OnCustomizationFinished = function(bCancelled)
+        self:SetMovementLocked(false)
+        if not bCancelled then
+            -- player committed; persist or sync the new look here
+        end
+    end
+
+    System:BindOnCosmeticsUpdated(self.OnCosmeticsUpdated)
+    System:BindOnCosmeticsCustomizationStarted(self.OnCustomizationStarted)
+    System:BindOnCosmeticsCustomizationFinished(self.OnCustomizationFinished)
+
+    return true
+end
+
+-- Always balance binds. Call from EndPlay / destruction.
+function MyClass:StopWatchingCosmetics()
+    local System = self.CosmeticsSystem
+    if not System then
+        return
+    end
+
+    System:UnbindOnCosmeticsUpdated(self.OnCosmeticsUpdated)
+    System:UnbindOnCosmeticsCustomizationStarted(self.OnCustomizationStarted)
+    System:UnbindOnCosmeticsCustomizationFinished(self.OnCustomizationFinished)
+
+    self.CosmeticsSystem = nil
 end
 ```
