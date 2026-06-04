@@ -268,12 +268,12 @@ Once everything works as expected, publish your package so it is available for d
 
 ---
 
-## Bonus: Alternative Creation Methods
-
-Instead of sculpting a head manually, you can also:
-
-- Conform your MetaHuman character head to an existing skeletal mesh.
-- Import a **DNA file** authored in Blender/Maya.
-- Conform your MetaHuman character to a MetaHuman identity created from a photo scan or a static mesh. See the [Mesh to MetaHuman documentation](https://dev.epicgames.com/documentation/metahuman/mesh-to-metahuman) for more details about creating a MetaHuman identity.
+## Bonus: Head Conform Methods
 
 ![Conform Window](cc_metahumans_assets/22-bonus.png)
+
+Instead of sculpting a head manually, you can also use the Conform Tool from Head section. You can choose one of the methods to conform your metahuman character head:
+
+- Conform your MetaHuman character head to an existing skeletal mesh.
+- Conform your MetaHuman character to a **DNA file** authored externally.
+- Conform your MetaHuman character to a MetaHuman identity created from a photo scan or a static mesh. See the [Mesh to MetaHuman documentation](https://dev.epicgames.com/documentation/metahuman/mesh-to-metahuman) for more details about creating a MetaHuman identity.
