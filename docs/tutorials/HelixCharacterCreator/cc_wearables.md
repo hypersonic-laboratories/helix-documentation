@@ -183,9 +183,23 @@ If this happens to you it's important you adjust your weight painting. You can d
 
 #### LOD Setup
 
-Your wearables need to have valid LOD data to work properly with HELIX Character Creator.
+Your wearables need to have valid LOD data to work properly with HELIX Character Creator. To ensure that, open your imported skeletal mesh asset, and find `LODSettings` property. It needs to be assigned one of the LOD Settings Data Asset listed below, according to type of the wearable:
 
-TODO
+| LOD Settings Data | Path | Description |
+|---|---|---|
+| **Clothing_Body_LODSettings_Medium** | /MetaHumanCharacter/Clothing/Clothing_Body_LODSettings_Medium | Use for wearables attached to body part of the character (anything below head) |
+| **Clothing_Face_LODSettings_Medium** | /MetaHumanCharacter/Clothing/Clothing_Face_LODSettings_Medium | Use for wearables attached to head part of the character (anything above neck, except hair) |
+| **Hair_LODSettings_Medium** | /MetaHumanCharacter/Hair/Hair_LODSettings_Medium | Use for hair meshes |
+| **Face_LODSettings_Medium** | /MetaHumanCharacter/Face/Face_LODSettings_Medium | Internal data asset. Automatically assigned to generated metahuman heads with metahuman character generator. |
+| **Body_LODSettings_Medium** | /MetaHumanCharacter/Body/IdentityTemplate/Body_LODSettings_Medium | Internal data asset. Utilized in base cut body meshes. |
+
+![image.png](cc_wearables_assets/lod-settings.png)
+
+After assigning the data asset, set the `Number of LODs` field to 3, and hit `Regenerate` button to generate LOD data with new settings.
+
+/// warning | Vault Packaging LOD Settings Rule
+If the asset is using anything different than listed data assets, or different LOD count other than 3, the vault packaging process will fail with corresponding errors.
+///
 
 #### Material Creation
 
