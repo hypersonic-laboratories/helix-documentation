@@ -288,7 +288,7 @@ Following this route for materials on your wearables will disable coloring suppo
     | **Display Name** | A meaningful name shown in the UI. |
     | **Preset Icon** | An icon texture, if you have one. |
     | **Material Override Template** | If your mesh has a correct setup as described in the Material Setup step, clicking "Auto-Fill From Mesh" will automatically add runtime coloring support for your wearable. After slots are created, you can rename the `Display Name` fields to describe each material slot of your mesh. |
-    | **Hides Slots** | List of cosmetic slots to hide when this wearable is equipped. |
+    | **Hides Slots** | List of cosmetic slots to hide when this wearable is equipped. You can either hide body parts if your clothing fully covers them, or hide other clothing slots if your wearable is likely to conflict with them. |
     | **Additional Tags** | List of additional metadata tags for your wearable. These tags are used for categorization purposes in the HELIX Character Creator UI. |
     | **Is Hidden From Database** | Hides your entry from the HELIX Character Creator UI, if enabled. |
     | **Mesh** | Assign the imported skeletal mesh here. |
