@@ -17,8 +17,6 @@ Before you begin, make sure you have:
 
 ## 1. Project Setup
 
-To integrate your wearables into HELIX, you must first download and launch Helix Studio.
-
 1. Launch Helix Studio
 2. Select the Helix tab to see the template projects
 3. Select the appropriate template (we'll be using the Wearables template)
