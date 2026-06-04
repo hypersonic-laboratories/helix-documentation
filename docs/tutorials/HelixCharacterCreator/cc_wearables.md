@@ -187,32 +187,54 @@ Your wearables need to have valid LOD data to work properly with HELIX Character
 
 | LOD Settings Data | Path | Description |
 |---|---|---|
-| **Clothing_Body_LODSettings_Medium** | /MetaHumanCharacter/Clothing/Clothing_Body_LODSettings_Medium | Use for wearables attached to body part of the character (anything below head) |
-| **Clothing_Face_LODSettings_Medium** | /MetaHumanCharacter/Clothing/Clothing_Face_LODSettings_Medium | Use for wearables attached to head part of the character (anything above neck, except hair) |
-| **Hair_LODSettings_Medium** | /MetaHumanCharacter/Hair/Hair_LODSettings_Medium | Use for hair meshes |
-| **Face_LODSettings_Medium** | /MetaHumanCharacter/Face/Face_LODSettings_Medium | Internal data asset. Automatically assigned to generated metahuman heads with metahuman character generator. |
-| **Body_LODSettings_Medium** | /MetaHumanCharacter/Body/IdentityTemplate/Body_LODSettings_Medium | Internal data asset. Utilized in base cut body meshes. |
+| **Clothing_Body_LODSettings_Medium** | `/MetaHumanCharacter/Clothing/Clothing_Body_LODSettings_Medium` | Use for wearables attached to body part of the character (anything below head) |
+| **Clothing_Face_LODSettings_Medium** | `/MetaHumanCharacter/Clothing/Clothing_Face_LODSettings_Medium` | Use for wearables attached to head part of the character (anything above neck, except hair) |
+| **Hair_LODSettings_Medium** | `/MetaHumanCharacter/Hair/Hair_LODSettings_Medium` | Use for hair meshes |
+| **Face_LODSettings_Medium** | `/MetaHumanCharacter/Face/Face_LODSettings_Medium` | Internal data asset. Automatically assigned to generated metahuman heads with metahuman character generator. |
+| **Body_LODSettings_Medium** | `/MetaHumanCharacter/Body/IdentityTemplate/Body_LODSettings_Medium` | Internal data asset. Utilized in base cut body meshes. |
 
 ![image.png](cc_wearables_assets/lod-settings.png)
 
 After assigning the data asset, set the `Number of LODs` field to 3, and hit `Regenerate` button to generate LOD data with new settings.
 
 /// warning | Vault Packaging LOD Settings Rule
-If the asset is using anything different than listed data assets, or different LOD count other than 3, the vault packaging process will fail with corresponding errors.
+If the skeletal mesh is using anything different than listed data assets for LOD settings, or different LOD count other than 3, the vault packaging process will fail.
 ///
 
-#### Material Creation
+#### Material Setup
 
-Your wearables need to use `MM_BaseCloth` master material to be compatible with HELIX Character Creator, which can be found at `/AdvancedCharacterCreator/Materials/MM_BaseCloth`.
+Your wearables need to use one of the defined master materials listed below to be compatible with HELIX Character Creator:
 
-TODO
+| Master Material | Path | Description |
+|---|---|---|
+| **MM_BaseCloth** | `/AdvancedCharacterCreator/Materials/MM_BaseCloth` | Base material for classic Color/Normal/ORM texture based setup |
+| **MM_BaseCloth_Glass** | `/AdvancedCharacterCreator/Materials/MM_BaseCloth_Glass` | Base material for transparent sections of wearables (i.e, sunglasses) |
+| **MM_Stitches** | `/AdvancedCharacterCreator/Materials/MM_Stitches` | Base material for masked stitch sections of wearables |
+| **M_Invis** | `/AdvancedCharacterCreator/Materials/M_Invis` | Invisible material. Can be used to hide specific sections of wearables if required. |
 
-/// note | Transparent Material Support On Clothing
-In some cases, you might need transparent sections on your clothing (e.g, sunglasses). In that case, you can alternatively use `MM_BaseCloth_Glass` master material to create new material instances for your clothing.
+To create a material instance with one of the master materials, just right click an empty area on content browser, and select material instance from menu:
+
+![image.png](cc_wearables_assets/material-1.png)
+
+Open the material instance and pick one of the allowed master materials as parent:
+
+![image.png](cc_wearables_assets/material-2.png)
+
+Assuming it's a material inheriting from `MM_BaseCloth`, add your base textures into the corresponding fields. Tweak any vector/scalar parameters to your liking.
+
+![image.png](cc_wearables_assets/material-3.png)
+
+Lastly, assign the new material instance to one of the slots on your skeletal mesh. Repeat the steps for each slot if you need different materials per slot.
+
+/// note | Additional Master Materials
+You can also use any base engine material from `/Engine/EngineMaterials/` folder, which is currently whitelisted in packaging rules.
+///
+
+/// warning | Vault Packaging Material Rule
+If the skeletal mesh is using any material instance inheriting from different master material than listed ones, the vault packaging process will fail.
 ///
 
 <!--
-#### Material Creation (Basic Custom Material)
 
 To create a standard material for your assets presuming you already have textures and have your wearable UV mapped is pretty simple.
 
@@ -242,16 +264,18 @@ Following this route for materials on your wearables will disable coloring suppo
     ///
 -->
 
-## 8. Character Creator Integration & Data Asset Creation
+## 8. HELIX Character Creator Integration
 
 1. Find `DA_Wearables` data asset in your package folder and open it.
 2. Select the appropriate wearable type (e.g. Bottoms).
 3. Then press "+ Add" to create a new element in the category you choose. 
-4. Give your new wearable a unique ID name by double clicking the tile's name. (e.g. F**_SportsShorts01** - M denoting Male)
+4. Give your new wearable a unique ID by double clicking the tile's name. (e.g. F**_SportsShorts01** - M denoting Male)
 
 ---
 
 ## 9. Wearable Data Setup
+
+After creating your data asset entry, fill the properties as described below:
 
 TODO: Add properties table here
 
