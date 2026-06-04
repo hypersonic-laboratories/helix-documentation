@@ -196,17 +196,17 @@ Once rigging completes, click **Assembly** in the side toolbar.
 
     | Field | Value |
     |---|---|
-    | **Body Base Color Texture** | Assign the `T_Body_VC_VT` texture from your assembled metahuman character |
-    | **Head Accessory Offset Transform** | Custom transform offset to apply to attached head accessories to your head mesh |
-    | **Hair Offset Transform** | Custom transform offset to apply to attached hair to your head mesh |
-    | **Supported Gender** | Match the body type you chose in MetaHuman Creator |
-    | **Display Name** | A meaningful name shown in the UI |
-    | **Preset Icon** | An icon texture, if you have one |
+    | **Body Base Color Texture** | Assign the `T_Body_VC_VT` texture from your assembled metahuman character. |
+    | **Head Accessory Offset Transform** | Custom transform offset to apply to attached head accessories to your head mesh. |
+    | **Hair Offset Transform** | Custom transform offset to apply to attached hair to your head mesh. |
+    | **Supported Gender** | Match the body type you chose in MetaHuman Creator. |
+    | **Display Name** | A meaningful name shown in the UI. |
+    | **Preset Icon** | An icon texture, if you have one. |
     | **Material Override Template** | List of available material slot runtime parameter modifications for your head mesh. See next section about how to set this up. |
-    | **Hides Slots** | List of cosmetic slots to hide when this head is selected. Usually, you wouldn't need to assign a tag into this field |
-    | **Additional Tags** | List of additional metadata tags for your head. Those tags are used for categorization purposes on HELIX Character Creator UI |
-    | **Is Hidden From Database** | Hides your entry from the HELIX Character Creator UI, if enabled |
-    | **Preset Skeletal Mesh** | Assign your new head mesh here |
+    | **Hides Slots** | List of cosmetic slots to hide when this head is selected. Usually, you wouldn't need to assign a tag into this field. |
+    | **Additional Tags** | List of additional metadata tags for your head. Those tags are used for categorization purposes on HELIX Character Creator UI. |
+    | **Is Hidden From Database** | Hides your entry from the HELIX Character Creator UI, if enabled. |
+    | **Preset Skeletal Mesh** | Assign your new head mesh here. |
 
 ---
 
