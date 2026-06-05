@@ -68,14 +68,14 @@ If your character mesh is using same skeleton with Unreal Engine 5 Manny/Quinn a
 
     ![image.png](cc_characters_assets/3.png)
 
-2. If you get errors about bone merge process being failed or missing bones on target skeleton, that means your character mesh is not compatible with this method and you should follow thesteps in [4.2](https://development.helix-documentation.pages.dev/tutorials/custom_characters/#32-custom-rig-based-character-mesh) instead.
+2. If you get errors about bone merge process being failed or missing bones on target skeleton, that means your character mesh is not compatible with this method and you should follow thesteps in [4.2](https://development.helix-documentation.pages.dev/tutorials/HelixCharacterCreator/cc_characters/#32-custom-rig-based-character-mesh) instead.
 
 ### 4.2. Custom Rig Based Character Mesh
 
 If your character mesh is using a custom rig (including old Unreal Engine 4 mannequin skeleton), it will need additional steps to set-up an IK Rig retageter to get it compatible with HELIX characters.
 
 /// warning | Warning
-Please note that runtime retargeting has an additional CPU cost per character rendered on screen. If you're planning your mesh to be used by mass number of characters in your world, please prefer rigging it with Unreal Engine 5 skeleton and follow the steps in [4.1](https://development.helix-documentation.pages.dev/tutorials/custom_characters/#31-unreal-engine-5-rig-based-character-mesh) to directly use it without need of retargeting.
+Please note that runtime retargeting has an additional CPU cost per character rendered on screen. If you're planning your mesh to be used by mass number of characters in your world, please prefer rigging it with Unreal Engine 5 skeleton and follow the steps in [4.1](https://development.helix-documentation.pages.dev/tutorials/HelixCharacterCreator/cc_characters/#31-unreal-engine-5-rig-based-character-mesh) to directly use it without need of retargeting.
 ///
 
 /// warning | Warning
