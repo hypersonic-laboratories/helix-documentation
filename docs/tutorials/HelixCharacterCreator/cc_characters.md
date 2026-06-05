@@ -247,7 +247,7 @@ This method doesn't require you to cook the package on the previous steps. As lo
 
 1. Create a draft world and press N to bring build mode window. Then click **Vault** from bottom toolbar. Find your package from the list.
 
-    ![image.png](cc_wearables_assets/hs-new-5.png)
+    ![image.png](cc_characters_assets/hs-new-5.png)
 
     ![image.png](cc_characters_assets/hs-new-6.png)
 
