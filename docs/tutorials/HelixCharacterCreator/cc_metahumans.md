@@ -1,6 +1,6 @@
 # Creating Custom MetaHumans
 
-This guide walks you through creating a custom MetaHuman head in **Helix Studio**, packaging it as a wearable vault package, and registering it so it appears in the in-game character creator.
+This guide walks you through creating a custom MetaHuman head in **HELIX Studio**, packaging it as a wearable **Vault** package, and uploading it to our in-game **Character Creator**.
 
 By the end you will have a custom MetaHuman head that players can select and equip on their characters at runtime.
 
@@ -8,17 +8,17 @@ By the end you will have a custom MetaHuman head that players can select and equ
 
 ## Prerequisites
 
-- Helix Studio installed.
-- An Epic account (required for the cloud rigging step).
+- **HELIX Studio** installed.
+- An Epic account (required for the Cloud rigging step).
 - Familarity with MetaHuman Creator for sculpting a custom head shape.
 
 ---
 
 ## 1. Create a Project
 
-Launch Helix Studio and create either a **new wearable sample project** or a **blank project** to start from.
+Launch **HELIX Studio** and create either a **new wearable sample project** or a **blank project** to start from.
 
-![Creating a new project in Helix Studio](cc_metahumans_assets/01-create-project.png)
+![Creating a new project in HELIX Studio](cc_metahumans_assets/01-create-project.png)
 
 ---
 
@@ -28,9 +28,13 @@ Launch Helix Studio and create either a **new wearable sample project** or a **b
 
     ![New Package dialog with type set to Wearable](cc_metahumans_assets/02-new-package.png)
 
-2. Fill in the details for your wearable vault package. Set the **type** to **Wearable**.
+    <br>
+
+2. Fill in the details for your wearable **Vault** package. Set the **type** to **Wearable**.
 
     ![New Package dialog with type set to Wearable](cc_metahumans_assets/03-new-package.png)
+    
+    <br>
 
 3. Click **Create Package**.
 
@@ -47,12 +51,14 @@ Launch Helix Studio and create either a **new wearable sample project** or a **b
 
     ![MetaHuman Character entry in the content browser context menu](cc_metahumans_assets/05-metahuman-creator-entry.png)
 
+    <br>
+
 3. Name your MetaHuman character asset and open it.
 
     ![MetaHuman character editor](cc_metahumans_assets/06-character-editor.png)
 
     /// note | Note
-    The MetaHuman Character UI is tailored to HELIX requirements. Some features available in standard Unreal Engine may not be available in the HELIX MetaHuman character creator.
+    The MetaHuman Character UI is tailored to **HELIX** requirements. Some features available in standard Unreal Engine may not be available in the **HELIX MetaHuman Character Creator**.
     ///
 
 ---
@@ -76,7 +82,7 @@ The body type determines gender compatibility for items, so choose it carefully.
 ///
 
 /// note | Note
-Body sculpting is **currently not supported**, and the generated body mesh won't be used by the character creator. You can adjust body proportions in the HELIX Character Creator's body section instead.
+Body sculpting is **currently not supported**, and the generated body mesh won't be used by the **Character Creator**. You can adjust body proportions in the **HELIX Character Creator**'s body section instead.
 ///
 
 ---
@@ -108,7 +114,7 @@ It's recommended to align the neck to body after finalizing the head sculpting, 
 
 Open the **Materials** section to tweak your character's textures. Here you can change:
 
-- Skin texture and color
+- Skin texture and tone
 - Eye color and iris type
 - Teeth
 - Makeup
@@ -118,11 +124,11 @@ Open the **Materials** section to tweak your character's textures. Here you can 
 For detailed material controls, see the [MetaHuman Materials documentation](https://dev.epicgames.com/documentation/metahuman/materials-controls).
 
 /// note | Note
-Even though skin color is also configurable in the HELIX Character Creator UI, the skin color chosen in MetaHuman Creator still affects your character when the head is selected. The skin color originating from MetaHuman Creator becomes the **base** skin color once the head is selected, and the in-UI skin color override is applied **additively** on top of it.
+Even though skin color is also configurable in the **HELIX Character Creator** UI, the skin color chosen in MetaHuman Creator still affects your character when the head is selected. The skin color originating from MetaHuman Creator becomes the **base** skin color once the head is selected, and the skin color that you may choose to select in the **HELIX Character Creator** UI will be applied **additively** on top of it.
 ///
 
 /// warning | Warning
-You can add makeup to your character from MetaHuman Creator, but they will conflict with makeup added through the HELIX Character Creator UI, and the MetaHuman Creator makeup will be **always visible**. Unless you have a specific reason, do not add makeup to custom heads.
+You can add makeup to your character from MetaHuman Creator, but it will conflict with makeup added through the **HELIX Character Creator** UI, and the MetaHuman Creator makeup will be **always visible**. Unless you have a specific reason, we would recommend you not to add makeup to custom heads.
 ///
 
 ---
@@ -131,49 +137,67 @@ You can add makeup to your character from MetaHuman Creator, but they will confl
 
 After finalizing your character, click the following buttons in the top toolbar:
 
-1. **Download Texture Sources**
-2. **Create Joints Only Rig**
+1. **Create Joints Only Rig**
+2. **Download Texture Sources**
 
-This may prompt you to log into an Epic account for the cloud rigging process.
+/// note | Note
+Both actions require an Epic account. If you're not signed in, clicking **Create Joints Only Rig** will trigger the login prompt, there is no separate sign-in button in MetaHuman Creator.
+///
 
 ---
 
 ## 9. Assemble the Character
 
-Once rigging completes, click **Assembly** in the side toolbar.
+Once rigging completes, go to the **Assembly** submenu in the side toolbar.
 
 1. Set the assembly type to **HELIX Optimized**.
 
     ![Assembly settings with HELIX Optimized type](cc_metahumans_assets/12-assembly-settings.png)
 
+    <br>
+
 1. Set **Root Directory** to your new package plugin folder.
 
     ![Assembly settings with HELIX Optimized type](cc_metahumans_assets/13-assembly-settings.png)
+
+    <br>
 
 3. Ensure there are **no face or body material baking overrides**. Click the trash can icons next to those fields to clear any overrides.
 
     ![Clearing material baking overrides](cc_metahumans_assets/14-clear-overrides.png)
 
     /// note | Note
-    MetaHuman Creator can export higher-resolution textures via override parameters, but this is **not recommended** for performance reasons. Use the HELIX Optimized defaults by clearing any override parameters.
+    MetaHuman Creator can export higher-resolution textures via override parameters, but this is **not recommended** for performance reasons. Use the **HELIX** Optimized defaults by clearing any override parameters.
     ///
+
+    <br>
 
 4. Once every field is correct, click **Assemble** and wait for the export to complete.
 
     ![Rigging process](cc_metahumans_assets/15-progress.png)
 
-    The export creates two folders: **Body** and **Face**. You will need to use:
+    /// warning | Memory Requirements
+    Assembling a MetaHuman Character requires at least **10 GB of free RAM**. If you have less available, Unreal Engine may crash during assembly and you could lose unsaved work.
+
+    Before assembling, close memory-heavy applications such as web browsers (Chrome, Edge), Slack, Discord, Spotify, and any other Unreal projects. You can check available memory in **Task Manager → Performance → Memory** (Windows).
+    ///
+
+    <br>
+
+    The export creates two folders: **Body** and **Face**. Verify the following items were created as you will need to use them in the next step:
 
     - **`T_Body_VC_VT`**, the base skin texture in **`Body/Baked/`** folder:
 
     ![Folder contents](cc_metahumans_assets/15-body-skin-texture-asset.png)
+
+    <br>
 
     - The custom head mesh from the **`Face`** folder:
 
     ![Folder contents](cc_metahumans_assets/15-face-mesh-asset.png)
 
     /// warning | Warning
-    The generated head mesh should have **3 LODs** and use the LOD data exported from MetaHuman Creator. Modifying the mesh's LOD data may cause it to stop working correctly in the HELIX Character Creator. It's not recommended to do any modifications to LOD setup of exported heads.
+    The generated head mesh should have **3 LODs** and use the LOD data exported from MetaHuman Creator. Modifying the mesh's LOD data may cause it to stop working correctly in the **HELIX Character Creator**. It's not recommended to do any modifications to LOD setup of exported heads.
     ///
 
 ---
@@ -184,15 +208,25 @@ Once rigging completes, click **Assembly** in the side toolbar.
 
     ![DA_Wearables data asset](cc_metahumans_assets/16-da-wearables.png)
 
-2. Select the **Face Types** category in the left panel, then click **+ Add** above it.
+    <br>
+
+2. Select the **Face Types** category in the left panel, then click **+ Add**.
 
     ![Adding a new Face Type entry](cc_metahumans_assets/17-add-face-type.png)
 
-3. Double-click the tile's name section and give it a meaningful string ID (e.g. `M_Face_MyCustomMetahuman`). 
+    <br>
 
-4. In the properties panel, configure the entry:
+3. Click the tile's name section and give it a meaningful string ID (e.g. `M_Face_MyCustomMetahuman`). 
+
+4. In the properties panel, configure everything to look similarly to the screenshot below. Please refer to the table below the screenshot for further information if you need help navigating around this menu.
 
     ![Face Type properties panel](cc_metahumans_assets/18-face-type-properties.png)
+
+    <br>
+
+    /// note | Note
+    We are providing all settings which can be of interest to you, but please note that the mandatory ones are only the following ones: **Body Base Color Texture**, **Body Base Normal Texture**, **Supported Genders**, **Display Name**, and **Preset Skeletal Mesh**.
+    ///
 
     | Field | Value |
     |---|---|
@@ -204,9 +238,15 @@ Once rigging completes, click **Assembly** in the side toolbar.
     | **Preset Icon** | An icon texture, if you have one. |
     | **Material Override Template** | List of available material slot runtime parameter modifications for your head mesh. See next section about how to set this up. |
     | **Hides Slots** | List of cosmetic slots to hide when this head is selected. Usually, you wouldn't need to assign a tag into this field. |
+<<<<<<< HEAD
     | **Additional Tags** | List of additional metadata tags for your head. Those tags are used for categorization purposes on HELIX Character Creator UI. |
     | **Is Hidden From Database** | Hides your entry from the HELIX Character Creator UI, if enabled. |
     | **Preset Skeletal Mesh** | Assign your new head mesh here. |
+=======
+    | **Additional Tags** | List of additional metadata tags for your head. Those tags are used for categorization purposes on **HELIX Character Creator** UI. |
+    | **Is Hidden From Database** | Hides your entry from the **HELIX Character Creator** UI, if enabled |
+    | **Preset Skeletal Mesh** | Assign your new head mesh here |
+>>>>>>> 2d22fcd (📝 docs: WIP custom MetaHumans tutorial)
 
 ---
 
@@ -228,7 +268,7 @@ To support runtime skin coloring:
 ## 12. Test in Play-in-Editor
 
 1. Enter Play-in-Editor in any level.
-2. Press **P** or use `CustomizeCharacter` console command while in game to open the HELIX Character Creator.
+2. Press **P** or use `CustomizeCharacter` console command while in game to open the **HELIX Character Creator**.
 3. Go to the **Head** section, your custom head mesh should appear in the list.
 4. Click it to apply your custom head to the character.
 
@@ -241,6 +281,8 @@ To support runtime skin coloring:
 After equipping different hairstyles or facial accessories, you may notice clipping against your custom head. This typically happens when the head is heavily sculpted and differs noticeably in proportion from the identity MetaHuman head.
 
 ![Offset transform fields for attachments](cc_metahumans_assets/20-offset-transforms-before.png)
+
+<br>
 
 To fix this, tweak the following fields on your head mesh entry in the data asset:
 
@@ -262,6 +304,8 @@ Once everything works as expected, publish your package so it is available for d
 1. From the toolbar menu, select **Packages → Manage Packages** and click your package name in the context menu. This opens the vault publish window.
 
     ![Vault publish window](cc_metahumans_assets/21-publish-vault.png)
+
+    <br>
 
 2. Adjust the publish fields to your liking.
 3. Click **Publish** to make your custom MetaHuman available for download in the **HELIX Vault**. Your package can now be tested on game builds by accessing vault.

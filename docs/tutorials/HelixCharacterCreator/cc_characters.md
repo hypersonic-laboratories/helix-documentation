@@ -1,18 +1,52 @@
 # Creating Custom Characters
 
-This guide walks you through the process of packaging custom character mesh assets for the [Creator Hub](creatorhub.md) using the [Creator Kit](creatorkit.md).
+This guide walks you through the process of packaging custom character mesh assets using Helix Studio.
 
-## 1. Acquiring Your Custom Character Mesh Asset
+By the end you will have a custom character mesh that players can select and equip on their characters at runtime.
+
+/// warning | Warning
+Custom character meshes do not support [wearables](https://development.helix-documentation.pages.dev/tutorials/HelixCharacterCreator/cc_wearables), and they will be disabled in character customization game UI if a custom character mesh is chosen.
+///
+
+---
+
+## Prerequisites
+
+- Helix Studio installed.
+- A **Helix account**, logged in within Helix Studio (required for the Packages tools and Vault upload).
+- A custom character mesh, prepared for importing into project (either .fbx file or import from Fab)
+
+---
+
+## 1. Create a Project
+
+Launch Helix Studio and create either a **new wearable sample project** or a **blank project** to start from.
+
+![Creating a new project in Helix Studio](cc_metahumans_assets/01-create-project.png)
+
+---
+
+## 2. Create a Wearable Vault Package
+
+1. From the toolbar menu, select **Packages → Manage Packages → New Package**.
+
+    ![New Package dialog with type set to Wearable](cc_metahumans_assets/02-new-package.png)
+
+2. Fill in the details for your wearable vault package. Set the **type** to **Wearable**.
+
+    ![New Package dialog with type set to Wearable](cc_metahumans_assets/03-new-package.png)
+
+3. Click **Create Package**.
+
+    Package creation generates a new plugin folder named after your package. This folder is the **root** where you gather all MetaHuman-related assets.
+
+    ![New Package dialog with type set to Wearable](cc_metahumans_assets/04-new-package.png)
+
+## 3. Acquiring Your Custom Character Mesh Asset
 
 Either use your favorite modeling tool to create and skin a custom character mesh, or get a character mesh from [Fab](https://fab.com).
 
-/// note | Source Assets
-If required, you can download our HELIX Unreal Engine 5 [Manny](https://drive.google.com/file/d/1qTCsg0_hac0-UlHvduxTFSdeNumvkxAh/view?usp=drive_link) and [Quinn](https://drive.google.com/file/d/1BqRV-v3xmHjGly0AYyxDAInhHAFltRhq/view?usp=drive_link) base skeletal mesh source files to use as reference on your character work.
-///
-
-/// warning | Warning
-Custom character meshes do not support [wearables](https://development.helix-documentation.pages.dev/tutorials/custom_cc_assets), and they will be disabled in character customization game UI if a custom character mesh is chosen.
-///
+If you're using a character pack acquired from Fab, just simply move textures, materials and character mesh into your package folder. Otherwise, if you have an `.fbx` file to import into project, import it directly into the created folder. Do not forget to fix redirectors.
 
 /// warning | Warning
 Custom character meshes should closely match the proportions of the standard Unreal Engine 5 Manny/Quinn mannequins. This is not a strict requirement; however, substantial differences in limb length, body proportions, or overall scale may cause animation or gameplay systems to behave incorrectly, including interaction traces, first person view mode quality, collision/hit detection, IK solvers, and ability logic.
@@ -22,39 +56,9 @@ Custom character meshes should closely match the proportions of the standard Unr
 
 ---
 
-## 2. Preparing Your Custom Character Mesh Package
+## 4. Setting Up Your Custom Character Mesh
 
-For this tutorial, we will be using a robot character mesh acquired from Fab.
-
-1. Launch the **Creator Kit** editor.
-
-2. Access the **HELIX Packaging Tool** from the main toolbar.
-
-3. In the packaging tool window, click **New Package**.
-
-4. Enter a unique Package Name (e.g., MyCustomCharacterMesh).
-
-5. Select **Wearable** as the **Package Type**. The workflow with custom character meshes is very similar to [wearable assets](custom_cc_assets.md). So, the same package type is designed to work with both.
-
-    ![image.png](cc_characters_assets/1.png)
-
-6. Click **Add New Package**. This action creates a dedicated folder for your assets (e.g., **Plugins/Wearable_MyCustomCharacterMesh**).
-
-7. If you're using a character pack acquired from Fab, just simply move textures, materials and character mesh into your package folder. Otherwise, if you have an `.fbx` file to import into project, import it directly into the created folder. Fix redirectors if required.
-
-    /// info | Note
-    Alternatively, you can also right click to your pack folder imported from Fab and select **Convert to Package (Wearable)** to create a package in-place. In that case, steps 2-6 are not required.
-
-    ![image.png](cc_characters_assets/u_0.png)
-    ///
-
-8. Optionally, you can also import a thumbnail image for your custom character mesh in the same folder.
-
----
-
-## 3. Setting Up Your Custom Character Mesh
-
-### 3.1. Unreal Engine 5 Rig Based Character Mesh
+### 4.1. Unreal Engine 5 Rig Based Character Mesh
 
 If your character mesh is using same skeleton with Unreal Engine 5 Manny/Quinn and has similar proportions with them, you can directly use your mesh without need of runtime retargeting.
 
@@ -66,7 +70,7 @@ If your character mesh is using same skeleton with Unreal Engine 5 Manny/Quinn a
 
 2. If you get errors about bone merge process being failed or missing bones on target skeleton, that means your character mesh is not compatible with this method and you should follow thesteps in [3.2](https://development.helix-documentation.pages.dev/tutorials/custom_characters/#32-custom-rig-based-character-mesh) instead.
 
-### 3.2. Custom Rig Based Character Mesh
+### 4.2. Custom Rig Based Character Mesh
 
 If your character mesh is using a custom rig (including old Unreal Engine 4 mannequin skeleton), it will need additional steps to set-up an IK Rig retageter to get it compatible with HELIX characters.
 
@@ -98,7 +102,7 @@ Ensure all of your skeleton bones have unit scale (1.0). If your character bones
 
     ![image.png](cc_characters_assets/u_4.gif)
 
-4. If there are issues with auto generated bone chains or IK targets, this usually happens if your character has an uncommon bone naming style or hierarchy, and you need to manually create each bone chain for your skeleton. Please check [IK Rig Documentation](https://dev.epicgames.com/documentation/en-us/unreal-engine/ik-rig-in-unreal-engine?application_version=5.5) for more information about manually setting up an IK Rig asset for skeletons.
+4. If there are issues with auto generated bone chains or IK targets, this usually happens if your character has an uncommon bone naming style or hierarchy, and you need to manually create each bone chain for your skeleton. Please check [IK Rig Documentation](https://dev.epicgames.com/documentation/en-us/unreal-engine/ik-rig-in-unreal-engine?application_version=5.7) for more information about manually setting up an IK Rig asset for skeletons.
 
 5. After IK Rig asset is ready, we need to create an IK Retargeter asset to define how animations should be retargeted from HELIX character base mesh to your custom mesh. To do that, **Right Click** to an empty space in your package folder, and select **Animation** -> **Retargeting** -> **IK Retargeter**. Open the created asset.
 
@@ -150,7 +154,7 @@ Ensure all of your skeleton bones have unit scale (1.0). If your character bones
 
 ---
 
-## 4. Tweaking Your Custom Character Mesh
+## 5. Tweaking Your Custom Character Mesh
 
 Custom character meshes have additional requirements to ensure they have optimal performance and fully compatible with gameplay systems in HELIX. Those steps are required to successfully package your assets.
 
@@ -158,7 +162,7 @@ Custom character meshes have additional requirements to ensure they have optimal
 
     ![image.png](cc_characters_assets/8.png)
 
-2. In your skeletal mesh asset, make sure you have LOD data generated for your mesh. This ensures your mesh does not negatively impact performance for distant characters using your custom character mesh. You can set LOD count to 4 and click regenerate to automatically generate LODs for your mesh, as shown below. Please check [Skeletal Mesh LODs Documentation](https://dev.epicgames.com/documentation/en-us/unreal-engine/skeletal-mesh-lods-in-unreal-engine?application_version=5.5) for more information.
+2. In your skeletal mesh asset, make sure you have LOD data generated for your mesh. This ensures your mesh does not negatively impact performance for distant characters using your custom character mesh. You can set LOD count to 3 and click regenerate to automatically generate LODs for your mesh, as shown below. Please check [Skeletal Mesh LODs Documentation](https://dev.epicgames.com/documentation/en-us/unreal-engine/skeletal-mesh-lods-in-unreal-engine?application_version=5.5) for more information.
 
     ![image.png](cc_characters_assets/4.png)
 
@@ -172,7 +176,7 @@ Custom character meshes have additional requirements to ensure they have optimal
 
 ---
 
-## 5. (Optional) Post-Anim Physics Simulation Support
+## 6. (Optional) Post-Anim Physics Simulation Support
 
 Custom character meshes optionally can simulate post-anim physics with post-process animation blueprints. Please check [Rigid Body Documentation](https://dev.epicgames.com/documentation/en-us/unreal-engine/animation-blueprint-rigid-body-in-unreal-engine?application_version=5.5) and [Anim Dynamics Documentation](https://dev.epicgames.com/documentation/en-us/unreal-engine/animation-blueprint-animdynamics-in-unreal-engine?application_version=5.5) for more information about how to create one for your character if applicable.
 
@@ -184,27 +188,30 @@ Post-process animation blueprint support is experimental and creators are respon
 
     ![image.png](cc_characters_assets/u_14.png)
 
-2. Make sure to also set a LOD threshold for your animation blueprint in the next **Post-Process AnimBP LOD Threshold** field, according to LOD count of your mesh. For example, if your mesh has 4 LODs, it usually makes sense to set this as half of the value, 2. This will ensure your performance heavy physics implementation won't be executed for non-significant characters on the screen. 
+2. Make sure to also set a LOD threshold for your animation blueprint in the next **Post-Process AnimBP LOD Threshold** field, according to LOD count of your mesh. For example, if your mesh has 3 LODs, it usually makes sense to limit it only to LOD0 by setting the value to 0. This will ensure your performance heavy physics implementation won't be executed for non-significant characters on the screen. 
 
 ---
 
-## 6. Finalizing and Cooking The Package
+## 7. Finalizing and Cooking The Package
 
 1. Make sure all the depending assets by your custom character mesh are placed inside same package folder. If one of those assets are placed outside of the created package folder, cooked `.pak` file will have missing dependencies and this might cause crashes or runtime errors during playthrough with this package.
 
-2. **Right Click** to an empty space in your package folder, and choose **Miscellaneous** -> **Data Asset**.
+2. Find the `DA_Wearables` data asset in your package folder and open it.
+3. Select the appropriate wearable type, `Custom Characters`
+4. Press "+ Add" to create a new element in the category.
+5. Give your new custom character mesh a unique ID by double clicking the tile's name.
+6. After creating your data asset entry, fill in the properties as described below:
 
-3. Choose **Character Customization Data Asset** from the new window. This data asset is responsible for categorizing your clothing and storing the required parameters.
-
-    ![image.png](WearableTutImages/9.png)
-
-4. Give it a meaningful name, something like `DA_MyCustomCharacterMesh` and open. Click **+** button and choose the **Custom Meshes** type.
-
-5. Create a new sub-entry inside your new entry, and give it a meaningful name.
-
-6. Fill the required parameters for your custom mesh. Usually, you should leave the **Head Mesh** field empty, and assign your full body custom mesh to **Body Mesh** field. Choose gender type for the one closest to your character mesh body proportions. This will ensure the correct base mesh is used while playing animations for your custom mesh.
-
-    ![image.png](cc_characters_assets/5.png)
+    | Property | Description |
+    |---|---|
+    | **Body Mesh** | Assign the imported skeletal mesh here. |
+    | **Supported Genders** | Select the gender most closest to your custom character. This will change the base animation retarget source mesh used with your custom mesh. |
+    | **Display Name** | A meaningful name shown in the UI. |
+    | **Preset Icon** | An icon texture, if you have one. |
+    | **Material Override Template** | Not functional for custom characters. |
+    | **Hides Slots** | Not functional for custom characters. |
+    | **Additional Tags** | List of additional metadata tags for your wearable. These tags are used for categorization purposes in the HELIX Character Creator UI. |
+    | **Is Hidden From Database** | Hides your entry from the HELIX Character Creator UI, if enabled. |
 
 7. Return to the HELIX Packaging Tool window.
 
@@ -218,19 +225,19 @@ Post-process animation blueprint support is experimental and creators are respon
 
 ---
 
-## 7. Testing Your Custom Character Mesh
+## 8. Testing Your Custom Character Mesh
 
-### 1. In Creator Kit
+### 8.1. In Creator Kit
 
 This method doesn't require you to cook the package on the previous steps. As long as you placed all the required assets in your package folder in Creator Kit, and created the data asset as explained above, it will automatically become available for editor playthroughs.
 
-1. Press play in **Creator Kit** editor, and press **P** button to show the **Character Customization UI** for your character.
+1. Press play in **Creator Kit** editor, and press **P** button to show the **HELIX Character Creator UI** for your character.
 
 2. In the shown UI, you should be able to navigate to your new custom mesh in **Custom** tab and click on it to test on the character.
 
     ![image.png](cc_characters_assets/6.png)
 
-### 2. In HELIX
+### 8.2. In HELIX
 
 1. Create a draft world and import the `.pak` file you've cooked in **Creator Kit**.
 
@@ -256,6 +263,6 @@ This method doesn't require you to cook the package on the previous steps. As lo
 
 ---
 
-## 6. On Your Own
+## 9. On Your Own
 
-Once you've followed these steps, uploaded your package to [Creator Hub](creatorhub.md), and imported it into your world, your new custom character mesh will be available for players joining your public world!
+Once you've followed these steps, uploaded your package to vault, and imported it into your world, your new custom character mesh will be available for players joining your public world!

@@ -678,7 +678,7 @@ Returns the `TScriptInterface<IHCosmeticsSystem>` for this character. The entry 
 
 ---
 
-## Worked examples
+## Sample Scripts
 
 ### Dress a character from scratch
 
@@ -779,11 +779,10 @@ local function PrintLoadout(Character)
     end
 end
 ```
+
 ---
 
 ### React to cosmetic changes
-
-Subscribe on init, react to loadout and UI-state changes, and unbind on teardown. The callbacks are stored on `self` so the exact same references can be handed to `UnbindOn*` later - inline functions could not be removed.
 
 ```lua title="Reactive subscription with teardown"
 function MyClass:StartWatchingCosmetics(Character)
@@ -821,6 +820,7 @@ function MyClass:StartWatchingCosmetics(Character)
 
     return true
 end
+
 
 -- Always balance binds. Call from EndPlay / destruction.
 function MyClass:StopWatchingCosmetics()
