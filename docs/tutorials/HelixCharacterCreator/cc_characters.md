@@ -213,25 +213,31 @@ Post-process animation blueprint support is experimental and creators are respon
     | **Additional Tags** | List of additional metadata tags for your wearable. These tags are used for categorization purposes in the HELIX Character Creator UI. |
     | **Is Hidden From Database** | Hides your entry from the HELIX Character Creator UI, if enabled. |
 
-7. Return to the HELIX Packaging Tool window.
+7. Find your package from top toolbar and click on it
 
-8. With your package selected, click the **Package** button. This process will cook your assets into the final `.pak` file format required by the HELIX Creator Hub. This may take some time.
+    ![image.png](cc_characters_assets/hs-new-1.png)
 
-    ![image.png](cc_characters_assets/9.png)
+8. Ensure information on the properties windows is correct, and fill any missing fields if needed. Click **Publish**.
 
-9. Once cooking is complete, a file explorer window will automatically open, displaying your final `.pak` files. Your custom character mesh is now ready to be uploaded to the **Creator Hub**!
+   ![image.png](cc_characters_assets/hs-new-2.png)
 
-    ![image.png](cc_characters_assets/7.png)
+9. Select `Upload to Vault` option and choose what you want to do with the package (update current, make latest, publish as new). For current tutorial, we'll choose publish as new. Click **Start** button to start packaging process.
+
+   ![image.png](cc_characters_assets/hs-new-3.png)
+
+10. Once packaging is complete, your package will be ready to use from HELIX Vault on game build.
+
+    ![image.png](cc_characters_assets/hs-new-4.png)
 
 ---
 
 ## 8. Testing Your Custom Character Mesh
 
-### 8.1. In Creator Kit
+### 8.1. In HELIX Studio
 
-This method doesn't require you to cook the package on the previous steps. As long as you placed all the required assets in your package folder in Creator Kit, and created the data asset as explained above, it will automatically become available for editor playthroughs.
+This method doesn't require you to cook the package on the previous steps. As long as you placed all the required assets in your package folder in HELIX Studio, and created the data asset as explained above, it will automatically become available for editor playthroughs.
 
-1. Press play in **Creator Kit** editor, and press **P** button to show the **HELIX Character Creator UI** for your character.
+1. Press play in **HELIX Studio** editor, and press **P** button to show the **HELIX Character Creator UI** for your character.
 
 2. In the shown UI, you should be able to navigate to your new custom mesh in **Custom** tab and click on it to test on the character.
 
@@ -239,19 +245,23 @@ This method doesn't require you to cook the package on the previous steps. As lo
 
 ### 8.2. In HELIX
 
-1. Create a draft world and import the `.pak` file you've cooked in **Creator Kit**.
+1. Create a draft world and press N to bring build mode window. Then click **Vault** from bottom toolbar. Find your package from the list.
 
-    ![image.png](WearableTutImages/14.png)
+    ![image.png](cc_wearables_assets/hs-new-5.png)
 
-    ![image.png](cc_characters_assets/10.png)
+    ![image.png](cc_characters_assets/hs-new-6.png)
 
-2. If import was successful, you should see the corresponding custom character mesh assets on left panel.
+2. Click on your package and select **Add to World**
+
+    ![image.png](cc_characters_assets/hs-new-7.png)
+
+3. If download was successful, you should see the corresponding custom character mesh assets on left panel.
 
     ![image.png](cc_characters_assets/11.png)
 
-3. Importing also makes your custom character mesh automatically available in **Character Customization UI**. You can go back to the game from build mode, and press **P** button.
+4. Go back to the game from build mode, and press **P** button.
 
-4. Your imported custom character mesh should be available in the **Custom** tab.
+5. Your imported custom character mesh should be available in the **Custom** tab.
 
     <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
     <iframe src="https://www.youtube.com/embed/eM2_7DWIIqM?si=qELiLj1TaBILbGUP"
