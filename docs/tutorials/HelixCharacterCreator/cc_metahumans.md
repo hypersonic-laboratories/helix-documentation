@@ -186,7 +186,7 @@ Once rigging completes, go to the **Assembly** submenu in the side toolbar.
 
     The export creates two folders: **Body** and **Face**. Verify the following items were created as you will need to use them in the next step:
 
-    - **`T_Body_VC_VT`**, the base skin texture in **`Body/Baked/`** folder:
+    - **`T_Body_BC_VT`** and **`T_Body_N_VT`**, the base skin color and normal textures in **`Body/Baked/`** folder:
 
     ![Folder contents](cc_metahumans_assets/15-body-skin-texture-asset.png)
 
@@ -197,7 +197,7 @@ Once rigging completes, go to the **Assembly** submenu in the side toolbar.
     ![Folder contents](cc_metahumans_assets/15-face-mesh-asset.png)
 
     /// warning | Warning
-    The generated head mesh should have **3 LODs** and use the LOD data exported from MetaHuman Creator. Modifying the mesh's LOD data may cause it to stop working correctly in the **HELIX Character Creator**. It's not recommended to do any modifications to LOD setup of exported heads.
+    The generated head mesh will have **3 LODs** by default. Modifying the mesh's LOD data may cause it to stop working correctly in the **HELIX Character Creator**. It's not recommended to do any modifications to LOD setup of exported heads.
     ///
 
 ---
@@ -224,29 +224,20 @@ Once rigging completes, go to the **Assembly** submenu in the side toolbar.
 
     <br>
 
-    /// note | Note
-    We are providing all settings which can be of interest to you, but please note that the mandatory ones are only the following ones: **Body Base Color Texture**, **Body Base Normal Texture**, **Supported Genders**, **Display Name**, and **Preset Skeletal Mesh**.
-    ///
-
     | Field | Value |
     |---|---|
-    | **Body Base Color Texture** | Assign the `T_Body_VC_VT` texture from your assembled metahuman character. |
+    | **Body Base Color Texture** | Assign the `T_Body_BC_VT` texture from your assembled metahuman character. |
+    | **Body Base Normal Texture** | Assign the `T_Body_N_VT` texture from your assembled metahuman character. |
     | **Head Accessory Offset Transform** | Custom transform offset to apply to attached head accessories to your head mesh. |
     | **Hair Offset Transform** | Custom transform offset to apply to attached hair to your head mesh. |
     | **Supported Gender** | Match the body type you chose in MetaHuman Creator. |
     | **Display Name** | A meaningful name shown in the UI. |
     | **Preset Icon** | An icon texture, if you have one. |
     | **Material Override Template** | List of available material slot runtime parameter modifications for your head mesh. See next section about how to set this up. |
-    | **Hides Slots** | List of cosmetic slots to hide when this head is selected. Usually, you wouldn't need to assign a tag into this field. |
-<<<<<<< HEAD
-    | **Additional Tags** | List of additional metadata tags for your head. Those tags are used for categorization purposes on HELIX Character Creator UI. |
+    | **Hides Slots** | List of cosmetic slots to hide when this head is selected. Usually, you don't need to assign a tag into this field. |
+    | **Additional Tags** | List of additional metadata tags for your head. Those optional tags are used for categorization purposes on HELIX Character Creator UI. |
     | **Is Hidden From Database** | Hides your entry from the HELIX Character Creator UI, if enabled. |
     | **Preset Skeletal Mesh** | Assign your new head mesh here. |
-=======
-    | **Additional Tags** | List of additional metadata tags for your head. Those tags are used for categorization purposes on **HELIX Character Creator** UI. |
-    | **Is Hidden From Database** | Hides your entry from the **HELIX Character Creator** UI, if enabled |
-    | **Preset Skeletal Mesh** | Assign your new head mesh here |
->>>>>>> 2d22fcd (📝 docs: WIP custom MetaHumans tutorial)
 
 ---
 
@@ -316,7 +307,7 @@ Once everything works as expected, publish your package so it is available for d
 
 ![Conform Window](cc_metahumans_assets/22-bonus.png)
 
-Instead of sculpting a head manually, you can also use the Conform Tool from Head section. You can choose one of the methods to conform your metahuman character head:
+Instead of sculpting a head manually, you can also use the **Conform Tool** from **Head** section. You can choose one of the methods to conform your metahuman character head:
 
 - Conform your MetaHuman character head to an existing skeletal mesh.
 - Conform your MetaHuman character to a **DNA file** authored externally.
