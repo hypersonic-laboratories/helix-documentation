@@ -37,7 +37,7 @@ Cosmetics are streamed asynchronously. Before the first load completes, the syst
 
 ## Building gameplay tags
 
-Most of the API is tag-driven (slot identifiers, hide requests, bulk clears). Build tags exactly as you would for [`HMap`](../HelixMap/lua.md) markers.
+Most of the API is tag-driven (slot identifiers, hide requests, bulk clears). You can build tags as shown below.
 
 ```lua title="Single tag"
 local TagUtility = UE.UHelixResourceUtility
@@ -134,8 +134,6 @@ Slot tags are hierarchical. Passing a parent tag (e.g. `Cosmetic.Slot.Clothing`)
 ---
 
 ## Enums
-
-Access enum values in Lua as `UE.<EnumName>.<Value>`.
 
 ### `EHCharacterCosmeticsGender`
 `Male`, `Female`. (`None` is internal.)
@@ -641,7 +639,7 @@ Cosmetic height of the character, and the height delta between the visible body 
 ---
 
 ### `GetDefaultCharacterCosmeticsPreset`
-Returns the default preset for this character, if any. In UnLua the C++ out-parameter is returned as a second value alongside the `bool` success flag.
+Returns the default preset for this character, if any. Out-parameter is returned as a second value alongside the `bool` success flag.
 
 ```lua title="Example"
 local ok, Preset = Character:GetDefaultCharacterCosmeticsPreset()
