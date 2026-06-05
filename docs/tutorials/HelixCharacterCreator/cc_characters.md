@@ -34,13 +34,13 @@ Launch Helix Studio and create either a **new wearable sample project** or a **b
 
 2. Fill in the details for your wearable vault package. Set the **type** to **Wearable**.
 
-    ![New Package dialog with type set to Wearable](cc_metahumans_assets/03-new-package.png)
+    ![New Package dialog with type set to Wearable](cc_characters_assets/hs-new-01.png)
 
 3. Click **Create Package**.
 
-    Package creation generates a new plugin folder named after your package. This folder is the **root** where you gather all MetaHuman-related assets.
+    Package creation generates a new plugin folder named after your package. This folder is the **root** where you gather all custom character related assets.
 
-    ![New Package dialog with type set to Wearable](cc_metahumans_assets/04-new-package.png)
+    ![New Package dialog with type set to Wearable](cc_characters_assets/hs-new-00.png)
 
 ## 3. Acquiring Your Custom Character Mesh Asset
 
@@ -62,20 +62,20 @@ Custom character meshes should closely match the proportions of the standard Unr
 
 If your character mesh is using same skeleton with Unreal Engine 5 Manny/Quinn and has similar proportions with them, you can directly use your mesh without need of runtime retargeting.
 
-1. **Right Click** to your character skeletal mesh and assign `SK_Unified` as target skeleton. This ensures your mesh is encoded with the project's main skeleton asset.
+1. **Right Click** to your character skeletal mesh and assign `SK_Unified` as target skeleton, which is currently placed inside `HelixAnimation` plugin. This ensures your mesh is encoded with the project's main skeleton asset.
 
     ![image.png](cc_characters_assets/2.png)
 
     ![image.png](cc_characters_assets/3.png)
 
-2. If you get errors about bone merge process being failed or missing bones on target skeleton, that means your character mesh is not compatible with this method and you should follow thesteps in [3.2](https://development.helix-documentation.pages.dev/tutorials/custom_characters/#32-custom-rig-based-character-mesh) instead.
+2. If you get errors about bone merge process being failed or missing bones on target skeleton, that means your character mesh is not compatible with this method and you should follow thesteps in [4.2](https://development.helix-documentation.pages.dev/tutorials/custom_characters/#32-custom-rig-based-character-mesh) instead.
 
 ### 4.2. Custom Rig Based Character Mesh
 
 If your character mesh is using a custom rig (including old Unreal Engine 4 mannequin skeleton), it will need additional steps to set-up an IK Rig retageter to get it compatible with HELIX characters.
 
 /// warning | Warning
-Please note that runtime retargeting has an additional CPU cost per character rendered on screen. If you're planning your mesh to be used by mass number of characters in your world, please prefer rigging it with Unreal Engine 5 skeleton and follow the steps in [3.1](https://development.helix-documentation.pages.dev/tutorials/custom_characters/#31-unreal-engine-5-rig-based-character-mesh) to directly use it without need of retargeting.
+Please note that runtime retargeting has an additional CPU cost per character rendered on screen. If you're planning your mesh to be used by mass number of characters in your world, please prefer rigging it with Unreal Engine 5 skeleton and follow the steps in [4.1](https://development.helix-documentation.pages.dev/tutorials/custom_characters/#31-unreal-engine-5-rig-based-character-mesh) to directly use it without need of retargeting.
 ///
 
 /// warning | Warning
@@ -142,7 +142,7 @@ Ensure all of your skeleton bones have unit scale (1.0). If your character bones
 
     ![image.png](cc_characters_assets/u_12.png)
 
-14. Assign the IK Retargeter asset you've created on the previous steps into **Retargeter** field.
+14. Assign the IK Retargeter asset you've created on the previous steps into **Retargeter** field. Write down approximate body height of your character, in Unreal units (cm). This value will help animation retargeting and also improve first person camera behavior on your custom mesh.
 
     ![image.png](cc_characters_assets/u_13.png)
 
@@ -162,7 +162,7 @@ Custom character meshes have additional requirements to ensure they have optimal
 
     ![image.png](cc_characters_assets/8.png)
 
-2. In your skeletal mesh asset, make sure you have LOD data generated for your mesh. This ensures your mesh does not negatively impact performance for distant characters using your custom character mesh. You can set LOD count to 3 and click regenerate to automatically generate LODs for your mesh, as shown below. Please check [Skeletal Mesh LODs Documentation](https://dev.epicgames.com/documentation/en-us/unreal-engine/skeletal-mesh-lods-in-unreal-engine?application_version=5.5) for more information.
+2. In your skeletal mesh asset, make sure you have LOD data generated for your mesh. This ensures your mesh does not negatively impact performance for distant characters using your custom character mesh. You can set LOD count to 3 and click regenerate to automatically generate LODs for your mesh. Please check [Skeletal Mesh LODs Documentation](https://dev.epicgames.com/documentation/en-us/unreal-engine/skeletal-mesh-lods-in-unreal-engine?application_version=5.5) for more information.
 
     ![image.png](cc_characters_assets/4.png)
 
@@ -171,7 +171,7 @@ Custom character meshes have additional requirements to ensure they have optimal
     /// note | List of Required Sockets
     - **weapon_l_socket**: Left hand socket used in HELIX to attach held items. Usually should be created under `hand_l` or `weapon_l` bone of your rig.
     - **weapon_r_socket**: Right hand socket used in HELIX to attach held items and weapons. Usually should be created under `hand_r` or `weapon_r` bone of your rig.
-    * *The list will be updated with more sockets in the future*
+    * *The list might be updated with more sockets in the future*
     ///
 
 ---
@@ -197,10 +197,10 @@ Post-process animation blueprint support is experimental and creators are respon
 1. Make sure all the depending assets by your custom character mesh are placed inside same package folder. If one of those assets are placed outside of the created package folder, cooked `.pak` file will have missing dependencies and this might cause crashes or runtime errors during playthrough with this package.
 
 2. Find the `DA_Wearables` data asset in your package folder and open it.
-3. Select the appropriate wearable type, `Custom Characters`
-4. Press "+ Add" to create a new element in the category.
-5. Give your new custom character mesh a unique ID by double clicking the tile's name.
-6. After creating your data asset entry, fill in the properties as described below:
+3. Select `Custom Characters` from left panel.
+4. Press "+ Add" to create a new entry in the category.
+5. Give your new custom character entry a unique ID by double clicking the tile's name.
+6. After creating your entry, fill in the properties as described below:
 
     | Property | Description |
     |---|---|
@@ -213,7 +213,7 @@ Post-process animation blueprint support is experimental and creators are respon
     | **Additional Tags** | List of additional metadata tags for your wearable. These tags are used for categorization purposes in the HELIX Character Creator UI. |
     | **Is Hidden From Database** | Hides your entry from the HELIX Character Creator UI, if enabled. |
 
-7. Find your package from top toolbar and click on it
+7. After finishing setting up your data asset, find your package from top toolbar and click on it.
 
     ![image.png](cc_characters_assets/hs-new-1.png)
 
@@ -221,11 +221,11 @@ Post-process animation blueprint support is experimental and creators are respon
 
    ![image.png](cc_characters_assets/hs-new-2.png)
 
-9. Select `Upload to Vault` option and choose what you want to do with the package (update current, make latest, publish as new). For current tutorial, we'll choose publish as new. Click **Start** button to start packaging process.
+9. Select **Upload to Vault** option and choose what you want to do with the current package (update current, make latest, publish as new). For current tutorial, we'll choose publish as new. Click **Start** button to start packaging process.
 
    ![image.png](cc_characters_assets/hs-new-3.png)
 
-10. Once packaging is complete, your package will be ready to use from HELIX Vault on game build.
+10. Once packaging is completed, your package will be ready to use from HELIX Vault on game build.
 
     ![image.png](cc_characters_assets/hs-new-4.png)
 
