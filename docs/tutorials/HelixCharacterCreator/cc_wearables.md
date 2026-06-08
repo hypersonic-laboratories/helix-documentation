@@ -49,17 +49,17 @@ To create a pack, use the Packages dropdown in the toolbar above the viewport. I
 
 ## 3. Template Assets
 
-To create or adjust wearables to be compatible with HELIX, we've provided some meshes to serve as a guide. You can find them in the Advanced Character Creator engine plugin, in the templates folder: `/AdvancedCharacterCreator/Templates`
+To create or adjust wearables to be compatible with HELIX, we've provided some meshes to serve as a guide. You can find them in the HELIX Character Creator engine plugin, in the templates folder: `/HelixCharacterCreator/Templates`
 
 /// note | Note
-You can paste these directories directly into the content browser path (where it will likely currently say `/AdvancedCharacterCreator/Templates`) by clicking the empty space in the bar.
+You can paste these directories directly into the content browser path (where it will likely currently say `/HelixCharacterCreator/Templates`) by clicking the empty space in the bar.
 ///
 
 Each template asset group can be found in the folders below:
 
-- Full body meshes: `/AdvancedCharacterCreator/Templates/Body`
-- Split body part meshes: `/AdvancedCharacterCreator/Templates/Body/Cut`
-- Head meshes: `/AdvancedCharacterCreator/Templates/Head`
+- Full body meshes: `/HelixCharacterCreator/Templates/Body`
+- Split body part meshes: `/HelixCharacterCreator/Templates/Body/Cut`
+- Head meshes: `/HelixCharacterCreator/Templates/Head`
 
 /// note | Note
 HELIX Character Creator currently uses `SKM_F_UNDW_Tall` for female, and `SKM_M_NRW_Tall` variations as the male base mesh.
@@ -217,13 +217,13 @@ Your wearables need to use one of the defined master materials listed below to b
 
 | Master Material | Path | Description |
 |---|---|---|
-| **MM_Basic_Wearables_Opaque** | `/AdvancedCharacterCreator/Materials/MM_Basic_Wearables_Opaque` | Base material for a basic texture with tint setup. |
-| **MM_Basic_Wearables_Masked** | `/AdvancedCharacterCreator/Materials/MM_Basic_Wearables_Masked` | Base material for a basic texture with tint setup with mask functinality (e.g. masked hair) |
-| **MM_BaseCloth** | `/AdvancedCharacterCreator/Materials/MM_BaseCloth` | Base material with Color/Normal/ORM texture-based setup. More advanced than MM_Basic_Wearables |
-| **MM_BaseCloth_Glass** | `/AdvancedCharacterCreator/Materials/MM_BaseCloth_Glass` | Base material for transparent sections of wearables (e.g. sunglasses) |
-| **MM_Stitches** | `/AdvancedCharacterCreator/Materials/MM_Stitches` | Base material for masked stitch sections of wearables |
-| **M_Invis** | `/AdvancedCharacterCreator/Materials/M_Invis` | Invisible material. Can be used to hide specific sections of wearables if required. |
-| **MM_Hair_2** | `/AdvancedCharacterCreator/Materials/MM_Hair_2` | Advanced material for hair meshes. |
+| **MM_Basic_Wearables_Opaque** | `/HelixCharacterCreator/Materials/MM_Basic_Wearables_Opaque` | Base material for a basic texture with tint setup. |
+| **MM_Basic_Wearables_Masked** | `/HelixCharacterCreator/Materials/MM_Basic_Wearables_Masked` | Base material for a basic texture with tint setup with mask functinality (e.g. masked hair) |
+| **MM_BaseCloth** | `/HelixCharacterCreator/Materials/MM_BaseCloth` | Base material with Color/Normal/ORM texture-based setup. More advanced than MM_Basic_Wearables |
+| **MM_BaseCloth_Glass** | `/HelixCharacterCreator/Materials/MM_BaseCloth_Glass` | Base material for transparent sections of wearables (e.g. sunglasses) |
+| **MM_Stitches** | `/HelixCharacterCreator/Materials/MM_Stitches` | Base material for masked stitch sections of wearables |
+| **M_Invis** | `/HelixCharacterCreator/Materials/M_Invis` | Invisible material. Can be used to hide specific sections of wearables if required. |
+| **MM_Hair_2** | `/HelixCharacterCreator/Materials/MM_Hair_2` | Advanced material for hair meshes. |
 
 To create a material instance from one of the master materials, right click an empty area in the content browser and select Material Instance from the menu:
 
