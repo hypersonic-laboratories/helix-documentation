@@ -55,6 +55,7 @@ nav:
       - tutorials/HelixCharacterCreator/cc_wearables.md
       - tutorials/HelixCharacterCreator/cc_metahumans.md
       - tutorials/HelixCharacterCreator/cc_characters.md
+      - tutorials/HelixCharacterCreator/cc_dynamichair.md
       - tutorials/HelixCharacterCreator/cc_scripting.md
     - Custom Assets:
       - tutorials/custom_maps.md
