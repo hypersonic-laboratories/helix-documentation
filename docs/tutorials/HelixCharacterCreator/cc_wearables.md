@@ -223,7 +223,16 @@ Your wearables need to use one of the defined master materials listed below to b
 | **MM_BaseCloth_Glass** | `/HelixCharacterCreator/Materials/MM_BaseCloth_Glass` | Base material for transparent sections of wearables (e.g. sunglasses) |
 | **MM_Stitches** | `/HelixCharacterCreator/Materials/MM_Stitches` | Base material for masked stitch sections of wearables |
 | **M_Invis** | `/HelixCharacterCreator/Materials/M_Invis` | Invisible material. Can be used to hide specific sections of wearables if required. |
-| **MM_Hair_2** | `/HelixCharacterCreator/Materials/MM_Hair_2` | Advanced material for hair meshes. |
+| **MM_Hair_1** | `/HelixCharacterCreator/Materials/MM_Hair_2` | Base material for hair meshes. |
+| **MM_Hair_2** | `/HelixCharacterCreator/Materials/MM_Hair_2` | Base material for hair meshes. |
+
+/// note | Additional Master Materials
+You can also use any base engine material from the `/Engine/EngineMaterials/` folder, which is currently whitelisted in the packaging rules.
+///
+
+/// warning | Vault Packaging Material Rule
+If the skeletal mesh uses any material instance inheriting from a master material other than those listed, the vault packaging process will fail.
+///
 
 To create a material instance from one of the master materials, right click an empty area in the content browser and select Material Instance from the menu:
 
@@ -239,17 +248,12 @@ Add your base textures into the corresponding fields. Tweak any vector/scalar pa
 
 Lastly, assign the new material instance to one of the slots on your skeletal mesh. Repeat the steps for each slot if you need different materials per slot.
 
-/// note | Additional Master Materials
-You can also use any base engine material from the `/Engine/EngineMaterials/` folder, which is currently whitelisted in the packaging rules.
-///
-
 /// note | Material Slot Names
-When assigning your material instance to a material slot inside of your skeletal mesh, please be sure to assign your slot names a numeric value, starting from 0 in ascending order. This is defined in the field next to "Slot" inside of your material element which is found under "Material Slots in the "Asset Details" panel. 
-Please also note, wearables are limited to 8 material slots but ideally a wearable should be limited to 1 or 2 unique materials.
-///
+Wearable skeletal meshes used in HELIX Character Creator should comform a naming convention, which requires each slot name to have a numeric value, starting from 0 in ascending order as shown on the image. This is defined in the field next to **Slot** inside of your material element which is found under **Material Slots** in the **Asset Details** panel.
 
-/// warning | Vault Packaging Material Rule
-If the skeletal mesh uses any material instance inheriting from a master material other than those listed, the vault packaging process will fail.
+![image.png](cc_wearables_assets/mat-slot-names.png)
+
+Please also note, wearables are limited to 8 material slots but ideally a wearable should be limited to 1 or 2 unique materials.
 ///
 
 <!--
