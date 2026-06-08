@@ -1,4 +1,4 @@
-# Dynamic Hair
+# Creating Dynamic Hair
 
 This tutorial is an extension to the wearables documentation. Please refer to the Wearables documentation to fill any gaps in the general workflow. This tutorial will only describe the work needed for simulated hair that diverges from the original wearables documentation.
 
