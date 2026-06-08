@@ -217,10 +217,13 @@ Your wearables need to use one of the defined master materials listed below to b
 
 | Master Material | Path | Description |
 |---|---|---|
-| **MM_BaseCloth** | `/AdvancedCharacterCreator/Materials/MM_BaseCloth` | Base material for the classic Color/Normal/ORM texture-based setup |
+| **MM_Basic_Wearables_Opaque** | `/AdvancedCharacterCreator/Materials/MM_Basic_Wearables_Opaque` | Base material for a basic texture with tint setup. |
+| **MM_Basic_Wearables_Masked** | `/AdvancedCharacterCreator/Materials/MM_Basic_Wearables_Masked` | Base material for a basic texture with tint setup with mask functinality (e.g. masked hair) |
+| **MM_BaseCloth** | `/AdvancedCharacterCreator/Materials/MM_BaseCloth` | Base material with Color/Normal/ORM texture-based setup. More advanced than MM_Basic_Wearables |
 | **MM_BaseCloth_Glass** | `/AdvancedCharacterCreator/Materials/MM_BaseCloth_Glass` | Base material for transparent sections of wearables (e.g. sunglasses) |
 | **MM_Stitches** | `/AdvancedCharacterCreator/Materials/MM_Stitches` | Base material for masked stitch sections of wearables |
 | **M_Invis** | `/AdvancedCharacterCreator/Materials/M_Invis` | Invisible material. Can be used to hide specific sections of wearables if required. |
+| **MM_Hair_2** | `/AdvancedCharacterCreator/Materials/MM_Hair_2` | Advanced material for hair meshes. |
 
 To create a material instance from one of the master materials, right click an empty area in the content browser and select Material Instance from the menu:
 
@@ -230,7 +233,7 @@ Open the material instance and pick one of the allowed master materials as the p
 
 ![image.png](cc_wearables_assets/material-2.png)
 
-Assuming it inherits from `MM_BaseCloth`, add your base textures into the corresponding fields. Tweak any vector/scalar parameters to your liking.
+Add your base textures into the corresponding fields. Tweak any vector/scalar parameters to your liking.
 
 ![image.png](cc_wearables_assets/material-3.png)
 
@@ -238,6 +241,11 @@ Lastly, assign the new material instance to one of the slots on your skeletal me
 
 /// note | Additional Master Materials
 You can also use any base engine material from the `/Engine/EngineMaterials/` folder, which is currently whitelisted in the packaging rules.
+///
+
+/// note | Material Slot Names
+When assigning your material instance to a material slot inside of your skeletal mesh, please be sure to assign your slot names a numeric value, starting from 0 in ascending order. This is defined in the field next to "Slot" inside of your material element which is found under "Material Slots in the "Asset Details" panel. 
+Please also note, wearables are limited to 8 material slots but ideally a wearable should be limited to 1 or 2 unique materials.
 ///
 
 /// warning | Vault Packaging Material Rule
