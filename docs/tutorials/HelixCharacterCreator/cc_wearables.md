@@ -248,12 +248,12 @@ Add your base textures into the corresponding fields. Tweak any vector/scalar pa
 
 Lastly, assign the new material instance to one of the slots on your skeletal mesh. Repeat the steps for each slot if you need different materials per slot.
 
-/// note | Material Slot Names
-Wearable skeletal meshes used in HELIX Character Creator should comform a naming convention, which requires each slot name to have a numeric value, starting from 0 in ascending order as shown on the image. This is defined in the field next to **Slot** inside of your material element which is found under **Material Slots** in the **Asset Details** panel.
+/// warning | Material Slot Requirements
+Wearable skeletal meshes used in HELIX Character Creator must follow a naming convention in which each material slot is assigned a numeric value, starting at **0** and **increasing sequentially**, as shown in the image. This value is defined in the field next to **Slot** for each material element under **Material Slots** in the **Asset Details** panel.
 
 ![image.png](cc_wearables_assets/mat-slot-names.png)
 
-Please also note, wearables are limited to 8 material slots but ideally a wearable should be limited to 1 or 2 unique materials.
+Please note that wearables are currently limited to **8 material slots**, and remaining slots won't render on the character when equipped. While this is the maximum supported amount, we strongly recommend using only 1–2 unique materials per wearable to achieve optimal rendering performance.
 ///
 
 <!--
