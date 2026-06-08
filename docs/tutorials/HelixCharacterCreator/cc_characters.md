@@ -75,10 +75,6 @@ If your character mesh is using same skeleton with Unreal Engine 5 Manny/Quinn a
 If your character mesh is using a custom rig (including old Unreal Engine 4 mannequin skeleton), it will need additional steps to set-up an IK Rig retageter to get it compatible with HELIX characters.
 
 /// warning | Warning
-Please note that runtime retargeting has an additional CPU cost per character rendered on screen. If you're planning your mesh to be used by mass number of characters in your world, please prefer rigging it with Unreal Engine 5 skeleton and follow the steps in [4.1](https://development.helix-documentation.pages.dev/tutorials/HelixCharacterCreator/cc_characters/#31-unreal-engine-5-rig-based-character-mesh) to directly use it without need of retargeting.
-///
-
-/// warning | Warning
 Ensure all of your skeleton bones have unit scale (1.0). If your character bones were scaled inside Maya/Blender during rigging (especially the root bone), this is not supported and your custom mesh will fail to retarget animations.
 ///
 
@@ -108,11 +104,15 @@ Ensure all of your skeleton bones have unit scale (1.0). If your character bones
 
     ![image.png](cc_characters_assets/u_5.png)
 
-6. Select `IK_Unified_CosmeticsRetarget` as **Source IKRig Asset**. Select either `SKM_Manny` or `SKM_Quinn` as **Source Preview Mesh** according to closest one to your custom mesh proportions for better results. This property will define the source skeleton we'll retarget the animations from during runtime.
+6. Select `IK_Unified_CosmeticsRetarget` as **Source IKRig Asset**. Select either `SKM_Manny` or `SKM_Quinn` as **Source Preview Mesh** according to closest one to your custom mesh proportions for better results. This property will define the source skeleton we'll retarget the animations from during runtime. When asked to assign IK to all ops, click **Assign** button on the prompt.
+
+    ![image.png](cc_characters_assets/5.7-ikrig-1.png)
 
     ![image.png](cc_characters_assets/u_6.png)
 
-7. Select the IK Rig asset you've just created on previous steps as **Target IKRig Asset**. This property will define the target skeleton we'll retarget the animations to during runtime.
+7. Select the IK Rig asset you've just created on previous steps as **Target IKRig Asset**. This property will define the target skeleton we'll retarget the animations to during runtime. When asked to assign IK to all ops, click **Assign** button on the prompt again.
+
+    ![image.png](cc_characters_assets/5.7-ikrig-1.png)
 
     ![image.png](cc_characters_assets/u_7.png)
 
@@ -120,17 +120,27 @@ Ensure all of your skeleton bones have unit scale (1.0). If your character bones
 
     ![image.png](cc_characters_assets/u_8.png)
 
-9. On the bottom right panel, **Chain Mapping** tab should automatically match your IK Rig asset bone chains with each other. Ensure each chain is mapped correctly. If there are missing chain assignments, assign the the missing chains manually.
+9. On the left **Op Stack** panel, go into **Pelvis Motion** settings. Ensure pelvis bone fields are correctly assigned to `pelvis` bone for both target & source rig.
+
+10. On the left **Op Stack** panel, go into **FK Chains** settings. **Retarget Chain Settings** section should automatically match your IK Rig asset bone chains with each other. Ensure each chain is mapped correctly. If there are missing chain assignments, assign the the missing chains manually, or use the **Auto-Map Chains** button to try automatically matching each chain.
 
     ![image.png](cc_characters_assets/u_9.png)
 
-10. To ensure your IK Retargeter works correctly, go to **Asset Browser** tab on bottom right panel, and play one of the available animations. If your custom character plays the animations without any visual issues, this means your IK Retargeter setup is ready!
+11. On the left **Op Stack** panel, go into **IK Chains** settings. **Solve IK Goal Settings** section should automatically match your IK Rig asset IK goals with each other. Ensure goal is mapped correctly. If there are missing goal assignments, assign the the missing goal manually, or use the **Auto-Map Chains** button to try automatically matching each goal.
+
+    ![image.png](cc_characters_assets/u_9_2.png)
+
+12. On the left **Op Stack** panel, go into **Root Motion** settings. Assing root bones of both rigs to **Source Root** and **Target Root** fields. Assign your custom character rig's pelvis bone to **Root Motion Source** field.
+
+    ![image.png](cc_characters_assets/u_9_3.png)
+
+13. To ensure your IK Retargeter works correctly, go to **Asset Browser** tab on bottom left panel, and play one of the available animations. If your custom character plays the animations without any visual issues, this means your IK Retargeter setup is ready!
 
     ![image.png](cc_characters_assets/u_10.gif)
 
-11. If there are issues with retargeting results, you might need to further tweak your bone chains in your IK Rig and IK Retargeter assets. Please check [IK Rig Retargeting Documentation](https://dev.epicgames.com/documentation/en-us/unreal-engine/ik-rig-animation-retargeting-in-unreal-engine?application_version=5.5) for more information.
+14. If there are issues with retargeting results, you might need to further tweak your bone chains in your IK Rig and IK Retargeter assets. Please check [IK Rig Retargeting Documentation](https://dev.epicgames.com/documentation/en-us/unreal-engine/ik-rig-animation-retargeting-in-unreal-engine?application_version=5.7) for more information.
 
-12. Go into your skeletal mesh asset and find **Asset User Data** property. Click **+** symbol to create a new asset user data instance.
+15. Go into your skeletal mesh asset and find **Asset User Data** property. Click **+** symbol to create a new asset user data instance.
 
     ![image.png](cc_characters_assets/u_11.png)
 
@@ -138,19 +148,19 @@ Ensure all of your skeleton bones have unit scale (1.0). If your character bones
     Do not confuse **Asset User Data** with **Asset User Data Editor Only**. They are separate properties and only the former should be modified.
     ///
 
-13. Select `HELIX Cosmetics Body Mesh Asset User Data` from the dropdown menu. This asset is used to define how your mesh should be used with HELIX characters during runtime.
+16. Select `HELIX Cosmetics Body Mesh Asset User Data` from the dropdown menu. This asset is used to define how your mesh should be used with HELIX characters during runtime.
 
     ![image.png](cc_characters_assets/u_12.png)
 
-14. Assign the IK Retargeter asset you've created on the previous steps into **Retargeter** field. Write down approximate body height of your character, in Unreal units (cm). This value will help animation retargeting and also improve first person camera behavior on your custom mesh.
+17. Assign the IK Retargeter asset you've created on the previous steps into **Retargeter** field. Write down approximate body height of your character, in Unreal units (cm). This value will help animation retargeting and also improve first person camera behavior on your custom mesh.
 
     ![image.png](cc_characters_assets/u_13.png)
 
-15. If you need your character body mesh to get retargeted differently during first person view mode, you can create another IK Retargeter asset and assign into **First Person Retargeter** field.
+18. If you need your character body mesh to get retargeted differently during first person view mode, you can create another IK Retargeter asset and assign into **First Person Retargeter** field.
 
-16. If your character body mesh has a neck & head section which can obscure camera during first person view mode, add the bone names covering those mesh sections into **First Person Bone Hide List** field. Usually, you should put names such as `head`, `neck_01`, `neck_02` etc. in this list.
+19. If your character body mesh has a neck & head section which can obscure camera during first person view mode, add the bone names covering those mesh sections into **First Person Bone Hide List** field. Usually, you should put names such as `head`, `neck_01`, `neck_02` etc. in this list.
 
-17. Your mesh should be ready for runtime retargeting after following those steps.
+20. Your mesh should be ready for runtime retargeting after following those steps.
 
 ---
 
