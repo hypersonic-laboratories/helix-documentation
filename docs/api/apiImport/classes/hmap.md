@@ -256,7 +256,7 @@ print(Settings.FullMap.ZoomInterpSpeed)
 
 ## Markers
 
-All Lua-created markers use the `HUD.Map.Icon.Custom` gameplay tag. Use `OverrideTexture` and `OverrideColor` to customise individual visuals.
+All Lua-created markers use the `HUD.Map.Icon.Custom` gameplay tag. Use `OverrideTexture`, `IconPath`, or `OverrideColor` to customise individual visuals.
 
 ### `MarkerData`
 Builds an `FHMapMarkerData` struct configured as a Custom-icon marker. Every field is optional.
@@ -279,7 +279,19 @@ local Data = HMap.MarkerData{
 | `MarkerType` | `string` | `''` | Logical type for game-logic queries (e.g. `'Store'`, `'QuestPin'`). Free-form. |
 | `SizeMultiplier` | `number` | `1.0` | Icon scale relative to base `IconSize`. Range `[0.1, 10.0]`. |
 | `OverrideTexture` | `UTexture2D` | `nil` | If set, replaces the tag-based icon. |
+| `IconPath` | `string` | `nil` | Image file imported to a texture at runtime, resolved relative to the calling script's folder. Used when `OverrideTexture` is unset. |
 | `OverrideColor` | `FLinearColor` | `nil` | If set, tints the icon. |
+
+/// tip | Loading an icon from an image file
+Set `IconPath` to an image shipped alongside your script (e.g. `images/pin.png`) instead of a pre-imported `UTexture2D`. HelixMap imports it at runtime with `ImportFileAsTexture2D`, resolving the path relative to the **calling script's** folder. `OverrideTexture` wins if both are set.
+
+```lua title="Example - icon from a packaged image"
+HMap.AddMarkerAt(UE.FVector(12000, -3400, 0), {
+    Title    = 'Shop',
+    IconPath = 'images/shop.png',
+})
+```
+///
 
 ---
 
