@@ -200,6 +200,8 @@ Once rigging completes, go to the **Assembly** submenu in the side toolbar.
     The generated head mesh will have **3 LODs** by default. Modifying the mesh's LOD data may cause it to stop working correctly in the **HELIX Character Creator**. It's not recommended to do any modifications to LOD setup of exported heads.
     ///
 
+5. Save the MetaHuman Character file.
+
 ---
 
 ## 10. Register the Head in the Data Asset
@@ -233,7 +235,7 @@ Once rigging completes, go to the **Assembly** submenu in the side toolbar.
     | **Supported Gender** | Match the body type you chose in MetaHuman Creator. |
     | **Display Name** | A meaningful name shown in the UI. |
     | **Preset Icon** | An icon texture, if you have one. |
-    | **Material Override Template** | List of available material slot runtime parameter modifications for your head mesh. See next section about how to set this up. |
+    | **Material Override Template** | List of available material slot runtime parameter modifications for your head mesh. It is greyed out until a mesh is set. See next section about how to set this up. |
     | **Hides Slots** | List of cosmetic slots to hide when this head is selected. Usually, you don't need to assign a tag into this field. |
     | **Additional Tags** | List of additional metadata tags for your head. Those optional tags are used for categorization purposes on HELIX Character Creator UI. |
     | **Is Hidden From Database** | Hides your entry from the HELIX Character Creator UI, if enabled. |
@@ -245,12 +247,13 @@ Once rigging completes, go to the **Assembly** submenu in the side toolbar.
 
 To support runtime skin coloring:
 
-1. Expand the **Material Override Template** section.
-2. Click **Auto-Fill From Mesh**.
+1. Ensure a mesh is selected from the **Face** folder, this will enable **Auto-Fill From Mesh** button.
+1. Click **Auto-Fill From Mesh**, this will add a list of available material slot runtime parameter modifications.
+2. Expand the **Material Override Template** section.
 
     ![Material Override Template with Skin Tint in Slot 7](cc_metahumans_assets/19-material-override.png)
 
-    This adds a **Skin Tint** template to **Slot 7**, where the head's main skin material resides. If it does not populate automatically, add the template type to Slot 7 manually.
+    This adds a **Skin** template to **Slot 7**, where the head's main skin material resides. If it does not populate automatically, add the template type to Slot 7 manually. Please note that it's likely you will need to update the "Display Name" under Slot 7 to a more helpful name, such as "Skin".
 
 3. Save the data asset.
 
@@ -259,6 +262,11 @@ To support runtime skin coloring:
 ## 12. Test in Play-in-Editor
 
 1. Enter Play-in-Editor in any level.
+
+    ![Play-in-Editor step in UE UI](cc_metahumans_assets/22-pie-step.png)
+
+    <br>
+
 2. Press **P** or use `CustomizeCharacter` console command while in game to open the **HELIX Character Creator**.
 3. Go to the **Head** section, your custom head mesh should appear in the list.
 4. Click it to apply your custom head to the character.
@@ -283,7 +291,7 @@ To fix this, tweak the following fields on your head mesh entry in the data asse
 ![Offset transform fields for attachments](cc_metahumans_assets/20-offset-transforms-after.png)
 
 /// note | Note
-The further you sculpt the forehead from the identity head, the harder existing hair and facial accessories are to fit. You will need to provide custom scale values as described in this step to better fit attachments to your custom head mesh.
+The further you sculpt the forehead from the identity head, the harder existing hair and facial accessories are to fit. You will need to provide custom scale values as described in this step to better fit attachments to your custom head mesh. This process can be quite time-consuming as you'd need to be switching between the data asset file and relaunching PIE to check the result in **HELIX Character Creator**.
 ///
 
 ---
@@ -292,14 +300,25 @@ The further you sculpt the forehead from the identity head, the harder existing 
 
 Once everything works as expected, publish your package so it is available for download.
 
-1. From the toolbar menu, select **Packages → Manage Packages** and click your package name in the context menu. This opens the vault publish window.
+1. From the toolbar menu, select **Packages → Manage Packages** and click your package name in the context menu. This opens the **Vault** publish window.
 
     ![Vault publish window](cc_metahumans_assets/21-publish-vault.png)
 
     <br>
 
-2. Adjust the publish fields to your liking.
-3. Click **Publish** to make your custom MetaHuman available for download in the **HELIX Vault**. Your package can now be tested on game builds by accessing vault.
+2. Adjust the publish fields to your liking, if you don't want your package to be available to other players, make sure to toggle the **PRIVATE** option. If needed, you can then give access to individual users via **Creator Hub**.
+
+    ![Private package option](cc_metahumans_assets/23-publish-vault-private-package-option.png)
+
+    <br>
+
+3. Click **Publish** to make your custom MetaHuman available for download in the **HELIX Vault**.
+
+    /// note | Note
+    When attempting to package and publish your package, **HELIX Studio** will prompt you to save your files. You must save your files before you can start the packaging process, otherwise your asset may not look or behave as expected.
+    ///
+
+4. After publishing is completed, your package can be tested in game builds by accessing it from the **Vault** tab, locating your package and clicking on **PREVIEW** button.
 
 ---
 
