@@ -1,6 +1,6 @@
 # Creating Custom Wearables
 
-This guide walks you through the process of creating and packaging custom wearables using Helix Studio, such as clothing (e.g. shoes, shirts, bottoms, underwear, outfits), hair (facial and head), and accessories (e.g. hats, gloves, masks, necklaces, glasses). Some specific adjustments may be required depending on the asset type, such as dynamic hair sim.
+This guide walks you through the process of creating and packaging custom wearables using **HELIX Studio**, such as clothing (e.g. shoes, shirts, bottoms, underwear, outfits), hair (facial and head), and accessories (e.g. hats, gloves, masks, necklaces, glasses). Some specific adjustments may be required depending on the asset type, such as dynamic hair sim.
 
 By the end you will have a custom wearable that players can select and equip on their characters at runtime.
 
@@ -10,17 +10,17 @@ By the end you will have a custom wearable that players can select and equip on 
 
 Before you begin, make sure you have:
 
-- **Helix Studio** installed and launched.
-- A **Helix account**, logged in within Helix Studio (required for the Packages tools and Vault upload).
-- A 3D modelling package (this guide uses **Blender**, as it is free and the most accessible; the core principles apply to most applications).
+- **HELIX Studio** installed and launched (refer to [this guide](../studio.md)).
+- A **HELIX account**, logged in within **HELIX Studio** (required for the Packages tools and **HELIX Vault** upload).
+- A 3D modelling package (this guide uses **Blender**, as it is free and the most accessible; the core principles apply to most modelling applications).
 - Your wearable textures prepared, if applicable.
 
 ---
 
 ## 1. Project Setup
 
-1. Launch Helix Studio
-2. Select the Helix tab to see the template projects
+1. Launch **HELIX Studio**
+2. Select the **HELIX** tab to see the template projects
 3. Select the appropriate template (we'll be using the Wearables template)
 4. Define the project save location and project name
 5. Hit Create
@@ -31,7 +31,7 @@ Before you begin, make sure you have:
 
 ## 2. Package Creation
 
-To create a pack, use the Packages dropdown in the toolbar above the viewport. If you don't see this, you may need to log in to your Helix account and potentially restart Helix Studio.
+To create a package, use the **Packages** dropdown in the toolbar above the viewport. If you don't see this, you may need to log in to your **HELIX account** and potentially restart **HELIX Studio**.
 
 1. Navigate to `Packages > Manage Packages > New Package`
 
@@ -39,9 +39,9 @@ To create a pack, use the Packages dropdown in the toolbar above the viewport. I
 
 2. Enter a unique Package Name (e.g. Sports Shirts).
 3. Select the appropriate package type for your package, e.g. **Wearable**.
-4. Assign a suitable description.
+4. Add a suitable description.
 5. Create a unique package URL. (Use `-` for spacing, e.g. `wearable-johns-sneakers`; uppercase characters are not allowed.)
-6. Click **Create Package**. This action creates a dedicated plugin folder for your assets (e.g. **Plugins/SportsShirts**) — this is where you put all of the custom content that makes up your pack.
+6. Click **Create Package**. This action creates a dedicated plugin folder for your assets (e.g. **Plugins/SportsShirts**) — this is where you put all of the custom content that makes up your package.
 
     ![image.png](cc_wearables_assets/image%201.png)
 
@@ -49,10 +49,10 @@ To create a pack, use the Packages dropdown in the toolbar above the viewport. I
 
 ## 3. Template Assets
 
-To create or adjust wearables to be compatible with HELIX, we've provided some meshes to serve as a guide. You can find them in the HELIX Character Creator engine plugin, in the templates folder: `/HelixCharacterCreator/Templates`
+To create or adjust wearables to be compatible with **HELIX**, we've provided some meshes to serve as a guide. You can find them in the **HELIX Character Creator** engine plugin, in the templates folder: `/HelixCharacterCreator/Templates`
 
 /// note | Note
-You can paste these directories directly into the content browser path (where it will likely currently say `/HelixCharacterCreator/Templates`) by clicking the empty space in the bar.
+You can paste paths to these directories directly into the content browser path (where it will likely currently say `/HelixCharacterCreator/Templates`) by clicking the empty space in the bar.
 ///
 
 Each template asset group can be found in the folders below:
@@ -65,39 +65,41 @@ Each template asset group can be found in the folders below:
 HELIX Character Creator currently uses `SKM_F_UNDW_Tall` for female, and `SKM_M_NRW_Tall` variations as the male base mesh.
 ///
 
-Although both male and female characters use the same skeleton, you will ideally create a piece of clothing for just one gender, or create 2 versions of your clothing, adjusting it individually to each body (i.e. Male & Female).
+Although both male and female characters use the same skeleton, if you want your clothing item to be available for both genders, you will need to create two versions of your item, adjusting it individually to each body (i.e. Male & Female).
 
-To export the template assets for use in a modelling package of your choice (e.g. Blender), you will need to export them out of Helix Studio.
+To export the template assets for use in a modelling package of your choice (e.g. Blender), you will need to export them out of **HELIX Studio**.
 
 1. For each mesh you want to export, `right click` it, go to `Asset Actions`, then `Export`.
 2. Name and save the asset in a suitable folder on your PC.
-3. In the export window, make sure you have Level of Detail (LOD) ticked under the Mesh tab. *(This is important because if you're making custom LOD models, you should model them around the corresponding LOD mesh to prevent clipping.)*
-4. Do this for all required template assets.
+3. After clicking `Save`, the export window will appear. There, make sure you have `Level of Detail (LOD)` ticked under the Mesh tab. *(This is important because if you're making custom LOD models, you should model them around the corresponding LOD mesh to prevent clipping.)*
 
     ![image.png](cc_wearables_assets/image%202.png)
+
+4. Do this for all required template assets.
 
 ---
 
 ## 4. Clothing Creation
 
-Exactly how you create your wearables and which modelling applications you use is up to you, but there are a few principles that are important to get right. The next few sections provide a breakdown of how to approach the creation of wearables. The examples are given using Blender as it's free and the most accessible 3D package. The core principles apply to most/all applications.
+Exactly how you create your wearables and which modelling applications you use is up to you, but there are a few principles that are important to get right. The next few sections provide a breakdown of how to approach the creation of wearables. The examples are given using **Blender** as it's free and the most accessible 3D package. The core principles apply to most/all modelling applications.
 
 1. Import a body or body part template into your modelling package.
 2. Model your clothing item around the template body, OR if you're using an existing wearable, adjust your model to fit the body. (Make sure you have good topology, especially around joints such as the knees.)
-3. Apply transforms to your model when done (so Location and Rotation equal 0,0,0 and Scale equals 1,1,1). To do this in Blender, with your model selected press `Ctrl + A` and select `All Transforms`.
+3. Apply transforms to your model when done (so Location and Rotation equal 0,0,0 and Scale equals 1,1,1). To do this in **Blender**, with your model selected press `Ctrl + A` and select `All Transforms`.
 
 #### Armature Binding & Transferring Weights
 
-To get your item of clothing to move with the body, you will need to parent the wearable mesh to the skeleton. Below are the steps to do this in Blender; other programs will differ slightly.
+To get your item of clothing to move with the body, you will need to parent the wearable mesh to the skeleton. Below are the steps to do this in **Blender**; other programs will differ slightly.
 
-1. Select your wearable mesh and Shift-select the armature (shown in the viewport as pyramids with spheres on the ends, or as "root" in the hierarchy).
+1. Select your wearable mesh and `Shift`-select the armature (shown in the viewport as pyramids with spheres on the ends, or as "root" in the hierarchy).
 2. Press `Ctrl + P` to parent, then select "With Automatic Weights".
 
 /// warning | Warning
 If you get a warning regarding unresolved bones, bone weighting issues, etc., you will need to investigate the cause further. Some things to check:
 
-- Apply transforms as described above.
-- Make sure your mesh has no duplicate/overlapping vertices. To fix this, with your model selected, enter Edit Mode (`Tab`), enter vertex select mode, press `A` to select all vertices, then hit `M` and select "By Distance".
+1 - Apply transforms as described above.
+<br>
+2 - Make sure your mesh has no duplicate/overlapping vertices. To fix this, with your model selected, enter Edit Mode (`Tab`), enter vertex select mode, press `A` to select all vertices, then hit `M` and select "By Distance".
 
 Regardless of whether weights transfer correctly, you will likely need to weight paint by hand. Feel free to move the armature points back and forth from time to time to see how your mesh deforms and whether it looks correct.
 ///
@@ -106,52 +108,46 @@ Regardless of whether weights transfer correctly, you will likely need to weight
 
 ## 5. Clothing Export Setup
 
-Once your item of clothing is created, bound to the armature, and the weights are painted, you'll need to set up the hierarchy correctly, ready to export to Helix Studio.
+Once your item of clothing is created, bound to the armature, and the weights are painted, you'll need to set up the hierarchy correctly, so it's ready to export to **HELIX Studo**.
 
 To do this:
 
 1. In the outliner, open up the "root" / armature parent.
 2. Select all children of the imported template model, including root (in this case, everything under "SKM_F_UNDW_Tall").
+
+    ![image.png](cc_wearables_assets/1_AfterMergeWithSkenUnparent.png)
+
 3. With all children selected, press `Alt + P` and select "Clear and Keep Transformation".
 4. Now delete the body meshes and the parent empty.
-    1. You should be left with root, the reference model LodGroup, and your wearable mesh/es.
+    1. You should be left with root, the reference model LodGroup, and your wearable mesh(es).
 5. Rename the LodGroup to an appropriate name, e.g. `SKM_F_Undw_Shorts_LodGroup`.
 6. Then select your wearable mesh (select all LOD meshes if you have created multiple LODs).
 7. With them selected, `Ctrl`-select the LodGroup.
 8. Then press `Ctrl + P` and select "Object".
 
-<!--
-#### LOD setup (if Applicable)
-
-1. Select Lod Group parent
-2. In the object tab, under custom properties create a new Property by pressing "New"
-3. Press the cog icon
-4. Set type to String, property name to fbx_type and the Default Value to LodGroup
-5. Hit ok
-6. Then change the value from 1 to LodGroup
--->
+    ![image.png](cc_wearables_assets/2_ParentMeshesToLodGroup.png)
 
 ---
 
 ## 6. Export Your Wearable
 
-1. Make sure your outliner only includes "root" (the armature) and the LodGroup containing your mesh/es.
+1. Make sure your outliner only includes "root" (the armature) and the LodGroup containing your mesh(es).
 2. Navigate to `File > Export > FBX`.
 3. Define a save location.
-4. Name your wearable appropriately. (Follow the naming conventions: for skeletal meshes, use the prefix `SKM_`.)
-5. Make sure you enable Custom Properties.
-6. Set Forward Axis to Y Forward and Up to Z Up.
-7. In Armature settings, set the Primary Bone Axis to Y and the Secondary Bone Axis to X.
-8. Make sure Add Leaf Bones is deselected.
+4. Name your wearable appropriately (follow the naming conventions: for skeletal meshes, use the prefix `SKM_`).
+5. Make sure you enable `Custom Properties`.
+6. Set `Forward Axis` to `Y Forward` and `Up` to `Z Up`.
+7. In Armature settings, set the `Primary Bone Axis` to `Y` and the `Secondary Bone Axis` to `X`.
+8. Make sure `Add Leaf Bones` is deselected.
 9. To avoid any doubt, copy the settings from the image below.
 
     ![image.png](cc_wearables_assets/image%203.png)
 
 ---
 
-## 7. Helix Studio Importing
+## 7. HELIX Studio Importing
 
-Next, import your model into Helix Studio. You must import your assets into the correct package folder (e.g. the package you created earlier). To find your package again:
+Next, import your model into **HELIX Studio**. You must import your assets into the correct package folder (e.g. the package you created in the [Package Creation](#2-package-creation) section). To find your package again:
 
 1. Navigate to `Packages > Manage Packages > YourPackageName`.
 
@@ -161,39 +157,42 @@ Next, import your model into Helix Studio. You must import your assets into the 
 
     ![image.png](cc_wearables_assets/image%205.png)
 
+---
+
 #### Skeletal Mesh Import
 
 With the content browser now inside the correct folder, you can add your mesh.
 
-1. To add your mesh, either drag your FBX file from Windows Explorer into the content browser, or press the Import button and navigate to the file.
-2. In the Import Content window, set a few settings:
+1. To add your mesh, either drag your `FBX` file from Windows Explorer into the content browser, or press the Import button and navigate to the file.
+2. In the `Import Content` window, set a few settings:
     1. If you made multiple LOD meshes, make sure "Import LODs" is ticked.
     2. Disable "Create Physics Asset".
-    3. Ideally you should also uncheck "Import Materials" (optional).
-    4. **IMPORTANT:** Set Skeleton to `metahuman_base_skel` or `Face_Archetype_Skeleton`. (If you see multiple, hover over each and select the one located in `MetaHumanCharacter/Female/Medium/NormalWeight/body`, or if you're creating a head wearable, use `/MetaHumanCharacter/Face/Face_Archetype_Skeleton`.)
+    3. Uncheck "Import Materials".
+    4. **IMPORTANT:** Set Skeleton to `metahuman_base_skel` or `Face_Archetype_Skeleton`. If you see multiple, hover over each and select the one located in `MetaHumanCharacter/Female/Medium/NormalWeight/body`, or if you're creating a head wearable, use `/MetaHumanCharacter/Face/Face_Archetype_Skeleton`.
 3. Then press "Import".
 
-/// note | Incorrect Skinning Fix
-If you open your wearable (double click it) and play a preview animation, you may see weight issues as demonstrated in the image below.
+??? note "Incorrect Skinning Fix"
+    If you open your wearable (double click it) and play a preview animation, you may see weight issues as demonstrated in the image below.
 
-![image.png](cc_wearables_assets/image%206.png)
+    ![image.png](cc_wearables_assets/image%206.png)
 
-If this happens, it's important to adjust your weight painting. You can do this in your modelling package or directly in Helix Studio. However, here's a quick method that may fix it:
+    If this happens, it's important to adjust your weight painting. You can do this in your modelling package or directly in Helix Studio. However, here's a quick method that may fix it:
 
-1. With your skeletal mesh open, open the Skin tab on the left.
-2. Press "Edit Weights" (here you can paint or transfer weights).
-3. Then expand the Weight Transfer tab.
-4. Define a source SKM (assign the source skeletal mesh you used as a reference for your wearable, e.g. `SKM_F_Undw_Bottom`).
-5. Set Mesh Mode to Source.
-6. Set Location and Rotation to 0,0,0.
-7. Hit Transfer Weights, then press "Apply to Asset".
+    1 - With your skeletal mesh open, open the Skin tab on the left.
+    2 - Press "Edit Weights" (here you can paint or transfer weights).
+    3 - Then expand the Weight Transfer tab.
+    4 - Define a source SKM (assign the source skeletal mesh you used as a reference for your wearable, e.g. `SKM_F_Undw_Bottom`).
+    5 - Set Mesh Mode to Source.
+    6 - Set Location and Rotation to 0,0,0.
+    7 - Hit Transfer Weights, then press "Apply to Asset".
 
-![image.png](cc_wearables_assets/image%207.png)
-///
+    ![image.png](cc_wearables_assets/image%207.png)
+
+---
 
 #### LOD Setup
 
-Your wearables need valid LOD data to work properly with HELIX Character Creator. To ensure that, open your imported skeletal mesh asset and find the `LODSettings` property. It must be assigned one of the LOD Settings Data Assets listed below, according to the type of wearable:
+Your wearables need valid LOD data to work properly with **HELIX Character Creator**. To ensure that, open your imported skeletal mesh asset and find the `LODSettings` property. It must be assigned one of the LOD Settings Data Assets listed below, according to the type of wearable:
 
 | LOD Settings Data | Path | Description |
 |---|---|---|
@@ -208,8 +207,10 @@ Your wearables need valid LOD data to work properly with HELIX Character Creator
 After assigning the data asset, set the `Number of LODs` field to 3, and hit the `Regenerate` button to generate LOD data with the new settings.
 
 /// warning | Vault Packaging LOD Settings Rule
-If the skeletal mesh uses anything other than the listed data assets for LOD settings, or a LOD count other than 3, the vault packaging process will fail.
+If the skeletal mesh uses anything other than the listed data assets for LOD settings, or a LOD count other than 3, the **Vault** packaging process will fail.
 ///
+
+---
 
 #### Material Setup
 
