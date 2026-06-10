@@ -198,7 +198,7 @@ Post-process animation blueprint support is experimental and creators are respon
 
     ![image.png](cc_characters_assets/u_14.png)
 
-2. Make sure to also set a LOD threshold for your animation blueprint in the next **Post-Process AnimBP LOD Threshold** field, according to LOD count of your mesh. For example, if your mesh has 3 LODs, it usually makes sense to limit it only to LOD0 by setting the value to 0. This will ensure your performance heavy physics implementation won't be executed for non-significant characters on the screen. 
+2. Make sure to also set a LOD threshold for your animation blueprint in the next **Post-Process AnimBP LOD Threshold** field, according to LOD count of your mesh. For example, if your mesh has 3 LODs, it usually makes sense to limit it only to LOD0 or LOD1 by setting the field to corresponding value. This will ensure your performance heavy physics implementation won't be executed for non-significant characters on the screen. 
 
 ---
 
