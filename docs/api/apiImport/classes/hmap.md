@@ -347,6 +347,41 @@ HMap.RemoveMarkerAt(Handle)
 
 ---
 
+## Navigation Waypoint
+
+A singleton "drive-to" marker, separate from regular markers — only one navigation waypoint ever exists, and setting a new one replaces it. It is always visible on the minimap: shown as a pin at its real position while in view, and clamped to the minimap border as a rotating arrow pointing toward the target while out of view. On the full-screen map it appears as a pin at its real position.
+
+The waypoint **auto-clears when the player arrives** (within 10 m horizontal distance of the target by default — height is ignored). It is local HUD state: not replicated, and not persisted across sessions.
+
+Players can also manage it directly on the full-screen map:
+
+- **Double left-click** places (or moves) the waypoint at the clicked spot.
+- **Left-click on the waypoint pin** clears it.
+
+### `SetNavWaypoint`
+Place or move the navigation waypoint at a world location. Replaces any existing waypoint.
+
+Pass `true` as the second argument to make the waypoint **forced**: the player cannot clear or move it from the map UI — only arrival or a script call (`ClearNavWaypoint`, or another `SetNavWaypoint`) removes it. Defaults to `false`.
+
+```lua title="Example"
+HMap.SetNavWaypoint(UE.FVector(12000, -3400, 0))
+```
+
+```lua title="Example - forced waypoint (mission objective)"
+HMap.SetNavWaypoint(MissionTarget:K2_GetActorLocation(), true)
+```
+
+---
+
+### `ClearNavWaypoint`
+Clear the navigation waypoint, if any. No-op when none is set. Also removes forced waypoints.
+
+```lua title="Example"
+HMap.ClearNavWaypoint()
+```
+
+---
+
 ## See also
 
 - [Configuring the map on Helix Studio](../../../tutorials/HelixMap/studio.md) — editor-side setup and baking.
