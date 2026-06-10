@@ -214,7 +214,7 @@ If the skeletal mesh uses anything other than the listed data assets for LOD set
 
 #### Material Setup
 
-Your wearables need to use one of the defined master materials listed below to be compatible with HELIX Character Creator:
+Your wearables need to use one of the defined master materials listed below to be compatible with **HELIX Character Creator**:
 
 | Master Material | Path | Description |
 |---|---|---|
@@ -232,10 +232,10 @@ You can also use any base engine material from the `/Engine/EngineMaterials/` fo
 ///
 
 /// warning | Vault Packaging Material Rule
-If the skeletal mesh uses any material instance inheriting from a master material other than those listed, the vault packaging process will fail.
+If the skeletal mesh uses any material instance inheriting from a master material other than those listed, the **Vault**
 ///
 
-To create a material instance from one of the master materials, right click an empty area in the content browser and select Material Instance from the menu:
+To create a material instance from one of the master materials, right click an empty area in the content browser and select `Material Instance` from the menu:
 
 ![image.png](cc_wearables_assets/material-1.png)
 
@@ -250,7 +250,7 @@ Add your base textures into the corresponding fields. Tweak any vector/scalar pa
 Lastly, assign the new material instance to one of the slots on your skeletal mesh. Repeat the steps for each slot if you need different materials per slot.
 
 /// warning | Material Slot Requirements
-Wearable skeletal meshes used in HELIX Character Creator must follow a naming convention in which each material slot is assigned a numeric value, starting at **0** and **increasing sequentially**, as shown in the image. This value is defined in the field next to **Slot** for each material element under **Material Slots** in the **Asset Details** panel.
+Wearable skeletal meshes used in **HELIX Character Creator** must follow a naming convention in which each material slot is assigned a numeric value, starting at **0** and **increasing sequentially**, as shown in the image. This value is defined in the field next to **Slot** for each material element under **Material Slots** in the **Asset Details** panel.
 
 ![image.png](cc_wearables_assets/mat-slot-names.png)
 
@@ -287,7 +287,7 @@ Following this route for materials on your wearables will disable coloring suppo
     ///
 -->
 
-## 8. HELIX Character Creator Integration
+## 8. **HELIX Character Creator** Integration
 
 1. Find the `DA_Wearables` data asset in your package folder and open it.
 2. Select the appropriate wearable type (e.g. Bottoms).
@@ -302,76 +302,77 @@ Following this route for materials on your wearables will disable coloring suppo
     | **Preset Icon** | An icon texture, if you have one. |
     | **Material Override Template** | If your mesh has a correct setup as described in the Material Setup step, clicking "Auto-Fill From Mesh" will automatically add runtime coloring support for your wearable. After slots are created, you can rename the `Display Name` fields to describe each material slot of your mesh. |
     | **Hides Slots** | List of cosmetic slots to hide when this wearable is equipped. You can either hide body parts if your clothing fully covers them, or hide other clothing slots if your wearable is likely to conflict with them. |
-    | **Additional Tags** | List of additional metadata tags for your wearable. These tags are used for categorization purposes in the HELIX Character Creator UI. |
-    | **Is Hidden From Database** | Hides your entry from the HELIX Character Creator UI, if enabled. |
+    | **Additional Tags** | List of additional metadata tags for your wearable. These tags are used for categorization purposes in the **HELIX Character Creator** UI. |
+    | **Is Hidden From Database** | Hides your entry from the **HELIX Character Creator** UI, if enabled. |
     | **Mesh** | Assign the imported skeletal mesh here. |
 
     ![image.png](cc_wearables_assets/image%209.png)
 
 ---
 
-## 9. Testing Your Wearable In Helix Studio
+## 9. Testing Your Wearable In **HELIX Studio**
 
-You can test your new wearable on a character using the HELIX Character Creator directly in Helix Studio.
+You can test your new wearable on a character using the **HELIX Character Creator** directly in **HELIX Studio**.
 
-As long as your asset is added to your package plugin folder and you have correctly set up your data asset (defined name, gender, icon, and mesh), you will see your wearable in the corresponding menu inside Character Creator. Make sure you save all of your imported and created assets.
+As long as your asset is added to your package plugin folder and you have correctly set up your data asset (defined name, gender, icon, and mesh), you will see your wearable in the corresponding menu inside **HELIX Character Creator**. **Make sure you save all of your imported and created assets**.
 
-To test in Helix Studio, follow the steps below:
+To test in **HELIX Studio**, follow the steps below:
 
-1. Press Play in the **Helix Studio** editor. The Play button is just above your viewport. (You can also press `Alt + P`.)
+1. Press Play in the **HELIX Studio** editor. The Play button is just above your viewport (you can also press `Alt + P`).
 
     ![image.png](cc_wearables_assets/image%2010.png)
 
-2. Once the game simulation and your character have loaded, press the `P` key to open HELIX Character Creator.
-3. In the HELIX Character Creator UI, be sure to select the gender your asset was created for. You can switch gender using the buttons in the top left of the viewport.
-4. Now you should be able to navigate to your new wearable using the HELIX Character Creator interface to find it.
-5. Once you've selected your wearable, press Save and Exit. This allows you to run around in the test level and see your wearable in action.
+2. Once the game simulation and your character have loaded, press the `P` key to open **HELIX Character Creator**.
+3. In the **HELIX Character Creator** UI, be sure to select the gender your asset was created for. You can switch gender using the buttons in the top left of the viewport.
+4. Now you should be able to navigate to your new wearable using the **HELIX Character Creator** interface to find it.
+5. Once you've selected your wearable, press `Save and Exit`. This allows you to run around in the test level and see your wearable in action.
 
 ---
 
 ## 10. Packing & Publishing
 
-To use your wearable(s) directly inside HELIX, you need to package/publish it.
+To use your wearable(s) directly inside **HELIX**, you need to package/publish it.
 
 1. Navigate to `Packages > Manage Packages > YourPackageName`.
 2. Finalise all fields appropriately.
 
     ![Screenshot 2026-05-26 154348.png](cc_wearables_assets/Screenshot_2026-05-26_154348.png)
 
-3. Hit Publish.
-4. In the publish window you have multiple options:
-    1. **Package Locally** gives you a pak file, which you can add to your HELIX game files directly.
-    2. **Upload to Vault** uploads your package to the Vault. Here you can choose whether it's publicly visible, only visible to you, or only visible to certain users.
-5. In the publish window you also have the choice of updating a current package, making it the latest, or publishing as a new package.
-6. Double-check that the correct package is selected to publish, and hit Start.
+3. Make sure to toggle `Private` toggle option if you don't want other players to see your package in **HELIX Vault**. You will be able to grant access to invidual players in **Creator Hub**. 
+4. Hit `Publish`.
+5. In the publish window you have multiple options:
+    1. **Package Locally** gives you a pak file, which you can add to your **HELIX Game** files directly.
+    2. **Upload to Vault** uploads your package to the **Vault**. Here you can choose whether it's publicly visible, only visible to you, or only visible to certain users.
+6. In the publish window you also have the choice of updating a current package, making it the latest, or publishing as a new package.
+7. Double-check that the correct package is selected to publish, and hit `Start`.
 
-Your package will now begin to cook, pack, and upload to the Vault.
+Your package will now begin to cook, pack, and upload to the **Vault**.
 
 ---
 
 ## 11. Check & Manage Your Uploaded Packages
 
-To view your published packages, you can use the Creator Hub.
+To view your published packages, you can use the **HELIX Creator Hub**.
 
-To access the Creator Hub, navigate to `Account > Creator Hub`.
+To access the **Creator Hub**, navigate to `Account > Creator Hub`.
 
 ![Screenshot 2026-05-28 123201.png](cc_wearables_assets/Screenshot_2026-05-28_123201.png)
 
-This opens your web browser. Once you're signed into your Helix account, you should be able to see all of your uploaded packages, manage their details, etc.
+This opens your web browser. Once you're signed into your **HELIX account**, you should be able to see all of your uploaded packages, manage their details, etc.
 
 ---
 
 ## 12. Testing Your Wearables In HELIX
 
-1. Load HELIX.
-2. Navigate to the Vault tab.
-3. Locate your uploaded package. (Tip: you can filter by "MY PUBLISHED".)
+1. Load **HELIX**.
+2. Navigate to the **Vault** tab.
+3. Locate your uploaded package (tip: you can filter by "MY PUBLISHED").
 
     ![image.png](cc_wearables_assets/image%2011.png)
 
 4. Open it by clicking it and pressing "Preview".
 
-    This loads a blank test world with your package ready to go. Simply follow the same steps as testing in Helix Studio, e.g. launching HELIX Character Creator, and your wearable will be there.
+    This loads a blank test world with your package ready to go. Simply follow the same steps as testing in **HELIX Studio**, e.g. launching **HELIX Character Creator** by pressing `P`, and your wearable will be there.
 
     ![Screenshot 2026-05-28 123425.png](cc_wearables_assets/Screenshot_2026-05-28_123425.png)
 
@@ -379,4 +380,4 @@ This opens your web browser. Once you're signed into your Helix account, you sho
 
 ## 13. Ready To Rock
 
-Once you've followed these steps, uploaded your package to the Creator Hub, and imported it into your world, your new wearable items will be available for players joining your public world!
+Once you've followed these steps, uploaded your package to the **Creator Hub**, and imported it into your world, your new wearable items will be available for players joining your public world!
