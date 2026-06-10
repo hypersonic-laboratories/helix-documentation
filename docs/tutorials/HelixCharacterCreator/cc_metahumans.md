@@ -137,8 +137,8 @@ You can add makeup to your character from MetaHuman Creator, but it will conflic
 
 After finalizing your character, click the following buttons in the top toolbar:
 
-1. **Create Joints Only Rig**
-2. **Download Texture Sources**
+1. **Download Texture Sources**
+2. **Create Joints Only Rig**
 
 /// note | Note
 Both actions require an Epic account. If you're not signed in, clicking **Create Joints Only Rig** will trigger the login prompt, there is no separate sign-in button in MetaHuman Creator.
@@ -156,21 +156,13 @@ Once rigging completes, go to the **Assembly** submenu in the side toolbar.
 
     <br>
 
-1. Set **Root Directory** to your new package plugin folder.
+2. Set **Root Directory** to your new package plugin folder.
 
     ![Assembly settings with HELIX Optimized type](cc_metahumans_assets/13-assembly-settings.png)
 
     <br>
 
-3. Ensure there are **no face or body material baking overrides**. Click the trash can icons next to those fields to clear any overrides.
-
-    ![Clearing material baking overrides](cc_metahumans_assets/14-clear-overrides.png)
-
-    /// note | Note
-    MetaHuman Creator can export higher-resolution textures via override parameters, but this is **not recommended** for performance reasons. Use the **HELIX** Optimized defaults by clearing any override parameters.
-    ///
-
-    <br>
+3. Save the MetaHuman Character file.
 
 4. Once every field is correct, click **Assemble** and wait for the export to complete.
 
@@ -199,8 +191,6 @@ Once rigging completes, go to the **Assembly** submenu in the side toolbar.
     /// warning | Warning
     The generated head mesh will have **3 LODs** by default. Modifying the mesh's LOD data may cause it to stop working correctly in the **HELIX Character Creator**. It's not recommended to do any modifications to LOD setup of exported heads.
     ///
-
-5. Save the MetaHuman Character file.
 
 ---
 
