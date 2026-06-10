@@ -238,12 +238,9 @@ Once rigging completes, go to the **Assembly** submenu in the side toolbar.
 To support runtime skin coloring:
 
 1. Ensure a mesh is selected from the **Face** folder, this will enable **Auto-Fill From Mesh** button.
-1. Click **Auto-Fill From Mesh**, this will add a list of available material slot runtime parameter modifications.
-2. Expand the **Material Override Template** section.
+2. Click **Auto-Fill From Mesh** and expand the **Material Override Template** section. This adds a **Skin** coloring template to **Slot 7**, where the head's main skin material resides. If it does not populate automatically, add the template type to Slot 7 manually and give it a meaningful display name.
 
     ![Material Override Template with Skin Tint in Slot 7](cc_metahumans_assets/19-material-override.png)
-
-    This adds a **Skin** template to **Slot 7**, where the head's main skin material resides. If it does not populate automatically, add the template type to Slot 7 manually. Please note that it's likely you will need to update the "Display Name" under Slot 7 to a more helpful name, such as "Skin".
 
 3. Save the data asset.
 
