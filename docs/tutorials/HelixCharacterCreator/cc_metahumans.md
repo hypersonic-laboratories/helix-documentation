@@ -137,8 +137,8 @@ You can add makeup to your character from MetaHuman Creator, but it will conflic
 
 After finalizing your character, click the following buttons in the top toolbar:
 
-1. **Download Texture Sources**
-2. **Create Joints Only Rig**
+1. **Create Joints Only Rig**
+2. **Download Texture Sources**
 
 /// note | Note
 Both actions require an Epic account. If you're not signed in, clicking **Create Joints Only Rig** will trigger the login prompt, there is no separate sign-in button in MetaHuman Creator.
