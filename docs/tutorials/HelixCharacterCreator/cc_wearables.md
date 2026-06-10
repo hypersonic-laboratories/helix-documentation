@@ -23,7 +23,7 @@ Before you begin, make sure you have:
 2. Select the **HELIX** tab to see the template projects
 3. Select the appropriate template (we'll be using the Wearables template)
 4. Define the project save location and project name
-5. Hit Create
+5. Hit `Create`
 
     ![Screenshot 2026-05-20 123753.png](cc_wearables_assets/Screenshot_2026-05-20_123753.png)
 
@@ -127,6 +127,17 @@ To do this:
 
     ![image.png](cc_wearables_assets/2_ParentMeshesToLodGroup.png)
 
+??? note "LOD Setup (if Applicable)"
+    1. Select **LOD Group** parent.
+    2. In the **Object** tab, under **Custom Properties**, create a new property by pressing **"New"**.
+    3. Press the **cog** icon.
+    4. Set:
+        1. **Type** = `String`
+        2. **Property Name** = `fbx_type`
+        3. **Default Value** = `LodGroup`
+    5. Click **OK**.
+    6. Then change the value from `1` to `LodGroup`.
+
 ---
 
 ## 6. Export Your Wearable
@@ -165,10 +176,12 @@ With the content browser now inside the correct folder, you can add your mesh.
 
 1. To add your mesh, either drag your `FBX` file from Windows Explorer into the content browser, or press the Import button and navigate to the file.
 2. In the `Import Content` window, set a few settings:
-    1. If you made multiple LOD meshes, make sure "Import LODs" is ticked.
-    2. Disable "Create Physics Asset".
-    3. Uncheck "Import Materials".
-    4. **IMPORTANT:** Set Skeleton to `metahuman_base_skel` or `Face_Archetype_Skeleton`. If you see multiple, hover over each and select the one located in `MetaHumanCharacter/Female/Medium/NormalWeight/body`, or if you're creating a head wearable, use `/MetaHumanCharacter/Face/Face_Archetype_Skeleton`.
+    1. If you made multiple LOD meshes, make sure "Import LODs" is ticked (in `All -> Common Meshes`).
+    2. Uncheck "Create Physics Asset" (in `All -> Skeletal Meshes`).
+    3. Uncheck "Import Materials" (in `All -> Materials`).
+    4. **IMPORTANT:** Set "Skeleton" to: 
+        1. `Face_Archetype_Skeleton` (in `All -> Common Skeletal Meshes and Animations`) if you are creating a head wearable. If you see multiple, hover over each and select the one located in `/MetaHumanCharacter/Face/Face_Archetype_Skeleton`.
+        2. `metahuman_base_skel` (in `All -> Common Skeletal Meshes and Animations`) for anything else. If you see multiple, hover over each and select the one located in `MetaHumanCharacter/Female/Medium/NormalWeight/body`.
 3. Then press "Import".
 
 ??? note "Incorrect Skinning Fix"
@@ -176,15 +189,21 @@ With the content browser now inside the correct folder, you can add your mesh.
 
     ![image.png](cc_wearables_assets/image%206.png)
 
-    If this happens, it's important to adjust your weight painting. You can do this in your modelling package or directly in Helix Studio. However, here's a quick method that may fix it:
+    If this happens, it's important to adjust your weight painting. You can do this in your modelling package or directly in **HELIX Studio**. However, here's a quick method that may fix it:
 
-    1 - With your skeletal mesh open, open the Skin tab on the left.
+    1 - With your skeletal mesh open, open the "Skin" tab on the left.
+    <br>
     2 - Press "Edit Weights" (here you can paint or transfer weights).
-    3 - Then expand the Weight Transfer tab.
-    4 - Define a source SKM (assign the source skeletal mesh you used as a reference for your wearable, e.g. `SKM_F_Undw_Bottom`).
-    5 - Set Mesh Mode to Source.
-    6 - Set Location and Rotation to 0,0,0.
-    7 - Hit Transfer Weights, then press "Apply to Asset".
+    <br>
+    3 - Then expand the "Weight Transfer" tab.
+    <br>
+    4 - Define a "Source Skeletal Mesh" (assign the source skeletal mesh you used as a reference for your wearable, e.g. `SKM_F_Undw_Bottom`).
+    <br>
+    5 - Set "Mesh Mode" to "Source".
+    <br>
+    6 - Set "Location" and "Rotation" to 0,0,0.
+    <br>
+    7 - Hit "Transfer Weights", then press "Apply to Asset".
 
     ![image.png](cc_wearables_assets/image%207.png)
 
@@ -202,6 +221,8 @@ Your wearables need valid LOD data to work properly with **HELIX Character Creat
 | **Face_LODSettings_Medium** | `/MetaHumanCharacter/Face/Face_LODSettings_Medium` | Internal data asset. Automatically assigned to generated MetaHuman heads with the MetaHuman character generator. |
 | **Body_LODSettings_Medium** | `/MetaHumanCharacter/Body/IdentityTemplate/Body_LODSettings_Medium` | Internal data asset. Utilized in base cut body meshes. |
 
+You will end up having something like this:
+
 ![image.png](cc_wearables_assets/lod-settings.png)
 
 After assigning the data asset, set the `Number of LODs` field to 3, and hit the `Regenerate` button to generate LOD data with the new settings.
@@ -216,76 +237,50 @@ If the skeletal mesh uses anything other than the listed data assets for LOD set
 
 Your wearables need to use one of the defined master materials listed below to be compatible with **HELIX Character Creator**:
 
-| Master Material | Path | Description |
-|---|---|---|
-| **MM_Basic_Wearables_Opaque** | `/HelixCharacterCreator/Materials/MM_Basic_Wearables_Opaque` | Base material for a basic texture with tint setup. |
-| **MM_Basic_Wearables_Masked** | `/HelixCharacterCreator/Materials/MM_Basic_Wearables_Masked` | Base material for a basic texture with tint setup with mask functinality (e.g. masked hair) |
-| **MM_BaseCloth** | `/HelixCharacterCreator/Materials/MM_BaseCloth` | Base material with Color/Normal/ORM texture-based setup. More advanced than MM_Basic_Wearables |
-| **MM_BaseCloth_Glass** | `/HelixCharacterCreator/Materials/MM_BaseCloth_Glass` | Base material for transparent sections of wearables (e.g. sunglasses) |
-| **MM_Stitches** | `/HelixCharacterCreator/Materials/MM_Stitches` | Base material for masked stitch sections of wearables |
-| **M_Invis** | `/HelixCharacterCreator/Materials/M_Invis` | Invisible material. Can be used to hide specific sections of wearables if required. |
-| **MM_Hair_1** | `/HelixCharacterCreator/Materials/MM_Hair_2` | Base material for hair meshes. |
-| **MM_Hair_2** | `/HelixCharacterCreator/Materials/MM_Hair_2` | Base material for hair meshes. |
+??? note "Master Material Table"
+    | Master Material | Path | Description |
+    |---|---|---|
+    | **MM_Basic_Wearables_Opaque** | `/HelixCharacterCreator/Materials/MM_Basic_Wearables_Opaque` | Base material for a basic texture with tint setup. It's recommended to use this master material for creators who just want to add textures and a tint. |
+    | **MM_Basic_Wearables_Masked** | `/HelixCharacterCreator/Materials/MM_Basic_Wearables_Masked` | Base material for a basic texture with tint setup with mask functinality (e.g. masked hair) |
+    | **MM_BaseCloth** | `/HelixCharacterCreator/Materials/MM_BaseCloth` | Base material with Color/Normal/ORM texture-based setup. More advanced than MM_Basic_Wearables, but also more complex and can be worse for performance. |
+    | **MM_BaseCloth_Glass** | `/HelixCharacterCreator/Materials/MM_BaseCloth_Glass` | Base material for transparent sections of wearables (e.g. sunglasses) |
+    | **MM_Stitches** | `/HelixCharacterCreator/Materials/MM_Stitches` | Base material for masked stitch sections of wearables |
+    | **M_Invis** | `/HelixCharacterCreator/Materials/M_Invis` | Invisible material. Can be used to hide specific sections of wearables if required. |
+    | **MM_Hair_1** | `/HelixCharacterCreator/Materials/MM_Hair_2` | Base material for hair meshes. |
+    | **MM_Hair_2** | `/HelixCharacterCreator/Materials/MM_Hair_2` | Base material for hair meshes. |
 
-/// note | Additional Master Materials
-You can also use any base engine material from the `/Engine/EngineMaterials/` folder, which is currently whitelisted in the packaging rules.
-///
+Before we start, important things to bring up:
 
-/// warning | Vault Packaging Material Rule
-If the skeletal mesh uses any material instance inheriting from a master material other than those listed, the **Vault**
-///
+1. Additional Master Materials: You can also use any base engine material from the `/Engine/EngineMaterials/` folder, which is currently whitelisted in the packaging rules.
+2. Vault Packaging Material Rule: If the skeletal mesh uses any material instance inheriting from a master material other than those listed, the **Vault** packaging process will fail.
+3. Material Slot Requirements: Wearable skeletal meshes used in **HELIX Character Creator** must follow a naming convention in which each material slot is assigned a numeric value, starting at **0** and **increasing sequentially**, as shown in the image. This value is defined in the field next to **Slot** for each material element under **Material Slots** in the **Asset Details** panel.
 
-To create a material instance from one of the master materials, right click an empty area in the content browser and select `Material Instance` from the menu:
-
-![image.png](cc_wearables_assets/material-1.png)
-
-Open the material instance and pick one of the allowed master materials as the parent:
-
-![image.png](cc_wearables_assets/material-2.png)
-
-Add your base textures into the corresponding fields. Tweak any vector/scalar parameters to your liking.
-
-![image.png](cc_wearables_assets/material-3.png)
-
-Lastly, assign the new material instance to one of the slots on your skeletal mesh. Repeat the steps for each slot if you need different materials per slot.
-
-/// warning | Material Slot Requirements
-Wearable skeletal meshes used in **HELIX Character Creator** must follow a naming convention in which each material slot is assigned a numeric value, starting at **0** and **increasing sequentially**, as shown in the image. This value is defined in the field next to **Slot** for each material element under **Material Slots** in the **Asset Details** panel.
-
-![image.png](cc_wearables_assets/mat-slot-names.png)
+    ![image.png](cc_wearables_assets/mat-slot-names.png)
 
 Please note that wearables are currently limited to **8 material slots**, and remaining slots won't render on the character when equipped. While this is the maximum supported amount, we strongly recommend using only 1–2 unique materials per wearable to achieve optimal rendering performance.
-///
 
-<!--
+<br>
+Now, we are ready to start creating material instances.
 
-To create a standard material for your assets presuming you already have textures and have your wearable UV mapped is pretty simple.
+1. Right click an empty area in the content browser and select `Material Instance` from the menu:
 
-/// warning | Warning
-Following this route for materials on your wearables will disable coloring support
-///
+    ![image.png](cc_wearables_assets/material-1.png)
 
-1. Import your textures by dragging into the content browser or using the import button
-2. Right click in your wearables package plugin folder
-3. Search and select material
-4. Name your material with the `M_` prefix for materials and `MI_` prefix for material instances 
-5. Next open your material by double clicking
-6. Now drag your textures from Helix Studios content browser, into the material graph
-7. Next hook up the RGB values from your textures to the corresponding output pins by left click dragging the pins
+2. Open the material instance and pick one of the allowed master materials (refer to the table above) as the parent:
 
-    ![image.png](cc_wearables_assets/image%208.png)
+    ![image.png](cc_wearables_assets/material-2.png)
 
-    /// note | Note
-    You may notice in this example we have used the R,G,B channels for the bottom texture. That is a packed Occlusion, Roughness & Metallic map (aka ORM). You don't need to worry about that right now but if you have 2/3 grayscale textures e.g. Occlusion, roughness & metallic it's good practice and optimal to pack these into the color channels of a packed texture.
-    ///
+3. Add your base textures into the corresponding fields. Tweak any vector/scalar parameters to your liking.
 
+    ![image.png](cc_wearables_assets/material-3.png)
 
-8. Now you can open up your wearable skeletal mesh and in the asset details panel, assign your material to the correct material slot
+4. Assign the new material instance to one of the slots on your skeletal mesh. 
 
-    /// note | Note
-    If you have a tileable texture you can hook the texture output pin into a multiply node, set the multiply value to the amount of times you want the texture to tile and then hook the output of the multiply into the corresponding texture type pin. You can create a multiply node by right clicking and searching or by holding down M and left clicking in the graph. Ideally the tile amount would be simply factored in to the uv mapping unless you're doing a more complex layered material setup.
-    ///
--->
+    ![image.png](cc_wearables_assets/material-4.png)
+
+5. Repeat the steps for each slot if you need different materials per slot.
+
+---
 
 ## 8. **HELIX Character Creator** Integration
 
@@ -293,20 +288,22 @@ Following this route for materials on your wearables will disable coloring suppo
 2. Select the appropriate wearable type (e.g. Bottoms).
 3. Press "+ Add" to create a new element in the category you chose.
 4. Give your new wearable a unique ID by double clicking the tile's name (e.g. **M_SportsShorts01** — M denoting Male).
-5. After creating your data asset entry, fill in the properties as described below:
+5. After creating your data asset entry, fill in the properties as shown in the screenshot below. There is also a handy table below the screenshot with detailed information per suggested field.
+
+    ![image.png](cc_wearables_assets/image%209.png)
+
+??? note "Further information on each suggested field"
 
     | Property | Description |
     |---|---|
     | **Supported Genders** | Base character gender that this wearable is available to. A single wearable entry should only have one gender selected. |
     | **Display Name** | A meaningful name shown in the UI. |
     | **Preset Icon** | An icon texture, if you have one. |
-    | **Material Override Template** | If your mesh has a correct setup as described in the Material Setup step, clicking "Auto-Fill From Mesh" will automatically add runtime coloring support for your wearable. After slots are created, you can rename the `Display Name` fields to describe each material slot of your mesh. |
+    | **Material Override Template** | If your mesh has a correct setup as described in the Material Setup step, clicking "Auto-Fill From Mesh" will automatically add runtime coloring support for your wearable. After slots are created, you can rename the `Display Name` fields to describe each material slot of your mesh. Please note that the "Auto-Fill From Mesh" will only become clickable after assigning the corresponding mesh at the bottom of the panel in this data asset. |
     | **Hides Slots** | List of cosmetic slots to hide when this wearable is equipped. You can either hide body parts if your clothing fully covers them, or hide other clothing slots if your wearable is likely to conflict with them. |
     | **Additional Tags** | List of additional metadata tags for your wearable. These tags are used for categorization purposes in the **HELIX Character Creator** UI. |
     | **Is Hidden From Database** | Hides your entry from the **HELIX Character Creator** UI, if enabled. |
     | **Mesh** | Assign the imported skeletal mesh here. |
-
-    ![image.png](cc_wearables_assets/image%209.png)
 
 ---
 
