@@ -218,8 +218,6 @@ Post-process animation blueprint support is experimental and creators are respon
     | **Supported Genders** | Select the gender most closest to your custom character. This will change the base animation retarget source mesh used with your custom mesh. |
     | **Display Name** | A meaningful name shown in the UI. |
     | **Preset Icon** | An icon texture, if you have one. |
-    | **Material Override Template** | Not functional for custom characters. |
-    | **Hides Slots** | Not functional for custom characters. |
     | **Additional Tags** | List of additional metadata tags for your wearable. These tags are used for categorization purposes in the HELIX Character Creator UI. |
     | **Is Hidden From Database** | Hides your entry from the HELIX Character Creator UI, if enabled. |
 
