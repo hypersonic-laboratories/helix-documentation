@@ -15,6 +15,12 @@ Before you begin, make sure you have:
 - A 3D modelling package (this guide uses **Blender**, as it is free and the most accessible; the core principles apply to most modelling applications).
 - Your wearable textures prepared, if applicable.
 
+/// warning | All Custom Assets Must Live in Your Plugin Folder
+Everything specific to your wearable — skeletal mesh, materials, material instances, textures, icons, custom data assets — must be imported or saved inside your package plugin folder (e.g. `/YourPackage/...`). Assets stored elsewhere (in `/Game/`, other plugins, etc.) will be excluded during packaging and your wearable will appear broken (missing textures, default materials, etc.) in the shipped game, even though it looks fine in **HELIX Studio**.
+
+Shared **HELIX** assets (certain master materials, LOD settings) are an exception — they ship as part of **HELIX** itself, so you can reference them safely from anywhere.
+///
+
 ---
 
 ## 1. Set Up **HELIX Studio** Project
@@ -184,7 +190,7 @@ With the content browser now inside the correct folder, you can add your mesh.
         2. `metahuman_base_skel` (in `All -> Common Skeletal Meshes and Animations`) for anything else. If you see multiple, hover over each and select the one located in `MetaHumanCharacter/Female/Medium/NormalWeight/body`.
 3. Then press "Import".
 
-??? note "Clipping issues? Incorrect skinning fix Here!"
+??? note "Clipping issues? Incorrect skinning fix here!"
     If you open your wearable (double click it) and play a preview animation, you may see weight issues as demonstrated in the image below.
 
     ![image.png](cc_wearables_assets/image%206.png)
