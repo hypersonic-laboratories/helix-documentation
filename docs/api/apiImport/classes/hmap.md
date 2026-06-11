@@ -276,7 +276,7 @@ local Data = HMap.MarkerData{
 |---|---|---|---|
 | `Title` | `string` | `''` | Display name shown on the map widget. |
 | `Description` | `string` | `''` | Secondary description shown on the map widget. |
-| `MarkerType` | `string` | `''` | Logical type for game-logic queries (e.g. `'Store'`, `'QuestPin'`). Free-form. |
+| `MarkerType` | `string` | `''` | Logical type for game-logic queries (e.g. `'Store'`, `'QuestPin'`). Free-form. Also groups the full-screen map legend — one filterable row per distinct type. |
 | `SizeMultiplier` | `number` | `1.0` | Icon scale relative to base `IconSize`. Range `[0.1, 10.0]`. |
 | `OverrideTexture` | `UTexture2D` | `nil` | If set, replaces the tag-based icon. |
 | `IconPath` | `string` | `nil` | Image file imported to a texture at runtime, resolved relative to the calling script's folder. Used when `OverrideTexture` is unset. |
@@ -355,7 +355,8 @@ The waypoint **auto-clears when the player arrives** (within 10 m horizontal dis
 
 Players can also manage it directly on the full-screen map:
 
-- **Double left-click** places (or moves) the waypoint at the clicked spot.
+- **Left-click a marker** places (or moves) the waypoint on that marker.
+- **Double left-click** an empty spot places (or moves) the waypoint there.
 - **Left-click on the waypoint pin** clears it.
 
 ### `SetNavWaypoint`

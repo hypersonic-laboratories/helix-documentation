@@ -60,7 +60,8 @@ To mark a point of interest (a store, an objective, a spawn point):
 1. In **Place Actors**, search for `Map Marker` and drag one into the level.
 2. Position it where it should appear on the map.
 3. In the Details panel, expand **Marker Data** and set:
-    - **Title** / **Description** — text shown on the map.
+    - **Title** / **Description** — shown on the marker's hover tooltip on the full-screen map. A marker with no Title shows no tooltip.
+    - **Marker Type** — a logical category (e.g. `Store`, `Quest`). The full-screen map legend shows one filterable row per distinct type, so set this to group related markers.
     - **Override Texture** — replace the default pin with your own icon.
     - **Override Color** — tint the icon.
     - **Size Multiplier** — scale the icon up or down (1.0 = default).
@@ -70,6 +71,14 @@ To mark a point of interest (a store, an objective, a spawn point):
 ![Configure the marker's data in the Details panel](map-configure-marker.png)
 
 The marker shows up on both the minimap and the full-screen map. The local player's own marker is added automatically — you don't place one. To add markers from gameplay code, see [Configuring the map at runtime](runtime.md).
+
+## Reading the full-screen map
+
+Players open the full-screen map with **`M`** (scroll to zoom, drag to pan). Beyond viewing, they can:
+
+- **Filter with the legend** — a panel in the bottom-left lists one row per distinct **Marker Type** on the map (icon + name). Clicking a row filters the map to that type — everything else hides, while the player marker and the navigation waypoint always stay visible. Selecting also pans to the **nearest marker of that type to the player**; clicking the row again clears the filter and pans back to the player.
+- **Read tooltips** — hovering a marker shows its **Title** and **Description**. Markers without a Title show no tooltip.
+- **Set a waypoint** — clicking a marker (or double-clicking any empty spot) drops a navigation waypoint; the minimap then shows a clamped arrow pointing to it, and it auto-clears when the player arrives. See [Navigation Waypoint](../../api/apiImport/classes/hmap.md#navigation-waypoint) in the `HMap` reference for the scripting side.
 
 ## Scene Capture vs Baked
 
