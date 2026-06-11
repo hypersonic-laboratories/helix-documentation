@@ -17,7 +17,7 @@ Before you begin, make sure you have:
 
 ---
 
-## 1. Project Setup
+## 1. Set Up **HELIX Studio** Project
 
 1. Launch **HELIX Studio**
 2. Select the **HELIX** tab to see the template projects
@@ -29,7 +29,7 @@ Before you begin, make sure you have:
 
 ---
 
-## 2. Package Creation
+## 2. Create a Package
 
 To create a package, use the **Packages** dropdown in the toolbar above the viewport. If you don't see this, you may need to log in to your **HELIX account** and potentially restart **HELIX Studio**.
 
@@ -40,14 +40,14 @@ To create a package, use the **Packages** dropdown in the toolbar above the view
 2. Enter a unique Package Name (e.g. Sports Shirts).
 3. Select the appropriate package type for your package, e.g. **Wearable**.
 4. Add a suitable description.
-5. Create a unique package URL. (Use `-` for spacing, e.g. `wearable-johns-sneakers`; uppercase characters are not allowed.)
+5. Create a unique package URL (use `-` for spacing, e.g. `wearable-johns-sneakers`; uppercase characters are not allowed).
 6. Click **Create Package**. This action creates a dedicated plugin folder for your assets (e.g. **Plugins/SportsShirts**) — this is where you put all of the custom content that makes up your package.
 
     ![image.png](cc_wearables_assets/image%201.png)
 
 ---
 
-## 3. Template Assets
+## 3. Obtain Character Template Assets
 
 To create or adjust wearables to be compatible with **HELIX**, we've provided some meshes to serve as a guide. You can find them in the **HELIX Character Creator** engine plugin, in the templates folder: `/HelixCharacterCreator/Templates`
 
@@ -79,7 +79,7 @@ To export the template assets for use in a modelling package of your choice (e.g
 
 ---
 
-## 4. Clothing Creation
+## 4. Create Your Clothing
 
 Exactly how you create your wearables and which modelling applications you use is up to you, but there are a few principles that are important to get right. The next few sections provide a breakdown of how to approach the creation of wearables. The examples are given using **Blender** as it's free and the most accessible 3D package. The core principles apply to most/all modelling applications.
 
@@ -106,7 +106,7 @@ Regardless of whether weights transfer correctly, you will likely need to weight
 
 ---
 
-## 5. Clothing Export Setup
+## 5. Set Up Your Clothing For Exporting
 
 Once your item of clothing is created, bound to the armature, and the weights are painted, you'll need to set up the hierarchy correctly, so it's ready to export to **HELIX Studo**.
 
@@ -156,7 +156,7 @@ To do this:
 
 ---
 
-## 7. HELIX Studio Importing
+## 7. Import Into **HELIX Studio**
 
 Next, import your model into **HELIX Studio**. You must import your assets into the correct package folder (e.g. the package you created in the [Package Creation](#2-package-creation) section). To find your package again:
 
@@ -170,7 +170,7 @@ Next, import your model into **HELIX Studio**. You must import your assets into 
 
 ---
 
-#### Skeletal Mesh Import
+#### Import Skeletal Mesh
 
 With the content browser now inside the correct folder, you can add your mesh.
 
@@ -184,7 +184,7 @@ With the content browser now inside the correct folder, you can add your mesh.
         2. `metahuman_base_skel` (in `All -> Common Skeletal Meshes and Animations`) for anything else. If you see multiple, hover over each and select the one located in `MetaHumanCharacter/Female/Medium/NormalWeight/body`.
 3. Then press "Import".
 
-??? note "Incorrect Skinning Fix"
+??? note "Clipping issues? Incorrect skinning fix Here!"
     If you open your wearable (double click it) and play a preview animation, you may see weight issues as demonstrated in the image below.
 
     ![image.png](cc_wearables_assets/image%206.png)
@@ -209,7 +209,7 @@ With the content browser now inside the correct folder, you can add your mesh.
 
 ---
 
-#### LOD Setup
+#### Set Up LOD Data
 
 Your wearables need valid LOD data to work properly with **HELIX Character Creator**. To ensure that, open your imported skeletal mesh asset and find the `LODSettings` property. It must be assigned one of the LOD Settings Data Assets listed below, according to the type of wearable:
 
@@ -233,7 +233,7 @@ If the skeletal mesh uses anything other than the listed data assets for LOD set
 
 ---
 
-#### Material Setup
+#### Set Up Materials
 
 Your wearables need to use one of the defined master materials listed below to be compatible with **HELIX Character Creator**:
 
@@ -282,7 +282,7 @@ Now, we are ready to start creating material instances.
 
 ---
 
-## 8. **HELIX Character Creator** Integration
+## 8. Integrate Into **HELIX Character Creator**
 
 1. Find the `DA_Wearables` data asset in your package folder and open it.
 2. Select the appropriate wearable type (e.g. Bottoms).
@@ -307,7 +307,7 @@ Now, we are ready to start creating material instances.
 
 ---
 
-## 9. Testing Your Wearable In **HELIX Studio**
+## 9. Test Your Wearable In **HELIX Studio**
 
 You can test your new wearable on a character using the **HELIX Character Creator** directly in **HELIX Studio**.
 
@@ -326,7 +326,7 @@ To test in **HELIX Studio**, follow the steps below:
 
 ---
 
-## 10. Packing & Publishing
+## 10. Package & Publish Your Clothing
 
 To use your wearable(s) directly inside **HELIX**, you need to package/publish it.
 
@@ -359,7 +359,7 @@ This opens your web browser. Once you're signed into your **HELIX account**, you
 
 ---
 
-## 12. Testing Your Wearables In HELIX
+## 12. Test Your Wearables In **HELIX**
 
 1. Load **HELIX**.
 2. Navigate to the **Vault** tab.
