@@ -1,6 +1,6 @@
 # Creating Custom Wearables
 
-This guide walks you through the process of creating and packaging custom wearables using **HELIX Studio**, such as clothing (e.g. shoes, shirts, bottoms, underwear, outfits), hair (facial and head), and accessories (e.g. hats, gloves, masks, necklaces, glasses). Some specific adjustments may be required depending on the asset type, such as dynamic hair sim.
+This guide walks you through the process of creating and packaging skeletal mesh based custom wearables using **HELIX Studio**, such as clothing (e.g. shoes, shirts, bottoms, outfits), hair (facial and head), and accessories (e.g. hats, gloves, masks, necklaces, glasses). Some specific adjustments may be required depending on the asset type, such as dynamic hair sim.
 
 By the end you will have a custom wearable that players can select and equip on their characters at runtime.
 
