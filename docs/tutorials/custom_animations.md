@@ -148,7 +148,7 @@ With your animations successfully adapted and moved to your package folder, you 
 
 6. Select **Upload to Vault** option and choose what you want to do with the current package (update current, make latest, publish as new). For current tutorial, we'll choose publish as new. Click **Start** button to start packaging process.
 
-   ![image.png](CustomAnimImages/hs-6.png)
+    ![image.png](CustomAnimImages/hs-6.png)
 
 7. Once packaging is completed, your package will be ready to use from HELIX Vault on game build.
 
