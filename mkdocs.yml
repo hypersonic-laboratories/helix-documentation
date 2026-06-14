@@ -57,8 +57,11 @@ nav:
       - tutorials/HelixCharacterCreator/cc_characters.md
       - tutorials/HelixCharacterCreator/cc_dynamichair.md
       - tutorials/HelixCharacterCreator/cc_scripting.md
+    - Custom Levels:
+      - tutorials/CustomLevels/custom_maps.md
+      - tutorials/CustomLevels/custom_map_doors.md
+      - tutorials/CustomLevels/custom_map_seatables.md
     - Custom Assets:
-      - tutorials/custom_maps.md
       - tutorials/custom_animations.md
       - tutorials/custom_vehicles.md
       - tutorials/custom_shells.md
