@@ -51,7 +51,7 @@ nav:
       - tutorials/creatorkit.md
       - tutorials/creatorhub.md
       - tutorials/in_world_purchases.md
-    - HELIX Character Creator:
+    - Character Customization:
       - tutorials/HelixCharacterCreator/cc_wearables.md
       - tutorials/HelixCharacterCreator/cc_metahumans.md
       - tutorials/HelixCharacterCreator/cc_characters.md
@@ -61,16 +61,16 @@ nav:
       - tutorials/CustomLevels/custom_maps.md
       - tutorials/CustomLevels/custom_map_doors.md
       - tutorials/CustomLevels/custom_map_seatables.md
+      - Custom Level Map:
+        - tutorials/HelixMap/studio.md
+        - tutorials/HelixMap/runtime.md
+        - tutorials/HelixMap/settings.md
     - Custom Assets:
       - tutorials/custom_animations.md
       - tutorials/custom_vehicles.md
       - tutorials/custom_shells.md
       - tutorials/custom_blueprints.md
       - tutorials/custom_ui.md
-    - HelixMap:
-      - tutorials/HelixMap/studio.md
-      - tutorials/HelixMap/runtime.md
-      - tutorials/HelixMap/settings.md
     - Misc:
       - tutorials/reference_custom_assets.md
       - tutorials/default_materials.md
