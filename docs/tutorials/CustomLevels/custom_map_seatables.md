@@ -1,4 +1,4 @@
-## Adding Seatable Entities To Custom Levels
+# Adding Seatable Entities To Custom Levels
 
 If your level has seatable assets such as benches, beds, chairs etc, you can take additional steps to make them interactable by players.
 
