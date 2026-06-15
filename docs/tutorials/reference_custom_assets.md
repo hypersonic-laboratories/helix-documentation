@@ -7,13 +7,13 @@ This guide walks you through how to use your imported custom package assets with
 Any kind of asset inside of an imported/mounted package can be accessed with:
 
 ```lua
-local CustomAsset = UE.UObject.Load('Game/YourPackageName/PathToYourAsset/YourAssetName.YourAssetName')
+local CustomAsset = UE.UObject.Load('/YourPackageName/PathToYourAsset/YourAssetName.YourAssetName')
 ```
 
-For example, to access a package named `Addon_MyFirstAnimationPack` with an animation sequence named `AS_Crying.uasset`, you can load the animation sequence as shown below in your lua scripts:
+For example, to access a package named `MyFirstAnimationPack` with an animation sequence named `AS_Crying.uasset`, you can load the animation sequence as shown below in your lua scripts:
 
 ```lua
-local CustomAnimationAsset = UE.UObject.Load('/Game/Addon_MyFirstAnimationPack/AS_Crying.AS_Crying')
+local CustomAnimationAsset = UE.UObject.Load('/MyFirstAnimationPack/AS_Crying.AS_Crying')
 ```
 
 You can get the full path of an asset by right clicking to it in build mode interface and selecting **Copy Object Path** in the dropdown menu.
