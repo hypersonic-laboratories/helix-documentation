@@ -93,7 +93,7 @@ Exactly how you create your wearables and which modelling applications you use i
 2. Model your clothing item around the template body, OR if you're using an existing wearable, adjust your model to fit the body. (Make sure you have good topology, especially around joints such as the knees.)
 3. Apply transforms to your model when done (so Location and Rotation equal 0,0,0 and Scale equals 1,1,1). To do this in **Blender**, with your model selected press `Ctrl + A` and select `All Transforms`.
 
-#### Armature Binding & Transferring Weights
+### Armature Binding & Transferring Weights
 
 To get your item of clothing to move with the body, you will need to parent the wearable mesh to the skeleton. Below are the steps to do this in **Blender**; other programs will differ slightly.
 
@@ -176,7 +176,7 @@ Next, import your model into **HELIX Studio**. You must import your assets into 
 
 ---
 
-#### Import Skeletal Mesh
+### Import Skeletal Mesh
 
 With the content browser now inside the correct folder, you can add your mesh.
 
@@ -215,7 +215,7 @@ With the content browser now inside the correct folder, you can add your mesh.
 
 ---
 
-#### Set Up LOD Data
+### Set Up LOD Data
 
 Your wearables need valid LOD data to work properly with **HELIX Character Creator**. To ensure that, open your imported skeletal mesh asset and find the `LODSettings` property. It must be assigned one of the LOD Settings Data Assets listed below, according to the type of wearable:
 
@@ -239,7 +239,7 @@ If the skeletal mesh uses anything other than the listed data assets for LOD set
 
 ---
 
-#### Set Up Materials
+### Set Up Materials
 
 Your wearables need to use one of the defined master materials listed below to be compatible with **HELIX Character Creator**:
 
@@ -266,25 +266,37 @@ Before we start, important things to bring up:
 Please note that wearables are currently limited to **8 material slots**, and remaining slots won't render on the character when equipped. While this is the maximum supported amount, we strongly recommend using only 1–2 unique materials per wearable to achieve optimal rendering performance.
 
 <br>
-Now, we are ready to start creating material instances.
+Now, we are ready to start creating material instances. The workflow will go through the set up of the basic material we recommend you choose if you just need texture and tin:
 
 1. Right click an empty area in the content browser and select `Material Instance` from the menu:
 
     ![image.png](cc_wearables_assets/material-1.png)
 
-2. Open the material instance and pick one of the allowed master materials (refer to the table above) as the parent:
+2. Open the material instance and pick one **MM_Basic_Wearables_Opaque** as the parent:
 
-    ![image.png](cc_wearables_assets/material-2.png)
+    ![image.png](cc_wearables_assets/material-2_opaque.png)
 
-3. Add your base textures into the corresponding fields. Tweak any vector/scalar parameters to your liking.
+3. Add your base textures into the corresponding fields and enable and configure tin if you'd like:
 
-    ![image.png](cc_wearables_assets/material-3.png)
+    ![image.png](cc_wearables_assets/material-3_opaque.png)
 
 4. Assign the new material instance to one of the slots on your skeletal mesh. 
 
     ![image.png](cc_wearables_assets/material-4.png)
 
 5. Repeat the steps for each slot if you need different materials per slot.
+
+#### Advanced Material Setup
+
+There is also a more advanced material called **MM_BaseCloth**. As mentioned in the master material table above, this base material has settings for Color/Normal/ORM texture-based setup. It is more advanced than **MM_Basic_Wearables**, but also more complex and can be worse for performance. See below how to set it up:
+
+1. Open the material instance and pick one of the allowed master materials (refer to the table above) as the parent:
+
+    ![image.png](cc_wearables_assets/material-2.png)
+
+2. Add your base textures into the corresponding fields. Tweak any vector/scalar parameters to your liking.
+
+    ![image.png](cc_wearables_assets/material-3.png)
 
 ---
 
