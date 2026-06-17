@@ -58,7 +58,7 @@ To create a package, use the **Packages** dropdown in the toolbar above the view
 To create or adjust wearables to be compatible with **HELIX**, we've provided some meshes to serve as a guide. You can find them in the **HELIX Character Creator** engine plugin, in the templates folder: `/HelixCharacterCreator/Templates`
 
 /// note | Note
-You can paste paths to these directories directly into the content browser path (where it will likely currently say `/HelixCharacterCreator/Templates`) by clicking the empty space in the bar.
+You can paste paths to these directories directly into the content browser path (where it will likely currently say `All > Plugins > {your package name}`) by clicking the empty space in the bar.
 ///
 
 Each template asset group can be found in the folders below:
@@ -90,7 +90,7 @@ To export the template assets for use in a modelling package of your choice (e.g
 Exactly how you create your wearables and which modelling applications you use is up to you, but there are a few principles that are important to get right. The next few sections provide a breakdown of how to approach the creation of wearables. The examples are given using **Blender** as it's free and the most accessible 3D package. The core principles apply to most/all modelling applications.
 
 1. Import a body or body part template into your modelling package.
-2. Model your clothing item around the template body, OR if you're using an existing wearable, adjust your model to fit the body. (Make sure you have good topology, especially around joints such as the knees.)
+2. Model your clothing item around the template body, OR if you're using an existing wearable, adjust your model to fit the body. (Make sure you have good topology, especially around joints such as the knees.) - If you're creating multiple custom LODs, it's helpful to hide all other body lods while you work to make sure your mesh fits around the corresponding lod.
 3. Apply transforms to your model when done (so Location and Rotation equal 0,0,0 and Scale equals 1,1,1). To do this in **Blender**, with your model selected press `Ctrl + A` and select `All Transforms`.
 
 ### Armature Binding & Transferring Weights
@@ -231,7 +231,7 @@ You will end up having something like this:
 
 ![image.png](cc_wearables_assets/lod-settings.png)
 
-After assigning the data asset, set the `Number of LODs` field to 3, and hit the `Regenerate` button to generate LOD data with the new settings.
+After assigning the data asset, set the `Number of LODs` field to 3, and hit the `Regenerate` button to generate LOD data with the new settings. (It may say “Apply Changes” first - select that button and then press again to regenerate)
 
 /// warning | Vault Packaging LOD Settings Rule
 If the skeletal mesh uses anything other than the listed data assets for LOD settings, or a LOD count other than 3, the **Vault** packaging process will fail.
@@ -341,6 +341,7 @@ To test in **HELIX Studio**, follow the steps below:
 3. In the **HELIX Character Creator** UI, be sure to select the gender your asset was created for. You can switch gender using the buttons in the top left of the viewport.
 4. Now you should be able to navigate to your new wearable using the **HELIX Character Creator** interface to find it.
 5. Once you've selected your wearable, press `Save and Exit`. This allows you to run around in the test level and see your wearable in action.
+6. To exit playmode you can press `Esc` and select "Leave World" or you can press `Shift + Esc`.
 
 ---
 
