@@ -284,6 +284,92 @@ Now, we are ready to start creating material instances. The workflow will go thr
 
 5. Repeat the steps for each slot if you need different materials per slot.
 
+### Material Options
+
+Our master material includes a wide range of options to support different material types and workflows. The settings you use will depend on your material, the level of control you require, and how your texture maps are configured.
+
+??? Texture Maps
+
+	The **Texture Maps** section is the primary area for assigning textures to your material.
+
+	By default, only the **Base Color (Albedo)** and **Normal Map** slots are visible. To use additional PBR maps such as **Ambient Occlusion (AO)**, **Roughness**, or **Metallic**, you must first enable them in the **Toggles** section.
+
+	Only enable texture maps that you intend to use. If a map would contain a single flat value across the entire texture (for example, a fully metallic surface or a constant roughness value), we recommend leaving the texture option disabled and using the controls in **05 - Float Variables** instead. This reduces texture memory usage and improves efficiency.
+
+	For example:
+
+	- Set **Metallic** to **1** for a fully metallic material.
+	- Set **Metallic** to **0** for a non-metallic material.
+	- Use values between **0** and **1** to achieve varying levels of metallic appearance.
+
+	The same principle applies to **Roughness** values.
+
+??? Assigning a Base Color (Albedo) Texture
+
+	To assign a Base Color texture:
+
+	1. Open the **Texture Maps** category within the Material Instance.
+	2. Check the box beside the appropriate texture slot to make the parameter editable.
+	3. Assign your texture using one of the following methods:
+		- Search for the texture directly in the field.
+		- Drag and drop the texture into the field.
+		- Select the texture in the Content Browser and click the arrow button beside the asset picker.
+
+??? Assigning Additional PBR Maps
+
+	If your material uses additional PBR maps, assign them in the corresponding texture slots.
+
+	As mentioned above, texture usage for **Ambient Occlusion**, **Roughness**, and **Metallic** maps must first be enabled in the **Toggles** section.
+
+??? Using Packed ORM Maps
+
+	If you are using two or more of the following maps:
+
+	- Ambient Occlusion (AO)
+	- Roughness
+	- Metallic
+
+	we strongly recommend packing them into a single **ORM** texture. This reduces texture memory usage and improves performance.
+
+	If you are not using a packed ORM texture, disable the **Use Packed ORM** option.
+
+??? Converting Glossiness Maps
+
+	If you are importing textures from another workflow or a modding project, you may encounter a **Glossiness** map instead of a Roughness map.
+
+	To use a Glossiness map, simply invert it in an image editing application to create a Roughness map.
+
+---
+
+### Additional Material Options
+
+The material includes several optional features that provide additional control and customization.
+
+To maximize performance, disable any feature that you are not actively using via its corresponding toggle.
+
+??? Extra Colors (Color Masking)
+
+	One example of an advanced feature is **Extra Colors**, also known as **Color Masking**.
+
+	This system allows you to use a colored mask texture to control tintable areas of a material.
+
+	For example, imagine a shirt with buttons:
+
+	- The shirt area is colored **red** in the mask.
+	- The button area is colored **green** in the mask.
+
+	The material can then use these RGB channels to apply separate color tints to each area.
+
+	### Setting Up Extra Colors
+
+	1. Enable the **Extra Colors** feature.
+	2. Create and assign an RGB color mask texture.
+	3. Adjust the corresponding color parameters within the material.
+
+	The color parameters are also exposed within the Character Creator. (as long as you set up the RGB mask tint in the wearable data asset)
+
+	If all color values remain set to **White** and their corresponding **Opacity/Alpha** values remain at **0**, the material will display its original Base Color texture by default. However, with **Extra Colors** enabled, users will still be able to customize the masked regions through the Character Creator, allowing them to recolor specific parts of the asset as desired.
+
 ---
 
 ## 8. Integrate Into **HELIX Character Creator**
