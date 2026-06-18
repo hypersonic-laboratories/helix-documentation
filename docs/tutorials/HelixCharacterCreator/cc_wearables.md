@@ -246,14 +246,12 @@ Your wearables need to use one of the defined master materials listed below to b
 ??? note "Master Material Table"
     | Master Material | Path | Description |
     |---|---|---|
-    | **MM_Basic_Wearables_Opaque** | `/HelixCharacterCreator/Materials/MM_Basic_Wearables_Opaque` | Base material for a basic texture with tint setup. It's recommended to use this master material for creators who just want to add textures and a tint. |
-    | **MM_Basic_Wearables_Masked** | `/HelixCharacterCreator/Materials/MM_Basic_Wearables_Masked` | Base material for a basic texture with tint setup with mask functinality (e.g. masked hair) |
-    | **MM_BaseCloth** | `/HelixCharacterCreator/Materials/MM_BaseCloth` | Base material with Color/Normal/ORM texture-based setup. More advanced than MM_Basic_Wearables, but also more complex and can be worse for performance. |
+    | **MM_Basic_Wearables** | `/HelixCharacterCreator/Materials/MM_Basic_Wearables` | Base material for all wearables. Can be used for basic hair by enabling the "Masked Material" toggle. |
     | **MM_BaseCloth_Glass** | `/HelixCharacterCreator/Materials/MM_BaseCloth_Glass` | Base material for transparent sections of wearables (e.g. sunglasses) |
     | **MM_Stitches** | `/HelixCharacterCreator/Materials/MM_Stitches` | Base material for masked stitch sections of wearables |
     | **M_Invis** | `/HelixCharacterCreator/Materials/M_Invis` | Invisible material. Can be used to hide specific sections of wearables if required. |
-    | **MM_Hair_1** | `/HelixCharacterCreator/Materials/MM_Hair_2` | Base material for hair meshes. |
-    | **MM_Hair_2** | `/HelixCharacterCreator/Materials/MM_Hair_2` | Base material for hair meshes. |
+    | **MM_Hair_1** | `/HelixCharacterCreator/Materials/MM_Hair_2` | Base material for hair meshes. Advanced and still in development - Use MM_Basic_Wearables with mask toggle for a simplified, stable setup. |
+    | **MM_Hair_2** | `/HelixCharacterCreator/Materials/MM_Hair_2` | Base material for hair meshes. Advanced and still in development - Use MM_Basic_Wearables with mask toggle for a simplified, stable setup. |
 
 Before we start, important things to bring up:
 
@@ -266,17 +264,17 @@ Before we start, important things to bring up:
 Please note that wearables are currently limited to **8 material slots**, and remaining slots won't render on the character when equipped. While this is the maximum supported amount, we strongly recommend using only 1–2 unique materials per wearable to achieve optimal rendering performance.
 
 <br>
-Now, we are ready to start creating material instances. The workflow will go through the set up of the basic material we recommend you choose if you just need texture and tin:
+Now, we are ready to start creating material instances. The workflow will go through the set up of the basic wearable material, which we recommend for most use cases:
 
 1. Right click an empty area in the content browser and select `Material Instance` from the menu:
 
     ![image.png](cc_wearables_assets/material-1.png)
 
-2. Open the material instance and pick one **MM_Basic_Wearables_Opaque** as the parent:
+2. Open the material instance and pick one, e.g. **MM_Basic_Wearables** as the parent:
 
     ![image.png](cc_wearables_assets/material-2_opaque.png)
 
-3. Add your base textures into the corresponding fields and enable and configure tin if you'd like:
+3. Add your base textures into the corresponding fields and enable and configure tint if you'd like:
 
     ![image.png](cc_wearables_assets/material-3_opaque.png)
 
@@ -285,18 +283,6 @@ Now, we are ready to start creating material instances. The workflow will go thr
     ![image.png](cc_wearables_assets/material-4.png)
 
 5. Repeat the steps for each slot if you need different materials per slot.
-
-#### Advanced Material Setup
-
-There is also a more advanced material called **MM_BaseCloth**. As mentioned in the master material table above, this base material has settings for Color/Normal/ORM texture-based setup. It is more advanced than **MM_Basic_Wearables**, but also more complex and can be worse for performance. See below how to set it up:
-
-1. Open the material instance and pick one of the allowed master materials (refer to the table above) as the parent:
-
-    ![image.png](cc_wearables_assets/material-2.png)
-
-2. Add your base textures into the corresponding fields. Tweak any vector/scalar parameters to your liking.
-
-    ![image.png](cc_wearables_assets/material-3.png)
 
 ---
 
