@@ -1,6 +1,6 @@
 # Creating Custom Characters
 
-This guide walks you through the process of packaging custom character mesh assets using Helix Studio.
+This guide walks you through the process of packaging custom character mesh assets using HELIX Studio.
 
 By the end you will have a custom character mesh that players can select and equip on their characters at runtime.
 
@@ -12,17 +12,17 @@ Custom character meshes do not support [wearables](https://development.helix-doc
 
 ## Prerequisites
 
-- Helix Studio installed.
-- A **Helix account**, logged in within Helix Studio (required for the Packages tools and Vault upload).
+- HELIX Studio installed.
+- A **HELIX account**, logged in within HELIX Studio (required for the Packages tools and Vault upload).
 - A custom character mesh, prepared for importing into project (either .fbx file or import from Fab)
 
 ---
 
 ## 1. Create a Project
 
-Launch Helix Studio and create either a **new wearable sample project** or a **blank project** to start from.
+Launch HELIX Studio and create either a **new wearable sample project** or a **blank project** to start from.
 
-![Creating a new project in Helix Studio](cc_metahumans_assets/01-create-project.png)
+![Creating a new project in HELIX Studio](cc_metahumans_assets/01-create-project.png)
 
 ---
 

@@ -4,7 +4,7 @@ This tutorial is an extension to the wearables documentation. Please refer to th
 
 ---
 
-Before following this tutorial familiarise yourself with the wearables documentation. For simulated hair, the workflow differs to section `7. Helix Studio Importing`. This documentation is a supplement to section 7. Here, more asset creation detail pertaining to hair bone setup is given along with describing the import process and setting up the `Physics Asset`. 
+Before following this tutorial familiarise yourself with the wearables documentation. For simulated hair, the workflow differs to section `7. HELIX Studio Importing`. This documentation is a supplement to section 7. Here, more asset creation detail pertaining to hair bone setup is given along with describing the import process and setting up the `Physics Asset`. 
 
 ---
 
@@ -32,7 +32,7 @@ Export your model exactly how it’s shown in the wearables documentation. Makin
 
 ---
 
-## 3. Helix Studio Importing
+## 3. HELIX Studio Importing
 
 Import you fbx into the correct folder as outlined in the wearables documentation - Except this time don’t assign a skeleton. Leave it blank because we will need to import our new skeleton as we made bone changes/ added bones.
 

@@ -4,7 +4,7 @@ If your level has seatable assets such as benches, beds, chairs etc, you can tak
 
 ![image.png](CustomMapImages/u_3.png)
 
-1. After selecting the actor you would like to convert in your level, click **Add Component** button in properties panel and select `Helix Seatable Entity Component` from the list. This component provides all the required functionality for your actor.
+1. After selecting the actor you would like to convert in your level, click **Add Component** button in properties panel and select `HELIX Seatable Entity Component` from the list. This component provides all the required functionality for your actor.
 
     ![image.png](CustomMapImages/u_4.png)
 

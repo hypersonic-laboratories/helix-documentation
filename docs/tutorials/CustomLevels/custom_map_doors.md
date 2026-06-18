@@ -1,6 +1,6 @@
 # Adding Interactable Doors To Custom Levels
 
-If your level has door meshes that you want to make interactable by players, you can take additional steps to replace them with **Helix Doors**.
+If your level has door meshes that you want to make interactable by players, you can take additional steps to replace them with **HELIX Doors**.
 
 ![image.png](CustomMapImages/14.png)
 

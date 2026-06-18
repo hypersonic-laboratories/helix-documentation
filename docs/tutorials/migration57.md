@@ -23,7 +23,7 @@ Suggested steps to achieve this, using the default **Creator Kit** packages as a
     ![image.jpg](MigrationImages/2.jpg)
 
     ??? note "HELP! I'm struggling to find the right folders!"
-        If you are struggling to locate the folders, click on "Open Helix Packaging" menu at the top, access the package you need to check and click "Browse". This will show you the folder it's linked to.
+        If you are struggling to locate the folders, click on "Open HELIX Packaging" menu at the top, access the package you need to check and click "Browse". This will show you the folder it's linked to.
 
 3. Open both the **Creator Kit** and **HELIX Studio** project folders in Windows Explorer, then copy the package folders to their corresponding places (**Content** Subfolders to **Content**, **Content Plugins** to **Plugins**):
     

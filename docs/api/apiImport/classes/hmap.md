@@ -385,6 +385,6 @@ HMap.ClearNavWaypoint()
 
 ## See also
 
-- [Configuring the map on Helix Studio](../../../tutorials/HelixMap/studio.md) — editor-side setup and baking.
+- [Configuring the map on HELIX Studio](../../../tutorials/HelixMap/studio.md) — editor-side setup and baking.
 - [Configuring the map at runtime](../../../tutorials/HelixMap/runtime.md) — markers and settings from Lua.
 - [Map Settings Object](../../../tutorials/HelixMap/settings.md) — reference for every map setting.

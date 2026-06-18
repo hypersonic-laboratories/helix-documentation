@@ -1,10 +1,10 @@
 ---
-title: Configuring the map on Helix Studio
-description: Set up the minimap and full-screen map for your level in Helix Studio
+title: Configuring the map on HELIX Studio
+description: Set up the minimap and full-screen map for your level in HELIX Studio
 status: new
 ---
 
-# Configuring the map on Helix Studio
+# Configuring the map on HELIX Studio
 
 ## What the map is
 

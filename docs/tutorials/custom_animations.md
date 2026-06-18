@@ -8,9 +8,9 @@ The process for adapting animations differs depending on whether the asset pack 
 
 ## 1. Create a Project
 
-Launch Helix Studio and create either a project you want to start from.
+Launch HELIX Studio and create either a project you want to start from.
 
-![Creating a new project in Helix Studio](HelixCharacterCreator/cc_metahumans_assets/01-create-project.png)
+![Creating a new project in HELIX Studio](HelixCharacterCreator/cc_metahumans_assets/01-create-project.png)
 
 ## 2. Acquire & Import Marketplace Asset
 
