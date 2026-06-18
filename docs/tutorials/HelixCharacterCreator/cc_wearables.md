@@ -288,7 +288,7 @@ Now, we are ready to start creating material instances. The workflow will go thr
 
 Our master material includes a wide range of options to support different material types and workflows. The settings you use will depend on your material, the level of control you require, and how your texture maps are configured.
 
-??? Texture Maps
+??? note "Texture Maps"
 
 	The **Texture Maps** section is the primary area for assigning textures to your material.
 
@@ -304,7 +304,7 @@ Our master material includes a wide range of options to support different materi
 
 	The same principle applies to **Roughness** values.
 
-??? Assigning a Base Color (Albedo) Texture
+??? note "Assigning a Base Color (Albedo) Texture"
 
 	To assign a Base Color texture:
 
@@ -315,13 +315,13 @@ Our master material includes a wide range of options to support different materi
 		- Drag and drop the texture into the field.
 		- Select the texture in the Content Browser and click the arrow button beside the asset picker.
 
-??? Assigning Additional PBR Maps
+??? note "Assigning Additional PBR Maps"
 
 	If your material uses additional PBR maps, assign them in the corresponding texture slots.
 
 	As mentioned above, texture usage for **Ambient Occlusion**, **Roughness**, and **Metallic** maps must first be enabled in the **Toggles** section.
 
-??? Using Packed ORM Maps
+??? note "Using Packed ORM Maps"
 
 	If you are using two or more of the following maps:
 
@@ -333,7 +333,7 @@ Our master material includes a wide range of options to support different materi
 
 	If you are not using a packed ORM texture, disable the **Use Packed ORM** option.
 
-??? Converting Glossiness Maps
+??? note "Converting Glossiness Maps"
 
 	If you are importing textures from another workflow or a modding project, you may encounter a **Glossiness** map instead of a Roughness map.
 
@@ -347,7 +347,7 @@ The material includes several optional features that provide additional control 
 
 To maximize performance, disable any feature that you are not actively using via its corresponding toggle.
 
-??? Extra Colors (Color Masking)
+??? note "Extra Colors (Color Masking)"
 
 	One example of an advanced feature is **Extra Colors**, also known as **Color Masking**.
 
