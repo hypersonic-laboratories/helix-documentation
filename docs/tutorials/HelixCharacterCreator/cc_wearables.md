@@ -284,7 +284,7 @@ Now, we are ready to start creating material instances. The workflow will go thr
 
 5. Repeat the steps for each slot if you need different materials per slot.
 
-# Material Options
+### Material Options
 
 Our master material includes a wide range of options to support different material types and workflows. The settings you use will depend on your material, the level of control you require, and how your texture maps are configured.
 
@@ -341,7 +341,7 @@ Our master material includes a wide range of options to support different materi
 
 ---
 
-## Additional Options
+### Additional Material Options
 
 The material includes several optional features that provide additional control and customization.
 
