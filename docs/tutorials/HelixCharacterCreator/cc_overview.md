@@ -64,7 +64,7 @@ Key architectural points:
 
 ---
 
-## Planned for Later
+## Upcoming Features
 
 - **Custom Tattoos**: Allow cooking custom tattoo textures and apply them to characters from HELIX Character Creator UI.
 - **Face Proportions Aware Makeup**: Project custom makeup items correctly to custom metahuman heads.
@@ -74,7 +74,7 @@ Key architectural points:
 
 ## What We Want Testers to Evaluate
 
-Try things out and tell us anything that looks wrong, breaks, or feels slow. When you report an issue, note what you did right before it happened and which item or package was involved. The main things to watch for:
+Help us improve the HELIX Character Creator by providing feedback and bug reports:
 
 - **Does everyone see the same character?** Your outfit, body shape, and look should appear correctly for other players, including people who join after you.
 - **Does it break anything?** Watch for crashes, error messages, or characters showing the wrong or default look after changing outfits or respawning.
@@ -85,6 +85,11 @@ Try things out and tell us anything that looks wrong, breaks, or feels slow. Whe
 - **Is it smooth?** Note any lag, stutter, or delay when changing your look, and anything that looks off on far-away characters.
 - **Does it save?** Your character should look the same after leaving and rejoining the same world.
 - **Do items conflict?** Watch for items that overlap, clip, or behave oddly when combined.
+
+/// note | Bug Reports & Feedback
+- For HELIX Character Creator related feedback, please fill out this form: https://forms.gle/UGqyNZykrRMit23G7
+- For bug reports, please use this form (and select Character Creator under Where Was This Issue Found): https://forms.fillout.com/t/dKV25icNNKus
+///
 
 ---
 
