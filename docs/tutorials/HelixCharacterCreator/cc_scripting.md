@@ -40,7 +40,7 @@ System:EquipCosmeticItem('ee0dd5a7-24e8-3192-a308-e9fb78e12491') -- Database ID 
 `GetCosmeticsSystem()` returns a `TScriptInterface<IHCosmeticsSystem>`. In UnLua you call its functions directly with `:`, no manual cast required.
 
 /// warning | Initial load
-Cosmetics are streamed asynchronously. Before the first load completes, the system may be absent or the loadout empty. Gate early access with `Character:IsInitialCosmeticsLoadDone()`.
+Cosmetics are streamed asynchronously. Before the first load completes, the system may be absent or the loadout might be empty. Gate early access with `IsInitialCosmeticsLoadDone` function and wait for first `OnCosmeticsUpdated` delegate callback to ensure cosmetics are initialized properly.
 ///
 
 ---
