@@ -1,4 +1,4 @@
-# Install Helix
+# Install HELIX
 
 ## Make a HELIX Account
 

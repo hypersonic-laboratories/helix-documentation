@@ -100,7 +100,7 @@ The server will automatically pull the newest published version of your world.
 | `HELIX_SERVER_ID` | The Server ID of a published server from the Creator Hub. |
 | `HELIX_PACKAGE_SLUG` | The Package (World) Slug from the Creator Hub. |
 | `HELIX_PACKAGE_VERSION_ID` | The Package (World) Version ID from the Creator Hub. |
-| `HELIX_LEVEL_ASSET` | Full Object Path to the Level Asset that will replace the Default Blank Level hosting a Helix World. |
+| `HELIX_LEVEL_ASSET` | Full Object Path to the Level Asset that will replace the Default Blank Level hosting a HELIX World. |
 | `HELIX_SIDELOAD_PAKS` | A `\|` delimited list of paths to local folders created with a Creator Kit. |
 | `HELIX_SYSTEM_DEPENDENCIES` | A `\|` delimited list of Package Version IDs that will be automatically added to every new World as dependencies. |
 

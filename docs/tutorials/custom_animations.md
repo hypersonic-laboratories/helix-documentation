@@ -4,51 +4,83 @@ This guide walks you through the complete process of acquiring animation packs f
 
 The process for adapting animations differs depending on whether the asset pack was designed for the older Unreal Engine 4 skeleton or the modern Unreal Engine 5 rig. This guide covers both scenarios.
 
-## 1. Acquiring & Importing Marketplace Assets
+---
 
-First, you need to get your animation assets from the marketplace and add them to the **Creator Kit** project.
+## 1. Create a Project
 
-1. Acquire your desired animation pack from [Fab](https://fab.com) (formerly the Unreal Marketplace).
+Launch HELIX Studio and create either a project you want to start from.
+
+![Creating a new project in HELIX Studio](HelixCharacterCreator/cc_metahumans_assets/01-create-project.png)
+
+## 2. Acquire & Import Marketplace Asset
+
+If your animation assets are acquired from Fab, you will need Epic Games Launcher to import them into your new project.
+
+1. Acquire your desired animation pack from [Fab](https://fab.com).
 2. Open the **Epic Games Launcher** and navigate to the **Unreal Engine** -> **Library** tab.
 3. Locate your newly acquired pack in the **Fab Library** section and click **Add To Project**.
 
     ![image.png](CustomAnimImages/1.png)
 
-4. From the project list, select **CreatorKit**.
+4. From the project list, select your new project. The window will show "Asset not compatible with version" error. Click **Select Version** box and select 5.7 (or latest available version below 5.7), and click **Add to Project**.
 
     ![image.png](CustomAnimImages/2.png)
 
 ---
 
-## 2. Setting Up Your HELIX Addon Package
+## 3. Create a Wearable Vault Package
 
-Next, you will use the **HELIX Packaging Tool** to prepare your package folder.
+1. From the toolbar menu, select **Packages → Manage Packages → New Package**.
+
+    ![image.png](CustomAnimImages/hs-1.png)
+
+2. Fill in the details for your vault package. Set the **type** to **Asset Pack**.
+
+    ![image.png](CustomAnimImages/hs-2.png)
+
+3. Click **Create Package**.
+
+    Package creation generates a new plugin folder named after your package. This folder is the **root** where you gather all your animation related assets.
+
+    ![image.png](CustomAnimImages/hs-3.png)
+
+---
+
+## 4. Set Up Your HELIX Addon Package
+
+Next, you will prepare your imported assets for packaging.
 
 ### Option A: For UE5 Rig-Based Packs (Replace Skeleton)
 
 This is the simpler method, used for modern packs that are already compatible with the `UE5` skeleton.
 
-1. Launch the **Creator Kit** editor.
-
-2. Find your imported Fab asset folder and right click to it. Select **Convert to Package (Addon)**. This will make it possible to directly cook this folder with HELIX Packaging Tool.
+1. Find your imported Fab asset folder under **Content**, and right click to it. Select **Migrate**.
 
     ![image.png](CustomAnimImages/u_1.png)
 
-    /// info | Note
-    Alternatively, you can also create a new package folder from HELIX Packaging Tool and move your assets or import source files into the created folder.
-    ///
+2. Make sure only root folder of your imported pack is selected, and click **OK** button.
 
-3. Select all the **Animation Sequence** assets in your package folder.
+    ![image.png](CustomAnimImages/u_2.png)
 
-4. Right-click the selection and choose **Replace Skeleton...**
+3. On the folder pick window, select `<Your Project Root>/Plugins/<Your Package Name>/Content` folder.
+
+    ![image.png](CustomAnimImages/u_3.png)
+
+4. Ensure assets are copied over into your new package content folder.
+
+    ![image.png](CustomAnimImages/u_4.png)
+
+5. Select all the **Animation Sequence** assets in your package folder.
+
+6. Right-click the selection and choose **Replace Skeleton...**
 
     ![image.png](CustomAnimImages/4.png)
 
-5. In the dialog, select **SK_Unified** from the list. This is the primary skeleton used by default for HELIX characters. Click **OK**.
+7. In the dialog, select **SK_Unified** from the list (Path: `/HelixAnimation/Unified/Meshes`). This is the primary skeleton used by default for HELIX characters. Click **OK**.
 
     ![image.png](CustomAnimImages/4_1.png)
 
-6. Verify that the selected animations now reference the **SK_Unified** skeleton. Save all modified assets (`Ctrl+ShiftS`).
+8. Verify that the selected animations now reference the **SK_Unified** skeleton. Save all modified assets (`Ctrl+ShiftS`).
 
     ![image.png](CustomAnimImages/9.png)
 
@@ -56,64 +88,47 @@ This is the simpler method, used for modern packs that are already compatible wi
 
 This method is for older packs built for the `UE4` Mannequin or packs using a custom rig. It uses the **IK Retargeting** system to create new, compatible animations.
 
-1. Launch the **Creator Kit** editor.
+1. Repeat same steps described on Option A, until step 5. This will move all your assets into your new HELIX package folder.
 
-2. Access the **HELIX Packaging Tool** from the main toolbar.
-
-3. In the packaging tool window, click **New Package**.
-
-    ![image.png](CustomAnimImages/5.png)
-
-4. Enter a unique **Package Name** (e.g., `MyFirstAnimationPack`) and select **Addon** as the **Package Type**.
-
-5. Click **Add New Package**. This action creates a dedicated folder for your assets (e.g., **Plugins/Addon_MyFirstAnimationPack**).
-
-    ![image.png](CustomAnimImages/6.png)
-
-6. In the **Content Browser**, locate the main folder for the animation assets you imported in Section 1.
-
-    ![image.png](CustomAnimImages/u_5.png)
-
-
-8. Select all the **Animation Sequence** assets in your package folder, right-click the selection, and choose **Retarget Animation Assets** -> **Duplicate and Retarget Animation Assets**.
+2. Select all the **Animation Sequence** assets in your new package folder, right-click the selection, and choose **Retarget Animation Assets** -> **Duplicate and Retarget Animation Assets**.
 
     ![image.png](CustomAnimImages/4_2.png)
 
-9. The Animation Retargeting window will open. For **Source Skeleton**, select the original skeleton from the downloaded pack (e.g., **SK_Mannequin**).
+3. The Animation Retargeting window will open. For **Source Skeleton**, select the original skeleton from the downloaded pack (e.g., **SK_Mannequin**).
 
     ![image.png](CustomAnimImages/4_3.png)
 
-10. For **Target Skeleton**, choose **SKM_Manny** located in **Content/Characters/Heroes/Unified** folder.
+4. For **Target Skeleton**, choose **SKM_Manny** located in `/HelixAnimation/Unified/Meshes` folder.
 
     ![image.png](CustomAnimImages/4_4.png)
 
     /// info | Note
-    Your project may contain multiple assets named **SKM_Manny**. Ensure you select the one from the **Unified** folder, as shown in the screenshot. This is the mesh associated with our **SK_Unified** skeleton.
+    Your project may contain multiple assets named **SKM_Manny**. Ensure you select the one from the `/HelixAnimation/Unified/Meshes` folder, as shown in the screenshot. This is the mesh associated with our **SK_Unified** skeleton.
     ///
 
-11. You can typically leave **Generate Auto Retargeter** checked to automatically map bones. For advanced use cases where the automatic mapping is incorrect, you can uncheck this and provide your own custom **IK Rig** and **IK Retargeter** assets.
+5. You can typically leave **Generate Auto Retargeter** checked to automatically map bones. For advanced use cases where the automatic mapping is incorrect, you can uncheck this and provide your own custom **IK Rig** and **IK Retargeter** assets.
 
-12. Review the list of animations to be generated. You can uncheck any you don't need. Click **Export Animations** button.
+6. Review the list of animations to be generated. You can uncheck any you don't need. Click **Export Animations** button.
 
     ![image.png](CustomAnimImages/4_5.png)
 
-13. On the new window, select your helix package folder (e.g., **Plugins/Addon_MyFirstAnimationPack**) as the destination. Click **Export**.
+7. On the new window, select a new folder in helix package folder to put new retargeted animations (e.g., **Plugins/MyAnimationPackage/Retargeted**). Click **Export**.
 
     ![image.png](CustomAnimImages/4_6.png)
 
-14. Click **Export** button again in next window.
+8. Click **Export** button again in next window.
 
     ![image.png](CustomAnimImages/4_7.png)
 
-15. The engine will now process and retarget all selected animations, creating new copies in your package folder that are compatible with the HELIX skeleton.
+9. The engine will now process and retarget all selected animations, creating new copies in your package folder that are compatible with the HELIX skeleton.
 
 ---
 
-## 4. Finalizing and Cooking The Package
+## 5. Finalize and Cook The Package
 
-With your animations successfully adapted and moved to your package folder, you can make final adjustments and "cook" the final `.pak` file.
+With your animations successfully adapted and moved to your package folder, you can make final adjustments and upload your package to vault.
 
-1. Open the animation assets inside your package folder (e.g., **Plugins/Addon_MyFirstAnimationPack**).
+1. Open the final animation assets inside your package folder (e.g., **Plugins/MyAnimationPackage**).
 
 2. Perform any necessary final adjustments. This is a good time to:
     - Enable/Disable **Root Motion**.
@@ -121,21 +136,25 @@ With your animations successfully adapted and moved to your package folder, you 
     - Add or modify **Animation Curves**.
     - Adjust play rate or other settings.
   
-3. If your package folder has any asset type unrelated to animations (textures, materials, levels, skeletal meshes etc.), remove them to reduce clutter.
+3. If your package folder has any asset type unrelated to animations (textures, materials, levels, skeletal meshes etc.), remove them to reduce clutter. If you've retargeted your animations, you should remove the source versions to prevent them from getting packaged with retargeted versions.
 
-4. Return to the **HELIX Packaging Tool** window.
+4. After finishing setting up your data asset, find your package from top toolbar and click on it.
 
-5. With your package selected, click the **Package** button. This process will cook your assets into the final `.pak` file format required by the **Creator Hub**. This may take some time.
+    ![image.png](CustomAnimImages/hs-4.png)
 
-    ![image.png](CustomAnimImages/7.png)
+5. Ensure information on the properties windows is correct, and fill any missing fields if needed. Click **Publish**.
 
-6. Once cooking is complete, a file explorer window will automatically open, displaying your final `.pak` file. Your animation pack is now ready to be uploaded to the **Creator Hub**!
+    ![image.png](CustomAnimImages/hs-5.png)
 
-    ![image.png](CustomAnimImages/10.png)
+6. Select **Upload to Vault** option and choose what you want to do with the current package (update current, make latest, publish as new). For current tutorial, we'll choose publish as new. Click **Start** button to start packaging process.
+
+    ![image.png](CustomAnimImages/hs-6.png)
+
+7. Once packaging is completed, your package will be ready to use from HELIX Vault on game build.
 
 ---
 
-## 5. (Bonus) Importing Animations From Mixamo
+## 6. (Bonus) Importing Animations From Mixamo
 
 It's also possible to download animations from [Mixamo.com](http://www.mixamo.com) and import them into Creator Kit for packaging with same retargeting steps done for `UE4` rig-based packs.
 
@@ -165,17 +184,11 @@ It's also possible to download animations from [Mixamo.com](http://www.mixamo.co
 
 ---
 
-## 6. Using Packaged Custom Animations In Worlds
-
-### 1. By Lua
+## 7. Using Packaged Custom Animations In Worlds
 
 For this example use case, we will try to load our packaged custom animation sequence asset and play it on player character with a Lua script.
 
-1. After creating your workspace, open build mode and import the package you created in **Creator Kit HELIX Packaging Tool**. To do that, click **File** -> **Load Package** from top bar, navigate to your package folder cooked by Creator Kit, and select `configFile.json` in the folder.
-
-    ![image.png](ReferenceCustomAssetsImages/1.png)
-
-    ![image.png](ReferenceCustomAssetsImages/2.png)
+1. After creating your workspace, open build mode by pressing **N** button and add the package you created in **Creator Kit HELIX Packaging Tool** from Vault section to your world.
 
 2. After import is completed, you will get a panel on the left side of window with the package's name. It might appear empty if your package doesn't have any world placeable assets, which is not a problem.
 
@@ -195,26 +208,19 @@ For this example use case, we will try to load our packaged custom animation seq
         local AnimParams = UE.FHelixPlayAnimParams()
         Timer.Delay(HWorld, 2, function()
             local MyCharacter = GetPlayerPawn(source)
-            -- Our custom package is named "Addon_MyFirstAnimationPack", and animation sequence asset inside is named "AS_Crying"
-            local result = Animation.Play(MyCharacter, '/Game/Addon_MyFirstAnimationPack/AS_Crying.AS_Crying', AnimParams, function() print('Animation Ended') end)
+            -- Our custom package is named "MyAnimationPackage", and animation sequence asset inside is named "AS_Crying"
+            local result = Animation.Play(MyCharacter, '/MyAnimationPackage/AS_Crying.AS_Crying', AnimParams, function() print('Animation Ended') end)
             print('Animation play result: ', result)
         end)
     end)
     ```
 
-4. Click the **Reload** button and then the **Play** button respectively to re-execute your lua scripts in workspace and then get back into play mode.
+5. Click the **Reload** button and then the **Play** button respectively to re-execute your lua scripts in workspace and then get back into play mode.
 
     ![image.png](ReferenceCustomAssetsImages/4.png)
 
     ![image.png](ReferenceCustomAssetsImages/4_2.png)
 
-5. Observe your character plays the custom animation after a second.
+6. Observe your character plays the custom animation after a second.
 
     ![image.png](ReferenceCustomAssetsImages/5.png)
-
----
-
-### 2. By Blueprint
-
-[examples coming soon]
-

@@ -8,9 +8,9 @@ HelixJS runs one entry script from your workspace. That script loads the rest of
 
 ## Where to put files
 
-In your Helix workspace:
+In your HELIX workspace:
 
-- `scripts/helix.main.js`: entry point. This is the file Helix executes.
+- `scripts/helix.main.js`: entry point. This is the file HELIX executes.
 - `scripts/js/`: folder for your JS modules (or use another name; the loader only needs a path).
 
 You can use any folder name instead of `js`. The loader receives `__dirname` as the scripts folder; you pass a `basePath` (e.g. `path.join(__dirname, "js")`) into `Utils.loadScripts`.

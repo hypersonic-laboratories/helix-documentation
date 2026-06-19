@@ -51,19 +51,27 @@ nav:
       - tutorials/creatorkit.md
       - tutorials/creatorhub.md
       - tutorials/in_world_purchases.md
+    - Character Customization:
+      - tutorials/HelixCharacterCreator/cc_overview.md
+      - tutorials/HelixCharacterCreator/cc_wearables.md
+      - tutorials/HelixCharacterCreator/cc_metahumans.md
+      - tutorials/HelixCharacterCreator/cc_characters.md
+      - tutorials/HelixCharacterCreator/cc_dynamichair.md
+      - tutorials/HelixCharacterCreator/cc_scripting.md
+    - Custom Levels:
+      - tutorials/CustomLevels/custom_maps.md
+      - tutorials/CustomLevels/custom_map_doors.md
+      - tutorials/CustomLevels/custom_map_seatables.md
+      - Custom Level Map:
+        - tutorials/HelixMap/studio.md
+        - tutorials/HelixMap/runtime.md
+        - tutorials/HelixMap/settings.md
     - Custom Assets:
-      - tutorials/custom_maps.md
-      - tutorials/custom_cc_assets.md
-      - tutorials/custom_characters.md
       - tutorials/custom_animations.md
       - tutorials/custom_vehicles.md
       - tutorials/custom_shells.md
       - tutorials/custom_blueprints.md
       - tutorials/custom_ui.md
-      - tutorials/custom_cc_FaceTattoo.md
-      - tutorials/custom_CC_bodyTattoo.md
-      - tutorials/custom_CC_Hair.md
-      - tutorials/custom_cc_Shoes.md
     - Misc:
       - tutorials/reference_custom_assets.md
       - tutorials/default_materials.md

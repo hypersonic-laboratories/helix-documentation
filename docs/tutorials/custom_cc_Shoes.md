@@ -46,22 +46,27 @@ After making the required adjustments, export your shoe model out as a `.fbx`.
 
 ---
 
-## **2. Creator Kit Package setup**
+## **2. HELIX Studio Package Setup**
 
-1. Launch the **Creator Kit** editor.
-2. Access the **HELIX Packaging Tool** from the main toolbar.
-3. In the packaging tool window, click **New Package**.
-4. Enter a unique Package Name (e.g. **MyNewShoes01**).
-5. Select **Wearable** as the **Package Type**.
+1. Launch **HELIX Studio**.
+2. Click **PACKAGE** -> **NEW PACKAGE** on the main toolbar.
+
+    ![image.png](WearableTutImages/19.png)
+
+    <br>
+
+3. Give your package a name, an easy to memorise HELIX URL, set the type to **WEARABLE** and add a description.
+
+    ![image.png](WearableTutImages/20.png)
     
-    ![image.png](WearableTutImages/1.png)
-    
-6. Click **Add New Package**. This action creates a dedicated plugin folder for your assets (e.g., **Plugins/Wearable_MyNewShoes01**).
+    <br>
+
+4. Click **CREATE PACKAGE**. This action creates a dedicated plugin folder for your assets (e.g., **Plugins/YourPackageName**).
     
     ![image.png](WearableTutImages/2.png)
     
-7. Go into the folder you've created and click the **Import** button in content browser. Choose your `.fbx` shoe model file. (You can also drag it into the Content Browser from Windows File Explorer)
-8. Do the same import procedure for any and all textures
+7. Go into the folder you've created and click the **Import** button in content browser. Choose your `.fbx` shoe model file. (You can also drag it into the Content Browser from Windows File Explorer).
+8. Do the same import procedure for any and all textures.
 
 ---
 
@@ -150,40 +155,61 @@ Please note, shoes are not cross compatible between genders, you will have to do
 
 ## **8. Packing**
 
-1. Return to the HELIX Packaging Tool window.
-2. With your package selected, click the **Package** button. This process will cook your assets into the final `.pak` file format required by the HELIX Creator Hub. This may take some time.
+1. Click on **PACKAGES** -> **MANAGE PACKAGES** -> **YOUR PACKAGE NAME**
+
+    ![image.png](WearableTutImages/21.png)  
+
+    <br>
+
+2. Fill in any additional information (optional), make sure the package visibility is set to **PRIVATE** unless you are happy with other creators and players to have access to it. Then click **PUBLISH**.
+
+    ![image.png](WearableTutImages/22.png)  
+
+    <br>
+
+3. Clicking **START** on the PUBLISH DIALOG confirmation prompt will package and publish your new package to the **Vault**. If you don't want your package to be uploaded to the **Vault**, select **PACKAGE LOCALLY** instead. Click **START** when ready.
     
-    ![image.png](WearableTutImages/11.png)
+    ![image.png](WearableTutImages/23.png)
+
+    <br>
+
+3. Once cooking is complete, if in the previous step you choose to publish your package to the **Vault**, you will now see it on **HELIX Creator Hub** as well as in **HELIX Game** client in the **Vault** tab. If you packaged it locally, you can find the files in the following path: `Your_Studio_Projects\Your_Project\Saved\HelixPackages\Your_Project`
     
-3. Once cooking is complete, a file explorer window will automatically open, displaying your final `.pak` files. Your wearable is now ready to be uploaded to the **Creator Hub**!
-    
-    ![image.png](WearableTutImages/12.png)
+    ![image.png](WearableTutImages/24.png)
     
     ---
     
 
 ## **9. Testing your Wearable**
 
-### **1. In Creator Kit**
+### **1. In HELIX Studio**
 
-1. This method doesn't require you to cook the package on the previous steps. As long as you placed all the required assets in your package folder in Creator Kit, and created the data asset as explained, it automatically becomes available for editor playthroughs.
-2. Press play in the **Creator Kit** editor, and press the **P** key to show the **Character Customization UI** for your character.
+1. This method doesn't require you to cook the package on the previous steps. As long as you placed all the required assets in your package folder in **HELIX Studio**, and created the data asset as explained, it automatically becomes available for editor playthroughs.
+2. Press play in the [**HELIX Studio** editor](studio.md#testing-in-editor), and press the **P** key to show the **Character Customization UI** for your character.
 3. In the shown UI, you should be able to navigate to your new wearable and click on it to test it on the character. (e.g. Outfits > Shoes)
 
-### **2. In HELIX**
+### **2. In HELIX Game Client**
 
-1. Create a draft world and import the `.pak` file you've cooked in **Creator Kit**.
+1. Create a draft world and import the `.pak` file you've cooked in **HELIX Studio**.
+
+2. Once in-game, press **N** to open Build Mode (or **ESC** -> **Build Mode**).
+
+3. Then click **FILE** -> **LOAD PACKAGE**, navigate to your package folder and select **configFile.json**.
     
     ![image.png](WearableTutImages/14.png)
+
+    <br>
     
     ![image.png](WearableTutImages/15.png)
+
+    <br>
     
 2. If import was successful, you should see your assets in the left panel.
-3. Importing also makes your wearables automatically available in **Character Customization UI**. Go back to the game from build mode, and the press **P** key.
+3. Importing also makes your wearables automatically available in **Character Customization UI**. Exit **Build Mode** by pressing the PLAY button or **N**, and the press **P** key to open **Character Creator**.
 4. Your imported wearable should be available in the corresponding category.
 
 ---
 
 ## **10. Ready To Rock**
 
-Once you've followed these steps, uploaded your package to Creator Hub, and imported it into your world, your new wearable items will be available for players joining your public world!
+Once you've followed these steps, uploaded your package to the **Vault**, and imported it into your world, your new wearable items will be available for players joining your public world!

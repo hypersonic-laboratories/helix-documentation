@@ -5,7 +5,7 @@ description: Player management and character data
 
 ## Description
 
-`Helix.Player` provides player and character APIs: pawn, controller, Helix ID, health changes, and cached character data. Use `fetchData` and `setCharacter` for persistence.
+`Helix.Player` provides player and character APIs: pawn, controller, HELIX ID, health changes, and cached character data. Use `fetchData` and `setCharacter` for persistence.
 
 ## Methods
 
@@ -47,12 +47,12 @@ if (controller && controller.GetControlRotation) {
 
 ### helixId ()
 
-Get player Helix ID.
+Get player HELIX ID.
 
 ```javascript
 const id = Helix.Player.helixId()
 if (id) {
-  console.log('Player Helix ID:', id.toString())
+  console.log('Player HELIX ID:', id.toString())
 }
 ```
 

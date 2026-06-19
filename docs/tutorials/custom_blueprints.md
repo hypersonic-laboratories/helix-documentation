@@ -36,7 +36,7 @@ For this tutorial, we have a blueprint based clock system pack, which has a main
   
     ![image.png](CustomBPImages/3.png)
 
-2. Make sure you have defined all the required functions, events, variables etc. in your blueprints to later access them with Lua inside Helix after importing your package there.
+2. Make sure you have defined all the required functions, events, variables etc. in your blueprints to later access them with Lua inside HELIX after importing your package there.
 
     ![image.png](CustomBPImages/5.png)
 
