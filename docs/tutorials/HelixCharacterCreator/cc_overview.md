@@ -31,7 +31,7 @@ Key architectural points:
 
 | Content type | Description | Authoring guide |
 |---|---|---|
-| **Modular body** | Base head, upper body, lower body, hands, and feet meshes (`Cosmetic.Slot.Body.*`). | Built-in |
+| **Modular body** | Base head, upper body, lower body, hands, and feet meshes. | Built-in |
 | **Clothing** | Tops, bottoms, full sets/outfits, backpacks, socks, shoes, and underwear layers. | [Creating Custom Wearables](cc_wearables.md) |
 | **Accessories** | Hats, masks, eyewear, necklaces, earrings, gloves, nails. | [Creating Custom Wearables](cc_wearables.md) |
 | **Appearance layers** | Main hair, facial hair (beard/mustache), eyebrows, eyelashes, iris, body/face tattoos, and makeup (lipstick, eyeliner, eyeshadow, blush). | [Creating Custom Wearables](cc_wearables.md) |
