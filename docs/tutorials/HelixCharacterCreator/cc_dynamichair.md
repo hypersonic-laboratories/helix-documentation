@@ -1,6 +1,6 @@
 # Creating Dynamic Hair
 
-This tutorial is an extension to the wearables documentation. Please refer to the [wearables](../HelixCharacterCreator/cc_wearables.md) documentation to fill any gaps in the general workflow. This tutorial will only describe the work needed for simulated hair that diverges from the original documentation. You may skip this tutorial for static hair.
+This tutorial is an extension to the wearables documentation. Please refer to the [wearables](../HelixCharacterCreator/cc_wearables.md) documentation to fill any gaps in the general workflow. This tutorial will only describe the work needed for simulated hair that diverges from the original documentation. You may not need details outlined here for static hair.
 
 ---
 
