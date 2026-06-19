@@ -52,6 +52,7 @@ nav:
       - tutorials/creatorhub.md
       - tutorials/in_world_purchases.md
     - Character Customization:
+      - tutorials/HelixCharacterCreator/cc_overview.md
       - tutorials/HelixCharacterCreator/cc_wearables.md
       - tutorials/HelixCharacterCreator/cc_metahumans.md
       - tutorials/HelixCharacterCreator/cc_characters.md
