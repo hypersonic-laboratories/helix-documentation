@@ -138,4 +138,4 @@ Then press Enable Collision button in the toolbar
 Once done, refer back to the `wearables` tutorial starting from the material section of part 7 or part **`8. Character Creator Integration/ Data Asset Creation`**.
 
 
-[Link Test](/HelixCharacterCreator/cc_wearables)
+[Link Test](../HelixCharacterCreator/cc_wearables.md)
