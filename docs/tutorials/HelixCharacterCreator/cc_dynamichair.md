@@ -135,7 +135,4 @@ Then press Enable Collision button in the toolbar
 
 ![image.png](cc_dynamichair_assets/image%2018.png)
 
-Once done, refer back to the `wearables` tutorial starting from the material section of part 7 or part **`8. Character Creator Integration/ Data Asset Creation`**.
-
-
-[Link Test](../HelixCharacterCreator/cc_wearables.md)
+Once done, refer back to the [wearables](../HelixCharacterCreator/cc_wearables.md) tutorial starting from the material section of part 7 or part **`8. Character Creator Integration/ Data Asset Creation`**.
