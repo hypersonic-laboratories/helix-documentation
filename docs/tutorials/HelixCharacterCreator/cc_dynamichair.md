@@ -1,10 +1,10 @@
 # Creating Dynamic Hair
 
-This tutorial is an extension to the wearables documentation. Please refer to the Wearables documentation to fill any gaps in the general workflow. This tutorial will only describe the work needed for simulated hair that diverges from the original wearables documentation.
+This tutorial is an extension to the wearables documentation. Please refer to the [wearables](../HelixCharacterCreator/cc_wearables.md) documentation to fill any gaps in the general workflow. This tutorial will only describe the work needed for simulated hair that diverges from the original documentation. You may not need details outlined here for static hair.
 
 ---
 
-Before following this tutorial familiarise yourself with the wearables documentation. For simulated hair, the workflow differs to section `7. HELIX Studio Importing`. This documentation is a supplement to section 7. Here, more asset creation detail pertaining to hair bone setup is given along with describing the import process and setting up the `Physics Asset`. 
+Before following this tutorial familiarise yourself with the wearables documentation. For simulated hair, the workflow differs to section [7. HELIX Studio Importing](../HelixCharacterCreator/cc_wearables.md/#7-import-into-helix-studio). This documentation is a supplement to section 7. Here, more asset creation detail pertaining to hair bone setup is given along with describing the import process and setting up the `Physics Asset`. 
 
 ---
 
@@ -28,13 +28,13 @@ After parenting you hair and the bones take some time to paint smooth, accurate 
 
 ## 2. Exporting your hair
 
-Export your model exactly how it’s shown in the wearables documentation. Making sure you’re hierarchy, LodGroups and bone binding is all setup.
+Export your model exactly how it’s shown in the [wearables](../HelixCharacterCreator/cc_wearables.md) documentation. Making sure you’re hierarchy, LodGroups and bone binding is all setup.
 
 ---
 
 ## 3. HELIX Studio Importing
 
-Import you fbx into the correct folder as outlined in the wearables documentation - Except this time don’t assign a skeleton. Leave it blank because we will need to import our new skeleton as we made bone changes/ added bones.
+Import you fbx into the correct folder as outlined in the [wearables](../HelixCharacterCreator/cc_wearables.md) documentation - Except this time don’t assign a skeleton. Leave it blank because we will need to import our new skeleton as we made bone changes/ added bones.
 
 ---
 
@@ -135,4 +135,4 @@ Then press Enable Collision button in the toolbar
 
 ![image.png](cc_dynamichair_assets/image%2018.png)
 
-Once done, refer back to the `wearables` tutorial starting from the material section of part 7 or part **`8. Character Creator Integration/ Data Asset Creation`**.
+Once done, refer back to the [wearables](../HelixCharacterCreator/cc_wearables.md) tutorial starting from the LOD section of [part 7](../HelixCharacterCreator/cc_wearables.md/#set-up-lod-data) or part [8. Character Creator Integration/ Data Asset Creation](../HelixCharacterCreator/cc_wearables.md/#8-integrate-into-helix-character-creator).
