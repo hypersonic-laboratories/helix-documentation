@@ -4,7 +4,7 @@ This tutorial is an extension to the [wearables](../HelixCharacterCreator/cc_wea
 
 ---
 
-Before following this tutorial familiarise yourself with the wearables documentation. For simulated hair, the workflow differs to section [7. HELIX Studio Importing](../HelixCharacterCreator/cc_wearables.md). This documentation is a supplement to section 7. Here, more asset creation detail pertaining to hair bone setup is given along with describing the import process and setting up the `Physics Asset`. 
+Before following this tutorial familiarise yourself with the wearables documentation. For simulated hair, the workflow differs to section [7. HELIX Studio Importing](../HelixCharacterCreator/cc_wearables.md/#7-import-into-helix-studio). This documentation is a supplement to section 7. Here, more asset creation detail pertaining to hair bone setup is given along with describing the import process and setting up the `Physics Asset`. 
 
 ---
 
