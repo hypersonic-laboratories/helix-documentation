@@ -218,7 +218,9 @@ Please refer to [this section](cc_wearables.md#set-up-materials) of the Custom W
 Custom character meshes optionally can simulate post-anim physics with post-process animation blueprints. Please check [Rigid Body Documentation](https://dev.epicgames.com/documentation/en-us/unreal-engine/animation-blueprint-rigid-body-in-unreal-engine?application_version=5.5) and [Anim Dynamics Documentation](https://dev.epicgames.com/documentation/en-us/unreal-engine/animation-blueprint-animdynamics-in-unreal-engine?application_version=5.5) for more information about how to create one for your character if applicable.
 
 /// warning | Warning
-Post-process animation blueprint support is experimental and creators are responsible with ensuring their custom character physics implementation is optimized for performance.
+1. Post-process animation blueprint support is experimental and creators are responsible with ensuring their custom character physics implementation is optimized for performance.
+
+2. If you decide to use this feature, please ensure to assign a skeleton to your Post-Process Animation Blueprint, otherwise packaging will fail.
 ///
 
 1. After creating a post-process animation blueprint, assign it to **Post-Process Anim Blueprint** field of your skeletal mesh asset.
