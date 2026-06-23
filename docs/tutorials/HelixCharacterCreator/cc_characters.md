@@ -46,7 +46,7 @@ Launch **HELIX Studio** and create either a **new wearable sample project** or a
 
 Either use your favorite modeling tool to create and skin a custom character mesh, or get a character mesh from [Fab](https://fab.com).
 
-If you're using a character pack acquired from [Fab](https://fab.com), just simply move textures, materials and character mesh into your package folder. If you can't see your imported assets in **HELIX Studio**, ensure they are specifically in the root folder of your plugin (not in subfolders).
+If you're using a character pack acquired from [Fab](https://fab.com), just simply move textures, materials and character mesh into your package folder.
 
 Otherwise, if you have an `.fbx` file to import into project, import it directly into the created folder. Do not forget to fix redirectors.
 
@@ -80,7 +80,7 @@ If your character mesh is using a custom rig (including old Unreal Engine 4 mann
 Ensure all of your skeleton bones have unit scale (1.0). If your character bones were scaled inside Maya/Blender during rigging (especially the root bone), this is not supported and your custom mesh will fail to retarget animations.
 ///
 
-1. **Right Click** to your custom character mesh in content browser and select **Create** -> **IK Rig**, when naming it, follow **IK*_Name** convention for clarity. IK Rig is asset is used to define bone chains and IK targets to use during retargeting process.
+1. **Right Click** to your custom character mesh in content browser and select **Create** -> **IK Rig**, when naming it, follow **IK_Name** convention for clarity. IK Rig is asset is used to define bone chains and IK targets to use during retargeting process.
 
     ![image.png](cc_characters_assets/u_1.png)
 
@@ -112,7 +112,7 @@ Ensure all of your skeleton bones have unit scale (1.0). If your character bones
 
     ![image.png](cc_characters_assets/u_6.png)
 
-7. Select the IK Rig asset you've just created on previous steps as **Target IKRig Asset**. This property will define the target skeleton we'll retarget the animations to during runtime. When asked to assign IK to all ops, click **Assign** button on the prompt again.
+7. Select the IK Rig asset you've just created on previous steps as **Default Target IKRig Asset**. This property will define the target skeleton we'll retarget the animations to during runtime. When asked to assign IK to all ops, click **Assign** button on the prompt again.
 
     ![image.png](cc_characters_assets/5.7-ikrig-1.png)
 
