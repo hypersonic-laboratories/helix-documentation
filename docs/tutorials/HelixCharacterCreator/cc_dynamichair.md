@@ -50,11 +50,11 @@ Then hit `Create Asset`.
 
 ![image.png](cc_dynamichair_assets/image%204.png)
 
-In the **Physics Asset** editor, you can press the `eye` icon and navigate to `Bones > None / All Hierarchy` to toggle visibility of the skeleton bones in the viewport. It can be helpful to have them set to `None`.
+In the **Physics Asset** editor, you can press the "eye" icon and navigate to `Bones > None / All Hierarchy` to toggle visibility of the skeleton bones in the viewport. It can be helpful to have them set to `None`.
 
 ![image.png](cc_dynamichair_assets/image%205.png)
 
-Next, select the **Head capsule** and in the **details** panel navigate to `Physics Type` and set it to `kinematic` to stop the whole head mesh dropping to the ground.
+Next, select the **Head capsule** and in the **Details** panel navigate to `Physics Type` and set it to `Kinematic` to stop the whole head mesh dropping to the ground.
 
 ![image.png](cc_dynamichair_assets/image%206.png)
 
@@ -62,11 +62,15 @@ Press `Simulate` to see the simulation (remember to stop simulating by pressing 
 
 ![image.png](cc_dynamichair_assets/image%207.png)
 
+If you can't see `Simulate` button it may be hidding in this burger menu:
+
+![image.png](cc_dynamichair_assets/image%2019.png)
+
 In the **Skeleton Tree**, delete all physics shapes other than `head` so we can start fresh.
 
 ![image.png](cc_dynamichair_assets/image%208.png)
 
-Next, in the same window, press the `cog` icon and navigate to `Show All Bones`. 
+Next, in the same window, press the "cog" icon and navigate to `Show All Bones`. 
 
 ![image.png](cc_dynamichair_assets/image%209.png)
 
@@ -78,13 +82,21 @@ This will add capsule bodies at those bone locations:
 
 ![image.png](cc_dynamichair_assets/image%2011.png)
 
-To make things easier, hide the bones in the **Skeleton Tree** again by pressing the `cog` icon and navigating to `Hide Bones`.
+To make things easier, hide the bones in the **Skeleton Tree** again by pressing the "cog" icon and navigating to `Hide Bones`.
 
-With all the new capsules selected, in the **Details** panel under `Body Setup > Primitives > Capsules` set `Length` and `Radius` to `10`. 
+With all the new capsules selected, in the **Details** panel under `Body Setup > Primitives > Capsules` set `Length` and `Radius` to `10`.
+
+![image.png](cc_dynamichair_assets/image%2020.png)
 
 Next, set the **Physics Type** to `Kinematic`. After that, select `Show All Bones` again in the **Skeleton Tree**.
 
-With all bones now visible, scroll down to your created hair bones. Select them all and press the `Add Bodies` button which is located in the **Tools** tab at the bottom right corner of the **Physics Asset** editor. 
+With all bones now visible, scroll down to your created hair bones. Select them all:
+
+![image.png](cc_dynamichair_assets/image%2021.png)
+
+With all hair bones selected, press the `Add Bodies` button which is located in the **Tools** tab at the bottom right corner of the **Physics Asset** editor. It will look like this:
+
+![image.png](cc_dynamichair_assets/image%2022.png)
 
 Make sure the `Primitive type` is still set to `Capsule`. (Just like all other windows, if you don’t see this tab, enable it in `Window > Tools` in the main editor toolbar at the top of the editor window).
 
@@ -94,7 +106,7 @@ Do the same for all chains of hair bones you have.
 
 After that, hide bones again to keep the **Skeleton Tree** hierarchy clear. 
 
-Then select all of the new Hair capsule bodies and change the **Physics Type** to `Simulated`.  
+Then select all of the new `Hair` capsule bodies and change the **Physics Type** to `Simulated`. **HELIX Studio** may hang for a little while, this is normal. 
 
 ![image.png](cc_dynamichair_assets/image%2013.png)
 
