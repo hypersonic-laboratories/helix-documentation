@@ -22,7 +22,7 @@ If your animation assets are acquired from Fab, you will need Epic Games Launche
 
     ![image.png](CustomAnimImages/1.png)
 
-4. From the project list, select your new project. The window will show "Asset not compatible with version" error. Click **Select Version** box and select 5.7 (or latest available version below 5.7), and click **Add to Project**.
+4. From the project list, enable "Show All Projects" toggle, and select your new project from the list. The window will show "Asset not compatible with version" error. Click **Select Version** box and select 5.7 (or latest available version below 5.7), and click **Add to Project**.
 
     ![image.png](CustomAnimImages/2.png)
 
