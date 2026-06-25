@@ -1,6 +1,6 @@
 # Working With Character Health
 
-This guide explains how character health works in **HELIX**: what happens when a character runs out of health, how the **downed**, **revive**, and **respawn** flows behave, and how the optional **per-limb damage** system works. It then walks through the scripting API (Lua/BP) for reading health/death state, applying damage and healing, and reacting to changes, plus the gameplay rules you can configure to tune the downed and respawn systems.
+This guide explains how character health works in **HELIX**: what happens when a character runs out of health, how the **downed**, **revive**, and **respawn** flows behave, and how the optional **per-limb damage** system works. It then walks through the scripting API (Lua/BP) for reading health/death state, applying damage and healing, and reacting to changes. The downed and respawn behavior is configured with [gameplay rules](gameplay_rules.md), and the relevant rules are listed in their respective sections below.
 
 ---
 
@@ -14,7 +14,7 @@ There is also a more generic `HActorHealthComponent` used for non-character acto
 
 At a high level:
 
-- **Health** is the character's life total. When it reaches **0**, the character either **dies instantly** or enters a **downed state** first, depending on whether the downed rule is enabled (see [Gameplay Rules](#gameplay-rules)).
+- **Health** is the character's life total. When it reaches **0**, the character either **dies instantly** or enters a **downed state** first, depending on whether the downed rule is enabled (see [Downed State](#downed-state)).
 - **Armor** absorbs incoming damage before health is touched.
 - **Death is final.** Once a character has started dying, it cannot be brought back. A revive is only possible *from* the downed state, *before* death begins.
 
@@ -22,16 +22,35 @@ At a high level:
 
 ## What Happens When Health Reaches 0
 
-When a character's health drops to 0, one of two things happens.
+When a character's health drops to 0, one of two things happens, depending on whether the **downed state** is enabled:
 
-**Downed disabled (default):** the character **dies immediately**. The death sequence starts, character goes into ragdoll state, and then finishes. This is irreversible.
+- **Downed disabled (default):** the character **dies immediately**. The death sequence starts, the character goes into a ragdoll state, and then finishes. This is irreversible.
+- **Downed enabled:** the character enters the **downed state** instead of dying right away, giving teammates a window to revive them.
 
-**Downed enabled:** the character enters the **downed state** instead of dying right away. While downed:
+The downed state is controlled by a gameplay rule (see [Downed State](#downed-state) below). Death itself is covered in [Death](#death).
+
+---
+
+## Death
+
+Death moves through three states: `NotDead → DeathStarted → DeathFinished`.
+
+/// warning | Death is irreversible
+There is no transition back to `NotDead`. Healing a character that has already started dying does **not** bring them back. If you want characters to be recoverable, use the **downed state**, that is the only revivable phase.
+///
+
+When death begins, the character plays out its death sequence and is then cleaned up (by default, the actor is destroyed after a short delay, and the player respawns, see [Respawn](#respawn)). Bind to `OnDeathStarted` / `OnDeathFinished` to hook your own logic into this (see [Delegates](#delegates-events)).
+
+---
+
+## Downed State
+
+When enabled, a **player-controlled** character that reaches 0 health enters the downed state instead of dying. While downed:
 
 - A **bleed-out timer** counts down. When it expires, the character dies from bleed-out.
-- Taking further damage while downed can **shorten** the remaining bleed-out time (tunable).
-- The character can be **healed back up**. Once healing brings them past the configured revive threshold, they are **revived** and return to normal play.
-- If the downed character takes a finishing/lethal hit (or chooses to give up, if allowed), they go straight to death.
+- Taking further damage while downed can **shorten** the remaining bleed-out time.
+- The character can be **healed back up**. Once healing brings them past the revive threshold, they are **revived** and return to normal play.
+- If the downed character takes a finishing/lethal hit, or chooses to give up (by default, pressing **K**), they go straight to death.
 
 /// warning | Warning
 For now, the downed state is only available to **player-controlled** characters. NPCs always go straight to death when their health reaches 0, regardless of the downed rule.
@@ -39,20 +58,27 @@ For now, the downed state is only available to **player-controlled** characters.
 
 ### Revive vs. Death
 
-The downed state always ends in one of two ways, and the reason is reported to anything listening:
+The downed state always ends in one of two ways, and the reason is reported to anything listening (via `OnDownedStateFinished`):
 
-- **Revived**: the character was healed back above the revive threshold (or otherwise revived by script). They return to a normal, alive state.
-- **Died**: the bleed-out timer ran out, a lethal hit landed, or the player gave up. The character transitions into death.
+- **Revived**: the character was healed back above the revive threshold (or revived by script). They return to a normal, alive state.
+- **Died**: the bleed-out timer ran out, a lethal hit landed, or the player gave up. The character transitions into [Death](#death), and there is no coming back. A downed character is *not yet dead*, that's the window in which a revive can happen.
 
-Once the character is **Died**, the normal death lifecycle takes over and there is no coming back. A downed character is *not yet dead*, that's the window in which a revive can happen.
+### Tuning the downed state
+
+The downed behavior is configured through gameplay rules. They can be set as base values for an experience or overridden at runtime, see [Gameplay Rules](gameplay_rules.md) for how the rule system works. The available downed rules are:
+
+| Rule Tag | Type | Default | Description |
+|---|---|---|---|
+| `GameplayRule.Health.DownedState.Enable` | Toggle | `false` | Enables the downed state instead of instant death when health reaches 0. |
+| `GameplayRule.Health.DownedState.Duration` | Scalar | `300` | How long (seconds) the downed state lasts before the character dies from bleed-out. |
+| `GameplayRule.Health.DownedState.ReviveHealthRatio` | Scalar | `0.5` | Health ratio (0–1) a downed character must be healed up to in order to revive. |
+| `GameplayRule.Health.DownedState.DamageTimeReductionMult` | Scalar | `1` | Multiplier controlling how much taking damage while downed shortens the bleed-out timer. |
+| `GameplayRule.Health.DownedState.ShowDefaultUI` | Toggle | `true` | Shows the built-in bleed-out timer widget on the HUD when downed. Disable to drive your own custom UI. |
+| `GameplayRule.Health.DownedState.AllowGiveUp` | Toggle | `true` | Lets a downed player give up by pressing **K** to skip straight to death. |
 
 /// note | Note
-Death and downed are each driven by their own **gameplay ability**, running on the server and the owning client. You don't interact with these abilities directly, they react to the health component's state for you. The downed ability is what handles the visible side of being downed (animations, the bleed-out timer, the **K** give-up action, and the default downed UI when those rules are enabled). The death ability is intentionally minimal, it cleans the actor up after a short delay.
+Death and downed are each driven by their own **gameplay ability**, running on the server and the owning client. You don't interact with these abilities directly, they react to the health component's state for you. The downed ability handles the visible side of being downed (animations, the bleed-out timer, the **K** give-up action, and the default downed UI when those rules are enabled). The death ability is intentionally minimal, it cleans the actor up after a short delay.
 ///
-
-### Death is irreversible
-
-Death moves through three states: `NotDead → DeathStarted → DeathFinished`. There is no transition back to `NotDead`. Healing a character that has already started dying does **not** bring them back. If you want characters to be recoverable, use the **downed state**, that is the only revivable phase.
 
 ---
 
@@ -238,7 +264,7 @@ Not every character has a limb health component, it's optional. Always check tha
 
 ## Respawn
 
-When a character dies, what happens next depends on the **auto-respawn** rule.
+When a character dies, what happens next depends on the **auto-respawn** rule. Like the downed rules, it can be set per-experience or overridden at runtime, see [Gameplay Rules](gameplay_rules.md).
 
 | Rule Tag | Type | Default | Description |
 |---|---|---|---|
@@ -263,43 +289,9 @@ Each returns `true` if the respawn was successfully triggered. These also work o
 
 ## Gameplay Rules
 
-The downed system is tuned through **gameplay rules** rather than hard-coded values. Rules live on a ruleset component on the **GameState**, so they apply to the whole match.
+The health systems above are configured through **gameplay rules**: the downed rules in [Downed State](#downed-state) and the auto-respawn rule in [Respawn](#respawn). These can be set as defaults per experience or overridden at runtime from script.
 
-There are two ways to set them:
-
-1. **As base values** for an experience, authored on the experience's definition via the **Set Gameplay Rules** game feature action. These are the defaults the experience ships with.
-2. **Overridden at runtime** from Lua or Blueprint, using the ruleset component on the GameState. Overrides take precedence over the base values and can be cleared to fall back to the base again.
-
-/// note | Note
-Runtime overrides are **server-authoritative**, the override functions only take effect when called with authority, and the resulting values replicate to clients.
-///
-
-### Available rules
-
-| Rule Tag | Type | Default | Description |
-|---|---|---|---|
-| `GameplayRule.Health.DownedState.Enable` | Toggle | `false` | Enables the downed state instead of instant death when health reaches 0. |
-| `GameplayRule.Health.DownedState.Duration` | Scalar | `300` | How long (seconds) the downed state lasts before the character dies from bleed-out. |
-| `GameplayRule.Health.DownedState.ReviveHealthRatio` | Scalar | `0.5` | Health ratio (0–1) a downed character must be healed up to in order to revive. |
-| `GameplayRule.Health.DownedState.DamageTimeReductionMult` | Scalar | `1` | Multiplier controlling how much taking damage while downed shortens the bleed-out timer. |
-| `GameplayRule.Health.DownedState.ShowDefaultUI` | Toggle | `true` | Shows the built-in bleed-out timer widget on the HUD when downed. Disable to drive your own custom UI. |
-| `GameplayRule.Health.DownedState.AllowGiveUp` | Toggle | `true` | Lets a downed player give up by pressing **K** to skip straight to death. |
-| `GameplayRule.Health.AutoRespawn.Enable` | Toggle | `true` | Auto-respawns the player after death at the nearest player start. See [Respawn](#respawn). |
-
-### Reading and overriding rules from script
-
-Get the ruleset component from the GameState, then read or override values:
-
-| Function | Purpose |
-|---|---|
-| `GetGameplayRulesetComponent(WorldContext)` | Fetches the ruleset component from the GameState. |
-| `GetToggleRuleValue(RuleTag, DefaultValue)` | Reads a toggle rule. |
-| `GetScalarRuleValue(RuleTag, DefaultValue)` | Reads a scalar rule. |
-| `OverrideToggleRule(RuleTag, bValue)` | **Server only.** Overrides a toggle rule at runtime. |
-| `OverrideScalarRule(RuleTag, Value)` | **Server only.** Overrides a scalar rule at runtime. |
-| `ClearOverriddenRule(RuleTag)` | **Server only.** Removes a single override, reverting to the base value. |
-| `ClearAllOverriddenRules()` | **Server only.** Removes all overrides. |
-| `OnRulesChanged` | Delegate that fires whenever replicated rule state changes, useful for refreshing UI. |
+For how the rule system works, including reading and overriding rules from Lua/Blueprint, see the [Gameplay Rules](gameplay_rules.md) documentation.
 
 ---
 
@@ -376,6 +368,7 @@ end
 
 ```lua
 -- Run on the server (authority).
+-- (See the Gameplay Rules doc for how rule overrides work.)
 local Ruleset = HGameplayRulesetComponent.GetGameplayRulesetComponent(WorldContextObject)
 if Ruleset then
     -- Turn the downed state on for this match.
@@ -416,6 +409,7 @@ end
 
 ```lua
 -- Disable auto-respawn so we control where players come back.
+-- (See the Gameplay Rules doc for how rule overrides work.)
 local Ruleset = HGameplayRulesetComponent.GetGameplayRulesetComponent(WorldContextObject)
 if Ruleset then
     Ruleset:OverrideToggleRule(Tag("GameplayRule.Health.AutoRespawn.Enable"), false)
