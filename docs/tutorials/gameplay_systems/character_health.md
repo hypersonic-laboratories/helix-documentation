@@ -1,6 +1,6 @@
 # Working With Character Health
 
-This guide explains how character health works in **HELIX**, what happens when a character runs out of health, and how the **downed**, **revive**, and **respawn** flows behave. It also covers the optional **per-limb damage** system. It then covers the scripting API (Lua/BP) you can use to read health/death state, apply damage and healing, and react to changes, plus the gameplay rules you can configure to tune the downed and respawn systems.
+This guide explains how character health works in **HELIX**: what happens when a character runs out of health, how the **downed**, **revive**, and **respawn** flows behave, and how the optional **per-limb damage** system works. It then walks through the scripting API (Lua/BP) for reading health/death state, applying damage and healing, and reacting to changes, plus the gameplay rules you can configure to tune the downed and respawn systems.
 
 ---
 
@@ -47,7 +47,7 @@ The downed state always ends in one of two ways, and the reason is reported to a
 Once the character is **Died**, the normal death lifecycle takes over and there is no coming back. A downed character is *not yet dead*, that's the window in which a revive can happen.
 
 /// note | Note
-Death and downed are each driven by their own **gameplay ability**, running on the server and the owning client. You don't interact with these abilities directly, they react to the health component's state for you. The downed ability is what plays the downed animations, runs the bleed-out timer, applies the damage-driven timer reduction, performs the stand-up/revive when health passes the threshold, and (if the rule is enabled) handles the **give-up** action when the downed player presses **K**. It also shows the default downed UI when that rule is enabled. The death ability is intentionally minimal, it cleans the actor up after a short delay.
+Death and downed are each driven by their own **gameplay ability**, running on the server and the owning client. You don't interact with these abilities directly, they react to the health component's state for you. The downed ability is what handles the visible side of being downed (animations, the bleed-out timer, the **K** give-up action, and the default downed UI when those rules are enabled). The death ability is intentionally minimal, it cleans the actor up after a short delay.
 ///
 
 ### Death is irreversible
@@ -244,7 +244,7 @@ When a character dies, what happens next depends on the **auto-respawn** rule.
 |---|---|---|---|
 | `GameplayRule.Health.AutoRespawn.Enable` | Toggle | `true` | Automatically respawns the player after death. The closest player start point in the world is selected by default. |
 
-**Auto-respawn enabled (default):** after a player dies, they are automatically respawned at the nearest player start point. You don't need to do anything.
+**Auto-respawn enabled (default):** the player is respawned automatically after death. You don't need to do anything.
 
 **Auto-respawn disabled:** the player stays dead until you respawn them from script. This is how you implement custom respawn behavior, for example, respawning at a hospital entrance after bleeding out, or at a checkpoint. Disable the rule, listen for death, and call one of the respawn functions yourself.
 
