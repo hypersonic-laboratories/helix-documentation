@@ -1,6 +1,6 @@
 # Working With Gameplay Rules
 
-**Gameplay rules** are named, replicated settings that tune how systems behave in a match, without hard-coding values. For example, the character health systems use rules to decide whether the downed state is enabled, how long bleed-out lasts, and whether players auto-respawn after death.
+**Gameplay rules** are named, replicated settings that tune how systems behave in a HELIX world, without hard-coding values. For example, the character health systems use rules to decide whether the downed state is enabled, how long bleed-out lasts, and whether players auto-respawn after death.
 
 This page explains how the rule system works and how to read and change rules from script. For the specific rules a system exposes, see that system's own documentation (e.g. the [Character Health](character_health.md) page lists the downed and respawn rules).
 
@@ -13,7 +13,7 @@ Each rule is identified by a **gameplay tag** under the `GameplayRule` parent ta
 - **Toggle**: an on/off boolean.
 - **Scalar**: a single floating-point number.
 
-Rules live on a ruleset component attached to the **GameState**, so a rule applies to the whole match and is shared by everyone in it. The values are **replicated**, so clients see the same rule values the server does and can read them for UI and presentation.
+Rules live on a ruleset component attached to the **GameState**, so a rule applies to the whole world and is shared by everyone in it. The values are **replicated**, so clients see the same rule values the server does and can read them for UI and presentation.
 
 There are two layers of values:
 
@@ -28,7 +28,7 @@ When you read a rule, you get the override if one exists, otherwise the base val
 
 ![image.png](assets/experience_rules.png)
 
-Base values are authored on an experience using the **Set Gameplay Rules** game feature action, which exists on each experience definition asset by default and shown on the right panel on the UI when experience data asset is being modified. When the experience is loaded, those values are applied to the ruleset on the GameState as the match's starting rules.
+Base values are authored on an experience using the **Set Gameplay Rules** game feature action, which exists on each experience definition asset by default and shown on the right panel on the UI when experience data asset is being modified. When the experience is loaded, those values are applied to the ruleset on the GameState as the world's starting rules.
 
 This is the right place to set the defaults a mode should always start with, for example, "downed state on, bleed-out 120s" for a co-op experience.
 
@@ -36,7 +36,7 @@ This is the right place to set the defaults a mode should always start with, for
 
 ## Overriding Rules at Runtime
 
-You can change rules while the match is running through the ruleset component. This is useful for dynamic behavior, for example, turning off auto-respawn during a final round, or speeding up bleed-out as a match progresses.
+You can change rules while the world is running through the ruleset component. This is useful for dynamic behavior, for example, turning off auto-respawn for a special world event, or speeding up bleed-out, etc.
 
 /// warning | Warning
 Runtime overrides are **server-authoritative**. The override and clear functions only take effect when called with authority (on the server). The resulting values replicate down to clients automatically.
@@ -93,7 +93,7 @@ end
 -- Run on the server (authority).
 local Ruleset = HGameplayRulesetComponent.GetGameplayRulesetComponent(WorldContextObject)
 if Ruleset then
-    -- Turn the downed state on for this match.
+    -- Turn the downed state on
     Ruleset:OverrideToggleRule(Tag("GameplayRule.Health.DownedState.Enable"), true)
 
     -- Make bleed-out faster (60 seconds instead of the default 300).
