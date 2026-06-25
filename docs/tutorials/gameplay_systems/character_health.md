@@ -287,14 +287,6 @@ Each returns `true` if the respawn was successfully triggered. These also work o
 
 ---
 
-## Gameplay Rules
-
-The health systems above are configured through **gameplay rules**: the downed rules in [Downed State](#downed-state) and the auto-respawn rule in [Respawn](#respawn). These can be set as defaults per experience or overridden at runtime from script.
-
-For how the rule system works, including reading and overriding rules from Lua/Blueprint, see the [Gameplay Rules](gameplay_rules.md) documentation.
-
----
-
 ## Sample Scripts
 
 > The examples below assume the standard Lua bindings (`HCharacterHealthComponent`, `HGameplayRulesetComponent`). Adapt the lookups to however your project resolves the local character / GameState.
