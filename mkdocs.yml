@@ -72,6 +72,8 @@ nav:
       - tutorials/custom_shells.md
       - tutorials/custom_blueprints.md
       - tutorials/custom_ui.md
+    - Gameplay Systems:
+      - tutorials/gameplay_systems/character_health.md
     - Misc:
       - tutorials/reference_custom_assets.md
       - tutorials/default_materials.md
