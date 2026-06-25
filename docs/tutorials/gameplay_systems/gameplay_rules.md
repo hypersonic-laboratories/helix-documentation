@@ -28,7 +28,7 @@ When you read a rule, you get the override if one exists, otherwise the base val
 
 ![image.png](assets/experience_rules.png)
 
-Base values are authored on an experience using the **Set Gameplay Rules** game feature action. Add the action to your experience (or a game feature plugin), then fill in the list of rules and their payloads. When the experience is loaded, those values are applied to the ruleset on the GameState as the match's starting rules.
+Base values are authored on an experience using the **Set Gameplay Rules** game feature action, which exists on each experience definition asset by default and shown on the right panel on the UI when experience data asset is being modified. When the experience is loaded, those values are applied to the ruleset on the GameState as the match's starting rules.
 
 This is the right place to set the defaults a mode should always start with, for example, "downed state on, bleed-out 120s" for a co-op experience.
 
