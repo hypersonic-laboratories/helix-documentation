@@ -1,13 +1,13 @@
 # HELIX Documentation
 
-> Official documentation for the **HELIX** platform by Hypersonic Laboratories: a modkit and game where creators build, script, and publish multiplayer 3D worlds. This site covers HELIX Studio (the Unreal Engine 5 based editor), Lua and JavaScript scripting, the HELIX Character Creator, custom assets, Blueprints, and the gameplay API.
+> Official documentation for the **HELIX** platform by Hypersonic Laboratories: a modkit and game where creators build, script, and publish multiplayer 3D worlds. This site covers HELIX Studio (the Unreal Engine 5-based editor), Lua and JavaScript scripting, the HELIX Character Creator, custom assets, Blueprints, and the gameplay API.
 
 Conventions for using these docs:
 
 - Pages are written for creators and scripters. Tutorials are task-oriented; the API and QBCore sections are reference material.
 - Scripting has two surfaces: **Lua** (the primary scripting API, under "API" and "Scripting") and **HelixJS** (a JavaScript/TypeScript layer).
 - Canonical class names are capitalized (for example `HCharacter`, `HPlayer`, `HVehicle`).
-- This file lives at `https://docs.helixgame.com/llms.txt`. Each link points to the rendered page; append nothing to fetch it.
+- This file lives at `https://docs.helixgame.com/llms.txt`. Each link points directly to a rendered page; request the URL as-is, without appending anything.
 
 ## Getting started
 
@@ -121,8 +121,8 @@ Conventions for using these docs:
 - [Trace](https://docs.helixgame.com/api/apiImport/classes/trace/): Line/shape tracing.
 - [Timer](https://docs.helixgame.com/api/apiImport/classes/timer/): Timer class.
 - [Animation](https://docs.helixgame.com/api/apiImport/classes/animation/): Animation class.
-- [Static mesh](https://docs.helixgame.com/api/apiImport/classes/static-mesh/): Static mesh actor.
-- [Level instance](https://docs.helixgame.com/api/apiImport/classes/levelinstance/): Level instance actor.
+- [StaticMesh](https://docs.helixgame.com/api/apiImport/classes/static-mesh/): Static mesh actor.
+- [LevelInstance](https://docs.helixgame.com/api/apiImport/classes/levelinstance/): Level instance actor.
 - [Light](https://docs.helixgame.com/api/apiImport/classes/light/): Light actor.
 - [Sky](https://docs.helixgame.com/api/apiImport/classes/sky/): Sky actor.
 - [Sound](https://docs.helixgame.com/api/apiImport/classes/sound/): Sound actor.
@@ -131,8 +131,8 @@ Conventions for using these docs:
 - [Decal](https://docs.helixgame.com/api/apiImport/classes/decal/): Decal actor.
 - [Cable](https://docs.helixgame.com/api/apiImport/classes/cable/): Cable actor.
 - [Billboard](https://docs.helixgame.com/api/apiImport/classes/billboard/): Billboard actor.
-- [Text render](https://docs.helixgame.com/api/apiImport/classes/text-render/): Text render actor.
-- [Scene capture](https://docs.helixgame.com/api/apiImport/classes/scenecapture/): Scene capture actor.
+- [TextRender](https://docs.helixgame.com/api/apiImport/classes/text-render/): Text render actor.
+- [SceneCapture](https://docs.helixgame.com/api/apiImport/classes/scenecapture/): Scene capture actor.
 - [Door](https://docs.helixgame.com/api/apiImport/classes/door/): Door actor.
 - [Widget](https://docs.helixgame.com/api/apiImport/classes/widget/): Widget actor.
 - [WebUI](https://docs.helixgame.com/api/apiImport/classes/webui/): WebUI surface.
@@ -140,7 +140,7 @@ Conventions for using these docs:
 - [Notification](https://docs.helixgame.com/api/apiImport/classes/notification/): Notifications.
 - [Database](https://docs.helixgame.com/api/apiImport/classes/database/): Database access.
 - [Discord](https://docs.helixgame.com/api/apiImport/classes/discord/): Discord integration.
-- [X-ray](https://docs.helixgame.com/api/apiImport/classes/xray/): X-ray system.
+- [Xray](https://docs.helixgame.com/api/apiImport/classes/xray/): X-ray system.
 
 ## Blueprints
 
