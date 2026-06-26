@@ -177,7 +177,7 @@ If your character comes from **Daz Studio** (a Genesis figure imported with the 
 Daz Genesis figures use a custom skeleton whose bones are aligned to the world rather than oriented along each bone. If you build the IK Rig and IK Retargeter automatically as in 4.2, the arms and legs retarget correctly because they are driven by IK goals, but the **spine, neck, and head stay rigid** during animation. The bone orientation breaks the forward-kinematics retargeting that those chains rely on.
 
 /// info | Why this happens
-The retarget reads each bone's local rotation. Daz bones share the same world-aligned orientation, so the spine chain has no usable rotation to transfer. The arms and legs hide the problem because IK goals override them; the spine, neck, and head have no IK, so they freeze.
+The retargeter reads each bone's local rotation. Daz bones share the same world-aligned orientation, so the spine chain has no usable rotation to transfer. The arms and legs hide the problem because IK goals override them; the spine, neck, and head have no IK, so they freeze.
 ///
 
 The **Daz to Unreal** plugin already ships IK Rigs and IK Retargeters built for the Genesis skeletons. Reuse the pair that matches your figure instead of generating your own:
