@@ -76,6 +76,10 @@ If your character mesh is using same skeleton with Unreal Engine 5 Manny/Quinn a
 
 If your character mesh is using a custom rig (including old Unreal Engine 4 mannequin skeleton), it will need additional steps to set-up an IK Rig retageter to get it compatible with **HELIX** characters.
 
+/// tip | Daz Studio characters
+If your mesh comes from **Daz Studio** (a Genesis figure imported with the **Daz to Unreal** bridge), follow [4.3](#43-daz-studio-genesis-characters) instead. Building the IK Rig automatically works for the limbs but leaves the spine rigid, and 4.3 avoids that.
+///
+
 /// warning | Warning
 Ensure all of your skeleton bones have unit scale (1.0). If your character bones were scaled inside Maya/Blender during rigging (especially the root bone), this is not supported and your custom mesh will fail to retarget animations.
 ///
@@ -165,6 +169,39 @@ Ensure all of your skeleton bones have unit scale (1.0). If your character bones
 19. If your character body mesh has a neck & head section which can obscure camera during first person view mode, add the bone names covering those mesh sections into **First Person Bone Hide List** field. Usually, you should put names such as `head`, `neck_01`, `neck_02` etc. in this list.
 
 20. Your mesh should be ready for runtime retargeting after following those steps.
+
+### 4.3. Daz Studio (Genesis) characters
+
+If your character comes from **Daz Studio** (a Genesis figure imported with the **Daz to Unreal** bridge), use this method instead of [4.2](#42-custom-rig-based-character-mesh).
+
+Daz Genesis figures use a custom skeleton whose bones are aligned to the world rather than oriented along each bone. If you build the IK Rig and IK Retargeter automatically as in 4.2, the arms and legs retarget correctly because they are driven by IK goals, but the **spine, neck, and head stay rigid** during animation. The bone orientation breaks the forward-kinematics retargeting that those chains rely on.
+
+/// info | Why this happens
+The retarget reads each bone's local rotation. Daz bones share the same world-aligned orientation, so the spine chain has no usable rotation to transfer. The arms and legs hide the problem because IK goals override them; the spine, neck, and head have no IK, so they freeze.
+///
+
+The **Daz to Unreal** plugin already ships IK Rigs and IK Retargeters built for the Genesis skeletons. Reuse the pair that matches your figure instead of generating your own:
+
+1. In the content browser, open the plugin folder `/DazToUnreal/Retarget/`. It contains ready-made assets for each Genesis generation:
+
+    | Figure | IK Rig | IK Retargeter |
+    |---|---|---|
+    | Genesis 8 / 8.1 | `G8IKRig` | `G81FixRotZeroRootIKRetargeter` |
+    | Genesis 9 | `G9IKRig` | `G9Retargeter` |
+
+    A `G3Retargeter` is also provided for older Genesis 3 figures.
+
+2. Copy the matching IK Rig and IK Retargeter into your package folder, next to your character mesh.
+
+3. Open each copied asset and assign your Daz character mesh:
+    - In the **IK Rig**, set your character mesh as its preview skeletal mesh.
+    - In the **IK Retargeter**, assign your character mesh as the **Target** (through the copied IK Rig).
+
+4. Continue from step 15 of [4.2](#42-custom-rig-based-character-mesh): open your skeletal mesh, add the `HELIX Cosmetics Body Mesh Asset User Data`, and assign the copied IK Retargeter to its **Retargeter** field.
+
+/// tip | Tip
+Test with an animation that bends the torso, such as sitting down or standing up. If the spine follows the animation instead of staying upright, the setup is correct.
+///
 
 ---
 
