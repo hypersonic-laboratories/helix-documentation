@@ -1,5 +1,7 @@
 # Working With Water
 
+![image.png](assets/swim.png)
+
 This guide explains how swimming works in **HELIX**: the different kinds of water a character can swim in, how to make areas of your **custom level** swimmable, what controls whether a character actually starts swimming, and the scripting API (Lua/BP) for reading swim state and water data.
 
 Every character spawned by the default experience already has the pieces it needs to swim, so in most cases making an area swimmable is purely a **level setup** task, no scripting required.
@@ -18,6 +20,8 @@ The water data receiver is added **automatically to every character** by the def
 ///
 
 HELIX supports **three** sources of water. **Unreal water bodies are the recommended way** to add swimmable water to your level, they're detected automatically by overlap and come with all the built-in water features (underwater post-process, surface effects, etc.). The other two sources are defined by placing a **Helix Physics Volume**.
+
+![image.png](assets/helix_physics_volume.png)
 
 | Water source | How it's defined | Recommended for UGC |
 |---|---|---|
@@ -38,6 +42,8 @@ When a character overlaps more than one kind of water at once, **Unreal water bo
 The **recommended** way to add swimmable water is a standard **Unreal Water plugin** actor, **Water Body Lake**, **Water Body River**, **Water Body Ocean**, or **Water Body Custom**.
 
 These need **no** Helix Physics Volume. Just place the water body actor as usual. The character detects the overlap automatically, queries the water body for surface/depth/velocity/normal, and starts swimming when there's enough depth. You also get all the built-in Unreal water features for free, underwater post-process effects, surface rendering, and so on.
+
+![image.png](assets/water.gif)
 
 /// note | Use Custom Water Body for arbitrary shapes
 For pools, ponds, and other bespoke shapes, prefer a **Water Body Custom**. It's essentially a flat water plane like the static-plane fallback below, but with all the goodies of the Unreal water system (underwater effects, surface materials, exclusion volumes). This is the recommended replacement for static plane water in almost every case.
