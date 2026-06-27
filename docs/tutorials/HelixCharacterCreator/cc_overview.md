@@ -20,7 +20,7 @@ Key architectural points:
 
 - **Mutable-based composition.** Meshes, textures, and material parameters are merged at runtime using Unreal's **Mutable** plugin, producing one optimized skeletal mesh per character instead of many attached components.
 - **Fully replicated and server-authoritative.** The cosmetic loadout and body/face morph data replicate from server to all clients. Simulated proxies, late-joining clients, and owning clients converge on the same appearance.
-- **UGC via Vault packages.** Creators cook their content into `.pak` packages in **HELIX Studio** and upload them to the **HELIX Vault**. Worlds download those packages on demand and apply them to characters at runtime, conceptually similar to **Fortnite**/**UEFN** packages.
+- **UGC via Vault packages.** Creators cook their content into `.pak` packages in **HELIX Studio** and upload them to the **HELIX Vault**. Worlds download those packages on demand and apply them to characters at runtime.
 - **Scriptable from Blueprint and Lua.** The entire query/equip/override/visibility API is exposed through two interfaces, `IHCharacterCosmetics` (the pawn) and `IHCosmeticsSystem` (the component), with no wrapper layer. See [Scripting on HELIX Character Creator](cc_scripting.md).
 
 ---
