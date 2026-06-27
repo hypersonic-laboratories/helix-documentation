@@ -79,6 +79,8 @@ For this tutorial, we will be using a police station asset acquired from Fab.
     HELIX uses static nav mesh generation with nav modifier support. Please check [Navigation Components Documentation](https://dev.epicgames.com/documentation/en-us/unreal-engine/navigation-components-in-unreal-engine) to see how to affect navigation in your level with nav modifiers dynamically in runtime, if needed.
     ///
 
+5. You can make some entities in your level interactable by characters, such as doors, or seatable entities. See [Working With Doors](https://docs.helixgame.com/tutorials/gameplay_systems/door) and [Working With Seatable Entities](https://docs.helixgame.com/tutorials/gameplay_systems/seatable) pages for more information.
+
 ---
 
 ## 5. Finalizing and Cooking The Package
