@@ -26,7 +26,7 @@ HELIX supports **three** sources of water. **Unreal water bodies are the recomme
 | Water source | How it's defined | Recommended for UGC |
 |---|---|---|
 | **Unreal Water Body** | Water plugin actor (lake, river, ocean, **custom**), detected by overlap | **Yes, preferred** |
-| **Static Mesh Plane** | Helix Physics Volume, source type `StaticPlane` | Fallback / last resort |
+| **Physics Volume Based** | Helix Physics Volume, source type `PhysicsVolume` | Basic swimmable areas |
 | **Pacifica Ocean** | Helix Physics Volume, source type `PacificaOcean` | No, Pacifica only |
 
 /// note | Note
@@ -37,7 +37,7 @@ When a character overlaps more than one kind of water at once, **Unreal water bo
 
 ## Adding Swimmable Water To A Level
 
-### Unreal water bodies
+### Unreal Water Bodies
 
 The **recommended** way to add swimmable water is a standard **Unreal Water plugin** actor, **Water Body Lake**, **Water Body River**, **Water Body Ocean**, or **Water Body Custom**.
 
@@ -45,27 +45,27 @@ These need **no** Helix Physics Volume. Just place the water body actor as usual
 
 ![image.png](assets/water.gif)
 
-/// note | Use Custom Water Body for arbitrary shapes
-For pools, ponds, and other bespoke shapes, prefer a **Water Body Custom**. It's essentially a flat water plane like the static-plane fallback below, but with all the goodies of the Unreal water system (underwater effects, surface materials, exclusion volumes). This is the recommended replacement for static plane water in almost every case.
+/// note | Use "custom water body" for arbitrary shapes
+For pools, ponds, and other bespoke shapes, prefer a **Water Body Custom**.
 ///
 
 /// note | Note
 For Unreal water bodies the receiver pulls live surface data (including waves) directly from the water body component. Exclusion volumes are respected, inside an exclusion zone the character is treated as not in that water.
 ///
 
-### Static mesh plane water
+### Physics Volume Based Water
 
-Static plane water is a **last resort** for cases where an Unreal water body won't work for you. Prefer a **Water Body Custom** instead (see above) whenever you can. When you do use it, the volume itself fully defines the swimmable region, both its surface and its depth, so it needs to be placed accurately.
+Physics volume based water is a fallback method for cases where an Unreal water body won't work for you. When you do use it, the volume itself fully defines the swimmable region, both its surface and its depth, so it needs to be placed accurately to cover swimmable area.
 
 1. Place an **Helix Physics Volume** (`AHPhysicsVolume`) in the level.
 2. Size and position it so it **precisely encloses the water area**: the **top** of the volume is treated as the water surface, and the volume should extend down to cover the full depth you want to be swimmable.
-3. Enable the **Water Volume** toggle on the volume.
-4. Set **Water Source Type** to **`StaticPlane`**.
+3. Enable the **Water Volume** toggle on the volume actor.
+4. Set **Water Source Type** to **`PhysicsVolume`**.
 
 The surface height comes from the **top of the volume's bounds**, and the floor is found by tracing down inside the volume (falling back to the bottom of the volume if nothing is hit). The difference between the two is the water depth used to decide whether a character can swim.
 
 /// warning | Place the volume accurately
-For static plane water, the volume **is** the water. If the top sits below the visual water surface, characters will swim too low (or pop out); if it doesn't reach the real floor, the depth check can be wrong. Match the volume's top face to the visible surface and its bottom to the floor.
+For physics volume based water, the volume **is** the water. If the top sits below the visual water surface, characters will swim too low (or pop out); if it doesn't reach the real floor, the depth check can be wrong. Match the volume's top face to the visible surface and its bottom to the floor.
 ///
 
 ### Pacifica Ocean Water
@@ -106,7 +106,7 @@ Swimming has two sub-states you can query (see the API below):
 
 ### Water currents and waves
 
-If the water defines a **velocity** (currents on Unreal water, or Pacifica ocean flow), the character is **dragged by it** while swimming. Static plane water has no velocity, it's always still.
+If the water defines a **velocity** (currents on Unreal water, or Pacifica ocean flow), the character is **dragged by it** while swimming.
 
 Wave **normals** are also used to project movement input along the surface while surface swimming, so steering feels right on sloped/wavy water.
 
@@ -118,10 +118,6 @@ Swimming movement is simulated largely on each machine rather than being fully d
 
 /// warning | Swimming is not fully replicated
 Swim movement is **not fully replicated**. In practice this is fine for normal play, but it means **tall waves are not supported** on Unreal water: with high-amplitude waves, the surface height the server sees and the surface the owning client sees can **drift apart**, causing desync. Keep wave heights low on swimmable Unreal water bodies.
-///
-
-/// note | Note
-Static plane water has a flat, still surface and no waves, so it avoids this class of desync entirely. It's the most predictable choice for tight, gameplay-critical swimming areas.
 ///
 
 ---
@@ -153,16 +149,12 @@ Both components live on the default character. Resolve them however your project
 | `IsOverlappingWater()` | `true` if touching any water (any source). |
 | `IsInUnrealWater()` | `true` if in an Unreal water body (and not in an exclusion zone). |
 | `IsInPacificaOceanWater()` | `true` if in Pacifica ocean water specifically. |
-| `IsInStaticPlaneWater()` | `true` if in static plane water specifically. |
-| `GetCurrentPhysicsVolumeWaterSourceType()` | The active source type: `None`, `PacificaOcean`, or `StaticPlane`. |
+| `IsInPhysicsVolumeWater()` | `true` if in physics volume based water specifically. |
+| `GetCurrentPhysicsVolumeWaterSourceType()` | The active source type: `None`, `PacificaOcean`, or `PhysicsVolume`. |
 | `GetWaterSurfaceLocation()` | World-space closest surface location of the current water. |
 | `GetFluidHeight()` | Total water height (surface minus floor) at the character. |
-| `GetWaterWorldVelocity()` | Water/current velocity at the character (zero for static plane). |
+| `GetWaterWorldVelocity()` | Water/current velocity at the character (zero for physics volume based water). |
 | `GetFluidFriction()` | Friction of the current water. |
-
-/// note | Note
-On characters, `GetFluidHeight`, `GetWaterSurfaceLocation`, and `GetWaterWorldVelocity` deliberately report "no water" values until Pacifica ocean simulation data has actually been read at least once, so brief bad readings on entry don't trigger a false swim. For static plane and Unreal water this gating doesn't apply.
-///
 
 ---
 
@@ -217,8 +209,8 @@ if WaterComp then
         print("In an Unreal water body")
     elseif WaterComp:IsInPacificaOceanWater() then
         print("In the Pacifica ocean")
-    elseif WaterComp:IsInStaticPlaneWater() then
-        print("In a static-plane pool/pond")
+    elseif WaterComp:IsInPhysicsVolumeWater() then
+        print("In a physics volume based pool/pond")
     end
 end
 ```
