@@ -50,7 +50,7 @@ For pools, ponds, and other bespoke shapes, prefer a **Water Body Custom**.
 ///
 
 /// note | Note
-For Unreal water bodies the receiver pulls live surface data (including waves) directly from the water body component. Exclusion volumes are respected, inside an exclusion zone the character is treated as not in that water.
+For Unreal water bodies, the receiver pulls live surface data (including waves) directly from the water body component. Exclusion volumes are respected, inside an exclusion zone the character is treated as not in that water.
 ///
 
 ### Physics Volume Based Water
