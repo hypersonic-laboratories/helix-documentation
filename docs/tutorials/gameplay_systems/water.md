@@ -160,8 +160,6 @@ Both components live on the default character. Resolve them however your project
 
 ## Sample Scripts
 
-> The examples below assume the standard Lua bindings and that you've resolved the local `Character`. Adapt the component lookups to however your project resolves components.
-
 ### 1. Check whether the local character is swimming
 
 ```lua
