@@ -4,6 +4,10 @@ This guide walks you through the process of creating and packaging skeletal mesh
 
 By the end you will have a custom wearable that players can select and equip on their characters at runtime.
 
+/// warning | Chaos Cloth Is Not Supported
+We currently only support rigid body physics on clothing. Chaos cloth (wearable physics) is not supported and there are no plans to support it any time soon. This is due to multiple reasons, primarily compatibility issues with mutable and how it affects performance.
+///
+
 ---
 
 ## Prerequisites
