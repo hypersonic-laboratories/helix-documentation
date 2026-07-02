@@ -30,7 +30,7 @@ This only works with individual actors placed in levels. Use cases like Instance
 
 As an alternative method, interaction data can be defined per source static mesh, and automatically propogate interaction capability to each use case of this asset in your worlds. This is the recommended approach if your static mesh is mass used in your world, or used as Instanced Static Mesh, Hierarchical Instanced Static Mesh, Fast Geometry Container etc.
 
-1. Open the static mesh you'd like to convert into seatable entity in your worlds, and find **Asset User Data** array field.
+1. Open the static mesh you'd like to add interaction, and find **Asset User Data** array field.
 
     ![image.png](assets/u_11.png)
 
