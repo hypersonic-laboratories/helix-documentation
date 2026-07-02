@@ -56,7 +56,7 @@ As an alternative method, interaction data can be defined per source static mesh
 
 8. Repeat the steps starting from 3 to add multiple seating locations to your mesh.
 
-9. Drag & drop your mesh in any level. Your character should be able to interact with it after getting close to it!
+9. Drag & drop your mesh in any level. Your character should be able to interact with it out of the box!
 
     ![image.png](assets/seat.gif)
 
