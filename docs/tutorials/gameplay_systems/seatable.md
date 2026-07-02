@@ -38,11 +38,11 @@ As an alternative method, interaction data can be defined per source static mesh
 
     ![image.png](assets/u_12.png)
 
-3. Click **+** button near **Interaction Payload** to define your first seating position on the mesh and select **HELIX Seatable Interaction Payload** from the dropdown menu. This adds the required metadata to interact with your mesh in worlds.
+3. Click **+** button near **Interaction Payload** to define your first interaction metadata for the mesh and select **HELIX Seatable Interaction Payload** from the dropdown menu.
 
     ![image.png](assets/u_13.png)
 
-4. Go to socket manager tab on same panel and create a socket to define the character should be seated after interaction. +X (red axis) defines where your character will be facing towards while seated to your mesh. Translate/rotate the socket according to your needs.
+4. Go to socket manager tab on same panel and create a socket to define where the character should be seated after interaction. +X (red axis) defines the direction your character will be facing towards while seated to your mesh. Translate/rotate the socket according to your needs.
 
     ![image.png](assets/u_14.png)
 
