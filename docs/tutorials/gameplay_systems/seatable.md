@@ -4,9 +4,9 @@ If your level has seatable entities such as benches, beds, chairs etc, you can t
 
 ### Seatable Entity Component Based Interaction
 
-![image.png](assets/u_3.png)
-
 It's possible to convert **actors** in worlds into seatable entities by attaching a specific scene component on them.
+
+![image.png](assets/u_3.png)
 
 /// warning | Actor Compatibility
 This only works with individual actors placed in levels. Use cases like Instanced Static Mesh, Hierarchical Instanced Static Mesh, Fast Geometry Container etc. are not going to work properly with this method.
@@ -26,9 +26,9 @@ This only works with individual actors placed in levels. Use cases like Instance
 
 ### Asset User Data Based Interaction
 
-![image.png](assets/u_7.png)
-
 As an alternative method, interaction data can be defined per source static mesh, and automatically propogate interaction capability to each use case of this asset in your worlds. This is the recommended approach if your static mesh is mass used in your world, or used as Instanced Static Mesh, Hierarchical Instanced Static Mesh, Fast Geometry Container etc.
+
+![image.png](assets/u_7.png)
 
 1. Open the static mesh you'd like to add interaction, and find **Asset User Data** array field.
 
