@@ -48,7 +48,7 @@ As an alternative method, interaction data can be defined per source static mesh
 
 5. Go back to details panel and write down name of the socket you just created into the **Target Mesh Socket** field.
 
-6. Assign **Seatable Interaction Data** and **Interaction Option Data** fields.
+6. Assign **Seatable Interaction Data** and **Interact Option Data** fields.
 
     ![image.png](assets/u_15.png)
 
