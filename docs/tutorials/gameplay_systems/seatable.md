@@ -1,6 +1,6 @@
 # Working With Seatable Entities
 
-If your level has seatable entities such as benches, beds, chairs etc, you can take additional steps to make them interactable by players. Currently there are two ways of converting world actors into seatable entities:
+If your level has seatable entities such as benches, beds, chairs etc, you can take additional steps to make them interactable by players. Currently there are two ways of converting world actors into seatable entities.
 
 ### Seatable Entity Component Based Interaction
 
