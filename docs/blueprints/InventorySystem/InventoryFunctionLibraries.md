@@ -1,4 +1,6 @@
-# Helix|Inventory|Authority Actions
+# Inventory Function Libraries
+
+## Helix|Inventory|Authority Actions
 
 These nodes are latent nodes. Each node has Success and Failure execution pins which will be called when the request is processed.
 
