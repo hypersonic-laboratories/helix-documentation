@@ -60,8 +60,6 @@ nav:
       - tutorials/HelixCharacterCreator/cc_scripting.md
     - Custom Levels:
       - tutorials/CustomLevels/custom_maps.md
-      - tutorials/CustomLevels/custom_map_doors.md
-      - tutorials/CustomLevels/custom_map_seatables.md
       - Custom Level Map:
         - tutorials/HelixMap/studio.md
         - tutorials/HelixMap/runtime.md
@@ -72,6 +70,12 @@ nav:
       - tutorials/custom_shells.md
       - tutorials/custom_blueprints.md
       - tutorials/custom_ui.md
+    - Gameplay Systems:
+      - tutorials/gameplay_systems/character_health.md
+      - tutorials/gameplay_systems/water.md
+      - tutorials/gameplay_systems/seatable.md
+      - tutorials/gameplay_systems/door.md
+      - tutorials/gameplay_systems/gameplay_rules.md
     - Misc:
       - tutorials/reference_custom_assets.md
       - tutorials/default_materials.md
@@ -89,6 +93,9 @@ nav:
       - blueprints/PersistentData/persistent_data.md
     - Dynamic Materials:
       - blueprints/DynamicMaterials/dynamic_materials.md
+    - Inventory System:
+      - blueprints/InventorySystem/CreatingItems.md
+      - blueprints/InventorySystem/InventoryFunctionLibraries.md
   - API:
     - api/index.md
     - Global Variables:
