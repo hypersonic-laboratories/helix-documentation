@@ -1,4 +1,4 @@
-
+# Creating Item
 
 Items in Helix are defined by data assets of the type HInventoryItemDefinition which are made up of multiple HInventoryItemFragments.
 Inventory Fragments are small pieces of logic or traits that make up what an item is. These fragments could for example allow the item to behave as a firearm or set how many of the same item can be in a stack.
@@ -11,27 +11,32 @@ Set a display name for your new item and add some fragments. Definition tags can
 ### `Fragment Types`
 
 `InventoryFragmentInventoryIcon`
+
 | Property | Type | Description |
 |---|---|---|
 |Brush | FSlateBrush | The brush to show when the item is in an inventory slot.|
 	
 `HInventoryFragmentWeight`
+
 | Property | Type | Description |
 |---|---|---|
 | Weight | float | How heavy this item is in kilograms.|
 	
 `InventoryFragment_Stackable`
+
 | Property | Type | Description |
 |---|---|---|
 | MaxStack | int | The maximum number of items of this type that can be stacked on top of each other.|
 	
 `InventoryFragment_WorldActor`
+
 | Property | Type | Description |
 |---|---|---|
 | StackedMeshSettings | FInventoryFragment_WorldActor_MeshSettings | When the item is dropped on the ground, it will take the appearance of the defined mesh. If a stack of items are dropped, the array entry with the highest available count will be used.|
 | ContainerActorClass | SubclassOf<AHInventoryLootContainer> | The class of actor to spawn when dropped on the ground. |
 	
 `HInventoryEquippableItem`
+
 | Property | Type | Description |
 |---|---|---|
 | InstanceType | SubclassOf<UHEquipmentInstance> |The type of EquipmentInstance that will be created when the item is equipped.|
@@ -39,12 +44,14 @@ Set a display name for your new item and add some fragments. Definition tags can
 | Actors To Spawn | ArrayOf<FHEquipmentActorToSpawn> |When equipped, an actor of this class will be spawened and attached to the user. This can be used for example to spawn a weapon in the player's hand.|
 
 `HInventoryFragmentClothing` (Child of HInventoryEquippableItem)
+
 | Property | Type | Description |
 |---|---|---|
 | ClothingItemID | FString | When placed in a clothing slot, the customization asset with this ID will be added to the character. |
 | ClothingSlotTag | FGameplayTag | What customization slot to apply the item to. |
 	
 `HInventoryFragmentFirearm`
+
 | Property | Type | Description |
 |---|---|---|
 | Firing Rate | float | Firing rate for this weapon (weapon fired per secs) |
@@ -71,12 +78,14 @@ Set a display name for your new item and add some fragments. Definition tags can
 | ClipAmmoCapacity | int | Maximum amount of ammo a clip can take for this weapon type |
 	
 `HInventoryFragmentHeldItem`
+
 | Property | Type | Description |
 |---|---|---|
 | EquipmentAnimSet | UHelixEquipmentAnimSet | Animation set to use with this held item |
 | DefaultCopyMotionData | FHelixCopyMotionData | Copy motion data to use by default for animation poses |
 	
 `HInventoryFragment_Weapon` (Child of UInventoryFragment_HeldItem)
+
 | Property | Type | Description |
 |---|---|---|
 | ApplicableDeviceProperties | ArrayOf<UInputDeviceProperty> | Device properties that should be applied while this weapon is equipped. These properties will be played in with the "Looping" flag enabled, so they will play continuously until this weapon is unequipped! | 
@@ -88,11 +97,13 @@ Set a display name for your new item and add some fragments. Definition tags can
 | AimingCopyMotionData | FHelixCopyMotionData | Copy motion data to use while aiming with this weapon |
 	
 `InventoryFragment_ReticleConfig`
+
 | Property | Type | Description |
 |---|---|---|
 | ReticleWidgets | SubclassOf<UHReticleWidgetBase> | Defines what widget to use when aiming a weapon.|
 	
 `InventoryFragment_SetStats`
+
 | Property | Type | Description |
 |---|---|---|
 | InitialItemStats | Map<FGameplayTag,int> | These tags (and the number of them) will be added to the inventory instance when it is created. |
