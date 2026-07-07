@@ -93,6 +93,9 @@ nav:
       - blueprints/PersistentData/persistent_data.md
     - Dynamic Materials:
       - blueprints/DynamicMaterials/dynamic_materials.md
+    - Inventory System:
+      - blueprints/InventorySystem/CreatingItems.md
+      - blueprints/InventorySystem/InventoryFunctionLibraries.md
   - API:
     - api/index.md
     - Global Variables:
