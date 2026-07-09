@@ -3,6 +3,7 @@
 
 **A Comprehensive Tutorial for FiveM Developers coming to HELIX**
 
+
 ---
 
 ## Table of Contents
@@ -14,11 +15,14 @@
 5. [Events & Callbacks](#events--callbacks)
 6. [UI Systems (NUI vs WebUI)](#ui-systems-nui-vs-webui)
 7. [Vehicle Management](#vehicle-management)
-8. [Weapon Management](#weapon-management)
 9. [World Objects & Entities](#world-objects--entities)
 10. [Notifications & HUD](#notifications--hud)
 11. [Complete Example: Porting a Simple Script](#complete-example-porting-a-simple-script)
 12. [Common Pitfalls & Best Practices](#common-pitfalls--best-practices)
+13. [Package.json Structure](#packagejson-structure)
+14. [FiveM vs HELIX: How we script here](#fivem-vs-helix-how-we-script-here)
+15. [Summary: Key Differences](#summary-key-differences)
+16. [Final Tips](#final-tips)
 
 ---
 
@@ -39,18 +43,16 @@ HELIX is built on Unreal Engine 5, which means fundamental differences from Five
 
 ### Getting the Core Object
 
-**FiveM:**
+**FiveM (typical QBCore setup):**
 
 ```lua
--- FiveM
 local QBCore = exports['qb-core']:GetCoreObject()
 ```
 
-**HELIX:**
+**HELIX**
 
 ```lua
--- HELIX
-local QBCore = exports['qb-core']:GetCoreObject() -- Same!
+local QBCore = exports['qb-core']:GetShared() 
 ```
 
 ### Player Data Structure
@@ -89,12 +91,11 @@ PlayerData = {
 
 ## Player & Character Management
 
-### Getting Local Player
+### Getting Local Player / Pawn
 
 **FiveM:**
 
 ```lua
--- FiveM
 local ped = PlayerPedId()
 local coords = GetEntityCoords(ped)
 ```
@@ -102,14 +103,10 @@ local coords = GetEntityCoords(ped)
 **HELIX:**
 
 ```lua
--- HELIX - Uses HPlayer and HCharacter classes
-local player = Client.GetLocalPlayer()
-local character = player:GetControlledCharacter()
+local pawn = GetPlayerPawn()
+if not pawn then return end
 
--- Check if character exists 
-if not character then return end
-
-local coords = character:GetLocation()  -- Returns Vector object
+local coords = GetEntityCoords(pawn)
 ```
 
 ### Getting Player Position
@@ -117,7 +114,6 @@ local coords = character:GetLocation()  -- Returns Vector object
 **FiveM:**
 
 ```lua
--- FiveM
 local coords = GetEntityCoords(PlayerPedId())
 local x, y, z = coords.x, coords.y, coords.z
 ```
@@ -125,74 +121,11 @@ local x, y, z = coords.x, coords.y, coords.z
 **HELIX:**
 
 ```lua
--- HELIX
-local player = Client.GetLocalPlayer()
-local character = player:GetControlledCharacter()
-if not character then return end
-
-local location = character:GetLocation()  -- Vector object
--- Access components: location.X, location.Y, location.Z
+local coords = GetEntityCoords(GetPlayerPawn())
+local x, y, z = coords.X, coords.Y, coords.Z
 ```
 
-### Getting Closest Player (Client)
 
-**FiveM:**
-
-```lua
--- FiveM
-function GetClosestPlayer()
-    local players = GetActivePlayers()
-    local ped = PlayerPedId()
-    local coords = GetEntityCoords(ped)
-    local closestDistance = -1
-    local closestPlayer = -1
-    
-    for _, player in pairs(players) do
-        local targetPed = GetPlayerPed(player)
-        if targetPed ~= ped then
-            local targetCoords = GetEntityCoords(targetPed)
-            local distance = #(coords - targetCoords)
-            if closestDistance == -1 or distance < closestDistance then
-                closestPlayer = player
-                closestDistance = distance
-            end
-        end
-    end
-    
-    return closestPlayer, closestDistance
-end
-```
-
-**HELIX:**
-
-```lua
--- HELIX - Built into QBCore.Functions
-local closestPlayer, closestDistance = QBCore.Functions.GetClosestPlayer()
-
--- Or get the HCharacter directly
-local closestCharacter, closestDistance = QBCore.Functions.GetClosestHCharacter()
-```
-
-### Getting Closest Player (Server)
-
-**FiveM:**
-
-```lua
--- FiveM - You'd need to write this yourself
-function GetClosestPlayer(source, coords)
-    -- Custom implementation needed
-end
-```
-
-**HELIX:**
-
-```lua
--- HELIX - Built-in server function
-local closestPlayer, closestDistance = QBCore.Functions.GetClosestPlayer(source, coords)
-
--- Or get HCharacter
-local closestChar, distance = QBCore.Functions.GetClosestHCharacter(source, coords)
-```
 
 ---
 
@@ -234,7 +167,7 @@ end)
 
 ```lua
 -- HELIX - Synchronous approach
-local result = [Database.Select](http://Database.Select)('SELECT * FROM players WHERE citizenid = ?', { citizenid })
+local result = Database.Select('SELECT * FROM players WHERE citizenid = ?', { citizenid })
 
 -- Result is a TArray (Unreal Engine array)
 if result[1] then
@@ -286,8 +219,8 @@ Database.Execute([[
     INSERT INTO players (citizenid, name, money)
     VALUES (?, ?, ?)
     ON CONFLICT(citizenid) DO UPDATE SET
-        name = [excluded.name](http://excluded.name),
-        money = [excluded.money](http://excluded.money)
+        name = excluded.name,
+        money = excluded.money
 ]], { citizenid, name, JSON.stringify(money) })
 ```
 
@@ -297,16 +230,16 @@ Database.Execute([[
 
 ```lua
 -- FiveM
-local moneyJson = json.encode([PlayerData.money](http://PlayerData.money))
-local moneyData = json.decode([result.money](http://result.money))
+local moneyJson = json.encode(PlayerData.money)
+local moneyData = json.decode(result.money)
 ```
 
 **HELIX:**
 
 ```lua
 -- HELIX - Uses JSON global (capital J)
-local moneyJson = JSON.stringify([PlayerData.money](http://PlayerData.money))
-local moneyData = JSON.parse([result.money](http://result.money))
+local moneyJson = JSON.stringify(PlayerData.money)
+local moneyData = JSON.parse(result.money)
 ```
 
 ---
@@ -355,8 +288,6 @@ end)
 **FiveM:**
 
 ```lua
--- NO NATIVE SOLUTION, MUST USE QBCORE
-
 -- FiveM Client
 QBCore.Functions.TriggerCallback('callbackName', function(result)
     print(result)
@@ -401,7 +332,7 @@ SendNUIMessage({
 
 -- In HTML/JS
 window.addEventListener('message', function(event) {
-    if ([event.data](http://event.data).action === 'openUI') {
+    if (event.data.action === 'openUI') {
         // Handle UI
     }
 })
@@ -411,16 +342,10 @@ window.addEventListener('message', function(event) {
 
 ```lua
 -- HELIX - Creating WebUI instance
-local myWebUI = WebUI('UniqueID', 'resource-name/path/to/index.html', true)
+local myWebUI = WebUI('UniqueID', 'resource-name/path/to/index.html', 0)
 
--- Wait for browser to load
-myWebUI.Browser.OnLoadCompleted:Add(myWebUI.Browser, function()
-    -- Now safe to call functions
-    myWebUI:CallFunction('functionName', param1, param2)
-end)
-
--- Calling JS functions from Lua
-myWebUI:CallFunction('updateData', { cash = 1000, bank = 5000 })
+-- Sending data into the UI
+myWebUI:SendEvent('updateData', { cash = 1000, bank = 5000 })
 ```
 
 ### Sending Data to UI
@@ -439,8 +364,8 @@ SendNUIMessage({
 **HELIX:**
 
 ```lua
--- HELIX - Direct function calls
-myWebUI:CallFunction('updateBalances', { cash = cash, bank = bank })
+-- HELIX - SendEvent from Lua into WebUI
+myWebUI:SendEvent('updateBalances', { cash = cash, bank = bank })
 ```
 
 ### Receiving Data from UI
@@ -484,32 +409,28 @@ function OpenBanking()
     if not bankingUI then
         bankingUI = WebUI('Banking', 'qb-banking/Client/html/index.html', 3)
         
-        -- Wait for browser to load
-        bankingUI.Browser.OnLoadCompleted:Add(bankingUI.Browser, function()
-            -- Get player data
-            local PlayerData = QBCore.Functions.GetPlayerData()
-            
-            -- Send initial data
-            bankingUI:CallFunction('initData', {
-                cash = [PlayerData.money.cash](http://PlayerData.money.cash),
-                bank = [PlayerData.money.bank](http://PlayerData.money.bank),
-                playerData = {
-                    name = PlayerData.charinfo.firstname .. ' ' .. PlayerData.charinfo.lastname,
-                    job = PlayerData.job
-                }
-            })
-        end)
+        -- Get player data and send it into the UI
+        local PlayerData = exports['qb-core']:GetPlayerData()
+        
+        bankingUI:SendEvent('initData', {
+            cash = PlayerData.money.cash,
+            bank = PlayerData.money.bank,
+            playerData = {
+                name = PlayerData.charinfo.firstname .. ' ' .. PlayerData.charinfo.lastname,
+                job = PlayerData.job
+            }
+        })
         
         -- Register event handlers
-        bankingUI:Subscribe('deposit', function(data)
+        bankingUI:RegisterEventHandler('deposit', function(data)
             TriggerServerEvent('qb-banking:server:deposit', data.amount)
         end)
         
-        bankingUI:Subscribe('withdraw', function(data)
+        bankingUI:RegisterEventHandler('withdraw', function(data)
             TriggerServerEvent('qb-banking:server:withdraw', data.amount)
         end)
         
-        bankingUI:Subscribe('close', function()
+        bankingUI:RegisterEventHandler('close', function()
             bankingUI:Destroy()
             bankingUI = nil
         end)
@@ -520,21 +441,20 @@ end
 **JavaScript (index.html):**
 
 ```jsx
-// HELIX - Global function to send events to Lua
-function hEvent(eventName, data) {
-    // This is provided by HELIX WebUI system
-}
+// Listen for events sent from Lua via SendEvent
+document.addEventListener('message', (event) => {
+    if (event.data.name === 'initData') {
+        const data = event.data.data
+        document.getElementById('cash').textContent = '$' + data.cash
+        document.getElementById('bank').textContent = '$' + data.bank
+    }
 
-// Called from Lua via CallFunction
-window.initData = function(data) {
-    document.getElementById('cash').textContent = '$' + [data.cash](http://data.cash)
-    document.getElementById('bank').textContent = '$' + [data.bank](http://data.bank)
-}
-
-window.updateBalances = function(data) {
-    document.getElementById('cash').textContent = '$' + [data.cash](http://data.cash)
-    document.getElementById('bank').textContent = '$' + [data.bank](http://data.bank)
-}
+    if (event.data.name === 'updateBalances') {
+        const data = event.data.data
+        document.getElementById('cash').textContent = '$' + data.cash
+        document.getElementById('bank').textContent = '$' + data.bank
+    }
+})
 
 // Send event to Lua
 document.getElementById('depositBtn').addEventListener('click', function() {
@@ -564,59 +484,33 @@ local vehicle = CreateVehicle(model, coords.x, coords.y, coords.z, heading, true
 SetPedIntoVehicle(PlayerPedId(), vehicle, -1)
 ```
 
-**HELIX:**
+**HELIX (QBCore):**
 
 ```lua
--- HELIX - Client side
-local player = Client.GetLocalPlayer()
-local character = player:GetControlledCharacter()
-if not character then return end
+local pawn = GetPlayerPawn()
+if not pawn then return end
 
-local location = character:GetLocation()
-local rotation = character:GetRotation()
-local forward = rotation:GetForwardVector()
-local spawnLocation = location + forward * 500  -- 500cm in front
+local location = GetEntityCoords(pawn)
+local rotation = GetEntityRotation(pawn)
 
--- Create vehicle using QBCore helper (or directly with HSimpleVehicle)
-local vehicle = QBCore.Functions.CreateVehicle(source, 'vehicle_name', spawnLocation, rotation)
+local spawnLocation = location + Vector(500, 0, 0)
+local vehicle = exports['qb-core']:CreateVehicle(source, 'vehicle_name', spawnLocation, rotation)
 ```
 
-**HELIX - Server Side (Better approach):**
+**HELIX (Native):**
 
 ```lua
--- Server/functions.lua shows the implementation
-function QBCore.Functions.CreateVehicle(source, vehicle_name, coords, rotation, plate, fuel)
-    local vehicle_data = QBShared.Vehicles[vehicle_name]
-    if not vehicle_data then return false end
-    
-    local ped = source:K2_GetPawn()
-    if not ped then return false end
-    
-    -- Get spawn location if not provided
-    local location = coords or ped:GetLocation()
-    local rot = rotation or ped:GetRotation()
-    
-    -- Create the vehicle
-    local vehicle = HSimpleVehicle(
-        location, 
-        rot, 
-        vehicle_data.asset_name,
-        vehicle_data.collision_type,
-        vehicle_data.gravity_enabled
-    )
-    
-    if not vehicle then return false end
-    
-    -- Set plate and fuel
-    local plate_number = plate or QBCore.Functions.GeneratePlate(vehicle)
-    vehicle:SetValue('plate', plate_number, true)
-    
-    local fuel_value = fuel or 100
-    vehicle:SetValue('fuel', fuel_value, true)
-    
-    return vehicle
-end
+local vehicle = HVehicle(
+    Vector(-7940, 3400, 150),
+    Rotator(0, 180, 0),
+    '/abcca-dax-veh/PongaseraGt/Blueprint/BP_PongaseraGtVehicle.BP_PongaseraGtVehicle_C',
+    'QueryAndPhysics',
+    true
+)
+
+vehicle:SetFuel(1.0)
 ```
+
 
 ### Getting Closest Vehicle
 
@@ -647,11 +541,7 @@ end
 **HELIX:**
 
 ```lua
--- HELIX - Built into QBCore
-local closestVehicle, closestDistance = QBCore.Functions.GetClosestVehicle()
-
--- Or get HSimpleVehicle
-local closestHVehicle, distance = QBCore.Functions.GetClosestHVehicle()
+GetClosestVehicle(coords, radius)
 ```
 
 ### Deleting Vehicles
@@ -667,36 +557,13 @@ DeleteEntity(vehicle)
 
 ```lua
 -- HELIX
-vehicle:Destroy()
+DeleteEntity(vehicle)
 ```
 
 ---
 
 ## Weapon Management
 
-### Creating a Weapon
-
-**FiveM:**
-
-```lua
--- FiveM
-GiveWeaponToPed(ped, GetHashKey('WEAPON_PISTOL'), 100, false, true)
-```
-
-**HELIX:**
-
-```lua
--- HELIX - More complex, uses Weapon class
-local weapon = QBCore.Functions.CreateWeapon(source, 'weapon_gaston', coords, rotation, itemInfo)
-
--- Then give to player
-if weapon then
-    local ped = source:GetControlledCharacter()
-    if ped then
-        ped:PickUp(weapon)
-    end
-end
-```
 
 ## World Objects & Entities
 
@@ -714,11 +581,9 @@ local objects = GetGamePool('CObject')
 **HELIX:**
 
 ```lua
--- HELIX - Uses class-specific GetAll()
-local vehicles = HSimpleVehicle.GetAll()
-local characters = HCharacter.GetAll()
-local props = Prop.GetAll()
-local weapons = Weapon.GetAll()
+-- HELIX 
+local vehicles = GetAllVehicles()
+local characters = GetAllPlayers()
 ```
 
 ### Distance Calculations
@@ -735,10 +600,10 @@ local distance = #(coords1 - coords2)
 **HELIX:**
 
 ```lua
--- HELIX - Using Vector:Distance()
-local location1 = entity1:GetLocation()
-local location2 = entity2:GetLocation()
-local distance = location1:Distance(location2)
+-- HELIX 
+local location1 = GetEntityCoords(entity1)
+local location2 = GetEntityCoords(entity2)
+local distance = GetDistanceBetweenCoords(location1, location2)
 ```
 
 ### Coordinate System
@@ -775,14 +640,8 @@ TriggerClientEvent('QBCore:Notify', source, 'Text here', 'error')
 **HELIX:**
 
 ```lua
--- HELIX Client (Same!)
-exports['qb-core']:Notify('Text here', 'success', 5000)
-
--- HELIX Server (Same!)
-TriggerClientEvent(source, 'QBCore:Notify', 'Text here', 'error')
-
--- Or using export
-exports['qb-core']:Player(source, 'Notify', 'Text here', 'success', 5000)
+-- HELIX
+Notification("Welcome to HELIX!", NotificationType.Success, 1.5)
 ```
 
 ### Notification Types
@@ -822,15 +681,13 @@ Let's port a simple "ATM" script from FiveM to HELIX.
 
 ```lua
 -- FiveM - client.lua
-local QBCore = exports['qb-core']:GetCoreObject()
-
 RegisterNetEvent('atm:client:openATM', function()
     local PlayerData = QBCore.Functions.GetPlayerData()
     
     SendNUIMessage({
         action = 'open',
-        cash = [PlayerData.money.cash](http://PlayerData.money.cash),
-        bank = [PlayerData.money.bank](http://PlayerData.money.bank)
+        cash = PlayerData.money.cash,
+        bank = PlayerData.money.bank
     })
     SetNuiFocus(true, true)
 end)
@@ -851,7 +708,6 @@ RegisterNUICallback('close', function(_, cb)
 end)
 
 -- FiveM - server.lua
-local QBCore = exports['qb-core']:GetCoreObject()
 
 RegisterNetEvent('atm:server:deposit', function(amount)
     local src = source
@@ -880,101 +736,72 @@ RegisterNetEvent('atm:server:withdraw', function(amount)
 end)
 ```
 
-### HELIX Version
+### HELIX Version (based on `hx_banking`)
 
 ```lua
 -- HELIX - Client/Index.lua
-local QBCore = exports('qb-core', 'GetCoreObject')()
-local atmUI = nil
+local Config = require('Shared/Index')
 
-RegisterClientEvent('atm:client:openATM', function()
-    local PlayerData = QBCore.Functions.GetPlayerData()
-    
-    if not atmUI then
-        -- Create WebUI instance
-        atmUI = WebUI('ATM', 'atm-resource/Client/html/index.html', 3)
-        
-        -- Wait for browser load
-        atmUI.Browser.OnLoadCompleted:Add(atmUI.Browser, function()
-            -- Send initial data via function call
-            atmUI:CallFunction('openATM', {
-                cash = [PlayerData.money.cash](http://PlayerData.money.cash),
-                bank = [PlayerData.money.bank](http://PlayerData.money.bank)
-            })
-        end)
-        
-        -- Register event handlers
-        atmUI:Subscribe('deposit', function(data)
-            TriggerServerEvent('atm:server:deposit', data.amount)
-        end)
-        
-        atmUI:Subscribe('withdraw', function(data)
-            TriggerServerEvent('atm:server:withdraw', data.amount)
-        end)
-        
-        atmUI:Subscribe('close', function()
-            atmUI:Destroy()
-            atmUI = nil
-        end)
-    else
-        -- UI already exists, just update data
-        atmUI:CallFunction('openATM', {
-            cash = [PlayerData.money.cash](http://PlayerData.money.cash),
-            bank = [PlayerData.money.bank](http://PlayerData.money.bank)
-        })
+local BankingUI = WebUI('Banking', Config.UIPath)
+local isBankOpen = false
+local PlayerData = {}
+local accountData = {}
+
+RegisterClientEvent('QBCore:Client:OnPlayerLoaded', function()
+    PlayerData = exports['qb-core']:GetPlayerData()
+end)
+
+RegisterClientEvent('QBCore:Player:SetPlayerData', function(val)
+    PlayerData = val
+
+    if BankingUI and isBankOpen then
+        local playerCash = PlayerData.money and PlayerData.money.cash or 0
+        local playerBank = PlayerData.money and PlayerData.money.bank or 0
+
+        accountData.cash = playerCash
+        accountData.balance = playerBank
+
+        BankingUI:SendEvent('updateData', accountData)
     end
 end)
 
--- Update balances when money changes
-RegisterClientEvent('atm:client:updateBalances', function(cash, bank)
-    if atmUI then
-        atmUI:CallFunction('updateBalances', { cash = cash, bank = bank })
+RegisterClientEvent('hx-banking:client:updateBalances', function(cash, bank)
+    if BankingUI and isBankOpen then
+        accountData.cash = cash
+        accountData.balance = bank
+
+        BankingUI:SendEvent('updateData', accountData)
     end
 end)
 
--- HELIX - Server/Index.lua
-local QBCore = exports('qb-core', 'GetCoreObject')()
-
-RegisterServerEvent('atm:server:deposit', function(source, amount)
-    local Player = QBCore.Functions.GetPlayer(source)
-    if not Player then return end
-    
-    amount = math.floor(tonumber(amount) or 0)
-    if amount <= 0 then return end
-    
-    if Player.Functions.RemoveMoney('cash', amount, 'atm-deposit') then
-        Player.Functions.AddMoney('bank', amount, 'atm-deposit')
-        Player.Functions.Notify('Deposited $' .. amount, 'success')
-        
-        -- Update UI
-        TriggerClientEvent('atm:client:updateBalances', source, 
-            [Player.PlayerData.money.cash](http://Player.PlayerData.money.cash), 
-            [Player.PlayerData.money.bank](http://Player.PlayerData.money.bank)
-        )
-    else
-        Player.Functions.Notify('Not enough cash', 'error')
+RegisterClientEvent('hx-banking:client:openATM', function()
+    if not PlayerData or not PlayerData.money then
+        return
     end
-end)
 
-RegisterServerEvent('atm:server:withdraw', function(source, amount)
-    local Player = QBCore.Functions.GetPlayer(source)
-    if not Player then return end
-    
-    amount = math.floor(tonumber(amount) or 0)
-    if amount <= 0 then return end
-    
-    if Player.Functions.RemoveMoney('bank', amount, 'atm-withdraw') then
-        Player.Functions.AddMoney('cash', amount, 'atm-withdraw')
-        Player.Functions.Notify('Withdrew $' .. amount, 'success')
-        
-        -- Update UI
-        TriggerClientEvent('atm:client:updateBalances', source,
-            [Player.PlayerData.money.cash](http://Player.PlayerData.money.cash),
-            [Player.PlayerData.money.bank](http://Player.PlayerData.money.bank)
-        )
-    else
-        Player.Functions.Notify('Not enough bank balance', 'error')
-    end
+    isBankOpen = true
+
+    local playerCash = PlayerData.money.cash or 0
+    local playerBank = PlayerData.money.bank or 0
+    local playerName = PlayerData.charinfo and (PlayerData.charinfo.firstname .. ' ' .. PlayerData.charinfo.lastname) or 'Unknown'
+
+    accountData = {
+        name = playerName,
+        balance = playerBank,
+        cash = playerCash,
+        number = PlayerData.citizenid or '000000',
+        iban = PlayerData.citizenid or 'UNKNOWN',
+        stats = {
+            {title = 'income', amount = 0},
+            {title = 'outcome', amount = 0},
+            {title = 'earnings', amount = 0}
+        },
+        transactions = {}
+    }
+
+    BankingUI:BringToFront()
+    BankingUI:SetInputMode(1)
+    BankingUI:SendEvent('OpenATM', accountData)
 end)
 ```
 
@@ -983,10 +810,10 @@ end)
 ```jsx
 // FiveM - script.js
 window.addEventListener('message', function(event) {
-    if ([event.data](http://event.data).action === 'open') {
+    if (event.data.action === 'open') {
         $('#atm-container').show()
-        $('#cash-amount').text('$' + [event.data.cash](http://event.data.cash))
-        $('#bank-amount').text('$' + [event.data.bank](http://event.data.bank))
+        $('#cash-amount').text('$' + event.data.cash)
+        $('#bank-amount').text('$' + event.data.bank)
     }
 })
 
@@ -997,16 +824,20 @@ $('#deposit-btn').click(function() {
 })
 
 // HELIX - script.js
-window.openATM = function(data) {
-    document.getElementById('atm-container').style.display = 'block'
-    document.getElementById('cash-amount').textContent = '$' + [data.cash](http://data.cash)
-    document.getElementById('bank-amount').textContent = '$' + [data.bank](http://data.bank)
-}
+document.addEventListener('message', (event) => {
+    if (event.data.name === 'openATM') {
+        const data = event.data.data
+        document.getElementById('atm-container').style.display = 'block'
+        document.getElementById('cash-amount').textContent = '$' + data.cash
+        document.getElementById('bank-amount').textContent = '$' + data.bank
+    }
 
-window.updateBalances = function(data) {
-    document.getElementById('cash-amount').textContent = '$' + [data.cash](http://data.cash)
-    document.getElementById('bank-amount').textContent = '$' + [data.bank](http://data.bank)
-}
+    if (event.data.name === 'updateBalances') {
+        const data = event.data.data
+        document.getElementById('cash-amount').textContent = '$' + data.cash
+        document.getElementById('bank-amount').textContent = '$' + data.bank
+    }
+})
 
 document.getElementById('deposit-btn').addEventListener('click', function() {
     const amount = parseInt(document.getElementById('amount').value)
@@ -1032,20 +863,20 @@ document.getElementById('close-btn').addEventListener('click', function() {
 
 **❌ Wrong:**
 
+
+```lua
+-- HELIX - Will crash if no pawn
+local pawn = GetPlayerPawn()
+local coords = GetEntityCoords(pawn)
+```
+
 **✅ Correct:**
 
 ```lua
--- HELIX - Will crash if no character
-local player = Client.GetLocalPlayer()
-local coords = player:GetControlledCharacter():GetLocation()
-```
-
-```lua
 -- HELIX
-local player = Client.GetLocalPlayer()
-local character = player:GetControlledCharacter()
-if not character then return end
-local coords = character:GetLocation()
+local pawn = GetPlayerPawn()
+if not pawn then return end
+local coords = GetEntityCoords(pawn)
 ```
 
 ### 2. Database Result Handling
@@ -1054,7 +885,7 @@ local coords = character:GetLocation()
 
 ```lua
 -- HELIX - Direct access won't work
-local result = [Database.Select](http://Database.Select)('SELECT * FROM players', {})
+local result = Database.Select('SELECT * FROM players', {})
 local data = result[1]  -- This is TArray, not Lua table!
 ```
 
@@ -1062,7 +893,7 @@ local data = result[1]  -- This is TArray, not Lua table!
 
 ```lua
 -- HELIX - Convert to Lua table
-local result = [Database.Select](http://Database.Select)('SELECT * FROM players', {})
+local result = Database.Select('SELECT * FROM players', {})
 if result[1] then
     local data = result[1].Columns:ToTable()
     -- Now data is usable
@@ -1095,7 +926,7 @@ JSON.parse(str)
 -- HELIX - Creating multiple instances
 function OpenUI()
     local ui = WebUI('MyUI', 'path/to/ui.html', 3)
-    ui:CallFunction('update', data)  -- Called before load!
+    ui:SendEvent('update', data)  -- Called before load!
 end
 ```
 
@@ -1103,17 +934,10 @@ end
 
 ```lua
 -- HELIX - Proper lifecycle
-local myUI = nil
+local myUI = WebUI('MyUI', 'path/to/ui.html', 3)
 
 function OpenUI()
-    if not myUI then
-        myUI = WebUI('MyUI', 'path/to/ui.html', 3)
-        
-        myUI.Browser.OnLoadCompleted:Add(myUI.Browser, function()
-            -- Now safe to call
-            myUI:CallFunction('update', data)
-        end)
-    end
+    myUI:SendEvent('update', data)
 end
 
 function CloseUI()
@@ -1176,10 +1000,10 @@ end
 **HELIX:**
 
 ```lua
--- HELIX - Use class GetAll()
-local vehicles = HSimpleVehicle.GetAll()
+-- HELIX
+local vehicles = GetAllVehicles()
 for _, vehicle in ipairs(vehicles) do
-    vehicle:Destroy()
+    DeleteEntity(vehicle)
 end
 ```
 
@@ -1189,7 +1013,7 @@ end
 
 ```lua
 -- HELIX Server - Always validate player exists
-local Player = QBCore.Functions.GetPlayer(source)
+local Player = exports['qb-core']:GetPlayer(source)
 if not Player then return end
 
 -- Now safe to use Player.Functions
@@ -1200,15 +1024,25 @@ if not Player then return end
 **FiveM:**
 
 ```lua
--- FiveM
+-- FiveM - Calling an export
 local result = exports['resource-name']:ExportName(args)
+
+-- FiveM - Defining an export (when not defined in manifest)
+exports('ExportName', function(args)
+    return something
+end)
 ```
 
 **HELIX:**
 
 ```lua
--- HELIX - Different syntax
-local result = exports('resource-name', 'ExportName', args)
+-- HELIX - Calling an export
+local result = exports['resource-name']:ExportName(args)
+
+-- HELIX - Defining an export
+exports('ExportName', function(args)
+    return something
+end)
 ```
 
 ### 10. Timer/Wait Functions
@@ -1252,20 +1086,50 @@ Both FiveM and HELIX use similar package.json for resource organization:
 
 ---
 
+## FiveM vs HELIX: How we script here
+
+The daily scripting workflow is close to FiveM but with a few important differences.
+
+### Resource structure
+
+In FiveM you normally have one `fxmanifest.lua` per resource and keep files in flat `client`, `server`, and `shared` folders.
+In HELIX we still separate code by side, but we lean on `package.json` to declare the shared, client, and server entry points and to keep structure consistent across resources.
+New HELIX resources should follow the same pattern as the examples here: a `Shared` folder for data and configuration, a `Client` folder for gameplay and UI, and a `Server` folder for persistence, validation, and game rules.
+
+### Server vs client responsibilities
+
+On FiveM you often mix logic and validation on both sides because the engine makes it easy to do everything from the client.
+In HELIX scripts we try to keep the client focused on presentation, input, and small quality-of-life helpers, while the server owns money changes, inventory, job logic, vehicle spawning, and any state that must be trusted.
+If something would be an exploit in FiveM when run on the client, put it on the server in HELIX and expose it through events, callbacks, or exports.
+
+### Data and persistence
+
+On FiveM you typically talk to MySQL asynchronously and pass Lua tables through `json.encode` and `json.decode`.
+In HELIX we use synchronous database calls, convert rows with `Columns:ToTable()`, and always use `JSON.stringify` and `JSON.parse` for structured data.
+Ported scripts should avoid keeping long‑lived database state in globals and instead fetch fresh data when needed or cache it behind clear helper functions.
+
+### Events, callbacks, and exports
+
+FiveM scripts often rely on `RegisterNetEvent` and `TriggerServerEvent` directly, plus QBCore callbacks for request–response flows.
+In HELIX we keep the same mental model, but we prefer the native callback helpers and a small set of well‑named exports per resource, so other scripts call into them instead of duplicating logic.
+When you port a FiveM script, start by listing the events, callbacks, and exports it exposes, then mirror that surface area in HELIX using the patterns shown earlier in this tutorial.
+
+---
+
 ## Summary: Key Differences
 
 | Feature | FiveM | HELIX |
 | --- | --- | --- |
 | **Engine** | GTA V (RAGE) | Unreal Engine 5 |
-| **Player Ped** | `PlayerPedId()` | `Client.GetLocalPlayer():GetControlledCharacter()` |
+| **Player Ped** | `PlayerPedId()` | `GetPlayerPawn()` |
 | **Coordinates** | Meters (vector3) | Centimeters (Vector) |
 | **Database** | MySQL (async) | SQLite (sync) |
 | **JSON** | `json.encode/decode` | `JSON.stringify/parse` |
-| **UI System** | NUI (SendNUIMessage) | WebUI (CallFunction) |
-| **Entities** | `GetGamePool()` | `ClassName.GetAll()` |
-| **Distance** | `#(v1 - v2)` | `v1:Distance(v2)` |
-| **Delete Entity** | `DeleteEntity()` | `entity:Destroy()` |
-| **Exports** | `exports['name']:Func()` | `exports('name', 'Func', args)` |
+| **UI System** | NUI (SendNUIMessage) | WebUI (SendEvent) |
+| **Entities** | `GetGamePool()` | `GetAllPlayers() GetAllPawns() GetAllVehicles() and more...` |
+| **Distance** | `#(v1 - v2)` | `GetDistanceBetweenCoords(coords1, coords2)` |
+| **Delete Entity** | `DeleteEntity()` | `DeleteEntity()` |
+| **Exports** | `exports['name']:Func()` | `exports['name']:Func()` |
 
 ---
 
@@ -1273,7 +1137,7 @@ Both FiveM and HELIX use similar package.json for resource organization:
 
 1. **Start Simple**: Port basic scripts first (like the ATM example)
 2. **Test Frequently**: Test after each major change
-3. **Use Built-in Functions**: QBCore provides many helper functions
+3. **Use Built-in Functions**: QBCore/Lua API provide many helper functions
 4. **Check Character/Player**: Always validate before accessing methods
 5. **Read Existing Code**: Study working HELIX resources for patterns
 6. **Mind the Scale**: Remember 1 meter = 100cm in HELIX
