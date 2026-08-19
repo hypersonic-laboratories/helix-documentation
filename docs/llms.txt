@@ -1,0 +1,185 @@
+# HELIX Documentation
+
+> Official documentation for the **HELIX** platform by Hypersonic Laboratories: a modkit and game where creators build, script, and publish multiplayer 3D worlds. This site covers HELIX Studio (the Unreal Engine 5-based editor), Lua and JavaScript scripting, the HELIX Character Creator, custom assets, Blueprints, and the gameplay API.
+
+Conventions for using these docs:
+
+- Pages are written for creators and scripters. Tutorials are task-oriented; the API and QBCore sections are reference material.
+- Scripting has two surfaces: **Lua** (the primary scripting API, under "API" and "Scripting") and **HelixJS** (a JavaScript/TypeScript layer).
+- Canonical class names are capitalized (for example `HCharacter`, `HPlayer`, `HVehicle`).
+- This file lives at `https://docs.helixgame.com/llms.txt`. Each link points directly to a rendered page; request the URL as-is, without appending anything.
+
+## Getting started
+
+- [Introduction](https://docs.helixgame.com/getting_started/): What HELIX is and how the platform fits together.
+- [Install HELIX](https://docs.helixgame.com/getting_started/install/): Install HELIX Studio and the game client.
+- [Basic controls](https://docs.helixgame.com/getting_started/basic_controls/): Default in-game and editor controls.
+- [Create your first HELIX world](https://docs.helixgame.com/tutorials/create_helix_world/): End-to-end walkthrough of building and launching a world.
+- [Coming from GTA/FiveM](https://docs.helixgame.com/getting_started/comingGTA/): Orientation for creators moving from GTA/FiveM.
+
+## Concepts
+
+- [LIX](https://docs.helixgame.com/about/lix/): The platform currency and how it is used.
+- [Instant hosting](https://docs.helixgame.com/about/hosting/): How HELIX hosts and runs published worlds.
+- [Vault](https://docs.helixgame.com/about/vault/): The asset and package distribution system.
+- [Collectibles & market](https://docs.helixgame.com/about/collectibles_market/): Collectibles and the in-platform market.
+- [IP ownership](https://docs.helixgame.com/about/ip_ownership/): Who owns content created on HELIX.
+
+## Tutorials
+
+- [Tutorials & examples](https://docs.helixgame.com/tutorials/): Index of tutorials.
+- [HELIX Studio user guide](https://docs.helixgame.com/tutorials/studio/): Tour of the HELIX Studio editor.
+- [Host a dedicated server](https://docs.helixgame.com/tutorials/dedicated_server/): Run a dedicated HELIX server.
+- [Publish package to Vault](https://docs.helixgame.com/tutorials/creatorhub/): Package and publish content to Vault.
+- [Intro to packages & HELIX Vault](https://docs.helixgame.com/tutorials/vault_package_management/): How packages and Vault distribution work.
+- [Monetize your world with LIX](https://docs.helixgame.com/tutorials/in_world_purchases/): Add in-world purchases.
+- [How to reference custom assets](https://docs.helixgame.com/tutorials/reference_custom_assets/): Reference packaged assets from scripts and content.
+- [Default materials guide](https://docs.helixgame.com/tutorials/default_materials/): Master materials creators are allowed to use.
+- [Common issues importing Fab assets](https://docs.helixgame.com/tutorials/FabIssues/common_issues_importing_fab/): Fixing problems when importing Fab content.
+- [Convert FiveM assets to HELIX](https://docs.helixgame.com/tutorials/ConvertingFivemAssets/converting-assets/): Bring FiveM assets into HELIX.
+- [Port your FiveM script to HELIX](https://docs.helixgame.com/tutorials/porting-tutorial/): Migrate FiveM scripts.
+- [Unreal Engine 5.7 migration guide](https://docs.helixgame.com/tutorials/migration57/): Migrate Creator Kit projects to UE 5.7.
+- [How to use Photo Mode](https://docs.helixgame.com/tutorials/photomode/): Use the in-game photo mode.
+- [How to use Build Mode](https://docs.helixgame.com/tutorials/build_mode/): Build and edit worlds in build mode.
+
+## Character customization
+
+- [HELIX Character Creator overview](https://docs.helixgame.com/tutorials/HelixCharacterCreator/cc_overview/): How the Character Creator and cosmetics pipeline work.
+- [Creating custom wearables](https://docs.helixgame.com/tutorials/HelixCharacterCreator/cc_wearables/): Author and package wearables on the `SK_Unified` skeleton.
+- [Creating custom MetaHumans](https://docs.helixgame.com/tutorials/HelixCharacterCreator/cc_metahumans/): Bring MetaHuman characters into HELIX.
+- [Creating custom characters](https://docs.helixgame.com/tutorials/HelixCharacterCreator/cc_characters/): Package custom character meshes, including IK Rig + IK Retargeter setup for custom skeletons.
+- [Creating dynamic hair](https://docs.helixgame.com/tutorials/HelixCharacterCreator/cc_dynamichair/): Add dynamic/groom hair.
+- [Character Creator scripting](https://docs.helixgame.com/tutorials/HelixCharacterCreator/cc_scripting/): Script the Character Creator.
+
+## Custom levels
+
+- [Creating custom levels](https://docs.helixgame.com/tutorials/CustomLevels/custom_maps/): Build custom maps/levels.
+- [Adding interactable doors](https://docs.helixgame.com/tutorials/CustomLevels/custom_map_doors/): Add interactable doors to custom levels.
+- [Adding seatable entities](https://docs.helixgame.com/tutorials/CustomLevels/custom_map_seatables/): Add seatable entities to custom levels.
+- [Configuring the map in HELIX Studio](https://docs.helixgame.com/tutorials/HelixMap/studio/): Set up the map object in Studio.
+- [Configuring the map at runtime](https://docs.helixgame.com/tutorials/HelixMap/runtime/): Configure the map from scripts at runtime.
+- [Map settings object](https://docs.helixgame.com/tutorials/HelixMap/settings/): Reference for the map settings object.
+
+## Custom assets
+
+- [Custom animations](https://docs.helixgame.com/tutorials/custom_animations/): Import and use custom animations.
+- [Custom vehicles](https://docs.helixgame.com/tutorials/custom_vehicles/): Import and configure custom vehicles.
+- [Custom shells](https://docs.helixgame.com/tutorials/custom_shells/): Create custom shells.
+- [Custom blueprints](https://docs.helixgame.com/tutorials/custom_blueprints/): Package custom Blueprints.
+- [Custom UI](https://docs.helixgame.com/tutorials/custom_ui/): Create custom UI assets.
+
+## Gameplay systems
+
+- [Working with character health](https://docs.helixgame.com/tutorials/gameplay_systems/character_health/): Configure and script character health.
+- [Working with gameplay rules](https://docs.helixgame.com/tutorials/gameplay_systems/gameplay_rules/): Configure and script gameplay rules.
+
+## Scripting (Lua)
+
+- [Lua scripting in HELIX](https://docs.helixgame.com/tutorials/Scripting/packageguide/): Package structure and how Lua scripting works.
+- [Getting started with Lua in Visual Studio Code](https://docs.helixgame.com/tutorials/Scripting/codeeditor/): Set up the editor and tooling for Lua.
+- [Communicating with events](https://docs.helixgame.com/tutorials/Scripting/events/): Send and receive events.
+- [Callbacks](https://docs.helixgame.com/tutorials/Scripting/callbacks-guide/): Use callbacks.
+- [Exports guide](https://docs.helixgame.com/tutorials/Scripting/exports-guide/): Export and import functions between packages.
+- [Game events](https://docs.helixgame.com/tutorials/Scripting/game-events/): Built-in game events.
+- [Spawning an actor](https://docs.helixgame.com/tutorials/Scripting/spawning/): Spawn actors from script.
+- [Creating interactable actors](https://docs.helixgame.com/tutorials/Scripting/interactable/): Make actors interactable.
+- [Using timers for cooldown functionality](https://docs.helixgame.com/tutorials/Scripting/timers/): Use timers.
+- [Database communication](https://docs.helixgame.com/tutorials/Scripting/database/): Read and write the database from Lua.
+- [Creating web user interface](https://docs.helixgame.com/tutorials/Scripting/webui/): Build WebUI from script.
+- [Binding into player X-ray events](https://docs.helixgame.com/tutorials/Scripting/xray/): Hook X-ray events.
+- [Animations list](https://docs.helixgame.com/tutorials/Scripting/anim_list/): Reference list of animation names.
+- [Character bones](https://docs.helixgame.com/tutorials/Scripting/bone_list/): Reference list of character bone names.
+- [Input keys](https://docs.helixgame.com/tutorials/Scripting/input_keys/): Reference list of input key names.
+
+## API reference (Lua)
+
+- [API reference](https://docs.helixgame.com/api/): Entry point for the Lua scripting API.
+
+### Global variables
+
+- [Functions](https://docs.helixgame.com/api/apiImport/global-variables/functions/): Global functions.
+- [Enums](https://docs.helixgame.com/api/apiImport/global-variables/enums/): Global enums.
+- [Structs](https://docs.helixgame.com/api/apiImport/global-variables/structs/): Global structs.
+- [HelixMath](https://docs.helixgame.com/api/apiImport/global-variables/helixmath/): Math helpers.
+- [HelixTable](https://docs.helixgame.com/api/apiImport/global-variables/helixtable/): Table helpers.
+- [JSON](https://docs.helixgame.com/api/apiImport/global-variables/json/): JSON helpers.
+
+### Classes
+
+- [Actor](https://docs.helixgame.com/api/apiImport/classes/actor/): Base actor class.
+- [HCharacter](https://docs.helixgame.com/api/apiImport/classes/hcharacter/): Playable/NPC character class.
+- [HPlayer](https://docs.helixgame.com/api/apiImport/classes/hplayer/): Connected player class.
+- [HPawn](https://docs.helixgame.com/api/apiImport/classes/hpawn/): Base pawn class.
+- [HVehicle](https://docs.helixgame.com/api/apiImport/classes/hvehicle/): Vehicle class.
+- [HWeapon](https://docs.helixgame.com/api/apiImport/classes/hweapon/): Weapon class.
+- [HInventory](https://docs.helixgame.com/api/apiImport/classes/hinventory/): Inventory class.
+- [HMap](https://docs.helixgame.com/api/apiImport/classes/hmap/): Map class.
+- [HShowroom](https://docs.helixgame.com/api/apiImport/classes/hshowroom/): Showroom class.
+- [Controller](https://docs.helixgame.com/api/apiImport/classes/controller/): Controller class.
+- [Interactable](https://docs.helixgame.com/api/apiImport/classes/interactable/): Interactable actor class.
+- [Trigger](https://docs.helixgame.com/api/apiImport/classes/trigger/): Trigger volume class.
+- [Trace](https://docs.helixgame.com/api/apiImport/classes/trace/): Line/shape tracing.
+- [Timer](https://docs.helixgame.com/api/apiImport/classes/timer/): Timer class.
+- [Animation](https://docs.helixgame.com/api/apiImport/classes/animation/): Animation class.
+- [StaticMesh](https://docs.helixgame.com/api/apiImport/classes/static-mesh/): Static mesh actor.
+- [LevelInstance](https://docs.helixgame.com/api/apiImport/classes/levelinstance/): Level instance actor.
+- [Light](https://docs.helixgame.com/api/apiImport/classes/light/): Light actor.
+- [Sky](https://docs.helixgame.com/api/apiImport/classes/sky/): Sky actor.
+- [Sound](https://docs.helixgame.com/api/apiImport/classes/sound/): Sound actor.
+- [Particle](https://docs.helixgame.com/api/apiImport/classes/particle/): Particle actor.
+- [Niagara](https://docs.helixgame.com/api/apiImport/classes/niagara/): Niagara VFX actor.
+- [Decal](https://docs.helixgame.com/api/apiImport/classes/decal/): Decal actor.
+- [Cable](https://docs.helixgame.com/api/apiImport/classes/cable/): Cable actor.
+- [Billboard](https://docs.helixgame.com/api/apiImport/classes/billboard/): Billboard actor.
+- [TextRender](https://docs.helixgame.com/api/apiImport/classes/text-render/): Text render actor.
+- [SceneCapture](https://docs.helixgame.com/api/apiImport/classes/scenecapture/): Scene capture actor.
+- [Door](https://docs.helixgame.com/api/apiImport/classes/door/): Door actor.
+- [Widget](https://docs.helixgame.com/api/apiImport/classes/widget/): Widget actor.
+- [WebUI](https://docs.helixgame.com/api/apiImport/classes/webui/): WebUI surface.
+- [Input](https://docs.helixgame.com/api/apiImport/classes/input/): Input bindings.
+- [Notification](https://docs.helixgame.com/api/apiImport/classes/notification/): Notifications.
+- [Database](https://docs.helixgame.com/api/apiImport/classes/database/): Database access.
+- [Discord](https://docs.helixgame.com/api/apiImport/classes/discord/): Discord integration.
+- [Xray](https://docs.helixgame.com/api/apiImport/classes/xray/): X-ray system.
+
+## Blueprints
+
+- [Work with Blueprints](https://docs.helixgame.com/blueprints/blueprints/): Use Unreal Blueprints in HELIX.
+- [SQLite and Blueprints](https://docs.helixgame.com/blueprints/PersistentData/persistent_data/): Persistent data from Blueprints.
+- [Creating dynamic materials](https://docs.helixgame.com/blueprints/DynamicMaterials/dynamic_materials/): Dynamic materials from Blueprints.
+
+## HelixJS (JavaScript)
+
+- [HelixJS](https://docs.helixgame.com/helixjs/): Overview of the JavaScript/TypeScript scripting layer.
+- [HelixJS API reference](https://docs.helixgame.com/helixjs/api/): API index.
+- [helix](https://docs.helixgame.com/helixjs/api/helix/): Core `helix` namespace.
+- [player](https://docs.helixgame.com/helixjs/api/player/): Player API.
+- [database](https://docs.helixgame.com/helixjs/api/database/): Database API.
+- [webui](https://docs.helixgame.com/helixjs/api/webui/): WebUI API.
+- [input](https://docs.helixgame.com/helixjs/api/input/): Input API.
+- [state](https://docs.helixgame.com/helixjs/api/state/): State API.
+- [Script loader and project layout](https://docs.helixgame.com/helixjs/tutorials/script-loader/): Project structure.
+- [Database setup and models](https://docs.helixgame.com/helixjs/tutorials/database/): Database models.
+- [WebUI and events](https://docs.helixgame.com/helixjs/tutorials/webui-and-events/): WebUI and events.
+- [Endpoints and RPC](https://docs.helixgame.com/helixjs/tutorials/endpoints-and-rpc/): Endpoints and RPC.
+
+## QBCore
+
+- [QBCore](https://docs.helixgame.com/qbcore/): QBCore framework overview for HELIX.
+- [Getting started with QBCore](https://docs.helixgame.com/qbcore/installation/): Install QBCore.
+- [Core concepts](https://docs.helixgame.com/qbcore/playerguide/): Core QBCore concepts.
+- [Core object](https://docs.helixgame.com/qbcore/qbcore-api/core-object/): QBCore core object.
+- [Shared file](https://docs.helixgame.com/qbcore/qbcore-api/shared-file/): Shared definitions.
+- [Player data](https://docs.helixgame.com/qbcore/qbcore-api/player-data/): Player data structure.
+- [Player functions](https://docs.helixgame.com/qbcore/qbcore-api/player-functions/): Player function reference.
+- [Client functions](https://docs.helixgame.com/qbcore/qbcore-api/client-functions/): Client function reference.
+- [Server functions](https://docs.helixgame.com/qbcore/qbcore-api/server-functions/): Server function reference.
+- [QBCore packages](https://docs.helixgame.com/qbcore/qbcore-packages/qb-inventory/): Reference packages such as qb-inventory, qb-banking, qb-houses, qb-shops, qb-target, qb-menu, and more.
+
+## Optional
+
+- [News & updates](https://docs.helixgame.com/news_updates/): News hub.
+- [Public roadmap](https://docs.helixgame.com/news_updates/public_roadmap/): Planned features.
+- [Known issues / report bugs](https://docs.helixgame.com/news_updates/known_issues/): Known issues and bug reporting.
+- [Devlog](https://docs.helixgame.com/news_updates/devlog/): Development log.
+- [Release notes](https://docs.helixgame.com/news_updates/release_notes/may_06_2026/): Dated release notes (latest and archive).
