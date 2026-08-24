@@ -4,10 +4,23 @@ set class = class ~ " md-header--shadow md-header--lifted" %} {% elif
 "navigation.tabs" not in features %} {% set class = class ~ " md-header--shadow"
 %} {% endif %}
 
+<!-- i18n Translation Dictionary -->
+{% set translation_dict = {
+  "en": {
+    "notice_alpha": "HELIX is in Closed Alpha. Some features and documentation may be non-functional or out of date.",
+    "btn_join_alpha": "Join Closed Alpha"
+  },
+  "zh-TW": {
+    "notice_alpha": "HELIX 目前處於封閉測試（Closed Alpha）。部分功能與文檔可能尚未完善或已過時。",
+    "btn_join_alpha": "加入封閉測試"
+  }
+} %}
+{% set t = translation_dict[config.theme.language] | d(translation_dict['en']) %}
+
 <!-- Header -->
 <header class="{{ class }}" data-md-component="header">
   <div class="notice">
-    HELIX is in Closed Alpha. Some features and documentation may be non-functional or out of date.
+    {{ t.notice_alpha }}
   </div>
   <nav class="md-header__inner md-grid" aria-label="{{ lang.t('header') }}">
     <!-- Link to home -->
@@ -61,13 +74,58 @@ set class = class ~ " md-header--shadow md-header--lifted" %} {% elif
           <a
             class="download-button helix"
             href="https://helixgame.com"
-            title="Join Closed Alpha"
+            title="{{ t.btn_join_alpha }}"
             target="_blank"
             rel="noopener"
           >
             {% set icon = "octicons/key-16" %} {% include ".icons/" ~ icon ~
-            ".svg" %} Join Closed Alpha</a
+            ".svg" %} {{ t.btn_join_alpha }}</a
           >
+        </li>
+        <!-- Language Dropdown (Supports infinite languages) -->
+        {% set supported_languages = config.extra.alternate %}
+        
+        {% set current_lang = config.theme.language %}
+        {% set clean_url = page.url %}
+        {% if current_lang != 'en' %}
+          {% set prefix = current_lang ~ "/" %}
+          {% set clean_url = page.url | replace(prefix, '', 1) %}
+        {% endif %}
+        
+        <li class="download-button language-dropdown">
+          <span class="lang-current">
+            {% set icon = "material/translate" %} {% include ".icons/" ~ icon ~ ".svg" %}
+            {% set current_lang_name = "English" %}
+            {% for lang in supported_languages %}
+              {% if lang.lang == current_lang %}
+                {% set current_lang_name = lang.name %}
+              {% endif %}
+            {% endfor %}
+            {{ current_lang_name }}
+            <span class="dropdown-arrow">▼</span>
+          </span>
+          <ul class="lang-dropdown-menu">
+            {% for lang in supported_languages %}
+              {% set active_class = "" %}
+              {% if current_lang == lang.lang %}
+                {% set active_class = "active-lang" %}
+              {% endif %}
+              
+              {% set lang_url = "/" ~ lang.lang ~ "/" ~ clean_url %}
+              {% if lang.lang == 'en' %}
+                {% set lang_url = "/" ~ clean_url %}
+              {% endif %}
+              
+              <li>
+                <a class="lang-dropdown-link {{ active_class }}" href="{{ lang_url }}" hreflang="{{ lang.lang }}">
+                  {{ lang.name }}
+                  {% if current_lang == lang.lang %}
+                    <span class="active-dot">●</span>
+                  {% endif %}
+                </a>
+              </li>
+            {% endfor %}
+          </ul>
         </li>
       </ul>
     </div>

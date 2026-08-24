@@ -1,6 +1,17 @@
 <!-- Actions -->
 {% if page.edit_url %}
 
+    <!-- i18n Translation Dictionary -->
+    {% set translation_dict = {
+      "en": {
+        "btn_feedback": "Provide feedback about this page"
+      },
+      "zh-TW": {
+        "btn_feedback": "提供關於此頁面的反饋"
+      }
+    } %}
+    {% set t = translation_dict[config.theme.language] | d(translation_dict['en']) %}
+
     <!-- If need be, we can add a status icon here too, instead of just in the sidebar, but it'll require custom js -->
     <!-- <a
         id="pageEditStatus"
@@ -29,8 +40,8 @@
         <!-- Add Comments too -->
         <a 
             href="{{ config.repo_url + '/issues/new?labels=' + 'page-' + page.title|replace(' ', '-')|lower + '&title=[' + page.title + '] Feedback' + '&body=[' + page.title + '](' + page.edit_url + ')%0D%0DThis page can be improved by:%0D1. %0D2.%20'}}"
-            title="Provide feedback about this page"
-            aria-label="Provide feedback about this page"
+            title="{{ t.btn_feedback }}"
+            aria-label="{{ t.btn_feedback }}"
             class="md-content__button md-icon"
             target="_blank"
             rel="noopener"

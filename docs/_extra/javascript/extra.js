@@ -35,13 +35,25 @@ keyboard$.subscribe((key) => {
   })();
 
   const button = (() => {
+    const translations = {
+      "en": {
+        wip: "This documentation is a work in progress. Information may be out of date or inaccurate.",
+        close: "Close"
+      },
+      "zh-TW": {
+        wip: "本文件目前仍在撰寫與完善中。部分資訊可能已過時或不準確。",
+        close: "關閉"
+      }
+    };
+    const lang = document.documentElement.lang || "en";
+    const t = translations[lang] || translations.en;
+
     const p = document.createElement("p");
-    p.innerHTML =
-      "This documentation is a work in progress. Information may be out of date or inaccurate.";
+    p.innerHTML = t.wip;
     modal.appendChild(p);
 
     const button = document.createElement("button");
-    button.innerHTML = "Close";
+    button.innerHTML = t.close;
     modal.appendChild(button);
     return button;
   })();
