@@ -401,7 +401,7 @@ SendNUIMessage({
 
 -- In HTML/JS
 window.addEventListener('message', function(event) {
-    if ([event.data](http://event.data).action === 'openUI') {
+    if (event.data.action === 'openUI') {
         // Handle UI
     }
 })
@@ -455,7 +455,7 @@ RegisterNUICallback('buttonClicked', function(data, cb)
 end)
 
 -- In JS
-$.post('[https://resource-name/buttonClicked](https://resource-name/buttonClicked)', JSON.stringify({
+$.post('https://resource-name/buttonClicked', JSON.stringify({
     value: someValue
 }))
 ```
@@ -463,8 +463,8 @@ $.post('[https://resource-name/buttonClicked](https://resource-name/buttonClicke
 **HELIX:**
 
 ```lua
--- HELIX - WebUI Subscribe
-myWebUI:Subscribe('buttonClicked', function(data)
+-- HELIX - WebUI Listen to events sent by the UI
+myWebUI:RegisterEventHandler('buttonClicked', function(data)
     print('Button clicked with data:', data)
 end)
 
@@ -527,13 +527,13 @@ function hEvent(eventName, data) {
 
 // Called from Lua via CallFunction
 window.initData = function(data) {
-    document.getElementById('cash').textContent = '$' + [data.cash](http://data.cash)
-    document.getElementById('bank').textContent = '$' + [data.bank](http://data.bank)
+    document.getElementById('cash').textContent = '$' + data.cash
+    document.getElementById('bank').textContent = '$' + data.bank
 }
 
 window.updateBalances = function(data) {
-    document.getElementById('cash').textContent = '$' + [data.cash](http://data.cash)
-    document.getElementById('bank').textContent = '$' + [data.bank](http://data.bank)
+    document.getElementById('cash').textContent = '$' + data.cash
+    document.getElementById('bank').textContent = '$' + data.bank
 }
 
 // Send event to Lua
@@ -829,8 +829,8 @@ RegisterNetEvent('atm:client:openATM', function()
     
     SendNUIMessage({
         action = 'open',
-        cash = [PlayerData.money.cash](http://PlayerData.money.cash),
-        bank = [PlayerData.money.bank](http://PlayerData.money.bank)
+        cash = PlayerData.money.cash,
+        bank = PlayerData.money.bank
     })
     SetNuiFocus(true, true)
 end)
@@ -947,9 +947,11 @@ RegisterServerEvent('atm:server:deposit', function(source, amount)
         Player.Functions.Notify('Deposited $' .. amount, 'success')
         
         -- Update UI
-        TriggerClientEvent('atm:client:updateBalances', source, 
-            [Player.PlayerData.money.cash](http://Player.PlayerData.money.cash), 
-            [Player.PlayerData.money.bank](http://Player.PlayerData.money.bank)
+        TriggerClientEvent(
+            'atm:client:updateBalances',
+            source,
+            Player.PlayerData.money.cash,
+            Player.PlayerData.money.bank
         )
     else
         Player.Functions.Notify('Not enough cash', 'error')
@@ -969,8 +971,8 @@ RegisterServerEvent('atm:server:withdraw', function(source, amount)
         
         -- Update UI
         TriggerClientEvent('atm:client:updateBalances', source,
-            [Player.PlayerData.money.cash](http://Player.PlayerData.money.cash),
-            [Player.PlayerData.money.bank](http://Player.PlayerData.money.bank)
+            Player.PlayerData.money.cash,
+           Player.PlayerData.money.bank
         )
     else
         Player.Functions.Notify('Not enough bank balance', 'error')
@@ -983,15 +985,15 @@ end)
 ```jsx
 // FiveM - script.js
 window.addEventListener('message', function(event) {
-    if ([event.data](http://event.data).action === 'open') {
+    if (event.data.action === 'open') {
         $('#atm-container').show()
-        $('#cash-amount').text('$' + [event.data.cash](http://event.data.cash))
-        $('#bank-amount').text('$' + [event.data.bank](http://event.data.bank))
+        $('#cash-amount').text(`$${event.data.cash}`)
+        $('#bank-amount').text(`$${event.data.bank}`)
     }
 })
 
 $('#deposit-btn').click(function() {
-    $.post('[https://atm-resource/deposit](https://atm-resource/deposit)', JSON.stringify({
+    $.post('https://atm-resource/deposit', JSON.stringify({
         amount: parseInt($('#amount').val())
     }))
 })
@@ -999,13 +1001,13 @@ $('#deposit-btn').click(function() {
 // HELIX - script.js
 window.openATM = function(data) {
     document.getElementById('atm-container').style.display = 'block'
-    document.getElementById('cash-amount').textContent = '$' + [data.cash](http://data.cash)
-    document.getElementById('bank-amount').textContent = '$' + [data.bank](http://data.bank)
+    document.getElementById('cash-amount').textContent = `$${data.cash}`
+    document.getElementById('bank-amount').textContent = `$${data.bank}`
 }
 
 window.updateBalances = function(data) {
-    document.getElementById('cash-amount').textContent = '$' + [data.cash](http://data.cash)
-    document.getElementById('bank-amount').textContent = '$' + [data.bank](http://data.bank)
+    document.getElementById('cash-amount').textContent = `$${data.cash}`
+    document.getElementById('bank-amount').textContent = `$${data.bank}`
 }
 
 document.getElementById('deposit-btn').addEventListener('click', function() {
@@ -1054,7 +1056,7 @@ local coords = character:GetLocation()
 
 ```lua
 -- HELIX - Direct access won't work
-local result = [Database.Select](http://Database.Select)('SELECT * FROM players', {})
+local result = Database.Select('SELECT * FROM players', {})
 local data = result[1]  -- This is TArray, not Lua table!
 ```
 
@@ -1062,7 +1064,7 @@ local data = result[1]  -- This is TArray, not Lua table!
 
 ```lua
 -- HELIX - Convert to Lua table
-local result = [Database.Select](http://Database.Select)('SELECT * FROM players', {})
+local result = Database.Select('SELECT * FROM players', {})
 if result[1] then
     local data = result[1].Columns:ToTable()
     -- Now data is usable
