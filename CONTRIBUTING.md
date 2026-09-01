@@ -61,3 +61,38 @@ Done via theme overrides
 
 ### Keep It Clean
 - Use existing color variable for css, don't `!override` unless necessary, etc.
+
+## Internationalization (i18n)
+
+We use [mkdocs-static-i18n](https://ultrabug.github.io/mkdocs-static-i18n/) for translations. For a complete guide, see [Contributing Translations](docs/getting_started/contributing-i18n.md).
+
+### Supported Languages
+- English (default)
+- Portuguese (BR): `pt-BR`
+- Spanish: `es`
+- German: `de`
+- French: `fr`
+
+### Quick Reference
+
+**File naming**: Add the locale suffix before `.md`
+- Original: `install.md`
+- Portuguese: `install.pt-BR.md`
+- Spanish: `install.es.md`
+
+**What to translate**:
+- Headings and body text
+- Image alt text
+- Admonition titles
+
+**What NOT to translate**:
+- Code blocks and inline code
+- API names, class names, function names
+- Technical terms (Package, World, Server, Assets, Blueprints, etc.)
+- UI labels as they appear in the software
+- File paths and URLs
+- Brand names (HELIX, Unreal Engine, FiveM, etc.)
+
+**Testing**: Run `mkdocs serve` and navigate to `/{locale}/` (e.g., `/pt-BR/`)
+
+Missing translations automatically fall back to English, so partial translations are fine.

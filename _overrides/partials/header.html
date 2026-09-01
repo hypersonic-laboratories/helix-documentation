@@ -72,6 +72,11 @@ set class = class ~ " md-header--shadow md-header--lifted" %} {% elif
       </ul>
     </div>
 
+    <!-- Language selector -->
+    {% if config.extra.alternate %}
+      {% include "partials/alternate.html" %}
+    {% endif %}
+
     <!-- Button to open search modal -->
     {% if "material/search" in config.plugins %}
     <label class="md-header__button md-icon" for="__search">
